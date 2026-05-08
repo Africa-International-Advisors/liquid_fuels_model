@@ -1,0 +1,67 @@
+# Aviation segment — MODELLED in v1 via the xlsx's two-variable regression.
+#
+# The xlsx fits jet fuel demand directly: aviation ≈ jet (paraffin and avgas
+# are small). For SACU v1, the regression IS the aviation segment's logic
+# for ZAF; BLNS will need separately fitted coefficients or a held-segment
+# fallback until data is available.
+
+regression:
+  # JetFuel(t) = intercept + b_gdp_pc * GDP_per_capita(t) + b_pax * PassengerDepartures(t)
+  #
+  # Source: xlsx sheet `RegJetFuel` / named-range coefficients.
+  by_country:
+    ZAF:
+      intercept:           -14746408795.77
+      coefficients:
+        gdp_per_capita:    196335
+        passenger_departures: 79.79
+      r_squared:           0.94602
+      observations:        6
+    BWA: null
+    LSO: null
+    NAM: null
+    SWZ: null
+  units: litres per year (response); ZAR/capita and pax (drivers)
+  source: Vopak/Reatile xlsx (RegJetFuel sheet)
+  last_updated: 2025-03-24
+  shared: true            # coefficients invariant across scenarios; drivers vary
+  expand:
+    kind: flat
+
+passenger_departures:
+  # Driver series for the regression. Historical observed departures plus
+  # the xlsx's base-scenario forecast path.
+  csv: timeseries/passenger_departures.csv
+  units: pax per year
+  source: Vopak/Reatile xlsx (PaxBaseScenario)
+  last_updated: 2025-03-24
+  shared: true
+  expand:
+    kind: linear
+
+product_split:
+  # Aviation segment emits one product (Jet A1) for v1. Aviation gasoline
+  # and paraffin are immaterial at SACU scale and rolled into jet.
+  by_country:
+    ZAF: { jet_a1: 1.0 }
+    BWA: { jet_a1: 1.0 }
+    LSO: { jet_a1: 1.0 }
+    NAM: { jet_a1: 1.0 }
+    SWZ: { jet_a1: 1.0 }
+  units: fraction (sums to 1 per country)
+  shared: true
+  expand:
+    kind: flat
+
+seasonality:
+  # Dec-Feb peak (southern-summer tourism), secondary Jul-Aug.
+  # Indices to be fitted from history.
+  by_country:
+    ZAF: aviation_za
+    BWA: aviation_bw
+    LSO: aviation_ls
+    NAM: aviation_na
+    SWZ: aviation_sz
+  source: fitted from history (see seasonality/ CSVs)
+  last_updated: null
+  shared: true

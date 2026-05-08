@@ -1,0 +1,69 @@
+# Macro drivers — GDP, GDP/capita, FX, population — per SACU country.
+#
+# Schema reminder for every assumption:
+#   value | csv      : either inline value/table, or path (relative to this file)
+#                      to a CSV containing the long time series.
+#   units            : human-readable unit string.
+#   source           : where the number originated (Stats SA, NamPower, IEA, ...).
+#   last_updated     : ISO date of source publication or analyst pull.
+#   scenarios        : list of scenarios this value applies to. Use `shared: true`
+#                      when a value is invariant across scenarios.
+#   expand           : annual->monthly rule. One of:
+#                        kind: flat
+#                        kind: linear
+#                        kind: seasonal
+#                        seasonal_index: <name in seasonality/>
+
+gdp:
+  csv: timeseries/gdp.csv
+  units: ZAR (constant 2015)
+  source: Vopak/Reatile xlsx (GDP named range); BLNS to be sourced
+  last_updated: 2025-03-24
+  scenarios: [high_demand, low_demand]
+  expand:
+    kind: linear
+
+gdp_per_capita:
+  csv: timeseries/gdp_per_capita.csv
+  units: ZAR (constant 2015) per capita
+  source: Vopak/Reatile xlsx (GDP named range, GDP/capita columns); BLNS to be sourced
+  last_updated: 2025-03-24
+  scenarios: [high_demand, low_demand]
+  expand:
+    kind: linear
+
+gdp_growth:
+  csv: timeseries/gdp_growth.csv
+  units: fraction per year (real GDP growth)
+  source: Vopak/Reatile xlsx (GDP_high_growth / GDP_low_growth); BLNS to be sourced
+  last_updated: 2025-03-24
+  scenarios: [high_demand, low_demand]
+  expand:
+    kind: flat
+
+population:
+  csv: timeseries/population.csv
+  units: persons
+  source: Vopak/Reatile xlsx (GDP named range, Population columns); BLNS to be sourced
+  last_updated: 2025-03-24
+  scenarios: [high_demand, low_demand]
+  expand:
+    kind: linear
+
+fx_zar_usd:
+  value: null   # placeholder — not in xlsx as a forecast series
+  units: ZAR per USD
+  source: TBD (SARB annual average)
+  last_updated: null
+  shared: true
+  expand:
+    kind: flat
+
+crude_oil_litres_per_barrel:
+  value: 158.987
+  units: litres per barrel
+  source: Vopak/Reatile xlsx (Crude_oil_litresPerBarrel)
+  last_updated: 2025-03-24
+  shared: true
+  expand:
+    kind: flat

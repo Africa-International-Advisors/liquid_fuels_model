@@ -1,0 +1,40 @@
+# Marine bunkering — held with driver tie in v1.
+# LSO/SWZ/BWA are landlocked; only ZAF and NAM have ports.
+
+base_year_volume:
+  by_port:
+    durban:      { country: ZAF, value: null, year: null }
+    cape_town:   { country: ZAF, value: null, year: null }
+    saldanha:    { country: ZAF, value: null, year: null }
+    walvis_bay:  { country: NAM, value: null, year: null }
+    luderitz:    { country: NAM, value: null, year: null }
+  units: litres per year (per port)
+  source: TBD
+  last_updated: null
+  scenarios: [reference]
+  expand:
+    kind: flat
+
+product_split:
+  # IMO sulphur-cap composition matters here when this graduates to MODELLED.
+  # For v1 record the observed split and hold it constant.
+  by_port:
+    durban:      { fuel_oil: null, diesel_500ppm: null }
+    cape_town:   { fuel_oil: null, diesel_500ppm: null }
+    saldanha:    { fuel_oil: null, diesel_500ppm: null }
+    walvis_bay:  { fuel_oil: null, diesel_500ppm: null }
+    luderitz:    { fuel_oil: null, diesel_500ppm: null }
+  units: fraction (sums to 1 per port)
+  scenarios: [reference]
+  expand:
+    kind: flat
+
+driver:
+  name: port_throughput_dwt
+  csv: timeseries/port_throughput_2026.csv
+  units: dwt
+  source: TBD (Transnet, Namport)
+  last_updated: null
+  shared: true
+  expand:
+    kind: linear

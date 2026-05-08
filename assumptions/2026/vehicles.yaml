@@ -1,0 +1,145 @@
+# Vehicles segment — modelled in v1.
+#
+# These keys mirror the xlsx's named ranges where possible (S-curve params,
+# new-vehicle regression coefficients) but are now per-country and carry
+# explicit provenance.
+#
+# v1 has only ZAF values (the xlsx is single-country). BLNS keys are present
+# but null so they are visibly missing rather than silently absent.
+
+ev_scurve:
+  # Logistic / Boltzmann S-curve parameters per country, per scenario.
+  # penetration(t) = 1 / (1 + exp((midpoint - t) / slope))
+  #
+  # NOTE: methodology note describes both scenarios as midpoint 2040 / slope 3,
+  # but the xlsx itself defines `EV_High_Penetration` as midpoint 2036 / slope 2.
+  # The xlsx is treated as the source of truth here.
+  by_country:
+    ZAF:
+      by_scenario:
+        high_demand: { max_penetration: 0.30, midpoint: 2040, slope: 3 }  # xlsx: EV_Low_Penetration
+        low_demand:  { max_penetration: 0.90, midpoint: 2036, slope: 2 }  # xlsx: EV_High_Penetration
+    BWA:
+      by_scenario:
+        high_demand: { max_penetration: null, midpoint: null, slope: null }
+        low_demand:  { max_penetration: null, midpoint: null, slope: null }
+    LSO:
+      by_scenario:
+        high_demand: { max_penetration: null, midpoint: null, slope: null }
+        low_demand:  { max_penetration: null, midpoint: null, slope: null }
+    NAM:
+      by_scenario:
+        high_demand: { max_penetration: null, midpoint: null, slope: null }
+        low_demand:  { max_penetration: null, midpoint: null, slope: null }
+    SWZ:
+      by_scenario:
+        high_demand: { max_penetration: null, midpoint: null, slope: null }
+        low_demand:  { max_penetration: null, midpoint: null, slope: null }
+  units: ratio (penetration), year (midpoint)
+  source: Vopak/Reatile xlsx (EV_High_Penetration / EV_Low_Penetration named ranges); BLNS to be sourced
+  last_updated: 2025-03-24
+  scenarios: [high_demand, low_demand]
+  expand:
+    kind: flat
+
+new_vehicle_regression:
+  # NewVehicleDemand = slope * GDP_per_capita + intercept
+  #
+  # Regression coefficients are shared across scenarios; what varies between
+  # scenarios is the GDP/capita series fed in (see macro.yaml).
+  by_country:
+    ZAF: { slope: 37.3149, intercept: -2387744, r_squared: 0.511137 }   # xlsx: RegEV / fEV Penetration
+    BWA: { slope: null, intercept: null, r_squared: null }
+    LSO: { slope: null, intercept: null, r_squared: null }
+    NAM: { slope: null, intercept: null, r_squared: null }
+    SWZ: { slope: null, intercept: null, r_squared: null }
+  units: vehicles per year (response), ZAR-per-capita constant 2015 (driver)
+  source: Vopak/Reatile xlsx (RegEV); BLNS to be fitted
+  last_updated: 2025-03-24
+  shared: true            # same coeffs apply to both scenarios
+  expand:
+    kind: flat
+
+scrappage_rate:
+  # Annual fraction of fleet retired. The xlsx omits this; the rebuild
+  # adds it as a first-class assumption.
+  by_country:
+    ZAF: null
+    BWA: null
+    LSO: null
+    NAM: null
+    SWZ: null
+  units: fraction per year
+  source: TBD (literature / fleet-age analysis)
+  last_updated: null
+  shared: true
+  expand:
+    kind: flat
+
+annual_km_per_vehicle:
+  # Not in the xlsx as a named range; the xlsx infers fuel demand from
+  # the gasoline/diesel regressions rather than via per-vehicle parameters.
+  # The segment-axis rebuild needs this to translate vehicle stock to fuel.
+  by_country:
+    ZAF: null
+    BWA: null
+    LSO: null
+    NAM: null
+    SWZ: null
+  units: km per vehicle per year
+  source: TBD
+  last_updated: null
+  shared: true
+  expand:
+    kind: flat
+
+fuel_consumption:
+  # Litres per 100 km, by country and powertrain. Same source-gap as above.
+  by_country:
+    ZAF: { ice_petrol: null, ice_diesel: null }
+    BWA: { ice_petrol: null, ice_diesel: null }
+    LSO: { ice_petrol: null, ice_diesel: null }
+    NAM: { ice_petrol: null, ice_diesel: null }
+    SWZ: { ice_petrol: null, ice_diesel: null }
+  units: L / 100 km
+  source: TBD
+  last_updated: null
+  shared: true
+  expand:
+    kind: flat
+
+petrol_diesel_split:
+  # Country-level split of new ICE sales between petrol and diesel.
+  by_country:
+    ZAF: { petrol: null, diesel: null }
+    BWA: { petrol: null, diesel: null }
+    LSO: { petrol: null, diesel: null }
+    NAM: { petrol: null, diesel: null }
+    SWZ: { petrol: null, diesel: null }
+  units: fraction (sums to 1 per country)
+  source: TBD
+  last_updated: null
+  shared: true
+  expand:
+    kind: flat
+
+efficiency_improvement:
+  # Annual efficiency improvement applied to gasoline / diesel demand
+  # (per scenario). Sourced from the xlsx Assumptions sheet's High/Low
+  # demand scenario columns.
+  diesel:
+    csv: timeseries/efficiency_improvement_diesel.csv
+    units: fraction per year
+    source: Vopak/Reatile xlsx (HighEfficiency_Improvement_Diesel / LowEfficiency_Improvement_Diesel)
+    last_updated: 2025-03-24
+    scenarios: [high_demand, low_demand]
+    expand:
+      kind: flat
+  gasoline:
+    csv: timeseries/efficiency_improvement_gasoline.csv
+    units: fraction per year
+    source: Vopak/Reatile xlsx (HighEfficiency_Improvement_Gasoline / LowEfficiency_Improvement_Gasoline)
+    last_updated: 2025-03-24
+    scenarios: [high_demand, low_demand]
+    expand:
+      kind: flat

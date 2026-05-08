@@ -1,0 +1,53 @@
+# Vintage metadata — every vintage directory has one of these.
+#
+# Once a vintage is "shipped" (used for an annual deliverable), the directory
+# is treated as immutable. Edits to a shipped vintage are an audit incident,
+# not a normal workflow. Subsequent corrections live in a new vintage.
+
+vintage: "2026"
+status: draft           # draft | shipped | superseded
+shipped_at: null        # ISO date once shipped
+owner: nigel.zhuwaki
+description: >
+  First Python-rebuild vintage. SACU scope (ZA, BW, LS, NA, SZ),
+  monthly to 2050, two coherent demand scenarios carried over from
+  the original Vopak/Reatile xlsx.
+
+scenarios:
+  - name: high_demand
+    description: >
+      High fuel-demand worldview. Higher GDP growth, slower EV penetration
+      (the xlsx's `EV_Low_Penetration` parameter set: max 0.30, midpoint 2040,
+      slope 3), lower fuel-efficiency improvement, more load-shedding-driven
+      OCGT diesel. This is the "more liquid fuel needed" scenario.
+  - name: low_demand
+    description: >
+      Low fuel-demand worldview. Lower GDP growth, faster EV penetration
+      (the xlsx's `EV_High_Penetration` parameter set: max 0.90, midpoint 2036,
+      slope 2), higher fuel-efficiency improvement, less load-shedding-driven
+      OCGT diesel. This is the "less liquid fuel needed" scenario.
+
+# Mapping of xlsx named ranges to scenarios for traceability.
+xlsx_scenario_mapping:
+  high_demand:
+    gdp_growth:           GDP_high_growth
+    ev_penetration:       EV_Low_Penetration         # low EV pen -> high fuel demand
+    eff_improvement_diesel:   HighEfficiency_Improvement_Diesel
+    eff_improvement_gasoline: HighEfficiency_Improvement_Gasoline
+    ocgt_load_factor:     PowerGenLoadFactor_High
+    ocgt_load_shedding:   LoadShedding_High
+    refinery_production:  Production_High
+    pax:                  PaxHighScenario
+  low_demand:
+    gdp_growth:           GDP_low_growth
+    ev_penetration:       EV_High_Penetration        # high EV pen -> low fuel demand
+    eff_improvement_diesel:   LowEfficiency_Improvement_Diesel
+    eff_improvement_gasoline: LowEfficiency_Improvement_Gasoline
+    ocgt_load_factor:     PowerGenLoadFactor_Low
+    ocgt_load_shedding:   LoadShedding_Low
+    refinery_production:  Production_Low
+    pax:                  PaxLowScenario
+
+# Optional: the central assumptions repo commit/tag this vintage was
+# pulled from, once the YAML provider is replaced by a remote provider.
+source_repo_ref: null

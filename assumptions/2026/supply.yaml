@@ -1,0 +1,71 @@
+# Supply-side assumptions — refinery capacities, product mixes, utilisation.
+#
+# The xlsx is essentially demand-only at the segment level but does carry
+# real refinery data. This file holds it in the same vintaged-and-sourced
+# form as the demand YAMLs, so the supply layer can grow without restructuring.
+
+refinery_capacity:
+  # Nameplate capacity (kbpd) for SA refineries. The xlsx tracks 6;
+  # availability is captured separately as a fleet-level constant.
+  by_country:
+    ZAF:
+      enref:    120     # Engen, Durban
+      sapref:   180     # Shell/BP, Durban (mothballed since 2022)
+      natref:   108.5   # Sasol/TotalEnergies, Sasolburg
+      sasol:     75     # Sasol Synfuels, Secunda (CTL)
+      astron:   100     # Astron, Cape Town
+      petrosa:   45     # PetroSA Mossel Bay (GTL; mothballed)
+    BWA: null
+    LSO: null
+    NAM: null
+    SWZ: null
+  units: kbpd (thousand barrels per day)
+  source: Vopak/Reatile xlsx (Refinery_capacity / Refinery)
+  last_updated: 2025-03-24
+  shared: true
+  expand:
+    kind: flat
+
+refinery_product_mix:
+  # Fraction of each refinery's output by product. Sums to <= 1; the
+  # remainder is heavy/residual not modelled in v1.
+  by_country:
+    ZAF:
+      enref:    { gasoline: 0.45, diesel: 0.25, jet_a1: 0.0  }
+      sapref:   { gasoline: 0.45, diesel: 0.25, jet_a1: 0.10 }
+      natref:   { gasoline: 0.45, diesel: 0.25, jet_a1: 0.10 }
+      sasol:    { gasoline: 0.85, diesel: 0.15, jet_a1: 0.0  }
+      astron:   { gasoline: 0.45, diesel: 0.25, jet_a1: 0.10 }
+      petrosa:  { gasoline: 0.85, diesel: 0.15, jet_a1: 0.0  }
+    BWA: null
+    LSO: null
+    NAM: null
+    SWZ: null
+  units: fraction
+  source: Vopak/Reatile xlsx (SupplyFuelMix)
+  last_updated: 2025-03-24
+  shared: true
+  expand:
+    kind: flat
+
+refinery_utilisation:
+  # Annual utilisation rate per refinery, scenario-dependent. The CSV
+  # rows are keyed (refinery, year, scenario) -> utilisation; the
+  # `country` column carries `ZAF:<refinery_name>` to encode the join.
+  csv: timeseries/refinery_production.csv
+  units: fraction
+  source: Vopak/Reatile xlsx (Production_High / Production_Low)
+  last_updated: 2025-03-24
+  scenarios: [high_demand, low_demand]
+  expand:
+    kind: linear
+
+refinery_availability:
+  # Fleet-level availability factor applied on top of utilisation.
+  value: 0.9
+  units: fraction
+  source: Vopak/Reatile xlsx (Refinery_availability)
+  last_updated: 2025-03-24
+  shared: true
+  expand:
+    kind: flat

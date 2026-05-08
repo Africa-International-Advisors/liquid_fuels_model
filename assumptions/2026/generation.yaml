@@ -1,0 +1,87 @@
+# Power-generation backup diesel (Eskom OCGT, IPPs). Promoted from
+# DEFERRED to HELD in v1 — the xlsx has explicit OCGT modelling that ports
+# directly into a sectoral compute.
+#
+# Sectoral compute (to be implemented):
+#   diesel_volume = sum_over_stations(capacity_MW)
+#                 * 24 * operational_days
+#                 * load_factor(year, scenario)
+#                 / efficiency
+#                 * (1000 / mj_per_litre)        # GWh -> MJ -> litres
+#
+# Plus an additive load-shedding-driven term where applicable.
+
+ocgt_capacity:
+  # Open-cycle gas turbine stations and their nameplate capacity (MW).
+  # The xlsx names "New 1" and "New 2" for planned/notional capacity.
+  by_country:
+    ZAF:
+      stations:
+        ankerlig:  1327
+        gourikwa:   740
+        avon:       670
+        dedisa:     335
+        new_1:     1000
+        new_2:     2000
+    BWA: null
+    LSO: null
+    NAM: null
+    SWZ: null
+  units: MW
+  source: Vopak/Reatile xlsx (PowerGen_Capacity named range)
+  last_updated: 2025-03-24
+  shared: true
+  expand:
+    kind: flat
+
+load_factor:
+  # Annual load factor for OCGT fleet, scenario-dependent.
+  csv: timeseries/ocgt_load_factor.csv
+  units: fraction
+  source: Vopak/Reatile xlsx (PowerGenLoadFactor_High / PowerGenLoadFactor_Low)
+  last_updated: 2025-03-24
+  scenarios: [high_demand, low_demand]
+  expand:
+    kind: linear
+
+load_shedding:
+  # Load-shedding-driven OCGT diesel demand (GWh-equivalent), by scenario.
+  csv: timeseries/ocgt_load_shedding.csv
+  units: GWh
+  source: Vopak/Reatile xlsx (LoadShedding_High / LoadShedding_Low)
+  last_updated: 2025-03-24
+  scenarios: [high_demand, low_demand]
+  expand:
+    kind: linear
+
+efficiency:
+  by_country:
+    ZAF: 0.4
+    BWA: null
+    LSO: null
+    NAM: null
+    SWZ: null
+  units: fraction (thermal efficiency)
+  source: Vopak/Reatile xlsx (PowerGen_Efficiency)
+  last_updated: 2025-03-24
+  shared: true
+  expand:
+    kind: flat
+
+mj_per_litre:
+  value: 36.9
+  units: MJ per litre (diesel)
+  source: Vopak/Reatile xlsx (MJ_Litres_Conversion)
+  last_updated: 2025-03-24
+  shared: true
+  expand:
+    kind: flat
+
+operational_days:
+  value: 365
+  units: days per year
+  source: Vopak/Reatile xlsx (Operational_days)
+  last_updated: 2025-03-24
+  shared: true
+  expand:
+    kind: flat

@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.env
+
+# Local data and run outputs (kept out of git; pinned by vintage instead)
+data/raw/
+data/interim/
+runs/*
+!runs/README.md
+*.xlsx.lock
+~$*.xlsx
+~$*.xlsm
+~$*.docx
+~$*.pptx
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
