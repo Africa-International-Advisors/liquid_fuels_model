@@ -195,18 +195,63 @@ def extract_ocgt_load_shedding(wb) -> None:
 
 
 def extract_passenger_departures(wb) -> None:
-    """Aviation passenger-departure series — historical + scenario forecasts.
+    """Aviation passenger-departure series — observed history stitched with baseline forecast.
 
-    Sources: PaxBaseScenario / PaxHighScenario / PaxLowScenario at Assumptions.
-    `PaxBaseScenario` provides the headline ACSA pax base path; high/low
-    scenario sheets hold growth rates on the same base.
+    The xlsx fitted its jet regression on observed pax. PaxBaseScenario is a
+    smoothed post-pandemic baseline forecast (2020 = 21M, ignoring the actual
+    COVID drop), so feeding it as input to the regression for historical years
+    produces values that don't match observed jet demand.
+
+    Stitch:
+      - 2017-2024 (or whatever's filled): observed Departures_Pass from
+        the `Jet - DemandSupply` sheet (column K under the un-transposed table).
+      - Years beyond observed: PaxBaseScenario.
+      - Observed wins for overlapping years.
     """
-    base = named_range_rows(wb, "PaxBaseScenario")
-    records: list[tuple] = []
-    # Header: Year | ACSA Pax Base | Growth Base
-    for row in base[1:]:
+    # Observed from Jet-DS — un-transposed table starts at row 9 with year in col E,
+    # observed pax in col K (header at row 8 says 'Departures_Pass'). The sheet has
+    # several side tables further down sharing column E for years; stop the walk
+    # the moment a header-like string (e.g. 'Jet Fuel', 'Year', 'Av Gas') appears.
+    ws = wb["Jet - DemandSupply"]
+    observed: dict[int, float] = {}
+    for row_idx in range(9, 30):
+        year_cell = ws.cell(row=row_idx, column=5).value
+        pax_cell = ws.cell(row=row_idx, column=11).value
+
+        # Skip blank rows mid-table; they don't end the table.
+        if year_cell is None:
+            continue
+        # Plain numeric year, or "2023*" annotation — extract digits.
+        if is_year(year_cell):
+            year_int = to_year(year_cell)
+        elif isinstance(year_cell, str):
+            digits = "".join(c for c in year_cell if c.isdigit())
+            if not digits or not (1900 <= int(digits) <= 2200):
+                break  # header of next side-table — stop walking.
+            year_int = int(digits)
+        else:
+            break
+        if (
+            isinstance(pax_cell, (int, float))
+            and not isinstance(pax_cell, bool)
+            and pax_cell > 0
+        ):
+            observed[year_int] = float(pax_cell)
+
+    # Baseline forecast (post-pandemic recovery profile)
+    baseline: dict[int, float] = {}
+    for row in named_range_rows(wb, "PaxBaseScenario")[1:]:
         if is_year(row[0]) and row[1] is not None:
-            records.append(("ZAF", to_year(row[0]), "shared", row[1]))
+            baseline[to_year(row[0])] = float(row[1])
+
+    # Stitch
+    years = sorted(set(observed) | set(baseline))
+    records: list[tuple] = []
+    for year in years:
+        value = observed.get(year, baseline.get(year))
+        if value is None:
+            continue
+        records.append(("ZAF", year, "shared", value))
     write_long_csv(OUT / "passenger_departures.csv", records)
 
 

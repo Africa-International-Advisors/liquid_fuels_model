@@ -14,9 +14,11 @@ import json
 import sys
 from pathlib import Path
 
+import pandas as pd
+
 from .assumptions import YamlDirectoryProvider
 from .config import Paths
-from .demand import vehicles
+from .demand import aviation, generation, vehicles
 from .output.aggregate import aggregate_volumes
 from .run import Run
 
@@ -47,14 +49,25 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"[lfm] {run.tag()}: starting", file=sys.stderr)
 
-    # v1: vehicles is the only modelled segment with values wired through.
-    print("[lfm]   computing vehicles segment...", file=sys.stderr)
-    veh = vehicles.compute_demand(provider, run)
-    monthly = veh.frame
-    print(f"[lfm]     -> {len(monthly):,} monthly rows", file=sys.stderr)
+    segment_modules = [vehicles, aviation, generation]  # segments wired in v1
+    segments_run: list[str] = []
+    frames: list = []
+    for mod in segment_modules:
+        print(f"[lfm]   computing {mod.name} segment...", file=sys.stderr)
+        result = mod.compute_demand(provider, run)
+        if not result.frame.empty:
+            frames.append(result.frame)
+        segments_run.append(mod.name)
+        print(f"[lfm]     -> {len(result.frame):,} monthly rows", file=sys.stderr)
 
+    monthly = (
+        pd.concat(frames, ignore_index=True)
+        if frames
+        else pd.DataFrame(columns=["country", "product", "period", "volume"])
+    )
     annual = aggregate_volumes(monthly)
-    print(f"[lfm]     -> {len(annual):,} annual rows", file=sys.stderr)
+    print(f"[lfm]   total: {len(monthly):,} monthly rows -> {len(annual):,} annual rows",
+          file=sys.stderr)
 
     # Banner: any provisional inputs should leave a loud mark on output.
     provisional_flags = _detect_provisional(provider, run)
@@ -75,7 +88,7 @@ def main(argv: list[str] | None = None) -> int:
                 "scenario": run.scenario,
                 "model_version": run.model_version,
                 "executed_at": run.executed_at.isoformat(),
-                "segments_run": ["vehicles"],
+                "segments_run": segments_run,
                 "provisional_inputs": provisional_flags,
             },
             indent=2,

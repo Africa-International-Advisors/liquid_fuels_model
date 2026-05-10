@@ -8,14 +8,16 @@ historical backfill against them year-by-year.
 
 Caveats — read these BEFORE drawing conclusions:
 
-  - Model output here is **vehicles segment only** (road transport). Total RSA
-    historical demand includes industrial, mining, agriculture, marine
-    bunkering, generation backup, etc. — none of those are in the model yet.
-    So:
-        Petrol comparison      : approx like-for-like (gasoline is mostly road)
-        Diesel comparison      : model is a SUBSET of historical (the gap
-                                 is unmodelled non-road diesel)
-        Jet comparison         : not meaningful (no aviation compute yet)
+  - Model output here is **vehicles + aviation + generation**. Total RSA
+    historical demand still includes industrial, mining, agriculture, and
+    marine bunkering — those segments are still unmodelled. So:
+        Petrol comparison : approx like-for-like (gasoline is mostly road)
+        Diesel comparison : model = vehicles (road) + generation (OCGT
+                            backup); xlsx total still includes industrial,
+                            mining, agri, marine. Gap closes as those land.
+        Jet comparison    : approx like-for-like — aviation ≈ jet, and the
+                            xlsx fits the regression on observed jet history,
+                            so reproduction should be tight
   - Vehicle parameters are PROVISIONAL. Convergence here doesn't validate
     parameter values — it tests whether the cohort engine reproduces the right
     *shape* given whatever parameters are loaded.
@@ -34,12 +36,12 @@ import pandas as pd
 from lfm.assumptions import YamlDirectoryProvider
 from lfm.config import Paths
 from lfm.core.geography import ISO3_LIST
-from lfm.demand import vehicles
+from lfm.demand import aviation, generation, vehicles
 from lfm.run import Run
 
 REPO = Path(__file__).resolve().parent.parent
 HISTORY_END = 2024  # last fully-observed year in the xlsx
-PRODUCTS_TRACKED = ("petrol_95", "diesel_50ppm")  # jet excluded — no compute yet
+PRODUCTS_TRACKED = ("petrol_95", "diesel_50ppm", "jet_a1")
 
 
 def load_history(paths: Paths) -> pd.DataFrame:
@@ -53,21 +55,40 @@ def load_history(paths: Paths) -> pd.DataFrame:
 
 
 def model_historical(run: Run, provider: YamlDirectoryProvider) -> pd.DataFrame:
-    """Run the cohort engine, return annual petrol+diesel for each country
-    over the historical window."""
-    frames: list[pd.DataFrame] = []
+    """Annual model output across all wired segments, per country, historical window."""
+    pieces: list[pd.DataFrame] = []
     for iso3 in ISO3_LIST:
-        annual = vehicles.compute_country_annual(
+        veh = vehicles.compute_country_annual(
             provider, run, iso3, start_year=vehicles.HISTORY_START,
         )
-        if annual is None:
+        avi = aviation.compute_country_annual(
+            provider, run, iso3, start_year=vehicles.HISTORY_START,
+        )
+        gen = generation.compute_country_annual(
+            provider, run, iso3, start_year=vehicles.HISTORY_START,
+        )
+        # Outer-join the segments. Vehicles + generation both emit
+        # `diesel_50ppm`; add them with fill_value=0 so years where one segment
+        # has no output (gen pre-2022) don't NaN-out the other.
+        joined: pd.DataFrame | None = None
+        if veh is not None:
+            joined = veh.copy()
+        if avi is not None:
+            joined = avi if joined is None else joined.join(avi, how="outer")
+        if gen is not None and "diesel_50ppm" in gen.columns and joined is not None:
+            joined = joined.copy()
+            joined["diesel_50ppm"] = joined["diesel_50ppm"].add(
+                gen["diesel_50ppm"], fill_value=0,
+            )
+        if joined is None:
             continue
-        df = annual.reset_index().rename(columns={"year": "period"})
+
+        df = joined.reset_index().rename(columns={"year": "period"})
         df.insert(0, "country", iso3)
-        frames.append(df)
-    if not frames:
-        return pd.DataFrame(columns=["country", "period", "petrol_95", "diesel_50ppm"])
-    return pd.concat(frames, ignore_index=True)
+        pieces.append(df)
+    if not pieces:
+        return pd.DataFrame(columns=["country", "period", "petrol_95", "diesel_50ppm", "jet_a1"])
+    return pd.concat(pieces, ignore_index=True)
 
 
 def build_comparison(
@@ -79,7 +100,8 @@ def build_comparison(
         .rename_axis(columns=None)
         .reset_index()
     )
-    m = model[model["country"] == "ZAF"][["period"] + list(PRODUCTS_TRACKED)]
+    present = [p for p in PRODUCTS_TRACKED if p in model.columns]
+    m = model[model["country"] == "ZAF"][["period"] + present]
 
     merged = h.merge(m, on="period", how="inner", suffixes=("_xlsx", "_model"))
     merged = merged[merged["period"] <= HISTORY_END].sort_values("period")
@@ -87,18 +109,21 @@ def build_comparison(
     rows = []
     for _, r in merged.iterrows():
         for p in PRODUCTS_TRACKED:
-            xlsx_col = f"{p}_xlsx"
-            model_col = f"{p}_model"
+            xlsx_col = f"{p}_xlsx" if f"{p}_xlsx" in merged.columns else p
+            model_col = f"{p}_model" if f"{p}_model" in merged.columns else None
             if xlsx_col not in merged.columns or pd.isna(r[xlsx_col]):
                 continue
             x = float(r[xlsx_col])
-            v = float(r[model_col]) if not pd.isna(r[model_col]) else 0.0
+            if model_col is None or pd.isna(r[model_col]):
+                v = 0.0
+            else:
+                v = float(r[model_col])
             gap_pct = (v - x) / x * 100 if x != 0 else float("nan")
             rows.append({
                 "year": int(r["period"]),
                 "product": p,
                 "xlsx_RSA_demand_BL": x / 1e9,
-                "model_vehicles_BL": v / 1e9,
+                "model_BL": v / 1e9,
                 "delta_BL": (v - x) / 1e9,
                 "gap_pct_of_xlsx": gap_pct,
             })
@@ -113,7 +138,7 @@ def render(comparison: pd.DataFrame, scenario: str) -> None:
 
     print(f"\n=== ZAF historical reconciliation, scenario={scenario} ===")
     print("    xlsx_RSA_demand : observed RSA fuel demand from the xlsx (all uses, all sectors)")
-    print("    model_vehicles  : current model output for the vehicles segment ONLY (road)")
+    print("    model           : current model output (segments wired so far)")
     print("    delta = model - xlsx (negative = model below xlsx; expected for diesel)")
     print()
 
@@ -123,8 +148,8 @@ def render(comparison: pd.DataFrame, scenario: str) -> None:
             continue
         print(f"  --- {product} ---")
         view = sub.set_index("year")[
-            ["xlsx_RSA_demand_BL", "model_vehicles_BL", "delta_BL", "gap_pct_of_xlsx"]
-        ].round({"xlsx_RSA_demand_BL": 2, "model_vehicles_BL": 2, "delta_BL": 2, "gap_pct_of_xlsx": 1})
+            ["xlsx_RSA_demand_BL", "model_BL", "delta_BL", "gap_pct_of_xlsx"]
+        ].round({"xlsx_RSA_demand_BL": 2, "model_BL": 2, "delta_BL": 2, "gap_pct_of_xlsx": 1})
         print(view.to_string())
         print()
 
