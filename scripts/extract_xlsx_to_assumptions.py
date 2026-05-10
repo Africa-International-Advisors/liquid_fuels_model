@@ -236,33 +236,58 @@ def extract_refinery_production(wb) -> None:
     write_long_csv(OUT / "refinery_production.csv", records)
 
 
-def extract_jet_demand_history(wb) -> None:
-    """Historical jet fuel demand (RSA) — for aviation regression fitting & validation."""
-    rows = named_range_rows(wb, "JetDemandSupply")
-    # The named range covers a column slab; header row identifies columns.
-    # Year column varies; demand is typically labelled 'Jet Fuel'.
-    # Pull from the first data shape we recognise.
-    records: list[tuple] = []
-    # Heuristic: scan all rows; if first cell is a year and second cell is numeric, take it.
-    for row in rows:
-        cells = list(row)
-        # Find year cell anywhere in the row
-        year_idx = next((i for i, v in enumerate(cells) if is_year(v)), None)
-        if year_idx is None:
-            continue
-        # The Jet Fuel column in the data tab is index 5 of the slab (offset varies).
-        # Be conservative: pick the first numeric cell after the year that's > 1e8 (litres scale).
-        for v in cells[year_idx + 1:]:
-            if isinstance(v, (int, float)) and v > 1e8:
-                records.append(("ZAF", to_year(cells[year_idx]), "shared", v))
-                break
-    # Deduplicate by (country, period)
-    seen: dict[tuple, tuple] = {}
-    for rec in records:
-        key = (rec[0], rec[1])
-        if key not in seen:
-            seen[key] = rec
-    write_long_csv(OUT / "jet_demand_history.csv", list(seen.values()))
+def extract_historical_demand(wb) -> None:
+    """Historical RSA demand by product, 2005-onwards.
+
+    Source: per-product DemandSupply sheets, "RSA Demand" column. These are
+    the totals the original xlsx fits its product-level regressions against,
+    so they're the authoritative comparator for any reconciliation.
+
+    Output schema is `(country, period, scenario, product, value)`. Scenario is
+    always "shared" since history is observed, not scenario-dependent.
+
+    Layout notes (from xlsx inspection):
+      - Gasoline - DemandSupply : Year in col C, RSA Demand in col K, header row 9
+      - Diesel - DemandSupply   : Year in col C, RSA Demand in col K, header row 10
+      - Jet - DemandSupply      : Year in col E, RSA Demand in col J, header row 8
+    """
+    sheets = [
+        ("Gasoline - DemandSupply", "petrol_95",     "C", "K", 9),
+        ("Diesel - DemandSupply",   "diesel_50ppm",  "C", "K", 10),
+        ("Jet - DemandSupply",      "jet_a1",        "E", "J", 8),
+    ]
+
+    out_path = OUT / "historical_demand.csv"
+    with out_path.open("w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh)
+        w.writerow(["country", "period", "scenario", "product", "value"])
+        total = 0
+        for sheet_name, product, year_col, value_col, header_row in sheets:
+            ws = wb[sheet_name]
+            # Walk down from the row immediately after the header until we
+            # stop seeing year-like values. Stop at the first non-year row.
+            for row_idx in range(header_row + 1, ws.max_row + 1):
+                year_v = ws[f"{year_col}{row_idx}"].value
+                if not is_year(year_v):
+                    # Allow blank rows mid-table; only stop after a streak of misses.
+                    if year_v is None:
+                        continue
+                    # Could be "2023*" annotation — try string parse.
+                    if isinstance(year_v, str):
+                        digits = "".join(c for c in year_v if c.isdigit())
+                        if not digits or not (1900 <= int(digits) <= 2200):
+                            continue
+                        year_int = int(digits)
+                    else:
+                        continue
+                else:
+                    year_int = to_year(year_v)
+                value = ws[f"{value_col}{row_idx}"].value
+                if value is None or not isinstance(value, (int, float)) or value == 0:
+                    continue
+                w.writerow(["ZAF", year_int, "shared", product, float(value)])
+                total += 1
+    print(f"  wrote {total:>5} rows -> {out_path.relative_to(REPO).as_posix()}")
 
 
 def main() -> None:
@@ -276,7 +301,7 @@ def main() -> None:
     extract_ocgt_load_shedding(wb)
     extract_passenger_departures(wb)
     extract_refinery_production(wb)
-    extract_jet_demand_history(wb)
+    extract_historical_demand(wb)
 
     print("\nDone.")
 
