@@ -64,6 +64,8 @@ These are the architectural commitments you should not casually reverse:
 
 3. **Internal model is monthly; consumer xlsx is annual.** The aggregation lives in `output/aggregate.py`. Don't make the engine annual to "match" the xlsx — the held segments need monthly seasonality and that lives at the engine layer.
 
+4. **Vehicle fuel-efficiency improvement applies to new sales only, not the whole fleet.** Each new-vehicle cohort enters at the year-of-manufacture L/100km (`fuel_consumption` baseline × cumulative `efficiency_improvement`) and that figure is held for the cohort's life. Fleet-average L/100km in a given year is a stock-weighted sum across cohorts. This is an explicit modelling rule recorded in `vehicles.yaml::fuel_consumption` — it implies the vehicles compute must track stock by cohort (year of first registration), not as a single bulk number.
+
 ## v1 build-out priorities
 
 The scaffold is in place; stub functions raise `NotImplementedError`. The build order that respects dependencies:

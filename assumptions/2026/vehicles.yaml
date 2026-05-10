@@ -1,11 +1,13 @@
 # Vehicles segment — modelled in v1.
 #
-# These keys mirror the xlsx's named ranges where possible (S-curve params,
-# new-vehicle regression coefficients) but are now per-country and carry
-# explicit provenance.
+# Three vehicle segments: passenger / lcv (light commercial) / hcv (heavy commercial).
+# Per-segment values capture that LCVs are heavily diesel and HCVs almost entirely
+# diesel, which a single aggregate would smear out.
 #
-# v1 has only ZAF values (the xlsx is single-country). BLNS keys are present
-# but null so they are visibly missing rather than silently absent.
+# Values flagged `provisional: true` are LITERATURE-RANGE PLACEHOLDERS sufficient
+# for engine implementation but NOT for decision-grade output. Tracking sheet:
+# `docs/vehicle_parameters_sourcing.md`. Outputs computed off provisional inputs
+# must carry a "PROVISIONAL" banner.
 
 ev_scurve:
   # Logistic / Boltzmann S-curve parameters per country, per scenario.
@@ -36,7 +38,7 @@ ev_scurve:
         high_demand: { max_penetration: null, midpoint: null, slope: null }
         low_demand:  { max_penetration: null, midpoint: null, slope: null }
   units: ratio (penetration), year (midpoint)
-  source: Vopak/Reatile xlsx (EV_High_Penetration / EV_Low_Penetration named ranges); BLNS to be sourced
+  source: Vopak/Reatile xlsx (EV_High_Penetration / EV_Low_Penetration); BLNS to be sourced
   last_updated: 2025-03-24
   scenarios: [high_demand, low_demand]
   expand:
@@ -60,73 +62,143 @@ new_vehicle_regression:
   expand:
     kind: flat
 
-scrappage_rate:
-  # Annual fraction of fleet retired. The xlsx omits this; the rebuild
-  # adds it as a first-class assumption.
-  by_country:
-    ZAF: null
-    BWA: null
-    LSO: null
-    NAM: null
-    SWZ: null
-  units: fraction per year
-  source: TBD (literature / fleet-age analysis)
-  last_updated: null
-  shared: true
-  expand:
-    kind: flat
+# --- segment-level fleet parameters ----------------------------------------- #
+# Three segments: passenger / lcv / hcv. The xlsx does not break these out;
+# values come from external sources (or provisional literature placeholders).
 
 annual_km_per_vehicle:
-  # Not in the xlsx as a named range; the xlsx infers fuel demand from
-  # the gasoline/diesel regressions rather than via per-vehicle parameters.
-  # The segment-axis rebuild needs this to translate vehicle stock to fuel.
   by_country:
-    ZAF: null
-    BWA: null
-    LSO: null
-    NAM: null
-    SWZ: null
+    ZAF: { passenger: 17000, lcv: 28000, hcv: 70000 }
+    BWA: { passenger: null,  lcv: null,  hcv: null  }
+    LSO: { passenger: null,  lcv: null,  hcv: null  }
+    NAM: { passenger: null,  lcv: null,  hcv: null  }
+    SWZ: { passenger: null,  lcv: null,  hcv: null  }
   units: km per vehicle per year
-  source: TBD
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (eNaTIS odometer queries / GreenCape / NAAMSA / IEA MoMo). See docs/vehicle_parameters_sourcing.md
   last_updated: null
   shared: true
   expand:
     kind: flat
 
 fuel_consumption:
-  # Litres per 100 km, by country and powertrain. Same source-gap as above.
+  # Litres per 100 km, by segment and powertrain. HCV petrol is null because
+  # heavy commercial vehicles in SACU are essentially all diesel.
+  #
+  # APPLICATION RULE (locked): the values here are the BASELINE for new-sale
+  # entries to the fleet. The `efficiency_improvement_*` annual paths (below)
+  # apply to NEW ENTRIES ONLY — i.e. each cohort's L/100km is fixed at the
+  # year-of-manufacture baseline times the cumulative efficiency improvement
+  # up to that year, then held for the cohort's life. The fleet-average
+  # L/100km in any given year emerges as a stock-weighted sum across cohorts.
+  # This implies the vehicles compute must track vehicle stock by cohort
+  # (year-of-first-registration), not as a single bulk number.
   by_country:
-    ZAF: { ice_petrol: null, ice_diesel: null }
-    BWA: { ice_petrol: null, ice_diesel: null }
-    LSO: { ice_petrol: null, ice_diesel: null }
-    NAM: { ice_petrol: null, ice_diesel: null }
-    SWZ: { ice_petrol: null, ice_diesel: null }
+    ZAF:
+      passenger: { ice_petrol: 9.5,  ice_diesel: 7.5  }
+      lcv:       { ice_petrol: 10.5, ice_diesel: 9.0  }
+      hcv:       { ice_petrol: null, ice_diesel: 35.0 }
+    BWA:
+      passenger: { ice_petrol: null, ice_diesel: null }
+      lcv:       { ice_petrol: null, ice_diesel: null }
+      hcv:       { ice_petrol: null, ice_diesel: null }
+    LSO:
+      passenger: { ice_petrol: null, ice_diesel: null }
+      lcv:       { ice_petrol: null, ice_diesel: null }
+      hcv:       { ice_petrol: null, ice_diesel: null }
+    NAM:
+      passenger: { ice_petrol: null, ice_diesel: null }
+      lcv:       { ice_petrol: null, ice_diesel: null }
+      hcv:       { ice_petrol: null, ice_diesel: null }
+    SWZ:
+      passenger: { ice_petrol: null, ice_diesel: null }
+      lcv:       { ice_petrol: null, ice_diesel: null }
+      hcv:       { ice_petrol: null, ice_diesel: null }
   units: L / 100 km
-  source: TBD
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (DMRE/DoE energy balances, IEA MoMo, NAAMSA-weighted OEM averages). See docs/vehicle_parameters_sourcing.md
+  last_updated: null
+  shared: true             # base fleet-average; efficiency_improvement applied annually on top
+  expand:
+    kind: flat
+
+petrol_diesel_split:
+  # Fraction of new ICE sales that are petrol vs diesel, per segment.
+  by_country:
+    ZAF:
+      passenger: { petrol: 0.83, diesel: 0.17 }
+      lcv:       { petrol: 0.30, diesel: 0.70 }
+      hcv:       { petrol: 0.00, diesel: 1.00 }
+    BWA:
+      passenger: { petrol: null, diesel: null }
+      lcv:       { petrol: null, diesel: null }
+      hcv:       { petrol: null, diesel: null }
+    LSO:
+      passenger: { petrol: null, diesel: null }
+      lcv:       { petrol: null, diesel: null }
+      hcv:       { petrol: null, diesel: null }
+    NAM:
+      passenger: { petrol: null, diesel: null }
+      lcv:       { petrol: null, diesel: null }
+      hcv:       { petrol: null, diesel: null }
+    SWZ:
+      passenger: { petrol: null, diesel: null }
+      lcv:       { petrol: null, diesel: null }
+      hcv:       { petrol: null, diesel: null }
+  units: fraction (sums to 1 per country×segment)
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (NAAMSA monthly sales reports). See docs/vehicle_parameters_sourcing.md
   last_updated: null
   shared: true
   expand:
     kind: flat
 
-petrol_diesel_split:
-  # Country-level split of new ICE sales between petrol and diesel.
+scrappage_rate:
+  # Annual fraction of fleet retired. v1 uses a flat rate per segment as
+  # a simplification; a Weibull/logistic survival curve is a future upgrade.
   by_country:
-    ZAF: { petrol: null, diesel: null }
-    BWA: { petrol: null, diesel: null }
-    LSO: { petrol: null, diesel: null }
-    NAM: { petrol: null, diesel: null }
-    SWZ: { petrol: null, diesel: null }
+    ZAF: { passenger: 0.04, lcv: 0.05, hcv: 0.06 }
+    BWA: { passenger: null, lcv: null, hcv: null }
+    LSO: { passenger: null, lcv: null, hcv: null }
+    NAM: { passenger: null, lcv: null, hcv: null }
+    SWZ: { passenger: null, lcv: null, hcv: null }
+  units: fraction per year
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (eNaTIS deregistrations / SA vehicle-stock-turnover papers). See docs/vehicle_parameters_sourcing.md
+  last_updated: null
+  shared: true
+  expand:
+    kind: flat
+
+new_vehicle_segment_split:
+  # Fraction of total new-vehicle demand falling into each segment.
+  # Needed because the EV/new-vehicle regression yields a single aggregate
+  # number; we then split that into passenger/lcv/hcv to apply per-segment
+  # consumption and km parameters.
+  by_country:
+    ZAF: { passenger: 0.78, lcv: 0.18, hcv: 0.04 }
+    BWA: { passenger: null, lcv: null, hcv: null }
+    LSO: { passenger: null, lcv: null, hcv: null }
+    NAM: { passenger: null, lcv: null, hcv: null }
+    SWZ: { passenger: null, lcv: null, hcv: null }
   units: fraction (sums to 1 per country)
-  source: TBD
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (NAAMSA new-vehicle registrations split by segment). See docs/vehicle_parameters_sourcing.md
   last_updated: null
   shared: true
   expand:
     kind: flat
 
 efficiency_improvement:
-  # Annual efficiency improvement applied to gasoline / diesel demand
-  # (per scenario). Sourced from the xlsx Assumptions sheet's High/Low
-  # demand scenario columns.
+  # Annual efficiency improvement applied to NEW-SALE entries only — see the
+  # APPLICATION RULE comment on `fuel_consumption` above. Each new cohort's
+  # L/100km = baseline * cumulative_product(1 - improvement) over years.
+  # Sourced from the xlsx Assumptions sheet's High/Low demand scenario columns.
   diesel:
     csv: timeseries/efficiency_improvement_diesel.csv
     units: fraction per year

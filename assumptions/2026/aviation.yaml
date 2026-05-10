@@ -11,10 +11,10 @@ regression:
   # Source: xlsx sheet `RegJetFuel` / named-range coefficients.
   by_country:
     ZAF:
-      intercept:           -14746408795.77
+      intercept:           -14746408795.767437
       coefficients:
-        gdp_per_capita:    196335
-        passenger_departures: 79.79
+        gdp_per_capita:    196334.9338396717
+        passenger_departures: 79.78786549099274
       r_squared:           0.94602
       observations:        6
     BWA: null

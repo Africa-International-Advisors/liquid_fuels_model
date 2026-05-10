@@ -6,10 +6,15 @@ v1 scope: **SACU** (South Africa, Botswana, Lesotho, Namibia, Eswatini),
 (`high_demand`, `low_demand`) ported from the original xlsx,
 **annual xlsx** as the consumer artifact.
 
-This repo is the model's code home. Assumptions live under
-`assumptions/<vintage>/` as a vintaged config — the model consumes them
-through a thin provider interface so the same code can later be wired
-to a central assumptions repo without changes.
+## Why this exists
+
+The original Excel model (`docs/Liquid Fuels Model - Supply Demand, 2025 - Reatile Copy.xlsx`) forecasts South African liquid fuel demand — gasoline, diesel, jet — out to 2050, balances it against domestic refinery supply, and surfaces deficits that imports need to cover. It's been a one-off deliverable: a workbook handed over, then opened the next year and edited in place. That's been getting harder. Three pressures pushed us toward a maintained, code-based rebuild:
+
+- **Annual refresh as a real operational requirement.** Each year's update needs to be reproducible — same inputs producing the same numbers — and stakeholders increasingly ask *"why did the 2030 diesel forecast change vs last year?"* Excel can't decompose that into "assumptions changed" vs "logic changed." A vintaged code-plus-config approach can.
+- **Assumptions governance.** A separate central assumptions repo is becoming the team's source of truth for shared inputs (GDP, FX, demographics). The model needs to *consume* assumptions through a clean interface so that swap is mechanical, not a rewrite. That's why everything under `assumptions/<vintage>/` looks the way it does.
+- **Geographic expansion.** The xlsx is South Africa only; the practical question is increasingly Southern African — cross-border fuel flows, regional refinery capacity, BLNS as demand satellites. v1 covers SACU; wider SADC is a planned extension, not a v1 scope creep.
+
+This repo is the rebuild. v1 is a **structural baseline** — the architecture, scenario machinery, and ZAF values ported from the xlsx — with the modelling logic itself to be filled in incrementally. The goal: a model the team can refresh annually with a clear contract for what's input vs logic vs output, and a defensible trail back to where every number came from.
 
 ## Layout
 
