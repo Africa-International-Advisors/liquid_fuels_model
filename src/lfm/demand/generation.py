@@ -1,4 +1,4 @@
-"""Power-generation backup diesel (Eskom OCGT, IPPs). v1 status: HELD (ZAF only).
+"""Power-generation backup diesel (Eskom OCGT, IPPs). v1 status: MODELLED (ZAF only).
 
 Sectoral compute:
     elec_MWh   = sum(capacity_MW) * 24 * operational_days * load_factor(year, scenario)
@@ -41,7 +41,7 @@ from ..run import Run
 from .base import DemandResult, SegmentStatus
 
 name = "generation"
-status = SegmentStatus.HELD
+status = SegmentStatus.MODELLED
 
 # v1 fleet definition: existing SA OCGT stations only.
 OPERATIONAL_STATIONS_ZAF = ("ankerlig", "gourikwa", "avon", "dedisa")

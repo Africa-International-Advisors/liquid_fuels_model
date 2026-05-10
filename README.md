@@ -24,8 +24,8 @@ src/lfm/                  Python package
   config.py               Path resolution
   core/                   time index, SACU geography, fuel products
   assumptions/            provider abstraction + YAML-directory implementation
-  demand/                 vehicles + aviation (modelled), generation + industrial
-                          + marine (held), agriculture (deferred)
+  demand/                 vehicles + aviation + generation (modelled),
+                          industrial + marine (held), agriculture (deferred)
   supply/                 cross-border + refining-import flows (thin v1)
   output/                 monthly→annual aggregate, template-driven xlsx
 
@@ -90,10 +90,10 @@ pytest
 | Timeseries CSVs (GDP, OCGT load, refinery utilisation, …) | extracted from xlsx |
 | YAML provider implementation | TODO |
 | Annual→monthly expansion | TODO |
-| Vehicles demand module (MODELLED) | TODO |
-| Aviation demand module (MODELLED, regression) | TODO |
-| Generation demand module (HELD, OCGT compute) | TODO |
-| Industrial / marine (held, driver-tied) | TODO |
+| Vehicles demand module (MODELLED) | done — cohort engine producing real numbers |
+| Aviation demand module (MODELLED, jet regression) | done — R² 0.95, ±10% on history |
+| Generation demand module (MODELLED, OCGT) | done — capacity × load factor → diesel |
+| Industrial / marine (held, driver-tied) | TODO — blocked on base-year sourcing |
 | Agriculture | deferred (returns empty frame) |
 | Supply flows | thin TODO |
 | Annual roll-up + xlsx writer | TODO |

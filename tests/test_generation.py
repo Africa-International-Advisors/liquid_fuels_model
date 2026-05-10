@@ -16,8 +16,8 @@ def provider() -> YamlDirectoryProvider:
     return YamlDirectoryProvider()
 
 
-def test_status_is_held():
-    assert generation.status == SegmentStatus.HELD
+def test_status_is_modelled():
+    assert generation.status == SegmentStatus.MODELLED
 
 
 def test_compute_returns_long_format_zaf_diesel_only(provider):

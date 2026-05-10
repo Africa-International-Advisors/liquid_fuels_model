@@ -32,7 +32,7 @@ src/lfm/
     base.py         DemandSegment Protocol; SegmentStatus = MODELLED|HELD|DEFERRED
     vehicles.py     MODELLED  (S-curve EV + GDP-driven new vehicles)
     aviation.py     MODELLED  (xlsx 2-var jet regression on GDP/capita + pax)
-    generation.py   HELD      (OCGT capacity x load factor; ports xlsx OCGT compute)
+    generation.py   MODELLED  (OCGT capacity x load factor / efficiency -> diesel)
     industrial.py   HELD      (driver-tied growth)
     marine.py       HELD      (per-port volumes + product split)
     agriculture.py  DEFERRED  (returns empty frame)
