@@ -167,28 +167,34 @@ def extract_efficiency_improvement(wb) -> None:
 
 
 def extract_ocgt_load_factor(wb) -> None:
-    """OCGT load factor by year and scenario (PowerGenLoadFactor_High/Low)."""
-    high = named_range_rows(wb, "PowerGenLoadFactor_High")
-    low = named_range_rows(wb, "PowerGenLoadFactor_Low")
+    """OCGT load factor by year and scenario.
+
+    The xlsx's `_High` / `_Low` suffix refers to grid availability (EAF), not
+    OCGT utilisation. So `PowerGenLoadFactor_Low` (low EAF -> stressed grid ->
+    high OCGT use) maps to OUR `high_demand` scenario, and vice versa. See the
+    scenario-mapping note in `_meta.yaml`.
+    """
+    pessimistic_grid = named_range_rows(wb, "PowerGenLoadFactor_Low")   # high OCGT use
+    optimistic_grid  = named_range_rows(wb, "PowerGenLoadFactor_High")  # low OCGT use
     records: list[tuple] = []
-    for row in high[1:]:
+    for row in pessimistic_grid[1:]:
         if is_year(row[0]) and row[1] is not None:
             records.append(("ZAF", to_year(row[0]), "high_demand", row[1]))
-    for row in low[1:]:
+    for row in optimistic_grid[1:]:
         if is_year(row[0]) and row[1] is not None:
             records.append(("ZAF", to_year(row[0]), "low_demand", row[1]))
     write_long_csv(OUT / "ocgt_load_factor.csv", records)
 
 
 def extract_ocgt_load_shedding(wb) -> None:
-    """OCGT load-shedding GWh by year and scenario."""
-    high = named_range_rows(wb, "LoadShedding_High")
-    low = named_range_rows(wb, "LoadShedding_Low")
+    """OCGT load-shedding GWh by year and scenario. Same EAF inversion as load_factor."""
+    pessimistic_grid = named_range_rows(wb, "LoadShedding_Low")   # high load shedding
+    optimistic_grid  = named_range_rows(wb, "LoadShedding_High")  # low load shedding
     records: list[tuple] = []
-    for row in high[1:]:
+    for row in pessimistic_grid[1:]:
         if is_year(row[0]) and row[1] is not None:
             records.append(("ZAF", to_year(row[0]), "high_demand", row[1]))
-    for row in low[1:]:
+    for row in optimistic_grid[1:]:
         if is_year(row[0]) and row[1] is not None:
             records.append(("ZAF", to_year(row[0]), "low_demand", row[1]))
     write_long_csv(OUT / "ocgt_load_shedding.csv", records)

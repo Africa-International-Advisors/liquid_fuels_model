@@ -28,14 +28,23 @@ scenarios:
       OCGT diesel. This is the "less liquid fuel needed" scenario.
 
 # Mapping of xlsx named ranges to scenarios for traceability.
+#
+# OCGT mapping note: the xlsx's PowerGenLoadFactor_High / _Low and
+# LoadShedding_High / _Low named ranges describe GRID AVAILABILITY (EAF), not
+# OCGT utilisation. Higher EAF = healthier grid = LESS load shedding = LESS
+# OCGT diesel. So the "_High" (high-EAF, low-OCGT-use) series is the
+# OPTIMISTIC grid worldview and pairs with low_demand (less liquid fuel
+# needed); the "_Low" (low-EAF, high-OCGT-use) series pairs with high_demand.
+# This was verified via scripts/probe_ocgt_mapping.py against the high_demand
+# description ("more load-shedding-driven OCGT diesel").
 xlsx_scenario_mapping:
   high_demand:
     gdp_growth:           GDP_high_growth
     ev_penetration:       EV_Low_Penetration         # low EV pen -> high fuel demand
     eff_improvement_diesel:   HighEfficiency_Improvement_Diesel
     eff_improvement_gasoline: HighEfficiency_Improvement_Gasoline
-    ocgt_load_factor:     PowerGenLoadFactor_High
-    ocgt_load_shedding:   LoadShedding_High
+    ocgt_load_factor:     PowerGenLoadFactor_Low     # high OCGT utilisation -> high diesel
+    ocgt_load_shedding:   LoadShedding_Low           # high load shedding GWh
     refinery_production:  Production_High
     pax:                  PaxHighScenario
   low_demand:
@@ -43,8 +52,8 @@ xlsx_scenario_mapping:
     ev_penetration:       EV_High_Penetration        # high EV pen -> low fuel demand
     eff_improvement_diesel:   LowEfficiency_Improvement_Diesel
     eff_improvement_gasoline: LowEfficiency_Improvement_Gasoline
-    ocgt_load_factor:     PowerGenLoadFactor_Low
-    ocgt_load_shedding:   LoadShedding_Low
+    ocgt_load_factor:     PowerGenLoadFactor_High    # low OCGT utilisation -> low diesel
+    ocgt_load_shedding:   LoadShedding_High          # low load shedding GWh
     refinery_production:  Production_Low
     pax:                  PaxLowScenario
 

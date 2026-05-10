@@ -22,13 +22,13 @@ v1 SIMPLIFICATIONS (worth flagging):
     sharply between scenarios), and the `load_factor` series already
     captures dispatched OCGT generation. Investigation queued.
 
-  - Scenario→named-range mapping is taken from `_meta.yaml::xlsx_scenario_mapping`.
-    Whether `high_demand` should be paired with `PowerGenLoadFactor_High`
-    (high EAF / less load shedding / less OCGT use) or `PowerGenLoadFactor_Low`
-    (low EAF / more load shedding / more OCGT use) is a real judgment call
-    about what the high_demand worldview means for grid availability.
-    Current mapping: `high_demand → PowerGenLoadFactor_High`. Worth checking
-    once a complete scenario narrative is locked.
+  - Scenario↔named-range mapping is taken from `_meta.yaml::xlsx_scenario_mapping`.
+    The xlsx's `_High`/`_Low` suffixes refer to grid availability (EAF), not
+    OCGT utilisation, so they're inverse to OCGT diesel demand. Mapping
+    locked: `high_demand → PowerGenLoadFactor_Low` (stressed grid, high OCGT
+    use, internally consistent with the high_demand description's "more
+    load-shedding-driven OCGT diesel"). Verified via
+    `scripts/probe_ocgt_mapping.py`.
 """
 from __future__ import annotations
 
