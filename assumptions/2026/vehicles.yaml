@@ -6,7 +6,7 @@
 #
 # Values flagged `provisional: true` are LITERATURE-RANGE PLACEHOLDERS sufficient
 # for engine implementation but NOT for decision-grade output. Tracking sheet:
-# `docs/vehicle_parameters_sourcing.md`. Outputs computed off provisional inputs
+# `docs/params_sourcing.md`. Outputs computed off provisional inputs
 # must carry a "PROVISIONAL" banner.
 
 ev_scurve:
@@ -76,7 +76,7 @@ annual_km_per_vehicle:
   units: km per vehicle per year
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (eNaTIS odometer queries / GreenCape / NAAMSA / IEA MoMo). See docs/vehicle_parameters_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (eNaTIS odometer queries / GreenCape / NAAMSA / IEA MoMo). See docs/params_sourcing.md
   last_updated: null
   shared: true
   expand:
@@ -118,7 +118,7 @@ fuel_consumption:
   units: L / 100 km
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (DMRE/DoE energy balances, IEA MoMo, NAAMSA-weighted OEM averages). See docs/vehicle_parameters_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (DMRE/DoE energy balances, IEA MoMo, NAAMSA-weighted OEM averages). See docs/params_sourcing.md
   last_updated: null
   shared: true             # base fleet-average; efficiency_improvement applied annually on top
   expand:
@@ -150,7 +150,7 @@ petrol_diesel_split:
   units: fraction (sums to 1 per country×segment)
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (NAAMSA monthly sales reports). See docs/vehicle_parameters_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (NAAMSA monthly sales reports). See docs/params_sourcing.md
   last_updated: null
   shared: true
   expand:
@@ -168,7 +168,7 @@ scrappage_rate:
   units: fraction per year
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (eNaTIS deregistrations / SA vehicle-stock-turnover papers). See docs/vehicle_parameters_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (eNaTIS deregistrations / SA vehicle-stock-turnover papers). See docs/params_sourcing.md
   last_updated: null
   shared: true
   expand:
@@ -188,7 +188,7 @@ new_vehicle_segment_split:
   units: fraction (sums to 1 per country)
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (NAAMSA new-vehicle registrations split by segment). See docs/vehicle_parameters_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (NAAMSA new-vehicle registrations split by segment). See docs/params_sourcing.md
   last_updated: null
   shared: true
   expand:

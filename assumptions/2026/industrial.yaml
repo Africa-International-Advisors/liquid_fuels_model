@@ -1,54 +1,54 @@
-# Industrial / mining diesel — held with driver tie in v1.
+# Industrial / mining diesel — held with GDP-ratio growth in v1.
+#
+# v1 simplification: single aggregate bucket per country (mining + manufacturing
+# + construction lumped together). Sub-segments (mining haul, smelters, etc.)
+# are a future enhancement.
+#
+# Compute: volume(t) = base_year_volume * (gdp_pc(t) / gdp_pc(base_year))^elasticity
 
 base_year_volume:
-  # Anchor: most recent observed annual industrial diesel consumption
-  # per country. Drives the held-segment growth path.
   by_country:
-    ZAF: { value: null, year: null }
-    BWA: { value: null, year: null }
-    LSO: { value: null, year: null }
-    NAM: { value: null, year: null }
-    SWZ: { value: null, year: null }
-  units: litres per year
-  source: TBD (SAPIA wholesale; BLNS regulators)
-  last_updated: null
-  scenarios: [reference]
-  expand:
-    kind: flat
-
-driver:
-  # Series this segment's growth is tied to.
-  name: industrial_gva
-  csv: timeseries/industrial_gva_2026.csv
-  units: ZAR (constant 2015)
-  source: TBD
+    ZAF: { value: 2.5e9,  year: 2024 }   # provisional ~2.5 BL/yr (mid-range guess)
+    BWA: { value: null,   year: null }
+    LSO: { value: null,   year: null }
+    NAM: { value: null,   year: null }
+    SWZ: { value: null,   year: null }
+  units: litres per year (diesel)
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — derived as residual of (xlsx total diesel - vehicles - OCGT - marine - agri); awaits proper sourcing (DMRE energy balances, mining sector reports, manufacturing energy intensity studies). See docs/params_sourcing.md
   last_updated: null
   shared: true
-  expand:
-    kind: linear
 
 elasticity:
-  # Volume_t / Volume_base = (Driver_t / Driver_base) ** elasticity
+  by_country:
+    ZAF: 1.0    # provisional — industrial diesel grows roughly 1:1 with GDP
+    BWA: null
+    LSO: null
+    NAM: null
+    SWZ: null
+  units: dimensionless (response of diesel demand to GDP/capita)
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — literature mid-range; varies 0.5–1.2 across studies. See docs/params_sourcing.md
+  last_updated: null
+  shared: true
+
+product:
+  # All industrial output goes to diesel_50ppm in v1.
+  default: diesel_50ppm
+  units: product code
+  shared: true
+
+seasonality:
+  # Industrial diesel has weak monthly seasonality (mining maintenance windows,
+  # agri spillover). Flat for v1.
   by_country:
     ZAF: null
     BWA: null
     LSO: null
     NAM: null
     SWZ: null
-  units: dimensionless
-  source: TBD
-  last_updated: null
-  scenarios: [reference]
-  expand:
-    kind: flat
-
-seasonality:
-  by_country:
-    ZAF: industrial_za
-    BWA: industrial_bw
-    LSO: null
-    NAM: industrial_na
-    SWZ: null
-  source: fitted from history (see seasonality/ CSVs)
+  source: TBD (would be fitted from monthly DMRE wholesale data per region)
   last_updated: null
   shared: true

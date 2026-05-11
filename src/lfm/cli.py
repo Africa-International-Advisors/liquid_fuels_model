@@ -18,7 +18,7 @@ import pandas as pd
 
 from .assumptions import YamlDirectoryProvider
 from .config import Paths
-from .demand import aviation, generation, vehicles
+from .demand import agriculture, aviation, generation, industrial, marine, vehicles
 from .output.aggregate import aggregate_volumes
 from .run import Run
 
@@ -49,7 +49,7 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"[lfm] {run.tag()}: starting", file=sys.stderr)
 
-    segment_modules = [vehicles, aviation, generation]  # segments wired in v1
+    segment_modules = [vehicles, aviation, generation, industrial, marine, agriculture]
     segments_run: list[str] = []
     frames: list = []
     for mod in segment_modules:
@@ -101,7 +101,7 @@ def main(argv: list[str] | None = None) -> int:
             "\n[lfm] *** PROVISIONAL OUTPUT -- DO NOT USE FOR DECISIONS ***\n"
             "[lfm] The following vehicle parameters are literature-range placeholders:\n"
             f"[lfm]   {', '.join(provisional_flags)}\n"
-            "[lfm] See docs/vehicle_parameters_sourcing.md for sourcing status.\n",
+            "[lfm] See docs/params_sourcing.md for sourcing status.\n",
             file=sys.stderr,
         )
 
@@ -116,10 +116,15 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _detect_provisional(provider: YamlDirectoryProvider, run: Run) -> list[str]:
-    """Return the list of vehicle YAML keys still flagged provisional."""
+    """Return the list of YAML keys still flagged provisional across all segments."""
+    domains = ["vehicles", "industrial", "marine", "agriculture"]
     out: list[str] = []
-    domain_doc = provider._load_domain(run.vintage, "vehicles")  # noqa: SLF001
-    for key, node in domain_doc.items():
-        if isinstance(node, dict) and node.get("provisional"):
-            out.append(f"vehicles.{key}")
+    for domain in domains:
+        try:
+            doc = provider._load_domain(run.vintage, domain)  # noqa: SLF001
+        except FileNotFoundError:
+            continue
+        for key, node in doc.items():
+            if isinstance(node, dict) and node.get("provisional"):
+                out.append(f"{domain}.{key}")
     return out

@@ -8,16 +8,18 @@ historical backfill against them year-by-year.
 
 Caveats — read these BEFORE drawing conclusions:
 
-  - Model output here is **vehicles + aviation + generation**. Total RSA
-    historical demand still includes industrial, mining, agriculture, and
-    marine bunkering — those segments are still unmodelled. So:
+  - Model output here is **all six demand segments**: vehicles, aviation,
+    generation (MODELLED) + industrial, marine, agriculture (HELD with
+    provisional placeholders). All HELD base-year volumes are LITERATURE-
+    RANGE GUESSES, not sourced numbers. So:
         Petrol comparison : approx like-for-like (gasoline is mostly road)
-        Diesel comparison : model = vehicles (road) + generation (OCGT
-                            backup); xlsx total still includes industrial,
-                            mining, agri, marine. Gap closes as those land.
-        Jet comparison    : approx like-for-like — aviation ≈ jet, and the
-                            xlsx fits the regression on observed jet history,
-                            so reproduction should be tight
+        Diesel comparison : model now sums vehicles + generation +
+                            industrial + agriculture diesel against xlsx
+                            total. The remaining gap is dominated by the
+                            quality of provisional inputs, not by missing
+                            segments.
+        Jet comparison    : approx like-for-like — aviation ≈ jet, R² 0.95
+                            on the xlsx fit.
   - Vehicle parameters are PROVISIONAL. Convergence here doesn't validate
     parameter values — it tests whether the cohort engine reproduces the right
     *shape* given whatever parameters are loaded.
@@ -36,7 +38,7 @@ import pandas as pd
 from lfm.assumptions import YamlDirectoryProvider
 from lfm.config import Paths
 from lfm.core.geography import ISO3_LIST
-from lfm.demand import aviation, generation, vehicles
+from lfm.demand import agriculture, aviation, generation, industrial, marine, vehicles
 from lfm.run import Run
 
 REPO = Path(__file__).resolve().parent.parent
@@ -67,19 +69,38 @@ def model_historical(run: Run, provider: YamlDirectoryProvider) -> pd.DataFrame:
         gen = generation.compute_country_annual(
             provider, run, iso3, start_year=vehicles.HISTORY_START,
         )
-        # Outer-join the segments. Vehicles + generation both emit
-        # `diesel_50ppm`; add them with fill_value=0 so years where one segment
-        # has no output (gen pre-2022) don't NaN-out the other.
+        ind = industrial.compute_country_annual(
+            provider, run, iso3, start_year=vehicles.HISTORY_START,
+        )
+        agr = agriculture.compute_country_annual(
+            provider, run, iso3, start_year=vehicles.HISTORY_START,
+        )
+        mar = marine.compute_country_annual(
+            provider, run, iso3, start_year=vehicles.HISTORY_START,
+        )
+
         joined: pd.DataFrame | None = None
         if veh is not None:
             joined = veh.copy()
         if avi is not None:
             joined = avi if joined is None else joined.join(avi, how="outer")
-        if gen is not None and "diesel_50ppm" in gen.columns and joined is not None:
+
+        # Sum every diesel-emitting source into a single diesel_50ppm column.
+        diesel_sources = [d for d in (gen, ind, agr) if d is not None and "diesel_50ppm" in d.columns]
+        if diesel_sources and joined is not None:
             joined = joined.copy()
-            joined["diesel_50ppm"] = joined["diesel_50ppm"].add(
-                gen["diesel_50ppm"], fill_value=0,
-            )
+            for src in diesel_sources:
+                joined["diesel_50ppm"] = joined["diesel_50ppm"].add(
+                    src["diesel_50ppm"], fill_value=0,
+                )
+
+        # Marine emits fuel_oil + diesel_500ppm (different products); add as new columns.
+        if mar is not None and not mar.empty:
+            if joined is None:
+                joined = mar.copy()
+            else:
+                joined = joined.join(mar, how="outer")
+
         if joined is None:
             continue
 

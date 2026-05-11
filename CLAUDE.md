@@ -33,9 +33,9 @@ src/lfm/
     vehicles.py     MODELLED  (S-curve EV + GDP-driven new vehicles)
     aviation.py     MODELLED  (xlsx 2-var jet regression on GDP/capita + pax)
     generation.py   MODELLED  (OCGT capacity x load factor / efficiency -> diesel)
-    industrial.py   HELD      (driver-tied growth)
-    marine.py       HELD      (per-port volumes + product split)
-    agriculture.py  DEFERRED  (returns empty frame)
+    industrial.py   HELD      (base × GDP-ratio^elasticity, single ZAF bucket)
+    marine.py       HELD      (per-port base × GDP-ratio^elasticity, summed by country)
+    agriculture.py  HELD      (base × GDP-ratio^elasticity, low elasticity)
   supply/flows.py   thin balancing layer (SA refining vs imports vs BLNS demand)
   output/
     aggregate.py    monthly→annual roll-up

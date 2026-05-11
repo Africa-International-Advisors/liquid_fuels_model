@@ -1,40 +1,55 @@
-# Marine bunkering — held with driver tie in v1.
-# LSO/SWZ/BWA are landlocked; only ZAF and NAM have ports.
+# Marine bunkering — held with GDP-ratio growth in v1.
+#
+# Per-port base volumes; ports map to their host country (Durban/CT/Saldanha
+# → ZAF; Walvis Bay/Lüderitz → NAM). Landlocked SACU members emit nothing.
+#
+# Compute (HELD pattern):
+#   per_port_volume(t) = base_year_volume * (gdp_pc(country, t) / gdp_pc(country, base))^elasticity
+# Country output sums over its ports. Product splits applied last.
+#
+# CAVEAT: SA GDP isn't a great driver for bunkering — global trade volumes
+# would be more correct. v1 uses GDP as a placeholder driver with a low
+# elasticity to acknowledge marine shouldn't track national GDP closely.
+# Replacing the driver with port throughput is a planned enhancement.
 
 base_year_volume:
   by_port:
-    durban:      { country: ZAF, value: null, year: null }
-    cape_town:   { country: ZAF, value: null, year: null }
-    saldanha:    { country: ZAF, value: null, year: null }
-    walvis_bay:  { country: NAM, value: null, year: null }
-    luderitz:    { country: NAM, value: null, year: null }
+    durban:      { country: ZAF, value: 1.5e9, year: 2024 }   # provisional ~1.5 BL
+    cape_town:   { country: ZAF, value: 0.5e9, year: 2024 }   # provisional ~0.5 BL
+    saldanha:    { country: ZAF, value: 0.2e9, year: 2024 }   # provisional ~0.2 BL
+    walvis_bay:  { country: NAM, value: 0.25e9, year: 2024 }  # provisional ~0.25 BL
+    luderitz:    { country: NAM, value: 0.05e9, year: 2024 }  # provisional ~0.05 BL
   units: litres per year (per port)
-  source: TBD
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (Transnet bunker volumes, Namport, IBIA bunker reports). See docs/params_sourcing.md
   last_updated: null
-  scenarios: [reference]
-  expand:
-    kind: flat
+  shared: true
+
+elasticity:
+  # Marine bunkering doesn't track national GDP closely (driver is global
+  # trade). v1 uses a low elasticity to dampen GDP's effect.
+  by_country:
+    ZAF: 0.4
+    NAM: 0.4
+    BWA: null
+    LSO: null
+    SWZ: null
+  units: dimensionless
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — placeholder pending move to a proper port-throughput driver. See docs/params_sourcing.md
+  last_updated: null
+  shared: true
 
 product_split:
   # IMO sulphur-cap composition matters here when this graduates to MODELLED.
-  # For v1 record the observed split and hold it constant.
-  by_port:
-    durban:      { fuel_oil: null, diesel_500ppm: null }
-    cape_town:   { fuel_oil: null, diesel_500ppm: null }
-    saldanha:    { fuel_oil: null, diesel_500ppm: null }
-    walvis_bay:  { fuel_oil: null, diesel_500ppm: null }
-    luderitz:    { fuel_oil: null, diesel_500ppm: null }
-  units: fraction (sums to 1 per port)
-  scenarios: [reference]
-  expand:
-    kind: flat
-
-driver:
-  name: port_throughput_dwt
-  csv: timeseries/port_throughput_2026.csv
-  units: dwt
-  source: TBD (Transnet, Namport)
+  # v1 uses a single split across all ports: roughly two-thirds fuel oil
+  # (HFO/VLSFO), one-third marine gasoil. Ports differ but v1 doesn't.
+  default: { fuel_oil: 0.65, diesel_500ppm: 0.35 }
+  units: fraction (sums to 1)
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — literature mid-range; post-IMO 2020 the split is shifting toward more diesel. See docs/params_sourcing.md
   last_updated: null
   shared: true
-  expand:
-    kind: linear

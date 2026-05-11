@@ -1,0 +1,45 @@
+# Agricultural diesel — held with GDP-ratio growth in v1.
+#
+# v1 simplification: single aggregate bucket per country. Sub-segments
+# (commercial vs subsistence; tractor vs irrigation pumps) are a future
+# enhancement.
+#
+# Compute: volume(t) = base_year_volume * (gdp_pc(t) / gdp_pc(base_year))^elasticity
+# Low elasticity vs GDP — agricultural diesel doesn't track economic growth
+# closely (it tracks planted hectares, irrigation cycles, fleet age).
+
+base_year_volume:
+  by_country:
+    ZAF: { value: 0.7e9, year: 2024 }   # provisional ~0.7 BL/yr
+    BWA: { value: null,  year: null }
+    LSO: { value: null,  year: null }
+    NAM: { value: null,  year: null }
+    SWZ: { value: null,  year: null }
+  units: litres per year (diesel)
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — placeholder pending sourcing (DAFF / DALRRD energy use studies, sector reports). See docs/params_sourcing.md
+  last_updated: null
+  shared: true
+
+elasticity:
+  # Agriculture barely tracks GDP — driver is hectares planted and rebate
+  # policy. Low elasticity acknowledges this is the wrong driver and the
+  # placeholder won't change much year-on-year.
+  by_country:
+    ZAF: 0.2
+    BWA: null
+    LSO: null
+    NAM: null
+    SWZ: null
+  units: dimensionless
+  provisional: true
+  needs_verification: true
+  source: PROVISIONAL — placeholder pending move to a hectares-planted driver. See docs/params_sourcing.md
+  last_updated: null
+  shared: true
+
+product:
+  default: diesel_50ppm
+  units: product code
+  shared: true

@@ -1,10 +1,15 @@
-# Vehicle parameters — sourcing log
+# Provisional parameter sourcing log
 
-This is the audit trail for the six fleet parameters in `assumptions/2026/vehicles.yaml`
-that don't come from the original xlsx and need external sourcing. The xlsx
-fits demand at the product level (gasoline / diesel / jet); the rebuild uses
-a segment-axis decomposition (passenger / LCV / HCV vehicle stock × consumption)
-which needs parameters the xlsx never recorded.
+This is the audit trail for parameters carried as **literature-range placeholders**
+across the demand segments. The original xlsx fits demand at the product level
+(gasoline / diesel / jet); the rebuild uses a segment-axis decomposition
+(vehicles / aviation / generation / industrial / marine / agriculture) which
+needs parameters the xlsx never recorded.
+
+Two segments — vehicles and the three HELD segments (industrial / marine /
+agriculture) — carry placeholder values flagged `provisional: true`.
+Aviation, generation, and the macro layer are sourced from the xlsx and
+verified against it (see `scripts/verify_against_xlsx.py`).
 
 ## How to use this doc
 
@@ -200,12 +205,37 @@ Update this table as parameters get sourced. PROVISIONAL = literature
 placeholder; SOURCED = real value from a named source but not yet sanity-checked
 by the team; VERIFIED = sourced + reviewed and signed off.
 
+### Vehicles segment
+
 | # | Parameter | ZAF | BWA | LSO | NAM | SWZ | Notes |
 |---|---|---|---|---|---|---|---|
-| 1 | `annual_km_per_vehicle`    | PROVISIONAL | — | — | — | — | |
-| 2 | `fuel_consumption`         | PROVISIONAL | — | — | — | — | |
-| 3 | `petrol_diesel_split`      | PROVISIONAL | — | — | — | — | |
-| 4 | `scrappage_rate`           | PROVISIONAL | — | — | — | — | |
-| 5 | `new_vehicle_segment_split`| PROVISIONAL | — | — | — | — | |
+| V1 | `annual_km_per_vehicle`    | PROVISIONAL | — | — | — | — | |
+| V2 | `fuel_consumption`         | PROVISIONAL | — | — | — | — | |
+| V3 | `petrol_diesel_split`      | PROVISIONAL | — | — | — | — | |
+| V4 | `scrappage_rate`           | PROVISIONAL | — | — | — | — | |
+| V5 | `new_vehicle_segment_split`| PROVISIONAL | — | — | — | — | |
 
-When all five rows for ZAF reach VERIFIED, the v1 ZAF vehicle segment is decision-grade.
+### HELD segments (industrial / marine / agriculture)
+
+These segments compute demand as `base_year_volume × (gdp_pc(t) / gdp_pc(base))^elasticity`,
+so each needs at minimum a sourced base-year volume and a sourced elasticity.
+
+| # | Parameter | ZAF | BWA | LSO | NAM | SWZ | Notes |
+|---|---|---|---|---|---|---|---|
+| I1 | industrial `base_year_volume` | PROVISIONAL | — | — | — | — | derived as residual of xlsx total diesel; needs DMRE / sector reports |
+| I2 | industrial `elasticity` (vs GDP/capita) | PROVISIONAL | — | — | — | — | placeholder ~1.0 |
+| M1 | marine `base_year_volume` (per port) | PROVISIONAL | — | — | PROVISIONAL (Walvis Bay, Lüderitz) | — | bunker volume by port; Transnet, Namport, IBIA reports |
+| M2 | marine `elasticity` | PROVISIONAL | — | — | PROVISIONAL | — | low (~0.4) since marine doesn't track national GDP |
+| M3 | marine `product_split` | PROVISIONAL | — | — | PROVISIONAL | — | post-IMO 2020 fuel oil ↔ marine gasoil mix |
+| A1 | agriculture `base_year_volume` | PROVISIONAL | — | — | — | — | DAFF/DALRRD energy use studies |
+| A2 | agriculture `elasticity` | PROVISIONAL | — | — | — | — | low (~0.2) — driver should be hectares planted |
+
+### Macro inputs (gating BLNS expansion)
+
+| # | Parameter | Status | Notes |
+|---|---|---|---|
+| MA1 | `gdp_per_capita` for BWA / LSO / NAM / SWZ | NOT SOURCED | currently only ZAF in `timeseries/gdp_per_capita.csv`. Sourcing this unlocks every HELD segment for BLNS. Marine NAM ports already wired in YAML — they'll start emitting automatically once NAM macro lands. |
+
+When all PROVISIONAL rows for ZAF reach VERIFIED, the v1 ZAF model output is
+decision-grade for petrol / diesel / jet. The macro-layer BLNS sourcing is
+the single biggest unlock for SACU-wide output.
