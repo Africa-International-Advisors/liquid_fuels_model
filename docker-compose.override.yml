@@ -1,0 +1,18 @@
+# Local-development override.
+#
+# Compose automatically loads this file on top of `docker-compose.yml`
+# when running locally, so `docker compose up` from the repo root just
+# works on your laptop without touching the base file.
+#
+# On Dokploy / production hosts this file is NOT applied (Dokploy only
+# runs the explicit `-f ./docker-compose.yml` you set in the UI), so
+# host port 8501 stays unbound on shared infrastructure and Traefik
+# routes by domain.
+#
+# Add to .gitignore if you want this strictly local; tracked here so
+# the dev workflow is one-command for everyone.
+
+services:
+  lfm-docs:
+    ports:
+      - "8501:8501"

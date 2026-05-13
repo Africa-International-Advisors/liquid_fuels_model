@@ -30,7 +30,16 @@ The app opens at `http://localhost:8501`.
 
 ## Run via Docker Compose (primary path)
 
-A `docker-compose.yml` is committed at the repo root. From the repo root:
+Two compose files at the repo root:
+
+- `docker-compose.yml` — base config. Uses `expose: 8501` (no host port
+  binding) so it's safe on shared hosts like Dokploy where Traefik routes
+  by domain. **This is what production / Dokploy uses.**
+- `docker-compose.override.yml` — local-dev override. Compose auto-loads
+  it on top of the base file, adding `ports: 8501:8501` so you can hit
+  `http://localhost:8501` on your laptop.
+
+From the repo root, locally:
 
 ```powershell
 docker compose up -d            # build (first run) + start detached
@@ -38,7 +47,7 @@ docker compose logs -f          # tail logs
 docker compose down             # stop and remove
 ```
 
-Browse to `http://localhost:8501`. The compose file:
+The base compose file:
 
 - Builds the image from `app/Dockerfile` (only on first run, or when code/deps change)
 - Mounts `README.md`, `CLAUDE.md`, and `docs/` **read-only** into the container —
@@ -46,6 +55,17 @@ Browse to `http://localhost:8501`. The compose file:
 - Sets `restart: unless-stopped` so the container survives host reboots
 - Includes a healthcheck on `/_stcore/health` (30s intervals)
 - Conservative resource caps (1 CPU, 512MB RAM) — adjust for your host
+
+## Run on Dokploy (or similar Traefik-fronted hosts)
+
+The base `docker-compose.yml` is what Dokploy points at. Because it uses
+`expose` (not `ports`), it won't fight other apps for port 8501 on the
+host. Dokploy / Traefik routes external traffic to the container by
+domain — set the domain in the Dokploy UI for the service.
+
+The local-dev override file (`docker-compose.override.yml`) is NOT
+applied on Dokploy because Dokploy invokes compose with an explicit
+`-f ./docker-compose.yml`, which skips the auto-loaded override.
 
 When to rebuild:
 - `docker compose up -d --build` after any change under `src/lfm/`, `app/`,

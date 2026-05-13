@@ -19,8 +19,13 @@ services:
     build:
       context: .
       dockerfile: app/Dockerfile
-    ports:
-      - "8501:8501"
+    # `expose` (not `ports`) so this works on hosts running multiple apps —
+    # e.g. Dokploy/Traefik routes by domain to the container's 8501 without
+    # needing to bind 8501 on the host. For LOCAL development, either run
+    # without compose (`docker run -p 8501:8501 lfm-docs:latest`) or override
+    # via a `docker-compose.override.yml` that adds `ports: ["8501:8501"]`.
+    expose:
+      - "8501"
     restart: unless-stopped
     # Read-only doc mounts: app picks up edits via its markdown loader
     # without an image rebuild.
