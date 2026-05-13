@@ -21,6 +21,7 @@ from .config import Paths
 from .demand import agriculture, aviation, generation, industrial, marine, vehicles
 from .output.aggregate import aggregate_volumes
 from .run import Run
+from .supply.flows import compute_balance, compute_supply
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -69,6 +70,14 @@ def main(argv: list[str] | None = None) -> int:
     print(f"[lfm]   total: {len(monthly):,} monthly rows -> {len(annual):,} annual rows",
           file=sys.stderr)
 
+    # Supply + demand-supply balance.
+    print("[lfm]   computing supply (refineries)...", file=sys.stderr)
+    supply_annual = compute_supply(provider, run)
+    print(f"[lfm]     -> {len(supply_annual):,} annual rows", file=sys.stderr)
+    balance_annual = compute_balance(monthly, supply_annual)
+    print(f"[lfm]   balance: {len(balance_annual):,} rows (demand-supply-deficit)",
+          file=sys.stderr)
+
     # Banner: any provisional inputs should leave a loud mark on output.
     provisional_flags = _detect_provisional(provider, run)
 
@@ -76,10 +85,12 @@ def main(argv: list[str] | None = None) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     monthly_path = out_dir / "demand_monthly.csv"
     annual_path = out_dir / "demand_annual.csv"
+    balance_path = out_dir / "balance_annual.csv"
     provenance_path = out_dir / "provenance.json"
 
     monthly.to_csv(monthly_path, index=False)
     annual.to_csv(annual_path, index=False)
+    balance_annual.to_csv(balance_path, index=False)
     provenance_path.write_text(
         json.dumps(
             {
@@ -89,6 +100,7 @@ def main(argv: list[str] | None = None) -> int:
                 "model_version": run.model_version,
                 "executed_at": run.executed_at.isoformat(),
                 "segments_run": segments_run,
+                "supply_run": True,
                 "provisional_inputs": provisional_flags,
             },
             indent=2,
@@ -105,12 +117,9 @@ def main(argv: list[str] | None = None) -> int:
             file=sys.stderr,
         )
 
-    print(f"[lfm] wrote {monthly_path.relative_to(paths.repo_root).as_posix()}",
-          file=sys.stderr)
-    print(f"[lfm] wrote {annual_path.relative_to(paths.repo_root).as_posix()}",
-          file=sys.stderr)
-    print(f"[lfm] wrote {provenance_path.relative_to(paths.repo_root).as_posix()}",
-          file=sys.stderr)
+    for p in (monthly_path, annual_path, balance_path, provenance_path):
+        print(f"[lfm] wrote {p.relative_to(paths.repo_root).as_posix()}",
+              file=sys.stderr)
     print(f"[lfm] {run.tag()}: done", file=sys.stderr)
     return 0
 

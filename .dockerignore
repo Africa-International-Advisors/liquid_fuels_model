@@ -1,0 +1,56 @@
+# Keep the Docker build context lean. The Dockerfile uses selective COPY,
+# but a .dockerignore still saves time transferring the context and prevents
+# accidental inclusion of large or sensitive files.
+
+# Version control
+.git/
+.gitignore
+
+# Local virtualenv (huge, not needed in image)
+.venv/
+venv/
+env/
+
+# Python bytecode and caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Editor / IDE state
+.vscode/
+.idea/
+.claude/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Model output (regenerated on every run; not part of the image)
+runs/
+
+# Local data scratchpad (gitignored anyway, but belt-and-braces)
+data/raw/
+data/interim/
+
+# Excel lock files
+~$*.xlsx
+~$*.xlsm
+~$*.docx
+~$*.pptx
+*.xlsx.lock
+
+# Compose stays out of context to avoid copying itself into the image.
+docker-compose.yml
+docker-compose.*.yml
+
+# Notebook checkpoints (not used today but conventional)
+.ipynb_checkpoints/
+
+# Streamlit local secrets (not used but reserved)
+.streamlit/secrets.toml

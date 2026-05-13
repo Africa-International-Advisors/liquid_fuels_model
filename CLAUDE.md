@@ -36,7 +36,8 @@ src/lfm/
     industrial.py   HELD      (base × GDP-ratio^elasticity, single ZAF bucket)
     marine.py       HELD      (per-port base × GDP-ratio^elasticity, summed by country)
     agriculture.py  HELD      (base × GDP-ratio^elasticity, low elasticity)
-  supply/flows.py   thin balancing layer (SA refining vs imports vs BLNS demand)
+  supply/flows.py   refinery output (capacity × util × product split × availability)
+                    + demand-supply balance with deficit per refinery product
   output/
     aggregate.py    monthly→annual roll-up
     xlsx.py         template-driven workbook writer

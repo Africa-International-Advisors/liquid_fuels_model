@@ -1,0 +1,45 @@
+# Compose file for the SACU Liquid Fuels Model documentation app.
+#
+# Run:
+#   docker compose up -d            # build (first run) + run detached
+#   docker compose logs -f          # follow logs
+#   docker compose down             # stop and remove
+#
+# Browse to http://localhost:8501.
+#
+# The docs and top-level READMEs are mounted read-only so that edits to
+# `README.md`, `CLAUDE.md`, or any file under `docs/` flow into the
+# running app on next browser refresh — no rebuild needed. Editing app
+# code (src/lfm/, app/) or the YAMLs DOES require a rebuild.
+
+services:
+  lfm-docs:
+    container_name: lfm-docs
+    image: lfm-docs:latest
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    # Read-only doc mounts: app picks up edits via its markdown loader
+    # without an image rebuild.
+    volumes:
+      - ./README.md:/home/streamlit/app/README.md:ro
+      - ./CLAUDE.md:/home/streamlit/app/CLAUDE.md:ro
+      - ./docs:/home/streamlit/app/docs:ro
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    # Streamlit is single-tenant doc viewer; trivial resource footprint.
+    # Caps here are conservative defaults — adjust for your host.
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          memory: 128M

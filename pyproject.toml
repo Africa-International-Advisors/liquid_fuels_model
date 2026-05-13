@@ -20,6 +20,9 @@ dev = [
     "pytest>=8.0",
     "ruff>=0.5",
 ]
+app = [
+    "streamlit>=1.32",
+]
 
 [project.scripts]
 lfm = "lfm.cli:main"

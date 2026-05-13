@@ -33,7 +33,8 @@ Every leaf is tagged:
 | industrial  | HELD     | 1  | 2  | many | 2 |
 | marine      | HELD     | 1  | 7  | 5    | 3 |
 | agriculture | HELD     | 1  | 2  | many | 2 |
-| supply (sketch) | stub | 4  | 0  | —    | 2 |
+| supply         | wired    | 4  | 0  | 3    | 3 |
+| balance        | wired    | —  | —  | —    | 1 |
 
 The depth column is a proxy for "how richly modelled" a segment is. Industrial,
 marine, and agriculture are intentionally shallow (HELD pattern). Vehicles is
@@ -257,27 +258,90 @@ SA Grain Information Service.
 
 ---
 
-## 7. Supply (sketch only — out of v1 scope)
-
-Included for completeness; the supply compute is a stub.
+## 7. Supply (MODELLED — refinery output, v1 volumes only)
 
 ```
-ZAF domestic supply (litres / yr, by product)
-└── Σ refineries[capacity × utilisation × product_split] × fleet_availability
-    ├── Refinery capacity (kbpd, per refinery)               [Q] xlsx Refinery_capacity
-    ├── Utilisation (per refinery × year × scenario)         [Q] xlsx scenario CSV
-    ├── Product split (per refinery)                         [Q] xlsx SupplyFuelMix
-    └── Fleet availability factor (0.9)                      [Q] xlsx Refinery_availability
-
-Then: Deficit = total demand - domestic supply
-└── Cross-border flows (BLNS imports via SA terminals)        [N]
-└── Storage decisions (Vopak's role)                          [N]
+ZAF domestic supply (litres / yr, by refinery product)
+└── Σ refineries[nameplate_kbpd × utilisation × availability × 365 × 1000 × L/bbl]
+    │                          × product_split  →  per refinery_product
+    ├── Refinery nameplate capacity (kbpd, per refinery)
+    │   ├── Enref (120)                                       [Q] xlsx
+    │   ├── SAPREF (180, mothballed 2022)                     [Q] xlsx
+    │   ├── Natref (108.5)                                    [Q] xlsx
+    │   ├── Sasol (75, CTL)                                   [Q] xlsx
+    │   ├── Astron (100)                                      [Q] xlsx
+    │   └── PetroSA (45, mothballed)                          [Q] xlsx
+    ├── Utilisation (per refinery × year × scenario)          [Q] xlsx scenario CSV
+    ├── Product split (gasoline / diesel / jet, per refinery) [Q] xlsx SupplyFuelMix
+    ├── Fleet availability factor (0.9)                       [Q] xlsx
+    ├── Crude L/barrel conversion (158.987)                   [Q] xlsx
+    └── Underlying narrative drivers
+        ├── Crude supply security                             [N]
+        ├── Refinery commissioning / mothballing decisions    [N]
+        └── Margin economics (driver of utilisation)          [N] becomes endogenous once pricing lands
 ```
 
-The refinery data is fully quantified — what's missing is the compute
-function in `src/lfm/supply/flows.py`. Implementing that closes the
-demand-supply loop and produces the deficit/imports headline that
-stakeholders consume.
+The supply layer covers gasoline, diesel, and jet_a1 — products with
+domestic refinery yield. Marine fuels (fuel_oil, diesel_500ppm) and other
+products (LPG, paraffin) have no refinery yield in v1 and so show up in
+the balance with `supply_litres = 0` — i.e., fully imported.
+
+---
+
+## 8. Balance / deficit (the headline output)
+
+```
+Demand-supply balance per (country × refinery_product × year)
+├── demand_litres   = Σ over demand-segments mapped to this refinery_product
+│   ├── gasoline  ← vehicles (petrol_95, petrol_93)
+│   ├── diesel    ← vehicles + generation + industrial + agriculture + marine (diesel_50ppm + diesel_500ppm)
+│   └── jet_a1    ← aviation
+├── supply_litres  = from Section 7
+└── deficit_litres = demand_litres - supply_litres
+    ├── deficit > 0  →  imports needed
+    ├── deficit < 0  →  surplus / exports
+    └── For non-refined products (fuel_oil, LPG, paraffin), supply = 0
+        so deficit = demand (100% imports).
+```
+
+`balance_annual.csv` per run carries the full per-product per-year picture.
+This is the stakeholder-facing headline: how much liquid fuel does the
+country need to import per product per scenario per year.
+
+---
+
+## 9. Pricing (deferred — point of reference for future work)
+
+**Explicitly out of v1.** Locked decision: v1 stays strictly volume-only.
+Pricing is a planned future capability for commercial-decision insights
+(storage / terminal economics, import bill, refinery margin, retail
+price forecasts) — not v1.
+
+When pricing lands, the layers below will plug into the existing balance
+output rather than restructure the model:
+
+```
+Pricing layer (deferred)
+├── Reference prices (exogenous)
+│   ├── Brent / WTI crude path                                [N]
+│   ├── Singapore / Rotterdam refined product paths           [N]
+│   └── BFP-indexed retail ULP path                           [N]
+├── Translation rules
+│   ├── Refinery margin (refined revenue − crude cost)        [N]
+│   ├── Wholesale-to-retail markups                           [N]
+│   └── Import parity formula (Singapore + freight + premium) [N]
+└── Optional: price-quantity feedback
+    └── Demand price elasticity per segment                   [N] modelling-heavy; may stay never
+```
+
+What pricing buys when it lands:
+- **Import bill** = deficit volume × import parity price → $ cost of imports
+- **Refinery economics** = revenue − COGS per refinery → which refineries are marginal
+- **Retail price forecast** under each scenario
+- **Cost-side scenarios** (high oil price worldview vs low) independent of demand scenarios
+
+For now the model produces *what* and *how much*. Pricing adds the *how
+much it costs* layer.
 
 ---
 

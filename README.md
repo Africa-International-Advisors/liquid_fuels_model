@@ -55,6 +55,34 @@ docs/                     reference material for the original xlsx model
   Liquid Fuels Model - Supply Demand, 2025 - Reatile Copy.xlsx
   24032026fleet-electrification-assumptions-sa-v2200.pptx
   AIA_Vopak_Intermediary_report_vf2_2025.pdf
+  demand_hypothesis_tree.md       McKinsey-style per-segment driver decomposition
+  params_sourcing.md              provisional-input sourcing log
+
+app/                      Streamlit documentation app
+  streamlit_app.py        Home page
+  pages/                  Hypothesis Tree + Architecture (auto-discovered)
+  Dockerfile + README.md  build / run / internal-deploy runbook
+```
+
+## Documentation app
+
+A Streamlit app surfaces the model's documentation for anyone who'd rather
+not clone the repo. See `app/README.md` for full build / run / deploy steps.
+
+**Docker Compose (recommended)** — one command from the repo root:
+
+```powershell
+docker compose up -d
+```
+
+Then browse to `http://localhost:8501`. The compose file mounts the docs
+read-only, so doc edits flow through on browser refresh without rebuilds.
+
+**Local Python (no Docker)**:
+
+```powershell
+pip install -e ".[app]"
+streamlit run app/streamlit_app.py
 ```
 
 ## Install
@@ -94,6 +122,9 @@ pytest
 | Aviation demand module (MODELLED, jet regression) | done — R² 0.95, ±10% on history |
 | Generation demand module (MODELLED, OCGT) | done — capacity × load factor → diesel |
 | Industrial / marine / agriculture (HELD, GDP-tied) | done — provisional placeholders, awaits sourcing |
+| Supply (refineries → gasoline / diesel / jet) | done — capacity × utilisation × split |
+| Balance / deficit (demand − supply per product) | done — `balance_annual.csv` per run |
+| Pricing layer | deferred — point of reference for future work |
 | Agriculture | deferred (returns empty frame) |
 | Supply flows | thin TODO |
 | Annual roll-up + xlsx writer | TODO |
