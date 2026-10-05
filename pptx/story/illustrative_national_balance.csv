@@ -1,0 +1,3 @@
+period,product,demand_bn_l,domestic_supply_bn_l,exports_bn_l,stock_build_bn_l,required_imports_bn_l,status
+Example annual period,petrol,9,4,0,0,5,Illustrative only
+Example annual period,diesel,12,3,0,0,9,Illustrative only

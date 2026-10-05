@@ -1,0 +1,9 @@
+period,route_id,origin,destination,product,volume_bn_l,role,status
+Example annual period,R1,Durban,Eastern coastal,petrol,0.4,Final market delivery,Illustrative only
+Example annual period,R1,Durban,Eastern coastal,diesel,0.6,Final market delivery,Illustrative only
+Example annual period,R2,Durban,Lesedi,petrol,0.6,Transfer through both facilities,Illustrative only
+Example annual period,R2,Durban,Lesedi,diesel,1.2,Transfer through both facilities,Illustrative only
+Example annual period,R3,Domestic origin,Lesedi,petrol,0.1,Receipt from another origin,Illustrative only
+Example annual period,R3,Domestic origin,Lesedi,diesel,0.1,Receipt from another origin,Illustrative only
+Example annual period,R4,Lesedi,Inland,petrol,0.7,Final market delivery,Illustrative only
+Example annual period,R4,Lesedi,Inland,diesel,1.3,Final market delivery,Illustrative only

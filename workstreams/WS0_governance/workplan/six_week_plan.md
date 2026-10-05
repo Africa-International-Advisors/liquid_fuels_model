@@ -20,6 +20,22 @@ broader infrastructure inventory and first-corridor work. Infrastructure is not
 a Week 1 gate. Later route milestones remain planning targets and depend on
 capacity after the fuel baseline and input mappings are coherent.
 
+The core client analysis is the South African petrol/diesel outlook: national
+import requirements, feasible regional flows/catchments, and Vopak's current
+throughput and addressable commercial envelope. Jet remains tracked separately
+in the underlying model and is excluded from client petrol/diesel totals.
+Infrastructure supports catchment and flow feasibility; detailed storage/service
+sizing is optional. The kickoff appendix pp. 31-38 supplies the infrastructure
+starting geography, not verified route capacities or customer flows.
+
+The analytical data-shape example is
+`pptx/output/delivered/Vopak_market_envelope_illustrative_2026_10_06.html`.
+It links national fuel balances, regional demand/access and terminal route rows.
+Every volume is illustrative; current Vopak actuals are not supplied. Keep facility
+receipt throughput separate from unique demand served, subtracting shared Durban-
+Lesedi transfers when aggregating the latter. Retain actual/modelled/illustrative/
+unknown status on each future input; unknown commercial access is not zero.
+
 ## Manish handoff for 6 October: use diagnostics to start integration
 
 Pull `origin/main` before working. The source audit and profile provide the starting

@@ -1,0 +1,9 @@
+region,product,demand_bn_l,required_imports_bn_l,feasible_service_bn_l,commercial_envelope_bn_l,current_unique_vopak_bn_l,additional_candidate_bn_l,assessment,status
+Eastern coastal,petrol,1.8,0.9,1.5,1,0.4,0.6,Illustrative Durban catchment,Illustrative only
+Eastern coastal,diesel,2.7,2.1,2.3,1.5,0.6,0.9,Illustrative Durban catchment,Illustrative only
+Inland,petrol,4.2,2.4,3.5,2.4,0.7,1.7,Illustrative Lesedi catchment,Illustrative only
+Inland,diesel,5.8,4.6,4.7,3.6,1.3,2.3,Illustrative Lesedi catchment,Illustrative only
+Western coastal,petrol,2,1.1,,,,,Outside first catchment; unassessed,Illustrative only
+Western coastal,diesel,2,1.4,,,,,Outside first catchment; unassessed,Illustrative only
+Other regions,petrol,1,0.6,,,,,Outside first catchment; unassessed,Illustrative only
+Other regions,diesel,1.5,0.9,,,,,Outside first catchment; unassessed,Illustrative only
