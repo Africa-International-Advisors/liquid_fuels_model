@@ -2,7 +2,9 @@
 
 Supersedes the 12-page delivery-review outline. Status: approved in chat on 6 October 2026;
 implemented in scripts/build_week1_maps.py with cartographic rendering refinements.
-Deliverables: editable PPTX and matching PDF, with no separate cover.
+Deliverables: editable PPTX and matching PDF. Following Nigel's subsequent correction,
+retain the kickoff cover and closing page and its four section chevrons.
+The final pack has five slides: cover, three analytical pages, closing.
 Use the kickoff deck's Vopak master, named layouts, map extent, Lato, logo and footer.
 
 ## 1. South African fuel demand and the infrastructure serving it
@@ -92,3 +94,6 @@ Sources: the three existing illustrative story CSVs.
 Preserve the kickoff deck and source template. Inspect all three rendered pages;
 deliver matching PPTX/PDF. Do not infer operational capacity from map connections.
 Keep illustration labels visible on every page. Detailed storage sizing is optional.
+The three analytical pages retain the existing chevrons, with Analytical
+specifications active. Cover and closing reuse the delivered kickoff's compositions,
+photographs and original image credits, with Week 1/date labels updated.

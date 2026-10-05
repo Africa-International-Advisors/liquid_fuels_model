@@ -9,6 +9,8 @@ import hashlib
 import json
 import math
 import sys
+import io
+from copy import deepcopy
 from datetime import date
 
 from pptx import Presentation
@@ -255,9 +257,66 @@ for master in prs.slide_masters:
         if q.has_text_frame and ('Click to edit' in q.text or q.name=='Text Placeholder 6'):
             q.text_frame.clear()
 
+reference = Presentation(ROOT/'output/delivered/Vopak_Analyst_Kickoff.pptx')
+
+def bookend(source, closing=False):
+    """Reuse the delivered kickoff cover/closing composition and its original photos."""
+    s=add_themed_slide(prs,'1_Title',brand=brand)
+    for q in list(s.shapes):
+        if q.is_placeholder:
+            q._element.getparent().remove(q._element)
+    for q in source.shapes:
+        if q.shape_type==13:
+            dest=s.shapes.add_picture(io.BytesIO(q.image.blob),q.left,q.top,q.width,q.height)
+            dest.crop_left,dest.crop_right=q.crop_left,q.crop_right
+            dest.crop_top,dest.crop_bottom=q.crop_top,q.crop_bottom
+            dest.name=q.name
+        else:
+            element=deepcopy(q._element)
+            # The reference's photo credit link must be re-related to this new slide.
+            for node in element.iter():
+                for key,value in list(node.attrib.items()):
+                    if key.startswith('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}'):
+                        rel=source.part.rels[value]
+                        if rel.is_external:
+                            node.set(key,s.part.rels.get_or_add_ext_rel(rel.reltype,rel.target_ref))
+            s.shapes._spTree.insert_element_before(element,'p:extLst')
+    replacements={
+        'Analyst kickoff':'Week 1 analytical pack',
+        'Coverage: SACU + priority African regions':'South Africa | Petrol and diesel',
+        '2 October 2026':'6 October 2026',
+        'Discussion':'Confirm demand, routes and access',
+    }
+    for q in s.shapes:
+        if q.has_text_frame:
+            for p in q.text_frame.paragraphs:
+                for r in p.runs:
+                    if r.text in replacements:
+                        r.text=replacements[r.text]
+    s.notes_slide.notes_text_frame.text=source.notes_slide.notes_text_frame.text+'\nWeek 1 analytical pack, 6 October 2026. Existing kickoff cover/closing reused at user request.'
+    return s
+
+bookend(reference.slides[0])
+
+def section_chevrons(s,active=1):
+    labels=['1  About','2  Analytical specifications','3  Model build','4  Delivery approach']
+    for i,label in enumerate(labels):
+        q=s.shapes.add_shape(MSO_SHAPE.CHEVRON,Inches(.5+i*2.93),Inches(.08),Inches(2.86),Inches(.42))
+        q.name=f'Section navigation {i+1}'
+        q.adjustments[0]=.12
+        q.fill.solid();q.fill.fore_color.rgb=BLUE if i==active else LIGHT
+        q.line.fill.background()
+        f=q.text_frame;f.clear();f.word_wrap=False
+        f.margin_left=f.margin_right=Inches(.18)
+        f.margin_top=f.margin_bottom=0
+        f.vertical_anchor=MSO_ANCHOR.MIDDLE
+        p=f.paragraphs[0];p.text=label;p.alignment=PP_ALIGN.CENTER
+        p.font.name=cfg.THEME_FONT;p.font.size=Pt(13);p.font.bold=i==active
+        p.font.color.rgb=brand.white if i==active else BLUE
+
 def slide(title,source,notes):
     s=add_themed_slide(prs,'Header only',brand=brand,title=title)
-    text(s,'WEEK 1  |  South Africa petrol and diesel outlook',.5,.12,11.5,.35,13,True)
+    section_chevrons(s)
     text(s,'Source: '+source,.5,7.16,10.6,.23,7.6)
     s.notes_slide.notes_text_frame.text=notes
     return s
@@ -323,7 +382,8 @@ assert math.isclose(durban+lesedi-byroute['R2'],unique)
 text(s,f"Durban receipts {durban:.1f} + Lesedi receipts {lesedi:.1f} − shared transfer {byroute['R2']:.1f} = unique demand served {unique:.1f}",.5,5.8,11.5,.48,19,False,BLUE)
 text(s,'Additional candidate volume is conditional, not forecast capture. The envelope includes domestic and imported supply. Western/other access remains unassessed.',.5,6.42,11.5,.55,14)
 
-assert len(prs.slides)==3
+bookend(reference.slides[-1],closing=True)
+assert len(prs.slides)==5
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:
         assert q.left>=0 and q.top>=0 and q.left+q.width<=prs.slide_width+10 and q.top+q.height<=prs.slide_height+10,(index,q.name)
@@ -333,7 +393,7 @@ prs.core_properties.subject='Illustrative demand geography and conditional Vopak
 prs.save(PATH)
 qa=ROOT/'qa/week1_maps';qa.mkdir(parents=True,exist_ok=True)
 (qa/'build_manifest.json').write_text(json.dumps({
- 'output':str(PATH),'slides':3,'template':str(cfg.SOURCE_TEMPLATE),
+ 'output':str(PATH),'slides':5,'template':str(cfg.SOURCE_TEMPLATE),
  'template_sha256':hashlib.sha256((ROOT/cfg.SOURCE_TEMPLATE).read_bytes()).hexdigest(),
  'projection':CRS_MAP.to_proj4(),'volumes':'Illustrative only',
  'boundary_source':'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson',

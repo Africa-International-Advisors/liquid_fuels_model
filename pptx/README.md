@@ -181,6 +181,8 @@ and market volumes with shared-transfer reconciliation. Export the matching PDF
 through PowerPoint and inspect every slide. `qa/week1_maps/build_manifest.json`
 records the template/boundary hashes and projection; rendered QA stays untracked.
 
+The revised five-slide delivery restores the existing kickoff cover and closing
+page around the three analytical pages and retains the original section chevrons.
 All figures and candidate access are illustrative. Accurate projection and
 cartographic styling do not make the inherited schematic routes an operational
 GIS network or verified service area. See `assets/maps/README.md` for evidence
