@@ -1,5 +1,12 @@
 # SACU Liquid Fuels Model
 
+`main` is the shared baseline; Manish continues on `basecase-2026-10` and brings
+in corrections from `main` each morning. See the
+[branch workflow](workstreams/WS0_governance/workplan/branch_workflow.md).
+
+The 5 October source datasets and fetchers are included, with source observations
+registered as unreviewed. Their adoption into demand calculations remains pending.
+
 Python rebuild of the Vopak/Reatile liquid-fuels model. Intended scope: SACU,
 monthly demand from 2024 to 2050, with annual supply balances and two scenarios.
 Current populated country coverage is South Africa only. Outputs are provisional.

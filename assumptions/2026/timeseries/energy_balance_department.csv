@@ -1,0 +1,1179 @@
+country,period,scenario,product,flow_key,flow,value,unit,source_file
+ZAF,2007,shared,petrol,production,Production,10239082000.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,aviation_gasoline,production,Production,15067181.640625,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,jet,production,Production,896896125.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,production,Production,723781500.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,production,Production,8917852000.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,imports,Import,1719210375.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,aviation_gasoline,imports,Import,40792843.75,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,jet,imports,Import,282666656.25,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,imports,Import,541.9753193855286,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,imports,Import,2693138250.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,exports,Export,-400531843.75,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,aviation_gasoline,exports,Export,-3807924.560546875,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,jet,exports,Export,-78833648.4375,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,exports,Export,-27336320.3125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,exports,Export,-836381875.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,,Intl. Marine Bunkers,-258085078.125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,,Domestic Supply,11557760531.25,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,aviation_gasoline,,Domestic Supply,52052100.830078125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,jet,,Domestic Supply,1100729132.8125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,,Domestic Supply,696445721.6628194,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,,Domestic Supply,10516523296.875,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,statistical_difference,Statistical Differences,-1676.1122941970825,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,aviation_gasoline,statistical_difference,Statistical Differences,30134364.501953125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,jet,statistical_difference,Statistical Differences,-1301198492.1875,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,statistical_difference,Statistical Differences,-13.464152812957764,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,statistical_difference,Statistical Differences,761815511.71875,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,final_consumption,Final Consumption,11557762207.362293,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,aviation_gasoline,final_consumption,Final Consumption,21917736.328125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,jet,final_consumption,Final Consumption,2401927625.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,final_consumption,Final Consumption,696445735.1269722,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,final_consumption,Final Consumption,9754707785.15625,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,industry,Industry Sector,14232068.725585938,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,industry,Industry Sector,14785251.220703125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,industry,Industry Sector,1002587281.25,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,mining,Mining and Quarrying,12518717.7734375,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,mining,Mining and Quarrying,13489113.28125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,mining,Mining and Quarrying,761815750.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,construction,Construction,1713350.9521484375,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,construction,Construction,1296137.939453125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,construction,Construction,240771531.25,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,transport,Transport Sector,11406561560.999989,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,aviation_gasoline,transport,Transport Sector,21917736.328125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,jet,transport,Transport Sector,2401927625.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,transport,Transport Sector,8270800.3125190735,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,transport,Transport Sector,7634989242.1875,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,jet,,International Civil Aviation,1078811375.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,aviation_gasoline,,Domestic Air Transport,21917736.328125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,jet,,Domestic Air Transport,1323116250.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,road,Road,11406560000.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,road,Road,8263820.3125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,road,Road,7548157500.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,rail,Rail,1560.9999895095825,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,rail,Rail,6980.000019073486,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,rail,Rail,86831742.1875,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,,Other Sectors,136968577.63671875,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,,Other Sectors,673389683.59375,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,,Other Sectors,1117131261.71875,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,agriculture,Agriculture,114412656.25,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,agriculture,Agriculture,59144550.78125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,agriculture,Agriculture,1047130250.0,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,commercial_public,Commerce and Public Services,6953895.99609375,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,commercial_public,Commerce and Public Services,65561195.3125,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,commercial_public,Commerce and Public Services,32916464.84375,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,petrol,residential,Residential,15602025.390625,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,paraffin,residential,Residential,548683937.5,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2007,shared,diesel,residential,Residential,37084546.875,litres,2007-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,production,Production,11117168000.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,aviation_gasoline,production,Production,1221489.2578125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,jet,production,Production,2474238000.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,production,Production,600400187.5,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,production,Production,12106369000.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,imports,Import,1291673125.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,aviation_gasoline,imports,Import,32065373.046875,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,jet,imports,Import,74343390.625,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,imports,Import,2422596750.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,exports,Export,-490873156.25,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,aviation_gasoline,exports,Export,-4156465.8203125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,jet,exports,Export,-102837828.125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,exports,Export,-14253706.0546875,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,exports,Export,-855684937.5,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,,Domestic Supply,11917967968.75,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,aviation_gasoline,,Domestic Supply,29130396.484375,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,jet,,Domestic Supply,2445743562.5,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,,Domestic Supply,586146481.4453125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,,Domestic Supply,13673280812.5,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,statistical_difference,Statistical Differences,-139.16015625,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,aviation_gasoline,statistical_difference,Statistical Differences,2442976.5625,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,jet,statistical_difference,Statistical Differences,187.5,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,statistical_difference,Statistical Differences,-33.14971923828125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,statistical_difference,Statistical Differences,-339.84375,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,final_consumption,Final Consumption,11917968107.910156,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,aviation_gasoline,final_consumption,Final Consumption,26687419.921875,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,jet,final_consumption,Final Consumption,2445743375.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,final_consumption,Final Consumption,586146514.5950317,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,final_consumption,Final Consumption,13673281152.34375,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,industry,Industry Sector,17108719.482421875,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,industry,Industry Sector,15907895.141601562,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,industry,Industry Sector,1328831062.5,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,mining,Mining and Quarrying,13093938.4765625,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,mining,Mining and Quarrying,14730701.171875,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,mining,Mining and Quarrying,947497500.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,construction,Construction,4014781.005859375,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,construction,Construction,1177193.9697265625,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,construction,Construction,381333562.5,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,transport,Transport Sector,11731591531.00586,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,aviation_gasoline,transport,Transport Sector,26687419.921875,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,jet,transport,Transport Sector,2445743375.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,transport,Transport Sector,7966006.172180176,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,transport,Transport Sector,11200153757.8125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,jet,,International Civil Aviation,1104679500.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,aviation_gasoline,,Domestic Air Transport,26687419.921875,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,jet,,Domestic Air Transport,1341063875.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,road,Road,11731345000.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,road,Road,7947826.171875,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,road,Road,8310331500.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,rail,Rail,246531.005859375,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,rail,Rail,18180.00030517578,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,rail,Rail,53269007.8125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,,Internal Navigation,2836553250.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,,Other Sectors,169267857.421875,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,,Other Sectors,562272613.28125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,,Other Sectors,1144296332.03125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,agriculture,Agriculture,97643531.25,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,agriculture,Agriculture,44532570.3125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,agriculture,Agriculture,1004236250.0,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,commercial_public,Commerce and Public Services,41416238.28125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,commercial_public,Commerce and Public Services,54251480.46875,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,commercial_public,Commerce and Public Services,78854406.25,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,petrol,residential,Residential,30208087.890625,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,paraffin,residential,Residential,463488562.5,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2008,shared,diesel,residential,Residential,61205675.78125,litres,2008-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,production,Production,10524234000.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,aviation_gasoline,production,Production,2384151.611328125,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,jet,production,Production,2355236750.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,production,Production,614925562.5,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,production,Production,11269368000.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,imports,Import,2005865500.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,aviation_gasoline,imports,Import,34248710.9375,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,jet,imports,Import,105254468.75,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,imports,Import,4743.2098388671875,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,imports,Import,2233763000.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,exports,Export,-449744687.5,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,aviation_gasoline,exports,Export,-8246211.9140625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,jet,exports,Export,-49009304.6875,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,exports,Export,-11225827.1484375,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,exports,Export,-834243812.5,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,,Domestic Supply,12080354812.5,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,aviation_gasoline,,Domestic Supply,28386650.634765625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,jet,,Domestic Supply,2411481914.0625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,,Domestic Supply,603704478.5614014,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,,Domestic Supply,12668887187.5,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,statistical_difference,Statistical Differences,47.4700927734375,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,aviation_gasoline,statistical_difference,Statistical Differences,-0.244140625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,jet,statistical_difference,Statistical Differences,164.0625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,statistical_difference,Statistical Differences,-6.55817985534668,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,statistical_difference,Statistical Differences,35.15625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,final_consumption,Final Consumption,12080354765.029907,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,aviation_gasoline,final_consumption,Final Consumption,28386650.87890625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,jet,final_consumption,Final Consumption,2411481750.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,final_consumption,Final Consumption,603704485.1195812,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,final_consumption,Final Consumption,12668887152.34375,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,industry,Industry Sector,13107698.2421875,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,industry,Industry Sector,13610214.416503906,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,industry,Industry Sector,1175043968.75,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,mining,Mining and Quarrying,9761868.1640625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,mining,Mining and Quarrying,12734775.390625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,mining,Mining and Quarrying,800291250.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,construction,Construction,3345830.078125,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,construction,Construction,875439.0258789062,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,construction,Construction,374752718.75,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,transport,Transport Sector,11905847391.00647,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,aviation_gasoline,transport,Transport Sector,28386650.87890625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,jet,transport,Transport Sector,2411481750.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,transport,Transport Sector,8941755.078077316,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,transport,Transport Sector,10408759175.78125,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,aviation_gasoline,,International Civil Aviation,4768303.22265625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,jet,,International Civil Aviation,1048278375.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,aviation_gasoline,,Domestic Air Transport,23618347.65625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,jet,,Domestic Air Transport,1363203375.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,road,Road,11905606000.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,road,Road,8938455.078125,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,road,Road,7677943500.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,rail,Rail,241391.00646972656,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,rail,Rail,3299.999952316284,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,rail,Rail,44227175.78125,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,,Internal Navigation,2686588500.0,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,,Other Sectors,161399675.78125,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,,Other Sectors,581152515.625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,,Other Sectors,1085084007.8125,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,agriculture,Agriculture,100091265.625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,agriculture,Agriculture,57429585.9375,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,agriculture,Agriculture,974384062.5,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,commercial_public,Commerce and Public Services,34313957.03125,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,commercial_public,Commerce and Public Services,75958242.1875,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,commercial_public,Commerce and Public Services,62798816.40625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,petrol,residential,Residential,26994453.125,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,paraffin,residential,Residential,447764687.5,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2009,shared,diesel,residential,Residential,47901128.90625,litres,2009-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,production,Production,9500559000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,aviation_gasoline,production,Production,2647610.83984375,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,jet,production,Production,3195018250.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,production,Production,508105093.75,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,production,Production,9627649000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,imports,Import,2123509750.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,aviation_gasoline,imports,Import,20782179.6875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,jet,imports,Import,263490593.75,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,imports,Import,9470.000267028809,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,imports,Import,2393404750.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,exports,Export,-444460468.75,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,aviation_gasoline,exports,Export,-3781479.98046875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,jet,exports,Export,-65956101.5625,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,exports,Export,-5294560.05859375,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,exports,Export,-683994125.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,jet,,Intl. Marine Bunkers,-1084818875.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,,Intl. Marine Bunkers,-1599051875.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,,Domestic Supply,11179608281.25,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,aviation_gasoline,,Domestic Supply,19648310.546875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,jet,,Domestic Supply,2307733867.1875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,,Domestic Supply,502820003.6916733,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,,Domestic Supply,9738007750.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,statistical_difference,Statistical Differences,296.875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,jet,statistical_difference,Statistical Differences,-132.8125,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,statistical_difference,Statistical Differences,-0.9469985961914062,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,statistical_difference,Statistical Differences,173.828125,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,final_consumption,Final Consumption,11179607984.375,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,aviation_gasoline,final_consumption,Final Consumption,19648310.546875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,jet,final_consumption,Final Consumption,2307734000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,final_consumption,Final Consumption,502820004.6386719,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,final_consumption,Final Consumption,9738007576.171875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,industry,Industry Sector,9460500.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,industry,Industry Sector,16060590.209960938,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,industry,Industry Sector,1042660015.625,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,mining,Mining and Quarrying,8109000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,mining,Mining and Quarrying,14825160.15625,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,mining,Mining and Quarrying,819643437.5,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,construction,Construction,1351500.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,construction,Construction,1235430.0537109375,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,construction,Construction,223016578.125,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,transport,Transport Sector,10974180000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,aviation_gasoline,transport,Transport Sector,19648310.546875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,jet,transport,Transport Sector,2307734000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,transport,Transport Sector,1235430.0537109375,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,transport,Transport Sector,7323910531.25,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,aviation_gasoline,,International Civil Aviation,19648310.546875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,jet,,Domestic Air Transport,2307734000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,road,Road,10974180000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,road,Road,7290573000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,rail,Rail,1235430.0537109375,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,rail,Rail,33337531.25,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,,Other Sectors,195967484.375,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,,Other Sectors,485523984.375,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,,Other Sectors,1371437029.296875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,agriculture,Agriculture,181100984.375,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,agriculture,Agriculture,58065210.9375,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,agriculture,Agriculture,880570625.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,commercial_public,Commerce and Public Services,6757500.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,commercial_public,Commerce and Public Services,84009242.1875,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,commercial_public,Commerce and Public Services,22991400.390625,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,petrol,residential,Residential,8109000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,paraffin,residential,Residential,343449531.25,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,residential,Residential,14944410.15625,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,,Non-specified (Other),452930593.75,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2010,shared,diesel,,Elect.Output-public elec. Plant,161000.0,litres,2010-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,production,Production,10913691000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,aviation_gasoline,production,Production,3597555.419921875,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,jet,production,Production,3329055500.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,production,Production,568208000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,production,Production,11371776000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,imports,Import,957294750.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,aviation_gasoline,imports,Import,21918406.25,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,jet,imports,Import,178301343.75,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,imports,Import,32779.88815307617,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,imports,Import,1486862875.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,exports,Export,-326472375.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,aviation_gasoline,exports,Export,-3547051.7578125,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,jet,exports,Export,-92228148.4375,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,exports,Export,-3649267.822265625,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,exports,Export,-570885250.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,jet,,Intl. Marine Bunkers,-1142739375.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,,Intl. Marine Bunkers,-1654231250.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,,Domestic Supply,11544513375.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,aviation_gasoline,,Domestic Supply,21968909.912109375,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,jet,,Domestic Supply,2272389320.3125,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,,Domestic Supply,564591512.0658875,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,,Domestic Supply,10633522375.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,statistical_difference,Statistical Differences,375.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,aviation_gasoline,statistical_difference,Statistical Differences,-0.244140625,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,jet,statistical_difference,Statistical Differences,-179.6875,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,statistical_difference,Statistical Differences,-8.197784423828125,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,statistical_difference,Statistical Differences,154.296875,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,final_consumption,Final Consumption,11544513000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,aviation_gasoline,final_consumption,Final Consumption,21968910.15625,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,jet,final_consumption,Final Consumption,2272389500.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,final_consumption,Final Consumption,564591520.2636719,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,final_consumption,Final Consumption,10633522220.703125,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,industry,Industry Sector,9460500.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,industry,Industry Sector,16060590.209960938,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,industry,Industry Sector,1281770500.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,mining,Mining and Quarrying,8109000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,mining,Mining and Quarrying,14825160.15625,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,mining,Mining and Quarrying,1070249625.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,construction,Construction,1351500.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,construction,Construction,1235430.0537109375,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,construction,Construction,211520875.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,transport,Transport Sector,11030943000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,aviation_gasoline,transport,Transport Sector,21968910.15625,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,jet,transport,Transport Sector,2272389500.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,transport,Transport Sector,1235430.0537109375,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,transport,Transport Sector,7481401308.59375,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,aviation_gasoline,,International Civil Aviation,21968910.15625,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,jet,,Domestic Air Transport,2272389500.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,road,Road,11030943000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,road,Road,1235430.0537109375,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,road,Road,7385987000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,rail,Rail,36786238.28125,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,,Internal Navigation,58628070.3125,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,,Other Sectors,504109500.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,,Other Sectors,547295500.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,,Other Sectors,1870350412.109375,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,agriculture,Agriculture,206779500.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,agriculture,Agriculture,69184078.125,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,agriculture,Agriculture,986331062.5,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,commercial_public,Commerce and Public Services,5406000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,commercial_public,Commerce and Public Services,80302953.125,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,commercial_public,Commerce and Public Services,18393119.140625,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,residential,Residential,8109000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,paraffin,residential,Residential,397808468.75,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,residential,Residential,16093980.46875,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,petrol,,Non-specified (Other),283815000.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,,Non-specified (Other),849532250.0,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,,Elect.Output in GWh,333920.0134277344,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2011,shared,diesel,,Elect.Output-public elec. Plant,333920.0134277344,litres,2011-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,production,Production,9637813800.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,aviation_gasoline,production,Production,37606980.46875,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,jet,production,Production,1100507375.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,production,Production,527136937.5,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,production,Production,9661628000.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,imports,Import,1851811524.3243241,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,aviation_gasoline,imports,Import,14396730.46875,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,imports,Import,3676244500.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,exports,Export,-235278875.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,aviation_gasoline,exports,Export,-6730620.1171875,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,exports,Export,-2079187.5,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,exports,Export,-527331562.5,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,aviation_gasoline,,Intl. Marine Bunkers,-13705799.8046875,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,jet,,Intl. Marine Bunkers,-1100507375.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,,Intl. Marine Bunkers,-2022976125.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,,Domestic Supply,11254346449.324326,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,aviation_gasoline,,Domestic Supply,31567291.015625,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,,Domestic Supply,525057750.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,,Domestic Supply,10787564812.5,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,statistical_difference,Statistical Differences,0.10557472705841064,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,aviation_gasoline,statistical_difference,Statistical Differences,1.953125,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,statistical_difference,Statistical Differences,-4.0283203125,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,statistical_difference,Statistical Differences,186.5234375,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,final_consumption,Final Consumption,11254346449.21875,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,aviation_gasoline,final_consumption,Final Consumption,31567289.0625,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,final_consumption,Final Consumption,525057754.0283203,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,final_consumption,Final Consumption,10787564625.976562,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,industry,Industry Sector,13515000.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,industry,Industry Sector,14825159.912109375,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,industry,Industry Sector,1369137828.125,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,mining,Mining and Quarrying,12163500.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,mining,Mining and Quarrying,12354299.8046875,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,mining,Mining and Quarrying,1156467375.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,construction,Construction,1351500.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,construction,Construction,2470860.107421875,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,construction,Construction,212670453.125,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,transport,Transport Sector,10932284000.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,aviation_gasoline,transport,Transport Sector,31567289.0625,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,transport,Transport Sector,1235430.0537109375,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,transport,Transport Sector,7629695890.625,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,aviation_gasoline,,International Civil Aviation,31567289.0625,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,road,Road,10932284000.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,road,Road,1235430.0537109375,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,road,Road,7541179000.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,rail,Rail,47132371.09375,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,,Internal Navigation,41384519.53125,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,,Other Sectors,308547449.21875,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,,Other Sectors,508997164.0625,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,,Other Sectors,1788730907.2265625,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,agriculture,Agriculture,19326449.21875,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,agriculture,Agriculture,77832093.75,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,agriculture,Agriculture,942647375.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,commercial_public,Commerce and Public Services,4054500.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,commercial_public,Commerce and Public Services,81538382.8125,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,commercial_public,Commerce and Public Services,10346129.8828125,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,residential,Residential,8109000.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,paraffin,residential,Residential,349626687.5,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,residential,Residential,13794839.84375,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,petrol,,Non-specified (Other),277057500.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,,Non-specified (Other),821942562.5,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2012,shared,diesel,,Elect.Output-public elec. Plant,1346160.0,litres,2012-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,production,Production,10480187000.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,aviation_gasoline,production,Production,29387857.421875,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,jet,production,Production,1762443875.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,production,Production,1531986500.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,production,Production,9380035000.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,imports,Import,1508536793.3733332,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,aviation_gasoline,imports,Import,14776646.484375,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,jet,imports,Import,229731031.25,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,imports,Import,111650.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,imports,Import,4950326169.129524,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,exports,Export,-956496631.85,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,aviation_gasoline,exports,Export,-2741159.912109375,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,jet,exports,Export,-81214554.6875,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,exports,Export,-70512550.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,exports,Export,-1619950782.9876199,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,,Domestic Supply,11032227161.523333,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,aviation_gasoline,,Domestic Supply,41423343.994140625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,jet,,Domestic Supply,1910960351.5625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,,Domestic Supply,1461585599.9999998,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,,Domestic Supply,12710410386.141903,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,statistical_difference,Statistical Differences,-337256526.95322967,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,aviation_gasoline,statistical_difference,Statistical Differences,12235957.275390625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,jet,statistical_difference,Statistical Differences,-392979960.9375,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,statistical_difference,Statistical Differences,923006520.7314252,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,statistical_difference,Statistical Differences,-513402076.7487213,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,,Transformation Sector,1148500000.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,electricity_plants,Electricity Plant,1148500000.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,final_consumption,Final Consumption,11369483688.476562,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,aviation_gasoline,final_consumption,Final Consumption,29187386.71875,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,jet,final_consumption,Final Consumption,2303940312.5,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,final_consumption,Final Consumption,538579079.2685747,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,final_consumption,Final Consumption,12075312462.890625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,industry,Industry Sector,36006859.375,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,industry,Industry Sector,13537128.662109375,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,industry,Industry Sector,1400165890.625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,mining,Mining and Quarrying,24576056.640625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,mining,Mining and Quarrying,11588057.6171875,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,mining,Mining and Quarrying,1197295375.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,construction,Construction,11430802.734375,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,construction,Construction,1949071.044921875,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,construction,Construction,202870515.625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,transport,Transport Sector,10511708140.625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,aviation_gasoline,transport,Transport Sector,29187386.71875,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,jet,transport,Transport Sector,2303940312.5,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,transport,Transport Sector,324807361.2500429,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,transport,Transport Sector,8791738210.9375,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,jet,,International Civil Aviation,1843152250.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,aviation_gasoline,,Domestic Air Transport,29187386.71875,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,jet,,Domestic Air Transport,460788062.5,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,road,Road,10483077000.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,road,Road,324806281.25,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,road,Road,8704902000.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,rail,Rail,28631140.625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,rail,Rail,1080.0000429153442,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,rail,Rail,86836210.9375,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,,Other Sectors,821768688.4765625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,,Other Sectors,200234589.35642242,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,,Other Sectors,1883408361.328125,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,agriculture,Agriculture,188347250.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,agriculture,Agriculture,92653914.0625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,agriculture,Agriculture,1084432500.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,commercial_public,Commerce and Public Services,4160497.0703125,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,commercial_public,Commerce and Public Services,1888670.0439453125,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,commercial_public,Commerce and Public Services,38368023.4375,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,residential,Residential,6334628.90625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,residential,Residential,4098.999977111816,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,residential,Residential,12307962.890625,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,petrol,,Non-specified (Other),622926312.5,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,paraffin,,Non-specified (Other),105687906.25,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,,Non-specified (Other),748299875.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2013,shared,diesel,,Elect.Output-public elec. Plant,3621000.0,litres,2013-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,production,Production,10828160000.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,aviation_gasoline,production,Production,26420230.46875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,jet,production,Production,1715087250.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,production,Production,1365744750.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,production,Production,9587740000.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,imports,Import,1150194500.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,aviation_gasoline,imports,Import,17242460.9375,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,jet,imports,Import,287705062.5,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,imports,Import,115349.9984741211,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,imports,Import,4997072000.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,exports,Export,-989306500.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,aviation_gasoline,exports,Export,-21582339.84375,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,jet,exports,Export,-114793898.4375,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,exports,Export,-67676960.9375,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,exports,Export,-1493407625.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,,Domestic Supply,10989048000.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,aviation_gasoline,,Domestic Supply,22080351.5625,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,jet,,Domestic Supply,1887998414.0625,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,,Domestic Supply,1298183139.0609741,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,,Domestic Supply,13091404375.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,statistical_difference,Statistical Differences,133414858.88671875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,jet,statistical_difference,Statistical Differences,-404182679.6875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,statistical_difference,Statistical Differences,780778591.3352966,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,statistical_difference,Statistical Differences,-685071974.1210938,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,,Transformation Sector,1178599875.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,electricity_plants,Electricity Plant,1178599875.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,final_consumption,Final Consumption,10855633141.113281,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,aviation_gasoline,final_consumption,Final Consumption,22080351.5625,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,jet,final_consumption,Final Consumption,2292181093.75,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,final_consumption,Final Consumption,517404547.7256775,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,final_consumption,Final Consumption,12597876474.121094,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,industry,Industry Sector,23601797.8515625,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,industry,Industry Sector,14558878.784179688,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,industry,Industry Sector,1639750640.625,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,mining,Mining and Quarrying,16619382.8125,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,mining,Mining and Quarrying,12587423.828125,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,mining,Mining and Quarrying,1505032250.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,construction,Construction,6982415.0390625,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,construction,Construction,1971454.9560546875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,construction,Construction,134718390.625,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,transport,Transport Sector,10618796935.546875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,aviation_gasoline,transport,Transport Sector,22080351.5625,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,jet,transport,Transport Sector,2292181093.75,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,transport,Transport Sector,1532208.0039978027,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,transport,Transport Sector,8993571750.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,aviation_gasoline,,International Civil Aviation,22080351.5625,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,jet,,International Civil Aviation,1833744875.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,jet,,Domestic Air Transport,458436218.75,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,road,Road,10599969000.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,road,Road,1494703.0029296875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,road,Road,8903131000.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,rail,Rail,18827935.546875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,rail,Rail,37505.001068115234,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,rail,Rail,90440750.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,,Other Sectors,213234407.71484375,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,,Other Sectors,501313460.9375,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,,Other Sectors,1964554083.4960938,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,agriculture,Agriculture,157224265.625,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,agriculture,Agriculture,117049750.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,agriculture,Agriculture,1092498750.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,commercial_public,Commerce and Public Services,3771315.91796875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,commercial_public,Commerce and Public Services,96105804.6875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,commercial_public,Commerce and Public Services,23462720.703125,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,residential,Residential,3343123.046875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,paraffin,residential,Residential,288157906.25,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,residential,Residential,7614487.79296875,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,petrol,,Non-specified (Other),48895703.125,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,,Non-specified (Other),840978125.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,,Elect.Output in GWh,3709000.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2014,shared,diesel,,Elect.Output-public elec. Plant,3709000.0,litres,2014-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,production,Production,10457813000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,aviation_gasoline,production,Production,12236614.2578125,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,jet,production,Production,2967278250.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,production,Production,554679000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,production,Production,9368482000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,imports,Import,1869644625.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,aviation_gasoline,imports,Import,24325390.625,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,jet,imports,Import,275033343.75,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,imports,Import,79934742.1875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,imports,Import,3466693000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,exports,Export,-1086493625.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,aviation_gasoline,exports,Export,-16858279.296875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,jet,exports,Export,-845874125.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,exports,Export,-48736410.15625,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,exports,Export,-1625413250.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,,Domestic Supply,11240964000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,aviation_gasoline,,Domestic Supply,19703725.5859375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,jet,,Domestic Supply,2396437468.75,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,,Domestic Supply,585877332.03125,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,,Domestic Supply,11209761750.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,statistical_difference,Statistical Differences,-226702624.1455078,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,aviation_gasoline,statistical_difference,Statistical Differences,0.9765625,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,jet,statistical_difference,Statistical Differences,-31.25,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,statistical_difference,Statistical Differences,23.681640625,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,statistical_difference,Statistical Differences,-3529128237.3046875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,,Transformation Sector,1247800000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,electricity_plants,Electricity Plant,1247800000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,final_consumption,Final Consumption,11467666624.145508,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,aviation_gasoline,final_consumption,Final Consumption,19703724.609375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,jet,final_consumption,Final Consumption,2396437500.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,final_consumption,Final Consumption,585877308.3496094,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,final_consumption,Final Consumption,13491089987.304688,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,industry,Industry Sector,6052782.1044921875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,industry,Industry Sector,11337411.62109375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,industry,Industry Sector,1933129179.6875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,mining,Mining and Quarrying,5637662.109375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,mining,Mining and Quarrying,10115725.5859375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,mining,Mining and Quarrying,1818396500.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,construction,Construction,415119.9951171875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,construction,Construction,1221686.03515625,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,construction,Construction,114732679.6875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,transport,Transport Sector,11251112777.34375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,aviation_gasoline,transport,Transport Sector,19703724.609375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,jet,transport,Transport Sector,2396437500.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,transport,Transport Sector,2271717.041015625,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,transport,Transport Sector,9552334257.8125,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,aviation_gasoline,,International Civil Aviation,19703724.609375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,jet,,International Civil Aviation,1917150000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,jet,,Domestic Air Transport,479287500.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,road,Road,11203320000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,road,Road,2271717.041015625,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,road,Road,9428381000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,rail,Rail,47792777.34375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,rail,Rail,123953257.8125,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,,Other Sectors,210501064.69726562,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,,Other Sectors,572268179.6875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,,Other Sectors,2005626549.8046875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,agriculture,Agriculture,172490500.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,agriculture,Agriculture,154152687.5,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,agriculture,Agriculture,1073494250.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,commercial_public,Commerce and Public Services,3779844.970703125,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,commercial_public,Commerce and Public Services,86348867.1875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,commercial_public,Commerce and Public Services,14730648.4375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,residential,Residential,2184249.0234375,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,paraffin,residential,Residential,331766625.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,residential,Residential,5507338.8671875,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,petrol,,Non-specified (Other),32046470.703125,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,,Non-specified (Other),911894312.5,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2015,shared,diesel,,Elect.Output-public elec. Plant,3709000.0,litres,2015-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,production,Production,10393066000.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,aviation_gasoline,production,Production,547464500.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,jet,production,Production,3047400500.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,production,Production,661122624.7484908,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,production,Production,9014190000.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,imports,Import,1395637750.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,aviation_gasoline,imports,Import,15096059.5703125,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,jet,imports,Import,104114703.125,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,imports,Import,4304660.15625,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,imports,Import,4424294000.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,exports,Export,-1158905750.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,aviation_gasoline,exports,Export,-5898740.234375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,jet,exports,Export,-334589593.75,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,exports,Export,-50211753.90625,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,exports,Export,-1887042750.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Domestic Supply,10629798000.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,aviation_gasoline,,Domestic Supply,556661819.3359375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,jet,,Domestic Supply,2816925609.375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Domestic Supply,615215530.9984908,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Domestic Supply,11551441250.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,statistical_difference,Statistical Differences,-1475326849.4992256,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,aviation_gasoline,statistical_difference,Statistical Differences,-4.8828125,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,jet,statistical_difference,Statistical Differences,169396234.375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,statistical_difference,Statistical Differences,-2490707850.343704,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Transformation Sector,1247800125.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,electricity_plants,Electricity Plant,1247800125.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,final_consumption,Final Consumption,12105124849.499226,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,aviation_gasoline,final_consumption,Final Consumption,556661824.21875,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,jet,final_consumption,Final Consumption,2647529375.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,final_consumption,Final Consumption,615215530.9984908,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,final_consumption,Final Consumption,12794348975.343704,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,industry,Industry Sector,31182868.29805374,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,industry,Industry Sector,45195732.170552015,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,industry,Industry Sector,1319798182.8632355,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Iron and Steel,6556.547164916992,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Iron and Steel,479.99998927116394,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Iron and Steel,13101490.234375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Chemical and Petrochemical,26872.99919128418,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Chemical and Petrochemical,5465773.92578125,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Chemical and Petrochemical,565736.9995117188,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Non-Metallic Minerals,1496885.009765625,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Non-Metallic Minerals,589067.0166015625,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Non-Metallic Minerals,5967712.40234375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Transport Equipment,1269833.0078125,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Transport Equipment,465769.0124511719,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Transport Equipment,1196598.9990234375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Machinery,5967.9999351501465,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Machinery,2796094.970703125,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,mining,Mining and Quarrying,4805227.5390625,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,mining,Mining and Quarrying,10744911.1328125,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,mining,Mining and Quarrying,1044253062.5,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Food and Tobacco,676625.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Food and Tobacco,4032198.974609375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Food and Tobacco,23314402.34375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Paper Pulp and Print,5199.999809265137,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Paper Pulp and Print,1114176.1474609375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Wood and Wood Products,6465.000152587891,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Wood and Wood Products,2072712.890625,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,construction,Construction,3366176.7578125,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,construction,Construction,10658931.640625,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,construction,Construction,138693625.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Textile and Leather,411404.9987792969,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Textile and Leather,9461.000442504883,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Non-specified (Industry),19523523.4375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Non-specified (Industry),12820730.46875,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Non-specified (Industry),86713109.375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,transport,Transport Sector,7901196606.201172,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,aviation_gasoline,transport,Transport Sector,556661824.21875,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,jet,transport,Transport Sector,2647529375.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,transport,Transport Sector,23383335.077941418,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,transport,Transport Sector,4612390911.010742,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,aviation_gasoline,,International Civil Aviation,17639636.71875,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,jet,,International Civil Aviation,2118023500.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Domestic Air Transport,2888584.228515625,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,jet,,Domestic Air Transport,529505875.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Domestic Air Transport,20000.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Domestic Air Transport,7477116.2109375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,road,Road,7850405500.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,road,Road,23353955.078125,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,road,Road,4396386500.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,rail,Rail,46030730.46875,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,rail,Rail,680.0000071525574,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,rail,Rail,186905984.375,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Pipeline Transport,8699.999809265137,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Pipeline Transport,20464513.671875,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Non-specified (Transport),1871791.50390625,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,aviation_gasoline,,Non-specified (Transport),539022187.5,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Non-specified (Transport),1156796.7529296875,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,,Other Sectors,4172745375.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Other Sectors,546636463.7499974,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Other Sectors,6862159881.469727,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,agriculture,Agriculture,1928879125.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,agriculture,Agriculture,178917718.75,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,agriculture,Agriculture,1887278875.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,petrol,commercial_public,Commerce and Public Services,2243866250.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,commercial_public,Commerce and Public Services,367718625.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,commercial_public,Commerce and Public Services,4972839500.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,paraffin,,Non-specified (Other),119.99999731779099,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Non-specified (Other),2041506.4697265625,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2016,shared,diesel,,Elect.Output-public elec. Plant,3709000.0,litres,2016-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,production,Production,9434440000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,aviation_gasoline,production,Production,414271500.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,jet,production,Production,1518965125.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,production,Production,732394937.5,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,production,Production,7921726000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,imports,Import,2114180000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,aviation_gasoline,imports,Import,18628169.921875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,jet,imports,Import,418603750.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,imports,Import,2475530.029296875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,imports,Import,6036039000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,exports,Export,-1082042000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,aviation_gasoline,exports,Export,-5177439.94140625,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,jet,exports,Export,-348765437.5,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,exports,Export,-47567628.90625,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,exports,Export,-1784002750.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Domestic Supply,10466578000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,aviation_gasoline,,Domestic Supply,427722229.98046875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,jet,,Domestic Supply,1588803437.5,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Domestic Supply,687302838.6230469,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Domestic Supply,12173762250.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,statistical_difference,Statistical Differences,-1345489959.344387,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,aviation_gasoline,statistical_difference,Statistical Differences,-20.01953125,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,statistical_difference,Statistical Differences,49.29471015930176,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,statistical_difference,Statistical Differences,-1094696312.4389648,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Transformation Sector,10000000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,electricity_plants,Electricity Plant,10000000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,final_consumption,Final Consumption,11812067959.344387,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,aviation_gasoline,final_consumption,Final Consumption,427722250.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,jet,final_consumption,Final Consumption,1588803437.5,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,final_consumption,Final Consumption,687302789.3283367,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,final_consumption,Final Consumption,13258458562.438965,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,industry,Industry Sector,100856478.93667221,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,industry,Industry Sector,44707520.958185196,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,industry,Industry Sector,1543839806.8237305,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Iron and Steel,128899.99389648438,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Iron and Steel,2319.999933242798,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Iron and Steel,9699440.4296875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Chemical and Petrochemical,4422390.13671875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Chemical and Petrochemical,547570.0073242188,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Non-Ferrous Metals,538070.0073242188,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Non-Metallic Minerals,1577589.9658203125,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Non-Metallic Minerals,501250.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Non-Metallic Minerals,6253240.234375,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Transport Equipment,1193770.01953125,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Transport Equipment,1139089.9658203125,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Machinery,3335239.990234375,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,mining,Mining and Quarrying,72304039.0625,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,mining,Mining and Quarrying,12389730.46875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,mining,Mining and Quarrying,1300426000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Food and Tobacco,644409.9731445312,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Food and Tobacco,3526120.1171875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Food and Tobacco,10867059.5703125,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Paper Pulp and Print,6599.999904632568,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Paper Pulp and Print,2368030.029296875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Wood and Wood Products,4000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Wood and Wood Products,1181410.0341796875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,construction,Construction,6626169.921875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,construction,Construction,8023220.21484375,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,construction,Construction,124469789.0625,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Textile and Leather,325420.0134277344,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Non-specified (Industry),18375000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Non-specified (Industry),14975000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Non-specified (Industry),83552937.5,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,transport,Transport Sector,7876567230.407715,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,aviation_gasoline,transport,Transport Sector,427722250.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,jet,transport,Transport Sector,1588803437.5,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,transport,Transport Sector,17501299.62015152,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,transport,Transport Sector,9832151515.625,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,aviation_gasoline,,International Civil Aviation,427722250.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,jet,,International Civil Aviation,1271042750.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Domestic Air Transport,14022690.4296875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,jet,,Domestic Air Transport,317760687.5,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Domestic Air Transport,473040.0085449219,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Domestic Air Transport,20117730.46875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,road,Road,7799955000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,road,Road,16903849.609375,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,road,Road,9359175000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,rail,Rail,59940000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,rail,Rail,3400.0000953674316,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,rail,Rail,136104515.625,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Pipeline Transport,815090.0268554688,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Pipeline Transport,121010.00213623047,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Pipeline Transport,19719269.53125,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Non-specified (Transport),1834449.951171875,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Non-specified (Transport),297035000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,,Other Sectors,3834644250.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,,Other Sectors,625093968.75,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Other Sectors,1882467239.9902344,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,agriculture,Agriculture,1951260000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,agriculture,Agriculture,272852000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,agriculture,Agriculture,1876914000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,petrol,commercial_public,Commerce and Public Services,1883384250.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,paraffin,commercial_public,Commerce and Public Services,352241968.75,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,residential,Residential,305239.990234375,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2017,shared,diesel,,Non-specified (Other),5248000.0,litres,2017-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,production,Production,9974560000.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,aviation_gasoline,production,Production,554742250.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,jet,production,Production,1543192125.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,production,Production,485783437.5,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,production,Production,8425262000.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,imports,Import,2195270250.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,aviation_gasoline,imports,Import,17667240.234375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,jet,imports,Import,395028031.25,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,imports,Import,270.00001072883606,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,imports,Import,6105302500.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,exports,Export,-1320565875.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,aviation_gasoline,exports,Export,-7574839.84375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,jet,exports,Export,-392400875.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,exports,Export,-49587011.71875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,exports,Export,-1837888125.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Domestic Supply,10849264375.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,aviation_gasoline,,Domestic Supply,564834650.390625,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,jet,,Domestic Supply,1545819281.25,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,,Domestic Supply,436196695.7812607,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Domestic Supply,12692676375.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,statistical_difference,Statistical Differences,-866156613.5063171,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,aviation_gasoline,statistical_difference,Statistical Differences,25.390625,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,jet,statistical_difference,Statistical Differences,125.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,statistical_difference,Statistical Differences,-302914208.61047506,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,statistical_difference,Statistical Differences,-522074161.9873047,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Transformation Sector,10000000.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,electricity_plants,Electricity Plant,10000000.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,final_consumption,Final Consumption,11715420988.506317,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,aviation_gasoline,final_consumption,Final Consumption,564834625.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,jet,final_consumption,Final Consumption,1545819156.25,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,final_consumption,Final Consumption,739110904.3917358,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,final_consumption,Final Consumption,13204750536.987305,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,industry,Industry Sector,184829966.83883667,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,industry,Industry Sector,38534630.016714334,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,industry,Industry Sector,1884421682.8613281,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,,Iron and Steel,400.0000059604645,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Iron and Steel,11264784.1796875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Chemical and Petrochemical,48798.99978637695,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,,Chemical and Petrochemical,3621162.109375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Chemical and Petrochemical,1618104.98046875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Non-Metallic Minerals,1626134.1552734375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,,Non-Metallic Minerals,616197.998046875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Non-Metallic Minerals,6658084.47265625,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Transport Equipment,4064301.025390625,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,,Transport Equipment,531468.017578125,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Transport Equipment,2737719.970703125,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Machinery,3614501.708984375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,mining,Mining and Quarrying,159424375.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,mining,Mining and Quarrying,8431396.484375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,mining,Mining and Quarrying,1650123000.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Food and Tobacco,560642.0288085938,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,,Food and Tobacco,3989104.98046875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Food and Tobacco,32105511.71875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Paper Pulp and Print,11000.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Paper Pulp and Print,2980391.845703125,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Wood and Wood Products,99346.00067138672,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,,Wood and Wood Products,8399.999618530273,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Wood and Wood Products,5575662.109375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,construction,Construction,1368496.58203125,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,construction,Construction,4130077.1484375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,construction,Construction,74592859.375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,,Textile and Leather,353851.01318359375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Non-specified (Industry),17626873.046875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,,Non-specified (Industry),16852572.265625,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Non-specified (Industry),93151062.5,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,transport,Transport Sector,9462780671.23413,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,aviation_gasoline,transport,Transport Sector,564834625.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,jet,transport,Transport Sector,1545819156.25,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,transport,Transport Sector,77992399.37502146,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,transport,Transport Sector,6593893472.65625,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,aviation_gasoline,,International Civil Aviation,564834625.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,jet,,International Civil Aviation,1236641125.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Domestic Air Transport,2916254.150390625,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,jet,,Domestic Air Transport,309178031.25,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Domestic Air Transport,7575588.8671875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,road,Road,9421383000.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,road,Road,77991859.375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,road,Road,6391942500.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,rail,Rail,35428523.4375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,rail,Rail,540.0000214576721,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,rail,Rail,169743343.75,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Pipeline Transport,210562.83569335938,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Pipeline Transport,15252206.0546875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Non-specified (Transport),2842330.810546875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Non-specified (Transport),9379833.984375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,,Other Sectors,2067810350.4333496,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,,Other Sectors,622583875.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Other Sectors,4726435381.469727,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,agriculture,Agriculture,120494023.4375,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,agriculture,Agriculture,248880562.5,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,agriculture,Agriculture,899883437.5,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,commercial_public,Commerce and Public Services,1947136625.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,paraffin,commercial_public,Commerce and Public Services,373703312.5,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,commercial_public,Commerce and Public Services,3823708500.0,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,petrol,residential,Residential,179701.99584960938,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,residential,Residential,1321480.95703125,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Non-specified (Other),1521963.0126953125,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2018,shared,diesel,,Elect.Output-public elec. Plant,15363557.6171875,litres,2018-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,production,Production,10424467000.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,aviation_gasoline,production,Production,636168437.5,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,jet,production,Production,1089709875.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,production,Production,463187406.25,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,production,Production,9080357000.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,imports,Import,2195270250.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,aviation_gasoline,imports,Import,17667240.234375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,jet,imports,Import,395028031.25,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,imports,Import,270.00001072883606,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,imports,Import,6105302500.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,exports,Export,-1320565875.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,aviation_gasoline,exports,Export,-7574839.84375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,jet,exports,Export,-392400875.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,exports,Export,-49587011.71875,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,exports,Export,-1837888125.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Domestic Supply,11299171375.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,aviation_gasoline,,Domestic Supply,646260837.890625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,jet,,Domestic Supply,1092337031.25,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,,Domestic Supply,413600664.5312607,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Domestic Supply,13347771375.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,statistical_difference,Statistical Differences,-83717539.83688354,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,aviation_gasoline,statistical_difference,Statistical Differences,644125815.9179688,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,jet,statistical_difference,Statistical Differences,1092337031.25,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,statistical_difference,Statistical Differences,-236085121.60012126,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,statistical_difference,Statistical Differences,-216775527.34375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Transformation Sector,28724191.40625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,electricity_plants,Electricity Plant,28724191.40625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,final_consumption,Final Consumption,11382888914.836884,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,aviation_gasoline,final_consumption,Final Consumption,2135021.97265625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,final_consumption,Final Consumption,649685786.131382,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,final_consumption,Final Consumption,13535822710.9375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,industry,Industry Sector,182970776.0734558,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,industry,Industry Sector,19949294.817447662,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,industry,Industry Sector,1897990848.3886719,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Iron and Steel,12674971.6796875,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Chemical and Petrochemical,96158.99658203125,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,,Chemical and Petrochemical,67888.99993896484,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Chemical and Petrochemical,1234865.966796875,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Non-Metallic Minerals,1746204.7119140625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,,Non-Metallic Minerals,433015.9912109375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Non-Metallic Minerals,6733528.80859375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Transport Equipment,4483208.49609375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,,Transport Equipment,495713.9892578125,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Transport Equipment,2603674.072265625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Machinery,2596061.03515625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,mining,Mining and Quarrying,158538687.5,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,mining,Mining and Quarrying,2967958.984375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,mining,Mining and Quarrying,1667249250.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Food and Tobacco,546473.9990234375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,,Food and Tobacco,3480062.98828125,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Food and Tobacco,47798125.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Paper Pulp and Print,9770.000457763672,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,,Paper Pulp and Print,55987.998962402344,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Paper Pulp and Print,3228152.099609375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Wood and Wood Products,236384.00268554688,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,,Wood and Wood Products,1559.999942779541,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Wood and Wood Products,8910586.9140625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,construction,Construction,569734.0698242188,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,construction,Construction,1471812.01171875,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,,Textile and Leather,369454.0100097656,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Textile and Leather,50740617.1875,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Non-specified (Industry),16744154.296875,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,,Non-specified (Industry),10605839.84375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Non-specified (Industry),94221015.625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,transport,Transport Sector,10185284090.454102,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,aviation_gasoline,transport,Transport Sector,2135021.97265625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,transport,Transport Sector,72231038.18893433,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,transport,Transport Sector,6892754390.136719,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,aviation_gasoline,,International Civil Aviation,2135021.97265625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Domestic Air Transport,2280997.314453125,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Domestic Air Transport,7911137.20703125,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,road,Road,10179225000.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,road,Road,72189117.1875,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,road,Road,6725982000.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,rail,Rail,791805.7861328125,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,rail,Rail,41921.00143432617,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,rail,Rail,128182664.0625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Pipeline Transport,15000.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Pipeline Transport,16578804.6875,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Non-specified (Transport),2971287.353515625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Non-specified (Transport),14099784.1796875,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,,Other Sectors,1014634048.3093262,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,,Other Sectors,557505453.125,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Other Sectors,4745077472.412109,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,agriculture,Agriculture,106811945.3125,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,agriculture,Agriculture,151585234.375,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,agriculture,Agriculture,921848687.5,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,commercial_public,Commerce and Public Services,907654750.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,paraffin,commercial_public,Commerce and Public Services,405920218.75,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,commercial_public,Commerce and Public Services,3821545500.0,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,petrol,residential,Residential,167352.99682617188,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,residential,Residential,713921.0205078125,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Non-specified (Other),969363.8916015625,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2019,shared,diesel,,Elect.Output-public elec. Plant,320734.5275878906,litres,2019-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,production,Production,7895000000.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,aviation_gasoline,production,Production,318043093.75,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,jet,production,Production,962755625.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,production,Production,379672343.75,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,production,Production,6447809500.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,imports,Import,1477345375.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,aviation_gasoline,imports,Import,19806400.390625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,jet,imports,Import,461709375.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,imports,Import,38414558.59375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,imports,Import,5858024500.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,exports,Export,-1179147375.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,aviation_gasoline,exports,Export,-1126010.009765625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,jet,exports,Export,-293271625.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,exports,Export,-1785974000.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Domestic Supply,8193198000.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,aviation_gasoline,,Domestic Supply,336723484.1308594,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,jet,,Domestic Supply,1131193375.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,,Domestic Supply,418086902.34375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Domestic Supply,10519860000.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,statistical_difference,Statistical Differences,-1081594034.8949432,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,aviation_gasoline,statistical_difference,Statistical Differences,329172048.5839844,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,jet,statistical_difference,Statistical Differences,1131193375.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,statistical_difference,Statistical Differences,-316783710.00289917,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,statistical_difference,Statistical Differences,-1659817345.0927734,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,final_consumption,Final Consumption,9274792034.894943,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,aviation_gasoline,final_consumption,Final Consumption,7551435.546875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,final_consumption,Final Consumption,734870612.3466492,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,final_consumption,Final Consumption,12179677345.092773,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,industry,Industry Sector,86091569.05555725,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,industry,Industry Sector,19307717.47970581,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,industry,Industry Sector,1446220699.0966797,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Iron and Steel,5185595.21484375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Chemical and Petrochemical,286960.99853515625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,,Chemical and Petrochemical,35490.0016784668,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Chemical and Petrochemical,1166624.0234375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Non-Metallic Minerals,1535782.958984375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,,Non-Metallic Minerals,380075.0427246094,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Non-Metallic Minerals,5481548.828125,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Transport Equipment,3482630.859375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,,Transport Equipment,371377.01416015625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Transport Equipment,1693350.7080078125,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,mining,Mining and Quarrying,72279070.3125,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,mining,Mining and Quarrying,4110355.95703125,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,mining,Mining and Quarrying,1263405750.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Food and Tobacco,435067.9931640625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,,Food and Tobacco,3955487.060546875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Food and Tobacco,43933812.5,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Paper Pulp and Print,9281.000137329102,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,,Paper Pulp and Print,66033.99658203125,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Paper Pulp and Print,2533429.931640625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Wood and Wood Products,395282.9895019531,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Wood and Wood Products,6711501.953125,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,construction,Construction,611820.068359375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,construction,Construction,1192807.9833984375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,construction,Construction,42847406.25,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,,Textile and Leather,178983.00170898438,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Non-specified (Industry),7055671.875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,,Non-specified (Industry),9017107.421875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Non-specified (Industry),73261679.6875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,transport,Transport Sector,8169590572.021484,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,aviation_gasoline,transport,Transport Sector,7551435.546875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,transport,Transport Sector,116427621.42944336,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,transport,Transport Sector,6019205312.5,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,aviation_gasoline,,International Civil Aviation,7551435.546875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Domestic Air Transport,9191375.9765625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,,Domestic Air Transport,371649.9938964844,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Domestic Air Transport,43095753.90625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,road,Road,8157710000.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,road,Road,113163437.5,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,road,Road,5848191500.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,rail,Rail,738723.9990234375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,rail,Rail,2892533.935546875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,rail,Rail,99427187.5,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Pipeline Transport,14555636.71875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Non-specified (Transport),1950472.0458984375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Non-specified (Transport),13935234.375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Other Sectors,1019109893.8179016,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,,Other Sectors,599135273.4375,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Other Sectors,4714251333.496094,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,agriculture,Agriculture,114024382.8125,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,agriculture,Agriculture,130023242.1875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,agriculture,Agriculture,1048963500.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,commercial_public,Commerce and Public Services,904899875.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,paraffin,commercial_public,Commerce and Public Services,469112031.25,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,commercial_public,Commerce and Public Services,3639121750.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,residential,Residential,15798.999786376953,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,residential,Residential,6097558.10546875,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,petrol,,Non-specified (Other),169837.00561523438,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Non-specified (Other),20068525.390625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Non-Energy Use,2014943.9697265625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Memo:Non-Energy Use in Transport,2014943.9697265625,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Elect.Output-public elec. Plant,1202000.0,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2020,shared,diesel,,Elect.Output-autoprod. elec. Plant,3024612.548828125,litres,2020-Commodity-Flow-and-Energy-Balance.xlsx
+ZAF,2021,shared,petrol,production,Production,6351306666.663,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,aviation_gasoline,production,Production,33949266.6,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,jet,production,Production,861359102.2420001,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,production,Production,36321641.983,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,production,Production,5314964285.718,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,imports,Imports,5417044280.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,aviation_gasoline,imports,Imports,19790160.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,jet,imports,Imports,551628996.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,imports,Imports,1000668220.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,imports,Imports,11219994600.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,exports,Exports,-1423827790.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,aviation_gasoline,exports,Exports,-1011690.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,jet,exports,Exports,-121950460.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,exports,Exports,-60027760.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,exports,Exports,-1026997820.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,Domestic supply,10344523156.663,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,aviation_gasoline,,Domestic supply,52727736.6,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,jet,,Domestic supply,1291037638.2420003,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,Domestic supply,976962101.9829999,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Domestic supply,15507961065.717999,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,statistical_difference,Statistical differences,-508347196.6629997,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,statistical_difference,Statistical differences,139837388.0170003,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,statistical_difference,Statistical differences,-2100694875.7179976,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,final_consumption,Final consumption,9836175960.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,aviation_gasoline,final_consumption,Final consumption,52727736.6,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,jet,final_consumption,Final consumption,1291037638.2420003,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,final_consumption,Final consumption,1116799490.0000002,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,final_consumption,Final consumption,13407266190.000002,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,industry,Industry,65035310.00000001,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,industry,Industry,26108379.999999996,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,industry,Industry,1499139259.9999998,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Iron and steel,5366950.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,Chemical and petrochemical,128380.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,Chemical and petrochemical,485900.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Chemical and petrochemical,1878500.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Non-ferrous metals,346200.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,Non-metallic minerals,263460.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,Non-metallic minerals,406220.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Non-metallic minerals,5348880.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,Transport equipment,1307420.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,Transport equipment,348570.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Transport equipment,560870.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,mining,Mining and quarrying,54494020.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,mining,Mining and quarrying,4981280.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,mining,Mining and quarrying,1293813420.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,"Food, beverages and tobacco",566650.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,"Food, beverages and tobacco",5346200.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,"Food, beverages and tobacco",58698500.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,"Paper, pulp and print",6400.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,"Paper, pulp and print",58890.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,"Paper, pulp and print",1949290.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,Wood and wood products,83410.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,Wood and wood products,274530.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Wood and wood products,4579050.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,construction,Construction,1059430.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,construction,Construction,2072960.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,construction,Construction,48692430.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,Textiles and leather,169850.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,Non-specified (Industry),7126140.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,Non-specified (Industry),11963980.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Non-specified (Industry),77905170.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,transport,Transport,8740206180.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,aviation_gasoline,transport,Transport,52727736.6,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,jet,transport,Transport,1291037638.2420003,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,transport,Transport,140779740.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,transport,Transport,6425382590.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,road,Road,8734665030.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,road,Road,140160930.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,road,Road,6327957280.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,aviation_gasoline,,Domestic aviation,52727736.6,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,rail,Rail,116810.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,rail,Rail,618810.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,rail,Rail,13127920.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,Pipeline transport,127820.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Pipeline transport,39319260.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,Non-specified (transport),5296520.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,jet,,Non-specified (transport),1291037638.2420003,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Non-specified (transport),44978130.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,Other,1030934470.0000001,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,Other,949911370.0000001,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Other,5482744340.000001,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,residential,Residential,14810.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,residential,Residential,2010320.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,commercial_public,Commercial and public services,906677260.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,commercial_public,Commercial and public services,633256150.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,commercial_public,Commercial and public services,4299975730.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,agriculture,Agriculture/forestry,120183560.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,agriculture,Agriculture/forestry,316575160.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,agriculture,Agriculture/forestry,1058398950.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,petrol,,Non-specified (other),4058840.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,paraffin,,Non-specified (other),80060.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Non-specified (other),122359340.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Electricity output in GWh,5016137.65,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Elec output-main activity producer ele plants,1826000.0,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm
+ZAF,2021,shared,diesel,,Elec output-autoproducer electricity plants,3190137.65,litres,2021-Commodity-Flow-and-Energy-Balance.xlsm

@@ -1,0 +1,350 @@
+publisher: Energy department (Department of Mineral and Petroleum Resources site)
+fuel_sales_by_province:
+  full_years:
+  - 2013
+  - 2014
+  - 2015
+  - 2016
+  - 2017
+  - 2018
+  - 2019
+  - 2020
+  - 2021
+  - 2022
+  part_years_in_quarterly_file_only:
+  - 2023
+  first_year_with_province_rows: 2013
+  provinces_differ_from_national_by_more_than_1pct:
+  - period: 2013
+    product: petrol
+    provinces_vs_national_pct: 2.6
+  - period: 2013
+    product: diesel
+    provinces_vs_national_pct: 2.1
+  - period: 2013
+    product: jet
+    provinces_vs_national_pct: 3.6
+  - period: 2014
+    product: petrol
+    provinces_vs_national_pct: 1.3
+  - period: 2014
+    product: diesel
+    provinces_vs_national_pct: 1.0
+  - period: 2015
+    product: jet
+    provinces_vs_national_pct: -2.5
+  - period: 2018
+    product: petrol
+    provinces_vs_national_pct: -1.9
+  - period: 2018
+    product: diesel
+    provinces_vs_national_pct: -1.8
+  - period: 2018
+    product: jet
+    provinces_vs_national_pct: -1.5
+  files:
+  - year: 2013
+    url: (offline)
+    file: 2013-FSV-Disaggregated-FSV-at-Magisterial-District-Quarter4-16Jan2015.xlsx
+    sha256: a3168ab77ad70d640bcd390b54608f1341ec182f9e6d1d5cb8537926796fa0ec
+  - year: 2013
+    url: (offline)
+    file: 2013-Magisterial-Districts-data.xlsx
+    sha256: f95ec9a58715a0f253d6f22164f3414533a42653ab5705750ee27b136579de4c
+  - year: 2014
+    url: (offline)
+    file: 2014-Quarterly-Disaggregated-FSV-Data-Magisterial-District-Level-01Dec2015.xlsx
+    sha256: de17d3723f638438f166eb969aa73466d5dd3a615a49d4f6aa6c9510b657abfd
+  - year: 2015
+    url: (offline)
+    file: 2015-Quarterly-Disaggregated-data-Magisterial-Districts-13January2017.xlsx
+    sha256: 9b0ac8c9c484480c6d6414d3170a02eacb58ac4c4d93e7fbf85974b9b20b75ed
+  - year: 2016
+    url: (offline)
+    file: 2016-Quarter4-Magisterial-Districts-data.xlsx
+    sha256: d88a7eb5d29a18ec990573ae3527e787127aecdee171c8f51b18de60bac2a080
+  - year: 2017
+    url: (offline)
+    file: 2017-Quarter4-Magisterial-Districts-data.xlsx
+    sha256: ca2fb932a249c0bb6fa4d3c251c6bd87689bc34bc143df6c3dd56fe289a44759
+  - year: 2018
+    url: (offline)
+    file: 2018-Quarter4-Magisterial-Districts-data.xlsx
+    sha256: 72d32380ad37b249fd15923d0d6bbeda4753962d7db4b57d0b5b999ed2ec7c14
+  - year: 2019
+    url: (offline)
+    file: 2019-Quarter4-Magisterial-Districts-data.xlsx
+    sha256: fd2d56c3053d6c4e5dbfd6077f2f79f9f8f87236e151949a6c14b68f43236092
+  - year: 2020
+    url: (offline)
+    file: 2020-Quarter1-4Magisterial-Districts-data.xlsx
+    sha256: 11211914826e929218b5b5ed8387562b54c68ae1218af3b754b7821298e12dae
+  - year: 2021
+    url: (offline)
+    file: 2021-Quarter4-Magisterial-Districts-data.xlsx
+    sha256: 18db0f3b3863d9c8e46c70b03efef703d9643cac10f0442d4d5bb441af30f399
+  - year: 2022
+    url: (offline)
+    file: 2022-Quarter4-Magisterial-Districts-data.xlsx
+    sha256: 4f65e5f4f54a5bc3561643dd872255860579b292483bca89468a1b9dee98950c
+  - year: 2023
+    url: (offline)
+    file: 2023-Quarter1-Magisterial-Districts-data.xlsx
+    sha256: e35e025b5770c11d3235a04b9a5049b5986e996261df0ea0e4bff9cb491f1586
+fuel_prices:
+  index_page: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/petroleum_arch.html
+  months: 2011-01 to 2024-04
+  full_years:
+  - 2012
+  - 2013
+  - 2014
+  - 2015
+  - 2016
+  - 2017
+  - 2018
+  - 2019
+  - 2020
+  - 2021
+  - 2022
+  - 2023
+  prices_are: regulated prices in cents per litre; petrol retail, diesel wholesale
+  files:
+  - year: 2011
+    url: (offline)
+    file: fuel-price-history-2011.pdf
+    sha256: 63f7c295f645460afebd608578a1be1fe8ca29357424090a20052503ed22e3bb
+  - year: 2012
+    url: (offline)
+    file: fuel-price-history-2012.pdf
+    sha256: 67913f6c8b510b50bb11d5212a0250614916ac14fc4ce15402765cc60c13dd0b
+  - year: 2013
+    url: (offline)
+    file: fuel-price-history-2013.pdf
+    sha256: 2e5baf0a6b66c82b8e4de766a84b91934b9d80865fd99e0792426e745fbe19be
+  - year: 2014
+    url: (offline)
+    file: fuel-price-history-2014.pdf
+    sha256: f7102580cffdfcb176409fef6ec60f4cce26a24e35771f079726c63a1a7567a9
+  - year: 2015
+    url: (offline)
+    file: fuel-price-history-2015.pdf
+    sha256: acc4c176ef95f9b674b5a944601ed90e35ea3accf5822232cf3435b2fed2ab88
+  - year: 2016
+    url: (offline)
+    file: fuel-price-history-2016.pdf
+    sha256: 4217c5623f3fb485b649ba27648a5617f6fc972ae38555e1fba6817fba457d2d
+  - year: 2017
+    url: (offline)
+    file: fuel-price-history-2017.pdf
+    sha256: a341f2495f02bac90de078541c091a0efcf7ddc061b47336be0b65f87e2612d5
+  - year: 2018
+    url: (offline)
+    file: fuel-price-history-2018.pdf
+    sha256: ac03f26524b2f168a4e0c7b1b3be7b9f4be1fae3b49fc731a7aa31e9d9201d68
+  - year: 2019
+    url: (offline)
+    file: fuel-price-history-2019.pdf
+    sha256: 2e3e1c904f7b1d63b51ae337e66e47b10c5fb960a2dbe086b1af7c1c21932d57
+  - year: 2020
+    url: (offline)
+    file: fuel-price-history-2020.pdf
+    sha256: c64d0c7bb9ae2471ed3aaa45a88e927d05c1aae56d6212c8312e890f37265399
+  - year: 2021
+    url: (offline)
+    file: fuel-price-history-2021.pdf
+    sha256: bb4049bc144992e9f6b533d15f1fb2bd56674f69d159147960f3cda26d5a33be
+  - year: 2022
+    url: (offline)
+    file: fuel-price-history-2022.pdf
+    sha256: 53b21992e0342936c6591c698981a8fef509b76a03e8bb354d31fbac5105dbbb
+  - year: 2023
+    url: (offline)
+    file: fuel-price-history-2023.pdf
+    sha256: 260a9a3ede47b9a1efe72cae77bc110f2fa862446056ba23b1b9b68fd4793ae7
+  - year: 2024
+    url: (offline)
+    file: fuel-price-history-2024.pdf
+    sha256: f0046b5de3714ab06e58eb6ea8452be1dce8b58f5dbaa6be1dc5418b64b564ea
+index_pages:
+- https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/media_SAVolumes.html
+- https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/Energy_Balances.html
+retrieved: '2026-10-05'
+fuel_sales:
+  latest_full_year: 2023
+  part_years_left_out_of_annual_file: []
+energy_balance:
+  latest_year: 2021
+  source_unit: kilolitres (converted to litres)
+warnings:
+- 'fuel prices 2011: month 9: 6 prices found, expected 7'
+files:
+- kind: fuel_sales
+  year: 2005
+  url: (offline)
+  file: 2005-Fuel-Sales-Volume.xlsx
+  sha256: 657327826ac2acc586fc1721e8b0696adb9f630403f48f007b3785db6b1e795d
+- kind: fuel_sales
+  year: 2006
+  url: (offline)
+  file: 2006-Fuel-Sales-Volume.xlsx
+  sha256: 3f0208939b98ed302cc58dae18dda0f881b08d5f6a903bab1d969b5af30de25d
+- kind: fuel_sales
+  year: 2007
+  url: (offline)
+  file: 2007-Fuel-Sales-Volume.xlsx
+  sha256: 3b53af957cbef2ef5c95f257b73cb26a829ac89f46dae99d04b8af71e8e949b8
+- kind: fuel_sales
+  year: 2008
+  url: (offline)
+  file: 2008-Fuel-Sales-Volume.xlsx
+  sha256: 470f2c34fb5c56a7d2d6022514a25e540c7fa7634bf3a8933062f0cde0c7b76a
+- kind: fuel_sales
+  year: 2009
+  url: (offline)
+  file: 2009-Fuel-Sales-Volume.xlsx
+  sha256: e7b4eca1a7843adf5a40789edc18aa9f855af2e7b4d1c6ff35eae1090a466c42
+- kind: fuel_sales
+  year: 2010
+  url: (offline)
+  file: 2010-National-Aggregated-FSV.xls
+  sha256: fb067ab514d4dcb528f8ea3ddab136ff56e8afd84c41e20965db6ea42ccdc08e
+- kind: fuel_sales
+  year: 2011
+  url: (offline)
+  file: 2011-National-Aggregated-FSV.xls
+  sha256: 03c0527015abcec1e5b88010850293b497a5feb4961295e2a8cd4964b457e430
+- kind: fuel_sales
+  year: 2012
+  url: (offline)
+  file: 2012-National-Aggregated-FSV.xls
+  sha256: 647a967a91f51b58d474dc348e5f143a384aeb62e55f8d34317c1d745838caa2
+- kind: fuel_sales
+  year: 2013
+  url: (offline)
+  file: 2013-Annual-FSV-at-National-Level-07-February-2014.xlsx
+  sha256: 95b43d31377ad612a5b870d3d90d11bd9a6dfda15910ad62400a934046775d95
+- kind: fuel_sales
+  year: 2014
+  url: (offline)
+  file: 2014-Annual-FSV-at-National-Level-Quarter-3-16Jan2015.xlsx
+  sha256: 00e52ffab899933e0bcb2cfab16c6514666beb7bc1eb304d3a171326cc7775c4
+- kind: fuel_sales
+  year: 2015
+  url: (offline)
+  file: 2015-Annual-FSV-at-National-Level.xlsx
+  sha256: a226689b3689e9b14b58bcbe95db448eaaa415e9ad2fde23e493d7319b5a7ba2
+- kind: fuel_sales
+  year: 2016
+  url: (offline)
+  file: 2016-National-Aggregated-Fuel-Sales-Volumes-data.xlsx
+  sha256: 95b7d5113376fa2f7329b1e0f11ee89f7d5669c6c017e5e539b5fe34e04207e9
+- kind: fuel_sales
+  year: 2017
+  url: (offline)
+  file: 2017-Quarter3-FSV-Annual-data.xls
+  sha256: 95924354cf83a33daf1afdd9b2c424735f8db4669eab0c23fc4f8c3211369a37
+- kind: fuel_sales
+  year: 2018
+  url: (offline)
+  file: 2018-National-Aggregated-FSV.xls
+  sha256: 80b6edf6f367e0fa7f29d446118b5743b0286437289b68ce439fe561f3a17033
+- kind: fuel_sales
+  year: 2019
+  url: (offline)
+  file: 2019-National-Aggregated-FSV.xls
+  sha256: 1105a01b88c3f9566501ce3b7ff659a2cf7e009dd232bda5a5107fcb3d658e6b
+- kind: fuel_sales
+  year: 2020
+  url: (offline)
+  file: 2020-National-Aggregated-FSV-data-Quarter4.xls
+  sha256: 22706657c1823437f8402bed0669be121dc00aa0cbd423fe0a8b4115166dd195
+- kind: fuel_sales
+  year: 2021
+  url: (offline)
+  file: 2021-National-Aggregated-FSV-data-Quarter4.xls
+  sha256: 825464b3294671d5f114e17393ad5993efd1d51596c5e6f32b63f62e42c8cd41
+- kind: fuel_sales
+  year: 2022
+  url: (offline)
+  file: 2022-National-Aggregated-FSV-data-Quarter4.xls
+  sha256: e364fbfdecd5f1531da4d6a7553f763a64763624017540b941b342e5a110d83a
+- kind: fuel_sales
+  year: 2023
+  url: (offline)
+  file: 2023-National-Aggregated-FSV-data-Quarter4.xls
+  sha256: b37099ea8311eebebc4c353dfb40b9e0decf10fb7977fa6a0c7c3c6e7a8547b1
+- kind: energy_balance
+  year: 2007
+  url: (offline)
+  file: 2007-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: 71f31cda65b2cc7dea0540bfd68f4269f2dafcec26a1a5c1e1e8e808a1ef3886
+- kind: energy_balance
+  year: 2008
+  url: (offline)
+  file: 2008-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: f164b240730aa6038cf89d78154842f5de586d99c6c842899f876e04c6eed139
+- kind: energy_balance
+  year: 2009
+  url: (offline)
+  file: 2009-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: 7a6fcc46e38e9e341aa11d91b0adac0d50977fe4f4db1bfd20cb47523e0625da
+- kind: energy_balance
+  year: 2010
+  url: (offline)
+  file: 2010-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: a4959ca0c06e140b37c66bd4c145ba2cf39deb4a021f8525c4dabf067d724804
+- kind: energy_balance
+  year: 2011
+  url: (offline)
+  file: 2011-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: 6adca2b21fb8d24238c14bac32de32d0989c67c655331ab018b0133aad9855a8
+- kind: energy_balance
+  year: 2012
+  url: (offline)
+  file: 2012-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: a529d1421783f3a1a7af1c425af18f85d70a1eb4dc6e5edbcde925376ec83c1e
+- kind: energy_balance
+  year: 2013
+  url: (offline)
+  file: 2013-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: cfe126accb36fc07c2aad29be47957bd5cb5deffbad87466e79059ec9444a056
+- kind: energy_balance
+  year: 2014
+  url: (offline)
+  file: 2014-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: 6f7d8ac87e4de709c231d62681cf9cddfe3c95a29146ff7d634df49ca0608190
+- kind: energy_balance
+  year: 2015
+  url: (offline)
+  file: 2015-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: 2ee38d6ba316f14461d5eaf34a48ba214a7181ded88ee4ae300000f5f6ca8941
+- kind: energy_balance
+  year: 2016
+  url: (offline)
+  file: 2016-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: a856b8dd7fddc3818af922952606c471cf306da4c1a283c8742ffebe5f56d1c2
+- kind: energy_balance
+  year: 2017
+  url: (offline)
+  file: 2017-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: 4ca3b11b875fea83ae3d0ba84ebd1555839c2fde6cd3bd6ef06fdb435479e3d7
+- kind: energy_balance
+  year: 2018
+  url: (offline)
+  file: 2018-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: 311c192615cdb838fad66c7baaf271684f485fdd76a77f94f095915196fdccd9
+- kind: energy_balance
+  year: 2019
+  url: (offline)
+  file: 2019-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: 4096f1e63e0aefa47ebe1d1035b66d50a684a9d7592353986456af214e9b62fc
+- kind: energy_balance
+  year: 2020
+  url: (offline)
+  file: 2020-Commodity-Flow-and-Energy-Balance.xlsx
+  sha256: 9df995f06d0d448c8b87cf7ea55bf56e715e5d222b163d0dbd160d78c57704c5
+- kind: energy_balance
+  year: 2021
+  url: (offline)
+  file: 2021-Commodity-Flow-and-Energy-Balance.xlsm
+  sha256: c88f209e1082e84b5cf7340765ca51a50fb05e005e21b5fb76675ae3e7284609

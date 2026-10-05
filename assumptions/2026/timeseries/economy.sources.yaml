@@ -1,0 +1,91 @@
+retrieved: '2026-10-05'
+statistics_south_africa:
+  publisher: Statistics South Africa, Gross domestic product (P0441)
+  file: GDP P0441 - GDP Time series Q2 2026.xlsx
+  sha256: 03ee11bd5fcf010e4794267fe6a970d0c26cb0d8895eb4f376bc6b64055f685e
+  how_obtained: downloaded by hand in a browser; the Stats SA site refuses scripted
+    downloads
+  latest_year: 2025
+  series_written:
+  - agriculture_forestry_and_fishing
+  - construction
+  - electricity_gas_and_water
+  - finance_real_estate_and_business_services
+  - gdp
+  - gdp_per_capita
+  - general_government_services
+  - manufacturing
+  - mining_and_quarrying
+  - personal_services
+  - population
+  - primary_industries
+  - secondary_industries
+  - tertiary_industries
+  - trade_catering_and_accommodation
+  - transport_storage_and_communication
+  - value_added_at_basic_prices_total
+  world_bank_gdp_differences_pct: {}
+  population:
+    publisher: Statistics South Africa, Mid-year population estimates (P0302)
+    file: Country projection by population group, sex and age (2002-2026).xlsx
+    sha256: aa3fadaadd4eba90409e81b061dcb2093bb4d6b9d0ed6692bc2f41e48f236ea4
+    summary_file: MYPE report table website_ 2026.xlsx
+    summary_total_agrees: true
+    latest_year: 2026
+    projection_rule: average annual growth over the last 5 years of the Stats SA series
+      (2021-2026), continued
+    projection_rate: 0.011866
+    note: Stats SA publishes no population figures beyond the release year; later
+      years are a base-case assumption.
+world_bank:
+  role: cross-check for GDP; source of GDP per capita and population until the Stats
+    SA population file is read
+  publisher: World Bank, World Development Indicators and Population estimates and
+    projections (data service)
+  original_sources: Statistics South Africa national accounts; United Nations population
+    estimates and projections (as stated by the World Bank)
+  constant_price_base_year: 2015
+  latest_gdp_year: 2025
+  latest_population_actual: 2025
+  population_projected_to: 2050
+  responses:
+    gdp:
+      indicator: NY.GDP.MKTP.KN
+      url: https://api.worldbank.org/v2/country/ZAF/indicator/NY.GDP.MKTP.KN?format=json&per_page=200&date=1990:2051
+      file: worldbank-gdp.json
+      last_updated_by_world_bank: '2026-07-13'
+      sha256: 95102f86b7db9dbbf625f3b08a4f2496faf3034bc535f74ff535fa17343d8e23
+    gdp_per_capita:
+      indicator: NY.GDP.PCAP.KN
+      url: https://api.worldbank.org/v2/country/ZAF/indicator/NY.GDP.PCAP.KN?format=json&per_page=200&date=1990:2051
+      file: worldbank-gdp_per_capita.json
+      last_updated_by_world_bank: '2026-07-13'
+      sha256: cb76218f7a32b2202b928b626f068dfed336748b02b1e9164d07decda61e0765
+    population:
+      indicator: SP.POP.TOTL
+      url: https://api.worldbank.org/v2/country/ZAF/indicator/SP.POP.TOTL?format=json&per_page=200&date=1990:2051
+      file: worldbank-population.json
+      last_updated_by_world_bank: '2026-07-13'
+      sha256: 8f7c093bb90447c6489bd02e1b65b4e40ab788eb5eaf1d6bb17f2bbc96f9fade
+    gdp_current_prices:
+      indicator: NY.GDP.MKTP.CN
+      url: https://api.worldbank.org/v2/country/ZAF/indicator/NY.GDP.MKTP.CN?format=json&per_page=200&date=1990:2051
+      file: worldbank-gdp_current_prices.json
+      last_updated_by_world_bank: '2026-07-13'
+      sha256: e65842d8e1b474cf9e8b5e185f54261a8751ad29c49600bf2946874f98a486ea
+    population_projection:
+      indicator: SP.POP.TOTL
+      url: https://api.worldbank.org/v2/country/ZAF/indicator/SP.POP.TOTL?format=json&per_page=200&date=1990:2050&source=40
+      file: worldbank-population_projection.json
+      last_updated_by_world_bank: '2026-07-01'
+      sha256: c7ecad8d01fad06308746d76b0aa114291a36a82eb557ca85d164e27621bd833
+treasury:
+  publisher: National Treasury
+  document: budget-review 2026, chapter 2, table 'Macroeconomic performance and projections'
+  url: (offline)
+  file: budget-review-2026-chapter-2.pdf
+  sha256: 176b33a05e0d95a5f7b3ed49a626080b218a40ff3838763a146b63c48324d7d8
+  forecast_to: 2028
+  note: Treasury publishes three forecast years. Later years are not published and
+    are a model assumption.
+warnings: []

@@ -83,3 +83,35 @@ seasonality:
   source: fitted from history (see seasonality/ CSVs)
   last_updated: null
   shared: true
+
+# --------------------------------------------------------------------------- #
+# Base-case driver decision, 5 October 2026
+#
+# Jet fuel in the base case is to be driven by AIRCRAFT MOVEMENTS (departing
+# flights by type: international, regional, domestic, unscheduled), not by
+# passenger numbers alone. Fuel is burned per flight, so movements also pick
+# up scheduled freighters and cargo carried in passenger aircraft.
+# Source: timeseries/air_traffic_acsa_annual.csv (ACSA, nine airports).
+# The regression above was fitted on GDP per capita and total departing
+# passengers and has to be re-estimated on the new data before use.
+#
+# OPEN ITEM — CARGO. Still to be worked out. No usable published series of air
+# cargo tonnage or freighter movements was found (checked: ACSA statistics
+# files and integrated report 2024/25, World Bank air freight indicator).
+# Leads not yet followed: the weekly Cargo Movement Updates published by the
+# business and freight associations (air cargo kilograms at OR Tambo), and a
+# direct request to ACSA or the civil aviation authority. Until then cargo is
+# covered only indirectly, through aircraft movements.
+driver_decision:
+  register_id: REG-AVIATION-DRIVER_DECISION
+  exception_id: EXC-AVIATION-DRIVER_DECISION
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  value:
+    jet_driver: aircraft_movements
+    cargo_status: open — no source yet; covered indirectly through movements
+    decided: 2026-10-05
+  source: Manish base-case driver proposal, 5 October 2026; ACSA group traffic statistics
+  last_updated: '2026-10-05'
+  units: driver choice and unresolved cargo status
+  shared: true

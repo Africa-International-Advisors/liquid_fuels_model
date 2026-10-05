@@ -91,3 +91,38 @@ crude_oil_litres_per_barrel:
   shared: true
   expand:
     kind: flat
+
+gdp_growth_beyond_official_forecast:
+  register_id: REG-MACRO-GDP_GROWTH_BEYOND_OFFICIAL_FORECAST
+  exception_id: EXC-MACRO-GDP_GROWTH_BEYOND_OFFICIAL_FORECAST
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  # Real GDP growth applied to every year after the last year National
+  # Treasury forecasts (timeseries/gdp_growth_treasury.csv; 2028 in the
+  # Budget Review 2026). Treasury publishes three forecast years only, so
+  # this is a base-case assumption, not a published figure. It equals
+  # Treasury's last forecast year (2.0% for 2028).
+  value: 0.02
+  units: fraction per year (real GDP growth)
+  source: Base-case assumption set by the engagement team on 5 October 2026; equal to National Treasury's 2028 forecast (Budget Review 2026, chapter 2)
+  last_updated: 2026-10-05
+  scenarios: [base]
+  expand:
+    kind: flat
+
+population_growth_beyond_official_estimates:
+  register_id: REG-MACRO-POPULATION_GROWTH_BEYOND_OFFICIAL_ESTIMATES
+  exception_id: EXC-MACRO-POPULATION_GROWTH_BEYOND_OFFICIAL_ESTIMATES
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  # Statistics South Africa's mid-year estimates stop at the release year
+  # (2026). Later years continue the average annual growth of the last
+  # `years` years of the Stats SA series. Applied by scripts/fetch_economy.py,
+  # which writes the result to timeseries/macro_statssa.csv.
+  value:
+    method: average annual growth of the Stats SA series, continued
+    years: 5
+  units: years averaged over
+  source: Base-case assumption set by the engagement team on 5 October 2026 (continue Stats SA's own recent growth rate). The five-year window was proposed, not yet confirmed.
+  last_updated: 2026-10-05
+  scenarios: [base]

@@ -1,0 +1,266 @@
+# Staged source datasets: registered for audit, not yet used by the demand engine.
+# Published figures, manual transcriptions and derived estimates remain unreviewed.
+storage_transnet_pipelines_depots:
+  register_id: REG-SOURCE-STORAGE_TRANSNET_PIPELINES_DEPOTS
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: infrastructure/storage_transnet_pipelines_depots.csv
+  units: see companion source evidence
+  source: infrastructure/storage_transnet_pipelines_depots.csv; provenance and limitations
+    in companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+fleet_fuel_split_2023:
+  register_id: REG-SOURCE-FLEET_FUEL_SPLIT_2023
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/fleet_fuel_split_2023.csv
+  units: see companion source evidence
+  source: reference/fleet_fuel_split_2023.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+vehicle_parameters_stone2018:
+  register_id: REG-SOURCE-VEHICLE_PARAMETERS_STONE2018
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/vehicle_parameters_stone2018.csv
+  units: see companion source evidence
+  source: reference/vehicle_parameters_stone2018.csv; provenance and limitations in
+    companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+vehicle_population_by_fuel_dot2023:
+  register_id: REG-SOURCE-VEHICLE_POPULATION_BY_FUEL_DOT2023
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/vehicle_population_by_fuel_dot2023.csv
+  units: see companion source evidence
+  source: reference/vehicle_population_by_fuel_dot2023.csv; provenance and limitations
+    in companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+air_traffic_acsa:
+  register_id: REG-SOURCE-AIR_TRAFFIC_ACSA
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/air_traffic_acsa.csv
+  units: mixed; see unit column
+  source: timeseries/air_traffic_acsa.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+air_traffic_acsa_annual:
+  register_id: REG-SOURCE-AIR_TRAFFIC_ACSA_ANNUAL
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/air_traffic_acsa_annual.csv
+  units: mixed; see unit column
+  source: timeseries/air_traffic_acsa_annual.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+energy_balance_department:
+  register_id: REG-SOURCE-ENERGY_BALANCE_DEPARTMENT
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/energy_balance_department.csv
+  units: mixed; see unit column
+  source: timeseries/energy_balance_department.csv; provenance and limitations in
+    companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+fuel_prices_department:
+  register_id: REG-SOURCE-FUEL_PRICES_DEPARTMENT
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_prices_department.csv
+  units: mixed; see unit column
+  source: timeseries/fuel_prices_department.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+fuel_prices_department_annual:
+  register_id: REG-SOURCE-FUEL_PRICES_DEPARTMENT_ANNUAL
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_prices_department_annual.csv
+  units: mixed; see unit column
+  source: timeseries/fuel_prices_department_annual.csv; provenance and limitations
+    in companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+fuel_sales_department:
+  register_id: REG-SOURCE-FUEL_SALES_DEPARTMENT
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_sales_department.csv
+  units: mixed; see unit column
+  source: timeseries/fuel_sales_department.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+fuel_sales_department_by_province:
+  register_id: REG-SOURCE-FUEL_SALES_DEPARTMENT_BY_PROVINCE
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_sales_department_by_province.csv
+  units: mixed; see unit column
+  source: timeseries/fuel_sales_department_by_province.csv; provenance and limitations
+    in companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+fuel_sales_department_by_province_quarterly:
+  register_id: REG-SOURCE-FUEL_SALES_DEPARTMENT_BY_PROVINCE_QUARTERLY
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_sales_department_by_province_quarterly.csv
+  units: mixed; see unit column
+  source: timeseries/fuel_sales_department_by_province_quarterly.csv; provenance and
+    limitations in companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+fuel_sales_department_quarterly:
+  register_id: REG-SOURCE-FUEL_SALES_DEPARTMENT_QUARTERLY
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_sales_department_quarterly.csv
+  units: mixed; see unit column
+  source: timeseries/fuel_sales_department_quarterly.csv; provenance and limitations
+    in companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+fuel_sales_fiasa:
+  register_id: REG-SOURCE-FUEL_SALES_FIASA
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_sales_fiasa.csv
+  units: mixed; see unit column
+  source: timeseries/fuel_sales_fiasa.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+fuel_trade_fiasa:
+  register_id: REG-SOURCE-FUEL_TRADE_FIASA
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_trade_fiasa.csv
+  units: mixed; see unit column
+  source: timeseries/fuel_trade_fiasa.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+gdp_growth_treasury:
+  register_id: REG-SOURCE-GDP_GROWTH_TREASURY
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/gdp_growth_treasury.csv
+  units: mixed; see unit column
+  source: timeseries/gdp_growth_treasury.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+macro_statssa:
+  register_id: REG-SOURCE-MACRO_STATSSA
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/macro_statssa.csv
+  units: mixed; see unit column
+  source: timeseries/macro_statssa.csv; provenance and limitations in companion .sources.yaml
+    files
+  last_updated: '2026-10-05'
+  shared: true
+macro_worldbank:
+  register_id: REG-SOURCE-MACRO_WORLDBANK
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/macro_worldbank.csv
+  units: mixed; see unit column
+  source: timeseries/macro_worldbank.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+nev_sales_naamsa:
+  register_id: REG-SOURCE-NEV_SALES_NAAMSA
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/nev_sales_naamsa.csv
+  units: mixed; see unit column
+  source: timeseries/nev_sales_naamsa.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+new_vehicle_market_naamsa:
+  register_id: REG-SOURCE-NEW_VEHICLE_MARKET_NAAMSA
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/new_vehicle_market_naamsa.csv
+  units: mixed; see unit column
+  source: timeseries/new_vehicle_market_naamsa.csv; provenance and limitations in
+    companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+new_vehicle_registrations_natis:
+  register_id: REG-SOURCE-NEW_VEHICLE_REGISTRATIONS_NATIS
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/new_vehicle_registrations_natis.csv
+  units: mixed; see unit column
+  source: timeseries/new_vehicle_registrations_natis.csv; provenance and limitations
+    in companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+new_vehicle_registrations_natis_annual:
+  register_id: REG-SOURCE-NEW_VEHICLE_REGISTRATIONS_NATIS_ANNUAL
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/new_vehicle_registrations_natis_annual.csv
+  units: mixed; see unit column
+  source: timeseries/new_vehicle_registrations_natis_annual.csv; provenance and limitations
+    in companion .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+ocgt_generation_eskom:
+  register_id: REG-SOURCE-OCGT_GENERATION_ESKOM
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/ocgt_generation_eskom.csv
+  units: mixed; see unit column
+  source: timeseries/ocgt_generation_eskom.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true
+vehicle_population_natis:
+  register_id: REG-SOURCE-VEHICLE_POPULATION_NATIS
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/vehicle_population_natis.csv
+  units: mixed; see unit column
+  source: timeseries/vehicle_population_natis.csv; provenance and limitations in companion
+    .sources.yaml files
+  last_updated: '2026-10-05'
+  shared: true

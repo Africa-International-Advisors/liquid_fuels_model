@@ -1,5 +1,14 @@
 # Agent and analyst working rules
 
+## Shared branch workflow
+
+`main` is Nigel's shared integration baseline. Manish develops on
+`basecase-2026-10` and, each morning, pulls that branch and merges `origin/main`
+before starting work. Preserve uncommitted work, resolve conflicts, run the
+governance check and relevant tests, then push the baseline branch. Use merges
+without force-pushing shared history. See
+`workstreams/WS0_governance/workplan/branch_workflow.md` for exact commands.
+
 Read `CLAUDE.md` for the model architecture and `GATE_CHECKLIST.md` for release readiness.
 The repository follows project-canon's model plus engagement profile with the agreed optional `pptx/` workspace.
 

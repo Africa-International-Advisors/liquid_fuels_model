@@ -1,0 +1,391 @@
+country,period,scenario,measure,flight_type,direction,value,unit
+ZAF,2013,shared,passengers,domestic,arrival,11680825,passengers
+ZAF,2013,shared,passengers,domestic,departure,11708988,passengers
+ZAF,2013,shared,passengers,domestic,total,23389813,passengers
+ZAF,2013,shared,passengers,international,arrival,5070458,passengers
+ZAF,2013,shared,passengers,international,departure,5081685,passengers
+ZAF,2013,shared,passengers,international,total,10152143,passengers
+ZAF,2013,shared,passengers,regional,arrival,512256,passengers
+ZAF,2013,shared,passengers,regional,departure,512820,passengers
+ZAF,2013,shared,passengers,regional,total,1025076,passengers
+ZAF,2013,shared,passengers,total,arrival,17343468,passengers
+ZAF,2013,shared,passengers,total,departure,17387062,passengers
+ZAF,2013,shared,passengers,total,total,34730530,passengers
+ZAF,2013,shared,passengers,unscheduled,arrival,79929,passengers
+ZAF,2013,shared,passengers,unscheduled,departure,83569,passengers
+ZAF,2013,shared,passengers,unscheduled,total,163498,passengers
+ZAF,2014,shared,passengers,domestic,arrival,11841083,passengers
+ZAF,2014,shared,passengers,domestic,departure,11877426,passengers
+ZAF,2014,shared,passengers,domestic,total,23718509,passengers
+ZAF,2014,shared,passengers,international,arrival,5148092,passengers
+ZAF,2014,shared,passengers,international,departure,5200095,passengers
+ZAF,2014,shared,passengers,international,total,10348187,passengers
+ZAF,2014,shared,passengers,regional,arrival,535148,passengers
+ZAF,2014,shared,passengers,regional,departure,531820,passengers
+ZAF,2014,shared,passengers,regional,total,1066968,passengers
+ZAF,2014,shared,passengers,total,arrival,17602023,passengers
+ZAF,2014,shared,passengers,total,departure,17690357,passengers
+ZAF,2014,shared,passengers,total,total,35292380,passengers
+ZAF,2014,shared,passengers,unscheduled,arrival,77700,passengers
+ZAF,2014,shared,passengers,unscheduled,departure,81016,passengers
+ZAF,2014,shared,passengers,unscheduled,total,158716,passengers
+ZAF,2015,shared,passengers,domestic,arrival,12999797,passengers
+ZAF,2015,shared,passengers,domestic,departure,13034591,passengers
+ZAF,2015,shared,passengers,domestic,total,26034388,passengers
+ZAF,2015,shared,passengers,international,arrival,5216252,passengers
+ZAF,2015,shared,passengers,international,departure,5282872,passengers
+ZAF,2015,shared,passengers,international,total,10499124,passengers
+ZAF,2015,shared,passengers,regional,arrival,535370,passengers
+ZAF,2015,shared,passengers,regional,departure,531658,passengers
+ZAF,2015,shared,passengers,regional,total,1067028,passengers
+ZAF,2015,shared,passengers,total,arrival,18826189,passengers
+ZAF,2015,shared,passengers,total,departure,18919276,passengers
+ZAF,2015,shared,passengers,total,total,37745465,passengers
+ZAF,2015,shared,passengers,unscheduled,arrival,74770,passengers
+ZAF,2015,shared,passengers,unscheduled,departure,70155,passengers
+ZAF,2015,shared,passengers,unscheduled,total,144925,passengers
+ZAF,2016,shared,passengers,domestic,arrival,13694215,passengers
+ZAF,2016,shared,passengers,domestic,departure,13728853,passengers
+ZAF,2016,shared,passengers,domestic,total,27423068,passengers
+ZAF,2016,shared,passengers,international,arrival,5493933,passengers
+ZAF,2016,shared,passengers,international,departure,5587063,passengers
+ZAF,2016,shared,passengers,international,total,11080996,passengers
+ZAF,2016,shared,passengers,regional,arrival,567254,passengers
+ZAF,2016,shared,passengers,regional,departure,565702,passengers
+ZAF,2016,shared,passengers,regional,total,1132956,passengers
+ZAF,2016,shared,passengers,total,arrival,19824789,passengers
+ZAF,2016,shared,passengers,total,departure,19947508,passengers
+ZAF,2016,shared,passengers,total,total,39772297,passengers
+ZAF,2016,shared,passengers,unscheduled,arrival,69387,passengers
+ZAF,2016,shared,passengers,unscheduled,departure,65890,passengers
+ZAF,2016,shared,passengers,unscheduled,total,135277,passengers
+ZAF,2017,shared,passengers,domestic,arrival,14100973,passengers
+ZAF,2017,shared,passengers,domestic,departure,14150989,passengers
+ZAF,2017,shared,passengers,domestic,total,28251962,passengers
+ZAF,2017,shared,passengers,international,arrival,5802754,passengers
+ZAF,2017,shared,passengers,international,departure,5940667,passengers
+ZAF,2017,shared,passengers,international,total,11743421,passengers
+ZAF,2017,shared,passengers,regional,arrival,564296,passengers
+ZAF,2017,shared,passengers,regional,departure,561840,passengers
+ZAF,2017,shared,passengers,regional,total,1126136,passengers
+ZAF,2017,shared,passengers,total,arrival,20535964,passengers
+ZAF,2017,shared,passengers,total,departure,20715534,passengers
+ZAF,2017,shared,passengers,total,total,41251498,passengers
+ZAF,2017,shared,passengers,unscheduled,arrival,67941,passengers
+ZAF,2017,shared,passengers,unscheduled,departure,62038,passengers
+ZAF,2017,shared,passengers,unscheduled,total,129979,passengers
+ZAF,2018,shared,passengers,domestic,arrival,14283966,passengers
+ZAF,2018,shared,passengers,domestic,departure,14339173,passengers
+ZAF,2018,shared,passengers,domestic,total,28623139,passengers
+ZAF,2018,shared,passengers,international,arrival,5921172,passengers
+ZAF,2018,shared,passengers,international,departure,6024950,passengers
+ZAF,2018,shared,passengers,international,total,11946122,passengers
+ZAF,2018,shared,passengers,regional,arrival,552373,passengers
+ZAF,2018,shared,passengers,regional,departure,545891,passengers
+ZAF,2018,shared,passengers,regional,total,1098264,passengers
+ZAF,2018,shared,passengers,total,arrival,20818200,passengers
+ZAF,2018,shared,passengers,total,departure,20972235,passengers
+ZAF,2018,shared,passengers,total,total,41790435,passengers
+ZAF,2018,shared,passengers,unscheduled,arrival,60689,passengers
+ZAF,2018,shared,passengers,unscheduled,departure,62221,passengers
+ZAF,2018,shared,passengers,unscheduled,total,122910,passengers
+ZAF,2019,shared,passengers,domestic,arrival,14896859,passengers
+ZAF,2019,shared,passengers,domestic,departure,14919116,passengers
+ZAF,2019,shared,passengers,domestic,total,29815975,passengers
+ZAF,2019,shared,passengers,international,arrival,5925407,passengers
+ZAF,2019,shared,passengers,international,departure,6039107,passengers
+ZAF,2019,shared,passengers,international,total,11964514,passengers
+ZAF,2019,shared,passengers,regional,arrival,551093,passengers
+ZAF,2019,shared,passengers,regional,departure,551244,passengers
+ZAF,2019,shared,passengers,regional,total,1102337,passengers
+ZAF,2019,shared,passengers,total,arrival,21429817,passengers
+ZAF,2019,shared,passengers,total,departure,21567439,passengers
+ZAF,2019,shared,passengers,total,total,42997256,passengers
+ZAF,2019,shared,passengers,unscheduled,arrival,56458,passengers
+ZAF,2019,shared,passengers,unscheduled,departure,57972,passengers
+ZAF,2019,shared,passengers,unscheduled,total,114430,passengers
+ZAF,2020,shared,passengers,domestic,arrival,5649023,passengers
+ZAF,2020,shared,passengers,domestic,departure,5673768,passengers
+ZAF,2020,shared,passengers,domestic,total,11322791,passengers
+ZAF,2020,shared,passengers,international,arrival,1478090,passengers
+ZAF,2020,shared,passengers,international,departure,1491364,passengers
+ZAF,2020,shared,passengers,international,total,2969454,passengers
+ZAF,2020,shared,passengers,regional,arrival,108902,passengers
+ZAF,2020,shared,passengers,regional,departure,107176,passengers
+ZAF,2020,shared,passengers,regional,total,216078,passengers
+ZAF,2020,shared,passengers,total,arrival,7296351,passengers
+ZAF,2020,shared,passengers,total,departure,7372639,passengers
+ZAF,2020,shared,passengers,total,total,14668990,passengers
+ZAF,2020,shared,passengers,unscheduled,arrival,60336,passengers
+ZAF,2020,shared,passengers,unscheduled,departure,100331,passengers
+ZAF,2020,shared,passengers,unscheduled,total,160667,passengers
+ZAF,2021,shared,passengers,domestic,arrival,7567708,passengers
+ZAF,2021,shared,passengers,domestic,departure,7578928,passengers
+ZAF,2021,shared,passengers,domestic,total,15146636,passengers
+ZAF,2021,shared,passengers,international,arrival,1208707,passengers
+ZAF,2021,shared,passengers,international,departure,1226626,passengers
+ZAF,2021,shared,passengers,international,total,2435333,passengers
+ZAF,2021,shared,passengers,regional,arrival,148110,passengers
+ZAF,2021,shared,passengers,regional,departure,150554,passengers
+ZAF,2021,shared,passengers,regional,total,298664,passengers
+ZAF,2021,shared,passengers,total,arrival,8970355,passengers
+ZAF,2021,shared,passengers,total,departure,9002822,passengers
+ZAF,2021,shared,passengers,total,total,17973177,passengers
+ZAF,2021,shared,passengers,unscheduled,arrival,45830,passengers
+ZAF,2021,shared,passengers,unscheduled,departure,46714,passengers
+ZAF,2021,shared,passengers,unscheduled,total,92544,passengers
+ZAF,2022,shared,passengers,domestic,arrival,10826668,passengers
+ZAF,2022,shared,passengers,domestic,departure,10846991,passengers
+ZAF,2022,shared,passengers,domestic,total,21673659,passengers
+ZAF,2022,shared,passengers,international,arrival,3612443,passengers
+ZAF,2022,shared,passengers,international,departure,3733912,passengers
+ZAF,2022,shared,passengers,international,total,7346355,passengers
+ZAF,2022,shared,passengers,regional,arrival,338100,passengers
+ZAF,2022,shared,passengers,regional,departure,332383,passengers
+ZAF,2022,shared,passengers,regional,total,670483,passengers
+ZAF,2022,shared,passengers,total,arrival,14851394,passengers
+ZAF,2022,shared,passengers,total,departure,14986458,passengers
+ZAF,2022,shared,passengers,total,total,29837852,passengers
+ZAF,2022,shared,passengers,unscheduled,arrival,74183,passengers
+ZAF,2022,shared,passengers,unscheduled,departure,73172,passengers
+ZAF,2022,shared,passengers,unscheduled,total,147355,passengers
+ZAF,2023,shared,passengers,domestic,arrival,12394075,passengers
+ZAF,2023,shared,passengers,domestic,departure,12420004,passengers
+ZAF,2023,shared,passengers,domestic,total,24814079,passengers
+ZAF,2023,shared,passengers,international,arrival,4835220,passengers
+ZAF,2023,shared,passengers,international,departure,4943195,passengers
+ZAF,2023,shared,passengers,international,total,9778415,passengers
+ZAF,2023,shared,passengers,regional,arrival,428054,passengers
+ZAF,2023,shared,passengers,regional,departure,418013,passengers
+ZAF,2023,shared,passengers,regional,total,846067,passengers
+ZAF,2023,shared,passengers,total,arrival,17723599,passengers
+ZAF,2023,shared,passengers,total,departure,17846377,passengers
+ZAF,2023,shared,passengers,total,total,35569976,passengers
+ZAF,2023,shared,passengers,unscheduled,arrival,66250,passengers
+ZAF,2023,shared,passengers,unscheduled,departure,65165,passengers
+ZAF,2023,shared,passengers,unscheduled,total,131415,passengers
+ZAF,2024,shared,passengers,domestic,arrival,12894676,passengers
+ZAF,2024,shared,passengers,domestic,departure,12912777,passengers
+ZAF,2024,shared,passengers,domestic,total,25807453,passengers
+ZAF,2024,shared,passengers,international,arrival,5262510,passengers
+ZAF,2024,shared,passengers,international,departure,5333867,passengers
+ZAF,2024,shared,passengers,international,total,10596377,passengers
+ZAF,2024,shared,passengers,regional,arrival,489248,passengers
+ZAF,2024,shared,passengers,regional,departure,481450,passengers
+ZAF,2024,shared,passengers,regional,total,970698,passengers
+ZAF,2024,shared,passengers,total,arrival,18701088,passengers
+ZAF,2024,shared,passengers,total,departure,18785364,passengers
+ZAF,2024,shared,passengers,total,total,37486452,passengers
+ZAF,2024,shared,passengers,unscheduled,arrival,54654,passengers
+ZAF,2024,shared,passengers,unscheduled,departure,57270,passengers
+ZAF,2024,shared,passengers,unscheduled,total,111924,passengers
+ZAF,2025,shared,passengers,domestic,arrival,13883889,passengers
+ZAF,2025,shared,passengers,domestic,departure,13880356,passengers
+ZAF,2025,shared,passengers,domestic,total,27764245,passengers
+ZAF,2025,shared,passengers,international,arrival,5688980,passengers
+ZAF,2025,shared,passengers,international,departure,5740261,passengers
+ZAF,2025,shared,passengers,international,total,11429241,passengers
+ZAF,2025,shared,passengers,regional,arrival,532968,passengers
+ZAF,2025,shared,passengers,regional,departure,523136,passengers
+ZAF,2025,shared,passengers,regional,total,1056104,passengers
+ZAF,2025,shared,passengers,total,arrival,20158559,passengers
+ZAF,2025,shared,passengers,total,departure,20197976,passengers
+ZAF,2025,shared,passengers,total,total,40356535,passengers
+ZAF,2025,shared,passengers,unscheduled,arrival,52722,passengers
+ZAF,2025,shared,passengers,unscheduled,departure,54223,passengers
+ZAF,2025,shared,passengers,unscheduled,total,106945,passengers
+ZAF,2013,shared,aircraft_movements,domestic,arrival,123698,aircraft movements
+ZAF,2013,shared,aircraft_movements,domestic,departure,123737,aircraft movements
+ZAF,2013,shared,aircraft_movements,domestic,total,247435,aircraft movements
+ZAF,2013,shared,aircraft_movements,international,arrival,37686,aircraft movements
+ZAF,2013,shared,aircraft_movements,international,departure,35128,aircraft movements
+ZAF,2013,shared,aircraft_movements,international,total,72814,aircraft movements
+ZAF,2013,shared,aircraft_movements,regional,arrival,10950,aircraft movements
+ZAF,2013,shared,aircraft_movements,regional,departure,10941,aircraft movements
+ZAF,2013,shared,aircraft_movements,regional,total,21891,aircraft movements
+ZAF,2013,shared,aircraft_movements,total,arrival,257638,aircraft movements
+ZAF,2013,shared,aircraft_movements,total,departure,256468,aircraft movements
+ZAF,2013,shared,aircraft_movements,total,total,514106,aircraft movements
+ZAF,2013,shared,aircraft_movements,unscheduled,arrival,85304,aircraft movements
+ZAF,2013,shared,aircraft_movements,unscheduled,departure,86662,aircraft movements
+ZAF,2013,shared,aircraft_movements,unscheduled,total,171966,aircraft movements
+ZAF,2014,shared,aircraft_movements,domestic,arrival,131499,aircraft movements
+ZAF,2014,shared,aircraft_movements,domestic,departure,131631,aircraft movements
+ZAF,2014,shared,aircraft_movements,domestic,total,263130,aircraft movements
+ZAF,2014,shared,aircraft_movements,international,arrival,36880,aircraft movements
+ZAF,2014,shared,aircraft_movements,international,departure,36270,aircraft movements
+ZAF,2014,shared,aircraft_movements,international,total,73150,aircraft movements
+ZAF,2014,shared,aircraft_movements,regional,arrival,11940,aircraft movements
+ZAF,2014,shared,aircraft_movements,regional,departure,11926,aircraft movements
+ZAF,2014,shared,aircraft_movements,regional,total,23866,aircraft movements
+ZAF,2014,shared,aircraft_movements,total,arrival,270917,aircraft movements
+ZAF,2014,shared,aircraft_movements,total,departure,270131,aircraft movements
+ZAF,2014,shared,aircraft_movements,total,total,541048,aircraft movements
+ZAF,2014,shared,aircraft_movements,unscheduled,arrival,90598,aircraft movements
+ZAF,2014,shared,aircraft_movements,unscheduled,departure,90304,aircraft movements
+ZAF,2014,shared,aircraft_movements,unscheduled,total,180902,aircraft movements
+ZAF,2015,shared,aircraft_movements,domestic,arrival,139731,aircraft movements
+ZAF,2015,shared,aircraft_movements,domestic,departure,140010,aircraft movements
+ZAF,2015,shared,aircraft_movements,domestic,total,279741,aircraft movements
+ZAF,2015,shared,aircraft_movements,international,arrival,36961,aircraft movements
+ZAF,2015,shared,aircraft_movements,international,departure,36952,aircraft movements
+ZAF,2015,shared,aircraft_movements,international,total,73913,aircraft movements
+ZAF,2015,shared,aircraft_movements,regional,arrival,12878,aircraft movements
+ZAF,2015,shared,aircraft_movements,regional,departure,12891,aircraft movements
+ZAF,2015,shared,aircraft_movements,regional,total,25769,aircraft movements
+ZAF,2015,shared,aircraft_movements,total,arrival,283563,aircraft movements
+ZAF,2015,shared,aircraft_movements,total,departure,281953,aircraft movements
+ZAF,2015,shared,aircraft_movements,total,total,565516,aircraft movements
+ZAF,2015,shared,aircraft_movements,unscheduled,arrival,93993,aircraft movements
+ZAF,2015,shared,aircraft_movements,unscheduled,departure,92100,aircraft movements
+ZAF,2015,shared,aircraft_movements,unscheduled,total,186093,aircraft movements
+ZAF,2016,shared,aircraft_movements,domestic,arrival,143146,aircraft movements
+ZAF,2016,shared,aircraft_movements,domestic,departure,143723,aircraft movements
+ZAF,2016,shared,aircraft_movements,domestic,total,286869,aircraft movements
+ZAF,2016,shared,aircraft_movements,international,arrival,37345,aircraft movements
+ZAF,2016,shared,aircraft_movements,international,departure,37317,aircraft movements
+ZAF,2016,shared,aircraft_movements,international,total,74662,aircraft movements
+ZAF,2016,shared,aircraft_movements,regional,arrival,13192,aircraft movements
+ZAF,2016,shared,aircraft_movements,regional,departure,13199,aircraft movements
+ZAF,2016,shared,aircraft_movements,regional,total,26391,aircraft movements
+ZAF,2016,shared,aircraft_movements,total,arrival,284582,aircraft movements
+ZAF,2016,shared,aircraft_movements,total,departure,283945,aircraft movements
+ZAF,2016,shared,aircraft_movements,total,total,568527,aircraft movements
+ZAF,2016,shared,aircraft_movements,unscheduled,arrival,90899,aircraft movements
+ZAF,2016,shared,aircraft_movements,unscheduled,departure,89706,aircraft movements
+ZAF,2016,shared,aircraft_movements,unscheduled,total,180605,aircraft movements
+ZAF,2017,shared,aircraft_movements,domestic,arrival,141055,aircraft movements
+ZAF,2017,shared,aircraft_movements,domestic,departure,141640,aircraft movements
+ZAF,2017,shared,aircraft_movements,domestic,total,282695,aircraft movements
+ZAF,2017,shared,aircraft_movements,international,arrival,38878,aircraft movements
+ZAF,2017,shared,aircraft_movements,international,departure,38789,aircraft movements
+ZAF,2017,shared,aircraft_movements,international,total,77667,aircraft movements
+ZAF,2017,shared,aircraft_movements,regional,arrival,13212,aircraft movements
+ZAF,2017,shared,aircraft_movements,regional,departure,13234,aircraft movements
+ZAF,2017,shared,aircraft_movements,regional,total,26446,aircraft movements
+ZAF,2017,shared,aircraft_movements,total,arrival,266642,aircraft movements
+ZAF,2017,shared,aircraft_movements,total,departure,264270,aircraft movements
+ZAF,2017,shared,aircraft_movements,total,total,530912,aircraft movements
+ZAF,2017,shared,aircraft_movements,unscheduled,arrival,73497,aircraft movements
+ZAF,2017,shared,aircraft_movements,unscheduled,departure,70607,aircraft movements
+ZAF,2017,shared,aircraft_movements,unscheduled,total,144104,aircraft movements
+ZAF,2018,shared,aircraft_movements,domestic,arrival,136505,aircraft movements
+ZAF,2018,shared,aircraft_movements,domestic,departure,137008,aircraft movements
+ZAF,2018,shared,aircraft_movements,domestic,total,273513,aircraft movements
+ZAF,2018,shared,aircraft_movements,international,arrival,38887,aircraft movements
+ZAF,2018,shared,aircraft_movements,international,departure,38694,aircraft movements
+ZAF,2018,shared,aircraft_movements,international,total,77581,aircraft movements
+ZAF,2018,shared,aircraft_movements,regional,arrival,12348,aircraft movements
+ZAF,2018,shared,aircraft_movements,regional,departure,12385,aircraft movements
+ZAF,2018,shared,aircraft_movements,regional,total,24733,aircraft movements
+ZAF,2018,shared,aircraft_movements,total,arrival,260321,aircraft movements
+ZAF,2018,shared,aircraft_movements,total,departure,259526,aircraft movements
+ZAF,2018,shared,aircraft_movements,total,total,519847,aircraft movements
+ZAF,2018,shared,aircraft_movements,unscheduled,arrival,72581,aircraft movements
+ZAF,2018,shared,aircraft_movements,unscheduled,departure,71439,aircraft movements
+ZAF,2018,shared,aircraft_movements,unscheduled,total,144020,aircraft movements
+ZAF,2019,shared,aircraft_movements,domestic,arrival,134607,aircraft movements
+ZAF,2019,shared,aircraft_movements,domestic,departure,135046,aircraft movements
+ZAF,2019,shared,aircraft_movements,domestic,total,269653,aircraft movements
+ZAF,2019,shared,aircraft_movements,international,arrival,39431,aircraft movements
+ZAF,2019,shared,aircraft_movements,international,departure,39215,aircraft movements
+ZAF,2019,shared,aircraft_movements,international,total,78646,aircraft movements
+ZAF,2019,shared,aircraft_movements,regional,arrival,12300,aircraft movements
+ZAF,2019,shared,aircraft_movements,regional,departure,12359,aircraft movements
+ZAF,2019,shared,aircraft_movements,regional,total,24659,aircraft movements
+ZAF,2019,shared,aircraft_movements,total,arrival,256280,aircraft movements
+ZAF,2019,shared,aircraft_movements,total,departure,256187,aircraft movements
+ZAF,2019,shared,aircraft_movements,total,total,512467,aircraft movements
+ZAF,2019,shared,aircraft_movements,unscheduled,arrival,69942,aircraft movements
+ZAF,2019,shared,aircraft_movements,unscheduled,departure,69567,aircraft movements
+ZAF,2019,shared,aircraft_movements,unscheduled,total,139509,aircraft movements
+ZAF,2020,shared,aircraft_movements,domestic,arrival,54848,aircraft movements
+ZAF,2020,shared,aircraft_movements,domestic,departure,54953,aircraft movements
+ZAF,2020,shared,aircraft_movements,domestic,total,109801,aircraft movements
+ZAF,2020,shared,aircraft_movements,international,arrival,15257,aircraft movements
+ZAF,2020,shared,aircraft_movements,international,departure,15094,aircraft movements
+ZAF,2020,shared,aircraft_movements,international,total,30351,aircraft movements
+ZAF,2020,shared,aircraft_movements,regional,arrival,4036,aircraft movements
+ZAF,2020,shared,aircraft_movements,regional,departure,4001,aircraft movements
+ZAF,2020,shared,aircraft_movements,regional,total,8037,aircraft movements
+ZAF,2020,shared,aircraft_movements,total,arrival,119145,aircraft movements
+ZAF,2020,shared,aircraft_movements,total,departure,117530,aircraft movements
+ZAF,2020,shared,aircraft_movements,total,total,236675,aircraft movements
+ZAF,2020,shared,aircraft_movements,unscheduled,arrival,45004,aircraft movements
+ZAF,2020,shared,aircraft_movements,unscheduled,departure,43482,aircraft movements
+ZAF,2020,shared,aircraft_movements,unscheduled,total,88486,aircraft movements
+ZAF,2021,shared,aircraft_movements,domestic,arrival,81638,aircraft movements
+ZAF,2021,shared,aircraft_movements,domestic,departure,81858,aircraft movements
+ZAF,2021,shared,aircraft_movements,domestic,total,163496,aircraft movements
+ZAF,2021,shared,aircraft_movements,international,arrival,20233,aircraft movements
+ZAF,2021,shared,aircraft_movements,international,departure,20035,aircraft movements
+ZAF,2021,shared,aircraft_movements,international,total,40268,aircraft movements
+ZAF,2021,shared,aircraft_movements,regional,arrival,6135,aircraft movements
+ZAF,2021,shared,aircraft_movements,regional,departure,6067,aircraft movements
+ZAF,2021,shared,aircraft_movements,regional,total,12202,aircraft movements
+ZAF,2021,shared,aircraft_movements,total,arrival,158523,aircraft movements
+ZAF,2021,shared,aircraft_movements,total,departure,157913,aircraft movements
+ZAF,2021,shared,aircraft_movements,total,total,316436,aircraft movements
+ZAF,2021,shared,aircraft_movements,unscheduled,arrival,50517,aircraft movements
+ZAF,2021,shared,aircraft_movements,unscheduled,departure,49953,aircraft movements
+ZAF,2021,shared,aircraft_movements,unscheduled,total,100470,aircraft movements
+ZAF,2022,shared,aircraft_movements,domestic,arrival,107270,aircraft movements
+ZAF,2022,shared,aircraft_movements,domestic,departure,107522,aircraft movements
+ZAF,2022,shared,aircraft_movements,domestic,total,214792,aircraft movements
+ZAF,2022,shared,aircraft_movements,international,arrival,30653,aircraft movements
+ZAF,2022,shared,aircraft_movements,international,departure,30416,aircraft movements
+ZAF,2022,shared,aircraft_movements,international,total,61069,aircraft movements
+ZAF,2022,shared,aircraft_movements,regional,arrival,8857,aircraft movements
+ZAF,2022,shared,aircraft_movements,regional,departure,8789,aircraft movements
+ZAF,2022,shared,aircraft_movements,regional,total,17646,aircraft movements
+ZAF,2022,shared,aircraft_movements,total,arrival,208554,aircraft movements
+ZAF,2022,shared,aircraft_movements,total,departure,207504,aircraft movements
+ZAF,2022,shared,aircraft_movements,total,total,416058,aircraft movements
+ZAF,2022,shared,aircraft_movements,unscheduled,arrival,61774,aircraft movements
+ZAF,2022,shared,aircraft_movements,unscheduled,departure,60777,aircraft movements
+ZAF,2022,shared,aircraft_movements,unscheduled,total,122551,aircraft movements
+ZAF,2023,shared,aircraft_movements,domestic,arrival,120190,aircraft movements
+ZAF,2023,shared,aircraft_movements,domestic,departure,120496,aircraft movements
+ZAF,2023,shared,aircraft_movements,domestic,total,240686,aircraft movements
+ZAF,2023,shared,aircraft_movements,international,arrival,38016,aircraft movements
+ZAF,2023,shared,aircraft_movements,international,departure,37796,aircraft movements
+ZAF,2023,shared,aircraft_movements,international,total,75812,aircraft movements
+ZAF,2023,shared,aircraft_movements,regional,arrival,11071,aircraft movements
+ZAF,2023,shared,aircraft_movements,regional,departure,10962,aircraft movements
+ZAF,2023,shared,aircraft_movements,regional,total,22033,aircraft movements
+ZAF,2023,shared,aircraft_movements,total,arrival,225895,aircraft movements
+ZAF,2023,shared,aircraft_movements,total,departure,225422,aircraft movements
+ZAF,2023,shared,aircraft_movements,total,total,451317,aircraft movements
+ZAF,2023,shared,aircraft_movements,unscheduled,arrival,56618,aircraft movements
+ZAF,2023,shared,aircraft_movements,unscheduled,departure,56168,aircraft movements
+ZAF,2023,shared,aircraft_movements,unscheduled,total,112786,aircraft movements
+ZAF,2024,shared,aircraft_movements,domestic,arrival,120591,aircraft movements
+ZAF,2024,shared,aircraft_movements,domestic,departure,120861,aircraft movements
+ZAF,2024,shared,aircraft_movements,domestic,total,241452,aircraft movements
+ZAF,2024,shared,aircraft_movements,international,arrival,40292,aircraft movements
+ZAF,2024,shared,aircraft_movements,international,departure,40117,aircraft movements
+ZAF,2024,shared,aircraft_movements,international,total,80409,aircraft movements
+ZAF,2024,shared,aircraft_movements,regional,arrival,11954,aircraft movements
+ZAF,2024,shared,aircraft_movements,regional,departure,11874,aircraft movements
+ZAF,2024,shared,aircraft_movements,regional,total,23828,aircraft movements
+ZAF,2024,shared,aircraft_movements,total,arrival,228441,aircraft movements
+ZAF,2024,shared,aircraft_movements,total,departure,227773,aircraft movements
+ZAF,2024,shared,aircraft_movements,total,total,456214,aircraft movements
+ZAF,2024,shared,aircraft_movements,unscheduled,arrival,55604,aircraft movements
+ZAF,2024,shared,aircraft_movements,unscheduled,departure,54921,aircraft movements
+ZAF,2024,shared,aircraft_movements,unscheduled,total,110525,aircraft movements
+ZAF,2025,shared,aircraft_movements,domestic,arrival,123296,aircraft movements
+ZAF,2025,shared,aircraft_movements,domestic,departure,123657,aircraft movements
+ZAF,2025,shared,aircraft_movements,domestic,total,246953,aircraft movements
+ZAF,2025,shared,aircraft_movements,international,arrival,42705,aircraft movements
+ZAF,2025,shared,aircraft_movements,international,departure,42363,aircraft movements
+ZAF,2025,shared,aircraft_movements,international,total,85068,aircraft movements
+ZAF,2025,shared,aircraft_movements,regional,arrival,12820,aircraft movements
+ZAF,2025,shared,aircraft_movements,regional,departure,12793,aircraft movements
+ZAF,2025,shared,aircraft_movements,regional,total,25613,aircraft movements
+ZAF,2025,shared,aircraft_movements,total,arrival,231127,aircraft movements
+ZAF,2025,shared,aircraft_movements,total,departure,230996,aircraft movements
+ZAF,2025,shared,aircraft_movements,total,total,462123,aircraft movements
+ZAF,2025,shared,aircraft_movements,unscheduled,arrival,52306,aircraft movements
+ZAF,2025,shared,aircraft_movements,unscheduled,departure,52183,aircraft movements
+ZAF,2025,shared,aircraft_movements,unscheduled,total,104489,aircraft movements

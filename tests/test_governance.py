@@ -88,7 +88,7 @@ def test_cli_stamps_provenance_and_preserves_previous_run(isolated, monkeypatch)
     monkeypatch.setattr(Paths, "default", classmethod(lambda cls: isolated))
     args = ["run", "--vintage", "2026", "--scenario", "high_demand"]
     assert main(args) == 0
-    directory = isolated.runs_dir / "2026-high_demand-v0.1.0"
+    directory = isolated.runs_dir / Run(vintage="2026", scenario="high_demand").tag()
     original = (directory / "provenance.json").read_bytes()
     stamp = json.loads(original)
     assert stamp["status"] == "provisional"

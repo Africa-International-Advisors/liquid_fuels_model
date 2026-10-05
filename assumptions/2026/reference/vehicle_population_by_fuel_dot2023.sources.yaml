@@ -1,0 +1,27 @@
+# Evidence record for vehicle_population_by_fuel_dot2023.csv
+
+citation: >
+  Department of Transport (2023). Transport Statistics Bulletin 2023.
+  Table 2.8: Vehicle Population by fuel type per Province, as at
+  31 December 2023, page 40. Source stated in the table: Road Traffic
+  Management Corporation (RTMC).
+url: https://www.transport.gov.za/wp-content/uploads/2023/02/Transport-Statistics-Bulletin-2023.pdf
+local: external/data/raw/literature/dot-transport-statistics-bulletin-2023.pdf
+retrieved: '2026-10-05'
+status: official; the only published count of vehicles by fuel type found
+
+transcription: >
+  National totals typed by hand from the "Total" column. The table also
+  gives each fuel type by province; those are not transcribed here.
+
+notes:
+  - The table covers all registered vehicles including trailers and caravans,
+    which appear under "none" (no fuel).
+  - It is not split by vehicle class. How petrol and diesel divide between
+    cars, light commercial vehicles and trucks is not published.
+  - The fourteen rows add to 13 187 801; the table prints a total of
+    13 188 374, a difference of 573. Only the petrol and diesel rows are used.
+  - "hybrid" shows 6 vehicles, which cannot be right against industry sales of
+    hybrids; hybrids are evidently recorded under petrol or diesel.
+  - No 2024 or 2025 edition of the bulletin was found. This file is not
+    refreshed automatically.
