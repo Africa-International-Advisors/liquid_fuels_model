@@ -1,0 +1,74 @@
+# Evidence record for storage_transnet_pipelines_depots.csv
+#
+# This file is the reference record of tank capacities at the five Transnet
+# Pipelines depots offered for lease in 2026. Use these figures wherever the
+# project needs storage capacity at these sites; do not re-type them elsewhere.
+
+publisher: Transnet Pipelines (an operating division of Transnet SOC Ltd)
+publication: >
+  Requests for Proposals for the leasing, operation and maintenance of five
+  fuel storage facilities (Bethlehem, Kroonstad and Magdala in the Free State,
+  Ladysmith in KwaZulu-Natal, Standerton in Mpumalanga).
+page: https://www.transnet.net/TPL-Leasing-Opportunities
+retrieved: '2026-10-05'
+proposal_closing_date: '2026-12-04'
+lease_term: ten years or longer (as stated in each RFP)
+kept_in: docs/sources/transnet_tpl_leasing_2026/     # tracked in the repository
+
+files:
+  - {file: tpl-leasing-opportunities.html, url: 'https://www.transnet.net/TPL-Leasing-Opportunities',
+     sha256: c40df8fa86d0bad9be79187e455bdc80e94874a73c3b00048ba70bf9d3201a9a}
+  - {file: tpl-rfp-kroonstad.pdf, url: 'https://www.transnet.net/getFile.ashx?id=30044',
+     sha256: cf4647ab3555e282a0ffa22e8abd43a4f8394bb899056756624ade64d54c114f}
+  - {file: tpl-rfp-standerton.pdf, url: 'https://www.transnet.net/getFile.ashx?id=30045',
+     sha256: 296af1472b2f6ed981c6ddc5cafddb9ab8fa19a270a5a870d31262b2f9b9e4d7}
+  - {file: tpl-rfp-magdala.pdf, url: 'https://www.transnet.net/getFile.ashx?id=30046',
+     sha256: dc0d42273c41610b93fdc81552c21a2a2984451ad104b36eeea9377bdb421318}
+  - {file: tpl-rfp-ladysmith.pdf, url: 'https://www.transnet.net/getFile.ashx?id=30047',
+     sha256: 4cad433664582432e2ed161413e9427574c2601b0eee8c30c39647c6cdf644a7}
+  - {file: tpl-rfp-bethlehem.pdf, url: 'https://www.transnet.net/getFile.ashx?id=30048',
+     sha256: faab588e2f27f1849a5acf9f6de71da476b8dc1a61b3e3fc264c8d3d13d83d99}
+
+transcription: >
+  Typed by hand from the "Description of Assets" section of each RFP.
+  Capacities given in cubic metres were converted at 1 m3 = 1 000 litres.
+
+totals_by_facility_litres:
+  Ladysmith Fuel Storage Facility: 9014000      # the RFP states 9 014 m3; the rows add to the same
+  Standerton Petroleum Depot: 2353000           # sum of the three stated tanks
+  Kroonstad Liquid Petroleum Depot: 3300000     # "approximately 3.3 million litres"
+  Bethlehem Liquid Petroleum Depot: null
+  Magdala Liquid Petroleum Depot: null
+
+what_each_rfp_says:
+  Ladysmith: >
+    Six accumulator tanks from the Durban-Johannesburg Pipeline system, taken
+    out of service in March 2018 and not maintained since. Not linked to the
+    multi-product pipeline and no plan to connect them. No road or rail
+    loading, no fire system, pumps or valves. Figures are working capacity.
+  Standerton: >
+    Purpose-built fuel terminal, formerly on the Durban-Witwatersrand Pipeline;
+    stranded since that pipeline was decommissioned. Three accumulator tanks;
+    the product each held is not stated.
+  Kroonstad: >
+    Purpose-built fuel terminal on a site of about 9 350 m2, close to the
+    Natref refinery. "4 Storage tanks (approximately 3.3 million litres)";
+    individual tank sizes and products are not stated.
+  Bethlehem: >
+    Pump station and depot infrastructure. The RFP lists a slop tank and water
+    tanks but states no product storage capacity.
+  Magdala: >
+    Pipeline pump station near Kroonstad. The RFP lists water tanks but states
+    no product storage capacity.
+
+limits:
+  - Two of the five RFPs (Bethlehem, Magdala) give no product storage capacity.
+  - >-
+    The Ladysmith RFP has a table headed "Table 1 - Tankage Capacity" that is an
+    image; the figures here come from the sentence above it, which gives the
+    same six tanks.
+  - Each RFP has a site layout drawing that may show more detail; not read.
+  - These are capacities as stated by the owner for a leasing process, not an
+    independent survey, and the Ladysmith and Standerton tanks are out of service.
+  - The page will change once the RFP closes. The documents kept in the
+    repository are the record of what was published on the retrieval date.

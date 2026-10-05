@@ -1,0 +1,8 @@
+country,period,segment,fuel,vehicles,share_of_segment,basis
+ZAF,2023-12,passenger,petrol,7016242,0.861,fitted
+ZAF,2023-12,passenger,diesel,1133157,0.139,fitted
+ZAF,2023-12,light_commercial,petrol,1184937,0.4406,fitted
+ZAF,2023-12,light_commercial,diesel,1504373,0.5594,fitted
+ZAF,2023-12,heavy,diesel,457331,1.0,fixed
+ZAF,2023-12,motorcycles,petrol,349215,1.0,fixed
+ZAF,2023-12,other_self_propelled,diesel,238955,1.0,fixed

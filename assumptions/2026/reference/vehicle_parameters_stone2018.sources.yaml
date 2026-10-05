@@ -1,0 +1,58 @@
+# Evidence record for vehicle_parameters_stone2018.csv
+#
+# These are the published vehicle distance, fuel consumption and scrappage
+# values adopted for the base case on 5 October 2026. They describe 2014 and
+# are cited as the 2018 paper. They are to be replaced if a more recent
+# published or supplied source becomes available.
+
+citation: >
+  Stone, A., Merven, B., Maseela, T. and Moonsamy, R. (2018). Providing a
+  foundation for road transport energy demand analysis: A vehicle parc model
+  for South Africa. Journal of Energy in Southern Africa, 29(2), 29-42.
+  doi:10.17159/2413-3051/2018/v29i2a2774
+data_year: 2014            # calibration year; freight distances are headed 2013
+published: 2018
+status: adopted for the base case; latest published values found
+retrieved: '2026-10-05'
+files:
+  main_paper:
+    url: https://www.scielo.org.za/pdf/jesa/v29n2/06.pdf
+    local: data/raw/literature/stone-2018-vehicle-parc-model-jesa-29-2.pdf
+  supplementary:
+    url: https://energyjournal.africa/en/article/download/2774/6899
+    local: data/raw/literature/stone-2018-supplementary.pdf
+
+transcription: >
+  Typed by hand from the PDF tables; not machine-extracted. Check any value
+  against the source before quoting it.
+
+columns:
+  vehicles_2010: main paper Tables 4 and 5 (vehicle count by type, 2010)
+  km_per_year_new: supplementary Tables 3 and 4, "this model - new vehicle mileage"
+  km_per_year_fleet_average: supplementary Tables 3 and 4, "average mileage of stock"
+  l_per_100km_new: supplementary Tables 6 and 7, "new vehicle fuel economy" (2014)
+  l_per_100km_fleet_average: supplementary Tables 6 and 7, "average fuel economy of stock" (2014)
+  weibull_beta, weibull_alpha, average_age_years: >
+    supplementary Tables 1 and 2. Share of a year's sales still on the road
+    after x years = exp(-(x / beta) ^ alpha).
+
+stated_in_the_text:
+  distance_falls_with_vehicle_age: >
+    4.9% a year from the new-vehicle value for light vehicles; 8.2% a year for
+    long-haul trucks (HCV6 to HCV9). Supplementary, "Vehicle mileage".
+  fuel_economy_improvement: >
+    New passenger cars about 0.5% a year in real-world terms (laboratory
+    figures improved 1.6% a year 2005-2013). Heavy diesel vehicles assumed
+    1.5% a year 2000-2014. Supplementary, "Fuel economy".
+  real_world_versus_laboratory: >
+    Laboratory (type approval) fuel figures understate real-world use; the
+    paper adjusts South African new-car figures upward by 8% to 17%.
+  how_it_was_checked: >
+    Vehicle numbers within 3% of the registration database; petrol and diesel
+    demand against sales 2000-2014 with a standard deviation of error of 4.8%.
+
+limits:
+  - Values are outputs of a calibrated model, not measurements.
+  - The authors had no South African odometer data; distances were adapted
+    from United States and road-freight industry sources and scaled in calibration.
+  - CarElectric fuel figure is litres of petrol equivalent.

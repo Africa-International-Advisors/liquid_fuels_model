@@ -1,0 +1,80 @@
+publisher: Fuels Industry Association of South Africa (formerly SAPIA)
+index_page: https://fuelsindustry.org.za/publications/annual-reports/
+retrieved: '2026-10-05'
+tables:
+  consumption:
+    heading: Consumption of petroleum products
+    report_unit: million litres
+    attributed_to: energy department (as stated in each report)
+    latest_year_reported: 2024
+    carried_over_rows_dropped:
+    - report: 2025
+      period: 2025
+    revisions_between_reports:
+    - period: 2024
+      column: petrol
+      earlier_report: 2024
+      earlier_value: 8763.0
+      later_report: 2025
+      later_value: 9029.0
+    - period: 2024
+      column: diesel
+      earlier_report: 2024
+      earlier_value: 11807.0
+      later_report: 2025
+      later_value: 11734.0
+    - period: 2024
+      column: paraffin
+      earlier_report: 2024
+      earlier_value: 1195.0
+      later_report: 2025
+      later_value: 1045.0
+    - period: 2024
+      column: jet
+      earlier_report: 2024
+      earlier_value: 1754.0
+      later_report: 2025
+      later_value: 1955.0
+    - period: 2024
+      column: fuel_oil
+      earlier_report: 2024
+      earlier_value: 503.0
+      later_report: 2025
+      later_value: 441.0
+    - period: 2024
+      column: lpg
+      earlier_report: 2024
+      earlier_value: 279.0
+      later_report: 2025
+      later_value: 315.0
+    warnings: []
+  imports_exports:
+    heading: Petroleum products imports and exports
+    report_unit: million litres (LPG in kilotonnes)
+    attributed_to: SARS / energy department (as stated in each report)
+    note: kerosene = illuminating paraffin + jet fuel + dual purpose kerosene
+    latest_year_reported: 2025
+    carried_over_rows_dropped: []
+    revisions_between_reports: []
+    warnings: []
+reports:
+- report_year: 2021
+  url: (offline)
+  file: annual-report-2021.pdf
+  sha256: d99f43cf65ec7d0f80a508ac89ffb41673566a45ba03254a049f572d0453a036
+- report_year: 2022
+  url: (offline)
+  file: annual-report-2022.pdf
+  sha256: 29308ca0ab89d43348a9044cb96a9cf02a30c96c4d6c51b015f328117c342ade
+- report_year: 2023
+  url: (offline)
+  file: annual-report-2023.pdf
+  sha256: a2897b2dd4a786a0c4b42fa246ed8548f4a05804facaedb66fa7c200eb228802
+- report_year: 2024
+  url: (offline)
+  file: annual-report-2024.pdf
+  sha256: 60a7da9c3dc856dfeafd2aee1a1c1e603ccc67f1838650c7127c8b1e2d0f0191
+- report_year: 2025
+  url: (offline)
+  file: annual-report-2025.pdf
+  sha256: a37e04143fd3e2eb672cd79d16c26e8b7a027171172b38d689949e6b0b502ef7

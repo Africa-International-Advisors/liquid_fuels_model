@@ -1,0 +1,14 @@
+country,period,scenario,series,value,unit,source_report
+ZAF,2023,shared,eskom_and_ipp_ocgt,4116.0,GWh,2024
+ZAF,2024,shared,eskom_and_ipp_ocgt,5143.0,GWh,2025
+ZAF,2025,shared,eskom_and_ipp_ocgt,2838.0,GWh,2026
+ZAF,2026,shared,eskom_and_ipp_ocgt,1079.0,GWh,2026
+ZAF,2022,shared,eskom_ocgt,1826.0,GWh,2024
+ZAF,2023,shared,eskom_ocgt,3018.0,GWh,2025
+ZAF,2024,shared,eskom_ocgt,3634.0,GWh,2026
+ZAF,2025,shared,eskom_ocgt,2176.0,GWh,2026
+ZAF,2026,shared,eskom_ocgt,811.0,GWh,2026
+ZAF,2023,shared,ipp_ocgt,1098.0,GWh,2025
+ZAF,2024,shared,ipp_ocgt,1509.0,GWh,2026
+ZAF,2025,shared,ipp_ocgt,662.0,GWh,2026
+ZAF,2026,shared,ipp_ocgt,268.0,GWh,2026

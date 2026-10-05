@@ -1,0 +1,21 @@
+publisher: Eskom Holdings SOC Ltd, integrated reports
+index_page: https://www.eskom.co.za/investors/integrated-results/
+retrieved: '2026-10-05'
+period_basis: financial year ending 31 March of the year shown
+latest_year_reported: 2026
+revisions_between_reports: []
+warnings:
+- 'eskom_and_ipp_ocgt: no figure for 2022'
+reports:
+- report_year: 2024
+  url: (offline)
+  file: eskom-integrated-report-2024.pdf
+  sha256: 9f4fb9bde4ccb83b428e8106292dd32781d2ec3938a9053ad38c312527e9eca6
+- report_year: 2025
+  url: (offline)
+  file: eskom-integrated-report-2025.pdf
+  sha256: f93ca0d57a40ac159bb8342c77e8cb2b10639825a2abbcdaf6219e6b2f1e702d
+- report_year: 2026
+  url: (offline)
+  file: eskom-integrated-report-2026.pdf
+  sha256: 7de8dacdfe2f125a0f5fe81f2cc55cde4bb77b010a521b15922745f22dce1fe6

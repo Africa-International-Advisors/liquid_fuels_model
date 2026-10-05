@@ -1,0 +1,31 @@
+publisher: Airports Company South Africa, group aeronautical statistics
+retrieved: '2026-10-05'
+coverage: ACSA's nine airports combined; non-ACSA airports are not included
+not_reported: cargo tonnage and freighter movements are not in these files
+check_applied: 'every row: arrivals + departures = total, for every year'
+full_calendar_years:
+- 2013
+- 2014
+- 2015
+- 2016
+- 2017
+- 2018
+- 2019
+- 2020
+- 2021
+- 2022
+- 2023
+- 2024
+- 2025
+warnings: []
+files:
+- measure: passengers
+  url: https://www.airports.co.za/StatisticsLib/ACSA%20AERONAUTICAL%20PASSENGER%20GROUP%20STATS.pdf
+  file: acsa-group-passengers.pdf
+  sha256: 475e1cab09667db574a2de6df479a3a94efc20ab1199d8b5e8bf4fa0bc243368
+  last_month_reported: 2026-08
+- measure: aircraft_movements
+  url: https://www.airports.co.za/StatisticsLib/ACSA%20AERONAUTICAL%20MOVEMENT%20%20GROUP%20STATS.pdf
+  file: acsa-group-aircraft_movements.pdf
+  sha256: 87e5a69bd21bcbbb38de010b9f51a0dcb1c1062090029acabe70172730d35c86
+  last_month_reported: 2026-08

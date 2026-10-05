@@ -1,0 +1,6 @@
+country,period,scenario,value,unit,basis,source_file
+ZAF,2024,shared,0.5,"per cent a year, real",actual,budget-review-2026-chapter-2.pdf
+ZAF,2025,shared,1.4,"per cent a year, real",estimate,budget-review-2026-chapter-2.pdf
+ZAF,2026,shared,1.6,"per cent a year, real",forecast,budget-review-2026-chapter-2.pdf
+ZAF,2027,shared,1.8,"per cent a year, real",forecast,budget-review-2026-chapter-2.pdf
+ZAF,2028,shared,2.0,"per cent a year, real",forecast,budget-review-2026-chapter-2.pdf

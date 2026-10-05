@@ -1,0 +1,11 @@
+facility,province,owner,tank_group,tank_count,product,capacity_litres_each,capacity_litres_total,capacity_basis,status,source_file,source_page
+Ladysmith Fuel Storage Facility,KZN,Transnet Pipelines,petrol accumulator tanks,2,petrol,1770000,3540000,working capacity,stranded since March 2018; out of service,tpl-rfp-ladysmith.pdf,2
+Ladysmith Fuel Storage Facility,KZN,Transnet Pipelines,diesel accumulator tanks,2,diesel,2500000,5000000,working capacity,stranded since March 2018; out of service,tpl-rfp-ladysmith.pdf,2
+Ladysmith Fuel Storage Facility,KZN,Transnet Pipelines,intermixture tank,1,intermixture,84000,84000,working capacity,stranded since March 2018; out of service,tpl-rfp-ladysmith.pdf,2
+Ladysmith Fuel Storage Facility,KZN,Transnet Pipelines,intermixture tank,1,intermixture,390000,390000,working capacity,stranded since March 2018; out of service,tpl-rfp-ladysmith.pdf,2
+Standerton Petroleum Depot,MP,Transnet Pipelines,accumulator tank,1,not stated,1350000,1350000,stated capacity,stranded after decommissioning of the Durban-Witwatersrand pipeline,tpl-rfp-standerton.pdf,2
+Standerton Petroleum Depot,MP,Transnet Pipelines,accumulator tank,1,not stated,220000,220000,stated capacity,stranded after decommissioning of the Durban-Witwatersrand pipeline,tpl-rfp-standerton.pdf,2
+Standerton Petroleum Depot,MP,Transnet Pipelines,accumulator tank,1,not stated,783000,783000,stated capacity,stranded after decommissioning of the Durban-Witwatersrand pipeline,tpl-rfp-standerton.pdf,2
+Kroonstad Liquid Petroleum Depot,FS,Transnet Pipelines,storage tanks,4,not stated,,3300000,approximate total; individual tanks not stated,offered for lease,tpl-rfp-kroonstad.pdf,3
+Bethlehem Liquid Petroleum Depot,FS,Transnet Pipelines,product storage,,not stated,,,no product storage capacity stated,offered for lease,tpl-rfp-bethlehem.pdf,2
+Magdala Liquid Petroleum Depot,FS,Transnet Pipelines,product storage,,not stated,,,no product storage capacity stated,offered for lease,tpl-rfp-magdala.pdf,3

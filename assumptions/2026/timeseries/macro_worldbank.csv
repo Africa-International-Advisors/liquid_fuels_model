@@ -1,0 +1,134 @@
+country,period,scenario,series,value,unit,basis
+ZAF,1990,shared,gdp,2360925000000.0,"rand, constant prices",actual
+ZAF,1991,shared,gdp,2336885000000.0,"rand, constant prices",actual
+ZAF,1992,shared,gdp,2286945000000.0,"rand, constant prices",actual
+ZAF,1993,shared,gdp,2315155791600.0,"rand, constant prices",actual
+ZAF,1994,shared,gdp,2389240777000.0,"rand, constant prices",actual
+ZAF,1995,shared,gdp,2463307241100.0,"rand, constant prices",actual
+ZAF,1996,shared,gdp,2569229452400.0,"rand, constant prices",actual
+ZAF,1997,shared,gdp,2636029418200.0,"rand, constant prices",actual
+ZAF,1998,shared,gdp,2649209565300.0,"rand, constant prices",actual
+ZAF,1999,shared,gdp,2712790594800.0,"rand, constant prices",actual
+ZAF,2000,shared,gdp,2826727799800.0,"rand, constant prices",actual
+ZAF,2001,shared,gdp,2903049450400.0,"rand, constant prices",actual
+ZAF,2002,shared,gdp,3010473149200.0,"rand, constant prices",actual
+ZAF,2003,shared,gdp,3099254274300.0,"rand, constant prices",actual
+ZAF,2004,shared,gdp,3240411666900.0,"rand, constant prices",actual
+ZAF,2005,shared,gdp,3411409874700.0,"rand, constant prices",actual
+ZAF,2006,shared,gdp,3602578681600.0,"rand, constant prices",actual
+ZAF,2007,shared,gdp,3795693977100.0,"rand, constant prices",actual
+ZAF,2008,shared,gdp,3916816237700.0,"rand, constant prices",actual
+ZAF,2009,shared,gdp,3856572112700.0,"rand, constant prices",actual
+ZAF,2010,shared,gdp,3973801603300.0,"rand, constant prices",actual
+ZAF,2011,shared,gdp,4099713743500.0,"rand, constant prices",actual
+ZAF,2012,shared,gdp,4197952411900.0,"rand, constant prices",actual
+ZAF,2013,shared,gdp,4302291176100.0,"rand, constant prices",actual
+ZAF,2014,shared,gdp,4363118106800.0,"rand, constant prices",actual
+ZAF,2015,shared,gdp,4420792517400.0,"rand, constant prices",actual
+ZAF,2016,shared,gdp,4450170996100.0,"rand, constant prices",actual
+ZAF,2017,shared,gdp,4501701615500.0,"rand, constant prices",actual
+ZAF,2018,shared,gdp,4571783379100.0,"rand, constant prices",actual
+ZAF,2019,shared,gdp,4583667070600.0,"rand, constant prices",actual
+ZAF,2020,shared,gdp,4300904420700.0,"rand, constant prices",actual
+ZAF,2021,shared,gdp,4509870255300.0,"rand, constant prices",actual
+ZAF,2022,shared,gdp,4602689546400.0,"rand, constant prices",actual
+ZAF,2023,shared,gdp,4639792036300.0,"rand, constant prices",actual
+ZAF,2024,shared,gdp,4664607663900.0,"rand, constant prices",actual
+ZAF,2025,shared,gdp,4716600597500.0,"rand, constant prices",actual
+ZAF,1990,shared,gdp_per_capita,57942.116318481,"rand per person, constant prices",actual
+ZAF,1991,shared,gdp_per_capita,56056.6762085246,"rand per person, constant prices",actual
+ZAF,1992,shared,gdp_per_capita,53882.0906631447,"rand per person, constant prices",actual
+ZAF,1993,shared,gdp_per_capita,53471.3132566952,"rand per person, constant prices",actual
+ZAF,1994,shared,gdp_per_capita,54295.8192410037,"rand per person, constant prices",actual
+ZAF,1995,shared,gdp_per_capita,55303.576545623,"rand per person, constant prices",actual
+ZAF,1996,shared,gdp_per_capita,56938.3336105754,"rand per person, constant prices",actual
+ZAF,1997,shared,gdp_per_capita,57723.0553645952,"rand per person, constant prices",actual
+ZAF,1998,shared,gdp_per_capita,57312.5744809826,"rand per person, constant prices",actual
+ZAF,1999,shared,gdp_per_capita,58052.0254091908,"rand per person, constant prices",actual
+ZAF,2000,shared,gdp_per_capita,59939.4538334717,"rand per person, constant prices",actual
+ZAF,2001,shared,gdp_per_capita,61031.0016734361,"rand per person, constant prices",actual
+ZAF,2002,shared,gdp_per_capita,62692.8326636216,"rand per person, constant prices",actual
+ZAF,2003,shared,gdp_per_capita,63901.6914744612,"rand per person, constant prices",actual
+ZAF,2004,shared,gdp_per_capita,66142.4306696472,"rand per person, constant prices",actual
+ZAF,2005,shared,gdp_per_capita,68931.2507570969,"rand per person, constant prices",actual
+ZAF,2006,shared,gdp_per_capita,72054.0566147909,"rand per person, constant prices",actual
+ZAF,2007,shared,gdp_per_capita,75119.737713212,"rand per person, constant prices",actual
+ZAF,2008,shared,gdp_per_capita,76628.131968716,"rand per person, constant prices",actual
+ZAF,2009,shared,gdp_per_capita,74554.0837224095,"rand per person, constant prices",actual
+ZAF,2010,shared,gdp_per_capita,75916.9672079832,"rand per person, constant prices",actual
+ZAF,2011,shared,gdp_per_capita,77360.0883985636,"rand per person, constant prices",actual
+ZAF,2012,shared,gdp_per_capita,78054.14739501,"rand per person, constant prices",actual
+ZAF,2013,shared,gdp_per_capita,78682.9975099486,"rand per person, constant prices",actual
+ZAF,2014,shared,gdp_per_capita,78480.6335221266,"rand per person, constant prices",actual
+ZAF,2015,shared,gdp_per_capita,77935.7697211301,"rand per person, constant prices",actual
+ZAF,2016,shared,gdp_per_capita,77719.2785898723,"rand per person, constant prices",actual
+ZAF,2017,shared,gdp_per_capita,78106.8614936833,"rand per person, constant prices",actual
+ZAF,2018,shared,gdp_per_capita,77999.4762441869,"rand per person, constant prices",actual
+ZAF,2019,shared,gdp_per_capita,76922.8018514166,"rand per person, constant prices",actual
+ZAF,2020,shared,gdp_per_capita,71016.1052072903,"rand per person, constant prices",actual
+ZAF,2021,shared,gdp_per_capita,73328.12003583,"rand per person, constant prices",actual
+ZAF,2022,shared,gdp_per_capita,73786.580106803,"rand per person, constant prices",actual
+ZAF,2023,shared,gdp_per_capita,73400.0482611129,"rand per person, constant prices",actual
+ZAF,2024,shared,gdp_per_capita,72876.3109664544,"rand per person, constant prices",actual
+ZAF,2025,shared,gdp_per_capita,72846.2687003303,"rand per person, constant prices",actual
+ZAF,1990,shared,population,40746268.0,persons,actual
+ZAF,1991,shared,population,41687898.0,persons,actual
+ZAF,1992,shared,population,42443509.0,persons,actual
+ZAF,1993,shared,population,43297156.0,persons,actual
+ZAF,1994,shared,population,44004139.0,persons,actual
+ZAF,1995,shared,population,44541554.0,persons,actual
+ZAF,1996,shared,population,45123018.0,persons,actual
+ZAF,1997,shared,population,45666838.0,persons,actual
+ZAF,1998,shared,population,46223880.0,persons,actual
+ZAF,1999,shared,population,46730335.0,persons,actual
+ZAF,2000,shared,population,47159719.0,persons,actual
+ZAF,2001,shared,population,47566800.0,persons,actual
+ZAF,2002,shared,population,48019415.0,persons,actual
+ZAF,2003,shared,population,48500348.0,persons,actual
+ZAF,2004,shared,population,48991421.0,persons,actual
+ZAF,2005,shared,population,49490033.0,persons,actual
+ZAF,2006,shared,population,49998277.0,persons,actual
+ZAF,2007,shared,population,50528584.0,persons,actual
+ZAF,2008,shared,population,51114599.0,persons,actual
+ZAF,2009,shared,population,51728516.0,persons,actual
+ZAF,2010,shared,population,52344051.0,persons,actual
+ZAF,2011,shared,population,52995205.0,persons,actual
+ZAF,2012,shared,population,53782567.0,persons,actual
+ZAF,2013,shared,population,54678791.0,persons,actual
+ZAF,2014,shared,population,55594838.0,persons,actual
+ZAF,2015,shared,population,56723537.0,persons,actual
+ZAF,2016,shared,population,57259551.0,persons,actual
+ZAF,2017,shared,population,57635162.0,persons,actual
+ZAF,2018,shared,population,58613001.0,persons,actual
+ZAF,2019,shared,population,59587885.0,persons,actual
+ZAF,2020,shared,population,60562381.0,persons,actual
+ZAF,2021,shared,population,61502603.0,persons,actual
+ZAF,2022,shared,population,62378410.0,persons,actual
+ZAF,2023,shared,population,63212384.0,persons,actual
+ZAF,2024,shared,population,64007187.0,persons,actual
+ZAF,2025,shared,population,64747319.0,persons,actual
+ZAF,2026,shared,population,65453084.0,persons,projection
+ZAF,2027,shared,population,66143022.0,persons,projection
+ZAF,2028,shared,population,66830385.0,persons,projection
+ZAF,2029,shared,population,67506849.0,persons,projection
+ZAF,2030,shared,population,68161359.0,persons,projection
+ZAF,2031,shared,population,68798580.0,persons,projection
+ZAF,2032,shared,population,69426439.0,persons,projection
+ZAF,2033,shared,population,70040481.0,persons,projection
+ZAF,2034,shared,population,70641572.0,persons,projection
+ZAF,2035,shared,population,71234752.0,persons,projection
+ZAF,2036,shared,population,71816379.0,persons,projection
+ZAF,2037,shared,population,72387814.0,persons,projection
+ZAF,2038,shared,population,72949617.0,persons,projection
+ZAF,2039,shared,population,73496159.0,persons,projection
+ZAF,2040,shared,population,74035624.0,persons,projection
+ZAF,2041,shared,population,74575448.0,persons,projection
+ZAF,2042,shared,population,75111901.0,persons,projection
+ZAF,2043,shared,population,75641513.0,persons,projection
+ZAF,2044,shared,population,76164460.0,persons,projection
+ZAF,2045,shared,population,76681450.0,persons,projection
+ZAF,2046,shared,population,77199548.0,persons,projection
+ZAF,2047,shared,population,77716655.0,persons,projection
+ZAF,2048,shared,population,78215322.0,persons,projection
+ZAF,2049,shared,population,78699586.0,persons,projection
+ZAF,2050,shared,population,79177328.0,persons,projection

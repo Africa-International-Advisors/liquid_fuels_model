@@ -1,0 +1,32 @@
+what: Petrol / diesel split of the registered fleet by model segment, December 2023
+status: derived estimate; totals official, pattern published, split calculated
+method: iterative proportional fitting of the 2010 pattern to 2023 totals
+inputs:
+  vehicles_by_class: timeseries/vehicle_population_natis.csv (NaTIS, 2023-12)
+  vehicles_by_fuel: reference/vehicle_population_by_fuel_dot2023.csv
+  pattern_2010: reference/vehicle_parameters_stone2018.csv (vehicles_2010)
+segments:
+  passenger: cars + minibuses
+  light_commercial: LDVs, panel vans, light load vehicles up to 3500 kg
+  heavy: trucks + buses
+fixed_before_fitting:
+  heavy: all diesel
+  motorcycles: all petrol
+  other_self_propelled: 'all diesel (assumption: tractors and plant)'
+fuel_totals_scaled_by: 0.999345
+petrol_share:
+  pattern_2010:
+    passenger: 0.9278
+    light_commercial: 0.6205
+  fitted_2023:
+    passenger: 0.861
+    light_commercial: 0.4406
+  python_model_as_inherited:
+    passenger: 0.83
+    light_commercial: 0.3
+limits:
+- The division between passenger and light commercial is not observed; it follows
+  the 2010 pattern as far as the 2023 totals allow.
+- This is the fleet on the road, not new sales. Recent sales will be more diesel than
+  the fleet as a whole.
+- Replace with the traffic authority's own class-by-fuel count if obtained.

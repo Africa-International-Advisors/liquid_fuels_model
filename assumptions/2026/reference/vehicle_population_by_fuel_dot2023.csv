@@ -1,0 +1,15 @@
+country,period,fuel_type,vehicles
+ZAF,2023-12,petrol,8555772
+ZAF,2023-12,diesel,3335546
+ZAF,2023-12,none,1161716
+ZAF,2023-12,unknown,123208
+ZAF,2023-12,electricity,4090
+ZAF,2023-12,hydrogen,3526
+ZAF,2023-12,other,3126
+ZAF,2023-12,solar,317
+ZAF,2023-12,gas,229
+ZAF,2023-12,steam,130
+ZAF,2023-12,paraffin,120
+ZAF,2023-12,ethanol,11
+ZAF,2023-12,hybrid,6
+ZAF,2023-12,methanol,4
