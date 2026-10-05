@@ -28,3 +28,19 @@ repeated historical/refinery keys, missing originals and unreadable source metad
 See `output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx` for the investigation
 list and exact file locations. Existing open exceptions remain in force; this audit
 does not change assumptions or record approval.
+
+## Source profile and key URL tests
+
+Run `.venv\Scripts\python.exe -m lfm.scripts.profile_data_sources --audit <audit-folder>/audit.json`.
+This profiles declared blocks plus undeclared CSVs as time series, dated snapshots,
+scalars, structured parameters or reference tables. It records units, time coverage,
+refresh route and the model-access trace from the audit. Scalars inside structured
+country/scenario blocks remain grouped; six standalone scalar blocks are not the
+total number of scalar values.
+
+The live connectivity check samples key publisher pages, API responses and document
+URLs. It retries a failed sample once, retaining the initial failure. This is neither
+a test of all historical URLs nor proof of a full download, parser completeness,
+freshness or source accuracy. Runs are on demand; no background service is scheduled.
+Use `--prior-pass <profile.json>` to retain failures from an earlier pass.
+The delivered HTML profile and connectivity CSV are under `output/delivered/`.
