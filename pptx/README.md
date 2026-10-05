@@ -233,3 +233,13 @@ For a reporting-only revision, the builder supports
 cost-map pages while rebuilding the demand and competition pages. A full build
 without that argument computes all maps from source. Always run package checks
 and inspect matching PowerPoint-rendered pages before delivering.
+
+The seven-page revision adds a storage-by-location bar chart before closing.
+It aggregates only six quantified gross-capacity records across five locations,
+with operator segments; missing Sasol/Transnet capacities remain explicitly unknown.
+Vopak Durban (360,246 m³) and Lesedi (140,000 m³) are taken from the cbm
+`data-end-number` attributes on the current terminal pages, not their alternate
+barrel values. Original HTML is retained under
+`external/data/raw/vopak_storage_20261006/`. The figures are published gross
+stocks, with product eligibility, usable capacity and access still outstanding.
+The chart is a partial inventory, not a national fuel-storage census or market share.

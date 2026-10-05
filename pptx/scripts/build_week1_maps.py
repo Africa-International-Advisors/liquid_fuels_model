@@ -1,4 +1,4 @@
-"""Six-page Week 1 analytical pack; no fuel-model execution.
+"""Week 1 analytical pack; no fuel-model execution.
 
 Geographical evidence stays editable in PowerPoint. LAEA projection uses pyproj;
 transport geometry is the existing schematic appendix, not a routable GIS network.
@@ -31,6 +31,7 @@ from coverage_map import clipped
 from accessibility_cartography import distance_surface
 from storage_footprint import draw_storage_footprint, storage_notes
 from competitive_market_page import add_competitive_page
+from storage_capacity_page import add_storage_capacity_page
 
 ROOT = Path(__file__).resolve().parents[1]
 # Reuse validated cost-map pages when only reporting evidence/layout changes.
@@ -274,9 +275,9 @@ class Map:
 
 prs = Presentation(REUSE or ROOT/cfg.SOURCE_TEMPLATE)
 if REUSE:
-    assert len(prs.slides) in (5,6), 'Reuse requires a prior Week 1 pack'
+    assert len(prs.slides) in (5,6,7), 'Reuse requires a prior Week 1 pack'
     # Remove only the infrastructure/evidence pages; preserve expensive cost exhibits.
-    positions=[1,4] if len(prs.slides)==6 else [1]
+    positions={5:[1],6:[1,4],7:[1,4,5]}[len(prs.slides)]
     for i in reversed(positions):
         sid=prs.slides._sldIdLst[i]
         prs.part.drop_rel(sid.rId)
@@ -432,13 +433,14 @@ if not REUSE:
     text(s,'Example rates: R0.15/L + R0.002/L/km. Grey = unassessed. Volumes: bn L/year.',.5,6.99,7.1,.14,7.5)
 
 add_competitive_page(slide,exhibit_layout,Map,text,table,ROOT,brand,regional)
+add_storage_capacity_page(slide,exhibit_layout,text,ROOT,brand)
 if not REUSE:
     bookend(reference.slides[-1],closing=True)
 else:
     ids=list(prs.slides._sldIdLst)
     for sid in ids: prs.slides._sldIdLst.remove(sid)
-    for i in [0,4,1,2,5,3]: prs.slides._sldIdLst.append(ids[i])
-assert len(prs.slides)==6
+    for i in [0,4,1,2,5,6,3]: prs.slides._sldIdLst.append(ids[i])
+assert len(prs.slides)==7
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:
         assert q.left>=0 and q.top>=0 and q.left+q.width<=prs.slide_width+10 and q.top+q.height<=prs.slide_height+10,(index,q.name)
@@ -448,7 +450,7 @@ prs.core_properties.subject='Illustrative demand geography and conditional Vopak
 prs.save(PATH)
 qa=ROOT/'qa/week1_maps';qa.mkdir(parents=True,exist_ok=True)
 (qa/'build_manifest.json').write_text(json.dumps({
- 'output':str(PATH),'slides':6,'template':str(cfg.SOURCE_TEMPLATE),
+ 'output':str(PATH),'slides':7,'template':str(cfg.SOURCE_TEMPLATE),
  'template_sha256':hashlib.sha256((ROOT/cfg.SOURCE_TEMPLATE).read_bytes()).hexdigest(),
  'projection':CRS_MAP.to_proj4(),'volumes':'Illustrative only',
  'boundary_source':'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson',

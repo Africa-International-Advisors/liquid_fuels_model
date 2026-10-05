@@ -49,3 +49,14 @@ the supplied master, cover, closing, chevrons and exhibit/key-takeaway structure
 
 No model assumptions were changed by this reporting revision. Governance coverage
 passes with 50 open exceptions; the model and opportunity illustration remain draft.
+
+## Storage-location page added
+
+Nigel requested a bar chart locating the largest published storage stocks.
+Page 6 ranks five quantified locations with operator segments; closing moves to
+page 7. The chart uses published gross capacity, not annual throughput or usable
+petrol/diesel-only capacity. It is a partial inventory and leaves missing
+Sasol/Transnet values unknown. Vopak's HTML cbm capacity attributes confirm
+360,246 m³ at Durban and 140,000 m³ at Lesedi; the alternate rendered numbers
+are barrels and must not be ingested as m³. Terminal-page publication dates are
+unstated; originals are preserved under `external/data/raw/vopak_storage_20261006/`.
