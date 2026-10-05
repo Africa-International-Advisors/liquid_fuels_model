@@ -1,45 +1,57 @@
-# Shared baseline and daily branch sync
+# Shared main workflow
 
-Agreed by Nigel on 5 October 2026: `main` is the shared integration baseline.
-Nigel makes corrections on `main`. Manish continues development on
-`basecase-2026-10`, bringing in `main` each morning before starting work.
-Daily sync is a manual responsibility; no scheduled pull or message has been set up.
+Nigel clarified on 5 October 2026 that both Nigel and Manish work directly on
+`main`. This supersedes the separate baseline-branch workflow described earlier
+that day. Manish pushes his work to `main`; Nigel pulls, reviews, gives feedback,
+and pushes corrections to `main`. Both pull before continuing.
 
-## Each morning: Manish
+## One-time switch: Manish
 
-Start with a clean working tree. Commit completed work first. If unfinished work
-must be stashed, use `git stash push -u` and restore it after the merge; retain the
-stash until restoration is confirmed. Do not discard changes to make sync pass.
+Commit or stash unfinished work before switching. All work published on
+`basecase-2026-10` through commit `dba3a54` is already merged into `main`.
+Any newer local or remote commits need to be preserved and reviewed before
+bringing them into `main`; do not discard them or overwrite shared history.
 
 ```powershell
-git switch basecase-2026-10
 git status --short
 git fetch origin
-git pull --ff-only origin basecase-2026-10
-git merge origin/main
+git switch main
+git pull --ff-only origin main
 ```
 
-Resolve any merge conflicts in the baseline branch, then run the checks below
-and push `basecase-2026-10`. If the fast-forward pull fails, reconcile local and
-remote work explicitly before continuing. Preserve shared history: use merges,
-and do not force-push either shared branch.
+If no local `main` exists, use `git switch --track origin/main` instead of
+`git switch main`. The old branch is retained for history; no routine merge
+from it is required.
+
+## Each morning and before starting work: both people
+
+Start with committed or stashed local work, then:
 
 ```powershell
-.\.venv\Scripts\python.exe -m lfm check --vintage 2026
-.\.venv\Scripts\python.exe -m pytest -q
-git push origin basecase-2026-10
+git switch main
+git pull --ff-only origin main
 ```
 
-Pulling only `basecase-2026-10` does not import Nigel's corrections on `main`.
-The `git merge origin/main` step is required.
+Manish must pull again after Nigel pushes corrections, before continuing work.
+Daily sync is manual; no scheduled pull or message has been set up.
 
-## Corrections and integration: Nigel
+## Before pushing: both people
 
-Update `main` before editing, commit corrections, validate, and push `main`.
-Use a separate checkout/worktree when another branch has unfinished local work.
-Review Manish's next increment and merge `basecase-2026-10` into `main` after
-resolving paths, assumption-register changes and tests. Manish then repeats the
-morning sync to incorporate those corrections.
+Commit the intended changes, then pull again to catch the other person's work.
+If both have committed since the last pull, preserve both sets of commits with
+a merge. Resolve conflicts, run checks on the combined result, and push:
+
+```powershell
+git pull --no-rebase origin main
+.\.venv\Scripts\python.exe -m lfm check --vintage 2026
+.\.venv\Scripts\python.exe -m pytest -q
+git push origin main
+```
+
+If Git rejects the push because `main` advanced again, repeat the pull, resolve
+any conflicts, and rerun relevant checks before retrying. Never force-push.
+An unsuccessful fast-forward morning pull means local commits need explicit
+reconciliation; use the same merge-and-check process above.
 
 ## Published baseline: 5 October 2026
 

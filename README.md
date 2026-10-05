@@ -1,7 +1,7 @@
 # SACU Liquid Fuels Model
 
-`main` is the shared baseline; Manish continues on `basecase-2026-10` and brings
-in corrections from `main` each morning. See the
+Nigel and Manish both work on `main`. Pull before starting work and before
+pushing changes. See the
 [branch workflow](workstreams/WS0_governance/workplan/branch_workflow.md).
 
 The 5 October source datasets and fetchers are included, with source observations
