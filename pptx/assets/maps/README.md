@@ -64,3 +64,22 @@ Fuel purchase price, taxes, storage and pipe/rail tariffs are excluded. No
 cost-based regional capture is inferred: the volume annotations remain independent
 illustrations. Replace rates with carrier evidence and schematic links with an
 operational network before interpreting this as delivered-cost accessibility.
+# Provincial demand layer
+
+`geoboundaries_zaf_adm1_simplified.geojson` was downloaded on 6 October 2026
+through https://www.geoboundaries.org/api/current/gbOpen/ZAF/ADM1/.
+Metadata is preserved in `geoboundaries_zaf_adm1_metadata.json`, including the
+pinned download URL, 2020 boundary year, OCHA ROSEA / South African Municipal
+Demarcation Board source and CC BY 3.0 IGO licence. The provider spells Northern
+Cape `Nothern Cape`; the reporting mapping explicitly normalises that name.
+Projection: the existing WGS84 LAEA map; display simplification 1,500 m in projected
+space. Lesotho remains outside the South African demand layer.
+
+Colour represents 2022 annual petrol/diesel sales in billion litres per province,
+from the declared quarterly departmental series; it does not imply within-province
+uniformity or a district-level hotspot. Each product/province has all four quarters;
+the sum reconciles to the national annual source within one litre. Raw received
+workbooks remain in `external/`; extraction is provisional until analyst review.
+Working regions are province unions from the dated story CSV and are not validated
+terminal service areas. Owner: Manish, Nigel review. Refresh trigger: a later
+complete provincial source year, improved boundaries, or agreed region definitions.

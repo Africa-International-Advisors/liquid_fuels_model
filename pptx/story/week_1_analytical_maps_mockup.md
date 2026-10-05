@@ -112,3 +112,24 @@ and R0.002/L/km rate, on 25 km cells. Darker means lower illustrative cost;
 grey means unassessed. Settings and evidence limitations are declared in
 illustrative_accessibility_settings.json. This is not carrier-quoted cost,
 validated routing, a time isochrone or a verified customer catchment.
+
+## Competitive-market and storage revision
+
+User requested the missing contestability/share page and a richer storage layer
+on 6 October. Preserve cover, closing, chevrons and the approved exhibit/takeaway
+composition. Final sequence: cover; infrastructure + demand + operator storage;
+cost accessibility; conditional market volumes; competitive footprint and share;
+closing. The competition exhibit lists public operator sources and site-level
+evidence gaps, followed by clearly illustrative catchment-share calculations.
+Actual share is unknown until matched customer-throughput evidence is received.
+Storage roles include independent terminal services, marketer depots, and pipeline
+accumulation; mixed-product capacities and inactive depots cannot be counted as
+usable petrol/diesel capacity. Source inventory and full limitations are retained
+in CSVs and slide notes, with clickable operator references on the new page.
+
+The subsequent demand-map correction replaces illustrative circles with real
+province boundaries and a 2022 reported-sales choropleth. Region unions are
+explicitly declared; colours show provincial volumes, not local hotspots.
+The share table becomes stacked regional bars with three segments: current
+Vopak, additional candidate, outside envelope. Western/other show unassessed.
+Historical observed demand is kept separate from authored share illustrations.

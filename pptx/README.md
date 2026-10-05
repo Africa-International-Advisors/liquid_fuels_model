@@ -198,3 +198,38 @@ declare dispatch and per-km rates, classification and connection limits.
 geometry; tests check route detours, unassessed areas and terminal selection.
 Operational routing, carrier rates, pipeline tariffs and customer access remain
 outstanding evidence before any real reach or capture conclusion.
+
+The six-slide revision adds a competitive-market page before closing and expands
+the consolidated map's storage layer. Dated presentation evidence lives in
+`story/storage_operator_inventory_2026_10_06.csv` (12 mapped site/group records,
+five excluded historical/lease records) and
+`story/competitive_market_evidence_2026_10_06.csv`. These are public-evidence
+reporting inventories, not engine inputs or verified operating-capacity assumptions.
+Vopak, Bidvest, Sasol, Transnet and Burgan Cape have separate asset roles and
+product/access flags. National-map callouts group clustered inland sites;
+speaker notes retain the named sites and source URLs. Coordinates are approximate
+except the Tarlton point published in Transnet's tender. Transnet Jameson Park
+and Vopak Lesedi remain distinct assets despite sharing an approximate map point.
+Actual Vopak share is unknown; the share table is explicitly an illustration
+from authored catchment volumes. Do not infer throughput from tank capacity.
+Manish owns refresh/reconciliation with Nigel review: confirm Bidvest's discrepant
+mixed-product totals, refresh Sasol's notice ending March 2026, check current
+usable tanks/access, and obtain matched unique petrol/diesel customer deliveries.
+
+Slide 2 now separates the working regions geographically and shades the nine
+provinces by observed 2022 petrol/diesel sales volume. `provincial_demand_map.py`
+requires four quarters for each of 18 province/product series and reconciles
+their total against the national CSV. It reads registered assumptions without
+altering them. 2022 is the latest complete year in the current provincial extract;
+2023 has Q1 only. This is total volume by province, not density or a smoothed
+district hotspot surface. The later opportunity figures remain illustrative,
+with different denominators. `story/demand_map_regions_2026_10_06.csv` declares
+working province membership; these outlines are not commercial catchments.
+The competition page uses editable 100% stacked bars for current/candidate/outside
+envelope shares; western/other remain visibly unassessed, not zero.
+
+For a reporting-only revision, the builder supports
+`--reuse-deck pptx/output/delivered/<previous-pack>.pptx`, preserving the validated
+cost-map pages while rebuilding the demand and competition pages. A full build
+without that argument computes all maps from source. Always run package checks
+and inspect matching PowerPoint-rendered pages before delivering.
