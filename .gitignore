@@ -11,8 +11,8 @@ venv/
 .env
 
 # Local data and run outputs (kept out of git; pinned by vintage instead)
-data/raw/
-data/interim/
+
+
 runs/*
 !runs/README.md
 *.xlsx.lock
@@ -27,3 +27,14 @@ runs/*
 .claude/
 .DS_Store
 Thumbs.db
+
+# Built artifacts: preserve only delivered copies
+output/*
+!output/delivered/
+
+# Local Next.js documentation viewer
+frontend/node_modules/
+frontend/.next/
+frontend/*.tsbuildinfo
+frontend/.env*
+!frontend/.env.example

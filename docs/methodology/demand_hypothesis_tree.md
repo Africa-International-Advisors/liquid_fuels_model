@@ -1,0 +1,364 @@
+# Demand hypothesis tree
+
+McKinsey-style decomposition of "what drives demand" for each segment in the
+SACU liquid fuels model. The tree exists to:
+
+1. Make the structural commitments visible — at a glance, you can see whether
+   a segment is bottom-up (deep tree) or driver-tied (shallow tree).
+2. Audit which leaves are quantified vs guessed vs not-yet-modelled.
+3. Identify sourcing priorities — provisional leaves that drive a lot of
+   demand are where the next data hunt should go.
+
+## Status tags
+
+Every leaf is tagged:
+
+- **[Q] quantified** — value lives in `assumptions/<vintage>/*.yaml` or a
+  CSV under `timeseries/`, sourced from the xlsx (or whatever future provider
+  takes over) and visible to `src/lfm/scripts/verify_against_xlsx.py`.
+- **[P] provisional** — placeholder pending sourcing. Carries a
+  `provisional: true` flag in the YAML; the `lfm run` PROVISIONAL banner
+  lists every parameter still in this state. Sourcing log: `docs/methodology/params_sourcing.md`.
+- **[N] not modelled** — declared in the tree for completeness; not a v1
+  input. Either narrative-only (drivers behind drivers) or a v1 simplification
+  that a future MODELLED upgrade would absorb.
+
+## At-a-glance summary
+
+| Segment | Status | [Q] | [P] | [N] | Tree depth |
+|---|---|---:|---:|---:|---:|
+| vehicles    | MODELLED | 7  | 5  | many | 5 |
+| aviation    | MODELLED | 5  | 0  | 5    | 3 |
+| generation  | MODELLED | 6  | 0  | 6    | 3 |
+| industrial  | HELD     | 1  | 2  | many | 2 |
+| marine      | HELD     | 1  | 7  | 5    | 3 |
+| agriculture | HELD     | 1  | 2  | many | 2 |
+| supply         | wired    | 4  | 0  | 3    | 3 |
+| balance        | wired    | —  | —  | —    | 1 |
+
+The depth column is a proxy for "how richly modelled" a segment is. Industrial,
+marine, and agriculture are intentionally shallow (HELD pattern). Vehicles is
+the richest because the methodology required cohort tracking + scrappage +
+S-curve composition.
+
+---
+
+## 0. Total ZAF liquid fuel demand
+
+```
+ZAF total liquid fuel demand (litres / year)
+├── petrol_95          ← vehicles
+├── diesel_50ppm       ← vehicles + generation + industrial + agriculture
+├── jet_a1             ← aviation
+├── fuel_oil           ← marine
+└── diesel_500ppm      ← marine
+```
+
+History reconciliation (`src/lfm/scripts/compare_history.py`) compares this against
+the xlsx's RSA Demand totals.
+
+---
+
+## 1. Vehicles (MODELLED)
+
+```
+ZAF vehicles fuel demand (litres / yr, split by petrol_95 / diesel_50ppm)
+└── Σ over (segment × powertrain × cohort)[ICE stock × annual km × L/100km]
+    ├── ICE stock by (segment, powertrain, cohort)
+    │   ├── New ICE entries per year
+    │   │   ├── Total new-vehicle demand
+    │   │   │   ├── Regression on GDP/capita                  [Q] xlsx RegEV, R² 0.51
+    │   │   │   │   ├── Slope (37.31)                         [Q]
+    │   │   │   │   └── Intercept (-2,387,744)                [Q]
+    │   │   │   └── GDP/capita driver                         [Q] xlsx scenario CSV
+    │   │   │       ├── GDP path                              [Q] xlsx scenario CSV
+    │   │   │       └── Population path                       [Q] xlsx scenario CSV
+    │   │   ├── EV penetration share (1 - share = ICE share)
+    │   │   │   ├── Logistic S-curve params (per scenario)
+    │   │   │   │   ├── Max penetration (0.30 / 0.90)         [Q] xlsx
+    │   │   │   │   ├── Midpoint year (2040 / 2036)           [Q] xlsx
+    │   │   │   │   └── Slope (3 / 2)                         [Q] xlsx
+    │   │   │   └── Underlying narrative drivers
+    │   │   │       ├── Charging infrastructure rollout       [N]
+    │   │   │       ├── EV price parity vs ICE                [N]
+    │   │   │       ├── Policy / fleet mandates               [N]
+    │   │   │       ├── Brand availability in SACU            [N]
+    │   │   │       └── Grid reliability                      [N]
+    │   │   ├── Segment split (passenger / LCV / HCV)         [P] placeholder
+    │   │   └── Petrol/diesel split per segment               [P] placeholder
+    │   └── Cohort scrappage
+    │       ├── Annual flat rate per segment                  [P] placeholder
+    │       └── Age-survival curve (Weibull/logistic)         [N] post-v1
+    ├── Annual km per vehicle (per segment)                   [P] placeholder
+    │   └── Underlying drivers
+    │       ├── Fuel price (consumer substitution)            [N]
+    │       ├── Congestion / urbanisation                     [N]
+    │       └── Freight cycle intensity (HCV)                 [N]
+    └── L/100km (per cohort × segment × powertrain)
+        ├── Baseline at year of manufacture                   [P] placeholder
+        │   └── Underlying drivers
+        │       ├── Fleet age distribution                    [N]
+        │       ├── SUV/bakkie skew vs sedans                 [N]
+        │       └── OEM mix in SACU                           [N]
+        └── Cumulative efficiency improvement                 [Q] xlsx scenario CSV
+            └── Locked rule: applies to new-sale cohorts only
+```
+
+**Sourcing priorities for vehicles:** the five [P] leaves are the
+decision-grade unlock. See `docs/methodology/params_sourcing.md` for candidate sources
+(eNaTIS, NAAMSA, GreenCape, IEA MoMo, DMRE).
+
+---
+
+## 2. Aviation (MODELLED)
+
+```
+ZAF aviation fuel demand (litres / yr, jet_a1)
+└── Two-variable regression: jet = intercept + b_gdp × GDP/cap + b_pax × pax_dep
+    ├── Regression coefficients (xlsx fit, R² 0.946)
+    │   ├── Intercept (-14,746,408,795.77)                    [Q] xlsx fJetFuel
+    │   ├── GDP/capita coefficient (196,334.93)               [Q] xlsx fJetFuel
+    │   └── Passenger departures coefficient (79.79)          [Q] xlsx fJetFuel
+    ├── GDP/capita driver                                     [Q] xlsx scenario CSV
+    └── Passenger departures driver                           [Q] stitched (xlsx)
+        ├── Observed 2017-2024 (Jet-DS sheet)                 [Q]
+        ├── Baseline forecast 2025-2050 (PaxBaseScenario)     [Q]
+        └── Underlying narrative drivers
+            ├── Inbound tourism                               [N]
+            ├── Business travel                               [N]
+            ├── Airline capacity / route availability         [N]
+            ├── Aircraft fuel efficiency                      [N] absorbed in residual
+            └── Freight (paraffin / avgas excluded)           [N]
+```
+
+**Known limitation:** the regression goes negative in pandemic-magnitude
+years (2020 input gives ~-95M litres, clamped to 0). Out-of-distribution
+input space, not a model bug.
+
+---
+
+## 3. Generation (MODELLED)
+
+```
+ZAF OCGT diesel demand (litres / yr, diesel_50ppm)
+└── Σ stations[MW × hrs × load_factor] / efficiency × (3600 / MJ_per_L)
+    ├── OCGT capacity (MW, operational fleet only in v1)
+    │   ├── Ankerlig (1327)                                   [Q] xlsx PowerGen_Capacity
+    │   ├── Gourikwa (740)                                    [Q]
+    │   ├── Avon (670)                                        [Q]
+    │   ├── Dedisa (335)                                      [Q]
+    │   └── New 1, New 2 (notional 3000 MW)                   [N] no commissioning year
+    ├── Operating hours (24 × 365)                            [Q] xlsx (Operational_days)
+    ├── Load factor (per year × scenario)                     [Q] xlsx scenario CSV
+    │   └── Underlying drivers
+    │       ├── Eskom EAF (Energy Availability Factor)        [N]
+    │       ├── Total system demand growth                    [N]
+    │       ├── Renewables build-out pace                     [N]
+    │       └── Transmission constraints                      [N]
+    ├── Thermal efficiency (0.4)                              [Q] xlsx PowerGen_Efficiency
+    │   └── Underlying drivers
+    │       ├── Fleet age                                     [N]
+    │       └── Maintenance regime                            [N]
+    └── Diesel energy density (36.9 MJ/L)                     [Q] xlsx MJ_Litres_Conversion
+```
+
+**Out-of-scope additive term:** `LoadShedding_*` named ranges (xlsx) are
+loaded into `generation.yaml` but unused — the units in the xlsx are
+unclear and the load_factor already captures dispatched OCGT generation.
+
+---
+
+## 4. Industrial (HELD)
+
+```
+ZAF industrial diesel demand (litres / yr, diesel_50ppm)
+└── base × (gdp_pc(t) / gdp_pc(base))^elasticity
+    ├── Base-year volume (single aggregate bucket, ZAF 2024)  [P] 2.5 BL placeholder
+    ├── GDP/capita ratio driver                               [Q] xlsx scenario CSV
+    └── Elasticity (1.0)                                      [P] placeholder
+
+Future MODELLED decomposition (sub-segments lumped in v1)
+└── Sub-segments
+    ├── Mining haul fleet                                     [N]
+    │   ├── Tonnes mined by commodity (coal, iron, PGM)       [N]
+    │   ├── Diesel L / tonne ore                              [N]
+    │   └── Haul-truck fleet size & efficiency                [N]
+    ├── Manufacturing                                         [N]
+    │   ├── Industrial GVA (steel, cement, chemicals)         [N]
+    │   └── Diesel L / ZAR output (energy intensity)          [N]
+    ├── Construction equipment                                [N]
+    └── Stationary engines (small industry, rural)            [N]
+```
+
+**Sourcing priorities:** just two numbers (base-year volume + elasticity)
+unlock decision-grade industrial. Candidate sources: DMRE energy balances,
+Minerals Council SA reports, Stats SA manufacturing energy series.
+
+---
+
+## 5. Marine (HELD)
+
+```
+ZAF + NAM marine bunkering (litres / yr, fuel_oil + diesel_500ppm)
+└── Σ ports[base × (gdp_pc(t) / gdp_pc(base))^elasticity] × product_split
+    ├── Per-port base-year volumes (2024)
+    │   ├── Durban (ZAF)                                      [P] 1.5 BL placeholder
+    │   ├── Cape Town (ZAF)                                   [P] 0.5 BL placeholder
+    │   ├── Saldanha (ZAF)                                    [P] 0.2 BL placeholder
+    │   ├── Walvis Bay (NAM)                                  [P] 0.25 BL — blocked on NAM GDP
+    │   └── Lüderitz (NAM)                                    [P] 0.05 BL — blocked on NAM GDP
+    ├── GDP/capita ratio driver (placeholder; should be trade)[Q] xlsx scenario CSV
+    ├── Elasticity to GDP (0.4)                               [P] placeholder
+    └── Product split (HFO / MGO)
+        ├── Default split (0.65 / 0.35)                       [P] placeholder
+        └── Underlying driver: IMO 2020 sulphur cap shift     [N]
+
+Future MODELLED decomposition (real driver = global trade, not GDP)
+└── Per-port:
+    ├── Throughput driver
+    │   ├── TEU throughput                                    [N]
+    │   ├── DWT throughput (bulk / tankers)                   [N]
+    │   └── Vessel call counts                                [N]
+    ├── Bunker hub competitiveness (vs Singapore / Rotterdam) [N]
+    └── Bunker price differential                             [N]
+```
+
+**Sourcing priorities:** per-port observed volumes (Transnet, Namport, IBIA
+bunker reports) is the immediate gap. NAM GDP/capita is a separate unlock
+that activates the NAM ports.
+
+---
+
+## 6. Agriculture (HELD)
+
+```
+ZAF agricultural diesel demand (litres / yr, diesel_50ppm)
+└── base × (gdp_pc(t) / gdp_pc(base))^elasticity
+    ├── Base-year volume (single aggregate bucket, ZAF 2024)  [P] 0.7 BL placeholder
+    ├── GDP/capita ratio driver                               [Q] xlsx scenario CSV
+    └── Elasticity (0.2 — low because GDP isn't the right driver) [P] placeholder
+
+Future MODELLED decomposition (real driver = hectares planted)
+└── Sub-segments
+    ├── Field operations (planting / harvest)
+    │   ├── Hectares planted (per crop)                       [N]
+    │   ├── Tractor fuel L / ha                               [N]
+    │   └── Harvester fuel L / ha                             [N]
+    ├── Irrigation pumping
+    │   ├── Hectares irrigated                                [N]
+    │   ├── Pump diesel vs electric mix                       [N]
+    │   └── Pumping intensity (m³ / ha)                       [N]
+    ├── On-farm transport                                     [N]
+    └── Diesel rebate policy (consumer-side incentive)        [N]
+```
+
+**Sourcing priorities:** same as industrial — two numbers (base + elasticity).
+Candidate sources: DALRRD (Department of Agriculture) energy use studies,
+SA Grain Information Service.
+
+---
+
+## 7. Supply (MODELLED — refinery output, v1 volumes only)
+
+```
+ZAF domestic supply (litres / yr, by refinery product)
+└── Σ refineries[nameplate_kbpd × utilisation × availability × 365 × 1000 × L/bbl]
+    │                          × product_split  →  per refinery_product
+    ├── Refinery nameplate capacity (kbpd, per refinery)
+    │   ├── Enref (120)                                       [Q] xlsx
+    │   ├── SAPREF (180, mothballed 2022)                     [Q] xlsx
+    │   ├── Natref (108.5)                                    [Q] xlsx
+    │   ├── Sasol (75, CTL)                                   [Q] xlsx
+    │   ├── Astron (100)                                      [Q] xlsx
+    │   └── PetroSA (45, mothballed)                          [Q] xlsx
+    ├── Utilisation (per refinery × year × scenario)          [Q] xlsx scenario CSV
+    ├── Product split (gasoline / diesel / jet, per refinery) [Q] xlsx SupplyFuelMix
+    ├── Fleet availability factor (0.9)                       [Q] xlsx
+    ├── Crude L/barrel conversion (158.987)                   [Q] xlsx
+    └── Underlying narrative drivers
+        ├── Crude supply security                             [N]
+        ├── Refinery commissioning / mothballing decisions    [N]
+        └── Margin economics (driver of utilisation)          [N] becomes endogenous once pricing lands
+```
+
+The supply layer covers gasoline, diesel, and jet_a1 — products with
+domestic refinery yield. Marine fuels (fuel_oil, diesel_500ppm) and other
+products (LPG, paraffin) have no refinery yield in v1 and so show up in
+the balance with `supply_litres = 0` — i.e., fully imported.
+
+---
+
+## 8. Balance / deficit (the headline output)
+
+```
+Demand-supply balance per (country × refinery_product × year)
+├── demand_litres   = Σ over demand-segments mapped to this refinery_product
+│   ├── gasoline  ← vehicles (petrol_95, petrol_93)
+│   ├── diesel    ← vehicles + generation + industrial + agriculture + marine (diesel_50ppm + diesel_500ppm)
+│   └── jet_a1    ← aviation
+├── supply_litres  = from Section 7
+└── deficit_litres = demand_litres - supply_litres
+    ├── deficit > 0  →  imports needed
+    ├── deficit < 0  →  surplus / exports
+    └── For non-refined products (fuel_oil, LPG, paraffin), supply = 0
+        so deficit = demand (100% imports).
+```
+
+`balance_annual.csv` per run carries the full per-product per-year picture.
+This is the stakeholder-facing headline: how much liquid fuel does the
+country need to import per product per scenario per year.
+
+---
+
+## 9. Pricing (deferred — point of reference for future work)
+
+**Explicitly out of v1.** Locked decision: v1 stays strictly volume-only.
+Pricing is a planned future capability for commercial-decision insights
+(storage / terminal economics, import bill, refinery margin, retail
+price forecasts) — not v1.
+
+When pricing lands, the layers below will plug into the existing balance
+output rather than restructure the model:
+
+```
+Pricing layer (deferred)
+├── Reference prices (exogenous)
+│   ├── Brent / WTI crude path                                [N]
+│   ├── Singapore / Rotterdam refined product paths           [N]
+│   └── BFP-indexed retail ULP path                           [N]
+├── Translation rules
+│   ├── Refinery margin (refined revenue − crude cost)        [N]
+│   ├── Wholesale-to-retail markups                           [N]
+│   └── Import parity formula (Singapore + freight + premium) [N]
+└── Optional: price-quantity feedback
+    └── Demand price elasticity per segment                   [N] modelling-heavy; may stay never
+```
+
+What pricing buys when it lands:
+- **Import bill** = deficit volume × import parity price → $ cost of imports
+- **Refinery economics** = revenue − COGS per refinery → which refineries are marginal
+- **Retail price forecast** under each scenario
+- **Cost-side scenarios** (high oil price worldview vs low) independent of demand scenarios
+
+For now the model produces *what* and *how much*. Pricing adds the *how
+much it costs* layer.
+
+---
+
+## How to use this doc
+
+When sourcing lands a real value:
+
+1. Replace the [P] in the relevant YAML with the sourced value.
+2. Set `provisional: false`, fill in `last_updated:` and `source:`.
+3. Update this tree's tag from [P] to [Q] for that leaf.
+4. Update the **At-a-glance** count at the top.
+5. Re-run `pytest`, `verify_against_xlsx.py`, and `compare_history.py`.
+
+When a segment graduates from HELD to MODELLED (e.g., industrial gets
+sub-segment data):
+
+1. Build the sub-segment compute in the segment's `.py` file.
+2. Update the YAML schema to carry the new sub-segment inputs.
+3. Update the tree here — the [N] sub-segment leaves become real branches.
+4. Bump the segment status in `demand/__init__.py` and the segment file.

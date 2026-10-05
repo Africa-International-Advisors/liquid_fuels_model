@@ -12,6 +12,10 @@
 # Plus an additive load-shedding-driven term where applicable.
 
 ocgt_capacity:
+  register_id: REG-GENERATION-OCGT_CAPACITY
+  exception_id: EXC-GENERATION-OCGT_CAPACITY
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Open-cycle gas turbine stations and their nameplate capacity (MW).
   # The xlsx names "New 1" and "New 2" for planned/notional capacity.
   by_country:
@@ -35,6 +39,10 @@ ocgt_capacity:
     kind: flat
 
 load_factor:
+  register_id: REG-GENERATION-LOAD_FACTOR
+  exception_id: EXC-GENERATION-LOAD_FACTOR
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Annual load factor for OCGT fleet, scenario-dependent.
   csv: timeseries/ocgt_load_factor.csv
   units: fraction
@@ -45,6 +53,10 @@ load_factor:
     kind: linear
 
 load_shedding:
+  register_id: REG-GENERATION-LOAD_SHEDDING
+  exception_id: EXC-GENERATION-LOAD_SHEDDING
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Load-shedding-driven OCGT diesel demand (GWh-equivalent), by scenario.
   csv: timeseries/ocgt_load_shedding.csv
   units: GWh
@@ -55,6 +67,10 @@ load_shedding:
     kind: linear
 
 efficiency:
+  register_id: REG-GENERATION-EFFICIENCY
+  exception_id: EXC-GENERATION-EFFICIENCY
+  owner: nigel.zhuwaki
+  confidence: unassessed
   by_country:
     ZAF: 0.4
     BWA: null
@@ -69,6 +85,10 @@ efficiency:
     kind: flat
 
 mj_per_litre:
+  register_id: REG-GENERATION-MJ_PER_LITRE
+  exception_id: EXC-GENERATION-MJ_PER_LITRE
+  owner: nigel.zhuwaki
+  confidence: unassessed
   value: 36.9
   units: MJ per litre (diesel)
   source: Vopak/Reatile xlsx (MJ_Litres_Conversion)
@@ -78,6 +98,10 @@ mj_per_litre:
     kind: flat
 
 operational_days:
+  register_id: REG-GENERATION-OPERATIONAL_DAYS
+  exception_id: EXC-GENERATION-OPERATIONAL_DAYS
+  owner: nigel.zhuwaki
+  confidence: unassessed
   value: 365
   units: days per year
   source: Vopak/Reatile xlsx (Operational_days)

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "durban",
+    "page": "https://www.vopak.com/terminals/vopak-terminal-durban",
+    "image": "https://www.vopak.com/sites/default/files/styles/cta_square/public/2024-02/vopak-blend-island-view.jpg.webp?h=39897005&itok=yJsyRB4I",
+    "path": "pptx\\assets\\cover-options\\durban.jpg"
+  },
+  {
+    "name": "europoort",
+    "page": "https://www.vopak.com/terminals/vopak-terminal-europoort-rotterdam",
+    "image": "https://www.vopak.com/sites/default/files/styles/cta_square/public/2024-02/Europoort_2019.jpg.webp?h=6f8e2d4a&itok=br4YyvSu",
+    "path": "pptx\\assets\\cover-options\\europoort.jpg"
+  },
+  {
+    "name": "antwerp",
+    "page": "https://www.vopak.com/terminals/vopak-terminal-eurotank-antwerp",
+    "image": "https://www.vopak.com/sites/default/files/styles/cta_square/public/2024-02/Eurotank_2022_1.jpg.webp?h=e6822f9a&itok=ja5DLNsx",
+    "path": "pptx\\assets\\cover-options\\antwerp.jpg"
+  },
+  {
+    "name": "lesedi",
+    "page": "https://www.vopak.com/terminals/vopak-terminal-lesedi",
+    "image": "https://www.vopak.com/sites/default/files/styles/cta_square/public/2024-02/Lesedi_2023.jpg.webp?h=92229be0&itok=wC9gTd3z",
+    "path": "pptx\\assets\\cover-options\\lesedi.jpg"
+  }
+]

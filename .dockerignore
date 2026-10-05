@@ -34,9 +34,11 @@ Thumbs.db
 # Model output (regenerated on every run; not part of the image)
 runs/
 
-# Local data scratchpad (gitignored anyway, but belt-and-braces)
-data/raw/
-data/interim/
+# Received sources and generated packs are not needed by the documentation viewer.
+external/
+pptx/
+output/
+archive/
 
 # Excel lock files
 ~$*.xlsx
@@ -54,3 +56,9 @@ docker-compose.*.yml
 
 # Streamlit local secrets (not used but reserved)
 .streamlit/secrets.toml
+
+# Frontend local dependencies, outputs and secrets
+frontend/node_modules/
+frontend/.next/
+frontend/*.tsbuildinfo
+frontend/.env*

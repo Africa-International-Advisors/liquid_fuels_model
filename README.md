@@ -1,146 +1,119 @@
 # SACU Liquid Fuels Model
 
-Python rebuild of the Vopak/Reatile liquid fuels supply–demand model.
-v1 scope: **SACU** (South Africa, Botswana, Lesotho, Namibia, Eswatini),
-**monthly** granularity to **2050**, two coherent scenarios
-(`high_demand`, `low_demand`) ported from the original xlsx,
-**annual xlsx** as the consumer artifact.
+Python rebuild of the Vopak/Reatile liquid-fuels model. Intended scope: SACU,
+monthly demand from 2024 to 2050, with annual supply balances and two scenarios.
+Current populated country coverage is South Africa only. Outputs are provisional.
 
 ## Why this exists
 
-The original Excel model (`docs/Liquid Fuels Model - Supply Demand, 2025 - Reatile Copy.xlsx`) forecasts South African liquid fuel demand — gasoline, diesel, jet — out to 2050, balances it against domestic refinery supply, and surfaces deficits that imports need to cover. It's been a one-off deliverable: a workbook handed over, then opened the next year and edited in place. That's been getting harder. Three pressures pushed us toward a maintained, code-based rebuild:
+The decision question is: how much liquid fuel will SACU need, how much can domestic
+production supply, and what gap remains under different scenarios? The rebuild
+separates assumptions, calculations and reporting so annual changes can be explained.
+A national deficit is not yet a terminal-throughput or trade-routing forecast.
 
-- **Annual refresh as a real operational requirement.** Each year's update needs to be reproducible — same inputs producing the same numbers — and stakeholders increasingly ask *"why did the 2030 diesel forecast change vs last year?"* Excel can't decompose that into "assumptions changed" vs "logic changed." A vintaged code-plus-config approach can.
-- **Assumptions governance.** A separate central assumptions repo is becoming the team's source of truth for shared inputs (GDP, FX, demographics). The model needs to *consume* assumptions through a clean interface so that swap is mechanical, not a rewrite. That's why everything under `assumptions/<vintage>/` looks the way it does.
-- **Geographic expansion.** The xlsx is South Africa only; the practical question is increasingly Southern African — cross-border fuel flows, regional refinery capacity, BLNS as demand satellites. v1 covers SACU; wider SADC is a planned extension, not a v1 scope creep.
+## Install and run
 
-This repo is the rebuild. v1 is a **structural baseline** — the architecture, scenario machinery, and ZAF values ported from the xlsx — with the modelling logic itself to be filled in incrementally. The goal: a model the team can refresh annually with a clear contract for what's input vs logic vs output, and a defensible trail back to where every number came from.
-
-## Layout
-
-```
-src/lfm/                  Python package
-  run.py                  Run = (vintage, scenario, model_version)
-  config.py               Path resolution
-  core/                   time index, SACU geography, fuel products
-  assumptions/            provider abstraction + YAML-directory implementation
-  demand/                 vehicles + aviation + generation (modelled),
-                          industrial + marine + agriculture (held)
-  supply/                 cross-border + refining-import flows (thin v1)
-  output/                 monthly→annual aggregate, template-driven xlsx
-
-assumptions/2026/         the active vintage
-  _meta.yaml              vintage metadata + scenario list + xlsx mapping
-  macro.yaml              GDP, GDP/capita, growth, population, FX
-  vehicles.yaml           S-curve params (high/low), regression coeffs, efficiency paths
-  aviation.yaml           jet 2-var regression, passenger driver, product split
-  generation.yaml         OCGT capacity, load factor, load shedding, conversion factors
-  industrial.yaml         driver-tied growth + seasonality (held)
-  marine.yaml             per-port volumes + product split (held)
-  agriculture.yaml        deferred placeholder
-  supply.yaml             refinery capacities, product mix, utilisation, availability
-  seasonality/            CSV-backed monthly indices
-  timeseries/             CSV-backed long histories (extracted from xlsx)
-
-scripts/                  ETL / inspection one-offs
-  inspect_xlsx.py         dump xlsx structure + named-range values
-  extract_xlsx_to_assumptions.py   write xlsx series into timeseries/ CSVs
-
-data/                     raw local working data (gitignored)
-runs/                     model outputs, tagged by Run (gitignored)
-tests/                    pytest
-
-docs/                     reference material for the original xlsx model
-  EV forecast methodology.md
-  Liquid Fuels Model - Supply Demand, 2025 - Reatile Copy.xlsx
-  24032026fleet-electrification-assumptions-sa-v2200.pptx
-  AIA_Vopak_Intermediary_report_vf2_2025.pdf
-  demand_hypothesis_tree.md       McKinsey-style per-segment driver decomposition
-  params_sourcing.md              provisional-input sourcing log
-
-app/                      Streamlit documentation app
-  streamlit_app.py        Home page
-  pages/                  Hypothesis Tree + Architecture (auto-discovered)
-  Dockerfile + README.md  build / run / internal-deploy runbook
-```
-
-## Documentation app
-
-A Streamlit app surfaces the model's documentation for anyone who'd rather
-not clone the repo. See `app/README.md` for full build / run / deploy steps.
-
-**Docker Compose (recommended)** — one command from the repo root:
-
-```powershell
-docker compose up -d
-```
-
-Then browse to `http://localhost:8501`. The compose file mounts the docs
-read-only, so doc edits flow through on browser refresh without rebuilds.
-
-**Local Python (no Docker)**:
-
-```powershell
-pip install -e ".[app]"
-streamlit run app/streamlit_app.py
-```
-
-## Install
+Use Python 3.14 for the pinned, tested environment:
 
 ```powershell
 python -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -e ".[dev]"
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install --no-deps -e .
+.\.venv\Scripts\python.exe -m lfm check --vintage 2026
+.\.venv\Scripts\python.exe -m lfm run --vintage 2026 --scenario high_demand
+.\.venv\Scripts\python.exe -m lfm run --vintage 2026 --scenario low_demand
+.\.venv\Scripts\python.exe -m pytest
 ```
 
-## Run
+`lfm check` checks governance coverage and drift, not model validity. `lfm check --strict`
+also fails while exceptions remain open. Exceptions expire on 12 November 2026 or
+before formal release, whichever comes first. Unknown confidence and source dates
+remain explicit; the register does not certify legacy assumptions.
+
+## Layout
+
+```text
+src/lfm/
+  model/          demand, supply and shared dimensions; no file I/O
+  assumptions/    file-backed and in-memory provider adapters
+  governance.py   register coverage, drift and exception checks
+  reporting/     aggregation and future Excel reporting
+  scripts/       workbook extraction, inspection and reconciliation
+  cli.py, run.py  orchestration and run identity
+assumptions/2026/ versioned YAML and CSV inputs (draft)
+governance/      individually owned input rows and time-bounded exceptions
+external/        original workbook, received reports and source data
+docs/            authored methodology and working notes
+runs/            calculated results and provenance (ignored)
+output/          generated model reports; delivered/ copies tracked
+pptx/            separate presentation workspace (see pptx/README.md)
+frontend/        Next.js / Tailwind read-only documentation viewer (local exception)
+workstreams/     engagement workplan, delivery tracking and analyst learning
+tests/           model, governance and migration checks
+archive/         superseded material when needed
+```
+
+## Current implementation
+
+Vehicles, aviation, generation, industrial, marine and agriculture compute demand.
+Supply and demand-supply balances run; annual aggregation and CSV reporting work.
+Vehicle assumptions and several sector baselines remain provisional. The Excel writer
+is still a stub. BLNS data, central assumptions-engine integration, independent review
+and business sign-off are not complete. See `GATE_CHECKLIST.md` and the exception log.
+
+The primary demand modules compute annually and expand to monthly rows; realistic
+monthly seasonality remains a modelling task. Historical reconciliation has material
+gaps. Tests passing does not mean the forecasts are ready for decisions.
+
+## Documentation viewer
+
+The read-only Next.js/TypeScript/Tailwind viewer follows the frontend stack used in
+`tender_scraper`. It reads the overview, hypothesis tree and architecture directly from
+Markdown. It does not execute the model or edit assumptions. Project-canon was not
+changed for this frontend; it is an explicit local exception.
 
 ```powershell
-python -m lfm run --vintage 2026
+cd frontend
+npm.cmd ci
+npm.cmd run dev
 ```
 
-(The CLI is wired but the engine isn't implemented yet — it'll print a
-prepared-Run banner and exit cleanly.)
-
-## Tests
-
-```powershell
-pytest
-```
-
-## What's implemented vs deferred
-
-| Layer | v1 status |
-|---|---|
-| Package skeleton, CLI, Run/vintage tagging | scaffolded |
-| Assumption provider interface | scaffolded |
-| Assumption YAMLs (vintaged config, xlsx values ported) | done for ZAF; BLNS = nulls |
-| Timeseries CSVs (GDP, OCGT load, refinery utilisation, …) | extracted from xlsx |
-| YAML provider implementation | TODO |
-| Annual→monthly expansion | TODO |
-| Vehicles demand module (MODELLED) | done — cohort engine producing real numbers |
-| Aviation demand module (MODELLED, jet regression) | done — R² 0.95, ±10% on history |
-| Generation demand module (MODELLED, OCGT) | done — capacity × load factor → diesel |
-| Industrial / marine / agriculture (HELD, GDP-tied) | done — provisional placeholders, awaits sourcing |
-| Supply (refineries → gasoline / diesel / jet) | done — capacity × utilisation × split |
-| Balance / deficit (demand − supply per product) | done — `balance_annual.csv` per run |
-| Pricing layer | deferred — point of reference for future work |
-| Agriculture | deferred (returns empty frame) |
-| Supply flows | thin TODO |
-| Annual roll-up + xlsx writer | TODO |
-
-The scaffold defines the seams; filling in the modules above is the v1
-build-out. Stub functions raise `NotImplementedError` rather than
-returning fake values, so missing pieces fail loudly.
+Open http://127.0.0.1:3100. From the repository root, `docker compose up -d --build`
+provides the same viewer. See `frontend/README.md` for build and deployment instructions.
+The former Streamlit implementation is preserved in `archive/2026-10-01_streamlit_viewer/`.
 
 ## Reproducibility
 
-Annual refresh means stakeholders will ask "why did this number change
-vs last year?" The only durable answer is an **assumption-delta vs
-logic-delta** decomposition. That's a design constraint:
+A run records model version, Git commit, dirty-worktree status, source-code hashes,
+input/governance hashes, scenario, vintage, execution user, time and open exceptions.
+Existing run outputs are not overwritten: repeated executions create a timestamped
+subfolder under the tagged run directory. Shipped vintages must not be edited.
+The central-engine snapshot reference is explicitly null until that integration exists.
 
-- A vintage directory is **immutable** once shipped. Corrections live in
-  a new vintage.
-- Every run is tagged `(model_version, vintage, scenario)`.
-- Year-on-year diffs run new-logic on old-vintage and on new-vintage,
-  attributing the gap accordingly.
+## Reference tools
+
+```powershell
+python -m lfm.scripts.compare_history
+python -m lfm.scripts.verify_against_xlsx
+```
+
+The original workbook is in `external/sources/` and remains read-only. Extraction is
+`python -m lfm.scripts.extract_xlsx_to_assumptions`; it updates the draft inputs and
+therefore requires deliberate reconciliation with the governance register afterwards.
+
+## Presentation workspace
+
+The agreed canon exception keeps `pptx/story/`, `pptx/scripts/`, original templates,
+brand settings and workflow together. Builders consume stamped model results and do
+not duplicate model logic. The user's template and an approved slide mockup are still
+pending; the presentation is not build-ready. See `pptx/README.md`.
+
+
+## Engagement workstreams
+
+`workstreams/` holds WS0 governance/planning, WS1 data validation, WS2 model development,
+WS3 reporting/delivery and WS4 analyst enablement. Start at `workstreams/README.md`.
+Root `governance/` remains the model assumption audit trail; WS0 is delivery management.
+Model code stays in `src/lfm/`, presentation work stays in `pptx/`, and the weekly cockpit
+is a dated record under `workstreams/WS0_governance/workplan/`. Dates and staffing in
+the initial six-week plan are proposed, not confirmed commitments.

@@ -6,10 +6,14 @@
 #
 # Values flagged `provisional: true` are LITERATURE-RANGE PLACEHOLDERS sufficient
 # for engine implementation but NOT for decision-grade output. Tracking sheet:
-# `docs/params_sourcing.md`. Outputs computed off provisional inputs
+# `docs/methodology/params_sourcing.md`. Outputs computed off provisional inputs
 # must carry a "PROVISIONAL" banner.
 
 ev_scurve:
+  register_id: REG-VEHICLES-EV_SCURVE
+  exception_id: EXC-VEHICLES-EV_SCURVE
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Logistic / Boltzmann S-curve parameters per country, per scenario.
   # penetration(t) = 1 / (1 + exp((midpoint - t) / slope))
   #
@@ -45,6 +49,10 @@ ev_scurve:
     kind: flat
 
 new_vehicle_regression:
+  register_id: REG-VEHICLES-NEW_VEHICLE_REGRESSION
+  exception_id: EXC-VEHICLES-NEW_VEHICLE_REGRESSION
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # NewVehicleDemand = slope * GDP_per_capita + intercept
   #
   # Regression coefficients are shared across scenarios; what varies between
@@ -67,6 +75,10 @@ new_vehicle_regression:
 # values come from external sources (or provisional literature placeholders).
 
 annual_km_per_vehicle:
+  register_id: REG-VEHICLES-ANNUAL_KM_PER_VEHICLE
+  exception_id: EXC-VEHICLES-ANNUAL_KM_PER_VEHICLE
+  owner: nigel.zhuwaki
+  confidence: unassessed
   by_country:
     ZAF: { passenger: 17000, lcv: 28000, hcv: 70000 }
     BWA: { passenger: null,  lcv: null,  hcv: null  }
@@ -76,13 +88,17 @@ annual_km_per_vehicle:
   units: km per vehicle per year
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (eNaTIS odometer queries / GreenCape / NAAMSA / IEA MoMo). See docs/params_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (eNaTIS odometer queries / GreenCape / NAAMSA / IEA MoMo). See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true
   expand:
     kind: flat
 
 fuel_consumption:
+  register_id: REG-VEHICLES-FUEL_CONSUMPTION
+  exception_id: EXC-VEHICLES-FUEL_CONSUMPTION
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Litres per 100 km, by segment and powertrain. HCV petrol is null because
   # heavy commercial vehicles in SACU are essentially all diesel.
   #
@@ -118,13 +134,17 @@ fuel_consumption:
   units: L / 100 km
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (DMRE/DoE energy balances, IEA MoMo, NAAMSA-weighted OEM averages). See docs/params_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (DMRE/DoE energy balances, IEA MoMo, NAAMSA-weighted OEM averages). See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true             # base fleet-average; efficiency_improvement applied annually on top
   expand:
     kind: flat
 
 petrol_diesel_split:
+  register_id: REG-VEHICLES-PETROL_DIESEL_SPLIT
+  exception_id: EXC-VEHICLES-PETROL_DIESEL_SPLIT
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Fraction of new ICE sales that are petrol vs diesel, per segment.
   by_country:
     ZAF:
@@ -150,13 +170,17 @@ petrol_diesel_split:
   units: fraction (sums to 1 per country×segment)
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (NAAMSA monthly sales reports). See docs/params_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (NAAMSA monthly sales reports). See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true
   expand:
     kind: flat
 
 scrappage_rate:
+  register_id: REG-VEHICLES-SCRAPPAGE_RATE
+  exception_id: EXC-VEHICLES-SCRAPPAGE_RATE
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Annual fraction of fleet retired. v1 uses a flat rate per segment as
   # a simplification; a Weibull/logistic survival curve is a future upgrade.
   by_country:
@@ -168,13 +192,17 @@ scrappage_rate:
   units: fraction per year
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (eNaTIS deregistrations / SA vehicle-stock-turnover papers). See docs/params_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (eNaTIS deregistrations / SA vehicle-stock-turnover papers). See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true
   expand:
     kind: flat
 
 new_vehicle_segment_split:
+  register_id: REG-VEHICLES-NEW_VEHICLE_SEGMENT_SPLIT
+  exception_id: EXC-VEHICLES-NEW_VEHICLE_SEGMENT_SPLIT
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Fraction of total new-vehicle demand falling into each segment.
   # Needed because the EV/new-vehicle regression yields a single aggregate
   # number; we then split that into passenger/lcv/hcv to apply per-segment
@@ -188,7 +216,7 @@ new_vehicle_segment_split:
   units: fraction (sums to 1 per country)
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (NAAMSA new-vehicle registrations split by segment). See docs/params_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (NAAMSA new-vehicle registrations split by segment). See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true
   expand:
@@ -200,6 +228,10 @@ efficiency_improvement:
   # L/100km = baseline * cumulative_product(1 - improvement) over years.
   # Sourced from the xlsx Assumptions sheet's High/Low demand scenario columns.
   diesel:
+    register_id: REG-VEHICLES-EFFICIENCY_IMPROVEMENT-DIESEL
+    exception_id: EXC-VEHICLES-EFFICIENCY_IMPROVEMENT-DIESEL
+    owner: nigel.zhuwaki
+    confidence: unassessed
     csv: timeseries/efficiency_improvement_diesel.csv
     units: fraction per year
     source: Vopak/Reatile xlsx (HighEfficiency_Improvement_Diesel / LowEfficiency_Improvement_Diesel)
@@ -208,6 +240,10 @@ efficiency_improvement:
     expand:
       kind: flat
   gasoline:
+    register_id: REG-VEHICLES-EFFICIENCY_IMPROVEMENT-GASOLINE
+    exception_id: EXC-VEHICLES-EFFICIENCY_IMPROVEMENT-GASOLINE
+    owner: nigel.zhuwaki
+    confidence: unassessed
     csv: timeseries/efficiency_improvement_gasoline.csv
     units: fraction per year
     source: Vopak/Reatile xlsx (HighEfficiency_Improvement_Gasoline / LowEfficiency_Improvement_Gasoline)

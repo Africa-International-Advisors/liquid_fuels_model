@@ -1,0 +1,45 @@
+{
+  "source": "https://www.vopak.com/system/files/Half_Year_Report_2026_v2.pdf",
+  "period": "Six months ended 30 June 2026",
+  "group_pages": [16, 18, 29, 32, 33, 39, 57],
+  "group": [
+    ["Revenue", 677.1, 651.5],
+    ["EBITDA, excl. exceptional items (APM)", 485.1, 491.0],
+    ["EBIT, incl. exceptional items", 311.6, 437.6],
+    ["Ordinary-shareholder net profit", 186.4, 318.6],
+    ["EPS, EUR/share", 1.63, 2.74],
+    ["Operating cash flow (gross)", 466.6, 495.8],
+    ["Investing cash flow, incl. derivatives", -174.9, -296.6],
+    ["Financing cash flow", -251.8, -147.7]
+  ],
+  "services_page": 39,
+  "services": [["Storage services",551.0,531.1],["Product movements",40.4,34.3],["Storage / handling related",68.9,70.0],["Other services",16.8,16.1]],
+  "regional_pages": [23,24,25,56,57],
+  "regions": [
+    ["Asia & Middle East",172.1,122.9,157.5,"89%"],
+    ["China & North Asia",77.0,55.7,56.2,"82%"],
+    ["Netherlands",269.6,176.1,165.7,"93%"],
+    ["Singapore",102.2,77.5,79.9,"94%"],
+    ["USA & Canada",166.3,87.4,89.7,"94%"],
+    ["All other business units",170.6,118.1,113.1,"90%"],
+    ["Global functions / corporate",11.2,-37.4,-46.8,"—"],
+    ["Group",969.0,600.3,615.3,"91%"]
+  ],
+  "proportional_cash_flow": [444.2,450.5],
+  "regional_revenue_2025": [202.9,80.1,257.7,103.3,171.5,153.2,13.4,982.1],
+  "cash_flow_page": 32,
+  "cash_flows": {
+    "gross_operating": 466.6,
+    "interest_received": 5.4,
+    "tax_paid": -53.4,
+    "net_operating": 418.6,
+    "investing": -174.9,
+    "financing": -251.8,
+    "net_cash_flows": -8.1,
+    "exchange": 3.0,
+    "net_change": -5.1,
+    "opening_cash_including_overdrafts": 98.8,
+    "closing_cash_including_overdrafts": 93.7
+  },
+  "definition": "Regional revenue and EBITDA use proportional reporting, excluding exceptional items. This combines Vopak's ownership share of subsidiaries, joint ventures and associates; it differs from IFRS consolidation."
+}

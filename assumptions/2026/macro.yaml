@@ -15,6 +15,10 @@
 #                        seasonal_index: <name in seasonality/>
 
 gdp:
+  register_id: REG-MACRO-GDP
+  exception_id: EXC-MACRO-GDP
+  owner: nigel.zhuwaki
+  confidence: unassessed
   csv: timeseries/gdp.csv
   units: ZAR (constant 2015)
   source: Vopak/Reatile xlsx (GDP named range); BLNS to be sourced
@@ -24,6 +28,10 @@ gdp:
     kind: linear
 
 gdp_per_capita:
+  register_id: REG-MACRO-GDP_PER_CAPITA
+  exception_id: EXC-MACRO-GDP_PER_CAPITA
+  owner: nigel.zhuwaki
+  confidence: unassessed
   csv: timeseries/gdp_per_capita.csv
   units: ZAR (constant 2015) per capita
   source: Vopak/Reatile xlsx (GDP named range, GDP/capita columns); BLNS to be sourced
@@ -33,6 +41,10 @@ gdp_per_capita:
     kind: linear
 
 gdp_growth:
+  register_id: REG-MACRO-GDP_GROWTH
+  exception_id: EXC-MACRO-GDP_GROWTH
+  owner: nigel.zhuwaki
+  confidence: unassessed
   csv: timeseries/gdp_growth.csv
   units: fraction per year (real GDP growth)
   source: Vopak/Reatile xlsx (GDP_high_growth / GDP_low_growth); BLNS to be sourced
@@ -42,6 +54,10 @@ gdp_growth:
     kind: flat
 
 population:
+  register_id: REG-MACRO-POPULATION
+  exception_id: EXC-MACRO-POPULATION
+  owner: nigel.zhuwaki
+  confidence: unassessed
   csv: timeseries/population.csv
   units: persons
   source: Vopak/Reatile xlsx (GDP named range, Population columns); BLNS to be sourced
@@ -51,6 +67,10 @@ population:
     kind: linear
 
 fx_zar_usd:
+  register_id: REG-MACRO-FX_ZAR_USD
+  exception_id: EXC-MACRO-FX_ZAR_USD
+  owner: nigel.zhuwaki
+  confidence: unassessed
   value: null   # placeholder — not in xlsx as a forecast series
   units: ZAR per USD
   source: TBD (SARB annual average)
@@ -60,6 +80,10 @@ fx_zar_usd:
     kind: flat
 
 crude_oil_litres_per_barrel:
+  register_id: REG-MACRO-CRUDE_OIL_LITRES_PER_BARREL
+  exception_id: EXC-MACRO-CRUDE_OIL_LITRES_PER_BARREL
+  owner: nigel.zhuwaki
+  confidence: unassessed
   value: 158.987
   units: litres per barrel
   source: Vopak/Reatile xlsx (Crude_oil_litresPerBarrel)

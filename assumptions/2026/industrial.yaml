@@ -7,6 +7,10 @@
 # Compute: volume(t) = base_year_volume * (gdp_pc(t) / gdp_pc(base_year))^elasticity
 
 base_year_volume:
+  register_id: REG-INDUSTRIAL-BASE_YEAR_VOLUME
+  exception_id: EXC-INDUSTRIAL-BASE_YEAR_VOLUME
+  owner: nigel.zhuwaki
+  confidence: unassessed
   by_country:
     ZAF: { value: 2.5e9,  year: 2024 }   # provisional ~2.5 BL/yr (mid-range guess)
     BWA: { value: null,   year: null }
@@ -16,11 +20,15 @@ base_year_volume:
   units: litres per year (diesel)
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — derived as residual of (xlsx total diesel - vehicles - OCGT - marine - agri); awaits proper sourcing (DMRE energy balances, mining sector reports, manufacturing energy intensity studies). See docs/params_sourcing.md
+  source: PROVISIONAL — derived as residual of (xlsx total diesel - vehicles - OCGT - marine - agri); awaits proper sourcing (DMRE energy balances, mining sector reports, manufacturing energy intensity studies). See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true
 
 elasticity:
+  register_id: REG-INDUSTRIAL-ELASTICITY
+  exception_id: EXC-INDUSTRIAL-ELASTICITY
+  owner: nigel.zhuwaki
+  confidence: unassessed
   by_country:
     ZAF: 1.0    # provisional — industrial diesel grows roughly 1:1 with GDP
     BWA: null
@@ -30,17 +38,27 @@ elasticity:
   units: dimensionless (response of diesel demand to GDP/capita)
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range; varies 0.5–1.2 across studies. See docs/params_sourcing.md
+  source: PROVISIONAL — literature mid-range; varies 0.5–1.2 across studies. See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true
 
 product:
+  register_id: REG-INDUSTRIAL-PRODUCT
+  exception_id: EXC-INDUSTRIAL-PRODUCT
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  source: Legacy configuration; original source not recorded
   # All industrial output goes to diesel_50ppm in v1.
   default: diesel_50ppm
   units: product code
   shared: true
 
 seasonality:
+  register_id: REG-INDUSTRIAL-SEASONALITY
+  exception_id: EXC-INDUSTRIAL-SEASONALITY
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  units: not recorded
   # Industrial diesel has weak monthly seasonality (mining maintenance windows,
   # agri spillover). Flat for v1.
   by_country:

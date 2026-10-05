@@ -6,6 +6,10 @@
 # fallback until data is available.
 
 regression:
+  register_id: REG-AVIATION-REGRESSION
+  exception_id: EXC-AVIATION-REGRESSION
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # JetFuel(t) = intercept + b_gdp_pc * GDP_per_capita(t) + b_pax * PassengerDepartures(t)
   #
   # Source: xlsx sheet `RegJetFuel` / named-range coefficients.
@@ -29,6 +33,10 @@ regression:
     kind: flat
 
 passenger_departures:
+  register_id: REG-AVIATION-PASSENGER_DEPARTURES
+  exception_id: EXC-AVIATION-PASSENGER_DEPARTURES
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Driver series for the regression. Historical observed departures plus
   # the xlsx's base-scenario forecast path.
   csv: timeseries/passenger_departures.csv
@@ -40,6 +48,11 @@ passenger_departures:
     kind: linear
 
 product_split:
+  register_id: REG-AVIATION-PRODUCT_SPLIT
+  exception_id: EXC-AVIATION-PRODUCT_SPLIT
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  source: Legacy configuration; original source not recorded
   # Aviation segment emits one product (Jet A1) for v1. Aviation gasoline
   # and paraffin are immaterial at SACU scale and rolled into jet.
   by_country:
@@ -54,6 +67,11 @@ product_split:
     kind: flat
 
 seasonality:
+  register_id: REG-AVIATION-SEASONALITY
+  exception_id: EXC-AVIATION-SEASONALITY
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  units: not recorded
   # Dec-Feb peak (southern-summer tourism), secondary Jul-Aug.
   # Indices to be fitted from history.
   by_country:

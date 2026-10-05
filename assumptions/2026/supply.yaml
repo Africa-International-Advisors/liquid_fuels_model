@@ -5,6 +5,10 @@
 # form as the demand YAMLs, so the supply layer can grow without restructuring.
 
 refinery_capacity:
+  register_id: REG-SUPPLY-REFINERY_CAPACITY
+  exception_id: EXC-SUPPLY-REFINERY_CAPACITY
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Nameplate capacity (kbpd) for SA refineries. The xlsx tracks 6;
   # availability is captured separately as a fleet-level constant.
   by_country:
@@ -27,6 +31,10 @@ refinery_capacity:
     kind: flat
 
 refinery_product_mix:
+  register_id: REG-SUPPLY-REFINERY_PRODUCT_MIX
+  exception_id: EXC-SUPPLY-REFINERY_PRODUCT_MIX
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Fraction of each refinery's output by product. Sums to <= 1; the
   # remainder is heavy/residual not modelled in v1.
   by_country:
@@ -49,6 +57,10 @@ refinery_product_mix:
     kind: flat
 
 refinery_utilisation:
+  register_id: REG-SUPPLY-REFINERY_UTILISATION
+  exception_id: EXC-SUPPLY-REFINERY_UTILISATION
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Annual utilisation rate per refinery, scenario-dependent. The CSV
   # rows are keyed (refinery, year, scenario) -> utilisation; the
   # `country` column carries `ZAF:<refinery_name>` to encode the join.
@@ -61,6 +73,10 @@ refinery_utilisation:
     kind: linear
 
 refinery_availability:
+  register_id: REG-SUPPLY-REFINERY_AVAILABILITY
+  exception_id: EXC-SUPPLY-REFINERY_AVAILABILITY
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Fleet-level availability factor applied on top of utilisation.
   value: 0.9
   units: fraction

@@ -29,7 +29,7 @@ import yaml
 
 from ..config import Paths
 from ..run import Run
-from ..core.time import ExpansionRule
+from ..model.core.time import ExpansionRule
 from .base import Assumption, AssumptionProvider
 
 
@@ -131,6 +131,10 @@ class YamlDirectoryProvider(AssumptionProvider):
 # Keys that describe an assumption rather than carry its value; stripped from
 # any returned dict so callers see only the substantive payload.
 _META_KEYS = {
+    "register_id",
+    "exception_id",
+    "owner",
+    "confidence",
     "source",
     "last_updated",
     "scenarios",

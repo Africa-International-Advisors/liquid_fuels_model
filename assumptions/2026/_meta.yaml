@@ -35,7 +35,7 @@ scenarios:
 # OCGT diesel. So the "_High" (high-EAF, low-OCGT-use) series is the
 # OPTIMISTIC grid worldview and pairs with low_demand (less liquid fuel
 # needed); the "_Low" (low-EAF, high-OCGT-use) series pairs with high_demand.
-# This was verified via scripts/probe_ocgt_mapping.py against the high_demand
+# This was verified via src/lfm/scripts/probe_ocgt_mapping.py against the high_demand
 # description ("more load-shedding-driven OCGT diesel").
 xlsx_scenario_mapping:
   high_demand:

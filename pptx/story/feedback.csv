@@ -1,0 +1,117 @@
+slide,feedback,status
+2,Native Marvin SCR table with editable context/challenge/direction icons; preserve wording,Applied and visually checked
+3,Reduce question size and weight; add numbered supporting sections and editable icons,Applied and visually checked
+6,Match slide 2 native SCR table and editable icons; preserve wording,Applied and visually checked
+7,Native Marvin table with labels and explanations; retain scope note,Applied and visually checked
+11,Two native Marvin tables: responsibilities and completion evidence; retain proposed-roles note,Applied and visually checked
+12,Native Marvin table: decisions / first deliverable / acceptance check,Applied and visually checked
+all,Reduce divider prominence: thinner light-grey table and title/footer rules,Applied and visually checked
+all,Dividers too faint: increase grey contrast while retaining thin weights,Applied and visually checked
+2,Explicit Namibia/Walvis Bay and broader African opportunity scope in project SCR,Applied and visually checked
+3,Add editable question icon beside the main question,Applied and visually checked
+4,SACU plus East/West/North Africa and SADC excluding SACU; native nine-scenario matrix with M/M baseline,Applied and visually checked
+5,Distinguish demand / domestic production / imports; calculated import requirements; logistics and market access,Applied and visually checked
+6,Replace person-development framing with repeatable reproducible modelling operating system,Applied and visually checked
+7,Specific required market data and Vopak board reporting and commercial analysis,Applied and visually checked
+8,Concrete build priorities covering full geography and reproducible outputs,Applied and visually checked
+9,"Parallel model/data, client-analysis and storyboard/reporting workstreams from week 1",Applied and visually checked
+old 10,Remove analyst-training page,Removed
+10 (old 11),Confirm Manish analyst 100 percent; Nigel modelling lead; Henry reviewer,Applied and visually checked
+11 (old 12),Week-1 baseline deliverable and readiness gate; remove capacity/role questions,Applied and visually checked
+12,Closing page matching the cover,Applied and visually checked
+3-8 and 11,Supply includes domestic production and available imports; distinguish required imports and remaining gaps,Applied and checked
+4,Regional-depth asterisk: screening versus detailed country modelling subject to priorities and data availability,Applied and visually checked
+4,Thin panel divider; highlight H/L tight supply and L/H ample supply around M/M baseline,Applied and visually checked
+13-15,Appendix: current Python versus Excel historical demand chart; macro/sector inventory; port/logistics evidence and gaps,Applied and visually checked
+14-16,Quantified ranked fuel-driver bridges; corrected jet calculation parity; explicitly distinguished accounting contributions from causal assumption effects,Applied with numerical tie-out and 57 passing tests
+13,Editable geographic coverage map: South African national data; Walvis Bay Durban Cape Town Saldanha evidence; schematic corridors and port-data gaps,Applied and visually checked
+15,Full Africa overview with enlarged South Africa and coastal port callout,Applied and visually checked
+5-6,Actual 2030 demand and supply assumptions with calculated volumes; M and imports marked unset; source extraction limitation disclosed,Applied
+15,Vopak blue regional shades; explicit SACU and SADC excluding SACU; non-overlapping East Africa convention,Applied and visually checked
+16-17,South African refinery/synfuel locations and selected pipelines; Excel fuel-specific terminal/provincial storage with vintages and units,Applied and visually checked
+17,South Africa all eight commercial ports plus Port Nolloth; major rail corridors and selected pipelines on a separate geographic page,Applied
+17,"Add ROMPCO, Sasolburg, inland Gauteng and Lilly gas connections on a dedicated sourced map",Applied
+20,"Stack demand by traced components and expose fleet, power and sector assumptions; retain unresolved Excel aggregates",Applied
+21,Compare Excel and Python accuracy evidence with exact citations and explicit unresolved validation,Applied
+10,"Add actual Python architecture diagram: vintaged inputs, snapshot, demand/supply engine, balance, provenance and reporting",Applied
+11 and 14,Establish WS5 infrastructure/logistics; add proposed architecture and dedicated delivery plan; integrate repo workstreams,Applied
+Transport appendix,Add national-road overlay and labelled road page; expand liquid-pipeline connections with explicit branch completeness limits,Applied
+2,About this document / what it is not: half Vopak blue and half white with contrasting text,Applied
+3,"Add sourced Vopak client context before project SCR: business, customers, SA platform, strategy and engagement implications",Applied
+2,Add executive summary immediately after cover with one message for each of the four sections,Applied
+2,"Rewrite executive summary in Vopak decision language: Durban/Lesedi, Walvis Bay, customer flows and African growth options",Applied
+Full architecture,"Add integrated whole-model view with all demand sectors, production, trade, infrastructure, storage, decisions and implementation status",Applied
+Model Build,"Resequence into problem, whole model, WS5 extension and build dependencies; move scope and Python execution reference pages to appendix",Applied
+11,Introduce WS1-WS5 together under a WS0 governance band before Model Build; remove premature WS5 label from document-purpose page,Applied
+Analytical Requirements,"Add infrastructure assumptions: ports, airports, rail, roads, pipelines, power lines, power stations and storage; align WS5 and architecture",Applied
+Imports,Add workbook historical imports and 2030 forecasts alongside Python import requirements; distinguish available imports from the domestic gap,Applied; available-import constraints remain unimplemented
+Cover and closing,Replace green artwork with website Banyan photograph and blue/white cover. Website CSS primary-dark #0A2373 matches supplied logo; supporting primary #283CE1 and secondary #00CFE1. Source https://www.vopak.com/who-we-are checked 2026-10-02,Applied
+Cover and closing,User selected Durban opening image and Lesedi closing image; retain blue and white layout,Applied
+Cover and closing,Add visible bottom-right Royal Vopak photo source credits with linked terminal source pages,Applied
+22 and 39,Rename page 22 Appendix; add final Thank you closing cover on page 39 with Lesedi image and source credit,Applied
+2,"State all-South-Africa assessment; Durban and Lesedi are applications within national scope, not the boundary. Align architecture decision outputs.",Applied
+1 / 22 / 39,"Website-inspired half-blue half-photo covers; official white website logo and white type, thin rule, Durban opening / Lesedi appendix and closing; linked credits retained",Applied
+39?42,"Add national totals and all-fuel demand, domestic production and deficit graphs for 2024?2050 in both current scenarios; closing cover moves to 43",Applied
+39?42,Replace written colour and dash descriptions with editable line-sample legends matching plotted series,Applied
+28,"Replace written pipeline legend with visible line samples for products, crude and jet, matching the diagram",Applied to PDF review; delivered PPTX unchanged
+Reconciliation charts,"Consider consolidating petrol, diesel and jet reconciliation bridges into one page with three panels; retain assumptions and source detail. Confirm layout in next revision.",Applied to PDF review; delivered PPTX unchanged
+39?42,"Fuel oil appears without introduction. Proposed: petrol, diesel and jet as core reporting scope; identify fuel oil separately as a provisional marine output and disclose whether national totals include it. Do not silently change totals.",Applied to PDF review; delivered PPTX unchanged
+Opening / appendix / closing covers,"Remove blue credit strip beneath photograph; extend photo to bottom edge. Move linked photo source below Internal working discussion on left blue panel, with adequate spacing.",Applied to PDF review; delivered PPTX unchanged
+Project SCR / Model SCR,"Reduce body-copy font size on both SCR pages; retain clear hierarchy with bold Situation, Complication and Resolution labels, existing icons and consistent spacing. Body currently feels too large.",Applied to PDF review; delivered PPTX unchanged
+6 / related opportunity framing,"Broaden storage opportunities to storage and handling service opportunities. Include receipt, transfer and onward dispatch; align question and commercial relevance with About Vopak.",Applied to PDF review; delivered PPTX unchanged
+4 About Vopak,"Add native editable visual showing receipt -> storage / handling -> onward dispatch -> customer markets. Connect to throughput, usable storage and service demand; retain sourced client facts.",Applied to PDF review; delivered PPTX unchanged
+Section 2 naming,"Rename Analytical requirements to Analytical specifications in navigation, section references and model specification page title",Applied to PDF review; delivered PPTX unchanged
+8 Demand assumptions,"Clarify selected major demand drivers, not full assumption inventory. Add affected fuel column and calculation mechanism; distinguish scenario-varying vs shared inputs. Show omitted fleet, activity, efficiency, aviation, generation and sector-baseline assumptions in supporting inventory. Verify fuel/module links against code before final wording.",Applied to PDF review; delivered PPTX unchanged
+After selected demand drivers,"Add demand assumptions inventory covering all six modules, assumptions, fuel affected, source/vintage, shared vs scenario-varying treatment and validation gaps; verify against code/register",Applied to PDF review; delivered PPTX unchanged
+Appendix architecture reference,"Add companion current Excel model architecture page before Python execution architecture. Trace actual workbook sheets/ranges from inputs through demand and domestic production to balances/import forecasts and storage/market-share outputs. Show scenario links, external workbook dependencies and limitations; distinguish inherited workbook from target model.",Applied to PDF review; delivered PPTX unchanged
+Opening sequence,Introduce About Vopak before executive summary. Proposed sequence: cover -> About Vopak -> About this document -> Executive summary -> Project SCR -> core question. Retain client service visual and storage/handling framing.,Applied to PDF review; delivered PPTX unchanged
+All section navigation,Rename first chevron to 1 About consistently across all navigated pages,Applied to PDF review; delivered PPTX unchanged
+Full model assumption inventory,Add complete registered scalar and annual-series inventory with values units fuels source dates missing inputs and duplicate observations,Applied to PDF review; delivered PPTX unchanged
+13 Market balances and commercial opportunity,Reduce table text hierarchy from 20 pt to 17 pt,Applied to PDF review; delivered PPTX unchanged
+6 The question we need to answer,Reduce main question from 25 to 21 pt and supporting paragraphs from 21 to 18 pt; retain heading hierarchy,Applied to PDF review; delivered PPTX unchanged
+7 Analytical specifications,Rename table columns to Specification area and Scope and approach,Applied to PDF review; delivered PPTX unchanged
+Detailed assumptions,Move the complete register inventory and calculation conventions to a separate reference PDF; keep the module overview and companion reference in the main deck,Applied to PDF review; delivered PPTX unchanged
+Sketch annotated PDF p1,Cover title: demand and supply; move date block up; add regional coverage,Applied; PDF-only review
+Sketch annotated PDF p2,Use and instead of ampersand; expand NMPP,Applied; PDF-only review
+Sketch annotated PDF p4,"Liquid-fuels question, competitors and SACU/African scope in summary",Applied; PDF-only review
+Sketch annotated PDF p5,Concrete production/import/route complication; outlook wording,Applied; PDF-only review
+Sketch annotated PDF p6,Petrol/diesel/jet; distinguish import requirement from unmet gap; Vopak storage and handling,Applied; PDF-only review
+Sketch annotated PDF p7,Central Africa; baseline inside M/M; remove repeated baseline caption,Applied; PDF-only review
+Sketch annotated PDF p8,Show industry and agriculture anchors among selected drivers,Applied; values read from existing provider; PDF-only review
+Sketch annotated PDF p9,Clarify departing-passenger proxy versus arrivals and cargo,Applied; missing coverage explicitly stated; PDF-only review
+Sketch annotated PDF p11,Explain H/L demand-case labels rather than import ranking,Applied; PDF-only review
+Sketch annotated PDF p13,Include handling in opportunity analysis,Applied; PDF-only review
+Sketch annotated PDF p17,"Explain liquid-fuel transport demand, not generic freight",Applied; PDF-only review
+Sketch annotated PDF p18,Manage geographic depth with explicit market tiers and escalation criteria,Applied; agreement remains a gate; PDF-only review
+Sketch annotated PDF p19,Replace weekly table with Gantt; explicitly include infrastructure,Applied; PDF-only review
+Sketch annotated PDF p20,Clarify purpose and relation to integrated workplan,Retained as supporting WS5 acceptance gates; heading and framing revised; PDF-only review
+Sketch annotated PDF p22,Separate numbered baseline-data and reporting decisions,Applied; PDF-only review
+Sketch annotated PDF p24,Make SADC label legible; identify where quantitative results appear,Applied; PDF-only review
+Sketch annotated PDF p25,Production layer framing,Applied; PDF-only review
+Sketch annotated PDF p26,Production and gas-pipeline framing,Applied; PDF-only review
+Sketch annotated PDF p27,Production plus pipelines ports roads rail,Applied; production markers added; PDF-only review
+Sketch annotated PDF p28,Road layer framing,Applied; PDF-only review
+Sketch annotated PDF p30,Combined diesel/petrol capacity and Vopak market share,D/P explained; market share remains unverified pending matched dates and shared-capacity allocation; PDF-only review
+Sketch annotated PDF p31,Approval mark on stacked comparison,Retained; PDF-only review
+Sketch annotated PDF p35,Check master assumptions repo and centralise evidence,Repository checked; registry snapshot integration identified as WS5 build task; PDF-only review
+Sketch annotated PDF p36,Confirm scope and distinguish current capability,Revised to explicit current versus target scope; PDF-only review
+Titles,Apply agreed action titles; retain About Vopak title; organise workstreams wording,Applied to PDF review; delivered PPTX unchanged
+20,Common gates for fuel and infrastructure,Applied to PDF review; delivered PPTX unchanged
+24–30,Six cumulative maps; remove SADC rectangle; provincial storage coverage distinct from site locations,Applied to PDF review; delivered PPTX unchanged
+37–38,Add end-to-end infrastructure architecture,Applied to PDF review; delivered PPTX unchanged
+2,Replace large chevrons with value-chain icons and shorter copy,Applied to PDF review; delivered PPTX unchanged
+6,Restore full market-outlook sentence; prevent clipping,Applied to PDF review; delivered PPTX unchanged
+32,Replace floating bridge bars with start-to-end waterfalls and three-line takeaways,Applied to PDF review; delivered PPTX unchanged
+Round 2 ? 9,Demand inventory table reaches footnote / source area. Move table up and adjust row heights; keep marine row and companion reference clear,Applied to 48-page PDF; rendered and visually checked; package QA passed; delivered PPTX unchanged
+Round 2 ? 10,Production assets lack operating-status context. Add dated operating-status column with sources; separate current operation from assumed 2030 utilisation. Unknown remains unverified,Applied to 48-page PDF; rendered and visually checked; package QA passed; delivered PPTX unchanged
+Round 2 ? 11,H/L and Excel?Python import differences unclear. Explain H/L refers to demand cases with linked production. Excel is higher for petrol/jet; Python higher for diesel in shown 2030 values. Add fuel-specific comparisons; do not label H as high imports,Applied to 48-page PDF; rendered and visually checked; package QA passed; delivered PPTX unchanged
+Round 2 ? 13,"Purpose of market-balances-to-opportunity page unclear; two images repeat same issue. Make explicit bridge from national balance to feasible and client-accessible flows, then handling and storage needs; simplify repeated definitions",Applied to 48-page PDF; rendered and visually checked; package QA passed; delivered PPTX unchanged
+Round 2 ? 14,No explicit integration workstream or responsibility. Show integration as explicit cross-workstream responsibility across WS2/WS5/WS3 with checks and ownership; decide whether separate WS is warranted without silently renumbering existing workstreams,Applied to 48-page PDF; rendered and visually checked; package QA passed; delivered PPTX unchanged
+Round 2 ? New cadence page,"Need internal check-in/check-out, partner reviews and client touchpoints. Draft proposed cadence and required outputs. Existing Monday HG check-in is planned; recurring dates and client availability remain to agree",Applied to 48-page PDF; rendered and visually checked; package QA passed; delivered PPTX unchanged
+Round 3 - company context,Add two H1 2026 financial / regional context pages after About Vopak,Applied to 50-page PDF; sources and totals checked; rendered layout checked; package QA passed
+Round 3 - infrastructure sequence,Move storage before corridors and integrate as sixth cumulative map layer,Applied to 50-page PDF; sources and totals checked; rendered layout checked; package QA passed
+Round 4 - financial visuals,Regional paired bar charts; clarify corporate EBITDA and negative overall net cash flow with dedicated cash-flow waterfall,Applied to 51-page PDF; cash-flow bridge reconciles; revised charts visually checked; package QA passed
+Round 5 - page 3 LHS,Replace group earnings and cash-flow table with paired comparison bars; retain EPS separately and ordinary-holder profit label,Applied to PDF; paired chart values preserve sourced figures; EPS separate; page rendered and checked; package QA passed
+Round 6 - client economics and regional earnings,"Add client economics page after About; retain group, regional and cash-flow data upfront; link implications to South Africa, Walvis Bay / Namibia and priority Africa",Applied to 52-page PDF; all financial data upfront on pages 3-6; revised pages rendered and visually checked; package QA passed
+Round 7 - page 3 background title,"Frame the service-economics page as client background, not an assessment instruction",Title revised; final PDF QA pending
+Round 7 - page 3 complete revenue mix,Include other services and explain percentage rounding; retain corrected background title,Applied; package checks passed and exported PDF visually verified

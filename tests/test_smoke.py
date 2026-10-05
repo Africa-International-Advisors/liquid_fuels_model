@@ -2,8 +2,8 @@
 from __future__ import annotations
 
 from lfm import __version__
-from lfm.core.geography import ISO3_LIST, SACU, country
-from lfm.core.products import CODES, product
+from lfm.model.core.geography import ISO3_LIST, SACU, country
+from lfm.model.core.products import CODES, product
 from lfm.run import Run
 
 

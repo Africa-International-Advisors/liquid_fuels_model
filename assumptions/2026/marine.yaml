@@ -13,6 +13,10 @@
 # Replacing the driver with port throughput is a planned enhancement.
 
 base_year_volume:
+  register_id: REG-MARINE-BASE_YEAR_VOLUME
+  exception_id: EXC-MARINE-BASE_YEAR_VOLUME
+  owner: nigel.zhuwaki
+  confidence: unassessed
   by_port:
     durban:      { country: ZAF, value: 1.5e9, year: 2024 }   # provisional ~1.5 BL
     cape_town:   { country: ZAF, value: 0.5e9, year: 2024 }   # provisional ~0.5 BL
@@ -22,11 +26,15 @@ base_year_volume:
   units: litres per year (per port)
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (Transnet bunker volumes, Namport, IBIA bunker reports). See docs/params_sourcing.md
+  source: PROVISIONAL — literature mid-range placeholders pending teammate lookup (Transnet bunker volumes, Namport, IBIA bunker reports). See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true
 
 elasticity:
+  register_id: REG-MARINE-ELASTICITY
+  exception_id: EXC-MARINE-ELASTICITY
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Marine bunkering doesn't track national GDP closely (driver is global
   # trade). v1 uses a low elasticity to dampen GDP's effect.
   by_country:
@@ -38,11 +46,15 @@ elasticity:
   units: dimensionless
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — placeholder pending move to a proper port-throughput driver. See docs/params_sourcing.md
+  source: PROVISIONAL — placeholder pending move to a proper port-throughput driver. See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true
 
 product_split:
+  register_id: REG-MARINE-PRODUCT_SPLIT
+  exception_id: EXC-MARINE-PRODUCT_SPLIT
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # IMO sulphur-cap composition matters here when this graduates to MODELLED.
   # v1 uses a single split across all ports: roughly two-thirds fuel oil
   # (HFO/VLSFO), one-third marine gasoil. Ports differ but v1 doesn't.
@@ -50,6 +62,6 @@ product_split:
   units: fraction (sums to 1)
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — literature mid-range; post-IMO 2020 the split is shifting toward more diesel. See docs/params_sourcing.md
+  source: PROVISIONAL — literature mid-range; post-IMO 2020 the split is shifting toward more diesel. See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true

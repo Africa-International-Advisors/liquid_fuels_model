@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--
+  PM COCKPIT TEMPLATE — the weekly governance pulse (simandou standard).
+  A single-file project operating system: decisions, delivery, registers, costs, and the
+  output generators that produce the team/client/delivery comms.
+
+  HOW TO USE
+    1. Copy to docs/scope_workplan/reflection_<YYYY-MM-DD>_internal.html
+    2. Set STORE below to a unique project code (keys the saved board/register state).
+    3. Replace every {{TOKEN}} and placeholder row with real, instrumented numbers.
+       Burn: tools/ai_session_hours.py = git floor (lower bound) <= budget <= real effort (upper).
+    4. MODE: "prekickoff" (readiness) or "inflight" (burn/delivery).
+    5. The Outputs tabs (team / client / delivery) are copy-pasteable — keep them current; they
+       are how the client-facing variant ships.
+    6. Grade the internal cockpit HONESTLY (D/F allowed). End on ONE named fix with an owner.
+  BRAND: set --accent to the engagement colour.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ENGAGEMENT}} — PM Cockpit {{DATE}}</title>
+<style>
+  * { box-sizing:border-box; }
+  :root {
+    --primary:#1f3a5f; --primary-light:#3a6ea5; --bg:#f5f6f8; --card:#fff;
+    --text:#212529; --muted:#6c757d; --border:#dee2e6;
+    --green:#2ea44f; --amber:#f59f00; --red:#cf222e; --grey:#6e7781; --purple:#8250df;
+    --accent:#3a6ea5; --sidebar:#10233a;
+  }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    font-size:14px; line-height:1.5; color:var(--text); background:var(--bg); margin:0; }
+  .layout { display:flex; min-height:100vh; }
+
+  /* sidebar */
+  .sidebar { width:226px; background:var(--sidebar); color:#cdd9e5; flex:0 0 226px; padding:14px 0 40px;
+    position:sticky; top:0; height:100vh; overflow-y:auto; transition:margin-left .2s; }
+  .sidebar.collapsed { margin-left:-226px; }
+  .sidebar .brand { padding:6px 18px 14px; border-bottom:1px solid #24405f; margin-bottom:8px; }
+  .sidebar .brand h1 { font-size:15px; color:#fff; margin:0; font-weight:600; }
+  .sidebar .brand .sub { font-size:11px; opacity:.7; }
+  .sidebar .grp { font-size:10px; text-transform:uppercase; letter-spacing:.6px; color:#6c8aad; padding:14px 18px 4px; }
+  .sidebar-item { display:flex; align-items:center; justify-content:space-between; width:100%; gap:8px;
+    background:none; border:none; color:#cdd9e5; text-align:left; padding:7px 18px; font-size:13px;
+    cursor:pointer; border-left:3px solid transparent; }
+  .sidebar-item:hover { background:#17304d; color:#fff; }
+  .sidebar-item.active { background:#17304d; color:#fff; border-left-color:var(--accent); font-weight:600; }
+  .badge { font-size:10px; font-weight:700; padding:1px 7px; border-radius:10px; background:#33506f; color:#cdd9e5; }
+
+  /* main */
+  .main { flex:1; min-width:0; }
+  header.top { background:var(--card); border-bottom:1px solid var(--border); padding:13px 26px; display:flex;
+    align-items:center; gap:14px; position:sticky; top:0; z-index:5; }
+  header.top .menu { background:none; border:1px solid var(--border); border-radius:5px; padding:5px 10px; cursor:pointer; font-size:15px; }
+  header.top h2 { margin:0; font-size:16px; color:var(--primary); }
+  header.top .sub { font-size:12px; color:var(--muted); margin-left:auto; }
+  .container { max-width:1080px; padding:22px 26px 70px; }
+  .view { display:none; } .view.active { display:block; }
+  h2.sec { font-size:18px; color:var(--primary); margin:0 0 4px; }
+  h2.sec small { font-size:13px; color:var(--muted); font-weight:normal; }
+  .lead { color:var(--muted); font-size:13px; margin:2px 0 16px; max-width:880px; }
+  .kpi-strip { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:0 0 18px; }
+  .kpi { background:var(--card); border:1px solid var(--border); border-left:4px solid var(--primary); border-radius:5px; padding:11px 13px; }
+  .kpi.warn{border-left-color:var(--amber);} .kpi.bad{border-left-color:var(--red);} .kpi.good{border-left-color:var(--green);}
+  .kpi-label { font-size:11px; text-transform:uppercase; letter-spacing:.4px; color:var(--muted); }
+  .kpi-value { font-size:23px; font-weight:700; margin:3px 0 1px; }
+  .kpi-meta { font-size:11px; color:var(--muted); }
+  table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--border); border-radius:6px; overflow:hidden; margin:8px 0 20px; font-size:13px; }
+  th { background:var(--primary); color:#fff; text-align:left; padding:8px 10px; font-weight:600; font-size:12px; }
+  td { padding:7px 10px; border-top:1px solid var(--border); vertical-align:top; }
+  tr:nth-child(even) td { background:#fafbfc; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  tfoot td { font-weight:700; background:#eef1f4; border-top:2px solid var(--primary); }
+  .pill { display:inline-block; padding:2px 9px; border-radius:11px; font-size:11px; font-weight:700; color:#fff; white-space:nowrap; }
+  .p-green,.pill-green{background:var(--green);} .p-amber,.pill-amber{background:var(--amber);}
+  .p-red,.pill-red{background:var(--red);} .p-grey,.pill-grey{background:var(--grey);} .p-prog{background:var(--primary-light);}
+  .grade { font-weight:700; font-size:15px; padding:1px 8px; border-radius:4px; color:#fff; }
+  .g-a{background:#1a7f37;} .g-b{background:#2ea44f;} .g-c{background:var(--amber);} .g-d{background:#e8590c;} .g-f{background:var(--red);}
+  .banner { border-radius:6px; padding:11px 15px; margin:0 0 16px; font-size:13px; }
+  .banner.warn{background:#fff8e6;border:1px solid #ffe08a;color:#7a5b00;}
+  .banner.bad{background:#fdecee;border:1px solid #f5b5bb;color:#86131c;}
+  .banner.ok{background:#eaf6ee;border:1px solid #b7e0c4;color:#1a5e30;}
+  .note { font-size:12px; color:var(--muted); }
+  ul.tight { margin:6px 0 14px; padding-left:20px; } ul.tight li { margin:3px 0; }
+  button.act { background:var(--primary); color:#fff; border:none; border-radius:5px; padding:6px 12px; font-size:12px; cursor:pointer; }
+  button.secondary { background:#eef1f4; color:var(--primary); }
+  input.cell, input.task { border:1px solid var(--border); border-radius:4px; padding:5px 8px; font-size:13px; }
+  .outbox { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:18px 20px; margin:10px 0 14px; }
+  .subtab { display:flex; gap:4px; margin:4px 0 12px; }
+  .subtab button { background:none; border:1px solid var(--border); border-radius:5px; padding:5px 11px; font-size:12px; cursor:pointer; color:var(--muted); }
+  .subtab button.active { background:var(--primary); color:#fff; border-color:var(--primary); }
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="brand"><h1>{{ENGAGEMENT}}</h1><div class="sub">PM cockpit · {{DATE}} · {{MODE}}</div></div>
+
+    <div class="grp">Decide</div>
+    <button class="sidebar-item active" data-tab="decide"><span>Decide now</span><span class="badge" style="background:var(--red);color:#fff;" id="decide-badge">{{n}}</span></button>
+    <div class="grp">Read</div>
+    <button class="sidebar-item" data-tab="snapshot"><span>Snapshot</span></button>
+    <button class="sidebar-item" data-tab="nownext"><span>Now &amp; next</span></button>
+    <div class="grp">Deliver</div>
+    <button class="sidebar-item" data-tab="board"><span>Delivery board</span><span class="badge" id="board-badge">0</span></button>
+    <button class="sidebar-item" data-tab="workstreams"><span>Workstreams</span></button>
+    <div class="grp">Control</div>
+    <button class="sidebar-item" data-tab="risks"><span>Risks</span><span class="badge" id="risk-badge">0/0</span></button>
+    <button class="sidebar-item" data-tab="decisions"><span>Decisions</span><span class="badge" id="dec-badge">0/0</span></button>
+    <button class="sidebar-item" data-tab="issues"><span>Issues / CR</span></button>
+    <button class="sidebar-item" data-tab="costs"><span>Costs</span><span class="badge" id="cost-badge">{{%}}</span></button>
+    <div class="grp">Learn</div>
+    <button class="sidebar-item" data-tab="lessons"><span>Lessons learned</span></button>
+    <div class="grp">Outputs</div>
+    <button class="sidebar-item" data-tab="internal"><span>PM cockpit (internal)</span></button>
+    <button class="sidebar-item" data-tab="team"><span>Team brief</span></button>
+    <button class="sidebar-item" data-tab="client"><span>Client email</span></button>
+    <button class="sidebar-item" data-tab="delivery"><span>Delivery email</span></button>
+  </nav>
+
+  <div class="main">
+    <header class="top">
+      <button class="menu" id="sidebar-toggle">☰</button>
+      <h2>{{ENGAGEMENT}} — PM Cockpit</h2>
+      <span class="sub">As at <strong>{{DATE}}</strong> · refresh weekly (Fri) · mode <strong>{{MODE}}</strong></span>
+    </header>
+    <div class="container">
+
+      <!-- DECIDE NOW -->
+      <section class="view active" data-view="decide">
+        <h2 class="sec">Decide now <small>the calls on your plate, ranked</small></h2>
+        <p class="lead">What actually needs a decision this week, most urgent first. Everything else is tracked elsewhere.</p>
+        <table>
+          <thead><tr><th>#</th><th>The call</th><th>Why now</th><th>Owner</th><th>By</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>{{the decision}}</strong></td><td>{{what forces it}}</td><td>{{who}}</td><td>{{when}}</td></tr>
+            <tr><td>2</td><td>{{…}}</td><td>{{…}}</td><td>{{…}}</td><td>{{…}}</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- SNAPSHOT -->
+      <section class="view" data-view="snapshot">
+        <h2 class="sec">Snapshot</h2>
+        <div class="kpi-strip">
+          <div class="kpi"><div class="kpi-label">Budget</div><div class="kpi-value">{{x}} h</div><div class="kpi-meta">priced control number</div></div>
+          <div class="kpi"><div class="kpi-label">Real effort</div><div class="kpi-value">{{x}} h</div><div class="kpi-meta">{{%}} of budget</div></div>
+          <div class="kpi"><div class="kpi-label">Git floor</div><div class="kpi-value">{{x}} h</div><div class="kpi-meta">commit-visible only</div></div>
+          <div class="kpi"><div class="kpi-label">Milestones</div><div class="kpi-value">{{n}}/{{N}}</div><div class="kpi-meta">{{which}}</div></div>
+          <div class="kpi"><div class="kpi-label">Fee consumed</div><div class="kpi-value">{{%}}</div><div class="kpi-meta">bill-value vs fee</div></div>
+        </div>
+        <p class="lead">{{The honest one-paragraph read.}}</p>
+        <div class="subtab" id="burn-tabs">
+          <button class="active" data-burn="pool">Pool view</button>
+          <button data-burn="ws">By workstream</button>
+          <button data-burn="resource">By resource</button>
+        </div>
+        <table><thead><tr><th>Signal</th><th class="num">Hours</th><th>What it is</th><th class="num">vs budget</th></tr></thead>
+          <tbody>
+            <tr><td>Git floor (lower bound)</td><td class="num">{{x}}</td><td>commit-visible work; blind to reading/meetings/non-committers</td><td class="num">{{%}}</td></tr>
+            <tr><td><strong>Commercial budget</strong></td><td class="num">{{x}}</td><td>priced control number</td><td class="num">100%</td></tr>
+            <tr><td>Real task effort</td><td class="num">{{x}}</td><td>planned-utilisation / actuals export</td><td class="num">{{%}}</td></tr>
+          </tbody></table>
+        <p class="note">From <code>tools/ai_session_hours.py</code> (git floor) and the utilisation export (upper bound). Real actuals sit between.</p>
+      </section>
+
+      <!-- NOW & NEXT -->
+      <section class="view" data-view="nownext">
+        <h2 class="sec">Now &amp; next <small>meeting outcomes · this week · next few days</small></h2>
+        <ul class="tight">
+          <li><strong>Decided:</strong> {{outcome}}</li>
+          <li><strong>This week:</strong> {{focus}}</li>
+          <li><strong>Next:</strong> {{what's coming}}</li>
+        </ul>
+      </section>
+
+      <!-- DELIVERY BOARD (interactive) -->
+      <section class="view" data-view="board">
+        <h2 class="sec">Delivery board <small>your tasks — saved in this browser</small></h2>
+        <div style="margin:6px 0 12px; display:flex; gap:6px; flex-wrap:wrap;">
+          <input class="task" id="board-input" placeholder="New task…" style="flex:1; min-width:220px;">
+          <button class="act" id="board-add">+ Add</button>
+          <button class="act secondary" id="board-reset">Reset</button>
+        </div>
+        <table><thead><tr><th style="width:34px;">✓</th><th>Task</th><th style="width:40px;"></th></tr></thead>
+          <tbody id="board-body"></tbody></table>
+        <p class="note">State persists locally (per project, via the <code>STORE</code> key). Not committed to git.</p>
+      </section>
+
+      <!-- WORKSTREAMS -->
+      <section class="view" data-view="workstreams">
+        <h2 class="sec">Workstreams <small>RAG + progress</small></h2>
+        <p class="lead">One row per workstream. Split into per-WS tabs if a workstream needs its own detail.</p>
+        <table><thead><tr><th>WS</th><th>Name</th><th>RAG</th><th class="num">Progress</th><th>Read</th></tr></thead>
+          <tbody>
+            <tr><td>WS1</td><td>{{name}}</td><td><span class="pill pill-amber">Amber</span></td><td class="num">{{%}}</td><td>{{one-line}}</td></tr>
+            <tr><td>WS2</td><td>{{name}}</td><td><span class="pill pill-green">Green</span></td><td class="num">{{%}}</td><td>{{one-line}}</td></tr>
+            <tr><td>WS3</td><td>{{name}}</td><td><span class="pill pill-red">Red</span></td><td class="num">{{%}}</td><td>{{one-line}}</td></tr>
+          </tbody></table>
+      </section>
+
+      <!-- RISKS -->
+      <section class="view" data-view="risks">
+        <h2 class="sec">Risk register</h2>
+        <table><thead><tr><th style="width:34px;">✓</th><th>ID</th><th>Risk</th><th>Mitigation</th><th>Sev</th></tr></thead>
+          <tbody data-register="risk">
+            <tr><td><input type="checkbox"></td><td>R1</td><td>{{risk}}</td><td>{{mitigation}}</td><td><span class="pill pill-red">High</span></td></tr>
+            <tr><td><input type="checkbox"></td><td>R2</td><td>{{risk}}</td><td>{{mitigation}}</td><td><span class="pill pill-amber">Med</span></td></tr>
+          </tbody></table>
+        <button class="act secondary" data-reset-register="risk">Reset risk ticks</button>
+      </section>
+
+      <!-- DECISIONS -->
+      <section class="view" data-view="decisions">
+        <h2 class="sec">Decision register</h2>
+        <table><thead><tr><th style="width:34px;">✓</th><th>ID</th><th>Decision</th><th>Rationale</th><th>Date</th></tr></thead>
+          <tbody data-register="dec">
+            <tr><td><input type="checkbox"></td><td>D1</td><td>{{decision}}</td><td>{{why}}</td><td>{{date}}</td></tr>
+          </tbody></table>
+        <button class="act secondary" data-reset-register="dec">Reset decision ticks</button>
+      </section>
+
+      <!-- ISSUES / CR -->
+      <section class="view" data-view="issues">
+        <h2 class="sec">Issues &amp; change requests</h2>
+        <p class="lead">Triggers that fired. Mark each: re-costed, or <strong>absorbed silently</strong>. Quantify the absorbed ones.</p>
+        <table><thead><tr><th>Trigger</th><th>What happened</th><th>Re-costed?</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>{{trigger}}</td><td>{{what}}</td><td>{{Y/N}}</td><td><span class="pill pill-red">{{absorbed/escalate}}</span></td></tr>
+          </tbody></table>
+        <div class="banner bad"><strong>The conversation that has to happen:</strong> {{the explicit fee/scope call}}.</div>
+      </section>
+
+      <!-- COSTS -->
+      <section class="view" data-view="costs">
+        <h2 class="sec">Cost picture <small>fixed-fee engagement</small></h2>
+        <table><thead><tr><th>Measure</th><th class="num">Value</th><th>Read</th></tr></thead>
+          <tbody>
+            <tr><td>Fee (fixed)</td><td class="num">{{fee}}</td><td>does not grow with hours</td></tr>
+            <tr><td>Bill-value delivered</td><td class="num">{{x}}</td><td>{{% of fee}} consumed</td></tr>
+            <tr><td>Cost to date</td><td class="num">{{x}}</td><td>margin {{+/-}} today</td></tr>
+            <tr><td>Pace vs milestone-linear</td><td class="num">{{x}}×</td><td><span class="pill pill-amber">{{front-loaded/behind/on pace}}</span></td></tr>
+          </tbody></table>
+        <div class="outbox"><strong>Project the landing margin:</strong>
+          est. cost-to-complete <input class="cell" id="ctc" type="number" style="width:80px"> →
+          total <strong id="pj-cost">—</strong> · margin <strong id="pj-margin">—</strong> · <strong id="pj-pct">—</strong></div>
+      </section>
+
+      <!-- LESSONS -->
+      <section class="view" data-view="lessons">
+        <h2 class="sec">Lessons learned <small>fed back into the method</small></h2>
+        <ul class="tight"><li>{{what we'd do differently}}</li><li>{{…}}</li></ul>
+      </section>
+
+      <!-- INTERNAL (reflection scorecard) -->
+      <section class="view" data-view="internal">
+        <h2 class="sec">PM cockpit (internal) <small>graded against our own philosophy</small></h2>
+        <table><thead><tr><th>Discipline</th><th>What happened</th><th>Grade</th></tr></thead>
+          <tbody>
+            <tr><td>Planning / rigour</td><td>{{what}}</td><td><span class="grade g-a">A</span></td></tr>
+            <tr><td>Scope control</td><td>{{what}}</td><td><span class="grade g-c">C</span></td></tr>
+            <tr><td>Budget control</td><td>{{what}}</td><td><span class="grade g-d">D</span></td></tr>
+          </tbody></table>
+        <div class="banner warn"><strong>The one fix:</strong> {{single named action, owner, into next week's Decide-now}}.</div>
+      </section>
+
+      <!-- OUTPUT: TEAM BRIEF -->
+      <section class="view" data-view="team">
+        <h2 class="sec">Team brief <small>for the delivery team</small></h2>
+        <div style="margin:6px 0 10px; display:flex; gap:6px;">
+          <button class="act" data-copy-html="out-team">Copy as HTML</button>
+          <button class="act secondary" data-copy-text="out-team">Copy as plain text</button>
+        </div>
+        <div class="outbox" id="out-team">
+          <p><strong>Team — week of {{DATE}}</strong></p>
+          <p>{{what landed, what's next, who owns what}}</p>
+          <ul><li>{{task / owner}}</li><li>{{task / owner}}</li></ul>
+        </div>
+      </section>
+
+      <!-- OUTPUT: CLIENT EMAIL -->
+      <section class="view" data-view="client">
+        <h2 class="sec">Client email <small>weekly status</small></h2>
+        <div style="margin:6px 0 10px; display:flex; gap:6px;">
+          <button class="act" data-copy-html="out-client">Copy as HTML</button>
+          <button class="act secondary" data-copy-text="out-client">Copy as plain text</button>
+        </div>
+        <div class="outbox" id="out-client">
+          <p>Hi {{client}},</p>
+          <p>{{progress this week, in client register — confident, no internal mess}}.</p>
+          <p>{{what we need from you}} · {{what's next}}.</p>
+          <p>Best,<br>{{name}}</p>
+        </div>
+      </section>
+
+      <!-- OUTPUT: DELIVERY EMAIL -->
+      <section class="view" data-view="delivery">
+        <h2 class="sec">Delivery email <small>cover note that ships with a deliverable</small></h2>
+        <div style="margin:6px 0 10px; display:flex; gap:6px;">
+          <button class="act" data-copy-html="out-deliv">Copy as HTML</button>
+          <button class="act secondary" data-copy-text="out-deliv">Copy as plain text</button>
+        </div>
+        <div class="outbox" id="out-deliv">
+          <p>Hi {{client}},</p>
+          <p>Please find attached {{deliverable}}. {{one-line on what it is and how to read it}}.</p>
+          <p>Happy to walk through it. Best,<br>{{name}}</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORE = "{{PROJECT_CODE}}";   // unique key for saved state
+
+  // ---- sidebar nav ----
+  document.querySelectorAll('.sidebar-item').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.sidebar-item').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector('.view[data-view="' + b.dataset.tab + '"]').classList.add('active');
+  }));
+  document.getElementById('sidebar-toggle').addEventListener('click', () =>
+    document.getElementById('sidebar').classList.toggle('collapsed'));
+
+  // ---- burn sub-view (swap the source table per view in real use) ----
+  document.querySelectorAll('#burn-tabs button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#burn-tabs button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+  }));
+
+  // ---- delivery board (localStorage) ----
+  const bKey = STORE + ':board';
+  let tasks = JSON.parse(localStorage.getItem(bKey) || '[]');
+  const bBody = document.getElementById('board-body'), bBadge = document.getElementById('board-badge');
+  function saveBoard(){ localStorage.setItem(bKey, JSON.stringify(tasks)); renderBoard(); }
+  function renderBoard(){
+    bBody.innerHTML = '';
+    tasks.forEach((t,i) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td><input type="checkbox" ${t.done?'checked':''} data-i="${i}"></td>`
+        + `<td style="${t.done?'text-decoration:line-through;color:#6c757d':''}">${t.text}</td>`
+        + `<td><button data-del="${i}" style="border:none;background:none;color:#cf222e;cursor:pointer;font-size:15px;">×</button></td>`;
+      bBody.appendChild(tr);
+    });
+    const open = tasks.filter(t=>!t.done).length;
+    if (bBadge) bBadge.textContent = open;
+  }
+  document.getElementById('board-add').addEventListener('click', () => {
+    const v = document.getElementById('board-input').value.trim();
+    if (v){ tasks.push({text:v,done:false}); document.getElementById('board-input').value=''; saveBoard(); }
+  });
+  bBody.addEventListener('click', e => {
+    if (e.target.dataset.i !== undefined){ tasks[e.target.dataset.i].done = e.target.checked; saveBoard(); }
+    if (e.target.dataset.del !== undefined){ tasks.splice(e.target.dataset.del,1); saveBoard(); }
+  });
+  document.getElementById('board-reset').addEventListener('click', () => {
+    if (confirm('Clear the board?')){ tasks = []; saveBoard(); } });
+  renderBoard();
+
+  // ---- registers: tick counters + persistence ----
+  function wireRegister(name){
+    const body = document.querySelector(`tbody[data-register="${name}"]`);
+    if (!body) return;
+    const boxes = body.querySelectorAll('input[type=checkbox]');
+    const rKey = STORE + ':' + name;
+    const saved = JSON.parse(localStorage.getItem(rKey) || '[]');
+    boxes.forEach((cb,i) => { cb.checked = !!saved[i];
+      cb.addEventListener('change', () => {
+        const st = Array.from(boxes).map(b=>b.checked);
+        localStorage.setItem(rKey, JSON.stringify(st)); updateBadge(); });
+    });
+    function updateBadge(){
+      const done = Array.from(boxes).filter(b=>b.checked).length;
+      const badge = document.getElementById(name==='risk'?'risk-badge':'dec-badge');
+      if (badge) badge.textContent = done + '/' + boxes.length;
+    }
+    updateBadge();
+  }
+  wireRegister('risk'); wireRegister('dec');
+  document.querySelectorAll('[data-reset-register]').forEach(b => b.addEventListener('click', () => {
+    const n = b.dataset.resetRegister; localStorage.removeItem(STORE+':'+n); location.reload(); }));
+
+  // ---- margin projector ----
+  const FEE = 0, COST_TO_DATE = 0;   // set from the costing script
+  const ctc = document.getElementById('ctc');
+  if (ctc) ctc.addEventListener('input', () => {
+    const c = parseFloat(ctc.value);
+    const set=(id,t,col)=>{const e=document.getElementById(id);e.textContent=t;if(col!==undefined)e.style.color=col;};
+    if (isNaN(c)){ set('pj-cost','—',''); set('pj-margin','—',''); set('pj-pct','—',''); return; }
+    const total=COST_TO_DATE+c, margin=FEE-total, pct=FEE?margin/FEE*100:0;
+    const col=margin<0?'#cf222e':(pct<20?'#f59f00':'#2ea44f');
+    set('pj-cost',total.toFixed(1),''); set('pj-margin',margin.toFixed(1),col); set('pj-pct',pct.toFixed(0)+'%',col);
+  });
+
+  // ---- output generators: copy as HTML / plain text ----
+  function copyHTML(id){
+    const html = document.getElementById(id).innerHTML;
+    const text = document.getElementById(id).innerText;
+    if (navigator.clipboard && window.ClipboardItem){
+      navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([html],{type:'text/html'}),
+        'text/plain': new Blob([text],{type:'text/plain'})
+      })]).then(()=>flash('Copied (rich)'));
+    } else { copyText(id); }
+  }
+  function copyText(id){
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(()=>flash('Copied (text)'));
+  }
+  function flash(msg){ const d=document.createElement('div');
+    d.textContent=msg; d.style.cssText='position:fixed;bottom:18px;right:18px;background:#1a7f37;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;z-index:50;';
+    document.body.appendChild(d); setTimeout(()=>d.remove(),1400); }
+  document.querySelectorAll('[data-copy-html]').forEach(b=>b.addEventListener('click',()=>copyHTML(b.dataset.copyHtml)));
+  document.querySelectorAll('[data-copy-text]').forEach(b=>b.addEventListener('click',()=>copyText(b.dataset.copyText)));
+</script>
+</body>
+</html>

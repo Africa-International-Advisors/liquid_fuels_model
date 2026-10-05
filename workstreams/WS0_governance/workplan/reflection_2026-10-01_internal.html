@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Liquid fuels model — PM Cockpit 1 October 2026</title>
+<style>
+  * { box-sizing:border-box; }
+  :root {
+    --primary:#1f3a5f; --primary-light:#3a6ea5; --bg:#f5f6f8; --card:#fff;
+    --text:#212529; --muted:#6c757d; --border:#dee2e6;
+    --green:#2ea44f; --amber:#f59f00; --red:#cf222e; --grey:#6e7781; --purple:#8250df;
+    --accent:#3a6ea5; --sidebar:#10233a;
+  }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    font-size:14px; line-height:1.5; color:var(--text); background:var(--bg); margin:0; }
+  .layout { display:flex; min-height:100vh; }
+
+  /* sidebar */
+  .sidebar { width:226px; background:var(--sidebar); color:#cdd9e5; flex:0 0 226px; padding:14px 0 40px;
+    position:sticky; top:0; height:100vh; overflow-y:auto; transition:margin-left .2s; }
+  .sidebar.collapsed { margin-left:-226px; }
+  .sidebar .brand { padding:6px 18px 14px; border-bottom:1px solid #24405f; margin-bottom:8px; }
+  .sidebar .brand h1 { font-size:15px; color:#fff; margin:0; font-weight:600; }
+  .sidebar .brand .sub { font-size:11px; opacity:.7; }
+  .sidebar .grp { font-size:10px; text-transform:uppercase; letter-spacing:.6px; color:#6c8aad; padding:14px 18px 4px; }
+  .sidebar-item { display:flex; align-items:center; justify-content:space-between; width:100%; gap:8px;
+    background:none; border:none; color:#cdd9e5; text-align:left; padding:7px 18px; font-size:13px;
+    cursor:pointer; border-left:3px solid transparent; }
+  .sidebar-item:hover { background:#17304d; color:#fff; }
+  .sidebar-item.active { background:#17304d; color:#fff; border-left-color:var(--accent); font-weight:600; }
+  .badge { font-size:10px; font-weight:700; padding:1px 7px; border-radius:10px; background:#33506f; color:#cdd9e5; }
+
+  /* main */
+  .main { flex:1; min-width:0; }
+  header.top { background:var(--card); border-bottom:1px solid var(--border); padding:13px 26px; display:flex;
+    align-items:center; gap:14px; position:sticky; top:0; z-index:5; }
+  header.top .menu { background:none; border:1px solid var(--border); border-radius:5px; padding:5px 10px; cursor:pointer; font-size:15px; }
+  header.top h2 { margin:0; font-size:16px; color:var(--primary); }
+  header.top .sub { font-size:12px; color:var(--muted); margin-left:auto; }
+  .container { max-width:1080px; padding:22px 26px 70px; }
+  .view { display:none; } .view.active { display:block; }
+  h2.sec { font-size:18px; color:var(--primary); margin:0 0 4px; }
+  h2.sec small { font-size:13px; color:var(--muted); font-weight:normal; }
+  .lead { color:var(--muted); font-size:13px; margin:2px 0 16px; max-width:880px; }
+  .kpi-strip { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:0 0 18px; }
+  .kpi { background:var(--card); border:1px solid var(--border); border-left:4px solid var(--primary); border-radius:5px; padding:11px 13px; }
+  .kpi.warn{border-left-color:var(--amber);} .kpi.bad{border-left-color:var(--red);} .kpi.good{border-left-color:var(--green);}
+  .kpi-label { font-size:11px; text-transform:uppercase; letter-spacing:.4px; color:var(--muted); }
+  .kpi-value { font-size:23px; font-weight:700; margin:3px 0 1px; }
+  .kpi-meta { font-size:11px; color:var(--muted); }
+  table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--border); border-radius:6px; overflow:hidden; margin:8px 0 20px; font-size:13px; }
+  th { background:var(--primary); color:#fff; text-align:left; padding:8px 10px; font-weight:600; font-size:12px; }
+  td { padding:7px 10px; border-top:1px solid var(--border); vertical-align:top; }
+  tr:nth-child(even) td { background:#fafbfc; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  tfoot td { font-weight:700; background:#eef1f4; border-top:2px solid var(--primary); }
+  .pill { display:inline-block; padding:2px 9px; border-radius:11px; font-size:11px; font-weight:700; color:#fff; white-space:nowrap; }
+  .p-green,.pill-green{background:var(--green);} .p-amber,.pill-amber{background:var(--amber);}
+  .p-red,.pill-red{background:var(--red);} .p-grey,.pill-grey{background:var(--grey);} .p-prog{background:var(--primary-light);}
+  .grade { font-weight:700; font-size:15px; padding:1px 8px; border-radius:4px; color:#fff; }
+  .g-a{background:#1a7f37;} .g-b{background:#2ea44f;} .g-c{background:var(--amber);} .g-d{background:#e8590c;} .g-f{background:var(--red);}
+  .banner { border-radius:6px; padding:11px 15px; margin:0 0 16px; font-size:13px; }
+  .banner.warn{background:#fff8e6;border:1px solid #ffe08a;color:#7a5b00;}
+  .banner.bad{background:#fdecee;border:1px solid #f5b5bb;color:#86131c;}
+  .banner.ok{background:#eaf6ee;border:1px solid #b7e0c4;color:#1a5e30;}
+  .note { font-size:12px; color:var(--muted); }
+  ul.tight { margin:6px 0 14px; padding-left:20px; } ul.tight li { margin:3px 0; }
+  button.act { background:var(--primary); color:#fff; border:none; border-radius:5px; padding:6px 12px; font-size:12px; cursor:pointer; }
+  button.secondary { background:#eef1f4; color:var(--primary); }
+  input.cell, input.task { border:1px solid var(--border); border-radius:4px; padding:5px 8px; font-size:13px; }
+  .outbox { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:18px 20px; margin:10px 0 14px; }
+  .subtab { display:flex; gap:4px; margin:4px 0 12px; }
+  .subtab button { background:none; border:1px solid var(--border); border-radius:5px; padding:5px 11px; font-size:12px; cursor:pointer; color:var(--muted); }
+  .subtab button.active { background:var(--primary); color:#fff; border-color:var(--primary); }
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <div class="brand"><h1>Liquid fuels model</h1><div class="sub">PM cockpit · 1 October 2026 · pre-kickoff</div></div>
+
+    <div class="grp">Decide</div>
+    <button class="sidebar-item active" data-tab="decide"><span>Decide now</span><span class="badge" style="background:var(--red);color:#fff;" id="decide-badge">4</span></button>
+    <div class="grp">Read</div>
+    <button class="sidebar-item" data-tab="snapshot"><span>Snapshot</span></button>
+    <button class="sidebar-item" data-tab="nownext"><span>Now &amp; next</span></button>
+    <div class="grp">Deliver</div>
+    <button class="sidebar-item" data-tab="board"><span>Delivery board</span><span class="badge" id="board-badge">0</span></button>
+    <button class="sidebar-item" data-tab="workstreams"><span>Workstreams</span></button>
+    <div class="grp">Control</div>
+    <button class="sidebar-item" data-tab="risks"><span>Risks</span><span class="badge" id="risk-badge">4 open</span></button>
+    <button class="sidebar-item" data-tab="decisions"><span>Decisions</span><span class="badge" id="dec-badge">2 pending</span></button>
+    <button class="sidebar-item" data-tab="issues"><span>Issues / CR</span></button>
+    <button class="sidebar-item" data-tab="costs"><span>Costs</span><span class="badge" id="cost-badge">?</span></button>
+    <div class="grp">Learn</div>
+    <button class="sidebar-item" data-tab="lessons"><span>Lessons learned</span></button>
+    <div class="grp">Outputs</div>
+    <button class="sidebar-item" data-tab="internal"><span>PM cockpit (internal)</span></button>
+    <button class="sidebar-item" data-tab="team"><span>Team brief</span></button>
+    <button class="sidebar-item" data-tab="client"><span>Client email</span></button>
+    <button class="sidebar-item" data-tab="delivery"><span>Delivery email</span></button>
+  </nav>
+
+  <div class="main">
+    <header class="top">
+      <button class="menu" id="sidebar-toggle">☰</button>
+      <h2>Liquid fuels model — PM Cockpit</h2>
+      <span class="sub">As at <strong>1 October 2026</strong> · refresh weekly (Fri) · mode <strong>pre-kickoff</strong></span>
+    </header>
+    <div class="container">
+
+      
+      <section class="view active" data-view="decide"><h2 class="sec">Kickoff decisions</h2><p class="lead">Draft for 2 October. Proposed owners and dates require agreement.</p><table><thead><tr><th>Call</th><th>Why it matters</th><th>Owner</th><th>Due</th></tr></thead><tbody><tr><td>Confirm business use and geographic scope</td><td>SA core; regional coverage conditional; terminal throughput is additional scope</td><td>Nigel + analyst</td><td>2 Oct</td></tr><tr><td>Confirm analyst capacity and Python support</td><td>One Excel analyst contributes across workstreams</td><td>Nigel</td><td>2 Oct</td></tr><tr><td>Agree validation criteria and reviewer</td><td>Tests alone do not validate forecasts</td><td>Nigel + reviewer to assign</td><td>2 Oct</td></tr><tr><td>Provide PowerPoint template</td><td>Brand setup and final deck depend on it</td><td>Nigel / template provider</td><td>Date to confirm</td></tr></tbody></table><p><a href="six_week_plan.md">Six-week plan</a> ? <a href="../meetings/2026-10-02_kickoff_agenda.md">Kickoff agenda</a></p></section>
+
+      
+      <section class="view" data-view="snapshot"><h2 class="sec">Pre-kickoff snapshot</h2><div class="banner warn">Draft/provisional model. Structural migration is complete; model validation and business sign-off are not.</div>
+<div class="kpi-strip">
+<div class="kpi"><div class="kpi-label">Proposed window</div><div class="kpi-value">6 weeks</div><div class="kpi-meta">2 Oct?12 Nov 2026</div></div>
+<div class="kpi"><div class="kpi-label">Existing tests</div><div class="kpi-value">54 pass</div><div class="kpi-meta">Migration evidence; not forecast validation</div></div>
+<div class="kpi warn"><div class="kpi-label">Model exceptions</div><div class="kpi-value">43 open</div><div class="kpi-meta">Review by 12 Nov or before release</div></div>
+<div class="kpi"><div class="kpi-label">Populated coverage</div><div class="kpi-value">ZAF</div><div class="kpi-meta">SACU remains intended scope</div></div></div>
+<p>The existing engine runs six demand segments and a supply balance. Both scenarios retained their prior results through migration. The six-week work focuses on defensible inputs, reconciliation, reporting and an analyst who can refresh the model independently.</p>
+<p>Budget, fee, actual effort and learning progress have not been recorded. No percentage complete is asserted.</p></section>
+
+      
+      <section class="view" data-view="nownext"><h2 class="sec">Now &amp; next</h2><ul class="tight"><li><strong>Agreed:</strong> keep the presentation workspace in <code>pptx/</code> and add the engagement workstream structure.</li><li><strong>Now:</strong> prepare the 2 October session; confirm scope, capacity and review support.</li><li><strong>First exercise:</strong> analyst runs both scenarios, traces agricultural demand and reproduces one calculation in Excel.</li><li><strong>Next:</strong> source opening fleet and sector baselines; decide regional depth by week 2.</li></ul><table><thead><tr><th>Week</th><th>Dates (proposed)</th><th>Review outcome</th></tr></thead><tbody><tr><td>1</td><td>2?8 Oct</td><td>Baseline runs, one Excel reconciliation, ranked data requests</td></tr><tr><td>2</td><td>9?15 Oct</td><td>Simple-sector change reviewed; fleet inputs sourced; regional depth agreed</td></tr><tr><td>3</td><td>16?22 Oct</td><td>Fleet and road demand reconciliation; paired cohort work</td></tr><tr><td>4</td><td>23?29 Oct</td><td>Other sectors, supply and agreed regional coverage reviewed</td></tr><tr><td>5</td><td>30 Oct?5 Nov</td><td>Scenario/sensitivity report and briefing draft</td></tr><tr><td>6</td><td>6?12 Nov</td><td>Independent refresh, challenge review and handover gates</td></tr></tbody></table></section>
+
+      
+      <section class="view" data-view="board">
+        <h2 class="sec">Delivery board <small>your tasks — saved in this browser</small></h2>
+        <div style="margin:6px 0 12px; display:flex; gap:6px; flex-wrap:wrap;">
+          <input class="task" id="board-input" placeholder="New task…" style="flex:1; min-width:220px;">
+          <button class="act" id="board-add">+ Add</button>
+          <button class="act secondary" id="board-reset">Reset</button>
+        </div>
+        <table><thead><tr><th style="width:34px;">✓</th><th>Task</th><th style="width:40px;"></th></tr></thead>
+          <tbody id="board-body"></tbody></table>
+        <p class="note">Board edits stay in this browser and are not saved into this HTML file or Git. Copy agreed actions into the next dated cockpit/meeting record; ticks are not approvals.</p>
+      </section>
+
+      
+      <section class="view" data-view="workstreams"><h2 class="sec">Workstream responsibilities</h2><p class="lead">These are responsibilities shared by one analyst and support roles?not five staffed teams. RAG is initial management judgment; progress is not yet measured.</p><table><thead><tr><th>WS</th><th>Focus</th><th>Proposed delivery owner</th><th>Status</th><th>Next evidence</th></tr></thead><tbody><tr><td>WS0</td><td>Governance and planning</td><td>Nigel</td><td>Amber ? kickoff decisions pending</td><td>Scope, capacity and reviewer agreed</td></tr><tr><td>WS1</td><td>Data and validation</td><td>Analyst; name pending</td><td>Amber ? material data gaps</td><td>Source map and historical reconciliation</td></tr><tr><td>WS2</td><td>Model development</td><td>Analyst with paired support</td><td>Amber ? validation remains</td><td>Reviewed fleet and sector changes</td></tr><tr><td>WS3</td><td>Reporting and delivery</td><td>Analyst with builder support</td><td>Amber ? template pending</td><td>Excel report, draft story and runbook</td></tr><tr><td>WS4</td><td>Python enablement</td><td>Analyst; coached by Nigel</td><td>Not assessed</td><td>Analyst demonstrates first independent exercise</td></tr></tbody></table></section>
+
+      
+      <section class="view" data-view="risks"><h2 class="sec">Risk register</h2><table><thead><tr><th>ID</th><th>Risk</th><th>Owner (proposed)</th><th>Mitigation</th><th>Status</th></tr></thead><tbody><tr><td>R1</td><td>Learning curve reduces available model-build time</td><td>Nigel</td><td>Pair on complex changes; use small complete exercises; agree capacity</td><td>Open / high</td></tr><tr><td>R2</td><td>Source data arrives late or is incomplete</td><td>Analyst + Nigel</td><td>Request in week 1; maintain explicit coverage; limit regional scope</td><td>Open / high</td></tr><tr><td>R3</td><td>Calibration masks wrong sector accounting</td><td>Nigel + reviewer</td><td>Review definitions and fleet/activity evidence, not only totals</td><td>Open / high</td></tr><tr><td>R4</td><td>Template or review support delays final delivery</td><td>Nigel</td><td>Obtain template early; assign independent reviewer at kickoff</td><td>Open / medium</td></tr></tbody></table></section>
+
+      
+      <section class="view" data-view="decisions"><h2 class="sec">Decision register</h2><table><thead><tr><th>ID</th><th>Decision</th><th>Basis</th><th>Date</th><th>Status</th></tr></thead><tbody><tr><td>D1</td><td>Keep self-contained pptx workspace with story/ and scripts/</td><td>User preference; canon updated</td><td>1 Oct 2026</td><td>Agreed</td></tr><tr><td>D2</td><td>Use model plus engagement profile</td><td>User requested workstreams, workplan and delivery tracking</td><td>1 Oct 2026</td><td>Agreed</td></tr><tr><td>D3</td><td>SA validated outputs as core; regional depth conditional</td><td>Planning recommendation for one analyst learning Python</td><td>2 Oct proposed</td><td>Pending kickoff</td></tr><tr><td>D4</td><td>2 Oct?12 Nov delivery window and role allocation</td><td>Draft six-week plan</td><td>2 Oct proposed</td><td>Pending kickoff</td></tr></tbody></table></section>
+
+      
+      <section class="view" data-view="issues"><h2 class="sec">Issues and scope changes</h2><table><thead><tr><th>ID</th><th>Issue</th><th>Owner (proposed)</th><th>Next action</th><th>Status</th></tr></thead><tbody><tr><td>I1</td><td>Historical gaps remain and inputs are unreviewed</td><td>Analyst + Nigel</td><td>Review reconciliation and prioritise source gaps</td><td>Open</td></tr><tr><td>I2</td><td>PowerPoint template not yet supplied</td><td>Nigel / provider</td><td>Supply source template; complete brand setup</td><td>Open</td></tr><tr><td>I3</td><td>Analyst availability and support not recorded</td><td>Nigel</td><td>Confirm weekly capacity and pairing arrangements</td><td>Open</td></tr><tr><td>I4</td><td>Central assumptions integration not implemented</td><td>Nigel + technical support</td><td>Plan integration against explicit EXC-ENGINE</td><td>Open</td></tr></tbody></table><p>No fee or schedule change has been approved. Record the effect of new scope before treating it as committed work.</p></section>
+
+      
+      <section class="view" data-view="costs"><h2 class="sec">Resources and commercial picture</h2><table><thead><tr><th>Measure</th><th>Current position</th><th>Action</th></tr></thead><tbody><tr><td>Analyst capacity</td><td>Not supplied</td><td>Agree hours or days per week at kickoff</td></tr><tr><td>Python support</td><td>Not assigned</td><td>Name reviewer and pairing allocation</td></tr><tr><td>Budget / fee / commercial basis</td><td>Not supplied</td><td>Confirm whether this is an internal allocation or contracted scope</td></tr><tr><td>Actual effort / cost to date</td><td>Not recorded</td><td>Start an agreed effort record; do not infer hours from commits</td></tr><tr><td>Forecast cost to complete</td><td>Not available</td><td>Estimate after scope and capacity are agreed</td></tr></tbody></table><p class="note">Unknowns are not zero. No cost, fee or margin calculation is shown without inputs.</p></section>
+
+      
+      <section class="view" data-view="lessons"><h2 class="sec">Learning and retrospective focus</h2><ul class="tight"><li>Separate a successful software run from validated model results.</li><li>Teach Python through one input-to-output exercise before changing the vehicle cohort engine.</li><li>Each Friday, record one change to the working method with an owner.</li></ul><p>No retrospective has yet been completed. See <a href="../retros/README.md">retrospective guidance</a>.</p></section>
+
+      
+      <section class="view" data-view="internal"><h2 class="sec">Internal readiness review</h2><table><thead><tr><th>Discipline</th><th>Current evidence</th><th>Assessment</th></tr></thead><tbody><tr><td>Structure</td><td>Canon and repo migrated; engagement overlay added</td><td>Ready for kickoff</td></tr><tr><td>Technical baseline</td><td>54 tests; both scenarios unchanged; source files preserved</td><td>Baseline established</td></tr><tr><td>Model validity</td><td>43 open exceptions; source and method review pending</td><td>Not release-ready</td></tr><tr><td>Planning</td><td>Draft schedule and responsibilities; capacity unknown</td><td>Needs kickoff agreement</td></tr><tr><td>Commercial control</td><td>Budget and effort not recorded</td><td>Not assessable</td></tr></tbody></table><div class="banner warn"><strong>One next action:</strong> Nigel to confirm scope, analyst capacity and review support at the 2 October kickoff.</div></section>
+
+      
+      <section class="view" data-view="team"><h2 class="sec">Team brief</h2><p class="lead">Draft only. Review before use. Copying does not send a message.</p><button class="act" data-copy-html="out-team">Copy as HTML</button> <button class="act secondary" data-copy-text="out-team">Copy as text</button><div class="outbox" id="out-team"><p>Draft internal brief ? 1 October 2026</p><p>The repository and engagement workstreams are ready for kickoff. The model remains provisional.</p><p>Nigel: agree the decision question, scope, analyst capacity and review support on 2 October. Analyst: run the model and trace one agricultural-demand calculation into Excel. Request fleet and sector data in week 1.</p><p>The proposed six-week plan ends 12 November; dates and ownership need kickoff agreement.</p></div></section>
+
+      
+      <section class="view" data-view="client"><h2 class="sec">Stakeholder update draft</h2><p class="lead">Draft only. Review before use. Copying does not send a message.</p><button class="act" data-copy-html="out-client">Copy as HTML</button> <button class="act secondary" data-copy-text="out-client">Copy as text</button><div class="outbox" id="out-client"><p>Draft status update ? audience and recipient to confirm.</p><p>The model structure has been reorganised and regression-checked without changing existing scenario results. The next phase is input validation, historical reconciliation, reporting and analyst handover.</p><p>Please confirm the intended business use, scope, available review support and presentation template. Outputs remain provisional pending validation and approval.</p></div></section>
+
+      
+      <section class="view" data-view="delivery"><h2 class="sec">Delivery cover-note checklist</h2><p class="lead">Draft only. Review before use. Copying does not send a message.</p><button class="act" data-copy-html="out-deliv">Copy as HTML</button> <button class="act secondary" data-copy-text="out-deliv">Copy as text</button><div class="outbox" id="out-deliv"><p>No formal deliverable has been released.</p><p>Before sending: identify the exact artifact and run tag; state country/product coverage, scenario, input vintage, limitations and review status; link to provenance and recorded approval.</p><p>If exceptions remain, label the output draft/provisional and describe its permitted use. Do not imply that the release gates have passed.</p></div></section>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORE = "liquid-fuels-2026-10-01";   // unique key for saved state
+
+  // ---- sidebar nav ----
+  document.querySelectorAll('.sidebar-item').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.sidebar-item').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector('.view[data-view="' + b.dataset.tab + '"]').classList.add('active');
+  }));
+  document.getElementById('sidebar-toggle').addEventListener('click', () =>
+    document.getElementById('sidebar').classList.toggle('collapsed'));
+
+  // ---- burn sub-view (swap the source table per view in real use) ----
+  document.querySelectorAll('#burn-tabs button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('#burn-tabs button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+  }));
+
+  // ---- delivery board (localStorage) ----
+  const bKey = STORE + ':board';
+  const initialTasks = [{"text": "Nigel ? confirm scope, capacity and support at 2 October kickoff", "done": false}, {"text": "Analyst ? run both scenarios and reconcile agriculture in Excel (week 1)", "done": false}, {"text": "Analyst + Nigel ? issue fleet and sector data requests (week 1)", "done": false}, {"text": "Nigel / provider ? supply presentation template (date pending)", "done": false}];
+  let tasks; try { tasks = JSON.parse(localStorage.getItem(bKey) || "null") || initialTasks; } catch { tasks = initialTasks; }
+  const bBody = document.getElementById('board-body'), bBadge = document.getElementById('board-badge');
+  function saveBoard(){ try { localStorage.setItem(bKey, JSON.stringify(tasks)); } catch { flash("Browser storage unavailable; copy actions into the dated record."); } renderBoard(); }
+  function escapeText(value){const e=document.createElement("span");e.textContent=value;return e.innerHTML;}
+  function renderBoard(){
+    bBody.innerHTML = '';
+    tasks.forEach((t,i) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td><input type="checkbox" ${t.done?'checked':''} data-i="${i}"></td>`
+        + `<td style="${t.done?'text-decoration:line-through;color:#6c757d':''}">${escapeText(t.text)}</td>`
+        + `<td><button data-del="${i}" style="border:none;background:none;color:#cf222e;cursor:pointer;font-size:15px;">×</button></td>`;
+      bBody.appendChild(tr);
+    });
+    const open = tasks.filter(t=>!t.done).length;
+    if (bBadge) bBadge.textContent = open;
+  }
+  document.getElementById('board-add').addEventListener('click', () => {
+    const v = document.getElementById('board-input').value.trim();
+    if (v){ tasks.push({text:v,done:false}); document.getElementById('board-input').value=''; saveBoard(); }
+  });
+  bBody.addEventListener('click', e => {
+    if (e.target.dataset.i !== undefined){ tasks[e.target.dataset.i].done = e.target.checked; saveBoard(); }
+    if (e.target.dataset.del !== undefined){ tasks.splice(e.target.dataset.del,1); saveBoard(); }
+  });
+  document.getElementById('board-reset').addEventListener('click', () => {
+    if (confirm('Clear the board?')){ tasks = []; saveBoard(); } });
+  renderBoard();
+
+  // ---- registers: tick counters + persistence ----
+  function wireRegister(name){
+    const body = document.querySelector(`tbody[data-register="${name}"]`);
+    if (!body) return;
+    const boxes = body.querySelectorAll('input[type=checkbox]');
+    const rKey = STORE + ':' + name;
+    const saved = JSON.parse(localStorage.getItem(rKey) || '[]');
+    boxes.forEach((cb,i) => { cb.checked = !!saved[i];
+      cb.addEventListener('change', () => {
+        const st = Array.from(boxes).map(b=>b.checked);
+        localStorage.setItem(rKey, JSON.stringify(st)); updateBadge(); });
+    });
+    function updateBadge(){
+      const done = Array.from(boxes).filter(b=>b.checked).length;
+      const badge = document.getElementById(name==='risk'?'risk-badge':'dec-badge');
+      if (badge) badge.textContent = done + '/' + boxes.length;
+    }
+    updateBadge();
+  }
+  wireRegister('risk'); wireRegister('dec');
+  document.querySelectorAll('[data-reset-register]').forEach(b => b.addEventListener('click', () => {
+    const n = b.dataset.resetRegister; localStorage.removeItem(STORE+':'+n); location.reload(); }));
+
+  // ---- output generators: copy as HTML / plain text ----
+  function copyHTML(id){
+    const html = document.getElementById(id).innerHTML;
+    const text = document.getElementById(id).innerText;
+    if (navigator.clipboard && window.ClipboardItem){
+      navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([html],{type:'text/html'}),
+        'text/plain': new Blob([text],{type:'text/plain'})
+      })]).then(()=>flash('Copied (rich)'));
+    } else { copyText(id); }
+  }
+  function copyText(id){
+    const text = document.getElementById(id).innerText;
+    if (!navigator.clipboard){flash("Select and copy the draft text manually.");return;}
+    navigator.clipboard.writeText(text).then(()=>flash("Copied (text)")).catch(()=>flash("Select and copy the draft text manually."));
+  }
+  function flash(msg){ const d=document.createElement('div');
+    d.textContent=msg; d.style.cssText='position:fixed;bottom:18px;right:18px;background:#1a7f37;color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;z-index:50;';
+    document.body.appendChild(d); setTimeout(()=>d.remove(),1400); }
+  document.querySelectorAll('[data-copy-html]').forEach(b=>b.addEventListener('click',()=>copyHTML(b.dataset.copyHtml)));
+  document.querySelectorAll('[data-copy-text]').forEach(b=>b.addEventListener('click',()=>copyText(b.dataset.copyText)));
+</script>
+</body>
+</html>

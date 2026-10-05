@@ -9,6 +9,10 @@
 # closely (it tracks planted hectares, irrigation cycles, fleet age).
 
 base_year_volume:
+  register_id: REG-AGRICULTURE-BASE_YEAR_VOLUME
+  exception_id: EXC-AGRICULTURE-BASE_YEAR_VOLUME
+  owner: nigel.zhuwaki
+  confidence: unassessed
   by_country:
     ZAF: { value: 0.7e9, year: 2024 }   # provisional ~0.7 BL/yr
     BWA: { value: null,  year: null }
@@ -18,11 +22,15 @@ base_year_volume:
   units: litres per year (diesel)
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — placeholder pending sourcing (DAFF / DALRRD energy use studies, sector reports). See docs/params_sourcing.md
+  source: PROVISIONAL — placeholder pending sourcing (DAFF / DALRRD energy use studies, sector reports). See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true
 
 elasticity:
+  register_id: REG-AGRICULTURE-ELASTICITY
+  exception_id: EXC-AGRICULTURE-ELASTICITY
+  owner: nigel.zhuwaki
+  confidence: unassessed
   # Agriculture barely tracks GDP — driver is hectares planted and rebate
   # policy. Low elasticity acknowledges this is the wrong driver and the
   # placeholder won't change much year-on-year.
@@ -35,11 +43,16 @@ elasticity:
   units: dimensionless
   provisional: true
   needs_verification: true
-  source: PROVISIONAL — placeholder pending move to a hectares-planted driver. See docs/params_sourcing.md
+  source: PROVISIONAL — placeholder pending move to a hectares-planted driver. See docs/methodology/params_sourcing.md
   last_updated: null
   shared: true
 
 product:
+  register_id: REG-AGRICULTURE-PRODUCT
+  exception_id: EXC-AGRICULTURE-PRODUCT
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  source: Legacy configuration; original source not recorded
   default: diesel_50ppm
   units: product code
   shared: true

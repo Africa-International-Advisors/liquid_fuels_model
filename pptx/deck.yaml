@@ -1,0 +1,31 @@
+{
+  "$schema": "https://brand-pptx.local/schemas/deck-v1.json",
+  "version": 1,
+  "project": "liquid-fuels-analyst-briefing",
+  "brand": {
+    "name": "Vopak",
+    "policy": "template",
+    "config": "brand_configs/vopak.py",
+    "template": "templates/Vopak_Template_v2.pptx",
+    "template_sha256": "0a596d60197bb973af4b106b40f7fa7c7af72dcf355f6899c660fc739670e482"
+  },
+  "story": {
+    "type": "html",
+    "source": "story/deck.html"
+  },
+  "build": {
+    "engine": "auto",
+    "mode": "editable",
+    "output": "output/delivered/Vopak_Analyst_Kickoff.pptx",
+    "template_aware": true,
+    "command": [
+      "@python",
+      "scripts/build_kickoff.py"
+    ]
+  },
+  "check": {},
+  "pdf": {
+    "renderer": "powerpoint",
+    "output": "output/delivered/Vopak_Analyst_Kickoff.pdf"
+  }
+}

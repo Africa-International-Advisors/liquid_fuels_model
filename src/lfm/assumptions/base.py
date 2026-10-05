@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from datetime import date
 from typing import Any, Protocol
 
-from ..core.time import ExpansionRule
+from ..model.core.time import ExpansionRule
 from ..run import Run
 
 

@@ -1,135 +1,95 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+# Liquid fuels model conventions
 
 ## What this repo is
 
-This repo is the Python rebuild of the Vopak/Reatile liquid fuels supply–demand model. v1 scope: **SACU** (ZAF, BWA, LSO, NAM, SZW), **monthly** to **2050**, **two coherent scenarios** (`high_demand`, `low_demand`) ported from the original xlsx, **annual xlsx** as the consumer artifact.
+A provisional SACU liquid-fuels forecast, currently populated for South Africa only.
+Owner: nigel.zhuwaki. Active vintage: 2026 (draft). Forecast horizon: 2024?2050.
+Decision question: what fuel demand and domestic supply gaps arise under high and low
+liquid-fuel demand scenarios? This is not yet a port-routing or terminal-throughput model.
 
-The original Excel artifacts live under `docs/` as **reference documents only** — do not treat them as the model:
+## Architecture
 
-- `docs/Liquid Fuels Model - Supply Demand, 2025 - Reatile Copy.xlsx` — original xlsx model
-- `docs/EV forecast methodology.md` — methodology note for the original xlsx (S-curve, GDP regression, stock build-up)
-- `docs/24032026fleet-electrification-assumptions-sa-v2200.pptx`, `docs/AIA_Vopak_Intermediary_report_vf2_2025.pdf` — deliverables
+Follow the project-canon model plus engagement profile and its optional `pptx/` workspace.
+- `src/lfm/model/`: demand, supply and dimension calculations; no file/network I/O.
+- `src/lfm/assumptions/`: provider adapters. The CLI preloads an in-memory snapshot.
+- `src/lfm/governance.py`: mechanically checks inputs against the register and exceptions.
+- `src/lfm/reporting/`: shared output transformations and model report builders.
+- `src/lfm/scripts/`: extraction, inspection and reconciliation commands.
+- `frontend/`: read-only Next.js/TypeScript/Tailwind documentation viewer; local exception,
+  not an addition to project-canon. No FastAPI service or model-run UI is included.
+- `assumptions/<vintage>/`: declared inputs, immutable once shipped.
+- `governance/`: owned register rows and dated exceptions; no fabricated validation.
+- `external/`: received material, preserved unchanged.
+- `docs/methodology/` and `docs/notes/`: authored explanation and working notes.
+- `runs/`: calculated outputs and provenance, ignored by Git.
+- `output/`: built model reports; only `delivered/` copies tracked.
+- `pptx/`: presentation-only workflow; `story/` for content, `scripts/` for builders,
+  `templates/` for original supplied files, `brand_configs/` for styling,
+  `output/` for generated packs (only `delivered/` tracked), `qa/` for generated checks.
+- `archive/`: superseded material, not a second active structure.
 
-## Architecture (read this before editing)
+## Load-bearing design decisions
 
-```
-src/lfm/
-  run.py            Run dataclass — (vintage, scenario, model_version) is the
-                    unit of reproducibility; every output carries this triple
-  config.py         Path resolution; env vars LFM_ASSUMPTIONS_DIR / LFM_DATA_DIR
-                    / LFM_RUNS_DIR override defaults
-  core/             dimensions every dataframe is keyed on
-    time.py         monthly + annual PeriodIndex; ExpansionRule for annual→monthly
-    geography.py    SACU country list — adding a country requires explicit scope change
-    products.py     fuel product taxonomy
-  assumptions/
-    base.py         AssumptionProvider Protocol — the seam between model and
-                    assumption sources
-    yaml_provider.py YamlDirectoryProvider — reads assumptions/<vintage>/
-  demand/
-    base.py         DemandSegment Protocol; SegmentStatus = MODELLED|HELD|DEFERRED
-    vehicles.py     MODELLED  (S-curve EV + GDP-driven new vehicles)
-    aviation.py     MODELLED  (xlsx 2-var jet regression on GDP/capita + pax)
-    generation.py   MODELLED  (OCGT capacity x load factor / efficiency -> diesel)
-    industrial.py   HELD      (base × GDP-ratio^elasticity, single ZAF bucket)
-    marine.py       HELD      (per-port base × GDP-ratio^elasticity, summed by country)
-    agriculture.py  HELD      (base × GDP-ratio^elasticity, low elasticity)
-  supply/flows.py   refinery output (capacity × util × product split × availability)
-                    + demand-supply balance with deficit per refinery product
-  output/
-    aggregate.py    monthly→annual roll-up
-    xlsx.py         template-driven workbook writer
-
-assumptions/<vintage>/   vintaged config — the contract is the YAML schema
-  _meta.yaml             vintage metadata + scenario list + xlsx mapping
-  <domain>.yaml          per-domain assumption files (macro, vehicles, aviation,
-                         generation, industrial, marine, agriculture, supply)
-  seasonality/*.csv      monthly indices (avg to 1.0)
-  timeseries/*.csv       long histories referenced from YAMLs
-                         (extracted from xlsx via scripts/extract_xlsx_to_assumptions.py)
-
-scripts/                 ETL / inspection one-offs
-  inspect_xlsx.py        dump xlsx structure + named-range values
-  extract_xlsx_to_assumptions.py  write xlsx series into timeseries/ CSVs
-```
-
-## Three load-bearing design decisions
-
-These are the architectural commitments you should not casually reverse:
-
-1. **Assumptions live behind a provider interface, not inline.** The model never reads YAML directly — it asks the `AssumptionProvider`. This is what lets the central assumptions repo replace the local YAML directory later without touching model code. Do not embed numbers in `src/lfm/`.
-
-2. **Vintage directories are immutable once shipped.** Corrections open a new vintage. This is the only way the year-on-year "why did the number change" question stays answerable. `_meta.yaml` carries `status: draft|shipped|superseded`.
-
-3. **Internal model is monthly; consumer xlsx is annual.** The aggregation lives in `output/aggregate.py`. Don't make the engine annual to "match" the xlsx — the held segments need monthly seasonality and that lives at the engine layer.
-
-4. **Vehicle fuel-efficiency improvement applies to new sales only, not the whole fleet.** Each new-vehicle cohort enters at the year-of-manufacture L/100km (`fuel_consumption` baseline × cumulative `efficiency_improvement`) and that figure is held for the cohort's life. Fleet-average L/100km in a given year is a stock-weighted sum across cohorts. This is an explicit modelling rule recorded in `vehicles.yaml::fuel_consumption` — it implies the vehicles compute must track stock by cohort (year of first registration), not as a single bulk number.
+1. Inputs are accessed through the provider. Do not embed new modelling assumptions in code.
+2. Preserve shipped vintages. Draft changes must update the register and appropriate exceptions.
+3. Demand output is monthly; annual reporting aggregates it. Supply currently computes annually.
+4. Vehicle efficiency improvements apply to new cohorts, not to the whole fleet retroactively.
+5. Do not reproduce the workbook cell-for-cell. Explain intentional methodology changes.
+6. Do not add countries beyond SACU without an explicit scope change.
+7. Presentation builders consume results, not a duplicate model. Never hand-edit generated packs.
 
 ## v1 build-out priorities
 
-The scaffold is in place; stub functions raise `NotImplementedError`. The build order that respects dependencies:
-
-1. `assumptions/yaml_provider.py` — load YAML + referenced CSVs into `Assumption` objects.
-   Scenario filtering on the timeseries CSVs (`scenario in {run.scenario, "shared"}`)
-   happens here.
-2. `core/time.py::expand_annual_to_monthly` — flat / linear / seasonal rules
-3. `demand/vehicles.py` — S-curve + new-vehicle regression (coeffs in vehicles.yaml)
-4. `demand/aviation.py` — apply the 2-var jet regression (coeffs in aviation.yaml)
-5. `demand/generation.py` — OCGT compute (capacity × load_factor → diesel litres)
-6. `demand/{industrial,marine}.py` — held segments share a tight pattern
-7. `output/aggregate.py` then `output/xlsx.py`
-8. `supply/flows.py` — thin demand-vs-refining balance using `supply.yaml`
+Validate opening vehicle stock and sector baselines; resolve historical reconciliation;
+review scenario wiring; source agreed regional coverage; integrate the shared assumptions
+engine; finish template-based Excel reporting; complete independent review and sign-off.
+These are model-development tasks, not completed by the structural migration.
 
 ## Working in this repo
 
-- **Don't reproduce the xlsx cell-for-cell.** This is a clean-slate redesign — fidelity to the xlsx outputs is not a requirement. Use it as documentation, not a target.
-- **Don't add countries beyond SACU** without an explicit scope change. Wider SADC is a planned future extension.
-- **Stub functions raise rather than return fake values** so missing pieces fail loudly. Preserve that discipline.
-- **The xlsx is a *report*, not the model.** Use openpyxl with a template; don't build workbooks cell-by-cell from scratch in code.
+Read AGENTS.md and GATE_CHECKLIST.md. Run governance and relevant tests after changes.
+New input scalars and CSV observations require owned register rows; structured blocks
+inherit a register group. All exceptions need a reason, owner, expiry and migration path.
+No unknown source date, confidence or approval is to be invented. Open exceptions mean
+provisional output. `lfm check` passing establishes coverage, not release approval.
+Existing outputs are preserved; repeated runs use timestamped subfolders.
+
+## Scenarios
+
+`high_demand`: higher growth, slower EV adoption and more OCGT demand.
+`low_demand`: lower growth, faster EV adoption and less OCGT demand.
+The exact workbook mappings are in `assumptions/2026/_meta.yaml`.
+Scenario definitions are local; central mapping is an explicit open exception.
+
+## What lives where for assumptions
+
+YAML declares scalars and structured settings; referenced CSVs carry series.
+`governance/assumption_register.csv` records each scalar/observation and its inherited
+source, owner and review status. `governance/exception_log.csv` records unresolved blocks
+and integration limitations. See `governance/README.md` for the update process.
 
 ## Commands
 
 ```powershell
-# install (editable)
-pip install -e ".[dev]"
-
-# run the (currently no-op) engine
-python -m lfm run --vintage 2026
-
-# tests
-pytest
-
-# single test
-pytest tests/test_smoke.py::test_sacu_is_five_countries
-
-# lint
-ruff check src tests
+python -m lfm check --vintage 2026
+python -m lfm check --vintage 2026 --strict
+python -m lfm run --vintage 2026 --scenario high_demand
+python -m pytest
+python -m lfm.scripts.compare_history
+python -m lfm.scripts.verify_against_xlsx
+npm.cmd --prefix frontend run dev
+.\.venv\Scripts\brand-pptx.exe doctor --strict
 ```
 
-## What lives where for assumptions
+The final command intentionally reports incomplete presentation setup until the user
+supplies the template and the builder is configured after mockup review.
 
-When you need to know "where does X come from?":
 
-- **Code-side default / fallback?** Nowhere — the model has no fallbacks; every input flows from the provider.
-- **Per-vintage config value?** `assumptions/<vintage>/<domain>.yaml`
-- **Long historical / forecast series?** `assumptions/<vintage>/timeseries/*.csv`, referenced by `csv:` field in the YAML.
-  CSV schema is `(country, period, scenario, value)` long-format. `scenario=shared` means the row applies to all scenarios.
-- **Monthly seasonal pattern?** `assumptions/<vintage>/seasonality/*.csv`, referenced by name in the segment YAML
-- **Raw upstream data (pre-cleaning)?** `data/raw/`, gitignored — not part of any vintage
-- **Re-extracting xlsx values into a new vintage?** `python scripts/extract_xlsx_to_assumptions.py`
-  rewrites the timeseries CSVs from the xlsx. Pair with manual updates to the segment YAMLs for any new scalars / coefficients.
+## Engagement workstreams
 
-## Scenarios
-
-v1 carries two coherent scenarios from the original xlsx:
-
-- `high_demand` — high GDP growth, slow EV penetration (`EV_Low_Penetration`),
-  low fuel-efficiency improvement, high load shedding. The "more liquid fuel needed" worldview.
-- `low_demand` — low GDP growth, fast EV penetration (`EV_High_Penetration`),
-  high fuel-efficiency improvement, low load shedding.
-
-The full xlsx-to-scenario mapping lives in `assumptions/2026/_meta.yaml::xlsx_scenario_mapping`.
-The naming reflects what's downstream of the assumption (fuel demand), not the
-direction of any single input — keep that in mind when adding new assumption keys.
+`workstreams/` holds WS0 governance/planning, WS1 data validation, WS2 model development,
+WS3 reporting/delivery and WS4 analyst enablement. Start at `workstreams/README.md`.
+Root `governance/` remains the model assumption audit trail; WS0 is delivery management.
+Model code stays in `src/lfm/`, presentation work stays in `pptx/`, and the weekly cockpit
+is a dated record under `workstreams/WS0_governance/workplan/`. Dates and staffing in
+the initial six-week plan are proposed, not confirmed commitments.

@@ -29,7 +29,7 @@ class Paths:
         return cls(
             repo_root=root,
             assumptions_dir=Path(os.getenv("LFM_ASSUMPTIONS_DIR", root / "assumptions")),
-            data_dir=Path(os.getenv("LFM_DATA_DIR", root / "data")),
+            data_dir=Path(os.getenv("LFM_DATA_DIR", root / "external" / "data")),
             runs_dir=Path(os.getenv("LFM_RUNS_DIR", root / "runs")),
         )
 

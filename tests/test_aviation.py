@@ -5,9 +5,9 @@ import pandas as pd
 import pytest
 
 from lfm.assumptions import YamlDirectoryProvider
-from lfm.core.time import END_YEAR, START_YEAR
-from lfm.demand import aviation
-from lfm.demand.base import SegmentStatus
+from lfm.model.core.time import END_YEAR, START_YEAR
+from lfm.model.demand import aviation
+from lfm.model.demand.base import SegmentStatus
 from lfm.run import Run
 
 

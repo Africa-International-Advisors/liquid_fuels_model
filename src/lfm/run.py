@@ -19,15 +19,14 @@ class Run:
     Attributes:
         vintage: Assumption-set vintage tag (e.g. ``"2026"``). Selects which
             ``assumptions/<vintage>/`` directory the provider reads from.
-        scenario: Scenario name. v1 ships a single ``"reference"`` scenario;
-            the dimension exists so future scenarios add without restructuring.
+        scenario: One of the named high_demand or low_demand scenarios.
         model_version: Code version. Defaults to the installed package version.
         executed_at: UTC timestamp the Run was instantiated (provenance only —
             does not affect model output).
     """
 
     vintage: str
-    scenario: str = "reference"
+    scenario: str = "high_demand"
     model_version: str = __version__
     executed_at: datetime = field(
         default_factory=lambda: datetime.now(timezone.utc)

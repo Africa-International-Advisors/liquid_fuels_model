@@ -5,9 +5,9 @@ import pandas as pd
 import pytest
 
 from lfm.assumptions import YamlDirectoryProvider
-from lfm.demand import vehicles
+from lfm.model.demand import vehicles
 from lfm.run import Run
-from lfm.supply.flows import (
+from lfm.model.supply.flows import (
     DEMAND_TO_REFINERY_PRODUCT,
     REFINERY_PRODUCTS,
     compute_balance,

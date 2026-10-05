@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from lfm.core.time import ExpansionRule, expand_annual_to_monthly
+from lfm.model.core.time import ExpansionRule, expand_annual_to_monthly
 
 
 def annual(values: list[float], start: int = 2024) -> pd.Series:
