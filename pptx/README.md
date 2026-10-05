@@ -162,3 +162,26 @@ pipeline source links are in speaker notes. `scripts/asset_maps.py` reads the or
 workbook capacities directly, preserving Durban 2024 and Lesedi 2026 labels. Pipelines
 are schematic external context, not newly implemented model constraints. Pipeline
 throughput, storage stocks and refinery nameplate capacity use distinct units.
+
+## Week 1 analytical map pack
+
+The approved three-page outline is `story/week_1_analytical_maps_mockup.md`.
+It supersedes the longer delivery-review outline. Nigel approved the three-page
+scope and GIS-style cartographic treatment in chat on 6 October 2026.
+
+Run `.venv/Scripts/python.exe pptx/scripts/build_week1_maps.py` from the repo root.
+Install the additional projection dependency from `pptx/requirements.txt` in the
+shared environment. The builder uses the supplied Vopak master and named
+`Header only` layout, editable map geometry/text/tables, the three existing
+illustrative CSVs and the Natural Earth 1:50m boundary layer.
+
+Deliveries are versioned under `output/delivered/Vopak_Week1_Analytical_Maps_*`:
+consolidated infrastructure/demand, Durban/Lesedi conditional candidate access,
+and market volumes with shared-transfer reconciliation. Export the matching PDF
+through PowerPoint and inspect every slide. `qa/week1_maps/build_manifest.json`
+records the template/boundary hashes and projection; rendered QA stays untracked.
+
+All figures and candidate access are illustrative. Accurate projection and
+cartographic styling do not make the inherited schematic routes an operational
+GIS network or verified service area. See `assets/maps/README.md` for evidence
+limitations, owner and replacement trigger. No model assumptions were changed.

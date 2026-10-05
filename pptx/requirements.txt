@@ -5,3 +5,4 @@ XlsxWriter==3.2.9
 Pillow==12.2.0
 typing_extensions==4.15.0
 pywin32==312; sys_platform == 'win32'
+pyproj==3.7.2
