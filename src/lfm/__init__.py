@@ -10,4 +10,4 @@ so the provider can later be swapped for the central assumptions repo
 without touching model code.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
