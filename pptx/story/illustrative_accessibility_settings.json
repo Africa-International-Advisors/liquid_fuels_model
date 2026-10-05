@@ -1,0 +1,16 @@
+{
+  "status": "Illustrative cartographic construction only",
+  "grid_cell_km": 25,
+  "metric": "Delivered road transport cost, ZAR per litre; illustrative only",
+  "illustrative_dispatch_zar_per_litre": 0.15,
+  "illustrative_transport_zar_per_litre_km": 0.002,
+  "cost_class_upper_zar_per_litre": [0.75, 1.25, 1.75, 2.25],
+  "cost_source": "Authored illustration, not carrier quotes or validated cost evidence",
+  "cost_definition": "Dispatch allowance plus generalized road/connection distance times an illustrative transport rate. Excludes fuel purchase price, tax, storage and pipeline tariffs. No pipeline or rail cost is claimed.",
+  "maximum_straight_line_connection_km": 100,
+  "graded_surface_method": "Shortest distance along inherited schematic road segments plus straight-line origin and destination connections, transformed into illustrative transport cost. Cells beyond the connection limit or without a connected route remain unassessed. Not operational routing or validated cost.",
+  "meaning": "A graduated illustrative road transport cost surface from Durban or Lesedi, clipped to mainland South Africa; not a verified customer catchment or tariff map",
+  "condition": "Candidate service requires compatible product, operational capacity, receipt/dispatch capability, transport access, delivered cost and customer rights",
+  "owner": "Manish assembles route/customer evidence; Nigel reviews interpretation",
+  "replace_when": "Operational routes and customer destinations are available, before claiming measured reach"
+}

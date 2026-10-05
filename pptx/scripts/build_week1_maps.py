@@ -20,11 +20,14 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.dml import MSO_LINE_DASH_STYLE
 from pptx.dml.color import RGBColor
 from pyproj import CRS, Transformer
+from shapely.geometry import shape as geo_shape, box as geo_box
+from shapely.ops import transform as geo_transform
 from brand_pptx import BrandStyle, add_themed_slide, remove_all_slides_cleanly
 from brand_pptx import _strip_table_style, cell_bottom_rule
 from network_sequence import PRODUCT, PRODUCTION, PORTS, RAIL, NODES
 from road_routes import ROADS
 from coverage_map import clipped
+from accessibility_cartography import distance_surface
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -145,6 +148,10 @@ for name in ['Eastern coastal', 'Inland']:
     assert math.isclose(g['additional_candidate_bn_l'], g['commercial_envelope_bn_l']-g['current_unique_vopak_bn_l'])
 
 features = json.loads((ROOT/'assets/maps/ne_50m_admin_0_countries.geojson').read_text(encoding='utf-8'))['features']
+access_settings=json.loads((ROOT/'story/illustrative_accessibility_settings.json').read_text())
+sa_geometry=geo_transform(PROJECT.transform,geo_shape(next(f['geometry'] for f in features if f['properties'].get('ADMIN')=='South Africa')).intersection(geo_box(16,-35.3,33.8,-22)))
+surface=distance_surface(ROADS,PROJECT,sa_geometry,access_settings)
+SURFACE_COLOURS=[RGBColor.from_string(c) for c in ['0A2373','375798','728BBB','A9BDDC','DDE6F2']]
 polys = []
 for feature in features:
     name = feature['properties'].get('ADMIN')
@@ -227,25 +234,36 @@ class Map:
             total = groups[name]['demand_bn_l']; x,y=self.xy(lon,lat)
             radius=.08*math.sqrt(total)
             marker(self.s,x,y,radius,DEMAND,hollow=True)
-            if name=='Eastern coastal': dx,dy=-1.3,.17
+            if name=='Eastern coastal': dx,dy=-.85,.17
             elif name=='Inland': dx,dy=-1.2,-.52
             elif name=='Western coastal': dx,dy=-.4,-.65
-            else: dx,dy=-.65,-.15
+            else: dx,dy=-1.75,-.58
             label={'Eastern coastal':'Eastern / coastal','Western coastal':'Western / coastal','Other regions':'Other regions','Inland':'Inland'}[name]
             q=text(self.s,f'{label}\n{total:.1f} bn L',x+dx,y+dy,1.55,.48,11,True,DEMAND)
             q.fill.solid(); q.fill.fore_color.rgb=brand.white
-    def access(self,terminal):
+    def surface(self):
+        for geometry,category,origin in surface:
+            color=LIGHT if category is None else SURFACE_COLOURS[category]
+            polygons=list(geometry.geoms) if geometry.geom_type=='MultiPolygon' else [geometry]
+            for polygon in polygons:
+                if polygon.geom_type!='Polygon' or polygon.area<1000000:
+                    continue
+                coords=[(int(Inches(x)),int(Inches(y))) for x,y in [self.projected(*p) for p in polygon.exterior.coords]]
+                fb=self.s.shapes.build_freeform(*coords[0]);fb.add_line_segments(coords[1:],close=True)
+                q=fb.convert_to_shape();q.name=f'Illustrative delivered road transport cost class {category}; reference terminal {origin}'
+                q.fill.solid();q.fill.fore_color.rgb=color;q.line.fill.background()
+    def access(self,terminal,road_color=BLUE):
         if terminal=='Durban':
-            self.route(list(reversed(ROADS['N3'])),BLUE,2.3)
+            self.route(list(reversed(ROADS['N3'])),road_color,2.3)
             self.route(PRODUCT[0],DEMAND,1.7,MSO_LINE_DASH_STYLE.DASH)
             coast=[p for p in ROADS['N2'] if p[0]>=28.7]
-            self.route(coast,BLUE,2.3)
+            self.route(coast,road_color,2.3)
             self.route([NODES['Durban'],NODES['Gauteng']],INK,1.1,MSO_LINE_DASH_STYLE.DASH_DOT)
             lon,lat=31.03,-29.88
         else:
             self.route(PRODUCT[0],DEMAND,1.7,MSO_LINE_DASH_STYLE.DASH)
-            self.route([ (28.39,-26.44),(28.05,-26.2),(28.19,-25.75)],BLUE,2.3)
-            self.route(ROADS['N4'],BLUE,2.0)
+            self.route([ (28.39,-26.44),(28.05,-26.2),(28.19,-25.75)],road_color,2.3)
+            self.route(ROADS['N4'],road_color,2.0)
             self.route([p for p in ROADS['N1'] if p[1]>-28],INK,1.1,MSO_LINE_DASH_STYLE.DASH_DOT)
             lon,lat=28.39,-26.44
         x,y=self.xy(lon,lat); marker(self.s,x,y,.09,BLUE,MSO_SHAPE.DIAMOND)
@@ -316,6 +334,7 @@ def section_chevrons(s,active=1):
 
 def slide(title,source,notes):
     s=add_themed_slide(prs,'Header only',brand=brand,title=title)
+    s.shapes.turbo_add_enabled=True
     section_chevrons(s)
     text(s,'Source: '+source,.5,7.16,10.6,.23,7.6)
     s.notes_slide.notes_text_frame.text=notes
@@ -325,62 +344,86 @@ method = ('Map uses WGS84 / Lambert azimuthal equal-area, centred 25°E, 29°S. 
     'Natural Earth 1:50m countries; schematic transport from the kickoff appendix. '
     'Scale is nominal at map centre. Facility points are approximate, inherited from '
     'the appendix, not surveyed GPS. Lesedi uses the inherited Jameson Park-area point. '
-    'No network analysis, service-area polygon or measured cost/time threshold is computed. '
+    'No operational service-area polygon or evidence-calibrated cost/time threshold is computed. '
     'Demand positions are regional annotations, not provincial centroids. '
     'All numerical volumes are illustrative and are not model outputs or actual Vopak flows. '
+    'The graduated surface is illustrative delivered road transport cost: R0.15/litre dispatch plus '
+    'R0.002/litre/km times shortest schematic-road distance and straight-line terminal/grid connections. '
+    'These are authored example parameters, not carrier quotes or validated cost evidence. '
+    '25 km cells; cost classes <=0.75, 0.75-1.25, 1.25-1.75, 1.75-2.25 and >2.25 R/litre. '
+    'Cells more than 100 km from the sampled road geometry or without a connected path remain unassessed. '
+    'Fuel purchase price, tax, storage and pipeline tariffs are excluded. Operational speeds, '
+    'capacity, permissions and commercial access are not evaluated. '
     'Natural Earth source: https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_admin_0_countries.geojson')
+
+def exhibit_layout(s, heading, takeaways):
+    """Reference structure: analytical exhibit left, numbered interpretation right."""
+    text(s,heading,.5,1.78,7.05,.34,15,True)
+    line(s,(.5,2.13),(7.55,2.13),INK,.65)
+    line(s,(7.88,1.99),(7.88,6.86),INK,.55)
+    text(s,'Key takeaways',8.12,1.78,4.03,.34,18,True)
+    line(s,(8.12,2.13),(12.15,2.13),INK,.65)
+    for i,(heading,body) in enumerate(takeaways):
+        y=2.39+i*1.10
+        text(s,f'{i+1:02d} · {heading}',8.12,y,4.05,.41,14,True,BLUE)
+        text(s,body,8.12,y+.43,4.05,.64,12.5)
+
 s=slide('Locate fuel demand alongside the infrastructure serving it',
     'Natural Earth 1:50m; kickoff appendix / schematic networks; illustrative regional CSV. 6 Oct 2026.',method)
-text(s,'Consolidated infrastructure + regional demand | illustrative, billion litres/year',.5,1.62,11.6,.3,14)
-m=Map(s,.5,2.05,7.75,4.46); m.context(labels=True); m.demand()
-text(s,'Demand to assess',8.6,2.1,3.4,.4,20,True)
-rows=[['Region','Petrol','Diesel']]
-for name in ['Eastern coastal','Inland','Western coastal','Other regions']:
-    rr=[r for r in regional if r['region']==name]
-    label={'Eastern coastal':'Eastern / coastal','Western coastal':'Western / coastal','Other regions':'Other','Inland':'Inland'}[name]
-    rows.append([label]+[f"{sum(float(r['demand_bn_l']) for r in rr if r['product']==p):.1f}" for p in ['petrol','diesel']])
-rows.append(['National','9.0','12.0'])
-table(s,rows,8.6,2.65,[1.75,.78,.78],2.2,12)
-text(s,'Seven infrastructure layers',8.6,5.03,3.5,.28,14,True)
-text(s,'Production, pipelines, ports, roads, rail, storage and corridors.',8.6,5.37,3.5,.58,13)
-text(s,'Marker area shows illustrative demand, not a catchment. Other operator storage sites remain to locate.',8.6,6.07,3.5,.7,11)
+exhibit_layout(s,'Infrastructure and regional demand | illustrative, bn litres/year',[
+ ('Seven infrastructure layers','Production, pipes, ports, roads, rail, storage and corridors establish the physical context.'),
+ ('Demand volumes are illustrative','Inland demand is 10.0 bn litres; eastern/coastal demand is 4.5 bn litres. These are example volumes.'),
+ ('Durban–Lesedi links the markets','Link coastal receipts, inland transfers and final deliveries without counting the same fuel twice.'),
+ ('Proximity does not establish access','Routes, compatible capacity, delivered cost, contracts and competitors determine reachable demand.'),
+])
+m=Map(s,.5,2.38,7.05,4.0);m.context(labels=True);m.demand()
 for x,label,kind in [(.55,'Production',MSO_SHAPE.OVAL),(1.95,'Port',MSO_SHAPE.RECTANGLE),(2.92,'Vopak storage*',MSO_SHAPE.DIAMOND)]:
-    marker(s,x+.05,6.73,.045,BLUE if kind==MSO_SHAPE.DIAMOND else INK if kind==MSO_SHAPE.OVAL else GREY,kind); text(s,label,x+.17,6.62,1.4,.22,9)
-for x,label,dash in [(4.4,'Road',None),(5.5,'Product pipe',None),(7.1,'Rail',MSO_LINE_DASH_STYLE.DASH_DOT)]:
-    line(s,(x,6.73),(x+.28,6.73),DEMAND if label=='Product pipe' else GREY,1,dash);text(s,label,x+.34,6.62,1.0,.22,9)
-text(s,'*Approximate sites. LAEA / WGS84. Transport is schematic; capacities/access unverified.',.5,6.91,11.5,.2,8.5)
+    marker(s,x+.05,6.57,.045,BLUE if kind==MSO_SHAPE.DIAMOND else INK if kind==MSO_SHAPE.OVAL else GREY,kind);text(s,label,x+.17,6.46,1.4,.22,9)
+for x,label,dash in [(.55,'Road',None),(1.95,'Product pipe',None),(3.75,'Rail',MSO_LINE_DASH_STYLE.DASH_DOT)]:
+    line(s,(x,6.82),(x+.28,6.82),DEMAND if label=='Product pipe' else GREY,1,dash);text(s,label,x+.34,6.71,1.0,.22,9)
+text(s,'Marker area = illustrative demand. Not a catchment boundary.',.5,6.96,7.1,.16,8)
 
 s=slide('Map conditional market access from Durban and Lesedi',
     'Existing appendix routes; illustrative candidate connections, not verified catchments. Natural Earth 1:50m.',method)
-text(s,'Durban | coastal deliveries + inland transfers',.55,1.66,5.6,.3,16,True)
-text(s,'Lesedi | inland dispatch + connected markets',6.55,1.66,5.6,.3,16,True)
-for terminal,x in [('Durban',.5),('Lesedi',6.5)]:
-    m=Map(s,x,2.1,5.65,3.43);m.context();m.access(terminal)
-    text(s,'Illustrative routes; no service-area boundary',x+2.3,5.27,3.2,.2,8.5)
-table(s,[['Condition','Accessibility test'],
- ['Existing road / pipe candidate','Capacity, compatible product, dispatch, access rights and delivered cost'],
- ['Expanded-route candidate','A specified rail/road/pipeline intervention, timing, interfaces and customer access']],
- .5,5.8,[3.05,8.6],.95,12)
-for x,label,color,dash in [(.55,'Road candidate',BLUE,None),(2.83,'Pipeline candidate',DEMAND,MSO_LINE_DASH_STYLE.DASH),(5.65,'Intervention to assess',INK,MSO_LINE_DASH_STYLE.DASH_DOT)]:
-    line(s,(x,5.64),(x+.35,5.64),color,1.7,dash);text(s,label,x+.43,5.53,2.3,.2,9)
-text(s,'Observed customer catchments: not supplied. Physical reach is conditional; contracts and competitors determine commercial access.',.5,6.91,11.55,.2,9)
+exhibit_layout(s,'Road-delivery accessibility | illustrative transport cost, R/litre',[
+ ('Durban: coastal and inland links','Road candidates connect coastal customers and inland transfers. Pipelines are separate supply connections.'),
+ ('Lesedi: inland dispatch','Test receipt, dispatch, tanker cycles and customer destinations for connected inland markets.'),
+ ('Lower cost means higher accessibility','Darker cells show lower example road-delivery cost from either facility. Pipe and rail lines remain context.'),
+ ('Customer access is unverified','Contracts and competitors define the commercial envelope. Actual customer catchments are not supplied.'),
+])
+m=Map(s,.5,2.38,7.05,4.0);m.surface();m.context();m.access('Durban');m.access('Lesedi',DEMAND)
+for i,(name,color) in enumerate(zip(['≤0.75','0.75–1.25','1.25–1.75','1.75–2.25','>2.25'],SURFACE_COLOURS)):
+    x=.55+i*1.02
+    marker(s,x+.06,6.58,.055,color,MSO_SHAPE.RECTANGLE);text(s,name,x+.2,6.47,1.05,.22,8.5)
+marker(s,5.8,6.58,.055,LIGHT,MSO_SHAPE.RECTANGLE);text(s,'Unassessed',5.94,6.47,.8,.22,8)
+text(s,'R/litre',6.84,6.47,.7,.22,8)
+text(s,'Example rate: R0.15/L dispatch + R0.002/L/km. Grey = unassessed.',.5,6.73,7.05,.21,10)
+text(s,'Illustrative road cost only. Pipeline/rail access and commercial rights are not priced.',.5,6.99,7.15,.14,7.5)
 
 s=slide('Separate demand, accessible volume and Vopak flows',
-    'Three illustrative story CSVs; annual petrol/diesel only. No actual Vopak throughput supplied.',method)
-text(s,'ILLUSTRATIVE ONLY  |  billion litres/year  |  petrol + diesel; jet excluded',.5,1.69,11.5,.3,13,True,BLUE)
-text(s,'National demand 21.0 − domestic production 7.0 = required imports 14.0',.5,2.13,11.5,.45,22,True)
-text(s,'Exports and stock movements are zero in this illustration only.',.5,2.62,11.5,.3,13)
-rows=[['Market','Demand','Feasible\nflows','Commercial\nenvelope','Current unique\ndemand served','Additional\ncandidate']]
-for name in ['Eastern coastal','Inland']:
-    rows.append([name]+[f'{groups[name][k]:.1f}' for k in fields])
-rows.append(['Combined']+[f"{sum(groups[n][k] for n in ['Eastern coastal','Inland']):.1f}" for k in fields])
-table(s,rows,.5,3.13,[2.35,1.25,1.6,2.05,2.25,2.15],1.9,15)
-text(s,'Count customer demand once',.5,5.3,11.5,.36,19,True)
+    'Illustrative CSVs and road transport rates; no actual Vopak throughput or quoted transport costs supplied.',method)
+exhibit_layout(s,'Cost accessibility and market volumes | illustrative',[
+ ('National balance sets import needs','Demand of 21.0 less domestic production of 7.0 gives required imports of 14.0 in this illustration.'),
+ ('Count unique customer demand once','Receipts of 2.8 at Durban and 2.0 at Lesedi include a shared 1.8 transfer. Unique demand served is 3.0.'),
+ ('Candidate opportunity is conditional','The example commercial envelope is 8.5; current unique demand served is 3.0, leaving a candidate 5.5.'),
+ ('Replace examples with evidence','Match regional demand, route constraints, customer flows and contracts by product, period and units.'),
+])
+m=Map(s,.5,2.38,7.05,4.0);m.surface();m.context()
+for value,x,y in [
+ ('Inland market | illustrative\nDemand 10.0 | envelope 6.0\nCurrent 2.0 | candidate 4.0',.8,2.72),
+ ('Eastern/coastal | illustrative\nDemand 4.5 | envelope 2.5\nCurrent 1.0 | candidate 1.5',4.75,5.52),
+]:
+    q=text(s,value,x,y,2.7,.73,11,True,BLUE);q.fill.solid();q.fill.fore_color.rgb=brand.white
 byroute={r:sum(float(q['volume_bn_l']) for q in routes if q['route_id']==r) for r in ['R1','R2','R3','R4']}
 durban=byroute['R1']+byroute['R2'];lesedi=byroute['R2']+byroute['R3']; unique=byroute['R1']+byroute['R4']
 assert math.isclose(durban+lesedi-byroute['R2'],unique)
-text(s,f"Durban receipts {durban:.1f} + Lesedi receipts {lesedi:.1f} − shared transfer {byroute['R2']:.1f} = unique demand served {unique:.1f}",.5,5.8,11.5,.48,19,False,BLUE)
-text(s,'Additional candidate volume is conditional, not forecast capture. The envelope includes domestic and imported supply. Western/other access remains unassessed.',.5,6.42,11.5,.55,14)
+for i,(name,color) in enumerate(zip(['≤0.75','0.75–1.25','1.25–1.75','1.75–2.25','>2.25'],SURFACE_COLOURS)):
+    x=.55+i*1.02
+    marker(s,x+.06,6.58,.055,color,MSO_SHAPE.RECTANGLE);text(s,name,x+.2,6.47,1.05,.22,8.5)
+marker(s,5.8,6.58,.055,LIGHT,MSO_SHAPE.RECTANGLE);text(s,'Unassessed',5.94,6.47,.8,.22,8)
+text(s,'R/litre',6.84,6.47,.7,.22,8)
+text(s,f"Receipts {durban:.1f} + {lesedi:.1f} − transfer {byroute['R2']:.1f} = unique demand {unique:.1f}",.5,6.72,7.05,.23,12,True,BLUE)
+text(s,'Example rates: R0.15/L + R0.002/L/km. Grey = unassessed. Volumes: bn L/year.',.5,6.99,7.1,.14,7.5)
 
 bookend(reference.slides[-1],closing=True)
 assert len(prs.slides)==5

@@ -97,3 +97,18 @@ Keep illustration labels visible on every page. Detailed storage sizing is optio
 The three analytical pages retain the existing chevrons, with Analytical
 specifications active. Cover and closing reuse the delivered kickoff's compositions,
 photographs and original image credits, with Week 1/date labels updated.
+
+## Subsequent layout and metric correction
+
+Nigel supplied a preferred exhibit-left/key-takeaways-right slide structure.
+All three analytical slides now use that structure and numbered interpretation.
+The former volumes table is replaced by a geographical accessibility exhibit
+with illustrative market-volume annotations. The cover/closing/chevrons remain.
+
+Nigel selected delivered transport cost (R/litre) as the accessibility measure.
+The first surface is explicitly illustrative: shortest schematic-road distance,
+straight-line terminal/grid connections, an authored R0.15/L dispatch allowance
+and R0.002/L/km rate, on 25 km cells. Darker means lower illustrative cost;
+grey means unassessed. Settings and evidence limitations are declared in
+illustrative_accessibility_settings.json. This is not carrier-quoted cost,
+validated routing, a time isochrone or a verified customer catchment.

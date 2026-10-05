@@ -187,3 +187,14 @@ All figures and candidate access are illustrative. Accurate projection and
 cartographic styling do not make the inherited schematic routes an operational
 GIS network or verified service area. See `assets/maps/README.md` for evidence
 limitations, owner and replacement trigger. No model assumptions were changed.
+
+The subsequent revision follows Nigel's supplied exhibit-left/key-takeaways-right
+reference. All analytical pages retain numbered interpretation; the former
+volume table is now a geographic accessibility exhibit with market annotations.
+Nigel selected delivered transport cost (R/litre): maps use a graduated,
+explicitly illustrative road-cost surface with 25 km cells. Story settings
+declare dispatch and per-km rates, classification and connection limits.
+`scripts/accessibility_cartography.py` generates this example from schematic
+geometry; tests check route detours, unassessed areas and terminal selection.
+Operational routing, carrier rates, pipeline tariffs and customer access remain
+outstanding evidence before any real reach or capture conclusion.

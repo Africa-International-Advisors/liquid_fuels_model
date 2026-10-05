@@ -41,12 +41,26 @@ surveyed facility coordinate. Road/pipe/rail styles are matched to their legends
 
 Demand markers use the authored illustrative regional CSV; their area is
 proportional to volume. Their position is an annotation, not measured demand
-density or a provincial allocation. No travel-time surface, delivered-cost
-surface, network service area or verified customer catchment is calculated.
-Candidate paths illustrate conditions to test. A future GIS accessibility result
+density or a provincial allocation. No validated travel-time or delivered-cost
+surface, operational service area or verified customer catchment is calculated.
+Candidate paths illustrate conditions to test. A future operational GIS accessibility result
 requires an operational/routable network, confirmed sites, product/handling
 capacity, access rights, costs and customer destinations.
 
 Owner: Manish assembles route/customer evidence; Nigel reviews interpretation.
 Replace these illustrative paths when those inputs are available, and before
 claiming measured reach or investment-ready addressable volumes.
+
+Nigel subsequently selected delivered transport cost (R/litre), with a graduated
+surface like the supplied accessibility-map examples. The revised pack uses
+25 km clipped cells and five sequential cost classes. For illustration only,
+cost is R0.15/litre dispatch plus R0.002/litre/km on shortest paths through the
+existing schematic road graph, including straight-line terminal/grid connections.
+The lower example cost from Durban or Lesedi determines each cell's class.
+Cells over 100 km from the sampled road geometry or without a connected path
+remain unassessed. These settings are authored examples, not quotes or approvals;
+see `story/illustrative_accessibility_settings.json` for the full declaration.
+Fuel purchase price, taxes, storage and pipe/rail tariffs are excluded. No
+cost-based regional capture is inferred: the volume annotations remain independent
+illustrations. Replace rates with carrier evidence and schematic links with an
+operational network before interpreting this as delivered-cost accessibility.
