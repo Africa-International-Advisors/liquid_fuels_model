@@ -1,0 +1,14 @@
+{
+  "change": "Page 13 storage bars stacked Vopak then other listed operators, aligned with annual demand; source values and story order unchanged",
+  "checks": [
+    "24-page PDF and PPTX package passed",
+    "physical bounds passed",
+    "segments aligned and contiguous; all five source components retained",
+    "rendered page 13 reviewed",
+    "governance coverage passed; 52 open exceptions; draft"
+  ],
+  "current_hashes": {
+    "Vopak_Week1_Convergence_2026_10_06.pptx": "a6852672ac7171b115a178fee0def0a5c9b12bc8512da997acb0dd73585e76db",
+    "Vopak_Week1_Convergence_2026_10_06.pdf": "0eea6fc6f6ddded0199a35866d80cba3c6c12dbbe6104065b2ad2f4dd38f9350"
+  }
+}

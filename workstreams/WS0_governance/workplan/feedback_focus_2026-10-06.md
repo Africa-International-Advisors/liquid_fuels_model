@@ -551,3 +551,13 @@ and governance verification are recorded with the delivery.
 - Teams sending was attempted only after Nigel requested a note. The connector
   required reauthentication; nothing was sent. Nigel then asked why Teams was
   being used; leave Teams alone and provide the recorded note for manual sharing.
+
+
+### VIS-05 follow-up: stacked horizontal storage comparison
+
+Nigel requested one horizontal stacked bar per region in the second graph,
+so demand and storage can be read across the row. Vopak is the first segment;
+other listed operators follow on the same stock scale. End labels show the
+known subtotal; component labels follow legend order. Unlisted/unknown values
+remain explicit, not zero. Source capacities, demand, units and story order
+are unchanged; annual flow and stock still use separate scales.
