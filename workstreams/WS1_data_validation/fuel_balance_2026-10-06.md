@@ -240,3 +240,38 @@ year runs July to June; Astron's litres depend on the assumed energy content
 (the gap is 4.2 to 4.6 bn for 2023 and 3.1 to 3.6 bn for 2024 across the plausible range); and ships' bunkers may
 be supplied from this output without appearing in sales. These reduce the gap
 but are unlikely to remove it.
+
+## Neighbours' own customs records, 6 October
+
+A test of whether the diesel residual leaves by land without being recorded as
+an export: what neighbouring countries report importing from South Africa,
+against what SARS records as exported to them. Source: UN Comtrade public
+API, headings 2710.12 and 2710.19, litres; responses kept in
+`runs/manish_candidate_20261006/raw/comtrade/` (untracked). All fuel lines,
+billion litres:
+
+| | 2021 | 2022 | 2023 | 2024 |
+|---|---|---|---|---|
+| Botswana: its imports / SARS exports | 1.13 / 1.12 | 1.06 / 1.07 | 1.02 / 1.07 | 0.63 / 0.82 |
+| Lesotho | 0.23 / 0.30 | 0.21 / 0.26 | 0.29 / 0.27 | 0.25 / 0.28 |
+| Eswatini | 0.18 / 0.23 | 0.15 / 0.19 | 0.22 / 0.29 | not reported / 0.31 |
+| Zimbabwe | 0.10 / 0.07 | 0.06 / 0.03 | 0.10 / 0.09 | 0.09 / 0.06 |
+| Zambia | 0.05 / 0.00 | 0.05 / 0.01 | 0.10 / 0.02 | 0.08 / 0.01 |
+| DR Congo | 0.03 / 0.07 | 0.20 / 0.06 | 0.21 / 0.05 | 0.07 / 0.05 |
+| Namibia | 0.08 / 0.10 | 0.02 / 0.02 | 0.02 / 0.00 | 0.02 / 0.01 |
+| Nine countries together | 1.80 / 1.87 | 1.75 / 1.64 | 2.02 / 1.79 | 1.17 / 1.60 |
+
+The two sides agree to within about 0.2 bn litres a year in total (2024 lacks
+Eswatini). The neighbours do not report receiving more South African fuel than
+SARS records sending, so recorded trade on either side of the border does not
+account for a residual of 3 to 4 bn litres. What remains is sales not reported
+to the department, movement that neither side records, direct supply to power
+or ships, or stocks.
+
+A second reading: Botswana's recorded imports from South Africa fell from
+1.02 bn litres in 2023 to 0.63 bn in 2024, and SARS shows the same direction.
+Botswana is sourcing less of its fuel through South Africa.
+
+Limits: Mozambique's 2021 quantity in Comtrade is implausible against its
+value and was left out; Malawi has no matching SARS rows; the comparison is
+for all fuel lines together because neighbours' data is at six-digit level.

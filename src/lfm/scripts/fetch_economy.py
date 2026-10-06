@@ -202,6 +202,8 @@ def _statssa(raw_dir: Path, out_dir: Path, world_bank_gdp: dict[int, float],
            ["country", "period", "scenario", "series", "value", "unit", "basis", "code",
             "source_file"])
 
+    quarterly_info = _statssa_quarterly(path, out_dir, series, warnings)
+
     differences = {
         year: round((world_bank_gdp[year] / gdp[year] - 1) * 100, 3)
         for year in sorted(set(gdp) & set(world_bank_gdp))
@@ -222,7 +224,49 @@ def _statssa(raw_dir: Path, out_dir: Path, world_bank_gdp: dict[int, float],
         "series_written": sorted({r["series"] for r in rows}),
         "world_bank_gdp_differences_pct": differences,
         "population": population_info,
+        "quarterly": quarterly_info,
     }
+
+
+def _statssa_quarterly(path: Path, out_dir: Path, annual: list[dict],
+                       warnings: list[str]) -> dict | None:
+    """Write the quarterly series and check that complete years add to the annual ones."""
+    try:
+        rows = statssa.read_sheet(path, statssa.QUARTERLY_SHEET)
+    except ValueError as exc:
+        warnings.append(f"Stats SA quarterly: {exc}")
+        return None
+    series, problems = statssa.parse_quarterly_constant_price_series(rows)
+    warnings += [f"Stats SA {path.name} quarterly: {p}" for p in problems]
+    if not series:
+        return None
+    out = [
+        {"country": "ZAF", "period": quarter, "scenario": "shared",
+         "series": _slug(s["name"]), "value": s["values"][quarter],
+         "unit": f"rand, {s['price_basis'].lower()}, not seasonally adjusted",
+         "code": s["code"], "source_file": path.name}
+        for s in series for quarter in sorted(s["values"])
+    ]
+    _write(out_dir / "macro_statssa_quarterly.csv", out,
+           ["country", "period", "scenario", "series", "value", "unit", "code", "source_file"])
+
+    yearly = {_slug(s["name"]): s["values"] for s in annual}
+    mismatches = []
+    for s in series:
+        name = _slug(s["name"])
+        by_year: dict[int, list[float]] = {}
+        for quarter, value in s["values"].items():
+            by_year.setdefault(int(quarter[:4]), []).append(value)
+        for year, values in by_year.items():
+            whole = yearly.get(name, {}).get(year)
+            if len(values) == 4 and whole and abs(sum(values) / whole - 1) > 0.001:
+                mismatches.append(f"{name} {year}")
+    if mismatches:
+        warnings.append(f"Stats SA quarterly: four quarters differ from the annual figure by "
+                        f"more than 0.1% for {len(mismatches)} series-year(s): {mismatches[:6]}")
+    periods = sorted({r["period"] for r in out})
+    return {"first_quarter": periods[0], "latest_quarter": periods[-1],
+            "series": len(series), "series_years_not_matching_annual": len(mismatches)}
 
 
 def _statssa_population(raw_dir: Path, out_dir: Path, gdp: dict[int, float],

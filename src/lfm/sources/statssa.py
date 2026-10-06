@@ -100,6 +100,64 @@ def parse_constant_price_series(rows: list[list]) -> tuple[list[dict], list[str]
     return out, warnings
 
 
+QUARTERLY_SHEET = "Quarterly"
+QUARTERLY_GDP_CODE = "QRU1000"    # GDP at market prices, constant prices, not seasonally adjusted
+_QUARTER_COLUMN = re.compile(r"^((?:19|20)\d{2})0([1-4])$")
+
+
+def parse_quarterly_constant_price_series(rows: list[list]) -> tuple[list[dict], list[str]]:
+    """Quarterly GDP and industry value added at constant prices, in rand.
+
+    Takes the "Actual values" rows, not the seasonally adjusted and annualised
+    ones, so the four quarters of a year add to the annual figure. Each series
+    is ``{"code", "name", "price_basis", "values": {"2026-Q2": rand}}``.
+    """
+    if not rows:
+        return [], ["quarterly sheet is empty"]
+    header = [str(cell).strip() if cell is not None else "" for cell in rows[0]]
+    try:
+        code_col, group_col, name_col = header.index("H03"), header.index("H04"), header.index("H05")
+        basis_col, kind_col, unit_col = header.index("H15"), header.index("H16"), header.index("H17")
+    except ValueError:
+        return [], ["quarterly sheet: expected column headings H03-H05 and H15-H17 not found"]
+    quarters = {
+        i: f"{m.group(1)}-Q{m.group(2)}"
+        for i, h in enumerate(header) if (m := _QUARTER_COLUMN.match(h))
+    }
+    if not quarters:
+        return [], ["quarterly sheet: no quarter columns found"]
+
+    out: list[dict] = []
+    warnings: list[str] = []
+    for row in rows[1:]:
+        if len(row) <= max(code_col, basis_col, kind_col, unit_col):
+            continue
+        basis = str(row[basis_col] or "")
+        if not basis.lower().startswith("constant"):
+            continue
+        if str(row[kind_col] or "").strip().lower() != "actual values":
+            continue
+        code, group = str(row[code_col] or "").strip(), str(row[group_col] or "").strip()
+        if code == QUARTERLY_GDP_CODE:
+            name = "gdp"
+        elif group == VALUE_ADDED:
+            name = str(row[name_col] or "").strip()
+        else:
+            continue
+        if str(row[unit_col] or "").strip().lower() != "r million":
+            continue    # the "% of GDP" rows share the same headings
+        values = {
+            quarter: float(row[i]) * 1_000_000
+            for i, quarter in quarters.items()
+            if i < len(row) and isinstance(row[i], (int, float))
+        }
+        if values:
+            out.append({"code": code, "name": name, "price_basis": basis, "values": values})
+    if not any(s["name"] == "gdp" for s in out):
+        warnings.append(f"quarterly GDP series {QUARTERLY_GDP_CODE} not found")
+    return out, warnings
+
+
 # --------------------------------------------------------------------------- #
 # Mid-year population estimates (P0302)
 #

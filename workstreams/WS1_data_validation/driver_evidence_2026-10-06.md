@@ -31,12 +31,12 @@ Extract paths are under `assumptions/2026/`; where each original is held is in
 | | Mining production volume index | Stats SA P2041 | — | — | — | — | Open: needs manual download |
 | | Diesel used by industry and mining | Department energy balances | `timeseries/energy_balance_department.csv` | 2007–2021 | litres | Sector boundaries shift in 2016 | Partial: ends 2021 |
 | Power | Gas turbine output, Eskom and independent producers | Eskom integrated reports, years to March | `timeseries/ocgt_generation_eskom.csv` | FY2022–FY2026 (Eskom); FY2023–FY2026 (combined) | GWh | Overlapping years agree across reports (none revised) | Sourced |
-| | Diesel burned, litres | Minister of Public Enterprises, replies reported in the press (Eskom's own turbines) | Not extracted | FY2022: 571 ML; FY2023: 937.5 ML | litres | Press reports of parliamentary replies; primary replies not retrieved | Partial: two years; see follow-up |
+| | Diesel burned, litres | Minister of Public Enterprises, replies reported in the press (Eskom's own turbines) | Not extracted | FY2022: 571 ML; FY2023: 937.5 ML; FY2025: 679 ML | litres | FY2025 from the reply itself (NW1980); the other two from press reports | Partial: three years, FY2024 missing; see follow-up |
 | Electrification | Battery electric, plug-in hybrid and hybrid new sales | naamsa quarterly reviews | `timeseries/nev_sales_naamsa.csv` | 2019–2025 | vehicles | Warnings reviewed 6 October: all relate to superseded editions; final values match the latest year-end review exactly | Sourced |
 | | Electric vehicles in the fleet | DoT bulletin Table 2.8: 4,090 electric at December 2023 | `reference/vehicle_population_by_fuel_dot2023.csv` | December 2023 only | vehicles | The same table shows 6 hybrids, which cannot be right | Partial |
 | Economic context | Real GDP and GDP per person | P0441 (code AR1000) and P0302 population | `timeseries/macro_statssa.csv` | 1993–2025; population to 2026 | rand, constant 2015 prices; persons | One release vintage; years after 2026 are projections | Sourced |
 | | Growth forecast | National Treasury Budget Review 2026, chapter 2 | `timeseries/gdp_growth_treasury.csv` | 2024–2028 | % a year, real | Single edition | Sourced |
-| | Petrol and diesel prices, monthly | Department "Fuel Price History" | `timeseries/fuel_prices_department.csv`; **candidate to November 2025** in `runs/manish_candidate_20261006/timeseries/` | Vintage: Jan 2011 – Apr 2024. Candidate: Jan 2011 – Nov 2025 | cents per litre, nominal | All 1,113 overlapping values unchanged in the candidate | Sourced to Nov 2025 as a candidate; Dec 2025 – Feb 2026 in a different document, not extracted; later months not posted |
+| | Petrol and diesel prices, monthly | Department "Fuel Price History" | `timeseries/fuel_prices_department.csv`; **candidate to November 2025** in `runs/manish_candidate_20261006/timeseries/` | Vintage: Jan 2011 – Apr 2024. Candidate: Jan 2011 – Nov 2025 | cents per litre, nominal | All 1,113 overlapping values unchanged in the candidate | Sourced to Feb 2026 as a candidate (six of seven series from Dec 2025); later months not posted |
 | | Consumer price index for real prices | Stats SA P0141 | — | — | — | — | Open: needs manual download |
 | Plant | Refinery nameplate capacity | FIASA annual report 2025, p.49 | `timeseries/refinery_capacity_reported.csv` | 2016–2025 | barrels a day | Single edition | Sourced (capacity, not output) |
 | | Refinery output by product | Department energy balances | `timeseries/energy_balance_department.csv` | 2007–2021 | litres | — | Partial: ends 2021; implied 2022–2024 output in the package 4 balance |
@@ -71,12 +71,11 @@ Not collected.
 | Item | Owner | Next action |
 |---|---|---|
 | Stats SA P3041.2 manufacturing, P2041 mining, P7162 land transport (time-series workbooks), P0141 CPI | Manish | Manual download into `external/data/raw/statssa/`; the site returns a block page to scripts. Then add readers and tests, as for GDP |
-| Stats SA quarterly GDP for 2026 | Manish | The workbook is on disk; the reader takes the Annual sheet only. Add quarterly support |
-| Tonne-kilometres for road and rail | Manish | Transnet annual report for rail; no road tonne-km series identified |
-| Diesel burned for power, litres | Manish | Retrieve the primary parliamentary replies; FY2024 onward not found |
+| Tonne-kilometres for road and rail | Manish | Rail tonnes confirmed (see second follow-up); tonne-km is not in the results coverage read; no road series identified |
+| Diesel burned for power, litres | Manish | FY2024 litres not found (only R23.4 bn of spend); primary replies for FY2022 and FY2023 not retrieved |
 | Fleet by fuel type after 2023; split by vehicle class | Nigel | Request from RTMC; not published |
 | Distance driven newer than 2014 | Nigel | Decide whether to approach the paper's authors or a commercial source |
-| Fuel prices from December 2025 | Manish | Add a reader for the monthly "Breakdown of Prices" document (see follow-up); the department has posted nothing after February 2026 |
+| Fuel prices after February 2026 | Manish | Nothing posted by the department yet; the fetcher will pick new months up when they appear |
 | Refinery output and utilisation by plant | Manish, Henry review | Operator reports (Sasol, Natref, Astron) |
 
 ## Follow-up, later on 6 October
@@ -165,3 +164,38 @@ that "sold oil products processed by our Astron Energy Refinery" rose 28% in
 2025, which does not sit with a 1% fall in energy content and has not been
 reconciled. The 2023 and 2024 values are the same in each edition that prints
 them.
+
+## Second follow-up, 6 October
+
+**Fuel prices now run to February 2026 by script.** `fetch_energy_dept` reads
+the department's monthly "Breakdown of Prices" pages for months the yearly
+history no longer covers (reader: `energy_dept.parse_price_breakdown`). Six of
+the seven series continue; coastal diesel is not published on those pages. As a
+check the November 2025 breakdown is read as well and equals the history for
+all six series. Candidate file: 151 monthly values beyond the vintage, none of
+the existing 1,113 changed.
+
+**Power diesel: a third year, from the primary source.** Reply to
+parliamentary question NW1980 (Minister of Electricity and Energy, 14 May
+2025): "During FY2025, Eskom OCGTs burnt 679 million litres of diesel." Against
+2,176 GWh that is 0.312 litres per kWh, the same as FY2022 (0.313) and FY2023
+(0.311). The factor of about 0.31 now rests on three years. FY2024 litres were
+not found; a reply of 25 April 2024 gives only the spend, R23.38 bn.
+
+**Quarterly GDP and industry value added.** `statssa.parse_quarterly_constant_price_series`
+reads the Quarterly sheet of the P0441 workbook already on disk (constant 2015
+prices, not seasonally adjusted). Candidate `macro_statssa_quarterly.csv`:
+15 series, 1993-Q1 to 2026-Q2. For every complete year the four quarters add
+to the annual figure within 0.1%.
+
+**Rail tonnes.** Transnet's results for the year to March 2026 as reported in
+the press: rail volumes 167.9 million tonnes, up from 160.1 million; the
+target is 250 million tonnes by 2029/30, of which Transnet Freight Rail about
+185 and private train operators about 65, the first of them from April 2027.
+These agree with the Stats SA rail payload already extracted (160.7 and 168.3
+million tonnes for calendar 2024 and 2025). Transnet's own report was not
+retrieved; figures are from Engineering News and other coverage.
+
+**Not obtained.** The port authority's statistics site did not respond from
+this network, so no official bunker series. Sasol and Glencore publish no
+split of refinery output by product.

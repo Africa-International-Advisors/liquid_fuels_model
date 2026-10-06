@@ -18,7 +18,7 @@ Status: **resolved** = cause established and nothing further needed;
 | # | P1 flag | Finding | Status | Owner / next action |
 |---|---|---|---|---|
 | 1 | Provincial annual coverage (26 rows) | None of the 26 rows is petrol or diesel. Every missing quarter is a blank cell in the department's own workbook, so the extract is faithful. | Resolved | — |
-| 2 | Province vs national ties (6 rows) | Three single-quarter causes, each traced to the original cells: a wrong sheet read by our parser (2013), two department files that differ (2014), an incomplete district sheet (2018). | 2013 and 2018 ready for review; 2014 open | Nigel: approve the 2013 correction. Manish: third record for 2014-Q3 |
+| 2 | Province vs national ties (6 rows) | Three single-quarter causes, each traced to the original cells: a wrong sheet read by our parser (2013), two department files that differ (2014; the energy balance supports the national one), an incomplete district sheet (2018). | Ready for review | Nigel: approve the 2013 correction; accept national for 2014 and 2018 |
 | 3 | Refinery repeated keys (558 rows) | The workbook's `Production_High` named range is `Assumptions!L102:R13102`; it should stop at row 131. Extractor fixed; candidate has no repeats and the same values the engine reads today. | Ready for review | Nigel: approve promotion of the candidate CSV and register update |
 | 4 | Historical demand repeated keys (15 rows) | The extractor walked past the jet table into three regional tables. Extractor fixed; candidate drops the 15 rows and nothing else. | Ready for review | Nigel: as above |
 | 5 | Provisional sector baselines and elasticities | No source was ever recorded for the seven blocks. Evidence now located for industry, agriculture and marine volumes and for the diesel income elasticity; none matches the placeholders. | Partial | Section 5 |
@@ -94,8 +94,11 @@ pivot, so this correction also removes the apparent agreement with FIASA.
 petrol 2,750,992,369. The district file is ten months later, which suggests a
 revision, but no third record settles it: the Reatile workbook follows the
 national file (12,615 and 10,890 ML for the year) and FIASA prints a third
-pair (13,169 and 11,344 ML). Both department records are preserved. Next
-action (Manish): look for 2014 comparatives in a later department release.
+pair (13,169 and 11,344 ML). The department's own 2014 energy balance gives
+final consumption of 12.60 bn litres of diesel and 10.86 bn of petrol, which
+sits with the national file (12.615 and 10.890) and not with the district
+sum (12.743 and 11.031). On that evidence the national figure stands and the
+district 2014-Q3 sheet is the outlier; both records are preserved.
 
 **2018-Q1: the district sheet is incomplete.** National file: diesel
 3,039,026,286, petrol 2,775,178,163. District workbook sheet "2018 Q1", grand
@@ -268,3 +271,11 @@ PDF has not been done.
 - `python -m lfm check --vintage 2026`: governance coverage passed; 52 open exceptions.
 - `python -m pytest -q`: 136 passed, 1 skipped (133 before; three tests added).
 - `ruff check` on the five touched files: clean.
+
+## Audit re-run, 6 October
+
+`python -m lfm.scripts.audit_source_inputs --vintage 2026` on `manish-branch`
+(output in `runs/source_audit_20261006T115205706711Z/`, untracked): both
+scenarios run; metadata parse errors 0 (1 on 5 October); the engine requests
+the same six CSVs as in the 5 October profile; provincial gaps 26 and repeated
+keys unchanged, as expected, because no vintage value has been changed.

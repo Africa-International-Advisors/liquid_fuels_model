@@ -99,3 +99,27 @@ def test_average_growth_over_a_window() -> None:
     rate, first, last = statssa.average_growth({2021: 100.0, 2026: 110.0, 2025: 108.0}, 5)
     assert (first, last) == (2021, 2026)
     assert abs((1 + rate) ** 5 - 1.10) < 1e-12
+
+
+def test_quarterly_series_take_unadjusted_constant_price_rows_only() -> None:
+    header = ["H01", "H02", "H03", "H04", "H05", "H06", "H15", "H16", "H17", "H25",
+              "202504", "202601", "202602"]
+    rows = [
+        header,
+        ["P0441", "GDP", "QNU1002", "Value added at basic prices", "Mining and quarrying", None,
+         "Current prices", "Actual values", "R million", "Quarterly", 9.0, 9.0, 9.0],
+        ["P0441", "GDP", "QRU1002", "Value added at basic prices", "Mining and quarrying", None,
+         "Constant 2015 prices", "Actual values", "R million", "Quarterly", 54.0, 47.0, 52.0],
+        ["P0441", "GDP", "QRS1002", "Value added at basic prices", "Mining and quarrying", None,
+         "Constant 2015 prices", "Seasonally adjusted and annualised values", "R million",
+         "Quarterly", 200.0, 201.0, 202.0],
+        ["P0441", "GDP", "QRU1000", "GDP at market prices", "GDP at market prices", None,
+         "Constant 2015 prices", "Actual values", "R million", "Quarterly", 1195.0, 1168.0, None],
+        ["P0441", "GDP", "QRU1099", "Value added at basic prices", "Mining and quarrying", None,
+         "Constant 2015 prices", "Actual values", "% of GDP", "Quarterly", 4.5, 4.0, 4.4],
+    ]
+    series, warnings = statssa.parse_quarterly_constant_price_series(rows)
+    assert warnings == []
+    assert [s["code"] for s in series] == ["QRU1002", "QRU1000"]
+    assert series[0]["values"] == {"2025-Q4": 54e6, "2026-Q1": 47e6, "2026-Q2": 52e6}
+    assert series[1]["name"] == "gdp" and "2026-Q2" not in series[1]["values"]
