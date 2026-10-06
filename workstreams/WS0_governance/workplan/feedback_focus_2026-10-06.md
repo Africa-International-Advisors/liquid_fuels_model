@@ -452,3 +452,33 @@ supporting exhibit and update overview references. Do not imply that the existin
 illustrative domestic/import split measures Vopak penetration.
 Owner: Nigel (story/visual direction); Manish (customer/route evidence and gates).
 Revisit at the end of the feedback round, before layout implementation.
+
+
+### VIS-05 / R6: make the regional demand and storage graphic tell its story
+
+Status: pending feedback; no deck changes. Reference: Convergence page 13.
+Nigel requested the chart itself convey the regional comparison, rather than
+relying on the adjacent prose and multiple prominent blue caveats.
+
+- Use an answer-led chart heading and direct labels to make Vopak's eastern
+  coast/inland footprint and the other regions' different positions apparent.
+- Replace repeated "No listed Vopak site" wording with a compact, consistent
+  marker and one clear key. This means no site in the reviewed inventory;
+  it does not mean zero customer reach or zero served demand.
+- Distinguish unavailable competitor capacity from zero with an explicit
+  unknown marker/key. Show positive published capacities visibly, using a
+  shared storage scale for Vopak and other operators where bases are comparable.
+- Keep demand (bn litres/year) and storage (thousand cubic metres) in separate
+  aligned panels/scales; never treat their ratio as Vopak's demand share.
+- Move the national total/product scope and inventory caveats into one concise
+  note. Preserve the partial inventory, mixed-product capacity bases, missing
+  Sasol/Transnet values and unknown fuel-compatible capacity/actual demand share.
+- Apply the restrained colour and regular-weight chart-label treatment from
+  VIS-01 and VIS-03. Keep provenance links and notes clear of the footer.
+
+Suggested story to test: Vopak's published tanks are concentrated on the eastern
+coast and inland, alongside the largest grouped historical demand markets.
+Customer-volume share, spare capacity and addressable catchments still require
+separate evidence. Review this graphic with VIS-04's reach/price/access flow.
+Owner: Nigel (message and visual direction); Manish (capacity bases and evidence).
+Revisit when the feedback round is complete and implementation is requested.
