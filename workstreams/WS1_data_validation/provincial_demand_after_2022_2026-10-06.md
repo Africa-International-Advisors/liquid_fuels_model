@@ -113,10 +113,8 @@ scripted downloads; it needs a manual download like the other Stats SA files.
 
 | Item | Owner | Next action |
 |---|---|---|
-| Provincial sales 2023-Q2 to 2024 | Nigel / Manish | Request from the department contact named in the publishing schedule; the data exists but is unpublished |
 | "2015–2024" overview report | Nigel | Confirm where the link was seen; retry `dmre.gov.za` from another network |
 | National sales 2025 and 2026 to date | Manish | FIASA annual report 2026 when published; department national workbook if released |
-| Commercial source | Nigel | Decide whether to approach a retail-volume data provider (for example Kalibrate) for provincial volumes |
 | Provincial GDP as a driver | Manish | Manual download of Stats SA P0441.2 |
 | Whether the pack may show estimated 2023–2024 provincial bars | Nigel | Decision; recommended for petrol only, clearly labelled |
 
@@ -146,5 +144,6 @@ falling from 2023. The estimate in this note keeps FIASA's 2025 edition (9.03
 and 11.73), flagged as unverified. Each provincial figure for 2024 carries that
 uncertainty on top of the share error.
 
-Not decided: who requests the unpublished provincial data from the department,
-and whether to approach a commercial provider.
+Dropped by Manish on 6 October: requesting the unpublished provincial data
+from the department, and approaching a commercial data provider. Neither is an
+open action.
