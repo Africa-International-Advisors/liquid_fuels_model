@@ -107,12 +107,12 @@ no balance after 2021. Refinery capacity (pack p8) is nameplate, not output.
 
 | Item | Owner | Next action |
 |---|---|---|
-| Customs data by tariff line (petrol, diesel; volume and partner country) | Manish | Scripted download fails at the last step (see follow-up); take a manual export for 2019–2026 with the selections listed there |
+| Customs data by tariff line (petrol, diesel; volume and partner country) | Nigel | Obtained (see the SARS section); review and decide on registering the three extracts in the vintage |
 | Actual production 2022 onward | Manish | Sasol and Natref totals obtained (see follow-up); product split and Astron still missing; ask the department whether a 2022 or 2023 balance exists |
 | Stock movements | Manish / Nigel | None published found; ask the department or FIASA |
 | Diesel residual from 2022 | Manish, Henry review | Test each candidate explanation; exports to neighbouring countries by partner from SARS is the first check |
-| FIASA 2024 misprint and duplicated 2025 row | Nigel | Query FIASA |
-| Imports by entry port | Nigel | Product-level port data access (pack p5) |
+| FIASA: 2024 diesel misprint (confirmed by customs), duplicated 2025 sales row, and the 2018 difference | Nigel | Query FIASA |
+| Imports by entry port | Nigel | Customs office now gives a public proxy (see the SARS section); terminal-level data still needs client or port access |
 
 ## Follow-up, later on 6 October
 
@@ -128,24 +128,82 @@ same direction as the residual: more product is supplied than recorded sales
 and exports account for. The size cannot be fixed without a product split and
 Astron's output.
 
-**SARS customs data: form mapped, download not achieved.** The portal
-(`tools.sars.gov.za/tradestatsportal/data_download.aspx`) is an ASP.NET form.
-Scripted steps work up to the last one: trade type, focus area "Tariffs",
-chapter 27 and the year all post back correctly and the tariff list loads, but
-the final Download returns the page instead of a file. Not pursued further
-today. For a manual export, the selections are:
+## SARS customs data, obtained 6 October
 
-- Trade type: Imports, then Exports. Focus area: Tariffs. Chapter 27.
-- Years 2019–2026, all months, all columns (they include statistical quantity
-  and unit, country of origin and destination, district office and transport
-  mode).
-- Tariff lines: petrol 27101102 and 27101202; distillate fuel (diesel)
-  27101130, 27101230 and 27101930; biodiesel blends 27102000. For jet and
-  paraffin: aviation kerosene 27101107, 27101207, 27101907; illuminating
-  kerosene 27101115, 27101126, 27101215, 27101226, 27101915, 27101926.
-  Residual fuel oil: 27101135, 27101235, 27101935.
+The portal download now works by script (`python -m lfm.scripts.fetch_sars`).
+The step that had been missing: the form refuses a download unless every
+country is ticked, even when the selection is by tariff line; it also allows at
+most two years at a time. The page then serves the workbook from a second
+address in the same session. 34 workbooks (imports and exports, each year 2010
+to August 2026; 31,982 lines) are in `external/data/raw/sars/`, uncommitted.
 
-The export answers three open questions at once: the 2024 diesel import
-figure, exports by destination country (the first test of the diesel
-residual), and imports by district office, which is the nearest public proxy
-for entry port.
+Candidate extracts, kept beside this note and not in the vintage:
+`fuel_trade_sars_candidate_2026-10-06.csv` (by product and year),
+`fuel_trade_sars_by_office_candidate_2026-10-06.csv` (by customs office and
+transport mode) and `fuel_trade_sars_by_partner_candidate_2026-10-06.csv` (by
+country of origin or destination).
+
+Tariff lines used: petrol 27101102, 27101202; diesel 27101130, 27101230,
+27101930; biodiesel blends 27102000; jet 27101107, 27101207, 27101907;
+paraffin 27101115, 27101126, 27101215, 27101226, 27101915, 27101926; fuel oil
+27101135, 27101235, 27101935.
+
+**Flag A is settled: 2024 diesel imports were 10.793 bn litres.** SARS minus
+FIASA, billion litres:
+
+| Year | Diesel imports | Petrol imports | Diesel exports | Petrol exports |
+|---|---|---|---|---|
+| 2014–2017 | within 0.005 | within 0.001 | within 0.012 | within 0.006 |
+| 2018 | −0.982 | −0.365 | −0.256 | −0.186 |
+| 2019 | −0.268 | 0.000 | −0.045 | −0.004 |
+| 2020 | 0.000 | 0.000 | 0.000 | 0.000 |
+| 2021 | +0.194 | 0.000 | −0.002 | −0.002 |
+| 2022 | +0.040 | 0.000 | +0.191 | +0.062 |
+| 2023 | +0.076 | 0.000 | −0.046 | −0.024 |
+| 2024 | **−4.000** | +0.001 | −0.025 | −0.019 |
+| 2025 | 0.000 | 0.000 | −0.001 | 0.000 |
+
+FIASA's table is the customs data, to the million litres in most years. Its
+2024 diesel figure is exactly 4,000 million litres too high: 14 793 printed
+for 10 793. The trade report's 10.8 bn is right. New flag: for 2018 SARS now
+shows about 1.0 bn litres less diesel and 0.4 bn less petrol imported than
+FIASA printed, and smaller differences in 2019 and 2021–2023; these look like
+later customs revisions but have not been explained.
+
+**Units.** SARS records these lines in kilograms to 2012 and litres from 2014;
+2013 has both (litres in two months only). The litre series is therefore
+usable from 2014. Nothing has been converted.
+
+**Where imports enter**, petrol plus diesel, billion litres, by customs office:
+
+| Office | 2024 | Share | 2025 | Share |
+|---|---|---|---|---|
+| Durban | 11.84 | 80.0% | 13.16 | 78.8% |
+| Cape Town | 1.09 | 7.4% | 1.52 | 9.1% |
+| Mossel Bay | 0.62 | 4.2% | 0.52 | 3.1% |
+| East London | 0.53 | 3.6% | 0.43 | 2.6% |
+| Richards Bay | 0.39 | 2.6% | 0.66 | 3.9% |
+| Komatipoort (road, from Mozambique) | 0.19 | 1.3% | 0.09 | 0.5% |
+| Port Elizabeth | 0.14 | 1.0% | 0.32 | 1.9% |
+
+In 2024 Durban cleared 8.03 bn litres of diesel and 3.80 bn of petrol; 98% of
+diesel imports arrived by sea. The customs office is where goods were cleared,
+which is the nearest public indication of entry port but is not a terminal or
+berth record.
+
+**Where exports go**, billion litres:
+
+| | Botswana | Eswatini | Lesotho | Namibia | Other |
+|---|---|---|---|---|---|
+| Diesel 2023 | 0.448 | 0.138 | 0.127 | 0.000 | 0.177 |
+| Diesel 2024 | 0.281 | 0.151 | 0.131 | 0.004 | 0.229 |
+| Petrol 2023 | 0.598 | 0.151 | 0.122 | 0.000 | 0.123 |
+| Petrol 2024 | 0.509 | 0.152 | 0.127 | 0.000 | 0.132 |
+
+**The diesel residual is not explained by recorded exports.** Customs confirms
+both the import figure and the export figure used in the balance. Recorded
+diesel exports to all destinations are 0.8–0.9 bn litres a year, and Botswana's
+recorded purchases fell from 0.45 to 0.28 bn litres between 2023 and 2024. The
+roughly 3 bn litres a year therefore sits in sales not reported to the
+department, unrecorded cross-border movement, direct supply to power or
+shipping, or stocks.
