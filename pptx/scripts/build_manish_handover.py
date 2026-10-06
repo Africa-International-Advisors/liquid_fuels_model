@@ -203,22 +203,46 @@ text(s, 'Then run:', 8.12, 5.46, 4.03, .28, 12, True)
 text(s, '& $py -m lfm check --vintage 2026\n& $py -m pytest -q', 8.12, 5.87, 4.03, .67, 11)
 text(s, 'A successful command is not numerical verification or adoption.', 8.12, 6.68, 4.03, .35, 11, True, brand.accent_primary)
 
-s = page('Close the retrieval gaps and return reviewable evidence',
-         'The LLM implements and tests missing extraction; Manish reviews source fidelity')
+s = page('Return five distinct work packages for review',
+         'Checklist | Manish owns evidence collection and checks; Nigel reviews integration')
 table(s, [
-    ['Missing coverage', 'Source and implementation needed', 'Return today'],
-    ['Provincial 2023 onward', 'Department market overview has charts through 2024. Verify PDF/table values; seek 2025 and 2026 YTD. Current workbook fetcher does not parse these charts.',
-     'Observed/estimated province-product table and national tie; explicit gaps.'],
-    ['Stats SA driver series', 'P0441 GDP/agriculture; P3041.2 manufacturing; P2041 mining; P7162 land transport. Add current downloads/parsers; activity is not fuel litres.',
-     'Originals, extracts, dates, units, geography, source table and revision flags.'],
-    ['Detailed fuel trade', 'SARS petrol/diesel tariff lines with quantities/units; energy/operator production and stock records. FIASA fetch does not download SARS.',
-     'Production + imports - exports - stock build; consumption comparison and residual.'],
-    ['Data sharing and review', '247 prior downloads and the stand-up transcript remain local after upload review blocks. Shared CSVs do not prove originals are available or verified.',
-     'Missing-original list; per-source outcomes; code and tests on Manish branch.'],
-], [1.7, 6.15, 3.8], height=3.53, size=12)
-text(s, 'Afternoon handback: source map, resolved/open flags, provincial coverage, matched balance and driver data. Nigel updates the SCR pack; lever scenarios follow sourcing.',
-     .5, 6.25, 11.65, .63, 12, True, brand.accent_primary)
+    ['Work package', 'Checklist: required evidence', 'Completion test'],
+    ['[ ] 1 Integrity', 'Resolve provincial completeness/ties and duplicate refinery/history keys against original cells.',
+     'Flag log: old/new value, reason; resolved or open with owner.'],
+    ['[ ] 2 Traceability', 'Map publisher -> original -> extract -> consuming function; list originals absent from main.',
+     'Exact paths and links; units, dates and engine-use status.'],
+    ['[ ] 3 Demand update', 'Collect petrol/diesel sales by province after 2022; verify 2024 chart evidence and seek 2025/2026.',
+     'Province/product/period; national tie; observed/estimated; gaps.'],
+    ['[ ] 4 Fuel balance', 'Match actual production, imports, exports and stock movements. Resolve competing trade definitions.',
+     'Same-year/product litres; balance residual explained or open.'],
+    ['[ ] 5 Driver evidence', 'Complete the seven driver rows on the next page. Add and test missing retrieval/parsers.',
+     'One source record per series; coverage and revisions explicit.'],
+], [1.7, 6.15, 3.8], height=3.75, size=12)
+text(s, 'Today: evidence and tests. After review: Nigel integrates approved changes and updates the SCR pack; lever quantification follows.',
+     .5, 6.43, 11.65, .43, 12, True, brand.accent_primary)
 text(s, 'Open detailed instructions and source links', .5, 6.89, 8.2, .24, 10.5, url=REPO_URL+'workstreams/WS0_governance/workplan/feedback_focus_2026-10-06.md', color=brand.accent_primary)
+
+s = page('Collect driver evidence with one checklist row per category',
+         'Data first | Record each row as sourced, partial or open; do not infer fuel litres from activity')
+table(s, [
+    ['Driver', 'Collect / public source', 'Keep explicit'],
+    ['Passenger vehicles', 'NaTIS passenger stock/registrations; petrol/diesel split, mileage and efficiency evidence.',
+     'ICE stock split and mileage may remain open.'],
+    ['Freight', 'NaTIS goods-vehicle stock; Stats SA P7162 road/rail payload and available tonne-km.',
+     'One revision vintage; tonnes are not tonne-km.'],
+    ['Agriculture', 'Stats SA P0441 agricultural activity; sector diesel-use/intensity evidence separately.',
+     'National activity; no provincial litres inferred.'],
+    ['Industry', 'Stats SA P3041.2 manufacturing and P2041 mining output; separate series.',
+     'Indices measure output, not fuel consumption.'],
+    ['Power generation', 'Eskom and IPP OCGT generation; reported diesel burn where available.',
+     'FY versus CY; GWh and litres stay separate.'],
+    ['Electrification', 'naamsa BEV, PHEV and conventional hybrid new sales; fleet-stock evidence if available.',
+     'Sales are a flow; HEV/PHEV still use fuel.'],
+    ['Economic context', 'Stats SA real GDP; department petrol/diesel prices, latest monthly observations.',
+     'Real versus nominal; no elasticity calibrated today.'],
+], [1.7, 6.15, 3.8], y=2.38, height=4.0, size=11.5)
+text(s, 'For every series: original file + source URL/table + extracted CSV + period/units + revision check. Missing evidence: owner and next retrieval action.',
+     .5, 6.56, 11.65, .43, 11.5, True, brand.accent_primary)
 
 bookend(source.slides[-1], {'Agree priorities': 'Return sourced data',
                            'and next steps': 'and explicit gaps',
@@ -228,7 +252,7 @@ bookend(source.slides[-1], {'Agree priorities': 'Return sourced data',
 sections = [('1  Priorities', 2), ('2  Files and sources', 3),
             ('3  Fetch and test', 4), ('4  Handback', 6)]
 for page_number, s in enumerate(prs.slides, 1):
-    if page_number in (1, 7):
+    if page_number in (1, len(prs.slides)):
         continue
     active = 0 if page_number == 2 else 1 if page_number == 3 else 2 if page_number <= 5 else 3
     for i, (label, target) in enumerate(sections):

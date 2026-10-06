@@ -224,6 +224,47 @@ folder, compare overlapping observations and review changes before adoption.
 
 ## End-of-day and Week 1 review
 
+### Handback checklist: five distinct work packages
+
+Unchecked items below are requirements, not an assertion that no evidence exists.
+Manish returns each as ready for review, partial or open, with an owner and next
+retrieval action for missing evidence. Nigel reviews adoption and integration.
+
+- [ ] **Integrity:** resolve the provincial completeness/tie flags and repeated
+  refinery/history keys; log old value, source cell, proposed value and reason.
+- [ ] **Traceability:** map publisher -> original -> extract -> consuming function;
+  include exact paths and identify originals absent from the shared repository.
+- [ ] **Provincial demand:** collect observed petrol/diesel sales after 2022;
+  verify newer chart/table evidence, seek 2025/2026 and reconcile national totals.
+- [ ] **Fuel balance:** match production, imports, exports and stock movements by
+  product/period/units; explain the residual or leave it explicitly open.
+- [ ] **Driver evidence:** return the seven categories below with originals and
+  extracts; implement and test missing retrieval/parsers on Manish's branch.
+
+Driver collection checklist (annual new sales and fleet stock remain separate):
+
+- [ ] **Passenger vehicles:** NaTIS passenger stock/registrations; separately
+  source petrol/diesel stock split, mileage and efficiency or mark them open.
+- [ ] **Freight:** NaTIS goods-vehicle stock and Stats SA P7162 road/rail payload;
+  tonne-km where available. Use one revision vintage; tonnes are not tonne-km.
+- [ ] **Agriculture:** Stats SA P0441 activity plus separate evidence of diesel
+  consumption/intensity; national activity does not establish provincial litres.
+- [ ] **Industry:** separate manufacturing P3041.2 and mining P2041 output series;
+  keep activity indices distinct from fuel consumption.
+- [ ] **Power:** Eskom and IPP OCGT generation plus reported diesel burn where
+  available; distinguish financial/calendar years and GWh/litres.
+- [ ] **Electrification:** naamsa BEV, PHEV and conventional hybrid new sales;
+  fleet stock/survival where available. Sales are not penetration; hybrids use fuel.
+- [ ] **Economic context:** Stats SA real GDP and department petrol/diesel prices;
+  identify nominal/real treatment and refresh periods. No elasticity calibration today.
+
+Every series needs source URL/table, original path, extracted CSV, coverage,
+units and revision check. Source collection, checking and reviewed integration
+are distinct stages; collecting an activity series does not quantify a fuel lever.
+
+[PDF handover checklist](../../../pptx/output/delivered/Vopak_Manish_Handover_2026_10_06.pdf)
+uses the same five work packages and seven driver categories.
+
 Today's handback is a resolved/open flag table, source-to-file-to-function map,
 new provincial demand evidence or an explicit evidence gap, a matched national
 production/import/export reconciliation, and sourced driver series with coverage
