@@ -109,7 +109,7 @@ no balance after 2021. Refinery capacity (pack p8) is nameplate, not output.
 |---|---|---|
 | Customs data by tariff line (petrol, diesel; volume and partner country) | Nigel | Obtained (see the SARS section); review and decide on registering the three extracts in the vintage |
 | Actual production 2022 onward | Manish | Sasol, Natref and Astron totals obtained (see follow-up and the all-product check); product split still missing; ask the department whether a 2022 or 2023 balance exists |
-| Stock movements | Manish / Nigel | None published found; ask the department or FIASA |
+| Stock movements | Manish / Nigel | JODI carries a stock series of low reliability (see the fuel levy section); ask the department or FIASA |
 | Diesel residual from 2022 | Manish, Henry review | Test each candidate explanation; exports to neighbouring countries by partner from SARS is the first check |
 | FIASA: 2024 diesel misprint (confirmed by customs), duplicated 2025 sales row, and the 2018 difference | Nigel | Query FIASA |
 | Imports by entry port | Nigel | Customs office now gives a public proxy (see the SARS section); terminal-level data still needs client or port access |
@@ -275,3 +275,46 @@ Botswana is sourcing less of its fuel through South Africa.
 Limits: Mozambique's 2021 quantity in Comtrade is implausible against its
 value and was left out; Malawi has no matching SARS rows; the comparison is
 for all fuel lines together because neighbours' data is at six-digit level.
+
+## Fuel levy volumes: the likeliest explanation of the residual, 6 October
+
+SARS collects the fuel levy on petrol and diesel as they leave refineries and
+import terminals, so the volume declared for levy is a measure of fuel entering
+the domestic market that does not depend on the department's sales returns.
+SARS media release, 12 March 2025: "Fuel consumption as at February 2025 was
+21 billion litres compared to 24 billion in the prior year".
+
+Read as the eleven months April to February of each fiscal year, and set
+against recorded petrol plus diesel sales for roughly the same months:
+
+| Eleven months to February | Levy-declared volume | Recorded sales (11/12 of the calendar year) | Difference |
+|---|---|---|---|
+| 2024 | 24 bn litres | about 20.1 (2023: 21.94) | about 3.9 |
+| 2025 | 21 bn litres | about 19.0 (2024: 20.76, FIASA) | about 2.0 |
+
+In the first period the levy was declared on about 3.9 bn litres more than the
+department recorded as sold, which is the size of the residual found from the
+balance (3 to 4 bn), from operators' output (4.4 bn in 2023) and now from tax.
+The simplest reading is that the fuel is real, taxed and consumed, and that the
+department's sales series undercounts, most plausibly sales by importers and
+wholesalers who do not file returns with it. A second SARS release (12 November
+2025) points the same way: declarations by importers rose 133% (3.6 bn litres)
+in April to September 2025 while those by local manufacturers fell 39% (3.4 bn).
+
+This is an inference, not a finding. The release gives round figures for both
+fuels together, "as at February" is read here as fiscal year to date, and the
+comparison months do not line up exactly. The tables in SARS's Tax Statistics
+2025 that would give the levy by fiscal year (Table A1.7.2) could not be read
+from the PDF. If the reading is right, recorded "demand" in the model's history
+understates diesel consumption by a fifth or more in 2023, which matters for
+any estimate of Vopak's addressable market.
+
+**JODI.** South Africa's submissions to the JODI oil database carry refinery
+output, imports, exports, stocks and demand by product and month for 2023 and
+2024 (kept at `external/data/raw/jodi/`; 2025 is blank). They are the only
+source found with a product split of refinery output (2023: petrol 8.52,
+diesel 5.19 bn litres; 2024: 7.34 and 3.89) and a stock series (closing diesel
+stock 0.65 bn litres at December 2023, 0.55 at December 2024). They are not
+usable as they stand: reported diesel imports are 6.8 bn litres for 2023
+against 12.9 in customs, the statistical differences are 1 to 3.5 bn litres,
+and every entry has JODI's lowest reliability code.

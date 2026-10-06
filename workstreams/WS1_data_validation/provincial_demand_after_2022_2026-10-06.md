@@ -119,3 +119,32 @@ scripted downloads; it needs a manual download like the other Stats SA files.
 | Commercial source | Nigel | Decide whether to approach a retail-volume data provider (for example Kalibrate) for provincial volumes |
 | Provincial GDP as a driver | Manish | Manual download of Stats SA P0441.2 |
 | Whether the pack may show estimated 2023–2024 provincial bars | Nigel | Decision; recommended for petrol only, clearly labelled |
+
+## Review outcomes and the 2024 national total, 6 October
+
+Manish accepted the finding that no official provincial figure exists after
+2023-Q1. The estimate method and what the pack may show are left for Nigel.
+
+**Can the 2024 national total be verified? No.** Manish asked for other
+sources. Four were checked; they do not agree with either FIASA version or
+with each other. Billion litres, calendar 2024 unless stated:
+
+| Source | Petrol | Diesel | Note |
+|---|---|---|---|
+| FIASA annual report 2025, p.47 | 9.03 | 11.73 | The same row is printed again for 2025 |
+| FIASA annual report 2024, p.32 | 8.76 | 11.81 | Earlier edition; may be preliminary |
+| JODI oil database, demand reported by South Africa | 10.14 | 10.04 | All twelve months; every South African entry carries JODI's lowest reliability code (3) |
+| SARS, fuel on which levy was declared | 21 for both fuels together, April 2024 to February 2025 (24 the year before) | | Media release of 12 March 2025; eleven months of a fiscal year, both fuels together |
+| Department national sales workbook | — | — | Not published for 2024 |
+
+For 2023, where the department's own figure exists (petrol 9.04, diesel 12.91),
+JODI gives 11.68 and 13.85, so JODI is not a reliable check on the level.
+
+What can be said: 2024 petrol sales lie between 8.8 and 10.1 bn litres and
+diesel between 10.0 and 11.8 bn across the sources; all sources show diesel
+falling from 2023. The estimate in this note keeps FIASA's 2025 edition (9.03
+and 11.73), flagged as unverified. Each provincial figure for 2024 carries that
+uncertainty on top of the share error.
+
+Not decided: who requests the unpublished provincial data from the department,
+and whether to approach a commercial provider.
