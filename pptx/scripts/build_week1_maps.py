@@ -486,6 +486,8 @@ apply_confidentiality(prs)
 apply_commentary_hierarchy(prs)
 from agenda_answer_page import apply_agenda_answer
 apply_agenda_answer(prs,ROOT,brand)
+from footer_layout import finish_footer_and_markers
+finish_footer_and_markers(prs,brand)
 assert len(prs.slides)==22
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:

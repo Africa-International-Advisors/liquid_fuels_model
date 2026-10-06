@@ -118,11 +118,11 @@ def apply_divider_markers(prs,brand):
             if q.name.startswith('SCR divider marker'):q._element.getparent().remove(q._element)
         x,y=7.88,2.13
         q=s.shapes.add_shape(MSO_SHAPE.OVAL,Inches(x-.13),Inches(y-.13),Inches(.26),Inches(.26))
-        q.name='SCR divider marker: circle';q.fill.solid();q.fill.fore_color.rgb=brand.white
+        q.name='SCR divider marker: circle';q.fill.solid();q.fill.fore_color.rgb=brand.accent_primary
         q.line.color.rgb=brand.accent_primary;q.line.width=Pt(.9)
         for a,b in [((x-.035,y-.065),(x+.035,y)),((x+.035,y),(x-.035,y+.065))]:
             q=s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,Inches(a[0]),Inches(a[1]),Inches(b[0]),Inches(b[1]))
-            q.name='SCR divider marker: arrow';q.line.color.rgb=brand.accent_primary;q.line.width=Pt(1.1)
+            q.name='SCR divider marker: arrow';q.line.color.rgb=brand.white;q.line.width=Pt(1.1)
 
 
 def lead_with_national_accounting(prs,brand):
