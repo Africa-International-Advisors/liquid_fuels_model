@@ -108,7 +108,7 @@ no balance after 2021. Refinery capacity (pack p8) is nameplate, not output.
 | Item | Owner | Next action |
 |---|---|---|
 | Customs data by tariff line (petrol, diesel; volume and partner country) | Nigel | Obtained (see the SARS section); review and decide on registering the three extracts in the vintage |
-| Actual production 2022 onward | Manish | Sasol and Natref totals obtained (see follow-up); product split and Astron still missing; ask the department whether a 2022 or 2023 balance exists |
+| Actual production 2022 onward | Manish | Sasol, Natref and Astron totals obtained (see follow-up and the all-product check); product split still missing; ask the department whether a 2022 or 2023 balance exists |
 | Stock movements | Manish / Nigel | None published found; ask the department or FIASA |
 | Diesel residual from 2022 | Manish, Henry review | Test each candidate explanation; exports to neighbouring countries by partner from SARS is the first check |
 | FIASA: 2024 diesel misprint (confirmed by customs), duplicated 2025 sales row, and the 2018 difference | Nigel | Query FIASA |
@@ -207,3 +207,35 @@ recorded purchases fell from 0.45 to 0.28 bn litres between 2023 and 2024. The
 roughly 3 bn litres a year therefore sits in sales not reported to the
 department, unrecorded cross-border movement, direct supply to power or
 shipping, or stocks.
+
+## All-product check for 2024, with Astron included
+
+Astron's output is reported by Glencore (2025 Annual Report, p.69; detail in
+`driver_evidence_2026-10-06.md`): about 4.9 bn litres in 2024 after converting
+energy content at an assumed 36 MJ a litre. With Sasol's figures this gives a
+supply check that does not depend on a product split. Petrol, diesel, jet,
+paraffin and fuel oil together, billion litres:
+
+| 2024 | Value | Source |
+|---|---|---|
+| Recorded sales | 24.2 | FIASA 2025 edition |
+| Imports | 17.2 | SARS |
+| Exports | 3.6 | SARS |
+| Production needed to balance | 10.6 | sales − imports + exports |
+| Secunda | 4.6 | Sasol, year to June 2024 |
+| Natref, whole refinery | 4.5 | Sasol, year to June 2024, scaled from its 63.64% share |
+| Astron | about 4.9 | Glencore, calendar 2024, converted from energy content |
+| Reported output, three plants | about 14.0 | |
+| **Output above what the balance needs** | **about 3.3** | |
+
+The three operators report roughly 3.3 bn litres more refined product than
+recorded sales, imports and exports can absorb. That is the same size as the
+diesel residual found product by product, reached by a separate route.
+
+Limits: the operator figures are all refined products, so they include
+liquefied gas, bitumen and other products that are not in the five fuels
+counted on the sales side (liquefied gas sales were 0.3 bn litres); Sasol's
+year runs July to June; Astron's litres depend on the assumed energy content
+(the gap is 3.1 to 3.6 bn across the plausible range); and ships' bunkers may
+be supplied from this output without appearing in sales. These reduce the gap
+but are unlikely to remove it.
