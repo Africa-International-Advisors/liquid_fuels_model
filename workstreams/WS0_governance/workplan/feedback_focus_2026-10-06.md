@@ -7,7 +7,65 @@ Nigel reviews proposed changes; Manish investigates and implements explained
 replacements. Henry reviews the technical mechanisms. Assignments and dates
 below are proposed discussion targets, not recorded meeting commitments.
 
-## What is ready to use
+## Start the conversation here
+
+Ask Manish for three things today: **reproduce the baseline, explain the flagged
+data, and propose one source-backed integration change**. Define the demand and
+supply levers alongside that work. Do not ask him to rebuild all the maps first.
+
+| Start with | Exact files to open | What Manish returns |
+|---|---|---|
+| 1. Find what the model actually uses | [Source audit workbook](../../../output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx), then [source profile](../../../output/delivered/source_profile_2026_10_05.html) | Input name → current file → consuming function → output; distinguish unused sources and presentation-only evidence. |
+| 2. Investigate the flagged numbers | Workbook tabs **Direction**, **Provincial gaps**, **Repeated keys**; open the CSVs in the file table below | Old value → competing/proposed value → original source cell → explanation. Keep unresolved cases open. |
+| 3. Propose the first integration | [Current GDP/capita input](../../../assumptions/2026/timeseries/gdp_per_capita.csv) versus [World Bank extract](../../../assumptions/2026/timeseries/macro_worldbank.csv) and [Stats SA extract](../../../assumptions/2026/timeseries/macro_statssa.csv) | Explain units, GDP/population consistency and forecast extension; one before/after petrol/diesel comparison. No automatic substitution. |
+
+## Where the files are
+
+Nigel's local project folder is
+`C:\Users\ITafr\Desktop\Insights\liquid_fuels_model`.
+All paths below are relative to that folder. Manish uses the same paths beneath
+his own clone; he does not need Nigel's Windows username or Desktop path.
+Every linked file below is on main. The separate local refresh folder is the
+exception described after the table.
+
+| Folder | What it contains | What this means |
+|---|---|---|
+| `external/` | Original workbooks, reports and captured source documents | Evidence to check against; not automatically a model input. |
+| `assumptions/2026/` | Extracted CSV data and YAML settings | Some are consumed by the engine; others are staged or used only in the pack. Check the specific row below. |
+| `src/lfm/model/` | Demand and supply calculations | This is where fuel quantities are calculated. Fetch/download functions live in `src/lfm/scripts/`. |
+| `output/delivered/` and `pptx/output/delivered/` | Audit workbook, profiles, flags and delivered presentation | Review outputs; not the original source data. |
+
+## Exact source files, use and investigation
+
+| Question | Extracted data / settings: click to open | Original evidence / where to trace it | Where it is used and what to check |
+|---|---|---|---|
+| Current workbook baseline | [gdp_per_capita.csv](../../../assumptions/2026/timeseries/gdp_per_capita.csv), [macro.yaml](../../../assumptions/2026/macro.yaml) | [Original Reatile workbook](<../../../external/sources/Liquid Fuels Model - Supply Demand, 2025 - Reatile Copy.xlsx>) | Engine input. `macro.gdp_per_capita` feeds [vehicles.py](../../../src/lfm/model/demand/vehicles.py), [agriculture.py](../../../src/lfm/model/demand/agriculture.py), [industrial.py](../../../src/lfm/model/demand/industrial.py) and other demand modules; trace the profile for each block. |
+| Proposed macro replacement | [macro_worldbank.csv](../../../assumptions/2026/timeseries/macro_worldbank.csv), [macro_statssa.csv](../../../assumptions/2026/timeseries/macro_statssa.csv), [gdp_growth_treasury.csv](../../../assumptions/2026/timeseries/gdp_growth_treasury.csv) | Fetcher [fetch_economy.py](../../../src/lfm/scripts/fetch_economy.py); source records in the companion metadata and source profile | Staged; sector activity also appears on pack p7. Not an automatic replacement of current GDP/capita or its forecast through 2050. |
+| Provincial demand and completeness | [Annual provincial sales](../../../assumptions/2026/timeseries/fuel_sales_department_by_province.csv), [quarterly provincial sales](../../../assumptions/2026/timeseries/fuel_sales_department_by_province_quarterly.csv), [national annual sales](../../../assumptions/2026/timeseries/fuel_sales_department.csv) | The `source_file` column identifies each original department workbook. [fetch_energy_dept.py](../../../src/lfm/scripts/fetch_energy_dept.py), function `_provincial`, performs extraction; some original downloads are still local. | Reporting pp3–4, not a calibrated provincial engine. Use quarters and exact source cells to explain the 26 flagged totals and six national ties; 2023 is incomplete. |
+| Repeated refinery records | [refinery_production.csv](../../../assumptions/2026/timeseries/refinery_production.csv), [supply.yaml](../../../assumptions/2026/supply.yaml) | Original Reatile workbook: `Production_High` / `Production_Low`; [scenario mapping](../../../assumptions/2026/_meta.yaml) | Despite its filename, this CSV is wired as **refinery utilisation** in [flows.py](../../../src/lfm/model/supply/flows.py), `compute_supply` / `_utilisation_series`. Resolve 558 extra rows before replacing values. |
+| Repeated historical demand records | [historical_demand.csv](../../../assumptions/2026/timeseries/historical_demand.csv) | Original Reatile workbook: RSA Demand table; audit workbook **Repeated keys** tab | Historical comparison evidence; inspect all 15 extra rows, including jet keys. This is not a reason to sum repeated observations. |
+| Sales, imports and exports | [fuel_sales_fiasa.csv](../../../assumptions/2026/timeseries/fuel_sales_fiasa.csv), [fuel_trade_fiasa.csv](../../../assumptions/2026/timeseries/fuel_trade_fiasa.csv), [fuel_trade_department_review.csv](../../../assumptions/2026/timeseries/fuel_trade_department_review.csv) | [FIASA report](../../../external/data/raw/fuel_supply_review_20261006/annual-report-2025.pdf), [government trade report](../../../external/data/raw/fuel_supply_review_20261006/trade2024.pdf), [source flag CSV](../../../output/delivered/supply_review_2026_10_06/trade_source_flags.csv) | Pack p5. These collected observations do not replace engine supply. Resolve 14.793 versus 10.8 bn litres of diesel imports; collect matched output/stocks before claiming a closed balance. |
+| Vehicle stock and EV uptake | [vehicle_population_natis.csv](../../../assumptions/2026/timeseries/vehicle_population_natis.csv), [nev_sales_naamsa.csv](../../../assumptions/2026/timeseries/nev_sales_naamsa.csv), current [vehicles.yaml](../../../assumptions/2026/vehicles.yaml) | [fetch_natis.py](../../../src/lfm/scripts/fetch_natis.py), [fetch_naamsa.py](../../../src/lfm/scripts/fetch_naamsa.py); underlying prior PDFs are in the local refresh folder | Extracts appear on pack p7. Engine [vehicles.py](../../../src/lfm/model/demand/vehicles.py) uses current vehicle settings; observed new sales are not fleet penetration. Fuel split, retirement, mileage and intensity need a reviewed bridge. |
+| Power, agriculture and industry | [ocgt_generation_eskom.csv](../../../assumptions/2026/timeseries/ocgt_generation_eskom.csv), [macro_statssa.csv](../../../assumptions/2026/timeseries/macro_statssa.csv), current [generation.yaml](../../../assumptions/2026/generation.yaml), [agriculture.yaml](../../../assumptions/2026/agriculture.yaml), [industrial.yaml](../../../assumptions/2026/industrial.yaml) | [fetch_eskom.py](../../../src/lfm/scripts/fetch_eskom.py), [fetch_economy.py](../../../src/lfm/scripts/fetch_economy.py); source profile for originals | Pack p7 observations. Proposed integration targets [generation.py](../../../src/lfm/model/demand/generation.py), [agriculture.py](../../../src/lfm/model/demand/agriculture.py), [industrial.py](../../../src/lfm/model/demand/industrial.py). GWh/value added must be translated to fuel litres with sourced parameters. |
+| Road/rail source revision | [freight_payload_statssa_review.csv](../../../assumptions/2026/timeseries/freight_payload_statssa_review.csv), [revision metadata](../../../assumptions/2026/timeseries/freight_payload_statssa_review.sources.json) | [December 2024 PDF](../../../external/data/raw/demand_drivers_20261006/P7162December2024.pdf), [December 2025 PDF](../../../external/data/raw/demand_drivers_20261006/P7162December2025.pdf); [collect_freight_review.py](../../../src/lfm/scripts/collect_freight_review.py) | Pack p7 only; road-to-rail fuel lever not integrated. Use one report vintage, then source tonne-km/load and diesel intensity. |
+| Refining capacity scenarios | [refinery_capacity_reported.csv](../../../assumptions/2026/timeseries/refinery_capacity_reported.csv), [review_capacity_scenarios.yaml](../../../assumptions/2026/review_capacity_scenarios.yaml) | FIASA report above and [CEF source capture](../../../external/data/raw/fuel_supply_review_20261006/cef_refinery_update.html); [collect_supply_review.py](../../../src/lfm/scripts/collect_supply_review.py) | Pack p8 only. Capacity is not output; authored future dates do not overwrite engine utilisation/yields. |
+| Storage and Transnet lease sites | [storage_transnet_pipelines_depots.csv](../../../assumptions/2026/infrastructure/storage_transnet_pipelines_depots.csv), [source metadata](../../../assumptions/2026/infrastructure/storage_transnet_pipelines_depots.sources.yaml) | [Transnet page capture](../../../external/sources/transnet_tpl_leasing_2026/tpl-leasing-opportunities.html); original RFP PDFs in that same folder | Storage context in pack; no operational logistics engine or actual market share established. Lease opportunities are conditional, not operating supply. |
+
+**Files not yet shared:** `external/data/refresh_20261005/raw/` contains prior
+department, Stats SA, NaTIS, naamsa, Eskom and other downloads. Its 247 files
+remain local after the bulk-upload rejection. The extracted CSVs linked above
+are on main; availability of a CSV does not mean its underlying PDF/workbook is
+also shared. Record missing originals explicitly when investigating a row.
+
+**Where freshness and refresh are documented:** [source_profile_2026_10_05.csv](../../../output/delivered/source_profile_2026_10_05.csv)
+lists refresh routes and input shapes; [source_connectivity_2026_10_05.csv](../../../output/delivered/source_connectivity_2026_10_05.csv)
+records earlier URL probes. These are dated checks, not live connectivity today.
+World Bank is API-based; many department/operator/Stats SA sources require
+document downloads. A reachable page does not establish a complete refresh.
+Use the individual fetcher linked above, preserve new raw files in a dated
+folder, compare overlapping observations and review changes before adoption.
+
+## Pack and diagnostic reference files
 
 - [Current PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pptx) and [PDF](../../../pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pdf): stable filenames, 16 pages; original cover/closing retained.
 - [Source audit workbook](../../../output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx): Direction, provincial gaps and repeated keys give row-level investigation leads.
