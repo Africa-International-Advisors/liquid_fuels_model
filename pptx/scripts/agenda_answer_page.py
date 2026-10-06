@@ -8,6 +8,7 @@ from pptx.oxml.xmlchemy import OxmlElement
 from pptx.opc.constants import RELATIONSHIP_TYPE as RT
 from brand_pptx import _strip_table_style, cell_bottom_rule
 from brand_configs import vopak as cfg
+from overview_row_references import apply_row_references
 from scr_editorial import replace
 
 
@@ -36,7 +37,7 @@ def _links(slide,cell,pages,prs,brand):
 
 def apply_agenda_answer(prs,root,brand):
     overview=prs.slides[1]
-    title='Imports are material; Vopak growth depends on accessible customer flows'
+    title='Vopak’s 2026 Liquid Fuels Outlook shows sustained import volumes, with growth from accessible customers (cost × service)'
     for q in list(overview.shapes):
         if Inches(1.7)<=q.top<Inches(7.05):q._element.getparent().remove(q._element)
         elif q.has_text_frame and Inches(.5)<q.top<Inches(1.6) and q.width>Inches(8):replace(q,title)
@@ -105,4 +106,5 @@ def apply_agenda_answer(prs,root,brand):
                 n=int(q.name.rsplit(' ',1)[-1]);active=[2,3,4][index-17]
                 q.fill.fore_color.rgb=brand.accent_primary if n==active else brand.grey_fill
                 for p in q.text_frame.paragraphs:p.font.bold=n==active;p.font.color.rgb=brand.white if n==active else brand.accent_primary
+    apply_row_references(prs,brand)
     overview.notes_slide.notes_text_frame.text+='\nAgenda-led opening answer. Henry prompt-by-prompt current responses are on pages 18–20. Source pp30–32; open is not closed.'
