@@ -46,8 +46,8 @@ def apply_agenda_answer(prs,root,brand):
         q.text_frame.margin_left=q.text_frame.margin_right=0;q.text_frame.margin_top=q.text_frame.margin_bottom=0
         for p in q.text_frame.paragraphs:p.font.name=cfg.THEME_FONT;p.font.size=Pt(size);p.font.bold=bold;p.font.color.rgb=color or brand.ink;p.space_after=Pt(0)
         return q
-    text(overview,'Current answer | validate customer access before committing additional capacity',.5,1.78,11.65,.3,14,True)
-    rows=[['Agenda','SCR','Current answer and implication','Next step / proposed lead','Deep dives'],
+    text(overview,'Henry’s storyline | what holds, what changes and what remains unproven',.5,1.78,11.65,.3,14,True)
+    rows=[['Agenda','SCR','What the evidence shows','So what / story verdict','Deep dives'],
     ['Market\nbaseline','','Imports underpin the national market\n2024 net petrol/diesel imports: 13.078 bn L. Production, stocks and sales coverage remain unmatched.','Match the national balance\nManish; Nigel source access',''],
     ['','','Demand is concentrated, but later provincial data are estimates\nGP, KZN and WC account for 68.6% of reported 2022 sales. The map does not establish customer access.','Refresh observed demand and destinations\nManish; Nigel review',''],
     ['Market\nchanges','','Demand drivers can move in different directions\nPower, freight, prices and vehicle mix need separate mechanisms; observed activity is not a fuel forecast.','Define growth, lever cases and back-tests\nManish; Nigel review',''],
@@ -55,6 +55,9 @@ def apply_agenda_answer(prs,root,brand):
     ['','','Alternative gateways challenge the same inland market\nMatola and Walvis Bay have storage; their competitiveness depends on full costs, route capacity and access.','Compare one product and destination\nManish; Nigel / Henry',''],
     ['Vopak\noutlook','','Market share of Vopak in Dbn and Lesedi\nShare is not established. Published tanks show footprint; unique customer deliveries establish served demand.','Obtain flows, remove transfers, test capture gates\nNigel client data; Manish',''],
     ['','','Potential scope for new investment?\nPrioritise Durban/Lesedi customer flows. Additional storage follows secured volumes and a usable-capacity gap.','Validate where, how and when to act\nNigel; Manish / Henry','']]
+    verdicts=json.loads((root/'story/overview_story_verdicts_2026_10_06.json').read_text(encoding='utf-8'))
+    for row,verdict in zip(rows[1:],verdicts['rows']):
+        row[2]=verdict['evidence'];row[3]=verdict['verdict']
     widths=[1.30,.55,5.05,3.30,1.45]
     t=_table(overview,rows,widths,2.26,4.48,brand,10.5)
     for a,b in [(1,2),(3,5),(6,7)]:

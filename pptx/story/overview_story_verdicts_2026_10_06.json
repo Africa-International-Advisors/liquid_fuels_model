@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-06",
+  "status": "Evidence verdicts for review; not business approval",
+  "rows": [
+    {
+      "ref": "S1",
+      "pages": [
+        3,
+        6
+      ],
+      "verdict": "Supported: imports are material.\nSustained future volumes remain a forecast case; the matched balance is open.",
+      "evidence": "Diesel drives imports; sales reports conflict\n2024 net petrol/diesel imports: 13.078 bn L. Production, stocks, sales coverage and port allocation remain open."
+    },
+    {
+      "ref": "S2",
+      "pages": [
+        4,
+        5
+      ],
+      "verdict": "Supported: concentrated demand.\nFocus on Gauteng/KZN; sales totals do not establish accessible customers.",
+      "evidence": "Demand sits around Vopak’s footprint\nGP, KZN and WC account for 68.6% of 2022 sales. Historical volumes were broadly steady; later provinces are estimates."
+    },
+    {
+      "ref": "S/C3",
+      "pages": [
+        7,
+        9
+      ],
+      "verdict": "Partly supported: diesel generation is falling.\nRail, EV and price effects remain unquantified; a uniform demand decline is unproven.",
+      "evidence": "Diesel generation is falling; other drivers differ\nFreight, EV uptake and prices follow different paths. Fuel used per km or unit of output is needed to quantify litres."
+    },
+    {
+      "ref": "C4",
+      "pages": [
+        8,
+        9
+      ],
+      "verdict": "Supported: refining capacity fell.\nPlant futures are conditional; capacity alone does not determine imports.",
+      "evidence": "Supply change makes import needs conditional\nCapacity has declined; redevelopment is conditional. Secunda/Natref product output and future cases remain open."
+    },
+    {
+      "ref": "C5",
+      "pages": [
+        10,
+        11
+      ],
+      "verdict": "Open: gateway competition.\nNo route winner without comparable cost, service and customer access.",
+      "evidence": "Alternative gateways challenge the same inland market\nMatola and Walvis Bay have storage; their competitiveness depends on full costs, route capacity and access."
+    },
+    {
+      "ref": "R6",
+      "pages": [
+        12,
+        13,
+        14
+      ],
+      "verdict": "Open: Vopak share is unproven.\nTanks show footprint; unique deliveries and access establish served volumes.",
+      "evidence": "Market share of Vopak in Dbn and Lesedi\nShare is not established. Published tanks show footprint; unique customer deliveries establish served demand."
+    },
+    {
+      "ref": "R7",
+      "pages": [
+        15,
+        16,
+        17
+      ],
+      "verdict": "Conditional: win customers first.\nUse existing assets; new storage needs secured flows and a usable-capacity gap.",
+      "evidence": "Potential scope for new investment?\nPrioritise Durban/Lesedi customer flows. Additional storage follows secured volumes and a usable-capacity gap."
+    }
+  ],
+  "appendices": {
+    "18": "Henry situation prompts: supports rows 1, 2, 3 and 4",
+    "19": "Henry complication prompts: supports rows 3, 4 and 5",
+    "20": "Henry resolution prompts: supports rows 6 and 7"
+  },
+  "non_analytical_pages": {
+    "1": "cover",
+    "2": "summary",
+    "21": "closing",
+    "22": "palette reference"
+  }
+}

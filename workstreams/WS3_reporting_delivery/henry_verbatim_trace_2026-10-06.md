@@ -4,7 +4,7 @@
 
 Original images: [Situation ? slide 30](../../external/partner_story_20261006/situation.png), [Complication ? slide 31](../../external/partner_story_20261006/complication.png), [Resolution ? slide 32](../../external/partner_story_20261006/resolution.png).
 
-Current pack: [Week 1 PDF](../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v10.pdf). Opening summary: page 2. Response appendices: pages 18?20.
+Current pack: [Week 1 PDF](../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v11.pdf). Opening summary: page 2. Response appendices: pages 18?20.
 
 Trace each item as **Henry wording ? current response ? linked deep dive**. The source words are also stored in the appendix speaker notes and the [machine-readable register](../../pptx/story/henry_question_answers_2026_10_06.json).
 
@@ -53,3 +53,19 @@ Henry's Situation instruction: ?The above can be shown as a couple of slides (i.
 Henry's Complication framing: ?A number of trends that supported demand growth have started to reverse?. The deck tests the component trends; it does not assume every reversal has already been measured or projected.
 
 Verbatim transcription from received images; original incomplete parentheses retained. Wrapped lines joined; Secunda dash normalised to a hyphen. Repeated prompts map separately to their analytical components.
+
+## Overview verdicts and page coverage
+
+The overview separates evidence from the verdict on Henry's storyline; supported / partly supported / open / conditional are evidence judgements, not business approvals. Internal owners and actions remain in the convergence checklist.
+
+| Overview row | Evidence / decision pages | Supporting appendix |
+|---|---|---|
+| S1 | 3 / 6 | 18 |
+| S2 | 4 / 5 | 18 |
+| S/C3 | 7 / 9 | 18 / 19 |
+| C4 | 8 / 9 | 18 / 19 |
+| C5 | 10 / 11 | 19 |
+| R6 | 12 / 13 / 14 | 20 |
+| R7 | 15 / 16 / 17 | 20 |
+
+Pages 3?17 are each summarised in the overview. Pages 18?20 trace the original prompts; pages 1, 21 and 22 are cover, closing and palette reference. See the [evidence and verdict register](../../pptx/story/overview_story_verdicts_2026_10_06.json).
