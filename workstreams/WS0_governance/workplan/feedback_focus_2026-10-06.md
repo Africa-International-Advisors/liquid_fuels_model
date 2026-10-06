@@ -328,3 +328,18 @@ The local raw-download payload remains a sharing gap pending approval; do not
 claim Manish can access it from main. Manish should pull main after publication.
 Record actual meeting decisions separately; this document contains preparation
 and proposed actions.
+
+
+## Pending visual feedback - canonical Convergence pack, 6 October 2026
+
+Status: logged only. Nigel requested feedback collection before implementation.
+Reference: current 22-page [Convergence PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf), page 8 (C4 refinery capacity).
+
+| Item | Feedback / finding | Proposed action | Status |
+|---|---|---|---|
+| VIS-01: blue explanatory text | Scenario headings, history disclaimer, 2036 volume labels and reported-output note feel too prominent; they compete with the title and charts. | Review dark grey for these text elements; retain navy for charts, navigation and the divider. Nigel to review the treatment before applying it across the pack. | Pending; no slide changes |
+| VIS-02: divider brand colour | Nigel asked whether the filled circle uses the Vopak logo blue. Page 8 PPTX shape XML confirms circle fill and outline are both `#0A2373`. `pptx/brand_configs/vopak.py` records the same value as the dominant opaque pixel sampled from the supplied logo; `footer_layout.py` uses the brand primary accent and a white arrow. | Keep the existing colour pending further feedback. The current divider matches the recorded logo-derived primary blue. | Checked; no slide changes |
+
+Owner: Nigel (visual direction); presentation builder implements after instruction.
+Revisit when Nigel finishes the feedback round and requests action. This entry
+changes no deck, model input or analytical conclusion.
