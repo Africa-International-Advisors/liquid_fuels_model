@@ -27,8 +27,8 @@ Extract paths are under `assumptions/2026/`; where each original is held is in
 | | Diesel used by agriculture | Department energy balances | `timeseries/energy_balance_department.csv` | 2007–2021 | litres | 2016–2017 are about double the other years | Partial: ends 2021; definition break |
 | Industry | Manufacturing, real value added | P0441, code AR1003 | `timeseries/macro_statssa.csv` | 1993–2025 | rand, constant 2015 prices | One release vintage | Sourced |
 | | Mining and quarrying, real value added | P0441, code AR1002 | `timeseries/macro_statssa.csv` | 1993–2025 | rand, constant 2015 prices | One release vintage | Sourced |
-| | Manufacturing production volume index | Stats SA P3041.2 | — | — | — | — | Open: needs manual download |
-| | Mining production volume index | Stats SA P2041 | — | — | — | — | Open: needs manual download |
+| | Manufacturing production volume index | Stats SA P3041.2, July 2026 | candidate `activity_statssa_monthly.csv` | Jan 1998 – Jul 2026 | index, 2019=100 | One release | Sourced (candidate) |
+| | Mining production volume index | Stats SA P2041, July 2026 | candidate `activity_statssa_monthly.csv` | Jan 2003 – Jul 2026 | index, 2019=100 | One release | Sourced (candidate) |
 | | Diesel used by industry and mining | Department energy balances | `timeseries/energy_balance_department.csv` | 2007–2021 | litres | Sector boundaries shift in 2016 | Partial: ends 2021 |
 | Power | Gas turbine output, Eskom and independent producers | Eskom integrated reports, years to March | `timeseries/ocgt_generation_eskom.csv` | FY2022–FY2026 (Eskom); FY2023–FY2026 (combined) | GWh | Overlapping years agree across reports (none revised) | Sourced |
 | | Diesel burned, litres | Minister of Public Enterprises, replies reported in the press (Eskom's own turbines) | Not extracted | FY2022: 571 ML; FY2023: 937.5 ML; FY2025: 679 ML | litres | FY2025 from the reply itself (NW1980); the other two from press reports | Partial: three years, FY2024 missing; see follow-up |
@@ -37,7 +37,7 @@ Extract paths are under `assumptions/2026/`; where each original is held is in
 | Economic context | Real GDP and GDP per person | P0441 (code AR1000) and P0302 population | `timeseries/macro_statssa.csv` | 1993–2025; population to 2026 | rand, constant 2015 prices; persons | One release vintage; years after 2026 are projections | Sourced |
 | | Growth forecast | National Treasury Budget Review 2026, chapter 2 | `timeseries/gdp_growth_treasury.csv` | 2024–2028 | % a year, real | Single edition | Sourced |
 | | Petrol and diesel prices, monthly | Department "Fuel Price History" | `timeseries/fuel_prices_department.csv`; **candidate to November 2025** in `runs/manish_candidate_20261006/timeseries/` | Vintage: Jan 2011 – Apr 2024. Candidate: Jan 2011 – Nov 2025 | cents per litre, nominal | All 1,113 overlapping values unchanged in the candidate | Sourced to Feb 2026 as a candidate (six of seven series from Dec 2025); later months not posted |
-| | Consumer price index for real prices | Stats SA P0141 | — | — | — | — | Open: needs manual download |
+| | Consumer price index for real prices | Stats SA P0141, August 2026 | candidate `activity_statssa_monthly.csv` | Jan 2008 – Aug 2026 | index, December 2024=100 | One release | Sourced (candidate) |
 | Plant | Refinery nameplate capacity | FIASA annual report 2025, p.49 | `timeseries/refinery_capacity_reported.csv` | 2016–2025 | barrels a day | Single edition | Sourced (capacity, not output) |
 | | Refinery output by product | Department energy balances | `timeseries/energy_balance_department.csv` | 2007–2021 | litres | — | Partial: ends 2021; implied 2022–2024 output in the package 4 balance |
 | | Secunda and Natref refined output, all products | Sasol production and sales metrics, years to June | Not extracted | FY2020–FY2026 | million barrels | Overlapping years agree across the three editions read | Partial: no product split |
@@ -70,7 +70,7 @@ Not collected.
 
 | Item | Owner | Next action |
 |---|---|---|
-| Stats SA P3041.2 manufacturing, P2041 mining, P7162 land transport (time-series workbooks), P0141 CPI | Manish | Manual download into `external/data/raw/statssa/`; the site returns a block page to scripts. Then add readers and tests, as for GDP |
+| Stats SA provincial GDP (P0441.2) | Manish | Downloaded; reader not written yet |
 | Tonne-kilometres for road and rail | Manish | Rail tonnes confirmed (see second follow-up); tonne-km is not in the results coverage read; no road series identified |
 | Diesel burned for power, litres | Manish | FY2024 litres not found (only R23.4 bn of spend); primary replies for FY2022 and FY2023 not retrieved |
 | Fuel prices after February 2026 | Manish | Nothing posted by the department yet; the fetcher will pick new months up when they appear |
@@ -221,3 +221,34 @@ of the workbook's implied 0.244. It changes model results.
 Dropped by Manish: requests to RTMC for the fleet by fuel type and to the
 paper's authors for newer distance figures. The fleet fuel split and the 2014
 distance values therefore stay as they are, marked partial.
+
+## Stats SA monthly releases obtained, 6 October
+
+The four releases were downloaded through the browser (the site refuses
+scripts but serves a signed-in browser session) and are kept as downloaded in
+`external/data/raw/statssa/`, with the provincial GDP release (P0441.2, 2024),
+which has not been read yet. Reader: `statssa.parse_monthly_series`; command:
+`python -m lfm.scripts.fetch_statssa_monthly --vintage 2026`. Output so far is
+a candidate, `activity_statssa_monthly.csv` (2,753 monthly values), not in the
+vintage.
+
+| Series | Release | Coverage | Unit |
+|---|---|---|---|
+| Mining production volume: total, excluding gold, coal | P2041, July 2026 | Jan 2003 – Jul 2026 | index, 2019=100 |
+| Manufacturing production volume, total | P3041.2, July 2026 | Jan 1998 – Jul 2026 | index, 2019=100 |
+| Freight payload: total, road, rail | P7162, July 2026 | Jan 2008 – Jul 2026 | thousand tonnes |
+| Passenger journeys: total, road, rail | P7162, July 2026 | Jan 2008 – Jul 2026 | thousand journeys |
+| Consumer price index, headline | P0141, August 2026 | Jan 2008 – Aug 2026 | index, December 2024=100 |
+
+All are actual values, not seasonally adjusted. This closes the open rows for
+the manufacturing and mining indices and the consumer price index, and turns
+the two-year freight payload series into a full one.
+
+Checks: annual rail payload is 160.7 million tonnes for 2024 and 168.3 for
+2025, and road 979.8 for 2024, the same as the December 2025 release already
+extracted; road for 2025 is 975.2 against 976.5 in that release, a revision of
+1.3 million tonnes. The 2019 averages of both volume indices are 100.0.
+
+What the freight series shows: rail carried 214 million tonnes in 2019, 156 in
+2022 and 168 in 2025; road carried 896, 1,049 and 975. Tonnes are not
+tonne-kilometres, which Stats SA does not publish.

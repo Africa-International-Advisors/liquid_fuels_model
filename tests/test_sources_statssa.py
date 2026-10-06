@@ -123,3 +123,31 @@ def test_quarterly_series_take_unadjusted_constant_price_rows_only() -> None:
     assert [s["code"] for s in series] == ["QRU1002", "QRU1000"]
     assert series[0]["values"] == {"2025-Q4": 54e6, "2026-Q1": 47e6, "2026-Q2": 52e6}
     assert series[1]["name"] == "gdp" and "2026-Q2" not in series[1]["values"]
+
+
+def test_monthly_series_are_read_by_code_and_missing_codes_are_reported() -> None:
+    rows = [
+        ["H01", "H02", "H03", "H04", "H05", "H16", "H17", "H18", "H25", "MO062026", "MO072026"],
+        ["P2041", "Mining", "FMP20000", "Physical volume", "Total, gold included",
+         "Actual indices", "Index", "2019=100", "Monthly", 96, "91,4"],
+        ["P2041", "Mining", "FMP20000S", "Physical volume", "Total, gold included",
+         "Seasonally adjusted indices", "Index", "2019=100", "Monthly", 95.0, 94.0],
+        ["P2041", "Mining", "FMP21000", "Physical volume", "Coal",
+         "Actual indices", "Index", "2019=100", "Monthly", 93.0, ".."],
+    ]
+    wanted = {"FMP20000": ("mining_volume_total", "index, 2019=100"),
+              "FMP21000": ("mining_volume_coal", "index, 2019=100"),
+              "FMP99999": ("not_there", "index")}
+    series, warnings = statssa.parse_monthly_series(rows, wanted)
+    by = {s["name"]: s for s in series}
+    assert by["mining_volume_total"]["values"] == {"2026-06": 96.0, "2026-07": 91.4}
+    assert by["mining_volume_coal"]["values"] == {"2026-06": 93.0}
+    assert warnings == ["series FMP99999 not found"]
+
+
+def test_latest_release_file_picks_the_newest_stamp(tmp_path) -> None:
+    for name in ("P7162 Land transport survey(202605).zip", "P7162 Land transport survey(202607).zip",
+                 "P7162 Land transport survey.zip"):
+        (tmp_path / name).write_bytes(b"")
+    found = statssa.latest_release_file(tmp_path, "P7162 Land transport survey(*).zip")
+    assert found.name == "P7162 Land transport survey(202607).zip"

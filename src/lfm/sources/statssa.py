@@ -159,6 +159,123 @@ def parse_quarterly_constant_price_series(rows: list[list]) -> tuple[list[dict],
 
 
 # --------------------------------------------------------------------------- #
+# Monthly releases in Stats SA's time-series layout
+#
+#     statssa.gov.za > Time series data > Excel
+#         "P2041 Mining Production and sales(202607).zip"
+#         "P3041.2 Manufacturing_ Production and sales(202607).zip"
+#         "P7162 Land transport survey(202607).zip"
+#         "P0141 - CPI(COICOP) from Jan 2008 (202608).zip"
+#
+# Each zip holds one or more workbooks with a single sheet: descriptor columns
+# headed H01, H02, ... and one column per month headed MO<mm><yyyy>. H03 is the
+# series code. The zips are kept as downloaded and read in place.
+
+_MONTH_COLUMN = re.compile(r"^MO(0[1-9]|1[0-2])((?:19|20)\d{2})$")
+_RELEASE_STAMP = re.compile(r"\((20\d{4})\)")
+
+# release -> (file pattern, workbook inside the zip, {series code: (series name, unit)})
+MONTHLY_RELEASES: dict[str, tuple[str, str, dict[str, tuple[str, str]]]] = {
+    "mining": ("P2041 Mining Production and sales(*).zip", "from 2003", {
+        "FMP20000": ("mining_volume_total", "index, 2019=100"),
+        "FMP20001": ("mining_volume_excluding_gold", "index, 2019=100"),
+        "FMP21000": ("mining_volume_coal", "index, 2019=100"),
+    }),
+    "manufacturing": ("P3041.2 Manufacturing*Production and sales(*).zip", "from 1998", {
+        "MPI30000": ("manufacturing_volume_total", "index, 2019=100"),
+    }),
+    "land_transport": ("P7162 Land transport survey(*).zip", "Land transport", {
+        "payl_totl": ("freight_payload_total", "thousand tonnes"),
+        "roadpayl": ("freight_payload_road", "thousand tonnes"),
+        "railpayl": ("freight_payload_rail", "thousand tonnes"),
+        "nops_totl": ("passenger_journeys_total", "thousand journeys"),
+        "roadnops": ("passenger_journeys_road", "thousand journeys"),
+        "railnops": ("passenger_journeys_rail", "thousand journeys"),
+    }),
+    "consumer_prices": ("P0141 - CPI(COICOP) from Jan 2008 (*).zip", "CPI", {
+        "CPI60001": ("consumer_price_index_headline", "index, December 2024=100"),
+    }),
+}
+
+
+def latest_release_file(folder: Path, pattern: str) -> Path | None:
+    """The newest zip matching ``pattern``, by the (yyyymm) stamp in its name."""
+    def key(path: Path) -> str:
+        match = _RELEASE_STAMP.search(path.name)
+        return match.group(1) if match else ""
+
+    files = [p for p in folder.glob(pattern) if key(p)]
+    return max(files, key=key) if files else None
+
+
+def read_release_zip(path: Path, member_contains: str) -> list[list]:
+    """Rows of the workbook inside a release zip whose name contains ``member_contains``."""
+    import io
+    import warnings
+    import zipfile
+
+    import openpyxl
+
+    with zipfile.ZipFile(path) as archive:
+        names = [n for n in archive.namelist()
+                 if n.lower().endswith(".xlsx") and member_contains.lower() in n.lower()]
+        if not names:
+            raise ValueError(f"{path.name}: no workbook with {member_contains!r} in its name")
+        data = archive.read(names[0])
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        sheet = openpyxl.load_workbook(io.BytesIO(data), read_only=True, data_only=True).worksheets[0]
+        rows = []
+        for row in sheet.iter_rows(values_only=True):
+            if row[0] is None:      # the sheets declare a million rows; data stops at the first blank
+                break
+            rows.append(list(row))
+        return rows
+
+
+def parse_monthly_series(rows: list[list], wanted: dict[str, tuple[str, str]]) -> tuple[list[dict], list[str]]:
+    """Monthly values for the series codes in ``wanted``.
+
+    Returns ``(series, warnings)``; each series is
+    ``{"code", "name", "unit", "values": {"2026-07": float}}``. A wanted code
+    that is not in the sheet is reported, never silently skipped.
+    """
+    if not rows:
+        return [], ["sheet is empty"]
+    header = [str(cell).strip() if cell is not None else "" for cell in rows[0]]
+    if "H03" not in header:
+        return [], ["expected column heading H03 (series code) not found"]
+    code_col = header.index("H03")
+    months = {
+        i: f"{m.group(2)}-{m.group(1)}" for i, h in enumerate(header) if (m := _MONTH_COLUMN.match(h))
+    }
+    if not months:
+        return [], ["no month columns found"]
+    out: list[dict] = []
+    found: set[str] = set()
+    for row in rows[1:]:
+        code = str(row[code_col] or "").strip()
+        if code not in wanted or code in found:
+            continue
+        found.add(code)
+        values = {}
+        for i, month in months.items():
+            cell = row[i] if i < len(row) else None
+            if isinstance(cell, (int, float)) and not isinstance(cell, bool):
+                values[month] = float(cell)
+            elif isinstance(cell, str) and cell.strip():
+                try:
+                    values[month] = float(cell.replace(",", ".").replace(" ", ""))
+                except ValueError:
+                    pass                      # ".." and similar mark a month not available
+        name, unit = wanted[code]
+        out.append({"code": code, "name": name, "unit": unit, "values": values})
+    missing = sorted(set(wanted) - found)
+    warnings = [f"series {code} not found" for code in missing]
+    return out, warnings
+
+
+# --------------------------------------------------------------------------- #
 # Mid-year population estimates (P0302)
 #
 #     statssa.gov.za > Publications > P0302 > latest release
