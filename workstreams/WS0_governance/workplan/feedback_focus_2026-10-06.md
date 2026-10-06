@@ -414,3 +414,41 @@ headings bold. Preserve font size and numeric legibility, units and the explicit
 illustrative-allocation warning. Review alongside VIS-01 text colour feedback
 before applying the treatment to comparable charts across the pack.
 Owner: Nigel (visual direction); builder implementation after instruction.
+
+
+### VIS-04 / R6: show the path from current volumes to greater market penetration
+
+Status: logged for design review; no slide or model changes.
+Nigel requested a clearer arrow-led explanation of how current customer volumes
+can increase through price, reach/access and the limits of infrastructure catchments.
+Avoid prominent red emphasis; use the restrained presentation palette and simple
+arrows to communicate progression.
+
+Proposed flow: total relevant petrol/diesel demand (TAM) -> physically reachable
+customer demand -> demand competitive on delivered price and service -> demand
+with commercial customer access -> captured unique final customer deliveries.
+Show current verified served volumes within the reachable market, then the
+additional candidate volumes that could pass these gates. Until those volumes
+are evidenced, show an unquantified path rather than invented penetration values.
+
+- Define TAM by product, year and customer geography. Provincial totals alone
+  do not define an infrastructure catchment or Vopak-addressable market.
+- Define reach from ports, storage and feasible pipeline/road/rail routes to
+  customer destinations. Show receipt/dispatch limits, compatible tanks and
+  route constraints; published storage capacity is not annual customer demand.
+- Compare full delivered price and service with alternatives for the same
+  customer/product/period. Price can expand the economically viable catchment;
+  physical reach alone does not establish competitive access.
+- Test contracts, switching and customer rights before identifying capture.
+  Remove shared Durban-Lesedi transfers from unique final-delivery volumes.
+- Present gates as constraints and assumptions, linked to SCN-01 L/M/H cases.
+  They need not be a fixed chronological sequence; failed or unknown gates
+  should explain what limits further penetration.
+
+Placement to review: use the market-penetration flow in the R6 outlook exhibits
+and summarize it on page 2. Page 6 currently addresses provincial supply origin;
+if repurposed, retain its national-versus-provincial accounting explanation in a
+supporting exhibit and update overview references. Do not imply that the existing
+illustrative domestic/import split measures Vopak penetration.
+Owner: Nigel (story/visual direction); Manish (customer/route evidence and gates).
+Revisit at the end of the feedback round, before layout implementation.
