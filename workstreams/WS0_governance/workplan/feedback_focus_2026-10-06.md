@@ -9,6 +9,41 @@ below are proposed discussion targets, not recorded meeting commitments.
 
 ## Today's direction confirmed by Nigel
 
+### Start instruction for Manish and his LLM
+
+Preserve any local work, then start from the latest shared main:
+
+```powershell
+git fetch origin
+git switch -c manish/data-validation-2026-10-06 origin/main
+```
+
+If that branch already exists, switch to it and merge `origin/main` using the
+[branch workflow](branch_workflow.md). Do not recreate it or discard local changes.
+Open [the PDF handover](../../../pptx/output/delivered/Vopak_Manish_Handover_2026_10_06.pdf):
+page 6 is the five-package handback checklist; page 7 is the driver evidence checklist.
+
+Copy this instruction into the LLM working on Manish's branch:
+
+> Read AGENTS.md, CLAUDE.md, GATE_CHECKLIST.md and this dated runbook. Work through
+> five packages: integrity, traceability, provincial demand after 2022, matched
+> production/import/export/stock balance, and driver evidence. Use the exact
+> source paths and staged fetch commands below. For drivers, collect passenger
+> vehicles, freight, agriculture, industry (manufacturing and mining separately),
+> power, electrification and GDP/price context. Also resolve refinery source/key
+> flags under integrity and fuel-balance work. Preserve originals and existing
+> observations; implement and test missing downloads/parsers. Return extracted
+> data, a source-to-file-to-function map, old/new flags and sourced/partial/open
+> status for every checklist item. Every open item needs an owner and next action.
+> Do not silently replace assumptions or quantify lever scenarios today. Restore
+> staging environment variables, run governance and relevant tests, then commit
+> intended code, registered inputs and review evidence to Manish's branch. Publish
+> that branch for Nigel's review; do not push analyst changes directly to main.
+
+**Acceptance:** the five packages and seven driver categories each have reviewable
+evidence or an explicit gap. A passing fetch command alone does not close a row.
+Nigel reviews source fidelity and accepted input changes before model integration.
+
 Nigel works on main. Manish creates his own branch from current origin/main and
 returns his changes for review. See [branch commands](branch_workflow.md).
 Today's objective is **data first**, not quantified lever scenarios or a GDP
