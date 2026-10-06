@@ -132,3 +132,20 @@ def apply_confidentiality(prs):
         p.font.name=cfg.THEME_FONT;p.font.size=Pt(8)
         p.font.color.rgb=RGBColor.from_string('BDBEC1' if i in (0,15) else '767676')
         p.space_before=p.space_after=Pt(0)
+
+
+def apply_commentary_hierarchy(prs):
+    """Keep numbered commentary headings subordinate to panel subtitles."""
+    import re
+    from pptx.dml.color import RGBColor
+    colour=RGBColor.from_string(cfg.THEME_COLOURS['accent4'])
+    for s in prs.slides:
+        for q in s.shapes:
+            if not (q.has_text_frame and q.left>=Inches(8) and
+                    Inches(2.2)<=q.top<Inches(6.9) and
+                    re.match(r'^\d{2}(?:\s*[|·]|\s+[A-Z])',q.text)):
+                continue
+            for p in q.text_frame.paragraphs:
+                for font in [p.font]+[r.font for r in p.runs]:
+                    font.name=cfg.THEME_FONT;font.size=Pt(12)
+                    font.bold=True;font.color.rgb=colour
