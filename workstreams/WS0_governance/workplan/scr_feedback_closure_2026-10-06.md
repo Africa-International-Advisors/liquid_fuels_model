@@ -22,3 +22,5 @@ Validation: PowerPoint render and PDF export; package and slide-boundary QA; eig
 Additional p10 review: separate legends for sales colour bands (bn litres/year), Vopak/port-storage/waypoint symbols, and schematic road/pipeline routes. Grey explicitly means unassessed; no market-share encoding.
 
 Additional design feedback: p3 map labels use transparent backgrounds and shading-aware contrast; two-panel pages have a native circle/right-arrow divider marker at the subtitle junction; p5 chart is taller with source/accounting notes in two columns; p17 is an editable palette appendix with actual theme/map HEX values. Original SCR page numbering retained.
+
+Divider follow-up: create missing vertical divider and subtitle rules on two-panel pages, including p15. Every evidence-panel page checked for circle/right-arrow marker; p15 visually rendered.

@@ -94,7 +94,18 @@ def apply_divider_markers(prs,brand):
     from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
     for s in prs.slides:
         dividers=[q for q in s.shapes if q.shape_type==9 and abs(q.left-Inches(7.88))<Inches(.02) and q.height>Inches(1)]
-        if not dividers:continue
+        two_panel=any(q.has_text_frame and q.left>=Inches(8) and
+                      abs(q.top-Inches(1.78))<Inches(.02) for q in s.shapes)
+        if not dividers and not two_panel:continue
+        if not dividers:
+            q=s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,Inches(7.88),Inches(2.13),Inches(7.88),Inches(6.86))
+            q.name='SCR panel divider';q.line.color.rgb=brand.ink;q.line.width=Pt(.55)
+        for left,right in [(.5,7.55),(8.12,12.15)]:
+            existing=any(q.shape_type==9 and abs(q.top-Inches(2.13))<Inches(.02)
+                         and abs(q.left-Inches(left))<Inches(.02) and q.width>Inches(1) for q in s.shapes)
+            if not existing:
+                q=s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,Inches(left),Inches(2.13),Inches(right),Inches(2.13))
+                q.name='SCR subtitle rule';q.line.color.rgb=brand.ink;q.line.width=Pt(.55)
         for q in list(s.shapes):
             if q.name.startswith('SCR divider marker'):q._element.getparent().remove(q._element)
         x,y=7.88,2.13
