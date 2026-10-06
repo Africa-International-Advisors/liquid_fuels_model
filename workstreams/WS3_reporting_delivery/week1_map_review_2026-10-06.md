@@ -185,3 +185,8 @@ The former page 9 now leads immediately after the cover. Evidence/implications a
 | 16 | Closing | Retained |
 
 SA01 is covered by pages 3?4; SA02 by page 9 and the access specifications. All fourteen partner questions have an evidence page or explicit placeholder. Rendered in PowerPoint, exported to a matching 16-page PDF and checked for package integrity and slide-edge bounds. Governance coverage passes with the existing 50 open exceptions; this remains a review draft.
+
+
+### SCR master table and page traceability
+
+Page 2 is now a full-width native PowerPoint table matching the supplied roadmap structure: SCR reference, evidence/required next step, proposed lead, timing/output, and linked deep-dive page numbers. Seven rows (S1/S2/C1/C2/C3/R1/R2) cover pages 3?15. Each analytical page carries its row reference above the title and an internal link back to page 2. Table page links and backlinks were checked against slide relationships; the 16-page PowerPoint/PDF pair was rendered and visually reviewed. No extra pages or changed data were introduced. Owners and week windows remain proposed, and investment remains optional after the flow case.
