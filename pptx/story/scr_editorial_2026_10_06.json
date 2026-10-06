@@ -1,12 +1,12 @@
 {
-  "scope": "Editorial revision only. Preserve source data, illustrative values, slide order and supplied Vopak master.",
+  "scope": "Week 1 convergence draft: SARS primary trade and updated driver evidence accepted for reporting; provincial estimates separate; accounting, model calibration and Vopak capture remain open. Supplied master and slide order retained.",
   "titles": {
-    "2": "Size the fuel market, then test what Vopak can serve",
+    "2": "Size the fuel market, reconcile supply, then test Vopak access",
     "3": "Three provinces account for 69% of reported fuel sales",
     "4": "Provincial sales show different demand patterns over time",
-    "5": "Imports are material, but the matched fuel balance is still open",
+    "5": "Customs records 10.0 billion litres of net diesel imports in 2024",
     "6": "Provincial demand is known; its supply origin still needs evidence",
-    "7": "Demand drivers move differently across vehicles and sectors",
+    "7": "Observed activity helps define the fuel levers; intensities remain open",
     "8": "Refinery capacity has fallen; redevelopment remains conditional",
     "9": "Transport cost shapes the market Durban and Lesedi can reach",
     "10": "Compare Durban, Matola and Walvis Bay for the same inland customer",
@@ -32,7 +32,7 @@
           "Colours show provincial sales totals, not density or customer catchments. Only Durban and Lesedi are labelled; competitor detail is on pages 12 and 14."
         ]
       ],
-      "action": "Manish: refresh a complete year and reconcile the source flags. Nigel: confirm the customer markets to test against Durban and Lesedi."
+      "action": "Nigel: confirm customer markets for Durban and Lesedi. Manish: retain the observed 2022 map; present later estimates separately with national-source flags."
     },
     "4": {
       "findings": [
@@ -41,32 +41,32 @@
           "The reported series places Gauteng above the other provinces throughout 2013–2022. Volumes differ across the smaller markets."
         ],
         [
-          "The series stops at 2022",
-          "2022 is the latest complete year in this extract. Only Q1 is available for 2023, so it is excluded from annual comparisons."
+          "Later provinces are estimates",
+          "2024 petrol estimates: Gauteng 3.47, KZN 1.47, Western Cape 1.41 bn L. These hold 2022 shares; no later observed provincial sales were found."
         ],
         [
-          "Historical reconciliation is open",
-          "Provincial totals differ from national sales in six years: 2013, 2014, 2015, 2017, 2018 and 2021."
+          "Historical differences are traced",
+          "The 2013 national parser is corrected on the analyst branch. 2014/2015 source versions differ; 2018 district coverage is incomplete. Preserve the flags."
         ]
       ],
-      "action": "Manish: reconcile flagged workbook cells and source newer observed sales. Record revisions and incomplete periods before updating the outlook."
+      "action": "Manish: reconcile source selections and retain estimate labels. Nigel: decide whether estimated petrol volumes belong in the outlook; diesel booking shares are less stable."
     },
     "5": {
       "findings": [
         [
-          "Sales measure the domestic market",
-          "Reported petrol/diesel sales are a demand proxy. They are not imports plus exports; exports leave the national market."
+          "Customs supports the trade selection",
+          "SARS records diesel imports of 10.793 and exports of 0.796 bn litres in 2024. Net imports are 9.997; use customs as the primary trade source."
         ],
         [
-          "The balance needs matched inputs",
-          "Domestic production plus imports, less exports and stock build, gives consumption. Compare that result with reported sales and explain the residual."
+          "Reported sales remain a proxy",
+          "FIASA reports petrol/diesel sales of 20.763 bn litres for 2024. Editions differ; this demand proxy remains unverified and is not imports plus exports."
         ],
         [
-          "Diesel trade remains disputed",
-          "Government diesel imports are 10.8 bn litres; FIASA gives 14.793. Production and stock changes for 2024 remain open."
+          "Production and stocks remain open",
+          "Production and stocks remain unresolved. The proposed 3-4 bn litre diesel gap is a hypothesis, not measured consumption."
         ]
       ],
-      "action": "Manish: match trade, actual production and stock changes by product and year. Nigel: obtain product-specific port records."
+      "action": "Manish: rebuild the balance CSV from SARS; match product, year, actual output and stock changes. Nigel: agree the sales selection and obtain customer/port evidence."
     },
     "9": {
       "findings": [
@@ -135,13 +135,30 @@
         ]
       ],
       "action": "Nigel: confirm candidate flows and inventory policy. Manish and Henry: test usable spare tanks, peak flows and operating allowances before sizing new capacity."
+    },
+    "8": {
+      "findings": [
+        [
+          "Capacity has fallen",
+          "Published capacity falls from 718 to 358 thousand bbl/day between 2020 and 2022. Redevelopment remains conditional."
+        ],
+        [
+          "Reported output is different",
+          "FY2024 Secunda output is 29.1 million barrels; Natref is 17.8 for Sasol’s share. Both cover all products and a year to June."
+        ],
+        [
+          "A product bridge is needed",
+          "Match product yields, calendar years and downtime before calculating import effects. Capacity does not measure actual output."
+        ]
+      ],
+      "action": "Manish: match operator output to product/year and document Natref ownership basis. Henry: review technical mechanisms. Nigel: agree refinery scenario timing."
     }
   },
   "overview_rows": [
-    "Demand baseline and regional market\nProvincial sales locate demand. Refresh the complete year and reconcile historical totals.",
-    "Domestic supply and finished imports\n2024 trade is sourced, but diesel imports conflict. Match production/stocks and identify import entry ports.",
-    "Demand drivers\nVehicles, sectors, power and electrification move differently. Source the evidence first, then quantify fuel effects.",
-    "Refinery availability\nCapacity has fallen. Separate operating output from conditional redevelopment and agree plant scenarios.",
+    "Demand baseline and regional market\n2022 provinces are observed; 2023-2024 are estimated separately. Resolve source versions before forecasting.",
+    "Domestic supply and finished imports\nSARS 2024 net diesel imports: 9.997 bn L. Match actual production, stocks and sales coverage; port allocation remains open.",
+    "Demand drivers\nMonthly activity to Jul 2026; GDP Q2 2026; inland prices Oct 2026. Define activity-to-litres bridges before calibrating cases.",
+    "Refinery availability\nCapacity history and reported operator output are distinct. Align fiscal/calendar years and product yields; redevelopment stays conditional.",
     "Competing supply routes\nCompare Durban, Matola and Walvis Bay for one customer. Test full route cost, capacity and customer access.",
     "Vopak share and additional demand\nMatch unique deliveries to regional demand. Test additional volumes against physical and commercial access.",
     "Storage and optional investment\nUse published tanks as context. Assess additional services only after the incremental customer-flow case."

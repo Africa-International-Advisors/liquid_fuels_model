@@ -26,7 +26,15 @@ def apply_editorial(prs, text, root, brand):
         replace(q, title)
     for page, content in copy['panels'].items():
         panel(prs.slides[int(page)-1], text, brand, content['findings'], content['action'])
+    history=prs.slides[3]
+    for q in history.shapes:
+        if q.has_text_frame and q.top==Inches(7.16):
+            replace(q,'Source: DMPR provincial sales 2013–2022; Manish held-share 2024 petrol estimates (FIASA total unverified).')
+    history.notes_slide.notes_text_frame.text+='\nEstimated figures: story/evidence_2026_10_06/provincial_petrol_diesel_2013_2024_2026-10-06.csv. Held 2022 shares, not observed later sales.'
     overview = prs.slides[1]
+    for q in overview.shapes:
+        if q.has_text_frame and q.top==Inches(7.16):
+            replace(q,'Source: Partner SA storyboard; SARS / Stats SA / operator evidence, 6 Oct 2026. Remaining gaps labelled.')
     t = next(q.table for q in overview.shapes if q.has_table)
     for i, value in enumerate(copy['overview_rows'], 1):
         cell = t.cell(i, 1)
@@ -115,6 +123,28 @@ def apply_divider_markers(prs,brand):
         for a,b in [((x-.035,y-.065),(x+.035,y)),((x+.035,y),(x-.035,y+.065))]:
             q=s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,Inches(a[0]),Inches(a[1]),Inches(b[0]),Inches(b[1]))
             q.name='SCR divider marker: arrow';q.line.color.rgb=brand.accent_primary;q.line.width=Pt(1.1)
+
+
+def lead_with_national_accounting(prs,brand):
+    """Keep the national accounting view ahead of the provincial deep dives."""
+    from scr_navigation import apply_navigation
+    ids=list(prs.slides._sldIdLst)
+    order=[0,1,4,2,3]+list(range(5,len(ids)))
+    for sid in ids:prs.slides._sldIdLst.remove(sid)
+    for i in order:prs.slides._sldIdLst.append(ids[i])
+    # Link relationships target slide parts and survive ordering; displayed pages change.
+    overview=prs.slides[1]
+    table=next(q.table for q in overview.shapes if q.has_table)
+    for row,mapping in [(1,{'3':'4','4':'5'}),(2,{'5':'3','6':'6'})]:
+        for run in table.cell(row,4).text_frame.paragraphs[0].runs:
+            lead=' / ' if run.text.startswith(' / ') else ''
+            run.text=lead+mapping[run.text.strip(' /')]
+    for page,s in enumerate(prs.slides,1):
+        for q in s.shapes:
+            if q.has_text_frame and q.left>Inches(12) and q.top>Inches(7):
+                if q.text.strip().isdigit():replace(q,str(page))
+        s.notes_slide.notes_text_frame.text+=f'\nConvergence order: national accounting p3; provincial map p4; history/estimates p5. Current page {page}.'
+    apply_navigation(prs,brand)
 
 
 def apply_confidentiality(prs):

@@ -1,0 +1,236 @@
+country,period,scenario,flow,product,value,unit,months_reported
+ZAF,2010,shared,export,diesel,1480739654.23,kilograms,12
+ZAF,2010,shared,export,fuel_oil,914242422.41,kilograms,12
+ZAF,2010,shared,export,jet,92763428.68,kilograms,12
+ZAF,2010,shared,export,paraffin,79358441.95,kilograms,12
+ZAF,2010,shared,export,petrol,1197958682.9,kilograms,12
+ZAF,2010,shared,import,diesel,2163298090.59,kilograms,12
+ZAF,2010,shared,import,fuel_oil,63447505.88,kilograms,4
+ZAF,2010,shared,import,jet,213471392.0,kilograms,10
+ZAF,2010,shared,import,paraffin,7668.28,kilograms,3
+ZAF,2010,shared,import,petrol,1571398227.03,kilograms,12
+ZAF,2011,shared,export,diesel,1256411971.36,kilograms,12
+ZAF,2011,shared,export,diesel,0.0,not stated,6
+ZAF,2011,shared,export,fuel_oil,954194245.49,kilograms,12
+ZAF,2011,shared,export,fuel_oil,0.0,not stated,2
+ZAF,2011,shared,export,jet,142198005.1,kilograms,12
+ZAF,2011,shared,export,jet,0.0,not stated,2
+ZAF,2011,shared,export,paraffin,75510485.91,kilograms,12
+ZAF,2011,shared,export,paraffin,0.0,not stated,2
+ZAF,2011,shared,export,petrol,983375308.58,kilograms,12
+ZAF,2011,shared,export,petrol,0.0,not stated,2
+ZAF,2011,shared,import,diesel,3152770697.58,kilograms,12
+ZAF,2011,shared,import,fuel_oil,97756494.01,kilograms,5
+ZAF,2011,shared,import,jet,199309237.0,kilograms,9
+ZAF,2011,shared,import,paraffin,41510.0,kilograms,3
+ZAF,2011,shared,import,petrol,1815092339.33,kilograms,12
+ZAF,2012,shared,export,diesel,1189502891.31,kilograms,12
+ZAF,2012,shared,export,diesel,0.0,not stated,12
+ZAF,2012,shared,export,diesel_biodiesel_blend,1005633.79,kilograms,12
+ZAF,2012,shared,export,diesel_biodiesel_blend,0.0,not stated,3
+ZAF,2012,shared,export,fuel_oil,984282379.49,kilograms,12
+ZAF,2012,shared,export,fuel_oil,0.0,not stated,3
+ZAF,2012,shared,export,jet,73299656.12,kilograms,12
+ZAF,2012,shared,export,jet,0.0,not stated,3
+ZAF,2012,shared,export,paraffin,122981328.63,kilograms,12
+ZAF,2012,shared,export,paraffin,0.0,not stated,4
+ZAF,2012,shared,export,petrol,828565133.91,kilograms,12
+ZAF,2012,shared,export,petrol,0.0,not stated,12
+ZAF,2012,shared,import,diesel,2782988687.96,kilograms,12
+ZAF,2012,shared,import,diesel,0.0,not stated,3
+ZAF,2012,shared,import,diesel_biodiesel_blend,20489.63,kilograms,5
+ZAF,2012,shared,import,diesel_biodiesel_blend,0.0,not stated,1
+ZAF,2012,shared,import,fuel_oil,63841066.0,kilograms,6
+ZAF,2012,shared,import,jet,174262100.56,kilograms,10
+ZAF,2012,shared,import,jet,0.0,not stated,2
+ZAF,2012,shared,import,paraffin,46960.0,kilograms,2
+ZAF,2012,shared,import,petrol,1247832259.02,kilograms,12
+ZAF,2012,shared,import,petrol,0.0,not stated,3
+ZAF,2013,shared,export,diesel,564941826.62,kilograms,11
+ZAF,2013,shared,export,diesel,147622243.09,litres,2
+ZAF,2013,shared,export,diesel,0.0,not stated,8
+ZAF,2013,shared,export,diesel_biodiesel_blend,411623.35,kilograms,11
+ZAF,2013,shared,export,diesel_biodiesel_blend,0.0,not stated,8
+ZAF,2013,shared,export,fuel_oil,453092734.45,kilograms,11
+ZAF,2013,shared,export,fuel_oil,68837514.0,litres,2
+ZAF,2013,shared,export,fuel_oil,0.0,not stated,8
+ZAF,2013,shared,export,jet,15202153.28,kilograms,10
+ZAF,2013,shared,export,jet,7682827.0,litres,2
+ZAF,2013,shared,export,jet,0.0,not stated,8
+ZAF,2013,shared,export,paraffin,19698039.65,kilograms,11
+ZAF,2013,shared,export,paraffin,5330087.0,litres,2
+ZAF,2013,shared,export,paraffin,0.0,not stated,8
+ZAF,2013,shared,export,petrol,257287996.36,kilograms,11
+ZAF,2013,shared,export,petrol,94981556.93,litres,2
+ZAF,2013,shared,export,petrol,0.0,not stated,8
+ZAF,2013,shared,import,diesel,1483136283.18,kilograms,11
+ZAF,2013,shared,import,diesel,598236054.32,litres,2
+ZAF,2013,shared,import,diesel,0.0,not stated,8
+ZAF,2013,shared,import,diesel_biodiesel_blend,17304.0,kilograms,4
+ZAF,2013,shared,import,diesel_biodiesel_blend,0.0,not stated,4
+ZAF,2013,shared,import,fuel_oil,96043123.0,kilograms,5
+ZAF,2013,shared,import,fuel_oil,0.0,not stated,1
+ZAF,2013,shared,import,jet,47350348.0,kilograms,6
+ZAF,2013,shared,import,jet,0.0,not stated,7
+ZAF,2013,shared,import,paraffin,14813.0,kilograms,6
+ZAF,2013,shared,import,paraffin,600.0,litres,1
+ZAF,2013,shared,import,paraffin,0.0,not stated,6
+ZAF,2013,shared,import,petrol,206807673.3,kilograms,8
+ZAF,2013,shared,import,petrol,75293332.0,litres,2
+ZAF,2013,shared,import,petrol,0.0,not stated,8
+ZAF,2014,shared,export,diesel,1493762628.09,litres,12
+ZAF,2014,shared,export,diesel_biodiesel_blend,493677.36,kilograms,12
+ZAF,2014,shared,export,fuel_oil,2013663906.36,litres,12
+ZAF,2014,shared,export,jet,114794276.0,litres,12
+ZAF,2014,shared,export,paraffin,67471731.75,litres,12
+ZAF,2014,shared,export,petrol,989515894.0,litres,12
+ZAF,2014,shared,import,diesel,4991712326.6,litres,12
+ZAF,2014,shared,import,diesel_biodiesel_blend,28016.1,kilograms,5
+ZAF,2014,shared,import,fuel_oil,54850150.54,litres,10
+ZAF,2014,shared,import,jet,287705170.0,litres,9
+ZAF,2014,shared,import,paraffin,63061.38,litres,10
+ZAF,2014,shared,import,petrol,1150194821.87,litres,12
+ZAF,2015,shared,export,diesel,1612855039.72,litres,12
+ZAF,2015,shared,export,diesel_biodiesel_blend,636012.96,kilograms,12
+ZAF,2015,shared,export,fuel_oil,2243812689.85,litres,12
+ZAF,2015,shared,export,jet,821007133.3,litres,12
+ZAF,2015,shared,export,paraffin,48162814.45,litres,12
+ZAF,2015,shared,export,petrol,1085670442.31,litres,12
+ZAF,2015,shared,import,diesel,6450779034.56,litres,12
+ZAF,2015,shared,import,diesel_biodiesel_blend,2715.0,kilograms,1
+ZAF,2015,shared,import,fuel_oil,116368904.58,litres,9
+ZAF,2015,shared,import,jet,275033120.0,litres,9
+ZAF,2015,shared,import,paraffin,9493.0,litres,5
+ZAF,2015,shared,import,petrol,1869645208.21,litres,12
+ZAF,2016,shared,export,diesel,1885605429.96,litres,12
+ZAF,2016,shared,export,diesel_biodiesel_blend,771434.5,kilograms,12
+ZAF,2016,shared,export,fuel_oil,2431386321.5,litres,12
+ZAF,2016,shared,export,jet,334589960.5,litres,12
+ZAF,2016,shared,export,paraffin,48762894.45,litres,12
+ZAF,2016,shared,export,petrol,1157328794.25,litres,12
+ZAF,2016,shared,import,diesel,4424294964.89,litres,12
+ZAF,2016,shared,import,diesel_biodiesel_blend,303.0,kilograms,3
+ZAF,2016,shared,import,fuel_oil,110464296.71,litres,12
+ZAF,2016,shared,import,jet,104114777.2,litres,10
+ZAF,2016,shared,import,paraffin,4304712.17,litres,8
+ZAF,2016,shared,import,petrol,1395638476.1,litres,12
+ZAF,2017,shared,export,diesel,1782674080.28,litres,12
+ZAF,2017,shared,export,diesel_biodiesel_blend,771546.86,kilograms,12
+ZAF,2017,shared,export,fuel_oil,2234135972.87,litres,12
+ZAF,2017,shared,export,jet,348765788.1,litres,12
+ZAF,2017,shared,export,paraffin,46138749.06,litres,12
+ZAF,2017,shared,export,petrol,1075886159.68,litres,12
+ZAF,2017,shared,import,diesel,6037459910.81,litres,12
+ZAF,2017,shared,import,diesel_biodiesel_blend,1754.0,kilograms,3
+ZAF,2017,shared,import,fuel_oil,107188549.07,litres,9
+ZAF,2017,shared,import,jet,418603994.0,litres,12
+ZAF,2017,shared,import,paraffin,2475570.0,litres,11
+ZAF,2017,shared,import,petrol,2114156484.64,litres,12
+ZAF,2018,shared,export,diesel,1582070108.37,litres,12
+ZAF,2018,shared,export,diesel_biodiesel_blend,1683788.53,kilograms,12
+ZAF,2018,shared,export,fuel_oil,2044390988.28,litres,12
+ZAF,2018,shared,export,jet,327817396.0,litres,12
+ZAF,2018,shared,export,paraffin,43829705.8,litres,12
+ZAF,2018,shared,export,petrol,1135050254.7,litres,12
+ZAF,2018,shared,import,diesel,5122959486.54,litres,12
+ZAF,2018,shared,import,diesel_biodiesel_blend,884.8,kilograms,5
+ZAF,2018,shared,import,fuel_oil,76393936.93,litres,8
+ZAF,2018,shared,import,jet,341603063.75,litres,12
+ZAF,2018,shared,import,paraffin,202.0,litres,9
+ZAF,2018,shared,import,petrol,1829771263.5,litres,12
+ZAF,2019,shared,export,diesel,1741377312.2,litres,12
+ZAF,2019,shared,export,diesel_biodiesel_blend,148836.77,kilograms,12
+ZAF,2019,shared,export,fuel_oil,1933994255.52,litres,12
+ZAF,2019,shared,export,jet,293094467.0,litres,12
+ZAF,2019,shared,export,paraffin,38028363.13,litres,12
+ZAF,2019,shared,export,petrol,1174701777.89,litres,12
+ZAF,2019,shared,import,diesel,5590272108.56,litres,12
+ZAF,2019,shared,import,diesel_biodiesel_blend,12559.37,kilograms,6
+ZAF,2019,shared,import,fuel_oil,143558114.71,litres,8
+ZAF,2019,shared,import,jet,461709631.0,litres,11
+ZAF,2019,shared,import,paraffin,655.0,litres,7
+ZAF,2019,shared,import,petrol,1477385841.09,litres,12
+ZAF,2020,shared,export,diesel,913814520.25,litres,12
+ZAF,2020,shared,export,diesel_biodiesel_blend,783128.71,kilograms,12
+ZAF,2020,shared,export,fuel_oil,1384511290.0,litres,12
+ZAF,2020,shared,export,jet,620316529.2,litres,12
+ZAF,2020,shared,export,paraffin,52223762.81,litres,12
+ZAF,2020,shared,export,petrol,1154779071.18,litres,12
+ZAF,2020,shared,import,diesel,6814985447.84,litres,12
+ZAF,2020,shared,import,diesel_biodiesel_blend,217.72,kilograms,4
+ZAF,2020,shared,import,fuel_oil,217950582.0,litres,11
+ZAF,2020,shared,import,jet,587431457.5,litres,12
+ZAF,2020,shared,import,paraffin,92409112.5,litres,9
+ZAF,2020,shared,import,petrol,1719673064.48,litres,12
+ZAF,2021,shared,export,diesel,893488105.77,litres,12
+ZAF,2021,shared,export,diesel_biodiesel_blend,412860.73,kilograms,12
+ZAF,2021,shared,export,fuel_oil,872564469.4,litres,12
+ZAF,2021,shared,export,jet,98779869.8,litres,12
+ZAF,2021,shared,export,paraffin,48607407.47,litres,12
+ZAF,2021,shared,export,petrol,1052495144.57,litres,12
+ZAF,2021,shared,import,diesel,9761395305.74,litres,12
+ZAF,2021,shared,import,diesel_biodiesel_blend,10459.83,kilograms,6
+ZAF,2021,shared,import,fuel_oil,572690096.59,litres,12
+ZAF,2021,shared,import,jet,446819487.0,litres,12
+ZAF,2021,shared,import,paraffin,810541254.31,litres,12
+ZAF,2021,shared,import,petrol,4008612763.78,litres,12
+ZAF,2022,shared,export,diesel,889199067.82,litres,12
+ZAF,2022,shared,export,diesel_biodiesel_blend,606905.73,kilograms,12
+ZAF,2022,shared,export,fuel_oil,757556389.98,litres,12
+ZAF,2022,shared,export,jet,384881163.0,litres,12
+ZAF,2022,shared,export,paraffin,33714190.77,litres,12
+ZAF,2022,shared,export,petrol,854613713.78,litres,12
+ZAF,2022,shared,import,diesel,11954256547.9,litres,12
+ZAF,2022,shared,import,diesel_biodiesel_blend,2144.11,kilograms,8
+ZAF,2022,shared,import,fuel_oil,1026922348.72,litres,12
+ZAF,2022,shared,import,jet,810352986.5,litres,12
+ZAF,2022,shared,import,paraffin,963896462.5,litres,12
+ZAF,2022,shared,import,petrol,5455261814.72,litres,12
+ZAF,2023,shared,export,diesel,889445907.92,litres,12
+ZAF,2023,shared,export,diesel_biodiesel_blend,2036410.52,kilograms,12
+ZAF,2023,shared,export,fuel_oil,739109955.74,litres,12
+ZAF,2023,shared,export,jet,451768335.07,litres,12
+ZAF,2023,shared,export,paraffin,29155303.89,litres,12
+ZAF,2023,shared,export,petrol,994019559.02,litres,12
+ZAF,2023,shared,import,diesel,12870032100.67,litres,12
+ZAF,2023,shared,import,diesel_biodiesel_blend,3758851.94,kilograms,11
+ZAF,2023,shared,import,fuel_oil,939262475.28,litres,12
+ZAF,2023,shared,import,jet,673861429.82,litres,12
+ZAF,2023,shared,import,paraffin,1201163549.5,litres,12
+ZAF,2023,shared,import,petrol,4482774760.38,litres,12
+ZAF,2024,shared,export,diesel,795834678.52,litres,12
+ZAF,2024,shared,export,diesel_biodiesel_blend,870648.31,kilograms,12
+ZAF,2024,shared,export,fuel_oil,1355762056.54,litres,12
+ZAF,2024,shared,export,jet,478434471.7,litres,12
+ZAF,2024,shared,export,paraffin,27360077.01,litres,12
+ZAF,2024,shared,export,petrol,919745015.89,litres,12
+ZAF,2024,shared,import,diesel,10792547134.05,litres,12
+ZAF,2024,shared,import,diesel_biodiesel_blend,74939.49,kilograms,8
+ZAF,2024,shared,import,fuel_oil,603926805.29,litres,12
+ZAF,2024,shared,import,jet,718086889.07,litres,12
+ZAF,2024,shared,import,paraffin,1053386151.52,litres,12
+ZAF,2024,shared,import,petrol,4000854433.45,litres,12
+ZAF,2025,shared,export,diesel,746700210.07,litres,12
+ZAF,2025,shared,export,diesel_biodiesel_blend,1547944.62,kilograms,12
+ZAF,2025,shared,export,fuel_oil,1017142192.07,litres,12
+ZAF,2025,shared,export,jet,471984139.36,litres,12
+ZAF,2025,shared,export,paraffin,34619211.79,litres,12
+ZAF,2025,shared,export,petrol,801762466.0,litres,12
+ZAF,2025,shared,import,diesel,12248720262.07,litres,12
+ZAF,2025,shared,import,diesel_biodiesel_blend,308140.01,kilograms,12
+ZAF,2025,shared,import,fuel_oil,547612768.91,litres,12
+ZAF,2025,shared,import,jet,884984438.32,litres,12
+ZAF,2025,shared,import,paraffin,1114376293.23,litres,12
+ZAF,2025,shared,import,petrol,4453471178.15,litres,12
+ZAF,2026,shared,export,diesel,500626007.45,litres,8
+ZAF,2026,shared,export,diesel_biodiesel_blend,1065298.9,kilograms,8
+ZAF,2026,shared,export,fuel_oil,735311974.82,litres,8
+ZAF,2026,shared,export,jet,164259477.11,litres,8
+ZAF,2026,shared,export,paraffin,20943430.05,litres,8
+ZAF,2026,shared,export,petrol,572388568.0,litres,8
+ZAF,2026,shared,import,diesel,7440229460.6,litres,8
+ZAF,2026,shared,import,diesel_biodiesel_blend,273213.31,kilograms,8
+ZAF,2026,shared,import,fuel_oil,451830565.21,litres,8
+ZAF,2026,shared,import,jet,499505259.68,litres,8
+ZAF,2026,shared,import,paraffin,412100920.65,litres,8
+ZAF,2026,shared,import,petrol,2881772291.26,litres,8

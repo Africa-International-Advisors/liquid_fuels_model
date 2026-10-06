@@ -71,14 +71,15 @@ def populate_review_exhibits(prs,text,root,brand):
 
 def national_page(s,text,root,brand):
     base=root.parent/'assumptions/2026/timeseries'
-    trade=read(base/'fuel_trade_department_review.csv')
+    evidence=root/'story/evidence_2026_10_06'
+    trade=[r for r in read(evidence/'fuel_trade_sars.csv') if r['unit']=='litres' and r['months_reported']=='12']
     sales=read(base/'fuel_sales_fiasa.csv')
     old=read(base/'fuel_trade_fiasa.csv')
     lookup={(int(r['period']),r['product'],r['flow']):float(r['value'])/1e9 for r in trade}
     demand={r['product']:float(r['value'])/1e9 for r in sales if r['period']=='2024'}
     frame(s,'Collect the national fuel balance and expose source disagreements',
           'National petrol/diesel | 2024, billion litres',
-          'Government Energy Trade Report 2024, printed pp.12–13; FIASA 2025, pp.47–49; energy balance 2021. Rounded trade figures.',text,brand)
+          'SARS customs extracts, 2024, litres / 12 months; FIASA 2025 sales, p.47 (unverified). Evidence manifest in notes.',text,brand)
     rows=[['Product','Reported\nsales','Imports','Exports','Net imports']]
     for product in ('petrol','diesel'):
         imp=lookup[2024,product,'import'];exp=lookup[2024,product,'export']
@@ -113,8 +114,8 @@ def national_page(s,text,root,brand):
          .5,5.44,7.05,.28,11,True,brand.accent_primary)
     staged=float(next(r['value'] for r in old if r['period']=='2024' and r['product']=='diesel' and r['flow']=='import'))/1e9
     residual=sum(demand[p] for p in products)-(total_imports-total_exports)
-    text(s,'Source flag | diesel imports',.5,5.97,3.35,.32,14,True,brand.accent_primary)
-    text(s,f'FIASA {staged:.3f}; government 10.800.\nDifference {10.8-staged:+.3f} bn L. Preserve both;\ninvestigate scope and vintage.',.5,6.40,3.35,.59,11.5)
+    text(s,'Primary trade | SARS customs',.5,5.97,3.35,.32,14,True,brand.accent_primary)
+    text(s,f'Diesel imports {lookup[2024,"diesel","import"]:.3f} bn L.\nGovernment rounds to 10.800; FIASA {staged:.3f}.\nUse SARS; retain the source discrepancy.',.5,6.40,3.35,.59,11.5)
     line(s,(4.03,5.96),(4.03,6.99),brand.grey_fill,.7)
     text(s,'2024 accounting remains open',4.22,5.97,3.33,.32,14,True,brand.accent_primary)
     text(s,f'Sales less net imports = {residual:.3f} bn L.\nBalancing requirement, not production.\nProduction, stocks and coverage unresolved.',4.22,6.40,3.33,.59,11.5)
@@ -122,7 +123,7 @@ def national_page(s,text,root,brand):
         ('The sources disagree','FIASA reports 14.793 bn L of diesel imports for 2024 versus 10.8 bn L in the government report. Neither value has been silently replaced.'),
         ('Port cargo has wider coverage','TNPA publishes liquid-bulk cargo by port, but it includes crude and other liquids. It does not establish petrol/diesel import allocation.')],
         'Manish: reconcile raw SARS product codes and units, then source matched-year production and stocks. Nigel: confirm access to product-specific port data.')
-    s.notes_slide.notes_text_frame.text+='\n'+(base/'supply_review.sources.json').read_text()+'\nTrade source flag: '+str(rows)
+    s.notes_slide.notes_text_frame.text+='\n'+(evidence/'manifest.json').read_text()+'\nConvergence selection: SARS primary trade; FIASA reported sales unverified. No production inferred. '+str(rows)
 
 
 def capacity_page(s,text,root,brand):
@@ -136,7 +137,7 @@ def capacity_page(s,text,root,brand):
     extra=[settings['proposed_addition_bpd']/1000 if year>=completion else 0 for year in years]
     frame(s,'Compare the capacity history with a conditional redevelopment case',
           'Published footprint + illustrative scenarios | thousand bbl/day',
-          'FIASA Annual Report 2025, p.49; CEF statement 23 Sep 2026. Nameplate / crude-equivalent capacity; not actual fuel output.',text,brand)
+          'FIASA 2025 p.49; CEF 23 Sep 2026; Sasol FY2025 metrics p.4. Capacity is not output; Sasol output is all products / FY.',text,brand)
     text(s,'History 2016–2025 is sourced; 2026 onward is illustrative, not a forecast',.5,2.38,7.05,.32,11,True,brand.accent_primary)
     for i,(heading,addition) in enumerate([('A | No new refinery capacity',[0]*len(years)),('B | Conditional CEF redevelopment',extra)]):
         x=.5+i*3.64
@@ -151,8 +152,11 @@ def capacity_page(s,text,root,brand):
             series.format.fill.solid();series.format.fill.fore_color.rgb=color
             series.format.line.color.rgb=color
         text(s,f'{settings["horizon_year"]}: {baseline[-1]+addition[-1]:.0f} thousand bbl/day',x,6.01,3.40,.30,12,True,brand.accent_primary)
-    text(s,f'B adds {settings["proposed_addition_bpd"]/1000:.0f} from {completion}; darker navy = existing footprint; lighter blue = conditional addition.',.5,6.46,7.05,.42,11)
-    text(s,f'B assumes illustrative FID {settings["illustrative_fid_year"]} + {settings["construction_months"]} months; no sanctioned date. Both hold existing capacity flat.',.5,6.80,7.05,.22,9)
+    output=read(root/'story/evidence_2026_10_06/refinery_output_operators.csv')
+    fy={r['plant']:float(r['value']) for r in output if r['period']=='2024' and r['operator']=='Sasol'}
+    text(s,f'Reported FY2024 output: Secunda {fy["Secunda"]:.1f}; Natref Sasol share {fy["Natref"]:.1f} million barrels.',.5,6.46,7.05,.34,11,True,brand.accent_primary)
+    text(s,f'All products; year to June, not calendar-year petrol/diesel. B adds 400 from {completion}, conditional on FID.',.5,6.80,7.05,.22,9)
+    s.notes_slide.notes_text_frame.text+='\nOperator observations: '+json.dumps(output)+'\nSource: Sasol FY2025 metrics p4; Natref 17.8 is Sasol share, not whole-plant output. No product split or year matching inferred.'
     panel(s,text,brand,[('History shows a structural decline','Published total falls from 718 in 2016–2020 to 538 in 2021 and 358 from 2022–2025. Capacity does not measure realised output.'),
         ('Redevelopment is conditional','CEF proposes approximately 400 thousand bbl/day after FID. Construction is approximately 48 months; the 2029 FID here is authored for comparison.'),
         ('Product output still needs modelling','Source utilisation, downtime and product yields before translating capacity into domestic supply. Secunda/Natref cases remain open.')],

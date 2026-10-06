@@ -12,18 +12,26 @@ def index(values,base_year=2024):
 
 def add_driver_page(s,text,root,brand):
     base=root.parent/'assumptions/2026/timeseries'
+    evidence=root/'story/evidence_2026_10_06'
     def series(file,key,value,start,end):
         return {int(r['period']):float(r['value']) for r in read(base/file)
                 if r.get(key)==value and start<=int(r['period'])<=end}
     power=series('ocgt_generation_eskom.csv','series','eskom_and_ipp_ocgt',2023,2026)
-    road=series('freight_payload_statssa_review.csv','mode','road',2024,2025)
-    rail=series('freight_payload_statssa_review.csv','mode','rail',2024,2025)
+    monthly=read(evidence/'activity_statssa_monthly.csv')
+    def annual_activity(key,average=False):
+        groups={}
+        for r in monthly:
+            if r['series']==key and 2019<=int(r['period'][:4])<=2025:
+                groups.setdefault(int(r['period'][:4]),[]).append(float(r['value']))
+        return {year:sum(vals)/12 if average else sum(vals) for year,vals in groups.items() if len(vals)==12}
+    road=annual_activity('freight_payload_road')
+    rail=annual_activity('freight_payload_rail')
     bev=series('nev_sales_naamsa.csv','drivetrain','battery_electric',2019,2025)
     phev=series('nev_sales_naamsa.csv','drivetrain','plug_in_hybrid',2019,2025)
     hybrid=series('nev_sales_naamsa.csv','drivetrain','traditional_hybrid',2019,2025)
     agriculture=series('macro_statssa.csv','series','agriculture_forestry_and_fishing',2019,2025)
-    manufacturing=series('macro_statssa.csv','series','manufacturing',2019,2025)
-    mining=series('macro_statssa.csv','series','mining_and_quarrying',2019,2025)
+    manufacturing=annual_activity('manufacturing_volume_total',True)
+    mining=annual_activity('mining_volume_total',True)
     stock=read(base/'vehicle_population_natis.csv')
     def december_stock(vehicle_class):
         return {int(r['period'][:4]):float(r['value']) for r in stock
@@ -31,25 +39,25 @@ def add_driver_page(s,text,root,brand):
             and 2021<=int(r['period'][:4])<=2025}
     cars=december_stock('cars');minibuses=december_stock('minibuses')
     trucks=december_stock('trucks');lcv=december_stock('light_commercial')
-    prices=read(base/'fuel_prices_department.csv')
+    prices=read(evidence/'fuel_prices_department.csv')
     price_series=[]
     for key,label in [('petrol_95_inland_retail','Petrol retail'),('diesel_005_inland_wholesale','Diesel wholesale')]:
         groups={}
         for r in prices:
             year=int(r['period'][:4])
-            if r['series']==key and 2019<=year<=2023:
+            if r['series']==key and 2019<=year<=2025:
                 groups.setdefault(year,[]).append(float(r['value'])/100)
         price_series.append((label,{year:sum(vals)/len(vals) for year,vals in groups.items() if len(vals)==12}))
     datasets=[('Passenger travel | all-fuel stock, Dec',[('Cars',cars),('Minibuses',minibuses)]),
               ('Freight demand | payload, CY',[('Road',road),('Rail',rail)]),
               ('Agriculture | real value added, CY',[('Agriculture / forestry / fishing',agriculture)]),
-              ('Manufacturing | real value added, CY',[('Manufacturing',manufacturing)]),
-              ('Mining | real value added, CY',[('Mining',mining)]),
+              ('Manufacturing | production volume, CY',[('Manufacturing',manufacturing)]),
+              ('Mining | production volume, CY',[('Mining',mining)]),
               ('Diesel power | OCGT generation, FY',[('Eskom + IPP',power)]),
               ('Electrification | annual new sales, CY',[('BEV',bev),('Plug-in hybrid',phev),('Hybrid',hybrid)]),
               ('Price response | annual nominal R/litre',price_series)]
     frame(s,'Compare observed evidence for potential demand levers',
-          None,'NaTIS; Stats SA P0441 / P7162; Eskom; naamsa; Department fuel-price history. Scope and observations in notes.',text,brand)
+          None,'NaTIS; Stats SA P0441 / P2041 / P3041.2 / P7162; Eskom; naamsa; DMPR / CEF. Snapshot manifest in notes.',text,brand)
     # A full-width, even grid replaces the asymmetric evidence sidebar.
     for q in list(s.shapes):
         if Inches(1.7)<=q.top<Inches(7.05):q._element.getparent().remove(q._element)
@@ -84,17 +92,20 @@ def add_driver_page(s,text,root,brand):
             lx=x+.32+j*1.78
             rule(s,(lx,y+.96),(lx+.20,y+.96),color,1.8)
             text(s,raw_series[j][0],lx+.24,y+.87,3.9 if len(raw_series)==1 else 1.50,.20,10)
-    text(s,'To quantify: mileage × fleet/fuel mix × litres/km; sector fuel intensity; OCGT litres/kWh; price elasticity. FY ends March. Price 2024 incomplete.',
+    text(s,'Latest staged: activity Jul 2026; GDP Q2 2026; inland prices Oct 2026. Charts use complete years. Fuel intensities remain open; FY ends March.',
          .5,6.92,11.65,.18,8.5)
     power_change=100*(power[2026]/power[2024]-1)
     rail_change=100*(rail[2025]/rail[2024]-1);road_change=100*(road[2025]/road[2024]-1)
     notes={'base_year':2024,'formula':'100 * observed value / own 2024 value','series':datasets,
            'status':'descriptive evidence; not causal contributions or forecast demand',
-           'price':'Annual extract stops 2023; no 2024 base available. Diesel prices are wholesale, petrol retail; no real-price elasticity calibrated.',
+           'price':'Annual means through 2025, 12 months only; monthly inland series through October 2026 held separately. Diesel wholesale / petrol retail; no calibrated price response.',
            'freight_revision':json.loads((base/'freight_payload_statssa_review.sources.json').read_text(encoding='utf-8')),
            'fleet':'BEV, plug-in hybrid and conventional-hybrid new sales shown separately; stocks, survival, mileage and efficiency not inferred. Uptake chart uses 0–400 to include the PHEV increase; six activity charts use 0–120.'}
     notes['vehicle_stock_scope']='NaTIS all-fuel national December snapshots. Cars/minibuses do not cover buses/motorcycles; trucks/light-commercial do not establish diesel-only freight usage. No ICE mix or fuel demand is inferred.'
-    notes['sector_scope']='Real gross value added: agriculture includes forestry/fishing; industry shows manufacturing and mining separately, not all industrial fuel consumption.'
+    notes['sector_scope']='Agriculture real value added includes forestry/fishing; manufacturing and mining are production volume indices averaged over 12 months. No fuel intensities inferred.'
+    notes['evidence_manifest']=json.loads((evidence/'manifest.json').read_text())
+    quarterly=read(evidence/'macro_statssa_quarterly.csv')
+    notes['latest_quarterly_gdp_observations']=[r for r in quarterly if r['series']=='gdp' and r['period'].startswith('2026')]
     notes['power_change_percent']=power_change
     notes['uptake_observations']={'BEV_new_sales':bev,'plug_in_hybrid_new_sales':phev,'conventional_hybrid_new_sales':hybrid}
     notes['sector_changes_percent']={'agriculture':index(agriculture)[2025]-100,'manufacturing':index(manufacturing)[2025]-100}

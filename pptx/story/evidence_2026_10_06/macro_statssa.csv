@@ -1,0 +1,569 @@
+country,period,scenario,series,value,unit,basis,code,source_file
+ZAF,1993,shared,agriculture_forestry_and_fishing,61191401808.907486,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,agriculture_forestry_and_fishing,66025522551.81118,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,agriculture_forestry_and_fishing,52886443564.00073,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,agriculture_forestry_and_fishing,65579190019.360916,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,agriculture_forestry_and_fishing,66169402729.53516,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,agriculture_forestry_and_fishing,62662424384.86978,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,agriculture_forestry_and_fishing,66547494696.731735,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,agriculture_forestry_and_fishing,69675226947.47812,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,agriculture_forestry_and_fishing,67375944458.211365,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,agriculture_forestry_and_fishing,71755380847.9951,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,agriculture_forestry_and_fishing,72244084943.53775,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,agriculture_forestry_and_fishing,72864979491.1534,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,agriculture_forestry_and_fishing,74912329189.77509,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,agriculture_forestry_and_fishing,70820033255.29666,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,agriculture_forestry_and_fishing,72929876793.86624,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,agriculture_forestry_and_fishing,87086665715.41585,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,agriculture_forestry_and_fishing,85438740679.42366,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,agriculture_forestry_and_fishing,85182132752.90141,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,agriculture_forestry_and_fishing,86880690198.72707,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,agriculture_forestry_and_fishing,88412741915.13145,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,agriculture_forestry_and_fishing,92373543795.2574,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,agriculture_forestry_and_fishing,102487691698.08235,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,agriculture_forestry_and_fishing,98759569251.38434,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,agriculture_forestry_and_fishing,93672105310.89499,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,agriculture_forestry_and_fishing,111545079537.53859,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,agriculture_forestry_and_fishing,112094925751.79875,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,agriculture_forestry_and_fishing,104784757699.11429,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,agriculture_forestry_and_fishing,122870099075.34619,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,agriculture_forestry_and_fishing,128983089561.3611,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,agriculture_forestry_and_fishing,131770642145.0265,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,agriculture_forestry_and_fishing,125746642145.02654,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,agriculture_forestry_and_fishing,114791642145.02654,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,agriculture_forestry_and_fishing,134796746981.71317,"rand, constant 2015 prices",actual,AR1001,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,mining_and_quarrying,230581600124.36465,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,mining_and_quarrying,231734508124.98645,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,mining_and_quarrying,224550738373.11182,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,mining_and_quarrying,222754332466.1269,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,mining_and_quarrying,226541156118.05103,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,mining_and_quarrying,226314614961.93304,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,mining_and_quarrying,223146210352.46603,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,mining_and_quarrying,220691602038.5889,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,mining_and_quarrying,220470910436.55026,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,mining_and_quarrying,222675619540.91577,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,mining_and_quarrying,230238529233.5439,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,mining_and_quarrying,233714638022.2279,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,mining_and_quarrying,236113024123.3809,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,mining_and_quarrying,234714850517.49567,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,mining_and_quarrying,233220254817.84787,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,mining_and_quarrying,220777705214.29587,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,mining_and_quarrying,209452324208.58655,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,mining_and_quarrying,220478419566.51694,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,mining_and_quarrying,218846847241.72943,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,mining_and_quarrying,212476405588.24884,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,mining_and_quarrying,220881987734.38507,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,mining_and_quarrying,217523633601.53568,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,mining_and_quarrying,227874959216.6656,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,mining_and_quarrying,220140983320.0867,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,mining_and_quarrying,225419698441.57767,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,mining_and_quarrying,223613026440.9932,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,mining_and_quarrying,222100060478.9847,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,mining_and_quarrying,194984856273.23434,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,mining_and_quarrying,219635997902.62903,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,mining_and_quarrying,204452922719.6744,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,mining_and_quarrying,204228699966.27374,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,mining_and_quarrying,205125829591.8731,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,mining_and_quarrying,205464886014.25735,"rand, constant 2015 prices",actual,AR1002,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,manufacturing,336028948589.7261,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,manufacturing,345101730201.6487,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,manufacturing,367533342664.7557,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,manufacturing,372678809462.06226,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,manufacturing,382741137317.5379,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,manufacturing,381975655042.9028,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,manufacturing,384267508973.1602,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,manufacturing,415393177199.9862,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,manufacturing,428685758870.3858,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,manufacturing,440688960118.7568,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,manufacturing,434059953642.14465,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,manufacturing,455305620795.79083,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,manufacturing,483553549295.2275,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,manufacturing,514685618168.8075,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,manufacturing,542233291302.8035,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,manufacturing,554786328652.3138,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,manufacturing,495829368097.48615,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,manufacturing,525119658960.2463,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,manufacturing,541051887145.01166,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,manufacturing,552394766220.4182,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,manufacturing,558020771170.0847,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,manufacturing,554420274997.2548,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,manufacturing,553392383981.9507,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,manufacturing,555879734247.2906,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,manufacturing,554832653637.5391,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,manufacturing,563249707192.476,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,manufacturing,559321509886.0238,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,manufacturing,491446551169.8276,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,manufacturing,524904832402.9977,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,manufacturing,523090754064.8606,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,manufacturing,524993754064.86096,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,manufacturing,523150754064.86096,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,manufacturing,516985652975.0193,"rand, constant 2015 prices",actual,AR1003,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,electricity_gas_and_water,84121497958.95604,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,electricity_gas_and_water,89000544840.5755,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,electricity_gas_and_water,90780555737.38704,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,electricity_gas_and_water,100584855757.02481,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,electricity_gas_and_water,104507665131.5488,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,electricity_gas_and_water,97923682228.2612,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,electricity_gas_and_water,97434063817.11989,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,electricity_gas_and_water,100454519795.45058,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,electricity_gas_and_water,96737702563.01892,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,electricity_gas_and_water,100123522152.7246,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,electricity_gas_and_water,103077733363.13896,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,electricity_gas_and_water,110071591294.09624,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,electricity_gas_and_water,115956127108.22958,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,electricity_gas_and_water,119921303819.6633,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,electricity_gas_and_water,124016633023.3299,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,electricity_gas_and_water,119626444214.30399,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,electricity_gas_and_water,117527019783.83766,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,electricity_gas_and_water,120366292013.59747,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,electricity_gas_and_water,122205811932.10153,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,electricity_gas_and_water,121772557960.41072,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,electricity_gas_and_water,120985931992.58112,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,electricity_gas_and_water,119530423345.58676,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,electricity_gas_and_water,114057740775.41133,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,electricity_gas_and_water,109947446628.06914,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,electricity_gas_and_water,110274929173.39545,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,electricity_gas_and_water,111279691912.67638,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,electricity_gas_and_water,107570958185.69037,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,electricity_gas_and_water,101405416262.36266,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,electricity_gas_and_water,103787354257.82013,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,electricity_gas_and_water,100918088041.66846,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,electricity_gas_and_water,96689167403.76843,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,electricity_gas_and_water,100040167403.76843,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,electricity_gas_and_water,95758689331.74277,"rand, constant 2015 prices",actual,AR1004,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,construction,56562364719.61926,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,construction,58201896365.27596,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,construction,60267413557.032326,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,construction,61482388577.47482,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,construction,63599057296.11339,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,construction,59850290344.15241,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,construction,59037909799.00722,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,construction,62373101200.712425,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,construction,65445376716.89797,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,construction,69247317668.17752,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,construction,74570582700.88693,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,construction,81362823266.13634,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,construction,91062312835.49635,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,construction,100565781554.0512,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,construction,116173186652.8603,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,construction,127644387649.1857,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,construction,138549985242.8401,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,construction,139564142613.61826,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,construction,140159009158.87958,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,construction,143770347197.40448,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,construction,150332604417.46912,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,construction,152382297126.2985,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,construction,153830956144.94272,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,construction,155995629219.1589,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,construction,147076452077.23383,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,construction,144860855147.59436,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,construction,139986326177.43646,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,construction,115373608609.99661,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,construction,112426894830.90982,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,construction,110065090748.90869,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,construction,109565090748.90869,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,construction,103625090748.90869,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,construction,99098520679.77132,"rand, constant 2015 prices",actual,AR1005,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,trade_catering_and_accommodation,260587103850.11597,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,trade_catering_and_accommodation,267101781446.3689,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,trade_catering_and_accommodation,282860786551.7047,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,trade_catering_and_accommodation,293326635654.1176,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,trade_catering_and_accommodation,294499942196.73425,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,trade_catering_and_accommodation,298328441445.29175,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,trade_catering_and_accommodation,321001402995.1339,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,trade_catering_and_accommodation,347002516637.7397,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,trade_catering_and_accommodation,353595564453.8567,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,trade_catering_and_accommodation,361728262436.2954,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,trade_catering_and_accommodation,371371072139.7954,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,trade_catering_and_accommodation,391416857784.11694,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,trade_catering_and_accommodation,418998559371.85547,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,trade_catering_and_accommodation,443973178674.78394,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,trade_catering_and_accommodation,468829473496.006,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,trade_catering_and_accommodation,477047676913.1703,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,trade_catering_and_accommodation,471717513228.5066,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,trade_catering_and_accommodation,492600114211.6367,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,trade_catering_and_accommodation,512692293382.2512,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,trade_catering_and_accommodation,532953290802.88184,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,trade_catering_and_accommodation,543627552937.4636,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,trade_catering_and_accommodation,549234883040.2142,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,trade_catering_and_accommodation,555536360811.3525,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,trade_catering_and_accommodation,564280801844.8577,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,trade_catering_and_accommodation,556707379249.2363,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,trade_catering_and_accommodation,562324592730.0206,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,trade_catering_and_accommodation,559934772899.3658,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,trade_catering_and_accommodation,491412846790.35657,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,trade_catering_and_accommodation,524187898873.07574,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,trade_catering_and_accommodation,543447091866.4238,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,trade_catering_and_accommodation,534955091866.4241,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,trade_catering_and_accommodation,528762091866.42395,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,trade_catering_and_accommodation,540828986222.1999,"rand, constant 2015 prices",actual,AR1006,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,transport_storage_and_communication,123125165960.5021,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,transport_storage_and_communication,128788923594.68521,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,transport_storage_and_communication,142440549495.72186,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,transport_storage_and_communication,151129423014.9609,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,transport_storage_and_communication,162615259164.09796,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,transport_storage_and_communication,171559098418.12332,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,transport_storage_and_communication,180480171535.86578,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,transport_storage_and_communication,195460025773.34253,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,transport_storage_and_communication,206992167293.9698,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,transport_storage_and_communication,225621462350.42706,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,transport_storage_and_communication,239943558395.00436,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,transport_storage_and_communication,251670273277.88202,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,transport_storage_and_communication,264994496565.41348,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,transport_storage_and_communication,278551278164.9449,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,transport_storage_and_communication,299472998330.03326,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,transport_storage_and_communication,309955023382.28864,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,transport_storage_and_communication,309373676493.142,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,transport_storage_and_communication,314564721433.2054,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,transport_storage_and_communication,325451983026.5126,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,transport_storage_and_communication,333328346852.82153,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,transport_storage_and_communication,342841154577.6394,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,transport_storage_and_communication,351904004379.1662,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,transport_storage_and_communication,360325625569.1225,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,transport_storage_and_communication,365766419132.15784,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,transport_storage_and_communication,369580335369.5569,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,transport_storage_and_communication,380338524690.0597,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,transport_storage_and_communication,378210881402.1566,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,transport_storage_and_communication,319642365173.05225,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,transport_storage_and_communication,339442735415.2725,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,transport_storage_and_communication,367701816723.6901,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,transport_storage_and_communication,383230816723.69006,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,transport_storage_and_communication,378589987689.2872,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,transport_storage_and_communication,381656953253.3201,"rand, constant 2015 prices",actual,AR1007,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,finance_real_estate_and_business_services,349096604694.9998,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,finance_real_estate_and_business_services,361851462689.4281,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,finance_real_estate_and_business_services,374542653577.56494,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,finance_real_estate_and_business_services,399956761723.30347,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,finance_real_estate_and_business_services,418779073510.577,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,finance_real_estate_and_business_services,428419602480.7523,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,finance_real_estate_and_business_services,450314227289.4739,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,finance_real_estate_and_business_services,464635253225.20123,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,finance_real_estate_and_business_services,502584492820.086,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,finance_real_estate_and_business_services,534128435660.7941,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,finance_real_estate_and_business_services,559762484719.1761,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,finance_real_estate_and_business_services,599251096335.2036,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,finance_real_estate_and_business_services,633463055354.0404,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,finance_real_estate_and_business_services,694554537800.1268,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,finance_real_estate_and_business_services,744934026857.6969,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,finance_real_estate_and_business_services,786496808192.1544,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,finance_real_estate_and_business_services,794793148070.734,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,finance_real_estate_and_business_services,804647505096.681,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,finance_real_estate_and_business_services,838885598316.7906,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,finance_real_estate_and_business_services,863845894837.1,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,finance_real_estate_and_business_services,886385509039.9508,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,finance_real_estate_and_business_services,906851359858.511,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,finance_real_estate_and_business_services,921868273467.1293,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,finance_real_estate_and_business_services,938154485113.069,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,finance_real_estate_and_business_services,961364265203.8075,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,finance_real_estate_and_business_services,994663103758.435,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,finance_real_estate_and_business_services,1016210410871.01,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,finance_real_estate_and_business_services,1021808952130.7976,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,finance_real_estate_and_business_services,1047806890294.7877,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,finance_real_estate_and_business_services,1086088739372.1267,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,finance_real_estate_and_business_services,1101706444332.7124,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,finance_real_estate_and_business_services,1137339073440.0393,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,finance_real_estate_and_business_services,1158863116116.6277,"rand, constant 2015 prices",actual,AR1008,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,general_government_services,226970677225.1311,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,general_government_services,229232776936.32343,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,general_government_services,231163140153.95715,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,general_government_services,235627283832.01862,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,general_government_services,237486152115.5539,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,general_government_services,235709130260.78683,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,general_government_services,233697360832.4018,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,general_government_services,231532578690.3627,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,general_government_services,229369535329.16046,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,general_government_services,231012683707.7603,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,general_government_services,237405434260.52393,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,general_government_services,241948002039.2622,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,general_government_services,252371222692.56427,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,general_government_services,257417039470.34042,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,general_government_services,266677550055.00732,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,general_government_services,279519233847.68036,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,general_government_services,288325881882.88385,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,general_government_services,293046819567.56384,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,general_government_services,305595332044.9431,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,general_government_services,313873821197.8019,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,general_government_services,326119789703.3938,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,general_government_services,336183231306.3887,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,general_government_services,344539778116.55,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,general_government_services,351164991331.151,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,general_government_services,356086114857.63385,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,general_government_services,362956526628.0773,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,general_government_services,367515417588.52045,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,general_government_services,371363823103.0062,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,general_government_services,368230707441.8362,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,general_government_services,368424598998.3351,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,general_government_services,370828527388.8365,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,general_government_services,372000225264.4439,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,general_government_services,373615330990.9998,"rand, constant 2015 prices",actual,AR1009,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,personal_services,336397888002.27734,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,personal_services,352783633409.61597,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,personal_services,372246871007.04333,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,personal_services,382141938920.15295,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,personal_services,382016910613.266,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,personal_services,405744823896.1176,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,personal_services,421443642568.70966,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,personal_services,441748938264.7272,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,personal_services,451680633407.4316,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,personal_services,462808926704.2055,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,personal_services,488531551244.39087,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,personal_services,497064929861.6905,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,personal_services,515938103608.7829,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,personal_services,542875699280.8777,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,personal_services,572784088442.1282,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,personal_services,594328989336.8309,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,personal_services,589544576069.0479,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,personal_services,591720093735.8312,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,personal_services,606318229157.1044,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,personal_services,619246189156.7263,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,personal_services,635410840207.0317,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,personal_services,645986700652.7812,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,personal_services,651572017717.6735,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,personal_services,659642969625.2231,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,personal_services,668356288332.2959,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,personal_services,672452446184.0002,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,personal_services,681248856951.9423,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,personal_services,667186622306.0134,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,personal_services,704480293770.72,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,personal_services,724471543585.9496,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,personal_services,739455543585.9496,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,personal_services,748448543585.9496,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,personal_services,751645886980.9232,"rand, constant 2015 prices",actual,AR1010,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,value_added_at_basic_prices_total,2076250661642.967,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,value_added_at_basic_prices_total,2138538181492.256,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,value_added_at_basic_prices_total,2202694326937.0234,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,value_added_at_basic_prices_total,2295207488668.3784,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,value_added_at_basic_prices_total,2354882883373.7563,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,value_added_at_basic_prices_total,2371367063557.3726,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,value_added_at_basic_prices_total,2435393974273.421,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,value_added_at_basic_prices_total,2542551309141.4517,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,value_added_at_basic_prices_total,2616285297106.5527,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,value_added_at_basic_prices_total,2715715134274.1436,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,value_added_at_basic_prices_total,2796683355916.76,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,value_added_at_basic_prices_total,2922469151733.589,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,value_added_at_basic_prices_total,3077723262470.4355,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,value_added_at_basic_prices_total,3247803591472.358,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,value_added_at_basic_prices_total,3423543587617.4287,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,value_added_at_basic_prices_total,3536069783634.2563,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,value_added_at_basic_prices_total,3485478687727.8457,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,value_added_at_basic_prices_total,3587289899951.799,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,value_added_at_basic_prices_total,3698087681604.0513,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,value_added_at_basic_prices_total,3782074361728.9453,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,value_added_at_basic_prices_total,3876979685575.257,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,value_added_at_basic_prices_total,3936504500005.8193,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,value_added_at_basic_prices_total,3981757665052.182,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,value_added_at_basic_prices_total,4014645565771.959,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,value_added_at_basic_prices_total,4061243195879.8154,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,value_added_at_basic_prices_total,4127833400436.1313,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,value_added_at_basic_prices_total,4136883952140.2446,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,value_added_at_basic_prices_total,3897495140893.994,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,value_added_at_basic_prices_total,4073886694751.4097,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,value_added_at_basic_prices_total,4160431288266.6646,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,value_added_at_basic_prices_total,4191399778226.451,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,value_added_at_basic_prices_total,4211873405800.582,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,value_added_at_basic_prices_total,4258714769546.5747,"rand, constant 2015 prices",actual,AR1011,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,gdp,2315155791634.564,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,gdp,2389240776966.87,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,gdp,2463307241052.8423,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,gdp,2569229452418.1143,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,gdp,2636029418180.9854,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,gdp,2649209565271.89,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,gdp,2712790594838.4155,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,gdp,2826727799821.63,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,gdp,2903049450416.8135,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,gdp,3010473149199.0776,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,gdp,3099254274279.796,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,gdp,3240411666866.0425,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,gdp,3411409874708.829,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,gdp,3602578681571.176,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,gdp,3795693977094.4175,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,gdp,3916816237652.8687,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,gdp,3856572112684.9,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,gdp,3973801603311.196,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,gdp,4099713743523.509,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,gdp,4197952411913.467,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,gdp,4302291176143.1406,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,gdp,4363118106800.599,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,gdp,4420792517414.471,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,gdp,4450170996114.514,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,gdp,4501701615484.831,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,gdp,4571783379053.3955,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,gdp,4583667070562.165,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,gdp,4300904420730.682,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,gdp,4509870255259.866,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,gdp,4602689546364.774,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,gdp,4639792036324.561,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,gdp,4664607663898.691,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,gdp,4716600597493.4795,"rand, constant 2015 prices",actual,AR1000,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,primary_industries,291773001933.27216,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,primary_industries,297760030676.7976,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,primary_industries,277437181937.11255,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,primary_industries,288333522485.4878,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,primary_industries,292710558847.5862,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,primary_industries,288977039346.80286,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,primary_industries,289693705049.19775,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,primary_industries,290366828986.067,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,primary_industries,287846854894.76166,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,primary_industries,294431000388.9109,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,primary_industries,302482614177.08167,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,primary_industries,306579617513.3813,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,primary_industries,311025353313.156,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,primary_industries,305534883772.7923,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,primary_industries,306150131611.7141,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,primary_industries,307864370929.71173,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,primary_industries,294891064888.0102,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,primary_industries,305660552319.41833,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,primary_industries,305727537440.4565,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,primary_industries,300889147503.3803,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,primary_industries,313255531529.64246,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,primary_industries,320011325299.618,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,primary_industries,326634528468.0499,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,primary_industries,313813088630.9817,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,primary_industries,336964777979.1163,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,primary_industries,335707952192.792,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,primary_industries,326884818178.099,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,primary_industries,317854955348.58057,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,primary_industries,348619087463.9901,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,primary_industries,336223564864.70087,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,primary_industries,329975342111.3003,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,primary_industries,319917471736.89966,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,primary_industries,340261632995.9705,"rand, constant 2015 prices",actual,AR1015,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,secondary_industries,476712811268.3014,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,secondary_industries,492304171407.5001,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,secondary_industries,518581311959.17505,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,secondary_industries,534746053796.5619,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,secondary_industries,550847859745.2001,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,secondary_industries,539749627615.3164,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,secondary_industries,540739482589.28735,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,secondary_industries,578220798196.1492,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,secondary_industries,590868838150.3026,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,secondary_industries,610059799939.6588,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,secondary_industries,611708269706.1705,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,secondary_industries,646740035356.0234,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,secondary_industries,690571989238.9535,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,secondary_industries,735172703542.522,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,secondary_industries,782423110978.9938,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,secondary_industries,802057160515.8035,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,secondary_industries,751906373124.1638,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,secondary_industries,785050093587.462,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,secondary_industries,803416708235.9928,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,secondary_industries,817937671378.2334,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,secondary_industries,829339307580.1349,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,secondary_industries,826332995469.1399,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,secondary_industries,821281080902.3047,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,secondary_industries,821822810094.5187,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,secondary_industries,812184034888.1682,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,secondary_industries,819390254252.7467,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,secondary_industries,806878794249.1506,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,secondary_industries,708225576042.1868,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,secondary_industries,741119081491.7277,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,secondary_industries,734073932855.4377,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,secondary_industries,731248012217.5381,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,secondary_industries,726816012217.5381,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,secondary_industries,711842862986.5333,"rand, constant 2015 prices",actual,AR1016,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1993,shared,tertiary_industries,1296177439733.0264,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1994,shared,tertiary_industries,1339758578076.4216,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1995,shared,tertiary_industries,1403254000785.992,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1996,shared,tertiary_industries,1462182043144.5535,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1997,shared,tertiary_industries,1495397337600.229,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1998,shared,tertiary_industries,1539761096501.072,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,1999,shared,tertiary_industries,1606936805221.5852,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2000,shared,tertiary_industries,1680379312591.3733,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2001,shared,tertiary_industries,1744222393304.5046,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,tertiary_industries,1815299770859.4824,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2003,shared,tertiary_industries,1897014100758.8909,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2004,shared,tertiary_industries,1981351159298.155,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2005,shared,tertiary_industries,2085765437592.6565,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2006,shared,tertiary_industries,2217371733391.074,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2007,shared,tertiary_industries,2352698137180.8716,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2008,shared,tertiary_industries,2447347731672.125,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2009,shared,tertiary_industries,2453754795744.3145,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2010,shared,tertiary_industries,2496579254044.9185,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2011,shared,tertiary_industries,2588943435927.6025,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2012,shared,tertiary_industries,2663247542847.3315,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2013,shared,tertiary_industries,2734384846465.4795,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2014,shared,tertiary_industries,2790160179237.061,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2015,shared,tertiary_industries,2833842055681.8276,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2016,shared,tertiary_industries,2879009667046.4585,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2017,shared,tertiary_industries,2912094383012.531,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2018,shared,tertiary_industries,2972735193990.593,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2019,shared,tertiary_industries,3003120339712.995,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2020,shared,tertiary_industries,2871414609503.2266,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2021,shared,tertiary_industries,2984148525795.6924,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2022,shared,tertiary_industries,3090133790546.5254,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2023,shared,tertiary_industries,3130176423897.613,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2024,shared,tertiary_industries,3165139921846.144,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2025,shared,tertiary_industries,3206610273564.071,"rand, constant 2015 prices",actual,AR1017,GDP P0441 - GDP Time series Q2 2026.xlsx
+ZAF,2002,shared,population,46054728.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2002,shared,gdp_per_capita,65367.29842805884,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2003,shared,population,46507944.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2003,shared,gdp_per_capita,66639.24499177594,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2004,shared,population,47024745.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2004,shared,gdp_per_capita,68908.64941141185,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2005,shared,population,47617789.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2005,shared,gdp_per_capita,71641.50092539637,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2006,shared,population,48249542.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2006,shared,gdp_per_capita,74665.5518838122,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2007,shared,population,48915571.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2007,shared,gdp_per_capita,77596.84492069851,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2008,shared,population,49626394.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2008,shared,gdp_per_capita,78926.06981786483,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2009,shared,population,50346226.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2009,shared,gdp_per_capita,76601.0169796024,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2010,shared,population,51066483.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2010,shared,gdp_per_capita,77816.2381637129,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2011,shared,population,51834864.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2011,shared,gdp_per_capita,79091.82019892073,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2012,shared,population,52669215.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2012,shared,gdp_per_capita,79704.10061956433,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2013,shared,population,53503857.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2013,shared,gdp_per_capita,80410.86040102008,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2014,shared,population,54358289.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2014,shared,gdp_per_capita,80265.9205627425,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2015,shared,population,55186958.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2015,shared,gdp_per_capita,80105.74740166818,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2016,shared,population,55955952.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2016,shared,gdp_per_capita,79529.89515958041,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2017,shared,population,56730686.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2017,shared,gdp_per_capita,79352.14489535401,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2018,shared,population,57565191.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2018,shared,gdp_per_capita,79419.2340828574,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2019,shared,population,58440883.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2019,shared,gdp_per_capita,78432.5430292038,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2020,shared,population,59284850.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2020,shared,gdp_per_capita,72546.43337599204,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2021,shared,population,59884141.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2021,shared,gdp_per_capita,75309.92646717378,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2022,shared,population,60517855.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2022,shared,gdp_per_capita,76055.06748983047,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2023,shared,population,61225903.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2023,shared,gdp_per_capita,75781.52071231291,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2024,shared,population,61983505.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2024,shared,gdp_per_capita,75255.62912098455,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2025,shared,population,62762495.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2025,shared,gdp_per_capita,75149.98563223911,"rand per person, constant 2015 prices",actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2026,shared,population,63522380.0,persons,actual,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2027,shared,population,64276134.21447465,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2028,shared,population,65038832.44861352,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2029,shared,population,65810580.83182354,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2030,shared,population,66591486.752839275,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2031,shared,population,67381658.87466602,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2032,shared,population,68181207.14970031,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2033,shared,population,68990242.83502974,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2034,shared,population,69808878.50791436,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2035,shared,population,70637228.0814519,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2036,shared,population,71475406.82042864,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2037,shared,population,72323531.35735859,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2038,shared,population,73181719.70871285,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2039,shared,population,74050091.29134159,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2040,shared,population,74928766.93909095,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2041,shared,population,75817868.919617,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2042,shared,population,76717520.9513993,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2043,shared,population,77627848.22095633,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2044,shared,population,78548977.40026516,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2045,shared,population,79481036.66438788,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2046,shared,population,80424155.7093071,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2047,shared,population,81378465.76997322,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2048,shared,population,82344099.63856564,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2049,shared,population,83321191.68297093,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"
+ZAF,2050,shared,population,84309877.86547998,persons,projection: Stats SA 2021-2026 average growth continued,,"Country projection by population group, sex and age (2002-2026).xlsx"

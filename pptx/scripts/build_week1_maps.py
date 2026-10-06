@@ -64,6 +64,7 @@ REGIONS = {
 OUT = ROOT / 'output/delivered'
 OUT.mkdir(parents=True, exist_ok=True)
 PATH = (Path(sys.argv[sys.argv.index('--output')+1]).resolve() if '--output' in sys.argv else OUT / 'Vopak_Week1_Analytical_Pack_2026_10_06.pptx')
+PATH.parent.mkdir(parents=True,exist_ok=True)
 if PATH.exists() and PATH.parent == OUT:
     archive=OUT/'archive'/datetime.now().strftime('%Y-%m-%d_%H%M%S')
     archive.mkdir(parents=True,exist_ok=True)
@@ -472,6 +473,8 @@ from scr_structure import structure_scr
 structure_scr(prs,slide,text,ROOT,brand)
 from scr_editorial import apply_editorial, apply_divider_markers, apply_confidentiality, apply_commentary_hierarchy
 apply_editorial(prs,text,ROOT,brand)
+from scr_editorial import lead_with_national_accounting
+lead_with_national_accounting(prs,brand)
 apply_divider_markers(prs,brand)
 from palette_reference_page import add_palette_page
 add_palette_page(prs,text,brand,cfg)
