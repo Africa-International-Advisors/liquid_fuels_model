@@ -201,6 +201,23 @@
         ]
       ],
       "action": "Manish: verify working capacity and unique dispatch. Nigel: obtain site records. Replace common turns with site-specific evidence."
+    },
+    "17": {
+      "findings": [
+        [
+          "Inventory policy sets working stock",
+          "At the illustrative 5.5 bn litres/year and uniform daily flow, 14 days requires 211,000 m³. More inventory days require more stock."
+        ],
+        [
+          "Existing tanks may absorb the stock",
+          "Compare this stock with fuel-compatible working space at Durban and Lesedi. Published gross capacities do not prove spare usable space."
+        ],
+        [
+          "This is not a new-storage requirement",
+          "Allow for peaks, product segregation, tank heels and receipt/dispatch limits. Add storage only if secured flows leave a usable-capacity gap."
+        ]
+      ],
+      "action": "Nigel: confirm candidate flows and inventory policy. Manish/Henry: verify spare working capacity and operating limits."
     }
   },
   "exhibit_roles": {

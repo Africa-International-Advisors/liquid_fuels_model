@@ -74,7 +74,9 @@ def unique_deliveries(s, root, brand):
 def apply_partner_review(prs, root, brand):
     assert len(prs.slides)==26
     review=json.loads((root/'story/partner_review_2026_10_07.json').read_text(encoding='utf-8'))
+    trade_layout(prs.slides[3],brand)
     unique_deliveries(prs.slides[13],root,brand)
+    inventory_layout(prs.slides[16],brand)
     for page,title in review['titles'].items():
         s=prs.slides[int(page)-1]
         q=next(q for q in s.shapes if q.name=='Title 1');replace(q,title)
@@ -133,6 +135,55 @@ def apply_partner_review(prs, root, brand):
             q.top=Inches(6.78);q.height=Inches(.18);style(q,9)
     from footer_layout import finish_footer_and_markers
     finish_footer_and_markers(prs,brand)
+
+
+def trade_layout(s,brand):
+    """Remove the duplicate lower accounting prose; let the trade chart speak."""
+    removed=[]
+    for q in list(s.shapes):
+        if q.left<Inches(7.8) and Inches(5.7)<=q.top<Inches(7):
+            if q.has_text_frame and q.text.startswith('Net imports:'):continue
+            if q.has_text_frame:removed.append(q.text)
+            q._element.getparent().remove(q._element)
+    q=next(q for q in s.shapes if q.has_chart)
+    q.height=Inches(3.30)
+    for axis in (q.chart.value_axis,q.chart.category_axis):
+        axis.has_major_gridlines=False;axis.has_minor_gridlines=False
+    for item in s.shapes:
+        if item.has_text_frame and item.text.startswith('Net imports:'):
+            item.top=Inches(6.66);item.height=Inches(.26);style(item,11,False)
+    if removed:s.notes_slide.notes_text_frame.text+='\nLower duplicate accounting blocks moved to notes:\n'+'\n'.join(removed)
+    s.notes_slide.notes_text_frame.text+='\n7 Oct trade layout: enlarge the grouped trade/sales chart, remove gridlines and retain one net-import summary. Source selection and residual are explained once in the RHS panel. Chart values unchanged.'
+
+
+def inventory_layout(s,brand):
+    """Chart left, evidence right; keep the native sensitivity data unchanged."""
+    q=next(q for q in s.shapes if q.has_chart)
+    q.left=Inches(.5);q.top=Inches(2.72);q.width=Inches(7.05);q.height=Inches(3.52)
+    for axis in (q.chart.value_axis,q.chart.category_axis):
+        axis.has_major_gridlines=False;axis.has_minor_gridlines=False
+    for item in list(s.shapes):
+        if not item.has_text_frame:continue
+        if item.text.startswith('Illustrative 5.5'):
+            item.left=Inches(.5);item.top=Inches(2.40);item.width=Inches(7.05);item.height=Inches(.27)
+            replace(item,'Illustrative 5.5 bn litres/year; uniform daily flow');style(item,11,False)
+        elif item.text=='Working inventory, thousand m³':item.width=Inches(7.05)
+        elif item.text=='Inventory days':item.width=Inches(7.05);style(item,11,False)
+        elif item.text.startswith('Working stock, not new capacity:'):
+            item._element.getparent().remove(item._element)
+    # Match the filled brand divider used by the surrounding evidence pages.
+    from pptx.enum.shapes import MSO_SHAPE
+    for item in list(s.shapes):
+        if item.name.startswith('Inventory evidence divider'):
+            item._element.getparent().remove(item._element)
+    d=line(s,(7.80,2.13),(7.80,6.90),RGBColor.from_string(cfg.THEME_COLOURS['accent4']),.55)
+    d.name='Inventory evidence divider line'
+    circle=s.shapes.add_shape(MSO_SHAPE.OVAL,Inches(7.66),Inches(1.99),Inches(.28),Inches(.28))
+    circle.fill.solid();circle.fill.fore_color.rgb=brand.accent_primary;circle.line.fill.background();circle.name='Inventory evidence divider circle'
+    for a,b in [((7.77,2.07),(7.83,2.13)),((7.83,2.13),(7.77,2.19))]:
+        arrow=line(s,a,b,brand.white,.9);arrow.name='Inventory evidence divider arrow'
+    line(s,(.5,2.13),(7.55,2.13),brand.ink,.55).name='Inventory evidence divider header'
+    s.notes_slide.notes_text_frame.text+='\n7 Oct inventory layout: chart narrowed into the standard left exhibit, all major/minor gridlines removed. Evidence/implication and action panel added on the right. Values and 14-day highlight unchanged.'
 
 
 if __name__=='__main__':

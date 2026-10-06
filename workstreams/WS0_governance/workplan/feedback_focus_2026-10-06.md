@@ -666,3 +666,22 @@ an authored illustration, not actual throughput. No model inputs, forecasts or
 existing native chart values changed. Stale page references and crowded notes
 are corrected. Presentation build now applies this review after canonical ordering.
 Editorial copy and type roles: pptx/story/partner_review_2026_10_07.json.
+
+
+## 7 October: inventory evidence panel
+
+Requested p17 change: remove all chart gridlines and restore the standard
+two-column exhibit/evidence layout. The right panel explains inventory policy,
+spare working space and the distinction between stock and new tankage, with
+Nigel/Manish/Henry actions. Existing 105/211/316/422 thousand m3 values and the
+14-day navy highlight remain unchanged. No new inputs or capacity conclusion.
+
+
+## 7 October: reduce national trade-page repetition
+
+Nigel marked the two lower blocks on p4 as taking space and making the slide
+text-heavy. Remove Primary trade / SARS customs and 2024 accounting remains open
+from the body; preserve their source discrepancy and residual details in notes.
+The existing RHS panel carries source selection and the unresolved balance once.
+Enlarge the grouped bars, remove chart gridlines and retain one net-import summary.
+No customs, sales or residual values changed.
