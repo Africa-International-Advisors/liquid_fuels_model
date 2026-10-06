@@ -20,3 +20,5 @@ Sources/code: `pptx/story/gateway_storage_2026_10_06.json`, `pptx/story/storage_
 Validation: PowerPoint render and PDF export; package and slide-boundary QA; eight source/supply/freight tests passed. Governance coverage passes with 52 existing open exceptions: draft status remains. These checks do not establish analyst source validation or business approval.
 
 Additional p10 review: separate legends for sales colour bands (bn litres/year), Vopak/port-storage/waypoint symbols, and schematic road/pipeline routes. Grey explicitly means unassessed; no market-share encoding.
+
+Additional design feedback: p3 map labels use transparent backgrounds and shading-aware contrast; two-panel pages have a native circle/right-arrow divider marker at the subtitle junction; p5 chart is taller with source/accounting notes in two columns; p17 is an editable palette appendix with actual theme/map HEX values. Original SCR page numbering retained.

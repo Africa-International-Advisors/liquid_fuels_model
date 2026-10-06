@@ -89,7 +89,7 @@ def national_page(s,text,root,brand):
                    ('Imports',[lookup[2024,p,'import'] for p in products]),
                    ('Exports',[lookup[2024,p,'export'] for p in products])]
     chart=add_themed_chart(s,XL_CHART_TYPE.BAR_CLUSTERED,
-                          Inches(.5),Inches(3.21),Inches(7.05),Inches(1.44),
+                          Inches(.5),Inches(3.18),Inches(7.05),Inches(2.16),
                           [p.title() for p in products],series_values,
                           show_legend=False,value_axis_format='0',axis_font_size=11,brand=brand)
     chart.value_axis.minimum_scale=0;chart.value_axis.maximum_scale=14;chart.value_axis.major_unit=2
@@ -108,13 +108,14 @@ def national_page(s,text,root,brand):
     text(s,'Production + imports − exports − stock build = consumption',.5,2.35,7.05,.29,12,True,brand.accent_primary)
     text(s,'Compare consumption with reported sales; explain coverage and the residual.',.5,2.68,7.05,.23,10.5)
     text(s,f'Net imports: petrol {rows[1][-1]}, diesel {rows[2][-1]}; combined {total_imports-total_exports:.3f} bn litres.',
-         .5,4.78,7.05,.28,11,True,brand.accent_primary)
-    text(s,'Source flag | 2024 diesel imports',.5,5.17,7.05,.34,14,True,brand.accent_primary)
+         .5,5.44,7.05,.28,11,True,brand.accent_primary)
     staged=float(next(r['value'] for r in old if r['period']=='2024' and r['product']=='diesel' and r['flow']=='import'))/1e9
-    text(s,f'FIASA staged: {staged:.3f}  |  Government report: 10.800\nDifference: {10.8-staged:+.3f} bn L. Preserve both; investigate scope and vintage.',.5,5.56,7.05,.54,11.5)
-    text(s,'2024 accounting remains open',.5,6.18,7.05,.30,14,True,brand.accent_primary)
     residual=sum(demand[p] for p in products)-(total_imports-total_exports)
-    text(s,f'Sales less net imports = {residual:.3f} bn L. This is a balancing requirement,\nnot measured production. 2024 production, stocks and coverage residual are unresolved.',.5,6.55,7.05,.48,11.5)
+    text(s,'Source flag | diesel imports',.5,5.97,3.35,.32,14,True,brand.accent_primary)
+    text(s,f'FIASA {staged:.3f}; government 10.800.\nDifference {10.8-staged:+.3f} bn L. Preserve both;\ninvestigate scope and vintage.',.5,6.40,3.35,.59,11.5)
+    line(s,(4.03,5.96),(4.03,6.99),brand.grey_fill,.7)
+    text(s,'2024 accounting remains open',4.22,5.97,3.33,.32,14,True,brand.accent_primary)
+    text(s,f'Sales less net imports = {residual:.3f} bn L.\nBalancing requirement, not production.\nProduction, stocks and coverage unresolved.',4.22,6.40,3.33,.59,11.5)
     panel(s,text,brand,[('Public figures are collectable','2024 petrol/diesel imports total 14.8 bn L in the government report. Exports total 1.71 bn L; these are rounded reported figures.'),
         ('The sources disagree','FIASA reports 14.793 bn L of diesel imports for 2024 versus 10.8 bn L in the government report. Neither value has been silently replaced.'),
         ('Port cargo has wider coverage','TNPA publishes liquid-bulk cargo by port, but it includes crude and other liquids. It does not establish petrol/diesel import allocation.')],

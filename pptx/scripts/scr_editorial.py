@@ -87,3 +87,20 @@ def apply_editorial(prs, text, root, brand):
                 replace(q, 'Verify product compatibility, working capacity and operating status.\nDetailed sizing follows the market case and remains secondary to fuel integration.')
     for s in prs.slides:
         s.notes_slide.notes_text_frame.text += '\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.'
+
+
+def apply_divider_markers(prs,brand):
+    """Native circle-and-arrow at the subtitle junction of each two-panel slide."""
+    from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
+    for s in prs.slides:
+        dividers=[q for q in s.shapes if q.shape_type==9 and abs(q.left-Inches(7.88))<Inches(.02) and q.height>Inches(1)]
+        if not dividers:continue
+        for q in list(s.shapes):
+            if q.name.startswith('SCR divider marker'):q._element.getparent().remove(q._element)
+        x,y=7.88,2.13
+        q=s.shapes.add_shape(MSO_SHAPE.OVAL,Inches(x-.13),Inches(y-.13),Inches(.26),Inches(.26))
+        q.name='SCR divider marker: circle';q.fill.solid();q.fill.fore_color.rgb=brand.white
+        q.line.color.rgb=brand.accent_primary;q.line.width=Pt(.9)
+        for a,b in [((x-.035,y-.065),(x+.035,y)),((x+.035,y),(x-.035,y+.065))]:
+            q=s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,Inches(a[0]),Inches(a[1]),Inches(b[0]),Inches(b[1]))
+            q.name='SCR divider marker: arrow';q.line.color.rgb=brand.accent_primary;q.line.width=Pt(1.1)

@@ -12,7 +12,7 @@ from storage_footprint import draw_storage_footprint,storage_notes,draw_transnet
 
 NAMES={'Eastern Cape':'EC','Free State':'FS','Gauteng':'GP','KwaZulu-Natal':'KZN',
        'Limpopo':'LP','Mpumalanga':'MP','North West':'NW','Nothern Cape':'NC','Northern Cape':'NC','Western Cape':'WC'}
-LABELS={'EC':(26.4,-32.5),'FS':(25.5,-28.6),'GP':(26.6,-24.7),'KZN':(29.4,-29.8),
+LABELS={'EC':(26.4,-32.5),'FS':(26.6,-28.6),'GP':(26.6,-24.7),'KZN':(30.2,-29.35),
         'LP':(29.2,-23.85),'MP':(30.25,-25.9),'NW':(25.9,-26.45),'NC':(21.55,-29.8),'WC':(20.6,-33.0)}
 COLOURS=['E3EBF6','BACCE4','809CC7','3D619D','0A2373']
 CLASSES=[1,2,4,6]
@@ -36,7 +36,7 @@ def add_page(slide,exhibit_layout,Map,text,marker,line,root,project,brand):
     for name, lon, lat, dx, dy in [("Durban",31.03,-29.88,.12,.03),("Lesedi",28.39,-26.44,-.35,.15)]:
         x,y=m.xy(lon,lat)
         q=text(s,name,x+dx,y+dy,.75,.22,10,True,brand.accent_primary)
-        q.fill.solid();q.fill.fore_color.rgb=brand.white
+        # Transparent facility labels sit beside the markers.
     province_labels(m,text,values,brand)
     s.notes_slide.notes_text_frame.text += '\n'+storage_notes(root)+'\n'+notes
     for i,(label,colour) in enumerate(zip(['<1','1-2','2-4','4-6','6+'],COLOURS)):
@@ -106,12 +106,16 @@ def draw(m,text,root,project,brand):
     return values,totals,notes
 
 def province_labels(m,text,values,brand):
-    # Gauteng is small and crowded with storage; displace its label with a leader.
+    # Read the shading at the label point, including displaced Gauteng.
+    from shapely.geometry import Point
+    boundary=json.loads((__import__('pathlib').Path(__file__).resolve().parents[1]/'assets/maps/geoboundaries_zaf_adm1_simplified.geojson').read_text(encoding='utf-8'))
     m.route([(27.9,-26.0),LABELS['GP']],brand.accent_primary,.6)
     for code,(lon,lat) in LABELS.items():
         x,y=m.xy(lon,lat)
-        q=text(m.s,f'{code}\n{values[code]:.2f}',x-.30,y-.17,.60,.36,9,True,brand.accent_primary)
-        q.fill.solid();q.fill.fore_color.rgb=brand.white
+        under=next((NAMES[f['properties']['shapeName']] for f in boundary['features'] if shape(f['geometry']).covers(Point(lon,lat))),None)
+        dark=under is not None and values[under]>=4
+        text(m.s,f'{code}\n{values[code]:.2f}',x-.30,y-.17,.60,.36,9,True,brand.white if dark else brand.accent_primary)
+
 
 def _polygon(m,geom,fill,stroke,width,name):
     parts=list(geom.geoms) if geom.geom_type=='MultiPolygon' else [geom]
