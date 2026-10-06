@@ -296,8 +296,13 @@ kept, 20 updated, 209 added, 809 removed); every changed row is `unreviewed`.
 | Original documents | Committed under `external/data/raw/` (not the three Glencore annual reports) | Closes the missing-originals flag for the five records |
 
 Left for Nigel, unchanged: the 2014 and 2018 provincial treatment, the
-elasticities, the road parameters and the register layout. The marine baseline
-stays at its placeholder on hold.
+elasticities, the road parameters, the register layout and the marine baseline
+(2.2 bn litres placeholder, equal to the department's 2007 measurement, against
+about 1 bn litres in the trade press for 2024-2026).
+
+Package 2: Manish accepted the source trace (`source_trace_2026-10-06.csv`) as
+the record on 6 October. Committing the remaining originals held only on
+Manish's and Nigel's machines is left for Nigel.
 
 Checks after the changes: `python -m lfm check --vintage 2026` passes with 52
 open exceptions; `python -m pytest -q` 150 passed, 1 skipped; both scenarios
