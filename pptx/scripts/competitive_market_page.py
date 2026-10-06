@@ -1,4 +1,4 @@
-﻿"""Sourced regional demand and public storage competitors; share gaps remain explicit."""
+"""Sourced regional demand and public storage competitors; share gaps remain explicit."""
 import csv
 import hashlib
 from pptx.util import Pt, Inches
@@ -39,6 +39,7 @@ def add_competitive_page(slide, exhibit_layout, Map, text, table, root, brand, r
               'DMPR 2022 provincial petrol/diesel sales; public operator sources [1-7], checked 6 Oct 2026. Share not established.',
               notes)
     exhibit_layout(s, 'All four regions | reported 2022 demand, bn litres/year', [])
+
     # Use the approved exhibit/divider layout; regional competitor detail replaces generic takeaways.
     for q in s.shapes:
         if q.has_text_frame and q.text == 'Key takeaways':
@@ -47,9 +48,9 @@ def add_competitive_page(slide, exhibit_layout, Map, text, table, root, brand, r
          .5, 2.38, 7.05, .27, 11, True, brand.accent_primary)
     text(s, 'Region / provinces', .5, 2.87, 1.42, .56, CHART_LABEL, True)
     text(s, 'Reported demand', 2.02, 2.87, 2.78, .29, CHART_LABEL, True)
-    text(s, 'Vopak\nserved', 4.98, 2.87, 1.15, .56, CHART_LABEL, True)
-    text(s, 'Additional\ncontestable', 6.30, 2.87, 1.25, .56, CHART_LABEL, True)
-    bar_x = 2.02; bar_width = 2.42; maximum = 12
+    text(s, 'Vopak tanks\n000 m³', 4.98, 2.87, 1.15, .56, CHART_LABEL, True)
+    text(s, 'Other tanks\n000 m³', 6.30, 2.87, 1.25, .56, CHART_LABEL, True)
+    bar_x = 2.02; bar_width = 2.12; maximum = 12
     for v in [0, 4, 8, 12]:
         x = bar_x + bar_width*v/maximum
         text(s, str(v), x-.10, 3.32, .40, .24, CHART_SECONDARY)
@@ -66,13 +67,18 @@ def add_competitive_page(slide, exhibit_layout, Map, text, table, root, brand, r
         q.name = f'Reported 2022 petrol/diesel demand: {region_names[i]}: {value:.9f} bn L'
         q.fill.solid(); q.fill.fore_color.rgb = brand.accent_primary; q.line.fill.background()
         text(s, f'{value:.2f}', bar_x+width+.07, y+.08, .61, .29, CHART_LABEL, True)
-        for x in [4.98, 6.30]:
-            q = text(s, 'Not\nestablished', x, y+.02, 1.20, .49, CHART_LABEL)
-            q.name = f'Unknown share input: {region_names[i]} at {x}'
-    text(s, 'To calculate share: unique Vopak customer deliveries / same-year regional demand.',
-         .5, 6.17, 7.05, .29, 10.5, True, brand.accent_primary)
-    text(s, 'Contestable demand needs route cost, compatible tanks, contracts and switching evidence.\nCount Durban-Lesedi transfers once. Region boundaries are working groupings, not catchments.',
-         .5, 6.51, 7.05, .44, 10)
+        from storage_footprint import inventory
+        sites=inventory(root)
+        locations=[['Durban','Richards Bay'],['Lesedi','Isando'],['Cape Town'],[]][i]
+        for x,is_vopak in [(4.98,True),(6.30,False)]:
+            selected=[r for r in sites if r['site'] in locations and (r['operator']=='Vopak')==is_vopak and r.get('gross_capacity_m3')]
+            value=sum(float(r['gross_capacity_m3']) for r in selected)/1000
+            label=f'{value:,.1f}' if selected else ('No listed\nVopak site' if is_vopak else 'Unknown')
+            text(s,label,x,y+.02,1.20,.49,CHART_LABEL)
+    text(s,'Published capacity is a provisional footprint measure, not annual demand served.',
+         .5,6.17,7.05,.29,10.5,True,brand.accent_primary)
+    text(s,'Partial gross inventory; mixed products and unknown Sasol/Transnet capacities.\nFuel-compatible capacity share and actual Vopak demand share remain unestablished.',
+         .5,6.51,7.05,.44,10)
     cards = [
         (2.40, '01 Eastern coast',
          'Vopak: Durban [1]. Bidvest: Durban and Richards Bay [2]; mixed-product capacity.\nTransnet: Ladysmith lease tanks [7].', .77),

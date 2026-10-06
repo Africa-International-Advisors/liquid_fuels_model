@@ -1,0 +1,149 @@
+{
+  "scope": "Editorial revision only. Preserve source data, illustrative values, slide order and supplied Vopak master.",
+  "titles": {
+    "2": "Size the fuel market, then test what Vopak can serve",
+    "3": "Three provinces account for 69% of reported fuel sales",
+    "4": "Provincial sales show different demand patterns over time",
+    "5": "Imports are material, but the matched fuel balance is still open",
+    "6": "Provincial demand is known; its supply origin still needs evidence",
+    "7": "Demand drivers move differently across vehicles and sectors",
+    "8": "Refinery capacity has fallen; redevelopment remains conditional",
+    "9": "Transport cost shapes the market Durban and Lesedi can reach",
+    "10": "Compare Durban, Matola and Walvis Bay for the same inland customer",
+    "11": "Separate market demand, accessible volume and unique Vopak deliveries",
+    "12": "Compare regional demand with Vopak’s published storage footprint",
+    "13": "The illustrative additional opportunity is 5.5 billion litres a year",
+    "14": "Durban leads the published storage subset",
+    "15": "Translate additional fuel flows into a preliminary inventory requirement"
+  },
+  "panels": {
+    "3": {
+      "findings": [
+        [
+          "Demand is concentrated",
+          "Gauteng, KwaZulu-Natal and Western Cape account for 68.6% of reported 2022 petrol/diesel sales."
+        ],
+        [
+          "Four reporting regions",
+          "Eastern coast: EC/KZN. Inland: GP/FS/LP/MP/NW. Western coast: WC. Other: NC. Boundaries are reporting groups."
+        ],
+        [
+          "Sales locate the historical market",
+          "Colours show provincial sales totals, not density or customer catchments. Only Durban and Lesedi are labelled; competitor detail is on pages 12 and 14."
+        ]
+      ],
+      "action": "Manish: refresh a complete year and reconcile the source flags. Nigel: confirm the customer markets to test against Durban and Lesedi."
+    },
+    "4": {
+      "findings": [
+        [
+          "Gauteng remains the largest market",
+          "The reported series places Gauteng above the other provinces throughout 2013–2022. Volumes differ across the smaller markets."
+        ],
+        [
+          "The series stops at 2022",
+          "2022 is the latest complete year in this extract. Only Q1 is available for 2023, so it is excluded from annual comparisons."
+        ],
+        [
+          "Historical reconciliation is open",
+          "Provincial totals differ from national sales in six years: 2013, 2014, 2015, 2017, 2018 and 2021."
+        ]
+      ],
+      "action": "Manish: reconcile flagged workbook cells and source newer observed sales. Record revisions and incomplete periods before updating the outlook."
+    },
+    "5": {
+      "findings": [
+        [
+          "Sales measure the domestic market",
+          "Reported petrol/diesel sales are a demand proxy. They are not imports plus exports; exports leave the national market."
+        ],
+        [
+          "The balance needs matched inputs",
+          "Domestic production plus imports, less exports and stock build, gives consumption. Compare that result with reported sales and explain the residual."
+        ],
+        [
+          "Diesel trade remains disputed",
+          "Government diesel imports are 10.8 bn litres; FIASA gives 14.793. Production and stock changes for 2024 remain open."
+        ]
+      ],
+      "action": "Manish: match trade, actual production and stock changes by product and year. Nigel: obtain product-specific port records."
+    },
+    "9": {
+      "findings": [
+        [
+          "Darker means lower transport cost",
+          "Cells show example road cost from Durban or Lesedi. The rate is illustrative and excludes fuel price, storage and pipeline tariffs."
+        ],
+        [
+          "Grey means unassessed",
+          "Grey areas have no assessed road connection under this illustration. They are not confirmed to be inaccessible."
+        ],
+        [
+          "A cost surface is a first screen",
+          "Pipeline and rail lines are context. Route capacity, product compatibility and customer rights still determine serviceable demand."
+        ]
+      ],
+      "action": "Nigel: select the first customer destination and cost threshold. Manish: replace example rates with dated route costs and access evidence."
+    },
+    "10": {
+      "findings": [
+        [
+          "Vopak has a South African footprint",
+          "Durban and Lesedi are highlighted against 2022 provincial sales. Colour shows sales totals; it does not establish Vopak market dominance."
+        ],
+        [
+          "Matola has published fuel storage",
+          "Galp/IPG GIMTL lists 60,000 m³ of petrol/diesel tanks, plus 6,000 m³ LPG excluded here. N4 is the eastern inland comparison route."
+        ],
+        [
+          "Walvis has storage and handling",
+          "NAMCOR NOSF lists 75,000 m³ in total, including 65,000 m³ petrol/diesel. Trans-Kalahari is the western inland comparator."
+        ]
+      ],
+      "action": "Manish: verify available tanks, customer access and full delivered costs. Source Namibia/Mozambique demand before extending the heatmap; grey means unassessed."
+    },
+    "11": {
+      "findings": [
+        [
+          "Count customer demand once",
+          "Example receipts of 2.8 at Durban and 2.0 at Lesedi include a shared 1.8 transfer. Unique demand served is therefore 3.0 bn litres."
+        ],
+        [
+          "Accessibility precedes opportunity sizing",
+          "Example catchment demand 14.5 → physically feasible 12.0 → commercial envelope 8.5. Each screen requires evidence."
+        ],
+        [
+          "Examples are separate from sales",
+          "These market volumes illustrate the calculation. They are not the reported 2022 regional totals or actual Vopak deliveries."
+        ]
+      ],
+      "action": "Nigel: request customer deliveries, destinations and transfer records. Manish: calculate unique served demand before estimating additional access."
+    },
+    "15": {
+      "findings": [
+        [
+          "Inventory days set working stock",
+          "At the illustrative 5.5 bn litres/year, 14 days needs about 211 thousand m³. More inventory days require more stock."
+        ],
+        [
+          "Existing tanks may cover part",
+          "Usable spare tanks may absorb this inventory. Published gross capacity does not establish spare petrol/diesel space."
+        ],
+        [
+          "Sizing needs an operating case",
+          "Test peak receipts, product segregation, tank heels and dispatch limits. This is a sensitivity, not an investment recommendation."
+        ]
+      ],
+      "action": "Nigel: confirm candidate flows and inventory policy. Manish and Henry: test usable spare tanks, peak flows and operating allowances before sizing new capacity."
+    }
+  },
+  "overview_rows": [
+    "Demand baseline and regional market\nProvincial sales locate demand. Refresh the complete year and reconcile historical totals.",
+    "Domestic supply and finished imports\n2024 trade is sourced, but diesel imports conflict. Match production/stocks and identify import entry ports.",
+    "Demand drivers\nVehicles, sectors, power and electrification move differently. Source the evidence first, then quantify fuel effects.",
+    "Refinery availability\nCapacity has fallen. Separate operating output from conditional redevelopment and agree plant scenarios.",
+    "Competing supply routes\nCompare Durban, Matola and Walvis Bay for one customer. Test full route cost, capacity and customer access.",
+    "Vopak share and additional demand\nMatch unique deliveries to regional demand. Test additional volumes against physical and commercial access.",
+    "Storage and optional investment\nUse published tanks as context. Assess additional services only after the incremental customer-flow case."
+  ]
+}

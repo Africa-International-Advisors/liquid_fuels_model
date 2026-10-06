@@ -1,0 +1,27 @@
+{
+  "checked": "2026-10-06",
+  "status": "Public reporting evidence; not verified available operating capacity or a model input",
+  "owner": "Manish",
+  "refresh_trigger": "Operator revision or access review",
+  "sites": [
+    {
+      "gateway": "Matola / Maputo",
+      "operator": "Galp / IPG GIMTL",
+      "petrol_diesel_m3": 60000,
+      "diesel_m3": 40000,
+      "petrol_m3": 20000,
+      "excluded_lpg_m3": 6000,
+      "source": "https://www.galp.com/mz/pt-pt/institucional/logistica"
+    },
+    {
+      "gateway": "Walvis Bay",
+      "operator": "NAMCOR NOSF",
+      "total_m3": 75000,
+      "petrol_diesel_m3": 65000,
+      "diesel_m3": 45000,
+      "petrol_m3": 20000,
+      "excluded_jet_hfo_m3": 10000,
+      "source": "https://www.namcor.com.na/national-oil-storage-facility/"
+    }
+  ]
+}
