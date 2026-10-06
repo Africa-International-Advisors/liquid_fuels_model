@@ -22,7 +22,7 @@ def add_page(slide,exhibit_layout,Map,text,marker,line,root,project,brand):
     top_share=sum(observed[p] for p in ('GP','KZN','WC'))/sum(observed.values())
     s=slide('Locate fuel demand alongside the infrastructure serving it',
         'DMPR 2022 sales; geoBoundaries/OCHA/MDB 2020 provinces (CC BY 3.0 IGO); operator sources on slide 7.',
-        'Observed historical sales, separate from the illustrative market figures on slides 6-7.')
+        'Observed historical sales, separate from the illustrative market figures on slide 6.')
     exhibit_layout(s,'Petrol + diesel sales by province | 2022, bn litres/year',[
         ('Demand concentrates in three provinces',f"Gauteng {observed['GP']:.2f}, KwaZulu-Natal {observed['KZN']:.2f} and Western Cape {observed['WC']:.2f} bn litres represent {top_share:.1%} of reported sales."),
         ('Regions have explicit boundaries','Eastern coast = EC + KZN; inland = GP, FS, LP, MP and NW; western coast = WC; other = NC. These are working groupings.'),
@@ -93,7 +93,7 @@ def draw(m,text,root,project,brand):
            'No district-level smoothing or within-province hotspot is inferred. Colour measures total annual provincial volume, '
            'not litres per km2. Region borders use the authored province membership, not a service area. '
            'Eastern coastal=EC+KZN; Inland=GP+FS+LP+MP+NW; Western coastal=WC; Other=NC. '
-           'The observed totals and regions are separate from the illustrative market/share figures on slides 6-7. '
+           'The observed totals and regions are separate from the illustrative market figures on slide 6. '
            f'Source CSV {path}; SHA256 {hashlib.sha256(path.read_bytes()).hexdigest()}; original workbook(s) {sorted(sources)}. '
            'Department index: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/media_SAVolumes.html. '
            'Boundary metadata/source/license: assets/maps/geoboundaries_zaf_adm1_metadata.json. '

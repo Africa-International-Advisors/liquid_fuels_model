@@ -20,10 +20,10 @@ the supplied master, cover, closing, chevrons and exhibit/key-takeaway structure
   usable capacity, current operation or third-party access.
 - Slides 3–4: illustrative road-cost surface and market opportunity volumes.
   Transport rates and schematic routes are not calibrated carrier/route evidence.
-- Slide 7: public operator sources plus illustrative 100% stacked share bars.
-  Current Vopak share, additional candidate and outside-envelope segments use
-  authored 4.5/10.0 bn L examples, not slide 2's historical sales denominators.
-  Western/other are unassessed. Actual Vopak share remains unknown.
+- Slide 7: all four working regions use reported 2022 demand, with public storage
+  operators listed by region. Vopak deliveries, share and additional contestable
+  volume are not established for any region. Earlier illustrative share bars have
+  been removed from this page. Capacity is not a delivery or share denominator.
 
 ## Direction for Manish
 
@@ -105,3 +105,24 @@ receipt/dispatch connections, storage licence and lease award before activating
 any of these assets in a route or market-access scenario. Refresh the index and
 PDFs at an amendment, the 4 December closing date, award or reactivation. Keep
 this manual-download path distinct from an API. No engine assumptions changed.
+
+## Regional competition page clarified
+
+Nigel requested all four regions while retaining competitor detail. Page 7 now
+shows sourced 2022 petrol/diesel sales by working region: eastern coast 6.02,
+inland 11.50, western coast 3.93 and Northern Cape 0.45 bn litres/year (rounded).
+The national sum is 21.90 bn litres; aggregation uses unrounded provincial data.
+The two adjacent fields, Vopak served and additional contestable, remain explicitly
+not established for every region. No authored share percentages appear on this page.
+
+Competitor details remain alongside the chart: Bidvest Durban/Richards Bay/Isando;
+Sasol Alrode/Pretoria West/Waltloo/Sasolburg; Transnet Tarlton/Jameson Park and
+lease opportunities; Burgan Cape at Cape Town. Mixed-product scope and lease
+status remain explicit. Northern Cape operator coverage is incomplete; Shell
+site notices and NERSA records are public inventory leads, not verified local sites.
+The public links and detailed evidence limitations remain in the page notes.
+
+Manish: fill unique matched-year Vopak customer deliveries and accessible candidate
+volumes after checking destinations, double-counted transfers, costs, product
+compatibility and contracts. Do not equate provincial geography with a terminal
+catchment. Obtain later complete demand observations before reporting a current share.

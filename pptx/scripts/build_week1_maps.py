@@ -453,7 +453,8 @@ for s in [prs.slides[4],prs.slides[5]]:
             q._element.getparent().remove(q._element)
     m=Map(s,.5,2.38,7.05,4.0,draw_base=False)
     draw_transnet_leases(m,text,line,marker,ROOT,brand,box=(.65,4.13))
-    s.notes_slide.notes_text_frame.text += '\nTransnet lease offers are context only, not cost-model origins or available supply.\n'+storage_notes(ROOT)
+    lease_note='\nTransnet lease offers are context only, not cost-model origins or available supply.\n'
+    s.notes_slide.notes_text_frame.text=s.notes_slide.notes_text_frame.text.split(lease_note)[0]+lease_note+storage_notes(ROOT)
 assert len(prs.slides)==9
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:

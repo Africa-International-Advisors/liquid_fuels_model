@@ -9,7 +9,7 @@ This is the current named delivery; no version suffix is needed to find it.
 4. Provincial domestic/import split — illustrative allocation of reported demand
 5. Conditional delivered-cost accessibility — illustrative
 6. Market volumes and shared-transfer reconciliation — illustrative
-7. Competition and regional share — illustrative shares / public operator sources
+7. Four regional demand totals and competitor footprint; Vopak share and contestable volumes unknown
 8. Published gross storage capacity by location — partial inventory
 9. Closing
 

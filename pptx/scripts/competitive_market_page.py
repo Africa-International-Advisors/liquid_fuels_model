@@ -1,88 +1,94 @@
-"""Competitive footprint and contestability exhibit using dated public evidence."""
+﻿"""Sourced regional demand and public storage competitors; share gaps remain explicit."""
 import csv
-from pptx.util import Pt,Inches
-from pptx.enum.shapes import MSO_SHAPE
-from pptx.enum.text import PP_ALIGN
-from pptx.dml.color import RGBColor
+import hashlib
+from pptx.util import Pt, Inches
+from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
+from provincial_demand_map import sales
+from storage_footprint import storage_notes
 
-def compact_table(table,s,rows,x,y,widths,height,size):
-    q=table(s,rows,x,y,widths,height,size)
-    for row in q.table.rows:
-        for cell in row.cells:
-            cell.margin_top=cell.margin_bottom=Pt(2)
-    return q
 
-def add_competitive_page(slide,exhibit_layout,Map,text,table,root,brand,regional):
-    with (root/'story/competitive_market_evidence_2026_10_06.csv').open(encoding='utf-8-sig',newline='') as f:
-        evidence=list(csv.DictReader(f))
-    notes='Public evidence reviewed 6 October 2026. Competitor list is a starting inventory, not exhaustive. '
-    notes+='Actual petrol/diesel throughput share remains unknown. Capacity is a stock and may include chemicals/gases. '
-    notes+='Bidvest site capacities: Durban 439306 + Richards Bay 483797 + Isando 32500 = 955603 m3; homepage instead states 868000 m3. Reconcile dates and products. '
-    notes+='Burgan Cape Terminal publishes 122000 m3 and a 2025-2026 uncommitted-capacity download; confirm the current period before treating it as available. '
-    notes+='Market volume illustration uses the authored regional CSV, not public company volumes. '
-    notes+='Current unique demand served / matched catchment demand; additional candidate / matched catchment demand. '
-    notes+='National, catchment, eligible-throughput and capacity denominators must not be interchanged. '
-    notes+='\n'.join(f"[{r['source_id']}] {r['operator']}: {r['source_url']} | {r['source_date']} | {r['limitation']}" for r in evidence)
-    s=slide('Define Vopak’s current share and the market it can contest',
-        'Operator sites/reports and NERSA [1–7], checked 6 Oct 2026; site inventory in slide 2 notes; shares illustrative.',notes)
-    exhibit_layout(s,'Competitive footprint and share | petrol/diesel focus',[
-        ('Actual Vopak share is not established','Need unique petrol/diesel deliveries divided by matched catchment demand, for the same period.'),
-        ('Contestability requires customer access','Test cost, compatible capacity, contracts and switching. Other operators’ volume is not automatically available.'),
-        ('Storage has different commercial roles','Bidvest and Burgan offer terminal services; Sasol depots and Transnet accumulation need separate access tests.'),
-        ('Capacity share is a separate measure','Exclude chemicals, gas, jet and unusable tanks. Reconcile dates; do not convert storage capacity into fuel throughput.'),
-    ])
-    rows=[['Operator / public source','Locations / role','Key evidence gap'],
-        ['Vopak [1]','Durban; Lesedi\nStorage and handling','Actual unique fuel deliveries\nand usable fuel capacity'],
-        ['Bidvest [2]','Durban; Richards Bay; Isando\nMixed-product terminals','Petrol/diesel scope; conflicting\ntotals 955,603 vs 868,000 m³'],
-        ['Sasol [6]','Alrode; Pretoria West; Waltloo;\nSasolburg blending/logistics','Current access; linked 2025/26\nnotice ends March 2026'],
-        ['Transnet [7]','Tarlton / Jameson Park;\n5 depot lease opportunities','Lease award / refurbishment / licence;\nno operating availability inferred'],
-        ['Burgan Cape [3]','Cape Town petrol/diesel terminal\nPublished capacity 122,000 m³','Current available capacity;\nCape overlap unassessed']]
-    q=compact_table(table,s,rows,.5,2.38,[1.35,2.90,2.80],2.55,10.5)
-    for cell in q.table.rows[len(q.table.rows)-1].cells:
-        for p in cell.text_frame.paragraphs:p.font.bold=False
-    text(s,'Shell [4] and NERSA [5]: extend the inventory through site notices and allocation mechanisms.',.5,5.03,7.05,.30,9)
-    fields=['demand_bn_l','current_unique_vopak_bn_l','additional_candidate_bn_l']
-    totals={k:sum(float(r[k]) for r in regional if r['region'] in ['Eastern coastal','Inland']) for k in fields}
-    demand=totals['demand_bn_l'];current=totals['current_unique_vopak_bn_l'];additional=totals['additional_candidate_bn_l']
-    rows=[['Illustrative catchment','Current share','Additional candidate'],
-          ['Eastern/coastal',f"{sum(float(r['current_unique_vopak_bn_l']) for r in regional if r['region']=='Eastern coastal')/sum(float(r['demand_bn_l']) for r in regional if r['region']=='Eastern coastal'):.1%}",f"{sum(float(r['additional_candidate_bn_l']) for r in regional if r['region']=='Eastern coastal')/sum(float(r['demand_bn_l']) for r in regional if r['region']=='Eastern coastal')*100:.1f} pp"],
-          ['Inland',f"{sum(float(r['current_unique_vopak_bn_l']) for r in regional if r['region']=='Inland')/sum(float(r['demand_bn_l']) for r in regional if r['region']=='Inland'):.1%}",f"{sum(float(r['additional_candidate_bn_l']) for r in regional if r['region']=='Inland')/sum(float(r['demand_bn_l']) for r in regional if r['region']=='Inland')*100:.1f} pp"],
-          ['Combined example',f'{current/demand:.1%}',f'{additional/demand*100:.1f} pp']]
-    text(s,'Illustrative share of each regional market | % of demand',.5,5.36,7.05,.22,11,True)
-    colours=[brand.accent_primary,RGBColor.from_string('809CC7'),RGBColor.from_string('E5E5E5')]
-    for i,region in enumerate(['Eastern coastal','Inland']):
-        data=[r for r in regional if r['region']==region]
-        d=sum(float(r['demand_bn_l']) for r in data)
-        c=sum(float(r['current_unique_vopak_bn_l']) for r in data)/d
-        a=sum(float(r['additional_candidate_bn_l']) for r in data)/d
-        y=5.68+i*.31
-        text(s,'Eastern coast' if i==0 else region,.5,y-.02,1.65,.22,10)
-        x=2.2
-        for j,value in enumerate([c,a,1-c-a]):
-            w=4.85*value
-            q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(y),Inches(w),Inches(.23))
-            q.name=f'Illustrative {region} share segment {j+1}: {value:.3%}'
-            q.fill.solid();q.fill.fore_color.rgb=colours[j];q.line.fill.background()
-            text(s,f'{value:.1%}',x,y+.02,w,.18,9,True,brand.white if j==0 else brand.ink,PP_ALIGN.CENTER)
-            x+=w
-    for i,region in enumerate(['Western coast','Other / NC']):
-        y=6.30+i*.23
-        text(s,region,.5,y,1.65,.20,9)
-        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(2.2),Inches(y),Inches(4.85),Inches(.18))
-        q.fill.solid();q.fill.fore_color.rgb=brand.grey_fill;q.line.fill.background()
-        text(s,'Unassessed - no share estimate',2.2,y,4.85,.18,8.5,False,brand.ink,PP_ALIGN.CENTER)
-    for x,label,colour in zip([.5,2.3,4.95],['Current Vopak','Additional candidate','Outside envelope'],colours):
-        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(6.82),Inches(.11),Inches(.11))
-        q.fill.solid();q.fill.fore_color.rgb=colour;q.line.fill.background()
-        text(s,label,x+.15,6.78,2.45,.18,8)
-    s.notes_slide.notes_text_frame.text += ('\nStacked bars are authored illustration only; not actual market share. '
-        'Eastern coast current 22.2%, additional candidate 33.3%, outside envelope 44.4%; '
-        'inland 20%, 40%, 40%. Candidate volume is conditional, not forecast capture. '
-        'Regions use the working province definitions on slide 2, but the bar denominators '
-        'remain the illustrative 4.5/10.0 bn L, not observed 2022 sales. Western/other unassessed.')
-    for i,r in enumerate(evidence):
-        label=f"[{r['source_id']}] "+['Vopak','Bidvest','Burgan','Shell','NERSA','Sasol','Transnet'][i]
-        q=text(s,label,.5+i*.98,6.96,.97,.17,7.5,color=brand.accent_primary)
+def add_competitive_page(slide, exhibit_layout, Map, text, table, root, brand, regional):
+    with (root/'story/competitive_market_evidence_2026_10_06.csv').open(encoding='utf-8-sig', newline='') as f:
+        evidence = list(csv.DictReader(f))
+    values, source, workbooks = sales(root)
+    with (root/'story/demand_map_regions_2026_10_06.csv').open(encoding='utf-8-sig', newline='') as f:
+        membership = list(csv.DictReader(f))
+    region_names = ['Eastern coastal', 'Inland', 'Western coastal', 'Other / Northern Cape']
+    totals = {name: sum(values[r['province_code']] for r in membership if r['region'] == name)
+              for name in region_names}
+    assert len(membership) == 9 and len({r['province_code'] for r in membership}) == 9
+    assert abs(sum(totals.values()) - sum(values.values())) < 1e-9
+    notes = ('Regional demand uses reported 2022 petrol/diesel sales, aggregated from all four quarters '
+             'for nine provinces. Historical sales are a demand proxy, not current terminal catchments. '
+             'No actual Vopak deliveries or contestable customer volumes were supplied for any region. '
+             'No share percentage is calculated or imputed; unknown is not zero. '
+             'The earlier illustrative 22.2/20.0% shares have been removed from this page. '
+             'Other operators are potential competing or complementary storage providers, not confirmed '
+             'direct competitors for every customer. Footprint is a starting inventory, not exhaustive. '
+             'Storage capacities are stocks, not deliveries, and may include ineligible products. '
+             'Obtain matched-year unique Vopak deliveries, customer destinations, transfer reconciliation, '
+             'route costs, product-compatible capacity and contracts before calculating shares. '
+             'Owner Manish; Nigel review. Refresh the source when a later complete provincial year is available. '
+             f'Sales file: {source}; SHA256 {hashlib.sha256(source.read_bytes()).hexdigest()}; '
+             f'received workbooks: {sorted(workbooks)}. Regional totals (bn litres): {totals}.\n'
+             + storage_notes(root) + '\n'
+             + '\n'.join(f"[{r['source_id']}] {r['operator']}: {r['source_url']} | {r['source_date']} | {r['limitation']}"
+                         for r in evidence))
+    s = slide('Size each regional market and locate competing storage',
+              'DMPR 2022 provincial petrol/diesel sales; public operator sources [1-7], checked 6 Oct 2026. Share not established.',
+              notes)
+    exhibit_layout(s, 'All four regions | reported 2022 demand, bn litres/year', [])
+    # Use the approved exhibit/divider layout; regional competitor detail replaces generic takeaways.
+    for q in s.shapes:
+        if q.has_text_frame and q.text == 'Key takeaways':
+            q.text_frame.paragraphs[0].runs[0].text = 'Key takeaways | competitors'
+    text(s, f'National total {sum(totals.values()):.2f} bn L | petrol + diesel; jet excluded',
+         .5, 2.38, 7.05, .27, 11, True, brand.accent_primary)
+    text(s, 'Region / provinces', .5, 2.87, 1.42, .48, 10, True)
+    text(s, 'Reported demand', 2.02, 2.87, 2.78, .25, 10, True)
+    text(s, 'Vopak\nserved', 4.98, 2.87, 1.15, .48, 10, True)
+    text(s, 'Additional\ncontestable', 6.30, 2.87, 1.25, .48, 10, True)
+    bar_x = 2.02; bar_width = 2.42; maximum = 12
+    for v in [0, 4, 8, 12]:
+        x = bar_x + bar_width*v/maximum
+        text(s, str(v), x-.10, 3.32, .30, .20, 9)
+        q = s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(x), Inches(3.61), Inches(x), Inches(5.93))
+        q.line.color.rgb = brand.grey_fill; q.line.width = Pt(.5)
+    labels = [('Eastern coast', 'EC / KZN'), ('Inland', 'GP / FS / LP / MP / NW'),
+              ('Western coast', 'WC'), ('Other', 'Northern Cape')]
+    for i, (name, label) in enumerate(labels):
+        y = 3.69 + i*.59; value = totals[region_names[i]]
+        text(s, name, .5, y, 1.47, .26, 11, True)
+        text(s, label, .5, y+.27, 1.47, .23, 8.5)
+        width = bar_width*value/maximum
+        q = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(bar_x), Inches(y+.08), Inches(width), Inches(.27))
+        q.name = f'Reported 2022 petrol/diesel demand: {region_names[i]}: {value:.9f} bn L'
+        q.fill.solid(); q.fill.fore_color.rgb = brand.accent_primary; q.line.fill.background()
+        text(s, f'{value:.2f}', bar_x+width+.07, y+.08, .48, .26, 10.5, True)
+        for x in [4.98, 6.30]:
+            q = text(s, 'Not\nestablished', x, y+.02, 1.20, .43, 9.5)
+            q.name = f'Unknown share input: {region_names[i]} at {x}'
+    text(s, 'To calculate share: unique Vopak customer deliveries / same-year regional demand.',
+         .5, 6.17, 7.05, .29, 10.5, True, brand.accent_primary)
+    text(s, 'Contestable demand needs route cost, compatible tanks, contracts and switching evidence.\nCount Durban-Lesedi transfers once. Region boundaries are working groupings, not catchments.',
+         .5, 6.51, 7.05, .44, 10)
+    cards = [
+        (2.40, '01 Eastern coast',
+         'Vopak: Durban [1]. Bidvest: Durban and Richards Bay [2]; mixed-product capacity.\nTransnet: Ladysmith lease tanks [7].', .77),
+        (3.55, '02 Inland',
+         'Vopak: Lesedi [1]. Bidvest: Isando [2].\nSasol: Alrode, Pretoria West, Waltloo and Sasolburg [6]. Transnet: Tarlton / Jameson Park plus four lease sites [7].', .91),
+        (4.93, '03 Western coast',
+         'Burgan Cape: Cape Town petrol/diesel terminal [3]. Confirm current tank availability and customer access.', .73),
+        (6.07, '04 Other / Northern Cape',
+         'Regional operator inventory is incomplete. Extend it using Shell site notices [4] and NERSA licences / access records [5].', .57),
+    ]
+    for y, heading, body, height in cards:
+        text(s, heading, 8.12, y, 4.03, .28, 13.5, True, brand.accent_primary)
+        text(s, body, 8.12, y+.36, 4.03, height, 11.5)
+    # Every source number remains directly clickable in PPT and exported PDF.
+    for i, r in enumerate(evidence):
+        label = f"[{r['source_id']}] " + ['Vopak', 'Bidvest', 'Burgan', 'Shell', 'NERSA', 'Sasol', 'Transnet'][i]
+        q = text(s, label, .5+i*.98, 6.99, .97, .17, 7.5, color=brand.accent_primary)
         for p in q.text_frame.paragraphs:
-            for run in p.runs:run.hyperlink.address='https://www.transnet.net/TPL-Leasing-Opportunities' if r['source_id']=='7' else r['source_url']
+            for run in p.runs: run.hyperlink.address = r['source_url']
     return s
