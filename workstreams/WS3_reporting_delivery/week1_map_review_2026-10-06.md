@@ -236,13 +236,33 @@ Durban–Lesedi transfers once. Nigel supplies client flows and agrees destinati
 and thresholds. No volume milestone is a forecast until these conditions close.
 # Demand-driver page 7 — indexed evidence
 
-Page 7 now contains four native line charts, all normalised as
+The expanded page 7 contains six native line charts, all normalised as
 `100 × observed value / that series' 2024 value`, with the same 0–120 vertical
-scale: Eskom + IPP OCGT generation, road/rail freight payload, BEV/conventional
-hybrid new sales, and real GDP. OCGT is financial year ending March; the other
-series are calendar years. Indices compare relative movement, not equal fuel
-weights or causal contributions. Conventional hybrids remain fuel users;
-vehicle sales do not establish fleet penetration. PHEVs are not in this chart.
+scale: passenger cars/minibuses, trucks/light-commercial vehicle stock,
+agriculture/forestry/fishing real value added, manufacturing/mining real value
+added, Eskom + IPP OCGT generation, and road/rail freight payload. NaTIS stocks
+use national December snapshots for 2021–2025; OCGT is financial year ending
+March; value added and payload are calendar years. BEV/conventional-hybrid new
+sales remain visible in the findings and notes, separate from vehicle stock.
+Indices compare relative movement, not equal fuel weights or causal contributions.
+
+The NaTIS extract does not identify petrol/diesel/electric fleets, so the ICE
+passenger and freight split remains explicitly unresolved. Cars/minibuses do
+not cover buses/motorcycles; light commercial includes non-freight use. These
+are identified classes, not complete fuel-consuming segments. Agriculture and
+industrial value added are activity proxies, not observed sector fuel litres.
+
+| Sector | Current evidence | Required fuel bridge / consuming module |
+| --- | --- | --- |
+| ICE passenger | All-fuel cars/minibuses stock | Fuel/drivetrain split × vehicle-km × cohort L/100km; `demand/vehicles.py` |
+| ICE freight | All-fuel trucks/LCV stock; road/rail payload | Fuel split, tonne-km/loads, route shift, mileage and efficiency; `demand/vehicles.py`; rail lever remains open |
+| Agriculture | Real agriculture/forestry/fishing value added | Sourced diesel baseline and activity/intensity relation; `demand/agriculture.py` still has a provisional baseline |
+| Industry | Real manufacturing and mining value added, separately | Subsector fuel baseline, direct use versus generation and intensities; `demand/industrial.py` |
+| Power | Eskom + IPP OCGT GWh | Sourced generation-to-diesel conversion and scope; `demand/generation.py` |
+
+These charts do not automatically replace or calibrate engine inputs. Manish
+must record the evidence, units and consuming equation for each bridge before
+closing the demand-driver gaps. Nigel agrees intervention alternatives.
 
 New Stats SA P7162 freight data use the December 2025 report consistently for
 both 2024 and 2025. The prior December 2024 report had 2024 road payload of
