@@ -114,12 +114,13 @@ TRACE: dict[str, tuple[str, ...]] = {
         "Ends 2021. Sector definitions shift in 2016. Fuel oil not extracted.",
         "Manish: later balance (package 4)"),
     "timeseries/fuel_prices_department.csv": (
-        DEPT, DEPT_URL, "fuel-price-history-<year>.pdf, 2011-2024", BOTH_LOCAL, "download", DEPT_CMD,
+        DEPT, DEPT_URL, "fuel-price-history-<year>.pdf, 2011-2025 (2024-2025 from the Fuel Prices Per Zone folders)", BOTH_LOCAL, "download", DEPT_CMD,
         "energy_dept.parse_price_history", "", "2024 (to April)",
-        "Stops April 2024; later monthly prices not yet collected.", "Manish (package 5)"),
+        "Vintage CSV stops April 2024. Fetcher now reads the newer monthly folders; candidate runs to "
+        "November 2025. 2026 not collected.", "Nigel: approve candidate"),
     "timeseries/fuel_prices_department_annual.csv": (
         DEPT, DEPT_URL, "derived from fuel_prices_department.csv", "derived", "derived", DEPT_CMD,
-        "fetch_energy_dept (12-month average)", "", "", "Ends 2023, the last complete year.", "Manish (package 5)"),
+        "fetch_energy_dept (12-month average)", "", "", "Vintage CSV ends 2023; candidate adds 2024.", "Nigel: approve candidate"),
     "timeseries/fuel_trade_department_review.csv": (
         DEPT, "https://www.dmpr.gov.za/ (SA Energy Trade Report 2024)",
         "external/data/raw/fuel_supply_review_20261006/trade2024.pdf, printed pp.12-13", MAIN, "download",

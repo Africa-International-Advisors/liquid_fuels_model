@@ -402,6 +402,11 @@ _MONTH_WORD = re.compile(
     r"\b(Jan|Feb|Mar|Apr|May|Jun|July|Jul|Aug|Sept|Sep|Oct|Nov|Dec)[a-z]*\b", re.IGNORECASE)
 # A price in cents: "1936.00", "2295,00", and occasionally with no decimals ("1482").
 _PRICE = re.compile(r"(?<![\d.,])\d{3,4}(?:[.,]\d{1,3})?(?![\d%])")
+# Some files print a price with a gap after the thousands digit: "2 112.00".
+_SPLIT_PRICE = re.compile(r"(?<![\d.,])(\d) (\d{3}[.,]\d{1,3})(?![\d%])")
+# The largest genuine monthly move on record is 52% (paraffin, 2020); a step
+# beyond 70% means a misread figure (a dropped thousands digit is -77% or more).
+PRICE_MAX_MONTHLY_CHANGE = 0.7
 
 
 def discover_price_files(index_html: str) -> list[SourceFile]:
@@ -414,12 +419,32 @@ def discover_price_files(index_html: str) -> list[SourceFile]:
     return [SourceFile(year=y, url=found[y]) for y in sorted(found)]
 
 
+# From mid-2024 the department files each month's price documents under a new
+# folder, "<year>/<Month> <year>/", and no longer lists them on the old archive
+# page. The latest month's "Fuel Price History" holds the year to date.
+PRICE_RECENT_BASE = (
+    "https://www.dmpr.gov.za/Portals/0/Resources/Fuel Prices Adjustments/Fuel Prices Per Zone/")
+PRICE_RECENT_FROM = 2024
+_MONTH_NAMES = ("January", "February", "March", "April", "May", "June", "July", "August",
+                "September", "October", "November", "December")
+
+
+def recent_price_candidates(year: int) -> list[SourceFile]:
+    """Addresses to try for a year's price history, latest month first."""
+    return [
+        SourceFile(year=year, url=urllib.parse.quote(
+            f"{PRICE_RECENT_BASE}{year}/{month} {year}/Fuel-Price-History.pdf", safe=":/"))
+        for month in reversed(_MONTH_NAMES)
+    ]
+
+
 def parse_price_history(text: str) -> tuple[dict[int, list[float]], list[str]]:
     """Monthly prices in cents per litre: ``({month number: [seven prices]}, warnings)``.
 
     The seven prices are in the order of ``PRICE_SERIES``. A month the
     department has not yet filled in is left out; a month with some other
-    number of prices is reported and left out.
+    number of prices, or with a price that jumps implausibly from the month
+    before, is reported and left out.
     """
     body = text[text.lower().find("jan"):] if "jan" in text.lower() else ""
     marks = [m for m in _MONTH_WORD.finditer(body)]
@@ -433,6 +458,7 @@ def parse_price_history(text: str) -> tuple[dict[int, list[float]], list[str]]:
         chunk = body[mark.end():end]
         if "ytd" in chunk.lower():
             chunk = chunk[:chunk.lower().find("ytd")]
+        chunk = _SPLIT_PRICE.sub(lambda m: m.group(1) + m.group(2), chunk)
         prices = [float(p.replace(",", ".")) for p in _PRICE.findall(chunk)]
         if not prices:
             continue
@@ -441,6 +467,14 @@ def parse_price_history(text: str) -> tuple[dict[int, list[float]], list[str]]:
                             f"{len(PRICE_SERIES)}")
             continue
         out[month] = prices
+    for month in sorted(out):
+        before = out.get(month - 1)
+        if before and any(
+            abs(now / then - 1) > PRICE_MAX_MONTHLY_CHANGE for now, then in zip(out[month], before)
+        ):
+            warnings.append(f"month {month}: a price differs from the month before by more than "
+                            f"{PRICE_MAX_MONTHLY_CHANGE:.0%}; month left out")
+            del out[month]
     return out, warnings
 
 

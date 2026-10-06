@@ -218,19 +218,31 @@ def _prices(raw_dir: Path, out_dir: Path, offline: bool, warnings: list[str]) ->
             warnings.append(f"fuel prices: index page not reachable ({exc})")
             listed = []
         raw_dir.mkdir(parents=True, exist_ok=True)
-        for source in listed:
-            path = raw_dir / f"fuel-price-history-{source.year}.pdf"
-            try:
-                data = dept.fetch(source.url)
-                if not data.startswith(b"%PDF"):
-                    raise ValueError("not a PDF")
-                path.write_bytes(data)   # the current year's file is updated in place
-            except Exception as exc:  # noqa: BLE001
-                if not path.exists():
-                    warnings.append(f"fuel prices {source.year}: download failed ({exc})")
+        # Each year has an ordered list of addresses; the first that returns a PDF is kept.
+        # The newer monthly folders come first because they hold later months.
+        attempts: dict[int, list] = {source.year: [source] for source in listed}
+        for year in range(dept.PRICE_RECENT_FROM, date.today().year + 1):
+            attempts[year] = dept.recent_price_candidates(year) + attempts.get(year, [])
+        for year in sorted(attempts):
+            path = raw_dir / f"fuel-price-history-{year}.pdf"
+            used = None
+            for source in attempts[year]:
+                try:
+                    data = dept.fetch(source.url)
+                    if not data.startswith(b"%PDF"):
+                        raise ValueError("not a PDF")
+                    path.write_bytes(data)   # the current year's file is updated in place
+                    used = source
+                    break
+                except Exception:  # noqa: BLE001
                     continue
+            if used is None:
+                if not path.exists():
+                    warnings.append(f"fuel prices {year}: no price history file found")
+                    continue
+                warnings.append(f"fuel prices {year}: download failed; kept the copy on disk")
             files.append(dept.SourceFile(
-                year=source.year, url=source.url, path=path,
+                year=year, url=used.url if used else "(kept from an earlier run)", path=path,
                 sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
 
     monthly: list[dict] = []

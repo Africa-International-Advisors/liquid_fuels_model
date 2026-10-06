@@ -236,3 +236,31 @@ def test_parse_sales_prefers_the_published_table_over_a_working_pivot() -> None:
     readings = dept.sales_readings(sheets)
     assert list(readings) == ["2013 Annual Aggregated FSV data", "Sheet4"]
     assert readings["Sheet4"]["petrol"] != readings["2013 Annual Aggregated FSV data"]["petrol"]
+
+
+def test_price_history_joins_a_price_printed_with_a_gap() -> None:
+    text = (
+        "Jan 2134.00 2055.00 2159.00 1928.55 1849.55 1227.118 1326.318\n"
+        "Feb 2097.00 2029.00 2 112.00 1913.35 1830.05 1197.118 1 298.618\n"
+    )
+    months, warnings = dept.parse_price_history(text)
+    assert months[2][2] == 2112.0
+    assert months[2][6] == 1298.618
+    assert warnings == []
+
+
+def test_price_history_leaves_out_a_month_with_an_implausible_jump() -> None:
+    text = (
+        "Jan 2134.00 2055.00 2159.00 1928.55 1849.55 1227.118 1326.318\n"
+        "Feb 2097.00 2029.00 112.00 1913.35 1830.05 1197.118 1298.618\n"
+    )
+    months, warnings = dept.parse_price_history(text)
+    assert list(months) == [1]
+    assert "month 2" in warnings[0]
+
+
+def test_recent_price_candidates_try_the_latest_month_first() -> None:
+    candidates = dept.recent_price_candidates(2025)
+    assert len(candidates) == 12
+    assert candidates[0].url.endswith("2025/December%202025/Fuel-Price-History.pdf")
+    assert candidates[-1].url.endswith("2025/January%202025/Fuel-Price-History.pdf")
