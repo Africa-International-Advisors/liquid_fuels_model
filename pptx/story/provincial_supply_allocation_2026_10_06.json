@@ -1,0 +1,11 @@
+{
+  "status": "Illustrative allocation only; not observed provincial supply",
+  "demand_year": 2022,
+  "demand_source": "assumptions/2026/timeseries/fuel_sales_department_by_province_quarterly.csv",
+  "mix_source": "pptx/story/illustrative_national_balance.csv",
+  "method": "Apply the example domestic_supply/demand share separately for petrol and diesel to each province's reported sales; remaining volume is illustrative finished-product imports",
+  "geographic_assumption": "Uniform source shares by product across provinces; provincial product mix may differ",
+  "scope": "Finished petrol and diesel; domestically refined output counts as domestic even when crude is imported",
+  "owner": "Manish / Nigel review",
+  "replacement_trigger": "Matched-year reviewed national balance plus evidenced refinery/import-to-province flows, exports and stock reconciliation"
+}

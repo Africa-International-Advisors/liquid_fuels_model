@@ -243,3 +243,21 @@ barrel values. Original HTML is retained under
 `external/data/raw/vopak_storage_20261006/`. The figures are published gross
 stocks, with product eligibility, usable capacity and access still outstanding.
 The chart is a partial inventory, not a national fuel-storage census or market share.
+
+The current pack adds a native provincial sales line chart and an illustrative
+domestic/import stack for every province. It is delivered as
+`output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pptx` plus matching PDF.
+Earlier shipped numbered packs are preserved under `output/delivered/archive/`;
+unshipped drafts are kept under ignored `qa/week1_maps/drafts/`. The builder
+archives the previous current pair before replacing the stable filenames.
+Run reporting revisions with `--reuse-deck` pointing at the current pack or an
+archived predecessor. Page references follow the current nine-page sequence.
+
+`scripts/provincial_sales_pages.py` sums only complete four-quarter product/year
+series. 2023 Q1 is not annualised. Historical provincial/national gaps are shown
+as source-review flags; no original values were changed. The import/domestic
+allocation uses the already-authored national example shares, by product, on
+reported 2022 demand. It is not observed 2022 provincial supply and cannot answer
+actual import penetration until matched flows, exports and stock changes are
+reconciled. The method, scope and replacement trigger are recorded in
+`story/provincial_supply_allocation_2026_10_06.json`.

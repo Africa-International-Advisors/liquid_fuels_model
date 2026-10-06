@@ -12,6 +12,8 @@ import sys
 import io
 from copy import deepcopy
 from datetime import date
+from datetime import datetime
+import shutil
 
 from pptx import Presentation
 from pptx.util import Inches, Pt
@@ -32,6 +34,7 @@ from accessibility_cartography import distance_surface
 from storage_footprint import draw_storage_footprint, storage_notes
 from competitive_market_page import add_competitive_page
 from storage_capacity_page import add_storage_capacity_page
+from provincial_sales_pages import add_trend_page,add_supply_page
 
 ROOT = Path(__file__).resolve().parents[1]
 # Reuse validated cost-map pages when only reporting evidence/layout changes.
@@ -57,12 +60,12 @@ REGIONS = {
 }
 OUT = ROOT / 'output/delivered'
 OUT.mkdir(parents=True, exist_ok=True)
-PATH = OUT / 'Vopak_Week1_Analytical_Maps_2026_10_06.pptx'
+PATH = OUT / 'Vopak_Week1_Analytical_Pack_2026_10_06.pptx'
 if PATH.exists():
-    n = 2
-    while PATH.with_stem(PATH.stem + f'_v{n}').exists():
-        n += 1
-    PATH = PATH.with_stem(PATH.stem + f'_v{n}')
+    archive=OUT/'archive'/datetime.now().strftime('%Y-%m-%d_%H%M%S')
+    archive.mkdir(parents=True,exist_ok=True)
+    for old in [PATH,PATH.with_suffix('.pdf')]:
+        if old.exists():shutil.copy2(old,archive/old.name)
 
 def text(s, value, x, y, w, h, size=14, bold=False, color=INK, align=None):
     q = s.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
@@ -275,9 +278,9 @@ class Map:
 
 prs = Presentation(REUSE or ROOT/cfg.SOURCE_TEMPLATE)
 if REUSE:
-    assert len(prs.slides) in (5,6,7), 'Reuse requires a prior Week 1 pack'
+    assert len(prs.slides) in (5,6,7,9), 'Reuse requires a prior Week 1 pack'
     # Remove only the infrastructure/evidence pages; preserve expensive cost exhibits.
-    positions={5:[1],6:[1,4],7:[1,4,5]}[len(prs.slides)]
+    positions={5:[1],6:[1,4],7:[1,4,5],9:[1,2,3,6,7]}[len(prs.slides)]
     for i in reversed(positions):
         sid=prs.slides._sldIdLst[i]
         prs.part.drop_rel(sid.rId)
@@ -388,6 +391,8 @@ def exhibit_layout(s, heading, takeaways):
 
 from provincial_demand_map import add_page as add_demand_page
 add_demand_page(slide,exhibit_layout,Map,text,marker,line,ROOT,PROJECT,brand)
+add_trend_page(slide,exhibit_layout,text,line,ROOT,brand)
+add_supply_page(slide,exhibit_layout,text,ROOT,brand)
 
 if not REUSE:
     s=slide('Map conditional market access from Durban and Lesedi',
@@ -439,8 +444,8 @@ if not REUSE:
 else:
     ids=list(prs.slides._sldIdLst)
     for sid in ids: prs.slides._sldIdLst.remove(sid)
-    for i in [0,4,1,2,5,6,3]: prs.slides._sldIdLst.append(ids[i])
-assert len(prs.slides)==7
+    for i in [0,4,5,6,1,2,7,8,3]: prs.slides._sldIdLst.append(ids[i])
+assert len(prs.slides)==9
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:
         assert q.left>=0 and q.top>=0 and q.left+q.width<=prs.slide_width+10 and q.top+q.height<=prs.slide_height+10,(index,q.name)
@@ -450,7 +455,7 @@ prs.core_properties.subject='Illustrative demand geography and conditional Vopak
 prs.save(PATH)
 qa=ROOT/'qa/week1_maps';qa.mkdir(parents=True,exist_ok=True)
 (qa/'build_manifest.json').write_text(json.dumps({
- 'output':str(PATH),'slides':7,'template':str(cfg.SOURCE_TEMPLATE),
+ 'output':str(PATH),'slides':9,'template':str(cfg.SOURCE_TEMPLATE),
  'template_sha256':hashlib.sha256((ROOT/cfg.SOURCE_TEMPLATE).read_bytes()).hexdigest(),
  'projection':CRS_MAP.to_proj4(),'volumes':'Illustrative only',
  'boundary_source':'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson',

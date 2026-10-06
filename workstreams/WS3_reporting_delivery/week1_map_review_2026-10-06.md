@@ -60,3 +60,23 @@ Sasol/Transnet values unknown. Vopak's HTML cbm capacity attributes confirm
 360,246 m³ at Durban and 140,000 m³ at Lesedi; the alternate rendered numbers
 are barrels and must not be ingested as m³. Terminal-page publication dates are
 unstated; originals are preserved under `external/data/raw/vopak_storage_20261006/`.
+
+## Provincial history, origin illustration and delivery cleanup
+
+The current named nine-page pack includes annual provincial trends (page 3) and
+the provincial domestic/finished-import stack (page 4). The stacks combine sourced
+2022 demand with explicitly illustrative product-specific source shares; no actual
+provincial source mix is asserted. National balance data in the current extract
+ends in 2021, and sales by province do not contain origin. Obtain matched-year
+evidence before replacing this illustration.
+
+The trend page uses the quarterly source rather than potentially incomplete annual
+totals. 2023 Q1 is excluded. Provincial sums versus the national sales source differ
+in 2013, 2014, 2015, 2017, 2018 and 2021; the largest combined gaps are approximately
++0.54 bn L in 2013 and -0.43 bn L in 2018. Review the raw workbooks and product-level
+differences without silently changing received data.
+
+Use `Vopak_Week1_Analytical_Pack_2026_10_06.pptx` / `.pdf` as the current delivery.
+Earlier shipped packs remain in `pptx/output/delivered/archive/2026-10-06/`;
+unshipped drafts are kept in ignored QA. Preserve that history and avoid creating
+further numbered variants in the delivery folder.
