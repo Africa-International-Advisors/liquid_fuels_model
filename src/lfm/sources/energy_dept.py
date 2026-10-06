@@ -478,6 +478,62 @@ def parse_price_history(text: str) -> tuple[dict[int, list[float]], list[str]]:
     return out, warnings
 
 
+# From December 2025 the department stopped posting the yearly "Fuel Price
+# History" and posts only a monthly "Breakdown of Prices" page: one price per
+# grade and region on the date it took effect. Those are listed on the archive
+# page below, a card per month.
+
+PRICE_ARCHIVE_PAGE = "https://www.dmpr.gov.za/Branches/Petroleum-Resources/Petrol-Price-Archive"
+_ARCHIVE_CARD = re.compile(r"<h4>\s*([A-Za-z]+)\s+((?:19|20)\d{2})\s*</h4>(.*?)(?=<h4>|\Z)", re.DOTALL)
+_ARCHIVE_LINK = re.compile(r'<a[^>]*href="([^"]+)"[^>]*>\s*Breakdown of[^<]*</a>', re.IGNORECASE)
+_AMOUNT = r"(\d{3,4}(?:[.,]\d{1,3})?)\s*c/l"
+_BREAKDOWN_PRICES = {
+    "petrol_93_inland_retail": _AMOUNT + r"\s*\(93 ULP[^)]*\)\s*Inland",
+    "petrol_95_inland_retail": _AMOUNT + r"\s*\(95 ULP[^)]*\)\s*Inland",
+    "petrol_95_coast_retail": _AMOUNT + r"\s*\(95 ULP[^)]*\)\s*Coastal",
+    "diesel_005_inland_wholesale": _AMOUNT + r"\s*\(0\.05%\)\s*Inland",
+    "paraffin_inland": r"Paraffin\b.*?" + _AMOUNT + r"\s*Inland",
+    "paraffin_coast": r"Paraffin\b.*?" + _AMOUNT + r"\s*Coastal",
+}
+
+
+def discover_price_breakdowns(archive_html: str) -> list[tuple[int, int, str]]:
+    """``(year, month, address)`` of each monthly "Breakdown of Prices" document."""
+    found: dict[tuple[int, int], str] = {}
+    for month_name, year, card in _ARCHIVE_CARD.findall(archive_html):
+        if month_name[:3].lower() not in _MONTHS:
+            continue
+        link = _ARCHIVE_LINK.search(card)
+        if not link:
+            continue
+        # The page carries test-site ("/uat1") links for recent months; the same
+        # path without that prefix is the live file.
+        href = link.group(1).replace("&amp;", "&").removeprefix("/uat1")
+        url = urllib.parse.urljoin(PRICE_ARCHIVE_PAGE, urllib.parse.quote(href, safe="/:?&=%"))
+        found.setdefault((int(year), _MONTHS.index(month_name[:3].lower()) + 1), url)
+    return [(year, month, found[(year, month)]) for year, month in sorted(found)]
+
+
+def parse_price_breakdown(text: str) -> tuple[dict[str, float], list[str]]:
+    """Prices in cents per litre from one "Breakdown of Prices" page, by series.
+
+    The page does not give coastal diesel, so ``diesel_005_coast_wholesale`` is
+    never returned. A series whose line cannot be found is reported and left out.
+    """
+    page = " ".join(text.split())
+    cut = page.find("Single Maximum")       # the retail paraffin cap follows; not a series here
+    page = page[:cut] if cut > 0 else page
+    out: dict[str, float] = {}
+    warnings: list[str] = []
+    for series, pattern in _BREAKDOWN_PRICES.items():
+        match = re.search(pattern, page, re.IGNORECASE)
+        if match:
+            out[series] = float(match.group(1).replace(",", "."))
+        else:
+            warnings.append(f"{series}: not found")
+    return out, warnings
+
+
 def _province_key(label: str) -> str:
     """'Limpopo Province' / 'KwaZulu Natal' / 'NorthWest' -> a key of PROVINCES."""
     return re.sub(r"[^a-z]", "", label.lower()).replace("province", "")

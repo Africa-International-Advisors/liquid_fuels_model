@@ -264,3 +264,50 @@ def test_recent_price_candidates_try_the_latest_month_first() -> None:
     assert len(candidates) == 12
     assert candidates[0].url.endswith("2025/December%202025/Fuel-Price-History.pdf")
     assert candidates[-1].url.endswith("2025/January%202025/Fuel-Price-History.pdf")
+
+
+def test_price_breakdowns_are_found_on_the_archive_page() -> None:
+    html = """
+    <div class="archive-card"><h4>January 2026</h4><ul>
+     <li><a download="" href="/uat1/API/Files/DownloadFile?ItemId=2825&amp;TabId=154">Petrol Regulation </a></li>
+     <li><a download="" href="/uat1/API/Files/DownloadFile?ItemId=2824&amp;TabId=154">Breakdown of Fuel Prices </a></li>
+    </ul></div>
+    <div class="archive-card"><h4>December 2025</h4><ul>
+     <li><a href="/uat1/Portals/0/Fuel Prices Per Zone/2025/December 2025/Breakdown-of-Prices-.pdf">Breakdown of Prices</a></li>
+    </ul></div>
+    <div class="archive-card"><h4>November 2025</h4><ul><li><a href="/x/Regs.xlsx">Fuel Regulations</a></li></ul></div>
+    """
+    found = dept.discover_price_breakdowns(html)
+    assert [(y, m) for y, m, _ in found] == [(2025, 12), (2026, 1)]
+    assert found[1][2] == "https://www.dmpr.gov.za/API/Files/DownloadFile?ItemId=2824&TabId=154"
+    assert found[0][2].endswith("/Portals/0/Fuel%20Prices%20Per%20Zone/2025/December%202025/Breakdown-of-Prices-.pdf")
+
+
+def test_price_breakdown_page_is_read_by_grade_and_region() -> None:
+    text = """Breakdown of petrol, diesel and paraffin prices as at 04 February 2026
+    Petrol
+    04 February 2026 1999.00 c/l
+    (93 ULP &
+    LRP)
+    Inland Region
+    04 February 2026 2010.00 c/l (95 ULP & LRP) Inland Region
+    04 February 2026 1916.00 c/l (93 ULP & LRP) Coastal Region
+    04 February 2026 1927.00c/l (95 ULP & LRP) Coastal Region
+    Diesel
+    04 February 2026 1791.83 c/l (0.05%) Inland Region
+    04 February 2026 1796.23 c/l (0.005%) Inland Region
+    Paraffin
+    04 February 2026 1210.098
+    c/l  Inland Region
+    04 February 2026 1108.598
+    c/l Coastal Region
+    Single Maximum Retail Price For Illuminating Paraffin
+    04 February 2026 1529.0 c/l  Country-Wide
+    """
+    prices, warnings = dept.parse_price_breakdown(text)
+    assert warnings == []
+    assert prices == {
+        "petrol_93_inland_retail": 1999.0, "petrol_95_inland_retail": 2010.0,
+        "petrol_95_coast_retail": 1927.0, "diesel_005_inland_wholesale": 1791.83,
+        "paraffin_inland": 1210.098, "paraffin_coast": 1108.598,
+    }

@@ -259,6 +259,7 @@ def _prices(raw_dir: Path, out_dir: Path, offline: bool, warnings: list[str]) ->
                     "country": "ZAF", "period": f"{f.year}-{month:02d}", "scenario": "shared",
                     "series": series, "value": price, "unit": "cents per litre",
                     "source_file": f.path.name})
+    breakdown_files = _breakdowns(raw_dir, offline, monthly, warnings)
     _write(out_dir / "fuel_prices_department.csv", monthly,
            ["country", "period", "scenario", "series", "value", "unit", "source_file"])
 
@@ -284,7 +285,67 @@ def _prices(raw_dir: Path, out_dir: Path, offline: bool, warnings: list[str]) ->
         "prices_are": "regulated prices in cents per litre; petrol retail, diesel wholesale",
         "files": [{"year": f.year, "url": f.url, "file": f.path.name, "sha256": f.sha256}
                   for f in files],
+        "monthly_breakdown_page": dept.PRICE_ARCHIVE_PAGE,
+        "monthly_breakdown_files": breakdown_files,
     }
+
+
+def _breakdowns(raw_dir: Path, offline: bool, monthly: list[dict], warnings: list[str]) -> list:
+    """Add months the yearly history does not cover from the monthly breakdown pages.
+
+    ``monthly`` is extended in place. The latest month the history does cover is
+    read from its breakdown page as well and compared, as a check that the two
+    documents mean the same prices.
+    """
+    have = {(r["period"], r["series"]): r["value"] for r in monthly}
+    latest = max((r["period"] for r in monthly), default="0000-00")
+    listed: list[tuple[int, int, str]] = []
+    if offline:
+        for path in sorted(raw_dir.glob("price-breakdown-*.pdf")):
+            year, month = path.stem.split("-")[-2:]
+            listed.append((int(year), int(month), "(offline)"))
+    else:
+        try:
+            listed = dept.discover_price_breakdowns(
+                dept.fetch(dept.PRICE_ARCHIVE_PAGE).decode("utf-8", "replace"))
+        except Exception as exc:  # noqa: BLE001
+            warnings.append(f"fuel prices: monthly archive page not reachable ({exc})")
+    files = []
+    for year, month, url in listed:
+        period = f"{year}-{month:02d}"
+        if period < latest:
+            continue
+        path = raw_dir / f"price-breakdown-{period}.pdf"
+        if not offline and not path.exists():
+            try:
+                data = dept.fetch(url)
+                if not data.startswith(b"%PDF"):
+                    raise ValueError("not a PDF")
+                path.write_bytes(data)
+            except Exception as exc:  # noqa: BLE001
+                warnings.append(f"fuel prices {period}: breakdown download failed ({exc})")
+                continue
+        if not path.exists():
+            continue
+        try:
+            prices, problems = dept.parse_price_breakdown(_pdf_text(path))
+        except Exception as exc:  # noqa: BLE001
+            warnings.append(f"fuel prices {period}: could not read {path.name} ({exc})")
+            continue
+        warnings += [f"fuel prices {period} breakdown: {p}" for p in problems]
+        files.append({"period": period, "url": url, "file": path.name,
+                      "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+        for series, price in prices.items():
+            if (period, series) in have:
+                if abs(have[(period, series)] - price) > 0.005:
+                    warnings.append(
+                        f"fuel prices {period} {series}: history {have[(period, series)]} "
+                        f"but breakdown {price}")
+                continue
+            monthly.append({
+                "country": "ZAF", "period": period, "scenario": "shared", "series": series,
+                "value": price, "unit": "cents per litre", "source_file": path.name})
+    return files
 
 
 def _pdf_text(path: Path) -> str:
