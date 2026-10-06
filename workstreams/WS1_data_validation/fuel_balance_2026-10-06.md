@@ -107,9 +107,45 @@ no balance after 2021. Refinery capacity (pack p8) is nameplate, not output.
 
 | Item | Owner | Next action |
 |---|---|---|
-| Customs data by tariff line (petrol, diesel; volume and partner country) | Manish | SARS trade statistics portal is an interactive form; build a scripted download or take a manual export for 2019–2025 |
-| Actual production 2022 onward | Manish | Sasol, Natref and Astron operator reports; ask the department whether a 2022 or 2023 balance exists |
+| Customs data by tariff line (petrol, diesel; volume and partner country) | Manish | Scripted download fails at the last step (see follow-up); take a manual export for 2019–2026 with the selections listed there |
+| Actual production 2022 onward | Manish | Sasol and Natref totals obtained (see follow-up); product split and Astron still missing; ask the department whether a 2022 or 2023 balance exists |
 | Stock movements | Manish / Nigel | None published found; ask the department or FIASA |
 | Diesel residual from 2022 | Manish, Henry review | Test each candidate explanation; exports to neighbouring countries by partner from SARS is the first check |
 | FIASA 2024 misprint and duplicated 2025 row | Nigel | Query FIASA |
 | Imports by entry port | Nigel | Product-level port data access (pack p5) |
+
+## Follow-up, later on 6 October
+
+**Operator output supports the diesel residual.** Sasol reports Secunda and
+Natref refined output of about 9.0 bn litres in each of the years to June 2023
+and 2024 (all products; table in `driver_evidence_2026-10-06.md`). Implied
+petrol plus diesel production for calendar 2023 and 2024 is 6.6 and 7.7 bn
+litres. Natref's white product yield was 87–89% in the last years it was
+reported (FY2020–FY2022), so petrol, diesel and jet make up most of that
+9.0 bn, and Astron's output comes on top from 2023. Domestic petrol and diesel
+output is therefore likely to be higher than the implied figure, which is the
+same direction as the residual: more product is supplied than recorded sales
+and exports account for. The size cannot be fixed without a product split and
+Astron's output.
+
+**SARS customs data: form mapped, download not achieved.** The portal
+(`tools.sars.gov.za/tradestatsportal/data_download.aspx`) is an ASP.NET form.
+Scripted steps work up to the last one: trade type, focus area "Tariffs",
+chapter 27 and the year all post back correctly and the tariff list loads, but
+the final Download returns the page instead of a file. Not pursued further
+today. For a manual export, the selections are:
+
+- Trade type: Imports, then Exports. Focus area: Tariffs. Chapter 27.
+- Years 2019–2026, all months, all columns (they include statistical quantity
+  and unit, country of origin and destination, district office and transport
+  mode).
+- Tariff lines: petrol 27101102 and 27101202; distillate fuel (diesel)
+  27101130, 27101230 and 27101930; biodiesel blends 27102000. For jet and
+  paraffin: aviation kerosene 27101107, 27101207, 27101907; illuminating
+  kerosene 27101115, 27101126, 27101215, 27101226, 27101915, 27101926.
+  Residual fuel oil: 27101135, 27101235, 27101935.
+
+The export answers three open questions at once: the 2024 diesel import
+figure, exports by destination country (the first test of the diesel
+residual), and imports by district office, which is the nearest public proxy
+for entry port.

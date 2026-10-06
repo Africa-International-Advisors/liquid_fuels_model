@@ -207,8 +207,14 @@ Further evidence located on 6 October:
   0.85 bn litres a year, against the model's 2.2 bn litres for 2024. Not
   verified against a primary source; articles not archived.
 
-Next actions (Manish): (a) fuel oil and marine lines from the original balance
-workbooks, which the extract does not carry; (b) Transnet National Ports
+Marine lines in the original balance workbooks (read 6 October, all fifteen
+years): international marine bunkers are reported for fuel oil in 2007 only
+(2.42 bn litres, plus 0.26 bn of diesel) and for diesel in 2010–2012; the row
+is empty from 2013 and zero in 2021. The 2.2 bn litre placeholder is therefore
+close to the 2007 level, the last time the department measured it, and about
+twice what the trade press reports for 2024–2026.
+
+Next actions (Manish): (a) done, above; (b) Transnet National Ports
 Authority and SARS ship-stores data for an official bunker series; (c) a
 sector-level source for agriculture and marine response to activity, or a
 decision to drive them with something other than GDP per capita. None replaces
