@@ -1,5 +1,8 @@
 # 6 October: feedback checklist and Manish discussion
 
+Start with the [standalone Manish handover instructions](manish_handover_2026-10-06.md),
+including files to open and the stand-up meeting-record reference.
+
 Purpose: source and reconcile the evidence behind the current diagnostics and
 partner story before quantifying levers or adopting replacements. South Africa
 petrol and diesel are the client focus; jet remains tracked separately.
