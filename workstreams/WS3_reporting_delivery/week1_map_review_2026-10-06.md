@@ -190,3 +190,8 @@ SA01 is covered by pages 3?4; SA02 by page 9 and the access specifications. All 
 ### SCR master table and page traceability
 
 Page 2 is now a full-width native PowerPoint table matching the supplied roadmap structure: SCR reference, evidence/required next step, proposed lead, timing/output, and linked deep-dive page numbers. Seven rows (S1/S2/C1/C2/C3/R1/R2) cover pages 3?15. Each analytical page carries its row reference above the title and an internal link back to page 2. Table page links and backlinks were checked against slide relationships; the 16-page PowerPoint/PDF pair was rendered and visually reviewed. No extra pages or changed data were introduced. Owners and week windows remain proposed, and investment remains optional after the flow case.
+
+
+### Clickable story navigation and matched panel headings
+
+Analytical pages 2?15 now use SCR overview / Situation / Complication / Resolution chevrons, linked to pages 2 / 3 / 7 / 11. Section highlighting follows the ordered story. All 56 chevron links and active states were verified, with clickable annotations preserved in the matching PDF. The original photographic cover and closing remain intact. Both left/right panel headings on analytical pages 3?15 use 15-point Lato bold. Rendered section states and page 11 were reviewed. Reuse strips obsolete internal slide relationships before rebuilding links, preventing removed pages from surviving as orphan package parts; breadcrumbs are replaced without duplication.

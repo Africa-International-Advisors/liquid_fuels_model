@@ -73,6 +73,9 @@ def apply_summary(prs, text, brand):
     mapping={page:(ref.split('\n')[0],ref.split('\n')[1]) for ref,_,_,_,pages in ROWS for page in pages}
     for page,(ref,stage) in mapping.items():
         s=prs.slides[page-1]
+        for old in list(s.shapes):
+            if old.name.startswith('SCR backlink'):
+                old._element.getparent().remove(old._element)
         q=text(s,f'SCR {ref} | {stage} | Return to overview: page 2',.5,.61,11.65,.24,10.5,True,brand.accent_primary)
         q.name=f'SCR backlink {ref}'
         q.click_action.target_slide=overview

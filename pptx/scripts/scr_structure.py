@@ -91,6 +91,8 @@ def structure_scr(prs, slide, text, root, brand):
 
     from scr_summary_table import apply_summary
     apply_summary(prs,text,brand)
+    from scr_navigation import apply_navigation
+    apply_navigation(prs,brand)
 
 
 def panel(s, text, brand, findings, action):

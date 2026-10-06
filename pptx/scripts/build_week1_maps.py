@@ -22,6 +22,7 @@ from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.dml import MSO_LINE_DASH_STYLE
 from pptx.dml.color import RGBColor
 from pptx.opc.packuri import PackURI
+from pptx.opc.constants import RELATIONSHIP_TYPE as RT
 from pyproj import CRS, Transformer
 from shapely.geometry import shape as geo_shape, box as geo_box
 from shapely.ops import transform as geo_transform
@@ -291,6 +292,14 @@ if REUSE:
     # python-pptx names new slide parts by slide count. Compact retained names
     # before appending, otherwise the old closing slide6 collides with new slide6.
     for i,retained in enumerate(prs.slides,1):
+        # Old internal links can keep removed slides reachable and cause duplicate
+        # package names. Story navigation is regenerated after final ordering.
+        for rel in list(retained.part.rels.values()):
+            if rel.reltype == RT.SLIDE:
+                for node in list(retained._element.xpath('.//a:hlinkClick')):
+                    if node.get('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id') == rel.rId:
+                        node.getparent().remove(node)
+                retained.part.drop_rel(rel.rId)
         retained.part.partname=PackURI(f'/ppt/slides/slide{i}.xml')
 else:
     remove_all_slides_cleanly(prs)
