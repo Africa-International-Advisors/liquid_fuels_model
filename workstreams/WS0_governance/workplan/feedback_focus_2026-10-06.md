@@ -621,3 +621,18 @@ the existing authored CSV values; coloured area does not determine these litres.
 The selected province outline is a reporting-market definition, not verified
 terminal reach. Replace the illustration when customer destinations, delivered
 cost/service tests and commercial rights become available (Manish; Nigel review).
+
+
+## 7 October: visually pair all five screening stages
+
+Nigel requested a visual representation across the map and waterfall. Page 15
+now uses five numbered schematic map markers, cluster halos and short labels
+matching the five bar badges: market, reach limit, commercial screen, already
+served and opportunity. The single reach elbow connector is replaced by this
+consistent visual key. Only the opportunity retains the strongest navy emphasis.
+
+Marker positions and halo sizes are editorial placements, not geocoded customers,
+observed commercial losses or calibrated spatial allocations. The page labels
+them as illustrative. Existing waterfall volumes and original road-cost exhibit
+are unchanged. Real destinations, served volumes and cost/service/access tests
+remain Manish's evidence task, with Nigel review.

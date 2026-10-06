@@ -51,6 +51,20 @@ def regional_graph(s, root, brand):
     add_turnover_graph(s, root, brand)
 
 
+def screen_badge(s,label,x,y,brand):
+    q=s.shapes.add_shape(MSO_SHAPE.OVAL,Inches(x-.15),Inches(y-.15),Inches(.30),Inches(.30))
+    q.name='Illustrative screen stage '+label
+    q.fill.solid();q.fill.fore_color.rgb=brand.white
+    q.line.color.rgb=brand.accent_primary;q.line.width=Pt(1.2)
+    tf=q.text_frame;tf.text=label
+    tf.margin_left=tf.margin_right=tf.margin_top=tf.margin_bottom=0
+    from pptx.enum.text import MSO_ANCHOR
+    tf.vertical_anchor=MSO_ANCHOR.MIDDLE
+    for p in tf.paragraphs:
+        p.alignment=PP_ALIGN.CENTER;p.font.name=cfg.THEME_FONT;p.font.size=Pt(10);p.font.bold=True;p.font.color.rgb=brand.accent_primary
+    return q
+
+
 def penetration_flow(s, root, brand, map_slide):
     clear_body(s)
     for q in list(s.shapes):
@@ -79,22 +93,19 @@ def penetration_flow(s, root, brand, map_slide):
         if i<4:
             level=[total,reachable,envelope,candidate][i]
             line(s,(x+width,ybottom-height*level/total),(x+1.31,ybottom-height*level/total),brand.ink,.6)
-    # The first deduction is spatial; later deductions are customer screens.
-    line(s,(5.02,4.30),(5.20,4.30),brand.accent_secondary,.8)
-    line(s,(5.20,4.30),(5.20,3.06),brand.accent_secondary,.8)
-    line(s,(5.20,3.06),(7.20,3.06),brand.accent_secondary,.8)
-    line(s,(7.20,3.06),(7.20,3.43),brand.accent_secondary,.8)
-    line(s,(7.20,3.43),(7.15,3.34),brand.accent_secondary,.8)
-    line(s,(7.20,3.43),(7.25,3.34),brand.accent_secondary,.8)
-    text(s,'Reach screen',5.34,2.82,1.55,.22,10,color=brand.accent_secondary)
-    text(s,'Customer screens: price, service, access and volumes already served.',7.62,6.53,4.45,.42,9)
+    # Match the map and bars through the same numbered screening stages.
+    from reach_waterfall_map import draw_screen_markers
+    draw_screen_markers(s,brand,text)
+    for i,(_,value,bottom,top) in enumerate(stages):
+        yy=ybottom-height*top/total
+        screen_badge(s,str(i+1),x0+i*1.31+width/2,yy+.19,brand)
     text(s,f'All volumes illustrative. Already served is assumed; {candidate:.1f} bn L/year remains an opportunity to test.',5.30,6.80,6.85,.18,8.5)
     for q in s.shapes:
         if q.has_text_frame and q.text.startswith('Source:'):
             replace(q,'Source: Authored catchment CSV; existing schematic road surface; declared reporting regions. Reach and customer volumes unverified.')
     # Keep authored volume examples in notes, rather than presenting them as measured penetration.
     s.notes_slide.notes_text_frame.text += '\nVIS-04: unquantified market-penetration flow. Earlier authored milestones remain illustrations, not measured current or captured volumes. L/M/H cost, reach, service, rights and capacity settings feed the SCN-01 task list.'
-    s.notes_slide.notes_text_frame.text+='\nWaterfall uses only existing authored Eastern coastal/inland catchment values. Commercial-screen loss combines commercial constraints; it is not a measured price elasticity or separate rights effect. Current example is not verified Vopak share. All withdrawals/screens are illustrative, not observed lost customers. The inset collapses the existing road-cost surface into illustrated road connection within selected eastern/inland reporting regions. It does not quantify the reach deduction; customer screens cannot be located on this map.'
+    s.notes_slide.notes_text_frame.text+='\nWaterfall uses only existing authored Eastern coastal/inland catchment values. Commercial-screen loss combines commercial constraints; it is not a measured price elasticity or separate rights effect. Current example is not verified Vopak share. All withdrawals/screens are illustrative, not observed lost customers. The inset collapses the existing road-cost surface into illustrated road connection within selected eastern/inland reporting regions. It does not quantify the reach deduction; Numbered customer-screen markers on the map are schematic visual placements, not actual customer locations or calibrated spatial allocations.'
 
 
 def scenario_framework(s, root, brand):

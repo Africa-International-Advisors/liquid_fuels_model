@@ -73,7 +73,7 @@ def draw_reach_map(dest, source, root, brand, text):
     for r in sites:
         px,py=proj.transform(float(r['longitude']),float(r['latitude']));xx,yy=xy(*source_xy(px,py));x=xx/Inches(1);y=yy/Inches(1)
         q=dest.shapes.add_shape(MSO_SHAPE.DIAMOND,Inches(x-.045),Inches(y-.045),Inches(.09),Inches(.09));q.name='Reach origin '+r['site'];q.fill.solid();q.fill.fore_color.rgb=brand.accent_primary;q.line.color.rgb=brand.white;q.line.width=Pt(.5)
-        text(dest,r['site'],x+.08,y-.05,.74,.23,9,True)
+        text(dest,r['site'],x-.78 if r['site_id']=='V2' else x+.08,y-.05,.74,.23,9,True)
     # Minimal geographic orientation, adapted from the source map.
     from convergence_feedback import line
     line(dest,(.72,3.60),(.72,3.34),brand.ink,.7)
@@ -85,3 +85,34 @@ def draw_reach_map(dest, source, root, brand, text):
     text(dest,'Outline = selected eastern + inland market',.5,6.13,4.55,.23,9)
     text(dest,'Spatial illustration only. The volume deduction is authored; it is not calculated from the shaded area.',.5,6.40,4.55,.35,8.5)
     dest.notes_slide.notes_text_frame.text+='\nREACH-MAP: source cells with a non-None cost class are collapsed into one illustrated road-connection layer and clipped to the selected Eastern coastal/Inland province union. No new cost cutoff or operating feasibility is inferred. Original 100 km schematic connection rule retained; original cost detail remains on the earlier transport page. Selected market outline uses declared reporting regions, not a verified terminal catchment. The 14.5/2.5/12.0 volume example is independent of the spatial classification; no area-to-litres or measured reach claim.'
+
+
+def draw_screen_markers(dest,brand,text):
+    """Pair schematic map markers with bars; positions encode no model input."""
+    from convergence_feedback import screen_badge,line
+    from pptx.dml.color import RGBColor
+    from brand_configs import vopak as cfg
+    charcoal=RGBColor.from_string(cfg.THEME_COLOURS['accent4'])
+    text(dest,'Numbers match the waterfall stages; placements are illustrative.',.5,2.84,4.65,.24,9)
+    markers=[
+        ('1',2.28,3.91,'Market',1.12,3.81,.90,brand.accent_secondary),
+        ('2',3.75,3.36,'Reach limit',4.00,3.25,.92,brand.grey_fill),
+        ('3',3.73,4.13,'Commercial',4.00,4.01,1.05,charcoal),
+        ('4',3.47,4.94,'Already served',3.82,4.83,1.24,charcoal),
+        ('5',2.84,5.30,'Opportunity',1.33,5.23,1.16,brand.accent_primary),
+    ]
+    for number,x,y,label,lx,ly,lw,col in markers:
+        # Soft illustrative cluster halo; no area or volume weighting is implied.
+        halo=dest.shapes.add_shape(MSO_SHAPE.OVAL,Inches(x-.24),Inches(y-.24),Inches(.48),Inches(.48))
+        halo.name='Schematic screen cluster '+number
+        halo.fill.background();halo.line.color.rgb=col;halo.line.width=Pt(1.5)
+        screen_badge(dest,number,x,y,brand)
+        anchor=lx+lw if lx<x else lx
+        line(dest,(x-.25 if lx<x else x+.25,y),(anchor,ly+.12),brand.accent_secondary,.6)
+        text(dest,label,lx,ly,lw,.27,9,color=brand.accent_primary if number=='5' else None)
+    text(dest,'Schematic markers, not customer locations. Volume screens are authored illustrations.',.5,6.40,4.55,.35,8.5)
+    # Replace the previous longer note with the single visual-placement caveat.
+    for q in list(dest.shapes):
+        if q.has_text_frame and q.text.startswith('Spatial illustration only.'):
+            q._element.getparent().remove(q._element)
+    dest.notes_slide.notes_text_frame.text+='\nVISUAL-PLACEMENT: stages 1-5 are schematic map markers matched to waterfall bars. Marker centres, halos and label leaders are editorial placements, not geocoded customers, area-weighted losses, observed destinations or new input assumptions.'
