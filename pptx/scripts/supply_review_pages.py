@@ -7,6 +7,7 @@ from pptx.enum.chart import XL_CHART_TYPE
 from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
 from pptx.enum.dml import MSO_LINE_DASH_STYLE
 from pptx.enum.text import MSO_ANCHOR
+from pptx.oxml.xmlchemy import OxmlElement
 from pyproj import CRS, Transformer
 from shapely.geometry import shape, box
 from brand_pptx import add_themed_chart, _strip_table_style, cell_bottom_rule
@@ -116,12 +117,13 @@ def capacity_page(s,text,root,brand):
                               [str(y) for y in years],[('Reported footprint / held flat',baseline),('Conditional addition',addition)],
                               show_legend=False,value_axis_format='0',axis_font_size=11,brand=brand)
         chart.value_axis.minimum_scale=0;chart.value_axis.maximum_scale=800;chart.value_axis.major_unit=200
-        chart.category_axis.tick_label_spacing=4
-        for series,color in zip(chart.series,(brand.accent_primary,brand.grey_fill)):
+        skip=OxmlElement('c:tickLblSkip');skip.set('val','4')
+        chart.category_axis._element.insert_element_before(skip,'c:tickMarkSkip','c:noMultiLvlLbl','c:extLst')
+        for series,color in zip(chart.series,(brand.accent_primary,brand.accent_secondary)):
             series.format.fill.solid();series.format.fill.fore_color.rgb=color
             series.format.line.color.rgb=color
         text(s,f'{settings["horizon_year"]}: {baseline[-1]+addition[-1]:.0f} thousand bbl/day',x,6.01,3.40,.30,12,True,brand.accent_primary)
-    text(s,'718 → 538 → 358: published footprint; idle nameplate and synthetic crude-equivalent included.',.5,6.46,7.05,.42,11)
+    text(s,f'B adds {settings["proposed_addition_bpd"]/1000:.0f} from {completion}; darker navy = existing footprint; lighter blue = conditional addition.',.5,6.46,7.05,.42,11)
     text(s,f'B assumes illustrative FID {settings["illustrative_fid_year"]} + {settings["construction_months"]} months; no sanctioned date. Both hold existing capacity flat.',.5,6.80,7.05,.22,9)
     panel(s,text,brand,[('History shows a structural decline','Published total falls from 718 in 2016–2020 to 538 in 2021 and 358 from 2022–2025. Capacity does not measure realised output.'),
         ('Redevelopment is conditional','CEF proposes approximately 400 thousand bbl/day after FID. Construction is approximately 48 months; the 2029 FID here is authored for comparison.'),

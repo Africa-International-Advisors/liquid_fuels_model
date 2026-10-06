@@ -228,6 +228,13 @@ The CEF case adds proposed 400 thousand bbl/day after an illustrative FID plus
 48 months. The capacity history includes synthetic crude-equivalent capacity
 and idle nameplate: it is not available petrol/diesel output.
 
+Page 8's illustrative display horizon is now 2036, rather than stopping at the
+2033 completion point. Both cases keep the same observed history and 0–800
+thousand bbl/day axis. The baseline holds 358; the conditional case adds 400
+from 2033 and holds 758 through 2036. The addition uses a contrasting blue
+area and an explicit legend. This is a registered reporting assumption change,
+not a revised capacity observation, sanctioned FID or fuel-output forecast.
+
 For R1, Manish should assemble customer × product × destination × period × route
 records with delivered R/litre, customer threshold, compatible capacity,
 contract/switching evidence and final delivered litres. Mark each condition

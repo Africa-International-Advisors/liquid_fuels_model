@@ -12,7 +12,7 @@ capacity_comparison:
   provisional: true
   value:
     start_year: 2026
-    horizon_year: 2033
+    horizon_year: 2036
     illustrative_fid_year: 2029
     construction_months: 48
     proposed_addition_bpd: 400000
