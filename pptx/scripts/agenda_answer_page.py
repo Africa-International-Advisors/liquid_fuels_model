@@ -46,7 +46,6 @@ def apply_agenda_answer(prs,root,brand):
         q.text_frame.margin_left=q.text_frame.margin_right=0;q.text_frame.margin_top=q.text_frame.margin_bottom=0
         for p in q.text_frame.paragraphs:p.font.name=cfg.THEME_FONT;p.font.size=Pt(size);p.font.bold=bold;p.font.color.rgb=color or brand.ink;p.space_after=Pt(0)
         return q
-    text(overview,'Henry’s storyline | what holds, what changes and what remains unproven',.5,1.78,11.65,.3,14,True)
     rows=[['Agenda','SCR','What the evidence shows','So what / story verdict','Deep dives'],
     ['Market\nbaseline','','Imports underpin the national market\n2024 net petrol/diesel imports: 13.078 bn L. Production, stocks and sales coverage remain unmatched.','Match the national balance\nManish; Nigel source access',''],
     ['','','Demand is concentrated, but later provincial data are estimates\nGP, KZN and WC account for 68.6% of reported 2022 sales. The map does not establish customer access.','Refresh observed demand and destinations\nManish; Nigel review',''],
@@ -59,12 +58,12 @@ def apply_agenda_answer(prs,root,brand):
     for row,verdict in zip(rows[1:],verdicts['rows']):
         row[2]=verdict['evidence'];row[3]=verdict['verdict']
     widths=[1.30,.55,5.05,3.30,1.45]
-    t=_table(overview,rows,widths,2.26,4.48,brand,10.5)
+    t=_table(overview,rows,widths,1.96,4.48,brand,10.5)
     for a,b in [(1,2),(3,5),(6,7)]:
         t.cell(a,0).merge(t.cell(b,0))
         for p in t.cell(a,0).text_frame.paragraphs:p.font.bold=True;p.font.color.rgb=brand.accent_primary
     for i,(pill,pages) in enumerate(zip(['S','S','S/C','C','C','R','R'],[[3,6],[4,5],[7,9],[8,9],[10,11],[12,13,14],[15,16,17]]),1):
-        y=2.26+.38+(i-1)*(4.48-.38)/7+.075
+        y=1.96+.38+(i-1)*(4.48-.38)/7+.075
         q=overview.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE,Inches(1.845),Inches(y),Inches(.46),Inches(.27));q.name=f'SCR pill {i}'
         q.fill.solid();q.fill.fore_color.rgb=brand.grey_fill;q.line.fill.background();q.text=pill
         q.text_frame.margin_left=q.text_frame.margin_right=0;q.text_frame.margin_top=q.text_frame.margin_bottom=0;q.text_frame.vertical_anchor=MSO_ANCHOR.MIDDLE

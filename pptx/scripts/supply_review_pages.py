@@ -88,7 +88,7 @@ def national_page(s,text,root,brand):
     total_imports=sum(lookup[2024,p,'import'] for p in products)
     total_exports=sum(lookup[2024,p,'export'] for p in products)
     rows.append(['Combined',f'{sum(demand[p] for p in products):.3f}',f'{total_imports:.3f}',f'{total_exports:.3f}',f'{total_imports-total_exports:.3f}'])
-    series_values=[('Reported sales',[demand[p] for p in products]),
+    series_values=[('Reported sales (proxy)',[demand[p] for p in products]),
                    ('Imports',[lookup[2024,p,'import'] for p in products]),
                    ('Exports',[lookup[2024,p,'export'] for p in products])]
     chart=add_themed_chart(s,XL_CHART_TYPE.BAR_CLUSTERED,
@@ -109,7 +109,7 @@ def national_page(s,text,root,brand):
         q.fill.solid();q.fill.fore_color.rgb=color;q.line.fill.background()
         text(s,series.name,x+.20,2.97,2.1,.28,11)
     text(s,'Production + imports − exports − stock build = consumption',.5,2.35,7.05,.29,12,True,brand.accent_primary)
-    text(s,'Compare consumption with reported sales; explain coverage and the residual.',.5,2.68,7.05,.23,10.5)
+    text(s,'Reported sales are a consumption proxy; production and stock changes are missing.',.5,2.68,7.05,.23,10.5)
     text(s,f'Net imports: petrol {rows[1][-1]}, diesel {rows[2][-1]}; combined {total_imports-total_exports:.3f} bn litres.',
          .5,5.44,7.05,.28,11,True,brand.accent_primary)
     staged=float(next(r['value'] for r in old if r['period']=='2024' and r['product']=='diesel' and r['flow']=='import'))/1e9
