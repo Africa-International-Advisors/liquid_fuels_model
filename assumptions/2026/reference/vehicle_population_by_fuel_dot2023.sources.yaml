@@ -19,9 +19,16 @@ notes:
     which appear under "none" (no fuel).
   - It is not split by vehicle class. How petrol and diesel divide between
     cars, light commercial vehicles and trucks is not published.
-  - The fourteen rows add to 13 187 801; the table prints a total of
-    13 188 374, a difference of 573. Only the petrol and diesel rows are used.
-  - "hybrid" shows 6 vehicles, which cannot be right against industry sales of
-    hybrids; hybrids are evidently recorded under petrol or diesel.
+  - >-
+    The fourteen fuel rows add to 13 187 801; the table prints a total of
+    13 188 374, a difference of 573. The difference is in the published table,
+    not the transcription: the nine provincial totals add to the printed
+    13 188 374, and each provincial total is larger than the fuel rows listed
+    above it. Only the petrol and diesel rows are used; for both, the nine
+    provincial figures add exactly to the national figure transcribed here
+    (checked 2026-10-06).
+  - >-
+    The "hybrid" row shows 6 vehicles, which cannot be right against industry
+    sales of hybrids; hybrids are evidently recorded under petrol or diesel.
   - No 2024 or 2025 edition of the bulletin was found. This file is not
     refreshed automatically.

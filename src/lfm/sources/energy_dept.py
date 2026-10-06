@@ -173,10 +173,24 @@ def read_workbook(path: Path) -> dict[str, list[list]]:
 def parse_sales(sheets: dict[str, list[list]]) -> dict[str, list[float | None]]:
     """Quarterly litres per product: ``{product: [q1, q2, q3, q4]}``.
 
-    Uses the first sheet that carries the product rows. A quarter with no
-    figure comes back as ``None`` so a part-year file is visible as such.
+    Uses the department's titled presentation sheet where there is one, else
+    the first sheet that carries the product rows. A quarter with no figure
+    comes back as ``None`` so a part-year file is visible as such.
     """
-    for rows in sheets.values():
+    readings = sales_readings(sheets)
+    return next(iter(readings.values()), {})
+
+
+def sales_readings(sheets: dict[str, list[list]]) -> dict[str, dict[str, list[float | None]]]:
+    """Every sheet's reading of the product rows, the titled sheet first.
+
+    Some workbooks keep a working pivot beside the published table (the 2013
+    file's pivot still holds a superseded fourth quarter). The published table
+    is the one headed "FUEL SALES VOLUME"; callers compare the readings to
+    report a workbook whose sheets disagree.
+    """
+    out: dict[str, dict[str, list[float | None]]] = {}
+    for name, rows in sheets.items():
         found: dict[str, list[float | None]] = {}
         for row in rows:
             label = next((c for c in row if isinstance(c, str) and c.strip()), None)
@@ -191,8 +205,16 @@ def parse_sales(sheets: dict[str, list[list]]) -> dict[str, list[float | None]]:
             quarters += [None] * (4 - len(quarters))
             found[product] = quarters
         if len(found) >= 3:
-            return found
-    return {}
+            out[name] = found
+    titled = [name for name in out if _has_sales_title(sheets[name])]
+    return {name: out[name] for name in titled + [n for n in out if n not in titled]}
+
+
+def _has_sales_title(rows: list[list]) -> bool:
+    return any(
+        isinstance(cell, str) and "FUEL SALES VOLUME" in cell.upper()
+        for row in rows[:6] for cell in row
+    )
 
 
 def parse_balance(sheets: dict[str, list[list]]) -> tuple[list[dict], list[str]]:

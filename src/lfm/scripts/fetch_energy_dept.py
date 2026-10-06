@@ -300,10 +300,16 @@ def _sales(files: list, warnings: list[str]) -> tuple[list, list, list]:
     quarterly: list[dict] = []
     part_years: list[int] = []
     for f in files:
-        products = dept.parse_sales(dept.read_workbook(f.path))
-        if not products:
+        readings = dept.sales_readings(dept.read_workbook(f.path))
+        if not readings:
             warnings.append(f"fuel sales {f.year}: product rows not found in {f.path.name}")
             continue
+        used, products = next(iter(readings.items()))
+        differing = [name for name, other in readings.items() if other != products]
+        if differing:
+            warnings.append(
+                f"fuel sales {f.year}: sheets of {f.path.name} disagree; used '{used}', "
+                f"not {differing}")
         base = {"country": "ZAF", "scenario": "shared", "unit": "litres",
                 "source_file": f.path.name}
         complete = True

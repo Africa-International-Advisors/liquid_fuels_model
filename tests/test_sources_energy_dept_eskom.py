@@ -214,3 +214,25 @@ def test_discover_price_files_rewrites_old_addresses() -> None:
     assert [f.year for f in files] == [2011, 2022]
     assert files[0].url.endswith("/esources/petroleum/Dec2011/FuelPriceHistory.pdf")
     assert files[0].url.startswith("https://www.dmpr.gov.za/")
+
+
+def test_parse_sales_prefers_the_published_table_over_a_working_pivot() -> None:
+    # The 2013 workbook keeps a pivot with a superseded fourth quarter ahead of
+    # the published table.
+    sheets = {
+        "Sheet4": [
+            ["Diesel", 1.0, 2.0, 3.0, 4.0, 10.0],
+            ["Jet Fuel", 1.0, 1.0, 1.0, 1.0, 4.0],
+            ["Petrol", 1.0, 2.0, 3.0, 4.0, 10.0],
+        ],
+        "2013 Annual Aggregated FSV data": [
+            [None, "2013 JANUARY TO DECEMBER SA FUEL SALES VOLUME / CONSUMPTION"],
+            [None, "Diesel (All grades)", 1.0, 2.0, 3.0, 9.0, 15.0],
+            [None, "Petrol (All grades)", 1.0, 2.0, 3.0, 8.0, 14.0],
+            [None, "Jet Fuel", 1.0, 1.0, 1.0, 2.0, 5.0],
+        ],
+    }
+    assert dept.parse_sales(sheets)["diesel"] == [1.0, 2.0, 3.0, 9.0]
+    readings = dept.sales_readings(sheets)
+    assert list(readings) == ["2013 Annual Aggregated FSV data", "Sheet4"]
+    assert readings["Sheet4"]["petrol"] != readings["2013 Annual Aggregated FSV data"]["petrol"]
