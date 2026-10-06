@@ -76,8 +76,5 @@ def apply_summary(prs, text, brand):
         for old in list(s.shapes):
             if old.name.startswith('SCR backlink'):
                 old._element.getparent().remove(old._element)
-        q=text(s,f'SCR {ref} | {stage} | Return to overview: page 2',.5,.61,11.65,.24,10.5,True,brand.accent_primary)
-        q.name=f'SCR backlink {ref}'
-        q.click_action.target_slide=overview
         s.notes_slide.notes_text_frame.text+=f'\nSCR master row {ref}; linked roadmap page 2. Deep-dive page {page}.'
-    overview.notes_slide.notes_text_frame.text+='\nMaster SCR rows: '+str(ROWS)+'\nSlide links connect each roadmap row to its deep dives, with backlinks to page 2.'
+    overview.notes_slide.notes_text_frame.text+='\nMaster SCR rows: '+str(ROWS)+'\nSlide links connect each roadmap row to its deep dives; the overview chevron provides the return link. No visible SCR breadcrumb.'

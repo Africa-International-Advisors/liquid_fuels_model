@@ -38,9 +38,9 @@ def add_driver_page(s,text,root,brand):
               ('Power | OCGT generation, FY',[('Eskom + IPP',power)]),
               ('Freight activity | payload, CY',[('Road',road),('Rail',rail)])]
     frame(s,'Track passenger, freight and sector activity driving fuel demand',
-          '',
+          'Demand-driver dashboard | every series indexed to 2024 = 100',
           'NaTIS Dec snapshots; Stats SA P0441 Q2 2026 / P7162 Dec 2025; Eskom integrated reports; naamsa Q2 2026. Series and scope in notes.',text,brand)
-    text(s,'2024 = 100 | Common 0–120 scale. Activity proxies; vehicle ICE split unresolved.',.5,2.35,7.05,.28,11,True,brand.accent_primary)
+    text(s,'Common 0–120 scale. Activity proxies; vehicle ICE split unresolved.',.5,2.35,7.05,.28,11,True,brand.accent_primary)
     for i,(heading,raw_series) in enumerate(datasets):
         x=.5+(i%2)*3.64;y=2.74+(i//2)*1.32
         text(s,heading,x,y,3.40,.29,12,True,brand.accent_primary)

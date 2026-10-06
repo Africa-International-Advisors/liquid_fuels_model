@@ -243,12 +243,14 @@ Durban–Lesedi transfers once. Nigel supplies client flows and agrees destinati
 and thresholds. No volume milestone is a forecast until these conditions close.
 # Demand-driver page 7 — indexed evidence
 
-Display update: redundant panel headings on both sides are removed on every
-analytical page, including the SCR overview, "Evidence and implications" and
-"Regional competitor evidence" and "Next steps | proposed owners".
-Main titles, chart titles and the underlying findings/actions remain;
-only compact units/index notes are retained. Exhibit descriptions remain in
-speaker notes. This is applied centrally in `scr_navigation.py` on each rebuild.
+Display update: analytical subtitles on both sides are retained at 14 pt,
+including "Evidence and implications" and "Regional competitor evidence".
+The visible "SCR S1 | Situation | Return to overview: page 2" breadcrumb and
+its equivalents are removed from every page. SCR references remain in notes;
+the clickable overview chevron provides the return link. Main titles, chart
+titles, units and findings/actions remain. The named breadcrumb is no longer
+created by `scr_summary_table.py`; subtitle size is applied centrally in
+`scr_navigation.py`, including the two retained map pages.
 
 The expanded page 7 contains six native line charts, all normalised as
 `100 × observed value / that series' 2024 value`, with the same 0–120 vertical
