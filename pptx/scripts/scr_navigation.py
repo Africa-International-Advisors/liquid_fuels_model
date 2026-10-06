@@ -10,7 +10,7 @@ SECTIONS = [('1  SCR overview', 2), ('2  Situation', 3),
 
 def apply_navigation(prs, brand):
     for page, slide in enumerate(prs.slides, 1):
-        if page in (1,16):
+        if not any(q.name=='Section navigation 1' for q in slide.shapes):
             continue  # Preserve the supplied photographic cover and closing.
         retained_headings={9:'Road-delivery accessibility | illustrative transport cost, R/litre',
                            11:'Illustrative road cost (R/litre) and market volumes'}

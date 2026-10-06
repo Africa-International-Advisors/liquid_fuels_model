@@ -160,7 +160,7 @@ def apply_confidentiality(prs):
         f.margin_left=f.margin_right=f.margin_top=f.margin_bottom=0
         p=f.paragraphs[0];p.text='Strictly Confidential'
         p.font.name=cfg.THEME_FONT;p.font.size=Pt(8)
-        p.font.color.rgb=RGBColor.from_string('BDBEC1' if i in (0,15) else '767676')
+        p.font.color.rgb=RGBColor.from_string('BDBEC1' if i in (0,len(prs.slides)-2) else '767676')
         p.space_before=p.space_after=Pt(0)
 
 

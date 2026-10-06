@@ -283,9 +283,9 @@ class Map:
 
 prs = Presentation(REUSE or ROOT/cfg.SOURCE_TEMPLATE)
 if REUSE:
-    assert len(prs.slides) in (5,6,7,9,10,16,17), 'Reuse requires a prior Week 1 pack'
+    assert len(prs.slides) in (5,6,7,9,10,16,17,18), 'Reuse requires a prior Week 1 pack'
     # Remove only the infrastructure/evidence pages; preserve expensive cost exhibits.
-    positions={5:[1],6:[1,4],7:[1,4,5],9:[1,2,3,6,7],10:[1,2,3,6,7,8],16:[i for i in range(16) if i not in (0,8,10,15)],17:[i for i in range(17) if i not in (0,8,10,15)]}[len(prs.slides)]
+    positions={5:[1],6:[1,4],7:[1,4,5],9:[1,2,3,6,7],10:[1,2,3,6,7,8],16:[i for i in range(16) if i not in (0,8,10,15)],17:[i for i in range(17) if i not in (0,8,10,15)],18:[i for i in range(18) if i not in (0,8,10,16)]}[len(prs.slides)]
     for i in reversed(positions):
         sid=prs.slides._sldIdLst[i]
         prs.part.drop_rel(sid.rId)
@@ -475,12 +475,14 @@ from scr_editorial import apply_editorial, apply_divider_markers, apply_confiden
 apply_editorial(prs,text,ROOT,brand)
 from scr_editorial import lead_with_national_accounting
 lead_with_national_accounting(prs,brand)
+from market_playbook_page import add_market_playbook
+add_market_playbook(prs,slide,text,ROOT,brand)
 apply_divider_markers(prs,brand)
 from palette_reference_page import add_palette_page
 add_palette_page(prs,text,brand,cfg)
 apply_confidentiality(prs)
 apply_commentary_hierarchy(prs)
-assert len(prs.slides)==17
+assert len(prs.slides)==18
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:
         assert q.left>=0 and q.top>=0 and q.left+q.width<=prs.slide_width+10 and q.top+q.height<=prs.slide_height+10,(index,q.name)
