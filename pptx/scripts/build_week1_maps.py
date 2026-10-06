@@ -470,6 +470,8 @@ for s in [prs.slides[4],prs.slides[5]]:
     s.notes_slide.notes_text_frame.text=s.notes_slide.notes_text_frame.text.split(lease_note)[0]+lease_note+storage_notes(ROOT)
 from scr_structure import structure_scr
 structure_scr(prs,slide,text,ROOT,brand)
+from scr_editorial import apply_editorial
+apply_editorial(prs,text,ROOT,brand)
 assert len(prs.slides)==16
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:

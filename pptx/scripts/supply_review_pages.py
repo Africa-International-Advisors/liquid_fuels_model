@@ -167,7 +167,9 @@ def corridor_page(s,text,root,brand):
              'Matola / Maputo':(.10,-.05),'Mbombela':(-.4,-.4),'Gauteng':(-1.1,.0),'Lesedi*':(-.2,.30),'Durban':(.1,-.03)}
     for name,(lon,lat) in config['points'].items():
         if name not in offsets:continue
-        x,y=xy(lon,lat);kind=MSO_SHAPE.DIAMOND if name in ('Lesedi*','Durban') else MSO_SHAPE.OVAL
+        x,y=xy(lon,lat)
+        kind=(MSO_SHAPE.DIAMOND if name in ('Lesedi*','Durban') else
+              MSO_SHAPE.RECTANGLE if name in ('Walvis Bay','Matola / Maputo') else MSO_SHAPE.OVAL)
         q=s.shapes.add_shape(kind,Inches(x-.04),Inches(y-.04),Inches(.08),Inches(.08));q.fill.solid();q.fill.fore_color.rgb=brand.accent_primary;q.line.fill.background()
         dx,dy=offsets[name];w=1.55 if name=='Matola / Maputo' else 1.12
         q=text(s,name,x+dx,y+dy,w,.28,11,True,brand.accent_primary);q.fill.solid();q.fill.fore_color.rgb=brand.white
@@ -175,8 +177,13 @@ def corridor_page(s,text,root,brand):
     line(s,(.78,2.9),(.74,2.98),brand.ink,1);line(s,(.78,2.9),(.82,2.98),brand.ink,1)
     width=500000*factor;line(s,(.7,6.15),(.7+width,6.15),brand.ink,1.5)
     text(s,'0',.7,5.92,.2,.22,9);text(s,'500 km',.7+width-.15,5.92,.65,.22,9)
-    text(s,'Solid: Durban / N4 candidates   |   Dashed: Trans-Kalahari / NMPP',.5,6.54,7.05,.32,11)
-    text(s,'LAEA / WGS84; routes schematic. No cost, available capacity, fuel rights or catchment is inferred.',.5,6.82,7.05,.20,9)
+    for i,(label,style) in enumerate([('Durban road / inland link','vopak'),('Matola: N4 corridor','east'),
+                                    ('Durban: NMPP schematic','pipe'),('Walvis: Trans-Kalahari','west')]):
+        x=.5+(i%2)*3.55;y=6.49+(i//2)*.27
+        line(s,(x,y+.10),(x+.38,y+.10),colors[style],1.6,
+             MSO_LINE_DASH_STYLE.DASH if style in ('west','pipe') else None)
+        text(s,label,x+.48,y,3.0,.23,10.5)
+    text(s,'LAEA/WGS84. Squares: alternative gateways. Diamonds: Vopak. Points/routes approximate; access unverified.',.5,6.99,7.05,.14,7.5)
     panel(s,text,brand,[('Compare the same inland destination','Gauteng is the common comparison market. Lesedi is a Vopak facility, not a destination every competing route must pass through.'),
         ('Matola approaches from the east','N4/Maputo connects Mozambique to Gauteng via Komatipoort and Mpumalanga. Fuel-compatible terminal access and road/rail service need testing.'),
         ('Walvis is an inland comparator','Trans-Kalahari links Walvis Bay via Namibia and Botswana to Gauteng. Its competitiveness for specific inland customers is unassessed.')],
