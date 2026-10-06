@@ -28,7 +28,7 @@ def add_forecast_story(prs,slide,text,root,brand):
             link=OxmlElement('a:hlinkClick');link.set('{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id',overview.part.relate_to(prs.slides[page-1].part,RT.SLIDE));link.set('action','ppaction://hlinksldjump');r._r.get_or_add_rPr().append(link)
     copy={3:'Historical drivers and forecast cases\nUse observed performance as the anchor. Agree growth assumptions and levers; calculate demand and regional effects before calibration.',
           6:'Market share of Vopak in Dbn and Lesedi\nMatch unique customer deliveries to regional demand. Test additional accessible volumes and commercial rights.',
-          7:'Potential scope for new investment?\nThe playbook lands priorities, service proposition and timing. Storage follows secured flows and a usable-capacity gap.'}
+          7:'Potential scope for new investment?\nThe outlook lands priorities, service proposition and timing. Storage follows secured flows and a usable-capacity gap.'}
     for row,value in copy.items():
         t.cell(row,1).text=value
         for p in t.cell(row,1).text_frame.paragraphs:p.font.name=cfg.THEME_FONT;p.font.size=Pt(10.5);p.font.color.rgb=brand.ink;p.space_after=Pt(0)
@@ -40,6 +40,6 @@ def add_forecast_story(prs,slide,text,root,brand):
                 elif 'Accessibility map p9 and competing routes p10' in q.text:replace(q,q.text.replace('Accessibility map p9 and competing routes p10','Accessibility map p10 and competing routes p11'))
                 elif 'pp.4, 9–14' in q.text:replace(q,q.text.replace('pp.4, 9–14','pp.4, 10–15'))
                 elif 'Incremental opportunity is on page 13' in q.text:replace(q,q.text.replace('Incremental opportunity is on page 13','Incremental opportunity is on page 14'))
-        s.notes_slide.notes_text_frame.text+=f'\nFinal structure: baseline pp3–6; changes pp7–11 (forecast framework p9); playbook pp12–17 (market choices p16, inventory p17). Current page {page}.'
+        s.notes_slide.notes_text_frame.text+=f'\nFinal structure: baseline pp3–6; changes pp7–11 (forecast framework p9); outlook pp12–17 (market choices p16, inventory p17). Current page {page}.'
     from scr_navigation import apply_navigation
     apply_navigation(prs,brand)

@@ -5,7 +5,7 @@ from brand_configs import vopak as cfg
 
 
 SECTIONS = [('1  Overview', 2), ('2  Market baseline', 3),
-            ('3  Market changes', 7), ('4  Vopak playbook', 12)]
+            ('3  Market changes', 7), ('4  Vopak outlook', 12)]
 
 
 def apply_navigation(prs, brand):
@@ -39,4 +39,4 @@ def apply_navigation(prs, brand):
             q.fill.solid()
             q.fill.fore_color.rgb=brand.accent_primary if index-1==active else brand.grey_fill
             q.click_action.target_slide=prs.slides[first_page-1]
-        slide.notes_slide.notes_text_frame.text+='\nFinal story navigation: Overview p2; Market baseline p3; Market changes p7; Vopak playbook p12. Henry SCR naming remains in the overview.'
+        slide.notes_slide.notes_text_frame.text+='\nFinal story navigation: Overview p2; Market baseline p3; Market changes p7; Vopak outlook p12. Henry SCR naming remains in the overview.'

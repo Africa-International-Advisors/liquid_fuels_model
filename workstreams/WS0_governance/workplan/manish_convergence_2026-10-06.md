@@ -12,8 +12,8 @@ All files below are tracked and available after merging current `origin/main`.
 
 | File | Purpose |
 |---|---|
-| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v3.pdf) | The 19-page draft: overview, market baseline, market changes and Vopak playbook |
-| [Editable PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v3.pptx) | Same story with editable charts and clickable navigation |
+| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v4.pdf) | The 19-page draft: overview, market baseline, market changes and Vopak outlook |
+| [Editable PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v4.pptx) | Same story with editable charts and clickable navigation |
 | [Branch review](../../WS1_data_validation/manish_branch_review_2026-10-06.md) | Findings against `manish-branch` at `4e64c8c`; checks and baseline decisions |
 | [Morning handover](manish_handover_2026-10-06.md) | Original five-package objective: evidence before lever quantification |
 | [Morning meeting record](../meetings/2026-10-06_vopak_standup.docx) | Received stand-up transcript; meeting context, not separately approved minutes |
@@ -24,7 +24,7 @@ All files below are tracked and available after merging current `origin/main`.
 1. **Overview (page 2):** retain Henry's Situation / Complication / Resolution wording and questions; link to the deep dives.
 2. **Market baseline (pages 3?6):** national accounting first, then observed provincial demand and supply origin. Separate measured, estimated and illustrative values.
 3. **Market changes (pages 7?11):** historical drivers and refinery change, then the forecast framework and route competition. Forecasts must connect assumptions to annual fuel demand and supply, with uncertainty explicit.
-4. **Vopak playbook (pages 12?17):** access and unique flows, regional opportunity and assets, then where to play, how to win and when to act. Inventory sensitivity follows the decision gates.
+4. **Vopak outlook (pages 12?17):** access and unique flows, regional opportunity and assets, then where to play, how to win and when to act. Inventory sensitivity follows the decision gates.
 
 Page 18 closes the pack; page 19 is the palette appendix. Chevrons link to the first page of each section (2, 3, 7, 12). The forecast framework establishes the analysis sequence; it does not add calibrated fuel forecasts.
 
@@ -40,8 +40,8 @@ Page 18 closes the pack; page 19 is the palette appendix. Chevrons link to the f
 | 7 | Freight annual history extended; mining/manufacturing use production indices; complete-year prices extend to 2025. Monthly activity to July 2026, quarterly GDP to Q2 2026 and inland prices to October 2026 are staged | Charts use complete years; distinguish YTD and monthly evidence. Keep BEV/PHEV/conventional hybrids separate; define fuel intensities before estimating litre effects |
 | 8 | Capacity scenarios remain conditional. Actual FY2024 output: Secunda 29.1 and Natref 17.8 million barrels, the latter Sasol's share | Check source pages; fiscal vs calendar year, ownership and all-product scope must be explicit. Source product yields before deriving imports |
 | 9–14 | Accessibility, customer-volume and storage examples remain conditional | National trade is not Vopak market share. Close route costs, usable capacity, customer rights and unique deliveries before sizing capture |
-| 16 | Market playbook: where to play, how to win, when to act and conditions for Durban, Lesedi and competing gateways | Priorities are hypotheses. Return named customers, route economics, usable capacity, commercial rights and conditional timing |
-| 17 | Preliminary inventory sensitivity follows the playbook | Secure incremental flows and identify a usable-capacity gap before sizing new tanks |
+| 16 | Market outlook: where to play, how to win, when to act and conditions for Durban, Lesedi and competing gateways | Priorities are hypotheses. Return named customers, route economics, usable capacity, commercial rights and conditional timing |
+| 17 | Preliminary inventory sensitivity follows the outlook | Secure incremental flows and identify a usable-capacity gap before sizing new tanks |
 
 The reporting copies are under `pptx/story/evidence_2026_10_06/`. They consume
 the collected observations without replacing engine inputs. The agriculture
