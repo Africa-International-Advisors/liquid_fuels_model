@@ -8,11 +8,11 @@ from pptx.dml.color import RGBColor
 from shapely.geometry import shape,box
 from shapely.ops import transform,unary_union
 from pptx.enum.shapes import MSO_SHAPE
-from storage_footprint import draw_storage_footprint,storage_notes
+from storage_footprint import draw_storage_footprint,storage_notes,draw_transnet_leases
 
 NAMES={'Eastern Cape':'EC','Free State':'FS','Gauteng':'GP','KwaZulu-Natal':'KZN',
        'Limpopo':'LP','Mpumalanga':'MP','North West':'NW','Nothern Cape':'NC','Northern Cape':'NC','Western Cape':'WC'}
-LABELS={'EC':(26.4,-32.5),'FS':(26.5,-28.6),'GP':(26.6,-24.7),'KZN':(30.1,-28.6),
+LABELS={'EC':(26.4,-32.5),'FS':(25.5,-28.6),'GP':(26.6,-24.7),'KZN':(29.4,-29.8),
         'LP':(29.2,-23.85),'MP':(30.25,-25.9),'NW':(25.9,-26.45),'NC':(21.55,-29.8),'WC':(20.6,-33.0)}
 COLOURS=['E3EBF6','BACCE4','809CC7','3D619D','0A2373']
 CLASSES=[1,2,4,6]
@@ -26,13 +26,14 @@ def add_page(slide,exhibit_layout,Map,text,marker,line,root,project,brand):
     exhibit_layout(s,'Petrol + diesel sales by province | 2022, bn litres/year',[
         ('Demand concentrates in three provinces',f"Gauteng {observed['GP']:.2f}, KwaZulu-Natal {observed['KZN']:.2f} and Western Cape {observed['WC']:.2f} bn litres represent {top_share:.1%} of reported sales."),
         ('Regions have explicit boundaries','Eastern coast = EC + KZN; inland = GP, FS, LP, MP and NW; western coast = WC; other = NC. These are working groupings.'),
-        ('Storage sits alongside demand','Vopak, Bidvest, Sasol, Transnet and Burgan Cape provide the mapped storage context. Inland facilities are clustered.'),
+        ('Five Transnet lease offers added','Numbered triangles locate stranded depots offered for lease. Refurbishment, licensing and customer access remain conditional.'),
         ('Sales do not establish accessible volume','All four quarters of 2022 reconcile to national sales. Current demand, delivered cost and customer rights need separate evidence.'),
     ])
     m=Map(s,.5,2.38,7.05,4.0)
     values,totals,notes=draw(m,text,root,project,brand)
     m.context(labels=False,storage_labels=False)
     draw_storage_footprint(m,text,line,marker,root,brand,inland_position=(.65,3.18))
+    draw_transnet_leases(m,text,line,marker,root,brand)
     province_labels(m,text,values,brand)
     s.notes_slide.notes_text_frame.text += '\n'+storage_notes(root)+'\n'+notes
     for i,(label,colour) in enumerate(zip(['<1','1-2','2-4','4-6','6+'],COLOURS)):
@@ -44,7 +45,7 @@ def add_page(slide,exhibit_layout,Map,text,marker,line,root,project,brand):
         marker(s,x+.05,6.82,.045,brand.accent_primary if kind in (MSO_SHAPE.DIAMOND,MSO_SHAPE.HEXAGON) else brand.ink,kind,hollow=kind==MSO_SHAPE.HEXAGON)
         text(s,label,x+.15,6.72,1.23,.20,8)
     text(s,'Lines: road / pipe / rail; heavy outlines: working regions',4.91,6.72,2.66,.26,7.5)
-    text(s,'Province totals, not within-province hotspots. Sites approximate; access unverified. Jet excluded.',.5,6.99,7.1,.14,7.5)
+    text(s,'Lease offers are not operating capacity. *Magdala RFP location narrative conflicts; briefing coordinate used. Jet excluded.',.5,6.99,7.1,.14,7.5)
     return s
 
 def sales(root):

@@ -31,7 +31,7 @@ from network_sequence import PRODUCT, PRODUCTION, PORTS, RAIL, NODES
 from road_routes import ROADS
 from coverage_map import clipped
 from accessibility_cartography import distance_surface
-from storage_footprint import draw_storage_footprint, storage_notes
+from storage_footprint import draw_storage_footprint, storage_notes, draw_transnet_leases
 from competitive_market_page import add_competitive_page
 from storage_capacity_page import add_storage_capacity_page
 from provincial_sales_pages import add_trend_page,add_supply_page
@@ -60,8 +60,8 @@ REGIONS = {
 }
 OUT = ROOT / 'output/delivered'
 OUT.mkdir(parents=True, exist_ok=True)
-PATH = OUT / 'Vopak_Week1_Analytical_Pack_2026_10_06.pptx'
-if PATH.exists():
+PATH = (Path(sys.argv[sys.argv.index('--output')+1]).resolve() if '--output' in sys.argv else OUT / 'Vopak_Week1_Analytical_Pack_2026_10_06.pptx')
+if PATH.exists() and PATH.parent == OUT:
     archive=OUT/'archive'/datetime.now().strftime('%Y-%m-%d_%H%M%S')
     archive.mkdir(parents=True,exist_ok=True)
     for old in [PATH,PATH.with_suffix('.pdf')]:
@@ -180,11 +180,12 @@ XMIN, XMAX = min(p[0] for p in box), max(p[0] for p in box)
 YMIN, YMAX = min(p[1] for p in box), max(p[1] for p in box)
 
 class Map:
-    def __init__(self, s, x, y, w, h):
+    def __init__(self, s, x, y, w, h, draw_base=True):
         self.s,self.x,self.y,self.w,self.h = s,x,y,w,h
         self.factor = min((w-.2)/(XMAX-XMIN), (h-.2)/(YMAX-YMIN))
         self.ox = x+(w-(XMAX-XMIN)*self.factor)/2
         self.oy = y+(h-(YMAX-YMIN)*self.factor)/2
+        if not draw_base: return
         bg = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(x), Inches(y), Inches(w), Inches(h))
         bg.name = 'Map frame; common geographic extent'
         bg.fill.solid(); bg.fill.fore_color.rgb = SEA
@@ -445,6 +446,14 @@ else:
     ids=list(prs.slides._sldIdLst)
     for sid in ids: prs.slides._sldIdLst.remove(sid)
     for i in [0,4,5,6,1,2,7,8,3]: prs.slides._sldIdLst.append(ids[i])
+# Refresh context on retained cost maps without recomputing their illustrative surfaces.
+for s in [prs.slides[4],prs.slides[5]]:
+    for q in list(s.shapes):
+        if q.name.startswith('Transnet lease overlay:'):
+            q._element.getparent().remove(q._element)
+    m=Map(s,.5,2.38,7.05,4.0,draw_base=False)
+    draw_transnet_leases(m,text,line,marker,ROOT,brand,box=(.65,4.13))
+    s.notes_slide.notes_text_frame.text += '\nTransnet lease offers are context only, not cost-model origins or available supply.\n'+storage_notes(ROOT)
 assert len(prs.slides)==9
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:

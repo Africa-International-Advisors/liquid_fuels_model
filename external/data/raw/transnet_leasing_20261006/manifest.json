@@ -1,0 +1,44 @@
+{
+  "checked_date": "2026-10-06",
+  "source_index": "https://www.transnet.net/TPL-Leasing-Opportunities",
+  "scope": "Reporting evidence only; no change to engine assumptions or cost origins",
+  "refresh": "Manual public PDF download; verify index and amendments at RFP close 2026-12-04, award, licensing or reactivation",
+  "files": [
+    {
+      "path": "ladysmith.pdf",
+      "url": "https://www.transnet.net/getFile.ashx?id=30047",
+      "sha256": "4cad433664582432e2ed161413e9427574c2601b0eee8c30c39647c6cdf644a7",
+      "capacity_pages": "2-3, 6"
+    },
+    {
+      "path": "standerton.pdf",
+      "url": "https://www.transnet.net/getFile.ashx?id=30045",
+      "sha256": "296af1472b2f6ed981c6ddc5cafddb9ab8fa19a270a5a870d31262b2f9b9e4d7",
+      "capacity_pages": "2, 5"
+    },
+    {
+      "path": "kroonstad.pdf",
+      "url": "https://www.transnet.net/getFile.ashx?id=30044",
+      "sha256": "cf4647ab3555e282a0ffa22e8abd43a4f8394bb899056756624ade64d54c114f",
+      "capacity_pages": "3, 5"
+    },
+    {
+      "path": "bethlehem.pdf",
+      "url": "https://www.transnet.net/getFile.ashx?id=30048",
+      "sha256": "faab588e2f27f1849a5acf9f6de71da476b8dc1a61b3e3fc264c8d3d13d83d99",
+      "capacity_pages": "2-3, 5"
+    },
+    {
+      "path": "magdala.pdf",
+      "url": "https://www.transnet.net/getFile.ashx?id=30046",
+      "sha256": "dc0d42273c41610b93fdc81552c21a2a2984451ad104b36eeea9377bdb421318",
+      "capacity_pages": "2-4"
+    }
+  ],
+  "limitations": [
+    "Magdala RFP describes both near Viljoenskroon and R34 near Kroonstad; mapped exact briefing coordinate pending independent location check.",
+    "Bethlehem and Magdala petroleum tank capacities are unknown, not zero.",
+    "Ladysmith 8540 m3 petrol/diesel working + 474 m3 intermixture = 9014 m3 total working.",
+    "Standerton 1350000 + 220000 + 783000 litres = 2353 m3; Kroonstad approximately 3300 m3."
+  ]
+}

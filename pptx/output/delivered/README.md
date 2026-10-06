@@ -17,3 +17,6 @@ Earlier shipped numbered map packs are preserved under `archive/2026-10-06/`.
 Unshipped working drafts were moved to ignored `pptx/qa/week1_maps/drafts/`.
 The builder keeps this current filename and archives the prior pair before replacing it.
 Other delivered projects, templates, source data and model runs were not reorganised.
+
+Five Transnet lease-offer sites are mapped on pages 2, 5 and 6 as context only.
+Their capacities are not counted as operating supply or used as cost origins.

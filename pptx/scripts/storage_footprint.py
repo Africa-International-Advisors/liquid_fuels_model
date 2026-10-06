@@ -8,7 +8,7 @@ def inventory(root):
 
 def storage_notes(root):
     return ('Storage footprint is a public-evidence starting inventory, not a complete census. '
-            'Coordinates are approximate except Tarlton tender coordinates. Symbols do not encode capacity. '
+            'Coordinates are approximate except Tarlton and five Transnet RFP briefing coordinates. Lease symbols indicate offers, not operating assets. Magdala RFP location narrative is inconsistent; verify independently. Symbols do not encode capacity. '
             'Lesedi and Transnet Jameson Park are distinct assets represented by the same approximate area; '
             'the national map cannot separate their actual boundaries. '
             'Capacity is a stock, not throughput. Mixed-product tanks cannot establish petrol/diesel share.\n'+
@@ -18,7 +18,7 @@ def storage_notes(root):
 
 def draw_storage_footprint(m,text,line,marker,root,brand,inland_position=(5.15,2.60)):
     for r in inventory(root):
-        if r['map_include']!='yes' or r['operator']=='Vopak':continue
+        if r['map_include']!='yes' or r['operator']=='Vopak' or r['site_id'].startswith('X'):continue
         x,y=m.xy(float(r['longitude']),float(r['latitude']))
         marker(m.s,x,y,.055,brand.accent_primary,MSO_SHAPE.HEXAGON,hollow=True)
     # Grouped callouts keep tightly clustered inland assets legible at national scale.
@@ -33,3 +33,22 @@ def draw_storage_footprint(m,text,line,marker,root,brand,inland_position=(5.15,2
         line(m.s,anchor,(x,y+h/2),brand.accent_primary,.65)
         q=text(m.s,label,x,y,w,h,10,True,brand.accent_primary)
         q.fill.solid();q.fill.fore_color.rgb=brand.white
+
+
+def draw_transnet_leases(m,text,line,marker,root,brand,box=(.65,4.04)):
+    """Separate lease-offer layer; exact RFP points, displaced identifiers at national scale."""
+    before=len(m.s.shapes)
+    offsets={'X1':(.08,.03),'X2':(.08,-.12),'X3':(-.40,-.12),'X4':(-.15,.07),'X5':(-.22,-.16)}
+    for r in inventory(root):
+        if not r['site_id'].startswith('X'):continue
+        x,y=m.xy(float(r['longitude']),float(r['latitude']))
+        marker(m.s,x,y,.040,brand.ink,MSO_SHAPE.ISOSCELES_TRIANGLE,hollow=True)
+        dx,dy=offsets[r['site_id']]
+        line(m.s,(x,y),(x+dx+.07,y+dy+.07),brand.ink,.55)
+        q=text(m.s,r['site_id'][1:],x+dx,y+dy,.15,.17,8,True,brand.ink)
+        q.fill.solid();q.fill.fore_color.rgb=brand.white
+    x,y=box
+    q=text(m.s,'   Transnet lease offers\n1 Ladysmith | 2 Standerton\n3 Kroonstad | 4 Bethlehem\n5 Magdala*',x,y,2.04,.86,9,True,brand.ink)
+    q.fill.solid();q.fill.fore_color.rgb=brand.white
+    marker(m.s,x+.06,y+.075,.040,brand.ink,MSO_SHAPE.ISOSCELES_TRIANGLE,hollow=True)
+    for q in list(m.s.shapes)[before:]:q.name='Transnet lease overlay: '+q.name

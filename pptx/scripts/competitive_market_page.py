@@ -35,7 +35,7 @@ def add_competitive_page(slide,exhibit_layout,Map,text,table,root,brand,regional
         ['Vopak [1]','Durban; Lesedi\nStorage and handling','Actual unique fuel deliveries\nand usable fuel capacity'],
         ['Bidvest [2]','Durban; Richards Bay; Isando\nMixed-product terminals','Petrol/diesel scope; conflicting\ntotals 955,603 vs 868,000 m³'],
         ['Sasol [6]','Alrode; Pretoria West; Waltloo;\nSasolburg blending/logistics','Current access; linked 2025/26\nnotice ends March 2026'],
-        ['Transnet [7]','Tarlton bulk storage;\nJameson Park accumulation','Usable tanks / third-party terms;\nnot all depots are operating'],
+        ['Transnet [7]','Tarlton / Jameson Park;\n5 depot lease opportunities','Lease award / refurbishment / licence;\nno operating availability inferred'],
         ['Burgan Cape [3]','Cape Town petrol/diesel terminal\nPublished capacity 122,000 m³','Current available capacity;\nCape overlap unassessed']]
     q=compact_table(table,s,rows,.5,2.38,[1.35,2.90,2.80],2.55,10.5)
     for cell in q.table.rows[len(q.table.rows)-1].cells:
@@ -84,5 +84,5 @@ def add_competitive_page(slide,exhibit_layout,Map,text,table,root,brand,regional
         label=f"[{r['source_id']}] "+['Vopak','Bidvest','Burgan','Shell','NERSA','Sasol','Transnet'][i]
         q=text(s,label,.5+i*.98,6.96,.97,.17,7.5,color=brand.accent_primary)
         for p in q.text_frame.paragraphs:
-            for run in p.runs:run.hyperlink.address=r['source_url']
+            for run in p.runs:run.hyperlink.address='https://www.transnet.net/TPL-Leasing-Opportunities' if r['source_id']=='7' else r['source_url']
     return s

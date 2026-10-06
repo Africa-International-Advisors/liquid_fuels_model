@@ -1,7 +1,7 @@
 # Week 1 analytical map review — 6 October 2026
 
 Nigel requested geographic demand regions, a demand heatmap, richer operator
-storage context and regional stacked share bars. The six-page Vopak pack keeps
+storage context and regional stacked share bars. The current nine-page Vopak pack keeps
 the supplied master, cover, closing, chevrons and exhibit/key-takeaway structure.
 
 ## Evidence and presentation status
@@ -15,12 +15,12 @@ the supplied master, cover, closing, chevrons and exhibit/key-takeaway structure
   groupings, not operational catchments. Colour encodes provincial volume,
   not local density or within-province hotspots.
 - Storage: 12 site/group records across Vopak, Bidvest, Sasol, Transnet and
-  Burgan Cape; five historical/lease-status Transnet records excluded from
-  the mapped available footprint. Site existence does not establish present
+  Burgan Cape; five Transnet lease-offer sites now mapped separately with numbered triangles.
+  These are context only and are excluded from available operating capacity. Site existence does not establish present
   usable capacity, current operation or third-party access.
 - Slides 3–4: illustrative road-cost surface and market opportunity volumes.
   Transport rates and schematic routes are not calibrated carrier/route evidence.
-- Slide 5: public operator sources plus illustrative 100% stacked share bars.
+- Slide 7: public operator sources plus illustrative 100% stacked share bars.
   Current Vopak share, additional candidate and outside-envelope segments use
   authored 4.5/10.0 bn L examples, not slide 2's historical sales denominators.
   Western/other are unassessed. Actual Vopak share remains unknown.
@@ -53,8 +53,8 @@ passes with 50 open exceptions; the model and opportunity illustration remain dr
 ## Storage-location page added
 
 Nigel requested a bar chart locating the largest published storage stocks.
-Page 6 ranks five quantified locations with operator segments; closing moves to
-page 7. The chart uses published gross capacity, not annual throughput or usable
+Page 8 ranks five gross-capacity locations with operator segments and separately
+shows quantified Transnet lease sites; closing is page 9. The chart uses published gross capacity, not annual throughput or usable
 petrol/diesel-only capacity. It is a partial inventory and leaves missing
 Sasol/Transnet values unknown. Vopak's HTML cbm capacity attributes confirm
 360,246 m³ at Durban and 140,000 m³ at Lesedi; the alternate rendered numbers
@@ -80,3 +80,28 @@ Use `Vopak_Week1_Analytical_Pack_2026_10_06.pptx` / `.pdf` as the current delive
 Earlier shipped packs remain in `pptx/output/delivered/archive/2026-10-06/`;
 unshipped drafts are kept in ignored QA. Preserve that history and avoid creating
 further numbered variants in the delivery folder.
+
+## Transnet lease evidence refresh ? 6 October 2026
+
+Nigel supplied the official TPL Leasing Opportunities page. All five linked RFPs,
+issued 5 October 2026 and closing 4 December 2026, are preserved with source URLs,
+page references and SHA256 hashes in `external/data/raw/transnet_leasing_20261006/`.
+The reporting inventory replaces the old local-CSV-only reference for these sites.
+
+- Ladysmith: 8,540 m? petrol/diesel working capacity; 474 m? intermixture excluded
+  from the chart. Total RFP working tankage is 9,014 m?. Tanks have been out of
+  service since March 2018; there is no NMPP connection or road/rail decanting system.
+- Standerton: 2,353 m? from three stated tank capacities; basis not labelled gross/working.
+- Kroonstad: approximately 3,300 m?, with the same capacity-basis limitation.
+- Bethlehem and Magdala: no petroleum tank capacity quantified. Unknown is not zero.
+- Exact briefing coordinates are mapped on pages 2, 5 and 6. Magdala's RFP has
+  conflicting location descriptions; its briefing coordinate is used pending verification.
+- Page 8 separates the 0?850 thousand m? gross-storage panel from an enlarged
+  0?10 thousand m? lease-capacity panel. The panels must not be summed as a
+  like-for-like usable fuel inventory.
+
+Manish: verify location, condition, eligible products, refurbishment cost,
+receipt/dispatch connections, storage licence and lease award before activating
+any of these assets in a route or market-access scenario. Refresh the index and
+PDFs at an amendment, the 4 December closing date, award or reactivation. Keep
+this manual-download path distinct from an API. No engine assumptions changed.
