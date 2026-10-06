@@ -165,10 +165,10 @@ def corridor_page(s,text,root,brand):
     project=Transformer.from_crs('EPSG:4326',CRS.from_proj4(config['projection']),always_xy=True)
     ext=config['extent'];bounds=[project.transform(lon,lat) for lon in (ext[0],ext[2]) for lat in (ext[1],ext[3])]
     xmin=min(p[0] for p in bounds);xmax=max(p[0] for p in bounds);ymin=min(p[1] for p in bounds);ymax=max(p[1] for p in bounds)
-    factor=min(6.85/(xmax-xmin),3.85/(ymax-ymin));ox=.5+(7.05-(xmax-xmin)*factor)/2;oy=2.39+(4-(ymax-ymin)*factor)/2
+    factor=min(6.85/(xmax-xmin),3.25/(ymax-ymin));ox=.5+(7.05-(xmax-xmin)*factor)/2;oy=2.39+(3.4-(ymax-ymin)*factor)/2
     def xy(lon,lat):
         x,y=project.transform(lon,lat);return ox+(x-xmin)*factor,oy+(ymax-y)*factor
-    bg=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(.5),Inches(2.39),Inches(7.05),Inches(4.0));bg.fill.solid();bg.fill.fore_color.rgb=brand.white;bg.line.color.rgb=brand.grey_fill
+    bg=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(.5),Inches(2.39),Inches(7.05),Inches(3.4));bg.fill.solid();bg.fill.fore_color.rgb=brand.white;bg.line.color.rgb=brand.grey_fill
     countries=json.loads((root/'assets/maps/ne_50m_admin_0_countries.geojson').read_text(encoding='utf-8'))
     for feature in countries['features']:
         geo=shape(feature['geometry']).intersection(box(*ext))
@@ -195,10 +195,10 @@ def corridor_page(s,text,root,brand):
     for r in capacity['sites']:
         lon,lat=config['points'][r['gateway']];x,y=xy(lon,lat)
         if r['gateway']=='Walvis Bay':px,py=x-1.42,y+.42
-        else:px,py=x+.10,y+.28
+        else:px,py=x+.28,y+.28
         q=text(s,f"{r['operator']}\n{r['petrol_diesel_m3']/1000:.0f}k m³ petrol/diesel",px,py,1.72,.43,9,True,brand.accent_primary)
         q.fill.solid();q.fill.fore_color.rgb=brand.white
-    text(s,'SA colour: 2022 sales totals. Grey: demand unassessed.',.5,2.23,7.05,.18,9,True,brand.accent_primary)
+    text(s,'Shading: provincial petrol + diesel sales, 2022 (bn litres/year)',.5,2.23,7.05,.18,9,True,brand.accent_primary)
     for label,lon,lat in [('NAMIBIA',17.0,-19.7),('BOTSWANA',23.6,-20.0),('SOUTH AFRICA',24.2,-30.0),('MOZAMBIQUE',32.4,-20.0)]:
         x,y=xy(lon,lat);text(s,label,x-.4,y,1.45,.25,9,True)
     colors={'vopak':brand.accent_primary,'pipe':brand.accent_primary,'east':brand.ink,'west':brand.accent_secondary if hasattr(brand,'accent_secondary') else brand.ink}
@@ -207,7 +207,7 @@ def corridor_page(s,text,root,brand):
             line(s,xy(*a),xy(*b),colors[route['style']],1.6 if route['style']!='pipe' else 1,
                  MSO_LINE_DASH_STYLE.DASH if route['style'] in ('west','pipe') else None)
     offsets={'Walvis Bay':(-1.25,.1),'Windhoek':(-.4,-.32),'Gaborone':(-.65,-.35),
-             'Matola / Maputo':(.10,-.05),'Mbombela':(-.4,-.4),'Gauteng':(-1.1,.0),'Lesedi*':(-.2,.30),'Durban':(.1,-.03)}
+             'Matola / Maputo':(.10,-.05),'Mbombela':(-.4,-.4),'Gauteng':(-1.1,.0),'Lesedi*':(-.55,.30),'Durban':(.1,.18)}
     for name,(lon,lat) in config['points'].items():
         if name not in offsets:continue
         x,y=xy(lon,lat)
@@ -218,15 +218,26 @@ def corridor_page(s,text,root,brand):
         q=text(s,name,x+dx,y+dy,w,.28,11,True,brand.accent_primary);q.fill.solid();q.fill.fore_color.rgb=brand.white
     text(s,'N',.67,2.60,.22,.23,11,True);line(s,(.78,3.12),(.78,2.9),brand.ink,1)
     line(s,(.78,2.9),(.74,2.98),brand.ink,1);line(s,(.78,2.9),(.82,2.98),brand.ink,1)
-    width=500000*factor;line(s,(.7,6.15),(.7+width,6.15),brand.ink,1.5)
-    text(s,'0',.7,5.92,.2,.22,9);text(s,'500 km',.7+width-.15,5.92,.65,.22,9)
-    for i,(label,style) in enumerate([('Durban road / inland link','vopak'),('Matola: N4 corridor','east'),
-                                    ('Durban: NMPP schematic','pipe'),('Walvis: Trans-Kalahari','west')]):
-        x=.5+(i%2)*3.55;y=6.49+(i//2)*.27
+    width=500000*factor;line(s,(.7,5.61),(.7+width,5.61),brand.ink,1.5)
+    text(s,'0',.7,5.38,.2,.22,9);text(s,'500 km',.7+width-.15,5.38,.65,.22,9)
+    # Three distinct visual keys: sales shading, facilities, then schematic routes.
+    for i,(label,colour) in enumerate(zip(['<1','1–2','2–4','4–6','6+','Unassessed'],COLOURS+[None])):
+        x=.5+i*1.13
+        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(5.99),Inches(.15),Inches(.15))
+        q.fill.solid();q.fill.fore_color.rgb=RGBColor.from_string(colour) if colour else brand.grey_fill
+        q.line.color.rgb=brand.ink;q.line.width=Pt(.3)
+        text(s,label,x+.23,5.93,.85 if i<5 else 1.15,.24,10.5)
+    for x,label,kind in [(.5,'Vopak facility',MSO_SHAPE.DIAMOND),(2.85,'Port / fuel storage',MSO_SHAPE.RECTANGLE),(5.30,'Route waypoint',MSO_SHAPE.OVAL)]:
+        q=s.shapes.add_shape(kind,Inches(x+.03),Inches(6.30),Inches(.10),Inches(.10))
+        q.fill.solid();q.fill.fore_color.rgb=brand.accent_primary;q.line.fill.background()
+        text(s,label,x+.23,6.23,2.05,.25,10.5)
+    for i,(label,style) in enumerate([('Road: Durban–Gauteng','vopak'),('Road: Matola–Gauteng (N4)','east'),
+                                    ('Pipeline: NMPP','pipe'),('Walvis–Gauteng (Trans-Kalahari)','west')]):
+        x=.5+(i%2)*3.55;y=6.53+(i//2)*.27
         line(s,(x,y+.10),(x+.38,y+.10),colors[style],1.6,
              MSO_LINE_DASH_STYLE.DASH if style in ('west','pipe') else None)
         text(s,label,x+.48,y,3.0,.23,10.5)
-    text(s,'LAEA/WGS84. SA: DMPR sales; storage: NAMCOR / Galp (6 Oct 2026). Squares: ports/storage; diamonds: Vopak. Access unverified.',.5,6.99,7.05,.14,7.5)
+    text(s,'Routes schematic; access unverified. Colour measures provincial totals, not density or Vopak share.',.5,7.00,7.05,.14,7.5)
     panel(s,text,brand,[('Compare the same inland destination','Gauteng is the common comparison market. Lesedi is a Vopak facility, not a destination every competing route must pass through.'),
         ('Matola approaches from the east','N4/Maputo connects Mozambique to Gauteng via Komatipoort and Mpumalanga. Fuel-compatible terminal access and road/rail service need testing.'),
         ('Walvis is an inland comparator','Trans-Kalahari links Walvis Bay via Namibia and Botswana to Gauteng. Its competitiveness for specific inland customers is unassessed.')],

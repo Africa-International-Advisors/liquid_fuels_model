@@ -18,3 +18,5 @@ Sources/code: `pptx/story/gateway_storage_2026_10_06.json`, `pptx/story/storage_
 [Forecasting method task](provincial_forecasting_method_2026-10-06.md) · [Manish data handover](manish_handover_2026-10-06.md) · [Stand-up minutes](../meetings/2026-10-06_vopak_standup.docx)
 
 Validation: PowerPoint render and PDF export; package and slide-boundary QA; eight source/supply/freight tests passed. Governance coverage passes with 52 existing open exceptions: draft status remains. These checks do not establish analyst source validation or business approval.
+
+Additional p10 review: separate legends for sales colour bands (bn litres/year), Vopak/port-storage/waypoint symbols, and schematic road/pipeline routes. Grey explicitly means unassessed; no market-share encoding.
