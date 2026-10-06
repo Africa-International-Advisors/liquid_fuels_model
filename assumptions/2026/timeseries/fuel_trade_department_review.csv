@@ -1,0 +1,13 @@
+country,period,scenario,product,flow,value,unit,source_file,pdf_page,precision
+ZAF,2023,shared,petrol,import,4500000000.0,litres,trade2024.pdf,13,rounded narrative; not raw customs extract
+ZAF,2023,shared,petrol,export,1000000000.0,litres,trade2024.pdf,14,rounded narrative; not raw customs extract
+ZAF,2023,shared,diesel,import,12800000000.0,litres,trade2024.pdf,13,rounded narrative; not raw customs extract
+ZAF,2023,shared,diesel,export,935000000.0,litres,trade2024.pdf,14,rounded narrative; not raw customs extract
+ZAF,2023,shared,jet,import,674000000.0,litres,trade2024.pdf,13,rounded narrative; not raw customs extract
+ZAF,2023,shared,jet,export,452000000.0,litres,trade2024.pdf,14,rounded narrative; not raw customs extract
+ZAF,2024,shared,petrol,import,4000000000.0,litres,trade2024.pdf,13,rounded narrative; not raw customs extract
+ZAF,2024,shared,petrol,export,920000000.0,litres,trade2024.pdf,14,rounded narrative; not raw customs extract
+ZAF,2024,shared,diesel,import,10800000000.0,litres,trade2024.pdf,13,rounded narrative; not raw customs extract
+ZAF,2024,shared,diesel,export,790000000.0,litres,trade2024.pdf,14,rounded narrative; not raw customs extract
+ZAF,2024,shared,jet,import,718000000.0,litres,trade2024.pdf,13,rounded narrative; not raw customs extract
+ZAF,2024,shared,jet,export,479000000.0,litres,trade2024.pdf,14,rounded narrative; not raw customs extract

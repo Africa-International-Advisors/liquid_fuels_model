@@ -6,3 +6,4 @@
 *.pptx binary
 *.xlsx binary
 *.pdf binary
+external/data/raw/fuel_supply_review_20261006/*.html binary

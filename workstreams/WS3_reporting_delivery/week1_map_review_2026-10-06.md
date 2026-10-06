@@ -195,3 +195,42 @@ Page 2 is now a full-width native PowerPoint table matching the supplied roadmap
 ### Clickable story navigation and matched panel headings
 
 Analytical pages 2?15 now use SCR overview / Situation / Complication / Resolution chevrons, linked to pages 2 / 3 / 7 / 11. Section highlighting follows the ordered story. All 56 chevron links and active states were verified, with clickable annotations preserved in the matching PDF. The original photographic cover and closing remain intact. Both left/right panel headings on analytical pages 3?15 use 15-point Lato bold. Rendered section states and page 11 were reviewed. Reuse strips obsolete internal slide relationships before rebuilding links, preventing removed pages from surviving as orphan package parts; breadcrumbs are replaced without duplication.
+# Public supply collection and accessibility conditions — 6 October update
+
+The stable 16-page pack now replaces four specifications with review exhibits:
+
+| Page / SCR | Exhibit added | What remains open |
+| --- | --- | --- |
+| 5 / S2 | 2024 sales, government imports/exports and net imports; explicit old-versus-new source flag | Matched production/stocks and product-specific port allocation; provincial origin cannot be inferred |
+| 8 / C2 | Published 2016–2025 capacity footprint; side-by-side held-flat and conditional CEF redevelopment areas | Not output; source utilisation/yields and agree timing. Authored 2029 FID is not sanctioned |
+| 10 / C3 | Southern Africa map linking Durban, Matola/Maputo and Walvis Bay to a common Gauteng comparison market | Schematic routes, not fuel service or commercial access. Compare same destination and full R/litre components |
+| 13 / R1 | Illustrative unique served-volume milestones 3.0 → 4.5 → 8.5 bn L/year, with conditions for coastal +1.5 and inland +4.0 | Cost threshold, physical capacity, customer rights and unique-volume reconciliation remain unassessed |
+
+The 2024 diesel-import source flag compares FIASA's staged 14.793 bn litres with
+the government report's rounded 10.8 bn litres: difference -3.993 bn litres.
+This is a source disagreement, not an approved correction. Existing FIASA inputs
+are preserved; neither series has been adopted into the engine automatically.
+The flag table is `output/delivered/supply_review_2026_10_06/trade_source_flags.csv`.
+
+Preserved reports and download attempts live in
+`external/data/raw/fuel_supply_review_20261006/manifest.json`. Latest report
+requests and the TNPA PDF include failed fetches; those are not claimed as
+collected. TNPA liquid bulk also has broader product scope than petrol/diesel.
+Refresh by downloading new reports into a new dated raw folder, checking the
+source sentences/table, rerunning `python -m lfm.scripts.collect_supply_review`,
+and updating the input register deliberately. The current extractor targets
+this preserved vintage and fails if its source table/sentences differ.
+
+Inputs: `fuel_trade_department_review.csv`, `refinery_capacity_reported.csv`,
+and `review_capacity_scenarios.yaml`, declared and registered under
+EXC-SUPPLY-REVIEW-2026-10-06 (Manish; expires 12 November or before adoption).
+The CEF case adds proposed 400 thousand bbl/day after an illustrative FID plus
+48 months. The capacity history includes synthetic crude-equivalent capacity
+and idle nameplate: it is not available petrol/diesel output.
+
+For R1, Manish should assemble customer × product × destination × period × route
+records with delivered R/litre, customer threshold, compatible capacity,
+contract/switching evidence and final delivered litres. Mark each condition
+passed, failed or unassessed, identify the binding constraint, and count shared
+Durban–Lesedi transfers once. Nigel supplies client flows and agrees destinations
+and thresholds. No volume milestone is a forecast until these conditions close.

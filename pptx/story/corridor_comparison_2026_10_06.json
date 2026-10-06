@@ -1,0 +1,29 @@
+{
+  "status": "Geographic explanation; schematic candidate corridors, not validated fuel routes or catchments",
+  "projection": "+proj=laea +lat_0=-27 +lon_0=24 +datum=WGS84 +units=m +no_defs",
+  "extent": [12.5, -35.5, 35.5, -17.0],
+  "sources": [
+    "https://www.wbcg.com.na/trans-kalahari-corridor/",
+    "https://tracn4.co.za/about-history/",
+    "Kickoff appendix: Durban-NMPP-Lesedi schematic"
+  ],
+  "points": {
+    "Walvis Bay": [14.505, -22.95],
+    "Windhoek": [17.08, -22.57],
+    "Gaborone": [25.91, -24.65],
+    "Matola / Maputo": [32.47, -25.96],
+    "Mbombela": [30.99, -25.47],
+    "Gauteng": [28.04, -26.20],
+    "Lesedi*": [28.39, -26.44],
+    "Durban": [31.03, -29.88],
+    "Komatipoort": [31.95, -25.44],
+    "Rustenburg": [27.24, -25.67]
+  },
+  "routes": [
+    {"name": "Walvis: Trans-Kalahari candidate", "style": "west", "waypoints": [[14.505,-22.95],[17.08,-22.57],[18.97,-22.45],[21.65,-21.70],[23.96,-24.40],[25.91,-24.65],[25.70,-25.25],[27.24,-25.67],[28.04,-26.20]]},
+    {"name": "Matola: N4 candidate", "style": "east", "waypoints": [[32.47,-25.96],[31.95,-25.44],[30.99,-25.47],[29.24,-25.87],[28.04,-26.20]]},
+    {"name": "Durban: N3 / inland link", "style": "vopak", "waypoints": [[31.03,-29.88],[29.60,-29.60],[29.79,-28.54],[28.98,-28.27],[28.39,-26.44],[28.04,-26.20]]},
+    {"name": "Durban: NMPP schematic", "style": "pipe", "waypoints": [[31.03,-29.88],[29.90,-29.45],[29.80,-28.50],[28.70,-27.20],[28.39,-26.44]]}
+  ],
+  "limitations": "Named-place coordinates and line geometry are approximate authored cartography. No shortest-path distances, route tariff, pipeline allocation, rail service, border permit or customer right is inferred. Walvis is a comparator for selected inland destinations, not an established Vopak catchment. Matola fuel-compatible receipt and dispatch still need verification."
+}

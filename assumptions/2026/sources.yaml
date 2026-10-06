@@ -1,5 +1,3 @@
-# Staged source datasets: registered for audit, not yet used by the demand engine.
-# Published figures, manual transcriptions and derived estimates remain unreviewed.
 storage_transnet_pipelines_depots:
   register_id: REG-SOURCE-STORAGE_TRANSNET_PIPELINES_DEPOTS
   exception_id: EXC-SOURCE-DATA-2026-10-05
@@ -263,4 +261,26 @@ vehicle_population_natis:
   source: timeseries/vehicle_population_natis.csv; provenance and limitations in companion
     .sources.yaml files
   last_updated: '2026-10-05'
+  shared: true
+fuel_trade_department_review:
+  register_id: REG-SOURCE-FUEL_TRADE_DEPARTMENT_REVIEW
+  exception_id: EXC-SUPPLY-REVIEW-2026-10-06
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_trade_department_review.csv
+  units: mixed; see unit and basis columns
+  source: timeseries/fuel_trade_department_review.csv; preserved PDFs and provenance
+    in timeseries/supply_review.sources.json
+  last_updated: '2026-10-06'
+  shared: true
+refinery_capacity_reported:
+  register_id: REG-SOURCE-REFINERY_CAPACITY_REPORTED
+  exception_id: EXC-SUPPLY-REVIEW-2026-10-06
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/refinery_capacity_reported.csv
+  units: mixed; see unit and basis columns
+  source: timeseries/refinery_capacity_reported.csv; preserved PDFs and provenance
+    in timeseries/supply_review.sources.json
+  last_updated: '2026-10-06'
   shared: true

@@ -1,0 +1,56 @@
+[
+  {
+    "file": "trade2024.pdf",
+    "url": "https://www.dmpr.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Trade%20Report/2024-South-African-Energy-Trade-Report.pdf",
+    "status": 200,
+    "sha256": "ad2c612c95e5ff3db7ce8b8280b1d30ac7ce13173f7c95a5e1ded3025c2d157d",
+    "retrieved": "2026-10-06",
+    "bytes": 1737491
+  },
+  {
+    "file": "trade2025_preliminary.pdf",
+    "url": "https://www.dmpr.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Trade%20Report/2025-South-African-Energy-Preliminary-Trade-Report.pdf",
+    "error": "HTTP Error 404: Not Found",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "file": "sector2025_preliminary.pdf",
+    "url": "https://www.dmpr.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Sector%20Report/2025-South-African-Energy-Sector-Preliminary-Report.pdf",
+    "error": "HTTP Error 404: Not Found",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "file": "tnpa_mar2025.pdf",
+    "url": "https://www.transnetnationalportsauthority.net/Commercial%20and%20Marketing/Port%20Cargo%20Statistics/Cargo%20-%20MAR%202025.pdf",
+    "error": "<urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "file": "energy_balance_index.html",
+    "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/Energy_Balances.html",
+    "status": 200,
+    "sha256": "0ac165e3575eb6b1b9540f4cbdd27462455608eff07f8520ac72ab765de65e12",
+    "retrieved": "2026-10-06",
+    "bytes": 23560
+  },
+  {
+    "file": "cef_refinery_update.html",
+    "url": "https://cefgroup.co.za/2026/09/23/cef-group-presents-five-year-financial-performance-governance-outcomes-and-sanpc-development-progress-to-parliament/",
+    "status": 200,
+    "sha256": "7c7804cd3d80dddb666da1507106aa2b6dcf48316dbf3ee9244a32a34be475d5",
+    "retrieved": "2026-10-06",
+    "bytes": 236086
+  },
+  {
+    "file": "trade2025_preliminary.pdf",
+    "url": "https://www.dmre.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Trade%20Report/2025-South-African-Energy-Preliminary-Trade-Report.pdf?ver=2mpclUkL_LUiTkST4yWRNw%3D%3D",
+    "error": "<urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>",
+    "retrieved": "2026-10-06"
+  },
+  {
+    "file": "sector2025_preliminary.pdf",
+    "url": "https://www.dmre.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Sector%20Report/2025-South-African-Energy-Sector-Preliminary-Report.pdf?ver=vj8mIFbD608QxnJWxaV2xw%3D%3D",
+    "error": "<urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>",
+    "retrieved": "2026-10-06"
+  }
+]

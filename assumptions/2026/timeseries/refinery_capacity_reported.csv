@@ -1,0 +1,61 @@
+country,period,scenario,asset,value,unit,basis,report_cell,source_file,pdf_page
+ZAF,2016,shared,Sapref,180000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2017,shared,Sapref,180000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2018,shared,Sapref,180000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2019,shared,Sapref,180000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2020,shared,Sapref,180000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2021,shared,Sapref,180000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2022,shared,Sapref,0,bbl/day,nameplate,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2023,shared,Sapref,0,bbl/day,nameplate,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2024,shared,Sapref,0,bbl/day,nameplate,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2025,shared,Sapref,0,bbl/day,nameplate,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2016,shared,Enref,135000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2017,shared,Enref,135000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2018,shared,Enref,135000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2019,shared,Enref,135000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2020,shared,Enref,135000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2021,shared,Enref,0,bbl/day,nameplate,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2022,shared,Enref,0,bbl/day,nameplate,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2023,shared,Enref,0,bbl/day,nameplate,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2024,shared,Enref,0,bbl/day,nameplate,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2025,shared,Enref,0,bbl/day,nameplate,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2016,shared,Astron Energy,100000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2017,shared,Astron Energy,100000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2018,shared,Astron Energy,100000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2019,shared,Astron Energy,100000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2020,shared,Astron Energy,100000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2021,shared,Astron Energy,100000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2022,shared,Astron Energy,100000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2023,shared,Astron Energy,100000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2024,shared,Astron Energy,100000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2025,shared,Astron Energy,100000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2016,shared,Natref,108000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2017,shared,Natref,108000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2018,shared,Natref,108000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2019,shared,Natref,108000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2020,shared,Natref,108000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2021,shared,Natref,108000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2022,shared,Natref,108000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2023,shared,Natref,108000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2024,shared,Natref,108000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2025,shared,Natref,108000,bbl/day,nameplate,numeric,annual-report-2025.pdf,49
+ZAF,2016,shared,Sasol,150000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2017,shared,Sasol,150000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2018,shared,Sasol,150000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2019,shared,Sasol,150000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2020,shared,Sasol,150000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2021,shared,Sasol,150000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2022,shared,Sasol,150000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2023,shared,Sasol,150000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2024,shared,Sasol,150000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2025,shared,Sasol,150000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2016,shared,PetroSA,45000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2017,shared,PetroSA,45000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2018,shared,PetroSA,45000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2019,shared,PetroSA,45000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2020,shared,PetroSA,45000,bbl/day,crude equivalent,numeric,annual-report-2025.pdf,49
+ZAF,2021,shared,PetroSA,0,bbl/day,crude equivalent,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2022,shared,PetroSA,0,bbl/day,crude equivalent,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2023,shared,PetroSA,0,bbl/day,crude equivalent,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2024,shared,PetroSA,0,bbl/day,crude equivalent,dash; excluded from reported total,annual-report-2025.pdf,49
+ZAF,2025,shared,PetroSA,0,bbl/day,crude equivalent,dash; excluded from reported total,annual-report-2025.pdf,49

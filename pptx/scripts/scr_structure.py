@@ -89,6 +89,8 @@ def structure_scr(prs, slide, text, root, brand):
                         run.text = run.text.replace('operator sources on slide 7', 'operator sources on slide 12').replace('site inventory in slide 2 notes', 'site inventory in slide 3 notes')
         s.notes_slide.notes_text_frame.text += f'\nSCR delivery order: page {i} of 16. Gap IDs and original evidence references retained in notes.'
 
+    from supply_review_pages import populate_review_exhibits
+    populate_review_exhibits(prs,text,root,brand)
     from scr_summary_table import apply_summary
     apply_summary(prs,text,brand)
     from scr_navigation import apply_navigation
