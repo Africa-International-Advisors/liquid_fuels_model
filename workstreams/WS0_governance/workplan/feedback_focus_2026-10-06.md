@@ -400,3 +400,17 @@ Use these IDs in handbacks and record evidence links when a task closes.
 Acceptance: an auditable assumption-to-equation-to-result-to-decision chain for
 all key levers, with L/M/H definitions, coherent worlds, tested outputs and linked
 exhibits. A high import requirement alone is not a customer-volume or investment case.
+
+
+### VIS-03: chart font weight - provincial supply allocation, page 6
+
+Status: pending visual feedback; no slide changes.
+Nigel questioned the bold treatment of province names and end-of-bar volume
+labels in the S1 provincial supply-origin illustration. The annotations also
+highlight the top axis; it is already regular weight and should remain so.
+Proposed treatment: regular-weight province names and volume labels, regular
+axis labels, and a quieter explanatory note. Keep the main title and section
+headings bold. Preserve font size and numeric legibility, units and the explicit
+illustrative-allocation warning. Review alongside VIS-01 text colour feedback
+before applying the treatment to comparable charts across the pack.
+Owner: Nigel (visual direction); builder implementation after instruction.
