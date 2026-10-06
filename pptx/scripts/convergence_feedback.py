@@ -88,19 +88,19 @@ def penetration_flow(s, root, brand, map_slide):
     assessed=[r for r in rows if r['commercial_envelope_bn_l']]
     total,reachable,envelope,current=[sum(float(r[k]) for r in assessed) for k in ['demand_bn_l','feasible_service_bn_l','commercial_envelope_bn_l','current_unique_vopak_bn_l']]
     candidate=envelope-current
-    stages=[('Catchment\nexample',total,0,total),('Reach\nlimits',total-reachable,reachable,total),('Commercial\nscreen',reachable-envelope,envelope,reachable),('Current\nexample',current,candidate,envelope),('Additional\ncandidate',candidate,0,candidate)]
+    stages=[('Illustrative\nmarket',total,0,total),('Outside\nfeasible reach',total-reachable,reachable,total),('Fails price /\nservice / access',reachable-envelope,envelope,reachable),('Assumed\nalready served',current,candidate,envelope),('Additional\nopportunity to test',candidate,0,candidate)]
     text(s,'Illustrative volume waterfall',5.30,2.43,6.85,.35,12,True)
     x0,ybottom,height,width=5.55,5.76,2.52,.68
     for i,(label,value,bottom,top) in enumerate(stages):
         x=x0+i*1.31; yy=ybottom-height*top/total; hh=height*value/total
-        colour=brand.accent_primary if i in (0,4) else brand.accent_secondary
+        colour=brand.accent_primary if i==4 else (brand.accent_secondary if i==0 else brand.grey_fill)
         bar(s,x,yy,width,hh,colour,f'Illustrative waterfall {label}: {value} bn L/year')
         text(s,('−' if i in (1,2,3) else '')+f'{value:.1f}',x-.13,yy-.35,.95,.28,12)
-        text(s,label,x-.18,5.96,1.10,.49,10)
+        text(s,label,x-.22,5.96,1.25,.56,9)
         if i<4:
             level=[total,reachable,envelope,candidate][i]
             line(s,(x+width,ybottom-height*level/total),(x+1.31,ybottom-height*level/total),brand.ink,.6)
-    text(s,f'The example leaves {candidate:.1f} bn L/year of candidates to test for cost, service, usable capacity and customer rights.',.5,6.63,11.65,.35,11)
+    text(s,f'All volumes illustrative. Assumed already served is not verified throughput; the {candidate:.1f} bn L/year remainder is an opportunity to test.',.5,6.63,11.65,.35,11)
     # Keep authored volume examples in notes, rather than presenting them as measured penetration.
     s.notes_slide.notes_text_frame.text += '\nVIS-04: unquantified market-penetration flow. Earlier authored milestones remain illustrations, not measured current or captured volumes. L/M/H cost, reach, service, rights and capacity settings feed the SCN-01 task list.'
     s.notes_slide.notes_text_frame.text+='\nWaterfall uses only existing authored Eastern coastal/inland catchment values. Commercial-screen loss combines commercial constraints; it is not a measured price elasticity or separate rights effect. Current example is not verified Vopak share. All withdrawals/screens are illustrative, not observed lost customers. The inset is the existing page-10 road-cost illustration, with schematic routes and no verified catchment.'
@@ -202,6 +202,8 @@ def apply_feedback(prs, root, brand):
     apply_confidentiality(prs)
     finish_footer_and_markers(prs, brand)
     assert len(prs.slides)==24
+    from convergence_story_order import apply_story_order
+    apply_story_order(prs, root, brand)
 
 
 def finalise_story(prs,root,brand):

@@ -176,3 +176,14 @@ working/gross capacity, product compatibility and operating constraints; confirm
 seasonality and remove shared transfers from customer-share calculations. Partial
 inland operator coverage cannot establish a regional supply gap. See VIS-05 /
 SCN-01 turnover tasks in feedback_focus_2026-10-06.md. No Teams message sent.
+
+
+### Story sequence and workplan review
+
+The canonical pack now has 26 pages: scope p2, answer p3, regional footprint p13,
+customer waterfall p15, base annual handling p16, working inventory p17, outlook
+p18 and kickoff-aligned roadmap p19. Supporting turnover sensitivity is p21.
+The 5.5 bn L/year and 3.0 bn L/year already-served inputs remain illustrative.
+Use convergence_workplan_review_2026-10-06.md to test acceptance evidence and
+client decisions; W1/W3/W5/W6 touchpoints remain proposals. Fuel integration is
+the Week 1 priority; do not treat public maps as a passed route/capacity gate.

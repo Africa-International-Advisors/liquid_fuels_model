@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-06",
+  "change": "26-page answer-led sequence; scope upfront; regional footprint before opportunity; base handling only; working stock in main story; kickoff-aligned delivery gates and proposed W1/W3/W5/W6 client checkpoints. Prior paired delivery archived.",
+  "validation": [
+    "PPTX package and shape bounds passed; 26 pages",
+    "All shape IDs unique and slide XML relationships valid",
+    "Overview and Henry internal links target current slide identities",
+    "PowerPoint PDF exported 26 pages; visual review of changed story, roadmap and appendix pages",
+    "Governance coverage passed; 53 exceptions remain open; draft",
+    "Full source builder successfully rebuilds the current 26-page pack from the restructured deck; relationships and sequence verified"
+  ],
+  "planning_status": "Client checkpoint dates and acceptance remain unconfirmed; fuel-first workplan clarification supersedes original W1 infrastructure gate",
+  "files": {
+    "pptx\\output\\delivered\\Vopak_Week1_Convergence_2026_10_06.pdf": "baba7a2211922fde5216e023db93bb70c98127ea01b95dddcae38de22d0fc8e4",
+    "pptx\\output\\delivered\\Vopak_Week1_Convergence_2026_10_06.pptx": "b7dd0c8f0d815c9d9ccc5c5e7e4f635a17269ac3d46ea382095c4119bf7d8efe",
+    "pptx\\output\\delivered\\archive\\2026-10-06_workplan-story\\Vopak_Week1_Convergence_2026_10_06.pdf": "95f5b8b81105eae1a9c55f5543d34212f55d4275a211be61b4d52dc65f29c9cf",
+    "pptx\\output\\delivered\\archive\\2026-10-06_workplan-story\\Vopak_Week1_Convergence_2026_10_06.pptx": "91e637a7a4b2b59b02b00d29fddeaa52287584148e9bc3b5e646af20db2aa800"
+  }
+}

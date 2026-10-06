@@ -585,3 +585,22 @@ Do not sum coastal/inland handling as unique sales; transfers can be counted twi
 Evidence and limits: pptx/story/terminal_turnover_evidence_2026_10_06.json.
 Governance exception EXC-TERMINAL-HANDLING-TURNS expires 12 November 2026 or at
 its earlier review/recommendation trigger. Forecast engine results are unchanged.
+
+
+## Top-down story and kickoff-plan alignment
+
+Nigel requested implementation after reviewing the page sequence and supplied a
+Gantt reference for client touchpoints. Scope moves after the cover. Regional
+footprint precedes customer screening, annual handling and working inventory;
+inventory returns to the main story before the outlook. The base handling
+comparison has two bars per region; L/M/H detail moves to the appendix. Waterfall
+labels distinguish illustrative market, screening losses, assumed already served
+and opportunity to test. Only the endpoint is navy.
+
+Roadmap p19 follows the six-week plan, with proposed W1/W3/W5/W6 client checkpoints
+from the kickoff p27. Technical and partner reviews are weekly. The later
+fuel-first priority supersedes the kickoff's W1 infrastructure gate. Readiness
+against each acceptance test is recorded in convergence_workplan_review_2026-10-06.md.
+All dates, client slots and final acceptance remain unconfirmed; no meetings scheduled.
+Main story ends p19; appendix starts p20. Every analysis/roadmap page is linked
+from its overview row; Henry trace tables retain their slide targets after reordering.

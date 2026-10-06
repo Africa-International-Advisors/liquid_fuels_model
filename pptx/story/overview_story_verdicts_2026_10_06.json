@@ -5,8 +5,8 @@
     {
       "ref": "S1",
       "pages": [
-        3,
-        6
+        4,
+        7
       ],
       "verdict": "Supported: imports are material.\nSustained future volumes remain a forecast case; the matched balance is open.",
       "evidence": "Diesel drives imports; sales reports conflict\n2024 net petrol/diesel imports: 13.078 bn L. Production, stocks, sales coverage and port allocation remain open."
@@ -14,8 +14,8 @@
     {
       "ref": "S2",
       "pages": [
-        4,
-        5
+        5,
+        6
       ],
       "verdict": "Supported: concentrated demand.\nFocus on Gauteng/KZN; sales totals do not establish accessible customers.",
       "evidence": "Demand sits around Vopak’s footprint\nGP, KZN and WC account for 68.6% of 2022 sales. Historical volumes were broadly steady; later provinces are estimates."
@@ -23,8 +23,8 @@
     {
       "ref": "S/C3",
       "pages": [
-        7,
-        9
+        8,
+        10
       ],
       "verdict": "Partly supported: diesel generation has fallen.\nBaseline, ample and tight worlds still need sourced assumptions and tested fuel/customer-volume effects.",
       "evidence": "Demand drivers differ; L/M/H cases cover all key levers\nPower, freight, fleet, prices, supply and customer access need explicit assumptions; fuel effects remain uncalibrated."
@@ -32,8 +32,8 @@
     {
       "ref": "C4",
       "pages": [
-        8,
-        9
+        9,
+        10
       ],
       "verdict": "Supported: refining capacity fell.\nPlant futures are conditional; capacity alone does not determine imports.",
       "evidence": "Supply change makes import needs conditional\nCapacity has declined; redevelopment is conditional. Secunda/Natref product output and future cases remain open."
@@ -41,8 +41,8 @@
     {
       "ref": "C5",
       "pages": [
-        10,
-        11
+        11,
+        12
       ],
       "verdict": "Open: gateway competition.\nNo route winner without comparable cost, service and customer access.",
       "evidence": "Alternative gateways challenge the same inland market\nMatola and Walvis Bay have storage; their competitiveness depends on full costs, route capacity and access."
@@ -50,33 +50,37 @@
     {
       "ref": "R6",
       "pages": [
-        12,
         13,
-        14
+        14,
+        15,
+        16
       ],
-      "verdict": "Estimate handling now; validate customer share.\nGross turnover equivalents need usable space, dispatch limits and customer access.",
-      "evidence": "Vopak footprint is established; turnover estimates handling\nPage 13 tests 1 / 2 / 3 monthly turns on the published inventory. Actual unique deliveries remain unquantified."
+      "verdict": "Footprint established; customer share unquantified.\nValidate cost, service, rights and unique deliveries.",
+      "evidence": "Footprint ? reach ? estimated handling\nDefine regions, screen customers and compare annual demand with handling at two turns/month."
     },
     {
       "ref": "R7",
       "pages": [
-        15,
-        16,
-        17
+        17,
+        18,
+        19
       ],
-      "verdict": "Conditional: win customers first.\nUse existing assets; new storage needs secured flows and a usable-capacity gap.",
-      "evidence": "Potential scope for new investment?\nPrioritise Durban/Lesedi customer flows. Additional storage follows secured volumes and a usable-capacity gap."
+      "verdict": "Conditional: secure customer flows first.\nUse existing assets; validate a capacity gap, then test investment.",
+      "evidence": "Working stock ? outlook ? delivery gates\nThe 5.5 bn L/year example needs 211,000 m? at 14 days; test usable spare space before adding tanks."
     }
   ],
   "appendices": {
-    "18": "Henry situation prompts: supports rows 1, 2, 3 and 4",
-    "19": "Henry complication prompts: supports rows 3, 4 and 5",
-    "20": "Henry resolution prompts: supports rows 6 and 7"
+    "21": "Turnover sensitivity supports R6 annual handling comparison",
+    "22": "Henry situation prompts",
+    "23": "Henry complication prompts",
+    "24": "Henry resolution prompts"
   },
   "non_analytical_pages": {
     "1": "cover",
-    "2": "summary",
-    "21": "closing",
-    "22": "palette reference"
+    "2": "document scope",
+    "3": "answer-led summary",
+    "20": "appendix divider",
+    "25": "closing",
+    "26": "palette reference"
   }
 }
