@@ -54,8 +54,14 @@ Sum of nine provinces minus the national file, same quarter:
 | 2014-Q3 | +5.38% (+140 ML) | +4.30% (+128 ML) | `2014-Annual-FSV-at-National-Level-Quarter-3-16…` | `2014-Quarterly-Disaggregated-FSV-Data-Magisterial-District-Level-01Dec2015.xlsx` |
 | 2018-Q1 | −7.66% (−213 ML) | −7.24% (−220 ML) | `2018-National-Aggregated-FSV.xls` | `2018-Quarter4-Magisterial-Districts-data.xlsx` |
 
-All other quarters 2013–2023-Q1 tie to the litre (2015, 2017, 2021 differ by
-less than 0.25% on the year). What the original cells show:
+The Week 1 pack (page 4) lists six flagged years. Three are the material ones
+above. The other three are small and not yet traced to cells: 2015 differs in
+all four quarters (year: diesel −28 ML, −0.21%; petrol −6 ML, −0.05%; largest
+quarter Q4 diesel −28 ML), 2017 in Q4 only (diesel −2.1 ML, petrol −0.3 ML)
+and 2021 in Q1 diesel only (−0.8 ML). All other quarters 2013–2023-Q1 tie to
+the litre. Next action (Manish): compare cells for 2015; the 2017 and 2021
+differences are below 0.02% of the year. What the original cells show for the
+three material ones:
 
 **2013-Q4: our extraction read the wrong sheet.** The national workbook has
 three sheets. `Sheet4` and `Sheet1` are a working pivot and its data, with
