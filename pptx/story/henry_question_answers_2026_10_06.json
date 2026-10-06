@@ -1,0 +1,215 @@
+{
+  "source": "external/partner_story_20261006/situation.png; complication.png; resolution.png (Henry storyboard pp30-32)",
+  "date": "2026-10-06",
+  "status": "Every prompt has a current response; partial/open responses are not closed findings",
+  "sections": [
+    {
+      "pill": "S",
+      "agenda": "Market baseline",
+      "questions": [
+        {
+          "question": "Total SA demand development",
+          "answer": "Partial: reported 2024 sales are 20.763 bn L; coverage awaits reconciliation. Provincial history ends in 2022.",
+          "pages": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "question": "Eastern SA market within economic striking distance",
+          "answer": "Open: location and illustrative costs show reach, not accessible customer litres. Need destinations, tariffs and rights.",
+          "pages": [
+            4,
+            10,
+            12,
+            14
+          ]
+        },
+        {
+          "question": "Greater diesel use in power generation",
+          "answer": "Partial: generation history is shown; recent OCGT use falls. Diesel-litres attribution still needs fuel-use evidence.",
+          "pages": [
+            7,
+            9
+          ]
+        },
+        {
+          "question": "Rail to road",
+          "answer": "Partial: road/rail payload history is shown. Payload alone does not prove modal substitution or diesel effects.",
+          "pages": [
+            7,
+            9
+          ]
+        },
+        {
+          "question": "Changes in fuel price",
+          "answer": "Partial: complete-year price history is staged. Travel response and real-price effects remain uncalibrated.",
+          "pages": [
+            7,
+            9
+          ]
+        },
+        {
+          "question": "More fuel-efficient vehicles",
+          "answer": "Open: fleet stocks and new EV/hybrid sales do not establish fleet efficiency. Need fuel mix, mileage and intensity.",
+          "pages": [
+            7,
+            9
+          ]
+        },
+        {
+          "question": "Slow GDP growth",
+          "answer": "Partial: GDP and sector activity evidence is available; growth-to-fuel effects require explicit assumptions.",
+          "pages": [
+            7,
+            9
+          ]
+        },
+        {
+          "question": "Refinery closures",
+          "answer": "Partial: published capacity falls to 358 thousand bbl/day. Capacity is distinct from output and operating availability.",
+          "pages": [
+            8
+          ]
+        },
+        {
+          "question": "Challenges at Secunda",
+          "answer": "Partial: FY2024 output is 29.1 million barrels, all products. Availability and petrol/diesel yields remain open.",
+          "pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "question": "Closure of Mossgas",
+          "answer": "Open: plant-specific shutdown dates, operating status and lost product output need explicit source confirmation.",
+          "pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "question": "Growth in imports and where they enter",
+          "answer": "Partial: 2024 net imports are 13.078 bn L. Import-growth attribution, product-specific ports and origin remain open.",
+          "pages": [
+            3,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "pill": "C",
+      "agenda": "Market changes",
+      "questions": [
+        {
+          "question": "Road to rail; private-sector rail projection",
+          "answer": "Open: historical payload is available; private-sector service, timing and modal-shift assumptions need evidence.",
+          "pages": [
+            7,
+            9
+          ]
+        },
+        {
+          "question": "End of loadshedding and spare power capacity",
+          "answer": "Partial: observed OCGT generation falls. Future dispatch, spare capacity and diesel demand remain conditional.",
+          "pages": [
+            7,
+            9
+          ]
+        },
+        {
+          "question": "EV / HEV penetration projection",
+          "answer": "Open: sales uptake is shown, not fleet penetration. Separate BEV, PHEV and conventional hybrids; model turnover.",
+          "pages": [
+            7,
+            9
+          ]
+        },
+        {
+          "question": "Effect of EV / HEV on litres per km",
+          "answer": "Open: require stock mix, mileage and fuel intensity. BEVs and hybrids have different fuel-use mechanisms.",
+          "pages": [
+            7,
+            9
+          ]
+        },
+        {
+          "question": "Higher fuel prices and km travelled",
+          "answer": "Open: prices are sourced; mileage response and elasticity must be specified and tested before forecasting.",
+          "pages": [
+            7,
+            9
+          ]
+        },
+        {
+          "question": "Mega refinery / SAPREF restart",
+          "answer": "Conditional: redevelopment capacity is a scenario, not sanctioned output. Confirm FID, ramp-up and product yields.",
+          "pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "question": "Secunda gas, coal and MRG diversion to 2032",
+          "answer": "Open: no liquid-fuel displacement is inferred. Need dated gas allocation, plant mechanism and product-output evidence.",
+          "pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "question": "Natref future?",
+          "answer": "Open: reported FY output is available; future ownership, availability and product yields require a dated case.",
+          "pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "question": "Durban storage / NMPP / Lesedi vs road and rail",
+          "answer": "Open: compare the same customer and product. Need full delivered costs, capacity, tariffs and service availability.",
+          "pages": [
+            10,
+            11,
+            14
+          ]
+        },
+        {
+          "question": "Transport from Matola and Walvis Bay",
+          "answer": "Partial: gateways, published storage and schematic routes are shown. Full costs, borders and customer access remain open.",
+          "pages": [
+            11,
+            14,
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "pill": "R",
+      "agenda": "Vopak outlook",
+      "questions": [
+        {
+          "question": "Market share of Vopak in Dbn and Lesedi",
+          "answer": "Open: published storage is an asset footprint, not served demand. Need unique deliveries, transfers and matched demand.",
+          "pages": [
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "question": "Potential scope for new investment?",
+          "answer": "Conditional: prioritise customer flows and service first. New storage requires secured incremental flows and a usable-capacity gap.",
+          "pages": [
+            15,
+            16,
+            17
+          ]
+        }
+      ]
+    }
+  ]
+}

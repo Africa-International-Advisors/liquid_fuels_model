@@ -12,8 +12,8 @@ All files below are tracked and available after merging current `origin/main`.
 
 | File | Purpose |
 |---|---|
-| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v4.pdf) | The 19-page draft: overview, market baseline, market changes and Vopak outlook |
-| [Editable PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v4.pptx) | Same story with editable charts and clickable navigation |
+| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v5.pdf) | The 22-page draft: overview, market baseline, market changes and Vopak outlook |
+| [Editable PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v5.pptx) | Same story with editable charts and clickable navigation |
 | [Branch review](../../WS1_data_validation/manish_branch_review_2026-10-06.md) | Findings against `manish-branch` at `4e64c8c`; checks and baseline decisions |
 | [Morning handover](manish_handover_2026-10-06.md) | Original five-package objective: evidence before lever quantification |
 | [Morning meeting record](../meetings/2026-10-06_vopak_standup.docx) | Received stand-up transcript; meeting context, not separately approved minutes |
@@ -21,12 +21,12 @@ All files below are tracked and available after merging current `origin/main`.
 
 ## Story structure
 
-1. **Overview (page 2):** retain Henry's Situation / Complication / Resolution wording and questions; link to the deep dives.
+1. **Overview (page 2):** lead with the current answer, group rows by the agenda and retain S/C/R pills and Henry's resolution questions; link to the deep dives.
 2. **Market baseline (pages 3?6):** national accounting first, then observed provincial demand and supply origin. Separate measured, estimated and illustrative values.
 3. **Market changes (pages 7?11):** historical drivers and refinery change, then the forecast framework and route competition. Forecasts must connect assumptions to annual fuel demand and supply, with uncertainty explicit.
 4. **Vopak outlook (pages 12?17):** access and unique flows, regional opportunity and assets, then where to play, how to win and when to act. Inventory sensitivity follows the decision gates.
 
-Page 18 closes the pack; page 19 is the palette appendix. Chevrons link to the first page of each section (2, 3, 7, 12). The forecast framework establishes the analysis sequence; it does not add calibrated fuel forecasts.
+Pages 18?20 respond to every Henry storyboard prompt, with partial/open status and linked evidence. Page 21 closes the pack; page 22 is the palette appendix. Chevrons link to the first page of each section (2, 3, 7, 12). The forecast framework establishes the analysis sequence; it does not add calibrated fuel forecasts.
 
 ## What is agreed for the draft
 
@@ -47,6 +47,10 @@ The reporting copies are under `pptx/story/evidence_2026_10_06/`. They consume
 the collected observations without replacing engine inputs. The agriculture
 and industry baseline changes remain a separate Nigel decision. The analyst
 branch has not been merged wholesale into main.
+
+## Henry storyboard coverage
+
+The opening answer is that imports are material, but Vopak growth depends on accessible customer flows. The agenda-led summary is on page 2; every prompt from received storyboard pages 30?32 has a current response on pages 18?20. The exact response register is [henry_question_answers_2026_10_06.json](../../../pptx/story/henry_question_answers_2026_10_06.json). Partial/open responses are explicit gaps, not completed analyses. Review Mossgas dates/status, vehicle efficiency, rail participation, price/mileage response, plant mechanisms, fleet penetration and import growth/entry ports before closing those prompts.
 
 ## What Manish must do next
 
