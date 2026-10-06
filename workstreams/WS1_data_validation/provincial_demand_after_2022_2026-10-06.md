@@ -115,7 +115,6 @@ scripted downloads; it needs a manual download like the other Stats SA files.
 |---|---|---|
 | "2015–2024" overview report | Nigel | Confirm where the link was seen; retry `dmre.gov.za` from another network |
 | National sales 2025 and 2026 to date | Manish | FIASA annual report 2026 when published; department national workbook if released |
-| Provincial GDP as a driver | Manish | Manual download of Stats SA P0441.2 |
 | Whether the pack may show estimated 2023–2024 provincial bars | Nigel | Decision; recommended for petrol only, clearly labelled |
 
 ## Review outcomes and the 2024 national total, 6 October
@@ -147,3 +146,31 @@ uncertainty on top of the share error.
 Dropped by Manish on 6 October: requesting the unpublished provincial data
 from the department, and approaching a commercial data provider. Neither is an
 open action.
+
+## Provincial GDP obtained, 6 October
+
+Stats SA's provincial GDP release (P0441.2, 2024) was downloaded through the
+browser and is read by `statssa.parse_provincial_gdp`. Output:
+`assumptions/2026/timeseries/gdp_by_province_statssa.csv`, 1,728 values: nine
+provinces, 16 industry lines, 2013 to 2024, constant 2015 prices. The nine
+provinces add to national GDP within 0.5% in every year.
+
+Real provincial GDP, R billion, and each province's share in 2024:
+
+| Province | 2013 | 2019 | 2022 | 2024 | Share 2024 | Change 2022–24 |
+|---|---|---|---|---|---|---|
+| Gauteng | 1,437 | 1,553 | 1,547 | 1,573 | 33.7% | +1.7% |
+| KwaZulu-Natal | 703 | 755 | 759 | 771 | 16.5% | +1.6% |
+| Western Cape | 603 | 648 | 657 | 667 | 14.3% | +1.5% |
+| Eastern Cape | 348 | 363 | 367 | 369 | 7.9% | +0.6% |
+| Mpumalanga | 322 | 339 | 341 | 344 | 7.4% | +0.8% |
+| Limpopo | 310 | 329 | 328 | 333 | 7.1% | +1.6% |
+| North West | 274 | 279 | 284 | 285 | 6.1% | +0.2% |
+| Free State | 213 | 221 | 222 | 223 | 4.8% | +0.7% |
+| Northern Cape | 91 | 97 | 99 | 99 | 2.1% | +0.5% |
+
+Provincial economies grew by between 0.2% and 1.7% over the two years, so
+their shares of national activity barely moved. That supports holding the 2022
+fuel shares for petrol; it does not explain the diesel share swings, which
+come from where volumes are booked. This is economic activity, not fuel sold,
+and has not been used to adjust the estimate.

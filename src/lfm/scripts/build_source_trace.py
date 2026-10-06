@@ -198,6 +198,12 @@ TRACE: dict[str, tuple[str, ...]] = {
         "extends pack p7 (industry, freight)", "2026 (to July; CPI to August)",
         "Activity measures, not fuel volumes. Not seasonally adjusted. Tonnes, not tonne-kilometres.",
         "Nigel: confirm"),
+    "timeseries/gdp_by_province_statssa.csv": (
+        "Statistics South Africa (P0441.2 Provincial GDP)", "https://www.statssa.gov.za/?page_id=1847",
+        "P0441.2  Provincial Gross Domestic Product(2024).zip, Tables 2-10, block c",
+        "on manish-branch (external/data/raw/statssa/)", "manual or browser download (site blocks scripts)",
+        ECON_CMD, "statssa.parse_provincial_gdp", "provincial driver for pack p3-4", "",
+        "Annual, 2013-2024. Economic activity by province, not fuel litres.", "Nigel: confirm"),
     "timeseries/macro_worldbank.csv": (
         "World Bank (republishing Stats SA and UN)", "https://api.worldbank.org/v2/country/ZAF/indicator/",
         "worldbank-<indicator>.json", BOTH_LOCAL, "API", ECON_CMD, "economy.parse_world_bank", "", "",

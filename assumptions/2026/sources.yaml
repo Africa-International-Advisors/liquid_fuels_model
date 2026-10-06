@@ -371,3 +371,14 @@ activity_statssa_monthly:
     provenance in timeseries/activity_statssa_monthly.sources.yaml
   last_updated: '2026-10-06'
   shared: true
+gdp_by_province_statssa:
+  register_id: REG-SOURCE-GDP_BY_PROVINCE_STATSSA
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/gdp_by_province_statssa.csv
+  units: rand, constant 2015 prices
+  source: Stats SA P0441.2 Provincial GDP, 2024 release, Tables 2-10 block c; economic activity, not fuel
+    volumes; provenance in timeseries/economy.sources.yaml
+  last_updated: '2026-10-06'
+  shared: true

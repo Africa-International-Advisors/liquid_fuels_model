@@ -203,6 +203,7 @@ def _statssa(raw_dir: Path, out_dir: Path, world_bank_gdp: dict[int, float],
             "source_file"])
 
     quarterly_info = _statssa_quarterly(path, out_dir, series, warnings)
+    provincial_info = _statssa_provincial(raw_dir, out_dir, gdp, warnings)
 
     differences = {
         year: round((world_bank_gdp[year] / gdp[year] - 1) * 100, 3)
@@ -225,7 +226,49 @@ def _statssa(raw_dir: Path, out_dir: Path, world_bank_gdp: dict[int, float],
         "world_bank_gdp_differences_pct": differences,
         "population": population_info,
         "quarterly": quarterly_info,
+        "provincial": provincial_info,
     }
+
+
+def _statssa_provincial(raw_dir: Path, out_dir: Path, national_gdp: dict[int, float],
+                        warnings: list[str]) -> dict | None:
+    """Write GDP by province and industry from the P0441.2 release zip, if present."""
+    path = statssa.latest_provincial_gdp_file(raw_dir)
+    if path is None:
+        warnings.append("no Stats SA provincial GDP zip (P0441.2) in external/data/raw/statssa/")
+        return None
+    try:
+        rows, problems = statssa.parse_provincial_gdp(statssa.read_zip_sheets(path))
+    except Exception as exc:  # noqa: BLE001
+        warnings.append(f"Stats SA provincial GDP: could not read {path.name} ({exc})")
+        return None
+    warnings += [f"Stats SA {path.name}: {p}" for p in problems]
+    if not rows:
+        return None
+    _write(out_dir / "gdp_by_province_statssa.csv", [
+        {"country": "ZAF", "period": r["year"], "scenario": "shared", "province": r["province"],
+         "series": _slug(r["industry"]), "value": r["value"], "unit": "rand, constant 2015 prices",
+         "source_file": path.name}
+        for r in rows
+    ], ["country", "period", "scenario", "province", "series", "value", "unit", "source_file"])
+
+    # The nine provinces should add to the national figure in the annual GDP workbook.
+    totals: dict[int, float] = {}
+    for r in rows:
+        if _slug(r["industry"]) == "gdpr_at_market_prices":
+            totals[r["year"]] = totals.get(r["year"], 0.0) + r["value"]
+    off = {year: round((totals[year] / national_gdp[year] - 1) * 100, 3)
+           for year in sorted(set(totals) & set(national_gdp))
+           if abs(totals[year] / national_gdp[year] - 1) > 0.005}
+    if off:
+        warnings.append(f"Stats SA provincial GDP: provinces differ from national GDP by more than "
+                        f"0.5% in {len(off)} year(s): {off}")
+    years = sorted({r["year"] for r in rows})
+    return {"file": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+            "first_year": years[0], "latest_year": years[-1],
+            "provinces": sorted({r["province"] for r in rows}),
+            "industries": sorted({_slug(r["industry"]) for r in rows}),
+            "years_differing_from_national_gdp_pct": off}
 
 
 def _statssa_quarterly(path: Path, out_dir: Path, annual: list[dict],

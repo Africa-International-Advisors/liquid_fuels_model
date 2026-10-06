@@ -307,3 +307,27 @@ Manish's and Nigel's machines is left for Nigel.
 Checks after the changes: `python -m lfm check --vintage 2026` passes with 52
 open exceptions; `python -m pytest -q` 150 passed, 1 skipped; both scenarios
 run.
+
+## 2015 province versus national, traced
+
+The 2015 difference is between two department files, not an extraction fault.
+
+- National file `2015-Annual-FSV-at-National-Level.xlsx` has one sheet
+  ("Annual"), so there is no superseded-sheet problem as in 2013.
+- District file `2015-Quarterly-Disaggregated-data-Magisterial-Districts-13January2017.xlsx`
+  is the later of the two by its name. Our provincial sums equal its own
+  grand-total rows exactly, so the extract is faithful.
+
+Litres, district grand total against national:
+
+| Quarter | Diesel, district (cell) | Diesel, national | Difference | Petrol, district | Petrol, national | Difference |
+|---|---|---|---|---|---|---|
+| Q1 | 3,462,269,011 (row 356) | 3,470,754,296 | −8,485,285 | 2,908,870,126 | 2,909,365,058 | −494,932 |
+| Q2 | 3,401,602,385 (row 348) | 3,402,587,412 | −985,027 | 2,787,867,874 | 2,787,858,514 | +9,360 |
+| Q3 | 3,401,241,803 (row 349) | 3,391,324,908 | +9,916,895 | 2,782,689,298 | 2,780,173,939 | +2,515,359 |
+| Q4 | 3,227,038,160 (row 347) | 3,255,472,636 | −28,434,476 | 2,990,227,174 | 2,998,311,909 | −8,084,735 |
+
+All four quarters differ slightly in both directions, which is what a later
+revision looks like; the year is −0.21% for diesel and −0.05% for petrol. The
+Q4 district sheet also carries a "(blank)" product column. Status: resolved as
+a revision between releases; both records preserved; no change proposed.

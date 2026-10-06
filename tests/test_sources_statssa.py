@@ -151,3 +151,32 @@ def test_latest_release_file_picks_the_newest_stamp(tmp_path) -> None:
         (tmp_path / name).write_bytes(b"")
     found = statssa.latest_release_file(tmp_path, "P7162 Land transport survey(*).zip")
     assert found.name == "P7162 Land transport survey(202607).zip"
+
+
+def test_provincial_gdp_reads_the_constant_price_block_only() -> None:
+    sheet = [
+        ["Western Cape – GDPR by activity", None, None],
+        ["a. Current prices - Rand million", None, None],
+        ["Industry", "2023", "2024"],
+        ["Mining and quarrying", 1921.9, 1863.5],
+        ["GDPR at market prices", 900000.0, 950000.0],
+        [None, None, None],
+        ["c. Constant 2015 prices - Rand million", None, None],
+        ["Industry", "2023", "2024"],
+        ["Mining and quarrying", 1500.0, 1400.0],
+        ["GDPR at market prices", 600000.0, 604000.0],
+        [None, None, None],
+        ["d. Constant 2015 prices - percentage changes", None, None],
+        ["Industry", "2023", "2024"],
+        ["Mining and quarrying", None, -6.7],
+    ]
+    rows, warnings = statssa.parse_provincial_gdp({
+        "ReadMe": [["Description of tables"]],
+        "Table 1": [["South Africa – GDP by activity"]],
+        "Table 2": sheet,
+    })
+    assert {(r["province"], r["industry"], r["year"]): r["value"] for r in rows} == {
+        ("WC", "Mining and quarrying", 2023): 1.5e9, ("WC", "Mining and quarrying", 2024): 1.4e9,
+        ("WC", "GDPR at market prices", 2023): 6.0e11, ("WC", "GDPR at market prices", 2024): 6.04e11,
+    }
+    assert "no sheet read for province GP" in warnings and len(warnings) == 8

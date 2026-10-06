@@ -42,6 +42,39 @@ statistics_south_africa:
     latest_quarter: 2026-Q2
     series: 15
     series_years_not_matching_annual: 0
+  provincial:
+    file: P0441.2  Provincial Gross Domestic Product(2024).zip
+    sha256: ee962b9267314d05271f0c728b8ed6385b6d626b15d473a99fef10fbae420537
+    first_year: 2013
+    latest_year: 2024
+    provinces:
+    - EC
+    - FS
+    - GP
+    - KZN
+    - LP
+    - MP
+    - NC
+    - NW
+    - WC
+    industries:
+    - agriculture_forestry_and_fishing
+    - all_industries_at_basic_prices
+    - construction
+    - electricity_and_water
+    - finance_real_estate_and_business_services
+    - gdpr_at_market_prices
+    - general_government_services
+    - manufacturing
+    - mining_and_quarrying
+    - personal_services
+    - primary_industries
+    - secondary_industries
+    - taxes_less_subsidies_on_products
+    - tertiary_industries
+    - transport_and_communication
+    - wholesale_retail_trade_hotels_restaurants
+    years_differing_from_national_gdp_pct: {}
 world_bank:
   role: cross-check for GDP; source of GDP per capita and population until the Stats
     SA population file is read

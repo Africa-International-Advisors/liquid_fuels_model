@@ -276,6 +276,107 @@ def parse_monthly_series(rows: list[list], wanted: dict[str, tuple[str, str]]) -
 
 
 # --------------------------------------------------------------------------- #
+# Provincial GDP (P0441.2), annual
+#
+#     statssa.gov.za > Time series data > Excel
+#         "P0441.2  Provincial Gross Domestic Product(2024).zip"
+#
+# One workbook. Tables 2 to 10 are one province each, titled
+# "<Province> – GDPR by activity", and hold four blocks down the sheet:
+# a. current prices, b. percentage contributions, c. constant 2015 prices,
+# d. percentage changes. Block c is read: a row of years, then one row per
+# industry down to "GDPR at market prices". Values are in R million.
+
+PROVINCIAL_GDP_PATTERN = "P0441.2*Provincial Gross Domestic Product(*).zip"
+PROVINCE_CODES = {
+    "western cape": "WC", "eastern cape": "EC", "northern cape": "NC", "free state": "FS",
+    "kwazulu-natal": "KZN", "north west": "NW", "gauteng": "GP", "mpumalanga": "MP", "limpopo": "LP",
+}
+_PROVINCE_TITLE = re.compile(r"^\s*(.+?)\s*[–-]\s*GDPR by activity", re.IGNORECASE)
+_STAMP_YEAR = re.compile(r"\(((?:19|20)\d{2})\)")
+
+
+def latest_provincial_gdp_file(folder: Path) -> Path | None:
+    def key(path: Path) -> str:
+        match = _STAMP_YEAR.search(path.name)
+        return match.group(1) if match else ""
+
+    files = [p for p in folder.glob(PROVINCIAL_GDP_PATTERN) if key(p)]
+    return max(files, key=key) if files else None
+
+
+def read_zip_sheets(path: Path) -> dict[str, list[list]]:
+    """Every sheet of the first workbook inside a release zip, as rows."""
+    import io
+    import warnings
+    import zipfile
+
+    import openpyxl
+
+    with zipfile.ZipFile(path) as archive:
+        names = [n for n in archive.namelist() if n.lower().endswith(".xlsx")]
+        if not names:
+            raise ValueError(f"{path.name}: no workbook inside")
+        data = archive.read(names[0])
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        book = openpyxl.load_workbook(io.BytesIO(data), read_only=True, data_only=True)
+        return {ws.title: [list(row) for row in ws.iter_rows(values_only=True)] for ws in book}
+
+
+def parse_provincial_gdp(sheets: dict[str, list[list]]) -> tuple[list[dict], list[str]]:
+    """Constant-price value added and GDP by province and industry, in rand.
+
+    Returns ``(rows, warnings)``; each row is
+    ``{"province", "industry", "year", "value"}``. A province sheet whose
+    constant-price block cannot be found is reported and left out, and so is
+    any of the nine provinces with no sheet.
+    """
+    out: list[dict] = []
+    warnings: list[str] = []
+    seen: set[str] = set()
+    for name, rows in sheets.items():
+        title = next((str(c) for c in (rows[0] if rows else []) if c is not None), "")
+        match = _PROVINCE_TITLE.match(title)
+        if not match:
+            continue
+        province = PROVINCE_CODES.get(match.group(1).strip().lower())
+        if province is None:
+            warnings.append(f"{name}: province {match.group(1)!r} not recognised")
+            continue
+        start = next((i for i, row in enumerate(rows)
+                      if isinstance(row[0], str) and row[0].strip().lower().startswith("c. constant")), None)
+        if start is None or start + 1 >= len(rows):
+            warnings.append(f"{name}: constant-price block not found")
+            continue
+        header = rows[start + 1]
+        years = {}
+        for i, cell in enumerate(header):
+            text = str(cell).strip() if cell is not None else ""
+            if re.fullmatch(r"(?:19|20)\d{2}", text):
+                years[i] = int(text)
+        if not years:
+            warnings.append(f"{name}: no year columns in the constant-price block")
+            continue
+        seen.add(province)
+        for row in rows[start + 2:]:
+            label = row[0]
+            if not isinstance(label, str) or not label.strip():
+                break
+            if label.strip().lower().startswith("d."):
+                break
+            for i, year in years.items():
+                cell = row[i] if i < len(row) else None
+                if isinstance(cell, (int, float)) and not isinstance(cell, bool):
+                    out.append({"province": province, "industry": label.strip(), "year": year,
+                                "value": float(cell) * 1_000_000})
+    for code in PROVINCE_CODES.values():
+        if code not in seen:
+            warnings.append(f"no sheet read for province {code}")
+    return out, warnings
+
+
+# --------------------------------------------------------------------------- #
 # Mid-year population estimates (P0302)
 #
 #     statssa.gov.za > Publications > P0302 > latest release
