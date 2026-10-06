@@ -17,10 +17,10 @@ def apply_navigation(prs, brand):
         if page in (1,16):
             continue  # Preserve the supplied photographic cover and closing.
         for q in list(slide.shapes):
-            if q.left<Inches(8) and q.has_text_frame and Inches(1.7)<=q.top<Inches(2.25):
+            if q.has_text_frame and (Inches(1.7)<=q.top<Inches(2.25) or q.text=='Next steps | proposed owners'):
                 slide.notes_slide.notes_text_frame.text+='\nExhibit description: '+q.text
                 q._element.getparent().remove(q._element)
-            elif q.left<Inches(8) and not q.has_text_frame and abs(q.top-Inches(2.13))<10 and q.height<Inches(.02):
+            elif not q.has_text_frame and abs(q.top-Inches(2.13))<10 and q.height<Inches(.02):
                 q._element.getparent().remove(q._element)
         if page in EXHIBIT_UNITS:
             q=slide.shapes.add_textbox(Inches(.5),Inches(1.82),Inches(3.4),Inches(.23))

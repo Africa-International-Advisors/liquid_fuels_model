@@ -243,8 +243,10 @@ Durban–Lesedi transfers once. Nigel supplies client flows and agrees destinati
 and thresholds. No volume milestone is a forecast until these conditions close.
 # Demand-driver page 7 — indexed evidence
 
-Display update: the redundant left-hand exhibit heading is removed on every
-analytical page, including the SCR overview. Main titles and chart titles remain;
+Display update: redundant panel headings on both sides are removed on every
+analytical page, including the SCR overview, "Evidence and implications" and
+"Regional competitor evidence" and "Next steps | proposed owners".
+Main titles, chart titles and the underlying findings/actions remain;
 only compact units/index notes are retained. Exhibit descriptions remain in
 speaker notes. This is applied centrally in `scr_navigation.py` on each rebuild.
 
