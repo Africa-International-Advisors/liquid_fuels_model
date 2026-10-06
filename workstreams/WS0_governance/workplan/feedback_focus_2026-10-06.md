@@ -482,3 +482,31 @@ Customer-volume share, spare capacity and addressable catchments still require
 separate evidence. Review this graphic with VIS-04's reach/price/access flow.
 Owner: Nigel (message and visual direction); Manish (capacity bases and evidence).
 Revisit when the feedback round is complete and implementation is requested.
+
+
+### VIS-06 / R7: reduce text hierarchy and let the inventory chart speak
+
+Status: pending feedback; no slide changes. Reference: Convergence page 17.
+Nigel highlighted the multiple blue lines above the inventory sensitivity chart:
+the illustrative-input banner and "More inventory days require more working stock"
+repeat what the chart can already communicate. Reduce competing text levels.
+
+- Keep the slide title, one concise exhibit heading and the chart as the main
+  hierarchy. Remove the redundant explanatory headline above the bars.
+- Consolidate the illustrative 5.5 bn litres/year input, uniform-flow assumption
+  and units into a short regular-weight chart note. Keep illustrative status
+  visible; reducing prominence must not make the values appear observed.
+- Give the chart more space and retain direct bar labels. Consider one restrained
+  callout at the reference 14-day case: approximately 211 thousand cubic metres.
+- Place the calculation in a compact methodology/source note or speaker notes,
+  with an auditable reference. Avoid repeating the same numeric result below
+  the chart and in the commentary column.
+- Shorten the right-hand prose to the decision implication and unresolved tests:
+  working inventory is not new tank capacity; usable spare tanks, peak receipts,
+  segregation, tank heels and dispatch constraints determine any addition.
+- Apply the calmer text-colour and font-weight direction from VIS-01/VIS-03.
+  Review repeated banners and formula blocks on other pages for the same issue.
+
+Owner: Nigel (hierarchy and message); presentation builder implements after
+instruction. No illustrative inputs or model calculations change in this task.
+Revisit with the consolidated visual feedback before rebuilding the current pack.
