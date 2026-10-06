@@ -24,9 +24,9 @@ All files below are tracked and available after merging current `origin/main`.
 1. **Overview (page 2):** lead with the current answer, group rows by the agenda and retain S/C/R pills and Henry's resolution questions; link to the deep dives.
 2. **Market baseline (pages 3?6):** national accounting first, then observed provincial demand and supply origin. Separate measured, estimated and illustrative values.
 3. **Market changes (pages 7?11):** historical drivers and refinery change, then the forecast framework and route competition. Forecasts must connect assumptions to annual fuel demand and supply, with uncertainty explicit.
-4. **Vopak outlook (pages 12?17):** access and unique flows, regional opportunity and assets, then where to play, how to win and when to act. Inventory sensitivity follows the decision gates.
+4. **Vopak outlook (pages 12-16):** access and unique flows, regional opportunity and assets, then where to play, how to win and when to act. Inventory sensitivity follows the decision gates.
 
-Pages 20-22 respond to every Henry storyboard prompt, with partial/open status and linked evidence. Page 18 starts the appendix; page 19 sets out document scope. Page 23 closes the pack; page 24 is the palette reference. Chevrons link to the first page of each section (2, 3, 7, 12). The forecast framework establishes the analysis sequence; it does not add calibrated fuel forecasts.
+Pages 20-22 respond to every Henry storyboard prompt, with partial/open status and linked evidence. The main story ends at page 16. Page 17 starts the appendix; page 18 sets out document scope; page 19 contains the illustrative inventory sensitivity. Page 23 closes the pack; page 24 is the palette reference. Chevrons link to the first page of each section (2, 3, 7, 12). The forecast framework establishes the analysis sequence; it does not add calibrated fuel forecasts.
 
 ## What is agreed for the draft
 
@@ -41,7 +41,7 @@ Pages 20-22 respond to every Henry storyboard prompt, with partial/open status a
 | 8 | Capacity scenarios remain conditional. Actual FY2024 output: Secunda 29.1 and Natref 17.8 million barrels, the latter Sasol's share | Check source pages; fiscal vs calendar year, ownership and all-product scope must be explicit. Source product yields before deriving imports |
 | 9–14 | Accessibility, customer-volume and storage examples remain conditional | National trade is not Vopak market share. Close route costs, usable capacity, customer rights and unique deliveries before sizing capture |
 | 16 | Market outlook: where to play, how to win, when to act and conditions for Durban, Lesedi and competing gateways | Priorities are hypotheses. Return named customers, route economics, usable capacity, commercial rights and conditional timing |
-| 17 | Preliminary inventory sensitivity follows the outlook | Secure incremental flows and identify a usable-capacity gap before sizing new tanks |
+| 19 (appendix) | Preliminary inventory sensitivity supports later operating assessment | Secure incremental flows and identify a usable-capacity gap before sizing new tanks |
 
 The reporting copies are under `pptx/story/evidence_2026_10_06/`. They consume
 the collected observations without replacing engine inputs. The agriculture
@@ -121,3 +121,42 @@ open governance exceptions; those checks do not establish input approval.
 
 
 Scenario work package: [SCN-01 task list](feedback_focus_2026-10-06.md#scn-01-tracked-task-list) tracks L/M/H settings for all key levers and assumptions, coherent market worlds, model validation and the canonical story update. Tasks are open; owners are proposed.
+
+
+## Latest story review and response to Manish's push - 6 October 2026
+
+Fetched and read `origin/manish-branch` at `4e64c8c`; no newer branch handback
+was present. Reviewed the commit message, handback, lever sheet and the earlier
+branch review. Branch inputs and model code are not merged by this story revision.
+
+| Manish input | Treatment in the current story / next decision |
+|---|---|
+| 2013 parser correction; refinery-range repeats; 2015 revision traced | Acknowledge as traced technical findings. Page 5 distinguishes the traced 2015 revision from the 2014/2018 decisions still due. Preserve both source records. |
+| Provincial GDP through 2024; held 2022 fuel shares | Accept as evidence for testing the held-share estimate, not as newly observed provincial fuel sales. Keep observed and estimated volumes separate. |
+| Monthly activity and newer fuel prices collected | Retain the collected evidence and scenario inputs. Do not label these uncollected; complete activity-to-litres and real-price/mileage bridges before calibration. Annual plots use complete years and do not annualise partial 2026. |
+| SARS primary trade from 2014 | Retain the SARS selection in the national story. Rebuild the consolidated balance with matching trade selection; retain comparisons and coverage residuals. |
+| Proposed 3-4 bn litre diesel gap | Record as Manish's supported hypothesis, with the source comparisons. Production/product scope, stocks and fiscal/calendar periods still need reconciliation before adjusting demand. |
+| Private backup generation, passenger rail, neighbours' sourcing and refining/compliance alternatives | Include these categories in the scenario design and L/M/H inventory. Cross-border transit is throughput, not domestic demand; keep grid/private generation and BEV/hybrids separate and avoid overlapping effects. |
+| Marine baseline, elasticities, road parameters and national sales selection | Nigel decisions remain explicit and open; proposed defaults are not accepted through presentation edits. |
+| Handback deck predates provincial GDP/2015 closure | Refresh the handback against current evidence and this response matrix; return comments and changed values with source page/cell links. |
+
+Updated story: pages 1-16 main narrative; appendix p17, scope p18, inventory
+sensitivity p19, Henry responses pp20-22, closing p23 and palette p24.
+Page 13 uses cubic metres for both demand flow and tank stocks, with explicit
+annual-versus-stock headings. Page 14 restores the editable reach map and an
+illustrative waterfall from the existing catchment CSV; it is not measured capture.
+
+### Note to share with Manish
+
+Manish ? thanks for the handback at 4e64c8c. I've reviewed your comments and
+updated the canonical Convergence pack on main. The story now ends with the
+market outlook on p16; the illustrative inventory sizing is in the appendix.
+I've retained the distinction between traced corrections, source estimates and
+unapproved assumptions, including your newer GDP/price evidence and additional
+lever proposals. Please pull main, review the current pack and this response
+matrix, and return corrections with source page/cell references. Priority is the
+matched SARS fuel balance, 2024 sales selection and an L/M/H register covering
+all key levers, including their dependencies. Please keep the diesel-gap claim
+as a hypothesis until production, stocks and coverage reconcile, and keep
+neighbouring-country throughput separate from SA demand. Return your commit,
+checks, remaining decisions and comments; we will converge them into the story.

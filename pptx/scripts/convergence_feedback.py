@@ -1,6 +1,7 @@
 """Approved presentation feedback; reuse evidence, not model calculations."""
 import json
 import re
+from copy import deepcopy
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -59,15 +60,15 @@ def regional_graph(s, root, brand):
             replace(q, 'Historical demand and published tanks | separate scales')
         elif q.name == 'Title 1':
             replace(q, 'R6. Vopak’s published tanks sit in the two largest regional demand markets')
-    text(s, 'Reported demand\nbn litres/year', 2.05, 2.40, 2.1, .52, 11, True)
-    text(s, 'Published storage\nthousand m³', 4.72, 2.40, 2.6, .52, 11, True)
+    text(s, 'Annual fuel demand\nmillion m³/year', 2.05, 2.40, 2.1, .52, 11, True)
+    text(s, 'Tank capacity\nmillion m³', 4.72, 2.40, 2.6, .52, 11, True)
     for x, label, colour in [(4.72, 'Vopak', brand.accent_primary), (5.80, 'Other listed', brand.accent_secondary)]:
         bar(s, x, 3.04, .11, .11, colour, 'Storage legend')
         text(s, label, x+.16, 2.99, 1.3, .24, 9.5)
     for x, width, maximum, ticks in [(2.05, 1.82, 12, [0, 4, 8, 12]), (4.72, 1.70, 1000, [0, 500, 1000])]:
         for tick in ticks:
             xx = x+width*tick/maximum
-            text(s, str(tick), xx-.12, 3.26, .5, .22, 9)
+            text(s, f'{tick/1000:g}' if maximum==1000 else str(tick), xx-.12, 3.26, .5, .22, 9)
             line(s, (xx, 3.57), (xx, 6.12), brand.grey_fill, .5)
     labels = [('Eastern coast', 'EC/KZN'), ('Inland', 'GP/FS/LP/MP/NW'), ('Western coast', 'WC'), ('Other', 'Northern Cape')]
     for i, (label, provinces) in enumerate(labels):
@@ -85,45 +86,68 @@ def regional_graph(s, root, brand):
                 w = 1.70*capacity/1000
                 bar(s, 4.72, yy, w, .17, brand.accent_primary if is_vopak else brand.accent_secondary,
                     f'Published gross {names[i]} {"Vopak" if is_vopak else "other"}: {capacity} thousand m3')
-                text(s, f'{capacity:,.1f}', 4.72+w+.07, yy-.04, .70, .25, 10)
+                text(s, f'{capacity/1000:.3f}', 4.72+w+.07, yy-.04, .70, .25, 10)
             else:
                 text(s, '—' if is_vopak else '?', 4.72, yy-.04, .5, .25, 11)
     text(s, '— no listed Vopak site   ? capacity unknown', .5, 6.35, 7.05, .25, 10)
-    text(s, f'2022 total {sum(demand):.2f} bn L; petrol + diesel, jet excluded. Partial gross inventory; mixed products and missing Sasol/Transnet values. Tanks do not establish annual deliveries or market share.',
+    text(s, 'Demand is annual flow; capacity is a stock. 1 million m³ = 1 bn litres. Partial gross inventory, mixed products and missing capacities; turnover and customer flows are needed to establish served demand.',
          .5, 6.68, 7.05, .30, 8.5)
     s.notes_slide.notes_text_frame.text += '\nVIS-05: demand and storage have separate linear scales; capacity sums retain the earlier regional inventory selection. No listed site is not zero customer reach; unknown capacity is not zero. No model calculation changed.'
 
 
-def penetration_flow(s, root, brand):
-    clear_body(s, True)
+def penetration_flow(s, root, brand, map_slide):
+    clear_body(s)
+    for q in list(s.shapes):
+        if Inches(1.7)<=q.top<Inches(2.3):q._element.getparent().remove(q._element)
     for q in s.shapes:
-        if q.name == 'Title 1': replace(q, 'R6. Greater market penetration depends on reach, price, service and customer access')
-        elif q.has_text_frame and q.top == Inches(1.78) and q.left < Inches(8): replace(q, 'From total market to customer volumes | gates to test')
-    labels = [
-        ('Total market (TAM)', 'Same product, year and customer geography'),
-        ('Infrastructure reach', 'Feasible routes; compatible receipt and dispatch'),
-        ('Competitive price × service', 'Full delivered cost and service versus alternatives'),
-        ('Commercial customer access', 'Contracts, rights and ability to switch'),
-        ('Captured unique deliveries', 'Additional customer litres; shared transfers removed'),
-    ]
-    for i, (heading, body) in enumerate(labels):
-        y = 2.43+i*.68
-        q = s.shapes.add_shape(MSO_SHAPE.CHEVRON, Inches(.58), Inches(y+.03), Inches(.28), Inches(.26))
-        q.fill.solid(); q.fill.fore_color.rgb=brand.accent_primary; q.line.fill.background()
-        text(s, heading, 1.02, y, 5.8, .27, 13, True)
-        text(s, body, 1.02, y+.30, 6.1, .25, 10.5)
-    text(s, 'Today’s served volumes + additional candidates that pass every gate', .5, 6.12, 7.05, .35, 12, True)
-    text(s, 'Current share and additional capture remain unquantified. Capacity, delivered cost and customer rights limit the addressable catchment.', .5, 6.62, 7.05, .36, 10)
+        if q.name == 'Title 1': replace(q, 'R6. Reach and commercial access narrow the illustrative customer opportunity')
+    text(s,'Illustrative reach and volume bridge | bn litres/year; customer capture unverified',.5,1.78,11.65,.35,14,True)
+    line(s,(.5,2.13),(12.15,2.13),brand.ink,.55)
+    text(s,'Durban and Lesedi: illustrative road reach',.5,2.43,4.65,.35,12,True)
+    # Reuse the editable geographic exhibit; no new catchment or cost calculation.
+    scale=4.55/7.05
+    ns='{http://schemas.openxmlformats.org/officeDocument/2006/relationships}'
+    for q in map_slide.shapes:
+        if not (Inches(.5)<=q.left<Inches(7.55) and Inches(2.38)<=q.top<Inches(6.70)):
+            continue
+        if q.name.startswith('Transnet lease overlay:') or (q.has_text_frame and 'Lease offers' in q.text):continue
+        el=deepcopy(q._element)
+        for node in el.iter():
+            for attr,value in list(node.attrib.items()):
+                if attr.startswith(ns):
+                    rel=map_slide.part.rels[value]
+                    node.set(attr,s.part.relate_to(rel.target_ref if rel.is_external else rel.target_part,rel.reltype,is_external=rel.is_external))
+        s.shapes._spTree.insert_element_before(el,'p:extLst')
+        dest=s.shapes[-1]
+        dest.left=int(Inches(.5)+(q.left-Inches(.5))*scale)
+        dest.top=int(Inches(3.03)+(q.top-Inches(2.38))*scale)
+        dest.width=int(q.width*scale);dest.height=int(q.height*scale)
+        if dest.has_text_frame:
+            for p in dest.text_frame.paragraphs:
+                for font in [p.font]+[r.font for r in p.runs]:
+                    if font.size:font.size=Pt(max(7,font.size.pt*scale))
+    text(s,'Darker shading = lower example road cost. Physical and commercial access remain unverified.',.5,6.04,4.6,.48,10)
+    import csv
+    rows=list(csv.DictReader((root/'story/illustrative_market_catchments.csv').open(encoding='utf-8-sig')))
+    assessed=[r for r in rows if r['commercial_envelope_bn_l']]
+    total,reachable,envelope,current=[sum(float(r[k]) for r in assessed) for k in ['demand_bn_l','feasible_service_bn_l','commercial_envelope_bn_l','current_unique_vopak_bn_l']]
+    candidate=envelope-current
+    stages=[('Catchment\nexample',total,0,total),('Reach\nlimits',total-reachable,reachable,total),('Commercial\nscreen',reachable-envelope,envelope,reachable),('Current\nexample',current,candidate,envelope),('Additional\ncandidate',candidate,0,candidate)]
+    text(s,'Illustrative volume waterfall',5.30,2.43,6.85,.35,12,True)
+    x0,ybottom,height,width=5.55,5.76,2.52,.68
+    for i,(label,value,bottom,top) in enumerate(stages):
+        x=x0+i*1.31; yy=ybottom-height*top/total; hh=height*value/total
+        colour=brand.accent_primary if i in (0,4) else brand.accent_secondary
+        bar(s,x,yy,width,hh,colour,f'Illustrative waterfall {label}: {value} bn L/year')
+        text(s,('−' if i in (1,2,3) else '')+f'{value:.1f}',x-.13,yy-.35,.95,.28,12)
+        text(s,label,x-.18,5.96,1.10,.49,10)
+        if i<4:
+            level=[total,reachable,envelope,candidate][i]
+            line(s,(x+width,ybottom-height*level/total),(x+1.31,ybottom-height*level/total),brand.ink,.6)
+    text(s,f'The example leaves {candidate:.1f} bn L/year of candidates to test for cost, service, usable capacity and customer rights.',.5,6.63,11.65,.35,11)
     # Keep authored volume examples in notes, rather than presenting them as measured penetration.
     s.notes_slide.notes_text_frame.text += '\nVIS-04: unquantified market-penetration flow. Earlier authored milestones remain illustrations, not measured current or captured volumes. L/M/H cost, reach, service, rights and capacity settings feed the SCN-01 task list.'
-    for q in s.shapes:
-        if not q.has_text_frame or q.left < Inches(8): continue
-        if q.text.startswith('01 |'): replace(q, '01 | Reach defines a candidate market')
-        elif q.text.startswith('02 |'): replace(q, '02 | Price and service determine competitiveness')
-        elif q.text.startswith('03 |'): replace(q, '03 | Customer access determines capture')
-        elif q.text.startswith(('Accessibility map', 'Maps locate')): replace(q, 'Routes locate potential customers. Receipt, dispatch and product constraints limit physical reach.')
-        elif q.text.startswith(('The current example', '3.0 current')): replace(q, 'Compare full delivered cost and service with alternatives for the same customer, product and period.')
-        elif q.text.startswith(('Evidence cost', 'Count an increment')): replace(q, 'Test contracts and switching. Count unique final deliveries; keep unknown and failed gates explicit.')
+    s.notes_slide.notes_text_frame.text+='\nWaterfall uses only existing authored Eastern coastal/inland catchment values. Commercial-screen loss combines commercial constraints; it is not a measured price elasticity or separate rights effect. Current example is not verified Vopak share. All withdrawals/screens are illustrative, not observed lost customers. The inset is the existing page-10 road-cost illustration, with schematic routes and no verified catchment.'
 
 
 def scenario_framework(s, root, brand):
@@ -133,8 +157,8 @@ def scenario_framework(s, root, brand):
         elif q.has_text_frame and q.top == Inches(1.78): replace(q, 'Scenario design | all key levers and assumptions')
     rows = [
         ['Input family', 'L/M/H settings to agree', 'Outputs and decision'],
-        ['Demand', 'Growth, activity, mileage, fleet efficiency/EVs, freight mode, power diesel use and price response', 'Petrol/diesel demand by year and region'],
-        ['Supply and trade', 'Plant output, yields, downtime, restart timing, import availability, exports and stocks', 'Domestic supply and required trade; residuals explicit'],
+        ['Demand', 'Growth, mileage, fleet efficiency/EVs, freight/passenger rail, grid/private generation, sector activity and price response', 'Petrol/diesel demand by year and region'],
+        ['Supply and trade', 'Plant output, yields, downtime/compliance, imports, neighbouring-country exports and stocks', 'Domestic supply, trade and transit throughput; residuals explicit'],
         ['Customer access', 'Delivered price, service, feasible routes, rights and switching', 'Reachable and competitively accessible customer litres'],
         ['Capacity and operations', 'Usable tanks, receipt/dispatch, inventory policy, peaks and spare space', 'Unique Vopak flows and any usable-capacity gap'],
     ]
@@ -192,7 +216,7 @@ def apply_feedback(prs, root, brand):
         for p in cell.text_frame.paragraphs:
             p.font.name=cfg.THEME_FONT;p.font.size=Pt(10.5);p.font.color.rgb=brand.ink;p.space_after=Pt(0)
     regional_graph(prs.slides[12], root, brand)
-    penetration_flow(prs.slides[13], root, brand)
+    penetration_flow(prs.slides[13], root, brand, prs.slides[9])
     scenario_framework(prs.slides[8], root, brand)
     inventory_slide=prs.slides[16]
     add_storage_sensitivity_page(inventory_slide, text, root, brand)
@@ -211,10 +235,48 @@ def apply_feedback(prs, root, brand):
                 for plot in q.chart.plots:
                     if plot.has_data_labels: plot.data_labels.font.bold=False
     scope_and_appendix(prs, root, brand)
+    finalise_story(prs,root,brand)
     apply_divider_markers(prs, brand)
     apply_confidentiality(prs)
     finish_footer_and_markers(prs, brand)
     assert len(prs.slides)==24
+
+
+def finalise_story(prs,root,brand):
+    """End the narrative with the outlook; keep inventory in supporting material."""
+    ids=list(prs.slides._sldIdLst)
+    # Move former story page 17 behind the appendix divider and scope.
+    ids=ids[:16]+ids[17:19]+[ids[16]]+ids[19:]
+    for item in list(prs.slides._sldIdLst):prs.slides._sldIdLst.remove(item)
+    for item in ids:prs.slides._sldIdLst.append(item)
+    for page in (0,22):
+        for q in prs.slides[page].shapes:
+            if q.has_text_frame and q.left<Inches(6.6):
+                for p in q.text_frame.paragraphs:
+                    p.font.color.rgb=brand.white
+                    for r in p.runs:r.font.color.rgb=brand.white
+    for q in prs.slides[16].shapes:
+        if q.has_text_frame and 'main story ends on page 17' in q.text:replace(q,q.text.replace('page 17','page 16'))
+    for q in list(prs.slides[18].shapes):
+        if q.name.startswith('Section navigation '):q._element.getparent().remove(q._element)
+    overview=next(q.table for q in prs.slides[1].shapes if q.has_table)
+    for p in overview.cell(7,4).text_frame.paragraphs:
+        for r in p.runs:r.text=r.text.replace('17','19')
+    for s in prs.slides:
+        for q in s.shapes:
+            if q.has_text_frame and q.top>Inches(7) and q.left>Inches(12) and q.text.strip().isdigit():
+                replace(q,str(list(prs.slides).index(s)+1))
+            if q.has_table:
+                for row in q.table.rows:
+                    for cell in row.cells:
+                        if cell.text.strip()=='15 / 16 / 17':
+                            for p in cell.text_frame.paragraphs:
+                                for r in p.runs:r.text=r.text.replace('17','19')
+    history=prs.slides[4]
+    for q in history.shapes:
+        if q.has_text_frame and q.text.startswith('The analyst branch corrects'):
+            replace(q,'Manish fixed the 2013 parser and traced 2015 to a source revision. Decisions remain on 2014 conflicts and incomplete 2018 coverage.')
+    history.notes_slide.notes_text_frame.text+='\nManish handback 4e64c8c: 2013 parser fixed; 2015 revision traced; 2014/2018 treatment still needs Nigel. Provincial GDP supports a held-share estimate but is not observed fuel sales.'
 
 
 if __name__=='__main__':

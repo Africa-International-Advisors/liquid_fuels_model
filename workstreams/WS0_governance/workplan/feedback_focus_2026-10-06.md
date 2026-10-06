@@ -533,3 +533,21 @@ feedback history. Model inputs and illustrative source values are unchanged.
 The canonical current filenames remain unchanged. Previous delivered versions
 are archived before replacement. Package checks, page/reference checks, rendering
 and governance verification are recorded with the delivery.
+
+
+## Follow-up corrections after visual review - 6 October 2026
+
+- Cover and closing: white text on navy, with a separate bookend contrast rule.
+- Page 13: annual demand (million m3/year) and tank stock (million m3), separate
+  scales; explicit flow-versus-stock distinction. Source values are unchanged.
+- Page 14: restore the editable road-reach map and an illustrative waterfall
+  using existing catchment values. It does not quantify actual customer capture
+  or isolate price effects; commercial screening combines constraints.
+- End the main narrative with the market outlook on p16; appendix divider p17,
+  scope p18 and illustrative inventory sensitivity p19. Henry responses remain
+  pp20-22; closing p23 and palette p24.
+- Review and respond to Manish's latest push, 4e64c8c, in the convergence handback
+  response matrix. Proposed lever assumptions and unresolved balance remain open.
+- Teams sending was attempted only after Nigel requested a note. The connector
+  required reauthentication; nothing was sent. Nigel then asked why Teams was
+  being used; leave Teams alone and provide the recorded note for manual sharing.

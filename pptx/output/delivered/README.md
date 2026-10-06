@@ -2,7 +2,7 @@
 
 Open [PDF](Vopak_Week1_Convergence_2026_10_06.pdf) or
 [editable PowerPoint](Vopak_Week1_Convergence_2026_10_06.pptx).
-This is the current 24-page storyline, incorporating the approved visual feedback and document scope. The main story ends on page 17.
+This is the current 24-page storyline, incorporating the approved visual feedback and document scope. The main story ends on page 16.
 Use this pair for review and further revisions; do not create numbered copies
 in the delivered root.
 
@@ -11,8 +11,9 @@ in the delivered root.
 | Overview | 1-2 | Cover and answer-led summary |
 | Market baseline | 3-6 | National accounting, provincial demand and supply allocation |
 | Market changes | 7-11 | Demand drivers, supply cases, forecasting and competing routes |
-| Vopak outlook | 12-17 | Customer flows, footprint, opportunity gates and inventory sensitivity |
-| Appendix divider and scope | 18-19 | Clear story ending; what the document covers and does not establish |
+| Vopak outlook | 12-16 | Customer flows, footprint, opportunity gates and inventory sensitivity |
+| Appendix divider and scope | 17-18 | Clear story ending; what the document covers and does not establish |
+| Inventory sensitivity | 19 | Illustrative operating sensitivity; downstream of secured customer flows |
 | Henry storyboard trace | 20-22 | Responses to every original storyboard prompt |
 | Closing and palette | 23-24 | Closing page and presentation colours |
 
@@ -54,3 +55,5 @@ Convergence filename and archives the previous pair before replacement.
 
 See [Manish convergence review](../../../workstreams/WS0_governance/workplan/manish_convergence_2026-10-06.md)
 and [Henry question trace](../../../workstreams/WS3_reporting_delivery/henry_verbatim_trace_2026-10-06.md).
+
+The previous 24-page visual-feedback pair is preserved in [archive/2026-10-06_story-corrections](archive/2026-10-06_story-corrections/); its delivery manifest records the updated order, checks and Manish review.

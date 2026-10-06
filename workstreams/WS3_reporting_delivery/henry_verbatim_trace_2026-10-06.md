@@ -44,7 +44,7 @@ Trace each item as **Henry wording ? current response ? linked deep dive**. The 
 | ID / source | Henry?s exact wording | Current response | Deep-dive pages |
 |---|---|---|---|
 | R01 / slide 32 | Market share of Vopak in Dbn and Lesedi | Open: published storage is an asset footprint, not served demand. Need unique deliveries, transfers and matched demand. | 12 / 13 / 14 |
-| R02 / slide 32 | Potential scope for new investment? | Conditional: prioritise customer flows and service first. New storage requires secured incremental flows and a usable-capacity gap. | 15 / 16 / 17 |
+| R02 / slide 32 | Potential scope for new investment? | Conditional: prioritise customer flows and service first. New storage requires secured incremental flows and a usable-capacity gap. | 15 / 16 / 19 |
 
 ## Narrative instructions retained
 
@@ -66,8 +66,8 @@ The overview separates evidence from the verdict on Henry's storyline; supported
 | C4 | 8 / 9 | 20 / 21 |
 | C5 | 10 / 11 | 21 |
 | R6 | 12 / 13 / 14 | 22 |
-| R7 | 15 / 16 / 17 | 22 |
+| R7 | 15 / 16 / 19 | 22 |
 
-Pages 3?17 are each summarised in the overview. Pages 20-22 trace the original prompts; pages 1, 23 and 24 are cover, closing and palette reference. See the [evidence and verdict register](../../pptx/story/overview_story_verdicts_2026_10_06.json).
+Pages 3-16 are each summarised in the overview. Pages 20-22 trace the original prompts; pages 1, 23 and 24 are cover, closing and palette reference. See the [evidence and verdict register](../../pptx/story/overview_story_verdicts_2026_10_06.json).
 
-The main story ends at page 17; Appendix divider page 18 and document scope page 19 precede the Henry response pages.
+The main story ends at page 16; Appendix divider page 17 and document scope page 18 precede the illustrative inventory sensitivity on page 19 and Henry response pages 20-22.
