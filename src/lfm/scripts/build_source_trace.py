@@ -25,7 +25,6 @@ REPO = Path(__file__).resolve().parents[3]
 PROFILE = REPO / "output" / "delivered" / "source_profile_2026_10_05.csv"
 
 MAIN = "on main"
-MANISH = "Manish's machine only (data/raw/)"
 BOTH_LOCAL = "local to Manish and Nigel; not on main"
 
 WORKBOOK = "external/sources/Liquid Fuels Model - Supply Demand, 2025 - Reatile Copy.xlsx"
@@ -65,8 +64,8 @@ TRACE: dict[str, tuple[str, ...]] = {
     "timeseries/refinery_production.csv": (
         "Reatile workbook (AIA, March 2025)", "", WORKBOOK + " :: Assumptions!L102:R131 and L135:R164",
         MAIN, "manual (workbook extract)", XLSX_CMD, "extract_refinery_production", "pack p8 context", "",
-        "Holds utilisation, not production. 558 repeated rows; fix and candidate ready (flag log section 3).",
-        "Nigel: approve candidate"),
+        "Holds utilisation, not production. Repeated rows removed on manish-branch (flag log section 3).",
+        "Nigel: confirm"),
     # ---- workbook extracts not read by the engine --------------------------
     "timeseries/gdp.csv": (
         "Reatile workbook (AIA, March 2025)", "", WORKBOOK, MAIN, "manual (workbook extract)",
@@ -84,21 +83,21 @@ TRACE: dict[str, tuple[str, ...]] = {
         "Reatile workbook (AIA, March 2025)", "", WORKBOOK + " :: Gasoline/Diesel/Jet - DemandSupply, RSA Demand",
         MAIN, "manual (workbook extract)", XLSX_CMD, "extract_historical_demand",
         "comparison only (compare_history)", "",
-        "15 stray jet rows; fix and candidate ready (flag log section 4). Not declared in a block.",
-        "Nigel: approve candidate"),
+        "15 stray jet rows removed on manish-branch (flag log section 4). Not declared in a block.",
+        "Nigel: confirm"),
     # ---- energy department --------------------------------------------------
     "timeseries/fuel_sales_department.csv": (
         DEPT, DEPT_URL + "SA FUEL SALES VOLUME/", "<year>-...-FSV....xls(x), national annual workbooks 2005-2023",
         BOTH_LOCAL, "download", DEPT_CMD, "energy_dept.parse_sales", "pack p4, p5 national tie", "",
-        "2013 read from a superseded sheet; corrected in code, CSV not yet regenerated. Series ends 2023.",
-        "Nigel: approve 2013 correction"),
+        "2013 corrected on manish-branch (published sheet). Series ends 2023.",
+        "Nigel: confirm 2013 correction"),
     "timeseries/fuel_sales_department_quarterly.csv": (
         DEPT, DEPT_URL + "SA FUEL SALES VOLUME/", "same workbooks as fuel_sales_department.csv",
         BOTH_LOCAL, "download", DEPT_CMD, "energy_dept.parse_sales", "", "",
-        "Same 2013-Q4 correction applies.", "Nigel: approve 2013 correction"),
+        "2013-Q4 corrected on manish-branch.", "Nigel: confirm 2013 correction"),
     "timeseries/fuel_sales_department_by_province.csv": (
         DEPT, DEPT_URL + "SA FUEL SALES VOLUME/", "<year>-...-Magisterial-Districts-data.xlsx, quarterly sheets",
-        BOTH_LOCAL + " (2013 annual workbook: Manish only)", "download", DEPT_CMD,
+        BOTH_LOCAL + " (2013 annual workbook on manish-branch)", "download", DEPT_CMD,
         "energy_dept.parse_provincial_sales via fetch_energy_dept._provincial", "pack p3, p4, p6, p12",
         "2023 (Q1 only)",
         "Ends 2022. 2018 understated about 1.8% (district Q1 sheet incomplete). 2014-Q3 differs from national file.",
@@ -152,7 +151,7 @@ TRACE: dict[str, tuple[str, ...]] = {
         "Statistics South Africa (P0441 GDP; P0302 mid-year population)",
         "https://www.statssa.gov.za/?page_id=1854&PPN=P0441",
         "GDP P0441 - GDP Time series Q2 2026.xlsx (Annual sheet); Country projection ... (2002-2026).xlsx",
-        MANISH + "; copied to external/data/raw/statssa/, uncommitted", "manual download (site blocks scripts)",
+        "on manish-branch (external/data/raw/statssa/)", "manual download (site blocks scripts)",
         ECON_CMD, "statssa.parse_constant_price_series; statssa.parse_population", "pack p7 (sector value added)",
         "", "Manual placement each release. Years after 2026 are projections, not observations.",
         "Nigel: commit originals?"),
@@ -192,13 +191,13 @@ TRACE: dict[str, tuple[str, ...]] = {
         "Department of Transport, Transport Statistics Bulletin 2023, Table 2.8 (source: RTMC)",
         "https://www.transport.gov.za/wp-content/uploads/2023/02/Transport-Statistics-Bulletin-2023.pdf",
         "dot-transport-statistics-bulletin-2023.pdf, p.40",
-        MANISH + "; copied to external/data/raw/literature/, uncommitted", "manual transcription", "none",
+        "on manish-branch (external/data/raw/literature/)", "manual transcription", "none",
         "typed by hand", "", "", "One date only (December 2023). No later edition found.", "Nigel: commit original?"),
     "reference/vehicle_parameters_stone2018.csv": (
         "Stone, Merven, Maseela and Moonsamy (2018), J. Energy in Southern Africa 29(2), and supplement",
         "https://www.scielo.org.za/pdf/jesa/v29n2/06.pdf",
         "stone-2018-vehicle-parc-model-jesa-29-2.pdf; stone-2018-supplementary.pdf",
-        MANISH + "; copied to external/data/raw/literature/, uncommitted", "manual transcription", "none",
+        "on manish-branch (external/data/raw/literature/)", "manual transcription", "none",
         "typed by hand", "", "", "Values are for 2014. Transcription not independently re-checked.",
         "Nigel: review"),
     "reference/fleet_fuel_split_2023.csv": (

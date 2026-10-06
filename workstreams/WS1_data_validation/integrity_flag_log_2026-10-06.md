@@ -279,3 +279,26 @@ PDF has not been done.
 scenarios run; metadata parse errors 0 (1 on 5 October); the engine requests
 the same six CSVs as in the 5 October profile; provincial gaps 26 and repeated
 keys unchanged, as expected, because no vintage value has been changed.
+
+## Changes applied on 6 October after Manish's review
+
+Manish approved five of the items above; they are now applied on
+`manish-branch` for Nigel to confirm. The register was reconciled with
+`python -m lfm.scripts.sync_register` for the five blocks touched (804 rows
+kept, 20 updated, 209 added, 809 removed); every changed row is `unreviewed`.
+
+| Item | Applied | Effect |
+|---|---|---|
+| 2013 national sales | `fuel_sales_department.csv` and its quarterly file now read the published sheet: diesel 12,141,281,548; petrol 11,439,925,235 litres (all six products change) | Reference data only; not read by the engine |
+| Refinery repeated keys | `refinery_production.csv` is 348 rows, no repeated key | Supply unchanged in every year, both scenarios |
+| Jet history repeated keys | `historical_demand.csv` is 57 rows | Comparison data only |
+| Industry and agriculture baselines | Industry 2.5e9 (2024) → 1,499,139,260 litres (2021); agriculture 0.7e9 (2024) → 1,058,398,950 litres (2021); source: 2021 energy balance; marked `needs_verification` | Diesel demand falls 0.63 bn litres in 2024 (15.29 → 14.65 in the high scenario, 15.24 → 14.61 in the low) and by 0.63–0.69 bn in 2030 and 2035 |
+| Original documents | Committed under `external/data/raw/` (not the three Glencore annual reports) | Closes the missing-originals flag for the five records |
+
+Left for Nigel, unchanged: the 2014 and 2018 provincial treatment, the
+elasticities, the road parameters and the register layout. The marine baseline
+stays at its placeholder on hold.
+
+Checks after the changes: `python -m lfm check --vintage 2026` passes with 52
+open exceptions; `python -m pytest -q` 150 passed, 1 skipped; both scenarios
+run.
