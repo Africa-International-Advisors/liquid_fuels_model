@@ -1,0 +1,13 @@
+monthly_turns:
+  value:
+    low: 1
+    base: 2
+    high: 3
+  units: gross-capacity-equivalent turns per month
+  source: Authored sensitivity informed by Blackmer/Dover Making Smart Energy Choices (May-June 2013), p1; not measured SA terminal performance. Evidence and replacement task in pptx/story/terminal_turnover_evidence_2026_10_06.json.
+  last_updated: '2026-10-06'
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  register_id: REG-TERMINAL-HANDLING-TURNS
+  exception_id: EXC-TERMINAL-HANDLING-TURNS

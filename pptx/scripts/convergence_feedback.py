@@ -47,64 +47,8 @@ def bar(s, x, y, w, h, color, name):
 
 
 def regional_graph(s, root, brand):
-    clear_body(s, True)
-    values, _, _ = sales(root)
-    import csv
-    members = list(csv.DictReader((root/'story/demand_map_regions_2026_10_06.csv').open(encoding='utf-8-sig')))
-    names = ['Eastern coastal', 'Inland', 'Western coastal', 'Other / Northern Cape']
-    demand = [sum(values[r['province_code']] for r in members if r['region'] == n) for n in names]
-    sites = inventory(root)
-    locations = [['Durban', 'Richards Bay'], ['Lesedi', 'Isando'], ['Cape Town'], []]
-    for q in s.shapes:
-        if q.has_text_frame and q.top == Inches(1.78) and q.left < Inches(8):
-            replace(q, 'Historical demand and published tanks | separate scales')
-        elif q.name == 'Title 1':
-            replace(q, 'R6. Vopak’s published tanks sit in the two largest regional demand markets')
-    text(s, 'Annual fuel demand\nmillion m³/year', 2.05, 2.40, 2.1, .52, 11, True)
-    text(s, 'Tank capacity\nmillion m³', 4.72, 2.40, 2.6, .52, 11, True)
-    for x, label, colour in [(4.72, 'Vopak', brand.accent_primary), (5.80, 'Other listed', brand.accent_secondary)]:
-        bar(s, x, 3.04, .11, .11, colour, 'Storage legend')
-        text(s, label, x+.16, 2.99, 1.3, .24, 9.5)
-    for x, width, maximum, ticks in [(2.05, 1.82, 12, [0, 4, 8, 12]), (4.72, 1.95, 1500, [0, 500, 1000, 1500])]:
-        for tick in ticks:
-            xx = x+width*tick/maximum
-            text(s, f'{tick/1000:g}' if maximum==1500 else str(tick), xx-.12, 3.26, .5, .22, 9)
-            line(s, (xx, 3.57), (xx, 6.12), brand.grey_fill, .5)
-    labels = [('Eastern coast', 'EC/KZN'), ('Inland', 'GP/FS/LP/MP/NW'), ('Western coast', 'WC'), ('Other', 'Northern Cape')]
-    for i, (label, provinces) in enumerate(labels):
-        y = 3.65+i*.63
-        text(s, label, .5, y, 1.45, .25, 11)
-        text(s, provinces, .5, y+.28, 1.50, .23, 9)
-        w = 1.82*demand[i]/12
-        bar(s, 2.05, y+.12, w, .23, brand.accent_primary, f'Reported demand {names[i]}: {demand[i]} bn L/year')
-        text(s, f'{demand[i]:.2f}', 2.05+w+.05, y+.10, .60, .25, 11)
-        stack_x=4.72;capacity_parts=[]
-        for j, is_vopak in enumerate([True, False]):
-            selected = [r for r in sites if r['site'] in locations[i] and (r['operator']=='Vopak') == is_vopak and r.get('gross_capacity_m3')]
-            yy = y+.12
-            if selected:
-                capacity = sum(float(r['gross_capacity_m3']) for r in selected)/1000
-                w = 1.95*capacity/1500
-                bar(s, stack_x, yy, w, .23, brand.accent_primary if is_vopak else brand.accent_secondary,
-                    f'Published gross {names[i]} {"Vopak" if is_vopak else "other"}: {capacity} thousand m3')
-                stack_x+=w
-                capacity_parts.append(capacity/1000)
-            else:
-                capacity_parts.append(None)
-        known=[v for v in capacity_parts if v is not None]
-        if known:
-            label=f'{sum(known):.4f}'.rstrip('0').rstrip('.')
-            text(s,label,stack_x+.07,y+.10,.75,.25,10)
-        else:
-            text(s,'?',4.72,y+.10,.5,.25,11)
-        # Component labels follow the legend order; blanks are not imputed zeros.
-        parts=[f'{v:.3f}' if v is not None else ('—' if j==0 else '?') for j,v in enumerate(capacity_parts)]
-        text(s,' + '.join(parts),4.72,y+.37,2.70,.22,9)
-    text(s, '— no listed Vopak site   ? capacity unknown', .5, 6.35, 7.05, .25, 10)
-    text(s, 'Demand is annual flow; capacity is a stock. 1 million m³ = 1 bn litres. Partial gross inventory, mixed products and missing capacities; turnover and customer flows are needed to establish served demand.',
-         .5, 6.68, 7.05, .30, 8.5)
-    s.notes_slide.notes_text_frame.text += '\nVIS-05: demand and storage have separate linear scales; capacity sums retain the earlier regional inventory selection. No listed site is not zero customer reach; unknown capacity is not zero. No model calculation changed.'
-    s.notes_slide.notes_text_frame.text += '\nStorage is stacked Vopak then other listed operators, one row per region aligned with annual demand. End labels show known listed subtotals, not complete regional capacity. Component labels are rounded and follow legend order; missing values remain dash/question mark. Shared stock axis is 0–1.5 million m3.'
+    from terminal_turnover_page import add_turnover_graph
+    add_turnover_graph(s, root, brand)
 
 
 def penetration_flow(s, root, brand, map_slide):
@@ -227,7 +171,13 @@ def apply_feedback(prs, root, brand):
         cell=overview_table.cell(3,col);cell.text=verdicts['rows'][2][key]
         for p in cell.text_frame.paragraphs:
             p.font.name=cfg.THEME_FONT;p.font.size=Pt(10.5);p.font.color.rgb=brand.ink;p.space_after=Pt(0)
+    for col,key in [(2,'evidence'),(3,'verdict')]:
+        cell=overview_table.cell(6,col);cell.text=verdicts['rows'][5][key]
+        for p in cell.text_frame.paragraphs:
+            p.font.name=cfg.THEME_FONT;p.font.size=Pt(10.5);p.font.color.rgb=brand.ink;p.space_after=Pt(0)
     regional_graph(prs.slides[12], root, brand)
+    from terminal_turnover_page import link_storage_page
+    link_storage_page(prs.slides[14], root, brand)
     penetration_flow(prs.slides[13], root, brand, prs.slides[9])
     scenario_framework(prs.slides[8], root, brand)
     inventory_slide=prs.slides[16]

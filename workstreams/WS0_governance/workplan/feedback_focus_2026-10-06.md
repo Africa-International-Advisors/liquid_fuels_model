@@ -561,3 +561,27 @@ other listed operators follow on the same stock scale. End labels show the
 known subtotal; component labels follow legend order. Unlisted/unknown values
 remain explicit, not zero. Source capacities, demand, units and story order
 are unchanged; annual flow and stock still use separate scales.
+
+
+### VIS-05 / SCN-01 follow-up: provisional tank turnover
+
+Nigel authorised a light internet search and provisional estimates. Page 13 now
+compares annual handling equivalents with annual historical demand on one scale,
+using the same partial site inventory as page 15. Base bars remain stacked by
+operator; low/high ranges use 1/2/3 monthly gross-equivalent turns, registered in
+assumptions/2026/terminal_handling.yaml. These are authored sensitivities informed
+by Blackmer/Dover (2013), not verified Vopak performance or measured fuel supply.
+Working space/product compatibility and receipt/dispatch constraints remain open.
+2022 demand vs 2026 inventory is historical context, not a matched-year adequacy test.
+Do not sum coastal/inland handling as unique sales; transfers can be counted twice.
+
+| Task | Owner | Status / replacement trigger |
+|---|---|---|
+| Obtain 12 months of outbound volumes and matching gross/working capacity per page-15 site | Manish; Nigel client access | Open; first operating-data review |
+| Separate fuel-compatible working space, occupancy, seasonal turns and downtime | Manish | Open; before capacity recommendation |
+| Verify berth/pipeline/road/rail receipt and dispatch ceilings; exclude inactive lease offers | Manish / Henry | Open; before operating supply conclusion |
+| Remove Durban-Lesedi transfers when calculating served demand and customer share | Manish / Nigel | Open; before R6 share conclusion |
+
+Evidence and limits: pptx/story/terminal_turnover_evidence_2026_10_06.json.
+Governance exception EXC-TERMINAL-HANDLING-TURNS expires 12 November 2026 or at
+its earlier review/recommendation trigger. Forecast engine results are unchanged.

@@ -160,3 +160,19 @@ all key levers, including their dependencies. Please keep the diesel-gap claim
 as a hypothesis until production, stocks and coverage reconcile, and keep
 neighbouring-country throughput separate from SA demand. Return your commit,
 checks, remaining decisions and comments; we will converge them into the story.
+
+
+### Turnover estimate added for convergence
+
+Nigel asked to estimate tank turnover now rather than leave the stock-to-flow
+bridge blank. Page 13 uses a registered 1/2/3 monthly gross-equivalent-turn
+sensitivity, base 2, informed by generic industry material. Lesedi 140,000 m3
+gives 1.68/3.36/5.04 million m3/year in those cases. These are hypothetical
+handling equivalents, not actual throughput, spare petrol/diesel capacity or share.
+Page 15 remains the source inventory and links back to the sensitivity.
+
+Please replace the common range with site-specific monthly outbound volumes,
+working/gross capacity, product compatibility and operating constraints; confirm
+seasonality and remove shared transfers from customer-share calculations. Partial
+inland operator coverage cannot establish a regional supply gap. See VIS-05 /
+SCN-01 turnover tasks in feedback_focus_2026-10-06.md. No Teams message sent.
