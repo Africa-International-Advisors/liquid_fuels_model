@@ -75,6 +75,7 @@ def apply_partner_review(prs, root, brand):
     assert len(prs.slides)==26
     review=json.loads((root/'story/partner_review_2026_10_07.json').read_text(encoding='utf-8'))
     trade_layout(prs.slides[3],brand)
+    refinery_layout(prs.slides[8],brand)
     unique_deliveries(prs.slides[13],root,brand)
     inventory_layout(prs.slides[16],brand)
     for page,title in review['titles'].items():
@@ -135,6 +136,25 @@ def apply_partner_review(prs, root, brand):
             q.top=Inches(6.78);q.height=Inches(.18);style(q,9)
     from footer_layout import finish_footer_and_markers
     finish_footer_and_markers(prs,brand)
+    from driver_split import split_drivers
+    split_drivers(prs,root,brand)
+    from fuel_lever_pages import add_fuel_lever_pages
+    add_fuel_lever_pages(prs,root,brand)
+
+
+def refinery_layout(s,brand):
+    removed=[]
+    for q in list(s.shapes):
+        if q.has_text_frame and q.left<Inches(8):
+            if q.text.startswith(('History 2016','Reported FY2024 output:')):
+                removed.append(q.text);q._element.getparent().remove(q._element)
+            elif q.text.startswith(('A |','B |')):q.top=Inches(2.45);q.height=Inches(.35)
+            elif q.text.startswith('2036:'):q.top=Inches(6.17);q.height=Inches(.30)
+        if q.has_chart:
+            q.top=Inches(2.95);q.height=Inches(3.05)
+            for axis in (q.chart.value_axis,q.chart.category_axis):
+                axis.has_major_gridlines=False;axis.has_minor_gridlines=False
+    if removed:s.notes_slide.notes_text_frame.text+='\nRefinery exhibit caveats moved to speaker notes:\n'+'\n'.join(removed)
 
 
 def trade_layout(s,brand):
@@ -152,8 +172,31 @@ def trade_layout(s,brand):
     for item in s.shapes:
         if item.has_text_frame and item.text.startswith('Net imports:'):
             item.top=Inches(6.66);item.height=Inches(.26);style(item,11,False)
+    trade_legend(s,brand)
     if removed:s.notes_slide.notes_text_frame.text+='\nLower duplicate accounting blocks moved to notes:\n'+'\n'.join(removed)
     s.notes_slide.notes_text_frame.text+='\n7 Oct trade layout: enlarge the grouped trade/sales chart, remove gridlines and retain one net-import summary. Source selection and residual are explained once in the RHS panel. Chart values unchanged.'
+
+
+def trade_legend(s,brand):
+    """Editable compact key in the exhibit header; swatches match chart fills."""
+    for q in list(s.shapes):
+        legacy=q.left<Inches(7.8) and Inches(2.9)<=q.top<Inches(3.17)
+        if legacy or q.name.startswith('Trade custom legend '):
+            q._element.getparent().remove(q._element)
+    for q in s.shapes:
+        if q.has_text_frame and q.left<Inches(8) and abs(q.top-Inches(1.78))<10:
+            replace(q,'Petrol + diesel | 2024, bn litres');q.width=Inches(3.60)
+    c=next(q.chart for q in s.shapes if q.has_chart)
+    c.has_legend=False
+    export_colour=RGBColor.from_string('D9D9D9')
+    for series,colour in zip(c.series,[brand.accent_primary,brand.accent_secondary,export_colour]):
+        series.format.fill.solid();series.format.fill.fore_color.rgb=colour
+        series.format.line.fill.background()
+    for x,label,width,colour in [(4.24,'Sales proxy',1.08,brand.accent_primary),(5.63,'Imports',.70,brand.accent_secondary),(6.65,'Exports',.70,export_colour)]:
+        bar(s,x,1.895,.12,.12,colour,'Trade custom legend swatch '+label)
+        q=text(s,label,x+.18,1.82,width,.24,11,False,color=brand.ink)
+        q.name='Trade custom legend label '+label
+    s.notes_slide.notes_text_frame.text+='\nCustom legend: editable header key, Sales proxy / Imports / Exports. Exports darkened to #D9D9D9 for visibility; bar and swatch match. Reported sales remain an unverified consumption proxy; series values unchanged.'
 
 
 def inventory_layout(s,brand):
@@ -192,4 +235,4 @@ if __name__=='__main__':
     from brand_pptx import BrandStyle
     root=Path(__file__).resolve().parents[1]
     p=Presentation(sys.argv[1]);apply_partner_review(p,root,BrandStyle.from_module(cfg))
-    p.save(sys.argv[2]);print('Reviewed 26-page canonical storyline and typography')
+    p.save(sys.argv[2]);print(f'Reviewed {len(p.slides)}-page canonical storyline and typography')

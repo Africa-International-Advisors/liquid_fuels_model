@@ -1,0 +1,13 @@
+# Draft review inputs; not yet consumed by the forecast engine.
+snapshot_inputs:
+  register_id: REG-FUEL-LEVER-DESIGN
+  exception_id: EXC-FUEL-LEVER-DESIGN
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  csv: timeseries/fuel_lever_design_2026_10_07.csv
+  units: per-row unit column; percentages are percentage points, indices reference 2024=100
+  source: Authored sensitivity proposal 7 October 2026; anchors and mechanisms in pptx/story/fuel_lever_design_2026_10_07.json; not approved forecasts
+  last_updated: 2026-10-07
+  provisional: true
+  needs_verification: true
+  shared: true

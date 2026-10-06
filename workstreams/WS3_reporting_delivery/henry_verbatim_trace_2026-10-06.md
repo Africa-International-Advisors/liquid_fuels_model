@@ -8,43 +8,43 @@ Current pack: [Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergenc
 
 Trace each item as **Henry wording ? current response ? linked deep dive**. The source words are also stored in the appendix speaker notes and the [machine-readable register](../../../pptx/story/henry_question_answers_2026_10_06.json).
 
-## S ? Market baseline (responses on page 22)
+## S ? Market baseline (responses on page 26)
 
 | ID / source | Henry?s exact wording | Current response | Deep-dive pages |
 |---|---|---|---|
 | S01 / slide 30 | Outline total SA demand development over the last few years and the market of interest for Vopak (eastern part of SA, within economic striking distance of its storage infrastructure and NMPP | Partial: reported 2024 sales are 20.763 bn L; coverage awaits reconciliation. Provincial history ends in 2022. | 4 / 5 / 6 |
-| S02 / slide 30 | Outline total SA demand development over the last few years and the market of interest for Vopak (eastern part of SA, within economic striking distance of its storage infrastructure and NMPP | Open: location and illustrative costs show reach, not accessible customer litres. Need destinations, tariffs and rights. | 5 / 11 / 14 / 15 |
-| S03 / slide 30 | Greater use of diesel in power gen | Partial: generation history is shown; recent OCGT use falls. Diesel-litres attribution still needs fuel-use evidence. | 8 / 10 |
-| S04 / slide 30 | Rail to road | Partial: road/rail payload history is shown. Payload alone does not prove modal substitution or diesel effects. | 8 / 10 |
-| S05 / slide 30 | Changes in fuel price | Partial: complete-year price history is staged. Travel response and real-price effects remain uncalibrated. | 8 / 10 |
-| S06 / slide 30 | Shift to more fuel efficient vehicles | Open: fleet stocks and new EV/hybrid sales do not establish fleet efficiency. Need fuel mix, mileage and intensity. | 8 / 10 |
-| S07 / slide 30 | Slow GDP growth | Partial: GDP and sector activity evidence is available; growth-to-fuel effects require explicit assumptions. | 8 / 10 |
-| S08 / slide 30 | Refinery closure | Partial: published capacity falls to 358 thousand bbl/day. Capacity is distinct from output and operating availability. | 9 |
-| S09 / slide 30 | Challenges at Secunda | Partial: FY2024 output is 29.1 million barrels, all products. Availability and petrol/diesel yields remain open. | 9 / 10 |
-| S10 / slide 30 | Closure of Mossgas | Open: plant-specific shutdown dates, operating status and lost product output need explicit source confirmation. | 9 / 10 |
+| S02 / slide 30 | Outline total SA demand development over the last few years and the market of interest for Vopak (eastern part of SA, within economic striking distance of its storage infrastructure and NMPP | Open: location and illustrative costs show reach, not accessible customer litres. Need destinations, tariffs and rights. | 5 / 15 / 18 / 19 |
+| S03 / slide 30 | Greater use of diesel in power gen | Partial: generation history is shown; recent OCGT use falls. Diesel-litres attribution still needs fuel-use evidence. | 9 / 12 |
+| S04 / slide 30 | Rail to road | Partial: road/rail payload history is shown. Payload alone does not prove modal substitution or diesel effects. | 8 / 12 |
+| S05 / slide 30 | Changes in fuel price | Partial: complete-year price history is staged. Travel response and real-price effects remain uncalibrated. | 9 / 11 |
+| S06 / slide 30 | Shift to more fuel efficient vehicles | Open: fleet stocks and new EV/hybrid sales do not establish fleet efficiency. Need fuel mix, mileage and intensity. | 9 / 12 / 14 |
+| S07 / slide 30 | Slow GDP growth | Partial: GDP and sector activity evidence is available; growth-to-fuel effects require explicit assumptions. | 8 / 14 |
+| S08 / slide 30 | Refinery closure | Partial: published capacity falls to 358 thousand bbl/day. Capacity is distinct from output and operating availability. | 10 |
+| S09 / slide 30 | Challenges at Secunda | Partial: FY2024 output is 29.1 million barrels, all products. Availability and petrol/diesel yields remain open. | 10 / 11 |
+| S10 / slide 30 | Closure of Mossgas | Open: plant-specific shutdown dates, operating status and lost product output need explicit source confirmation. | 10 / 11 |
 | S11 / slide 30 | Show growth in imports and where they have been coming in | Partial: 2024 net imports are 13.078 bn L. Import-growth attribution, product-specific ports and origin remain open. | 4 / 7 |
 
-## C ? Market changes (responses on page 23)
+## C ? Market changes (responses on page 27)
 
 | ID / source | Henry?s exact wording | Current response | Deep-dive pages |
 |---|---|---|---|
-| C01 / slide 31 | Road to rail (use the stats SA land transport survey, provide a projection of the shift based on private sector participation in rail | Open: historical payload is available; private-sector service, timing and modal-shift assumptions need evidence. | 8 / 10 |
-| C02 / slide 31 | End of loadshedding and large spare capacity in power generation | Partial: observed OCGT generation falls. Future dispatch, spare capacity and diesel demand remain conditional. | 8 / 10 |
-| C03 / slide 31 | Penetration of EVs and HEVs (Need to provide a projection of penetration, show how this may impact litres per km calc) | Open: sales uptake is shown, not fleet penetration. Separate BEV, PHEV and conventional hybrids; model turnover. | 8 / 10 |
-| C04 / slide 31 | Penetration of EVs and HEVs (Need to provide a projection of penetration, show how this may impact litres per km calc) | Open: require stock mix, mileage and fuel intensity. BEVs and hybrids have different fuel-use mechanisms. | 8 / 10 |
-| C05 / slide 31 | Large increase in fuel prices (need to show how this may impact km’s travelled) | Open: prices are sourced; mileage response and elasticity must be specified and tested before forecasting. | 8 / 10 |
-| C06 / slide 31 | Talk of a mega refinery (restart Sapref) | Conditional: redevelopment capacity is a scenario, not sanctioned output. Confirm FID, ramp-up and product yields. | 9 / 10 |
-| C07 / slide 31 | Secunda production - linked to improved pure gas production from coal, however diversion away from fuel production due to sale of MRG and potential extension to 2032 | Open: no liquid-fuel displacement is inferred. Need dated gas allocation, plant mechanism and product-output evidence. | 9 / 10 |
-| C08 / slide 31 | Natref future? | Open: reported FY output is available; future ownership, availability and product yields require a dated case. | 9 / 10 |
-| C09 / slide 31 | Competitiveness of Vopak supply chain of Durban storage, NMPP and storage in Lesedi vs. the alternatives:<br>Road and rail transport from Durban | Open: compare the same customer and product. Need full delivered costs, capacity, tariffs and service availability. | 11 / 12 / 15 |
-| C10 / slide 31 | Competitiveness of Vopak supply chain of Durban storage, NMPP and storage in Lesedi vs. the alternatives:<br>Transport from Matola<br>Transport from Walvis Bay | Partial: gateways, published storage and schematic routes are shown. Full costs, borders and customer access remain open. | 12 / 15 / 18 |
+| C01 / slide 31 | Road to rail (use the stats SA land transport survey, provide a projection of the shift based on private sector participation in rail | Open: historical payload is available; private-sector service, timing and modal-shift assumptions need evidence. | 8 / 12 |
+| C02 / slide 31 | End of loadshedding and large spare capacity in power generation | Partial: observed OCGT generation falls. Future dispatch, spare capacity and diesel demand remain conditional. | 9 / 12 |
+| C03 / slide 31 | Penetration of EVs and HEVs (Need to provide a projection of penetration, show how this may impact litres per km calc) | Open: sales uptake is shown, not fleet penetration. Separate BEV, PHEV and conventional hybrids; model turnover. | 9 / 14 |
+| C04 / slide 31 | Penetration of EVs and HEVs (Need to provide a projection of penetration, show how this may impact litres per km calc) | Open: require stock mix, mileage and fuel intensity. BEVs and hybrids have different fuel-use mechanisms. | 9 / 14 |
+| C05 / slide 31 | Large increase in fuel prices (need to show how this may impact km’s travelled) | Open: prices are sourced; mileage response and elasticity must be specified and tested before forecasting. | 9 / 14 |
+| C06 / slide 31 | Talk of a mega refinery (restart Sapref) | Conditional: redevelopment capacity is a scenario, not sanctioned output. Confirm FID, ramp-up and product yields. | 10 / 12 / 13 / 14 |
+| C07 / slide 31 | Secunda production - linked to improved pure gas production from coal, however diversion away from fuel production due to sale of MRG and potential extension to 2032 | Open: no liquid-fuel displacement is inferred. Need dated gas allocation, plant mechanism and product-output evidence. | 10 / 11 |
+| C08 / slide 31 | Natref future? | Open: reported FY output is available; future ownership, availability and product yields require a dated case. | 10 / 11 |
+| C09 / slide 31 | Competitiveness of Vopak supply chain of Durban storage, NMPP and storage in Lesedi vs. the alternatives:<br>Road and rail transport from Durban | Open: compare the same customer and product. Need full delivered costs, capacity, tariffs and service availability. | 15 / 16 / 19 |
+| C10 / slide 31 | Competitiveness of Vopak supply chain of Durban storage, NMPP and storage in Lesedi vs. the alternatives:<br>Transport from Matola<br>Transport from Walvis Bay | Partial: gateways, published storage and schematic routes are shown. Full costs, borders and customer access remain open. | 16 / 19 / 22 |
 
-## R ? Vopak outlook (responses on page 24)
+## R ? Vopak outlook (responses on page 28)
 
 | ID / source | Henry?s exact wording | Current response | Deep-dive pages |
 |---|---|---|---|
-| R01 / slide 32 | Market share of Vopak in Dbn and Lesedi | Open: published storage is an asset footprint, not served demand. Need unique deliveries, transfers and matched demand. | 14 / 16 / 15 |
-| R02 / slide 32 | Potential scope for new investment? | Conditional: prioritise customer flows and service first. New storage requires secured incremental flows and a usable-capacity gap. | 13 / 18 / 17 |
+| R01 / slide 32 | Market share of Vopak in Dbn and Lesedi | Open: published storage is an asset footprint, not served demand. Need unique deliveries, transfers and matched demand. | 18 / 20 / 19 |
+| R02 / slide 32 | Potential scope for new investment? | Conditional: prioritise customer flows and service first. New storage requires secured incremental flows and a usable-capacity gap. | 17 / 22 / 21 |
 
 ## Narrative instructions retained
 
@@ -71,3 +71,5 @@ The overview separates evidence from the verdict on Henry's storyline; supported
 Pages 4-19 are each summarised in the overview. Pages 22-24 trace Henry's original prompts. Scope is page 2; turnover sensitivity is page 21; cover, closing and palette are pages 1, 25 and 26. See the [evidence and verdict register](../../../pptx/story/overview_story_verdicts_2026_10_06.json).
 
 Main sequence: regional footprint p13 ? regional screening p14 ? customer waterfall p15 ? annual handling p16 ? working stock p17 ? outlook p18 ? delivery gates p19. Appendix divider p20. Working stock is part of the main argument, not detached supporting material.
+
+7 October update: the canonical pack has 30 pages. Fuel lever proposals at pp12?14 use 2030/2035 snapshots; all input ranges remain unreviewed. Jet is a newly requested lever design, while historical demand and storage exhibits remain petrol/diesel.

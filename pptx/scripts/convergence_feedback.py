@@ -122,7 +122,7 @@ def scenario_framework(s, root, brand):
     ]
     table(s, rows, .5, 2.42, [2.0, 5.45, 4.20], 2.90, brand, 11)
     text(s, 'Combine settings into coherent worlds', .5, 5.60, 11.65, .30, 14, True)
-    for x, heading, body in [(.5, 'Baseline', 'Agreed reference assumptions'), (4.45, 'Ample supply', 'Supply and access comfortably meet demand'), (8.40, 'Tight supply', 'Demand tests available supply and delivery routes')]:
+    for x, heading, body in [(.5, 'Baseline', 'Proposed M settings; fuel inputs follow'), (4.45, 'Ample supply', 'Supply and access comfortably meet demand'), (8.40, 'Tight supply', 'Demand tests available supply and delivery routes')]:
         text(s, heading, x, 6.02, 3.7, .28, 12)
         text(s, body, x, 6.34, 3.7, .46, 10.5)
     s.notes_slide.notes_text_frame.text += '\nSCN-01 design only. L/M/H settings remain proposed/unquantified, with linked assumptions and incompatible combinations to record. Medium demand/medium domestic supply is a proposed reference, not a calibrated forecast. A 3x3 demand/supply matrix summarizes worlds; every key underlying lever needs its own settings. Imports are one output. See feedback_focus_2026-10-06.md SCN-01.1-8.'

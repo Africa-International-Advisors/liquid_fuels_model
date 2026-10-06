@@ -2,29 +2,27 @@
 
 Open [PDF](Vopak_Week1_Convergence_2026_10_06.pdf) or
 [editable PowerPoint](Vopak_Week1_Convergence_2026_10_06.pptx).
-This is the current 26-page storyline, aligned to the kickoff workplan and the
-approved sequence. The main story ends with the delivery roadmap on page 19.
-Use this pair for review; previous deliveries are archived together.
+This is the current **30-page** storyline. The main story ends with the delivery
+roadmap on page 23; the appendix starts on page 24. Previous deliveries remain archived.
 
-The 7 October editorial review makes main-story titles implication/action led,
-standardises chart typography and replaces repetitive evidence panels with
-"Implication for Vopak" and "Next action". Pages 13-17 have distinct jobs:
-footprint, unique deliveries, additional opportunity, annual handling and working
-stock. Page 14 removes shared transfers using the existing illustrative route
-values; page 15 retains the opportunity waterfall. Inputs and native chart series
-are unchanged. Editorial copy and fixed type roles are held in
-[partner_review_2026_10_07.json](../../story/partner_review_2026_10_07.json).
+The 7 October update adds diesel, jet and petrol input tables at **pages 12?14**,
+each with current references, explicit **2030 and 2035 L/M/H** settings and rationale.
+These are registered proposed sensitivities, not calibrated or approved forecasts.
+The driver dashboard is split into four charts per page (8?9). The trade page has
+a compact custom legend; refinery qualifications are retained in notes.
 
 | Agenda | Pages | Purpose |
 |---|---|---|
-| Overview | 1-3 | Cover, document scope and answer-led summary |
-| Market baseline | 4-7 | National accounting, provincial demand and supply allocation |
-| Market changes | 8-12 | Drivers, supply cases, scenarios and competing routes |
-| Vopak outlook | 13-19 | Regional footprint, customer opportunity, handling, working stock, decision and delivery gates |
-| Appendix divider | 20 | Clear end of the main story |
-| Turnover sensitivity | 21 | Supporting 1/2/3 monthly-turn cases |
-| Henry storyboard trace | 22-24 | Responses to every original prompt |
-| Closing and palette | 25-26 | Closing page and presentation colours |
+| Overview | 1?3 | Cover, document scope and answer-led summary |
+| Market baseline | 4?7 | National accounting, provincial demand and supply allocation |
+| Market changes | 8?16 | Drivers, refinery, scenario framework, three fuel lever tables and competing routes |
+| Vopak outlook | 17?23 | Footprint, unique deliveries, opportunity, handling, working stock, decision and roadmap |
+| Appendix divider | 24 | End of the main story |
+| Turnover sensitivity | 25 | Supporting 1/2/3 monthly-turn cases |
+| Henry storyboard trace | 26?28 | Responses to every original prompt |
+| Closing and palette | 29?30 | Closing page and presentation colours |
+
+Draft inputs and review tasks: [fuel lever handoff](../../../workstreams/WS0_governance/workplan/fuel_lever_review_2026-10-07.md).
 
 Client touchpoints are proposed for weeks 1, 3, 5 and 6, consistent with the
 kickoff pack. The later fuel-first instruction takes precedence over the original
@@ -71,4 +69,6 @@ and [Henry question trace](../../../workstreams/WS3_reporting_delivery/henry_ver
 
 The previous 24-page visual-feedback pair is preserved in [archive/2026-10-06_story-corrections](archive/2026-10-06_story-corrections/); its delivery manifest records the updated order, checks and Manish review.
 
-The previous turnover pair is preserved in [archive/2026-10-06_workplan-story](archive/2026-10-06_workplan-story/). The current 26-page pack restores working inventory to the main story and adds the kickoff-aligned delivery roadmap.
+The previous turnover pair is preserved in [archive/2026-10-06_workplan-story](archive/2026-10-06_workplan-story/). That 26-page revision restored working inventory to the main story and adds the kickoff-aligned delivery roadmap.
+
+The previous 26-page pair is preserved in [archive/2026-10-07_fuel-levers](archive/2026-10-07_fuel-levers/), with hashes and validation in its delivery manifest.

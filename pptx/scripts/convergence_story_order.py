@@ -209,4 +209,4 @@ if __name__=='__main__':
     apply_story_order(p,root,b)
     for i,s in enumerate(p.slides,1):
         for q in s.shapes:assert q.left>=0 and q.top>=0 and q.left+q.width<=p.slide_width+10 and q.top+q.height<=p.slide_height+10,(i,q.name)
-    p.save(sys.argv[2]);print('Built 26-page answer-led convergence pack')
+    p.save(sys.argv[2]);print(f'Built {len(p.slides)}-page answer-led convergence pack')

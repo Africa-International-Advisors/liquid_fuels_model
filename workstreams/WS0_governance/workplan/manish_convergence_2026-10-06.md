@@ -187,3 +187,15 @@ The 5.5 bn L/year and 3.0 bn L/year already-served inputs remain illustrative.
 Use convergence_workplan_review_2026-10-06.md to test acceptance evidence and
 client decisions; W1/W3/W5/W6 touchpoints remain proposals. Fuel integration is
 the Week 1 priority; do not treat public maps as a passed route/capacity gate.
+
+
+### 7 October: current handoff supersedes earlier page numbers
+
+Canonical Convergence now has 30 pages. Diesel/jet/petrol lever proposals are
+pp12?14, at 2030/2035 with explicit L/M/H input values. Jet follows your
+aircraft-movement driver proposal; regression fitting remains outstanding.
+Please review each proposed range against sources and return lever/year/case
+corrections. Use fuel_lever_review_2026-10-07.md for baseline, scenario integration,
+plant-slate and client acceptance tasks. No forecast or range approval is implied.
+Drivers are now pp8?9 (four charts each); working stock is p21 in the main story,
+roadmap p23 and appendix p24. No Teams or external message was sent.

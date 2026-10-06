@@ -685,3 +685,15 @@ from the body; preserve their source discrepancy and residual details in notes.
 The existing RHS panel carries source selection and the unresolved balance once.
 Enlarge the grouped bars, remove chart gridlines and retain one net-import summary.
 No customs, sales or residual values changed.
+
+
+## 7 October: three fuel lever pages and readable evidence
+
+Confirmed 2030/2035 snapshots. Add main-story diesel/jet/petrol pages with
+registered proposed L/M/H values and rationale; keep current reference distinct
+from accepted inputs. See fuel_lever_review_2026-10-07.md for owned acceptance
+tasks and dependencies. Ranges require review; no new forecast was run.
+Custom trade legend, four driver charts per page and refinery qualifications
+in notes are implemented. New sequence: framework 11; fuel inputs 12?14;
+footprint 17; transfers 18; opportunity 19; handling 20; stock 21; outlook 22;
+roadmap 23; appendix 24; turnover 25; Henry responses 26?28.
