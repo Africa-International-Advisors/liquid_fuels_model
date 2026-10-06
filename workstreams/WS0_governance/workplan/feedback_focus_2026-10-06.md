@@ -343,3 +343,35 @@ Reference: current 22-page [Convergence PDF](../../../pptx/output/delivered/Vopa
 Owner: Nigel (visual direction); presentation builder implements after instruction.
 Revisit when Nigel finishes the feedback round and requests action. This entry
 changes no deck, model input or analytical conclusion.
+
+
+### SCN-01: low / medium / high demand and supply world view
+
+Nigel requested an explicit framework for the baseline, ample-supply and
+tight-supply worlds. Status: design feedback logged; no deck or model changes.
+
+- Construct a 3 x 3 matrix of low, medium and high demand against low, medium
+  and high domestic supply. Medium demand / medium supply is the working
+  reference case, subject to agreed assumptions; it is not yet a calibrated forecast.
+- Demand cases need sourced historical petrol/diesel demand, explicit growth
+  assumptions and quantified levers: activity, freight mode, power generation,
+  fleet efficiency/EV uptake and fuel-price response. Preserve product, year
+  and geography; avoid counting the same effect twice.
+- Domestic supply cases represent actual petrol/diesel output by plant and year,
+  with availability, downtime, product yields and restart/redevelopment timing.
+  Published nameplate capacity is a constraint, not actual production.
+- Calculate required net imports = consumption - domestic production + stock
+  build. Gross imports additionally depend on exports. Match the consumption
+  estimate to reported sales and retain any coverage residual separately.
+- Label high-demand / low-domestic-supply as the candidate tight-supply corner,
+  and low-demand / high-domestic-supply as the candidate ample-supply corner.
+  These are hypotheses: assess import availability, terminal/route capacity,
+  delivered cost and service before concluding actual shortage or surplus.
+- Each world should show demand, domestic output, net import requirement and
+  the implication for accessible Vopak customer flows. Import need alone does
+  not establish Vopak throughput, market share or new-storage demand.
+
+Proposed owners: Nigel agrees the market worlds and narrative; Manish sources
+and reconciles the assumptions and tests the balance; Henry reviews plant cases.
+Revisit after the feedback round, once demand/output evidence and the assumption
+ranges are agreed. Keep assumptions in vintaged registered YAML/CSV when built.
