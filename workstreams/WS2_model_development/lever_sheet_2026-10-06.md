@@ -25,15 +25,14 @@ what a named decision or event would change.
 | 7 | Economic growth | All | GDP per person from the old workbook | Stats SA GDP, Treasury forecast | Treasury to 2028, then 2% | Sourced; not yet in the model |
 | 8 | **Fuel price level** (new) | Petrol, diesel | No price response | Monthly prices to October 2026; one study | Prices settle at a stated level | Proposed addition |
 | 9 | **Private backup generation** (new) | Diesel | Not in the model | Indirect only | No return of load-shedding | Proposed addition; no measured volume |
-| 10 | **Which demand is being sized: recorded or supplied** (new) | Diesel | Recorded sales | Four lines of evidence for a 3–4 bn litre gap | Recorded sales, with the gap shown | Proposed addition; for Nigel and Henry |
-| 11 | **Neighbouring countries' sourcing through South Africa** (new) | Petrol, diesel | Not in the model | Customs by destination, both sides | Present volumes continue | Proposed addition |
-| 12 | **Domestic refining** (Nigel's page 8, extended) | Import requirement | Utilisation from the old workbook | Operator output; capacity; clean fuels rule | Three plants keep running and comply | Evidence held; no product split |
-| 13 | **Passengers returning to rail** (new) | Petrol | Not in the model | Monthly rail and road journeys 2008–2026 | Recovery continues at its present pace | Proposed addition; minor |
-| 14 | Vehicle fuel efficiency | Petrol, diesel | Improvement rate, unsourced | 2018 paper for the starting level | Present rate | Already a scenario input |
-| 15 | Marine bunkering | Fuel oil, diesel | Placeholder volume × GDP | Trade press only | Present volumes | Baseline unsourced; with Nigel |
-| 16 | Air traffic and cargo | Jet | Regression on GDP and passengers | Airport traffic to August 2026 | Movements grow with GDP | Tracked separately; cargo open |
+| 10 | **Neighbouring countries' sourcing through South Africa** (new) | Petrol, diesel | Not in the model | Customs by destination, both sides | Present volumes continue | Proposed addition |
+| 11 | **Domestic refining** (Nigel's page 8, extended) | Import requirement | Utilisation from the old workbook | Operator output; capacity; clean fuels rule | Three plants keep running and comply | Evidence held; no product split |
+| 12 | **Passengers returning to rail** (new) | Petrol | Not in the model | Monthly rail and road journeys 2008–2026 | Recovery continues at its present pace | Proposed addition; minor |
+| 13 | Vehicle fuel efficiency | Petrol, diesel | Improvement rate, unsourced | 2018 paper for the starting level | Present rate | Already a scenario input |
+| 14 | Marine bunkering | Fuel oil, diesel | Placeholder volume × GDP | Trade press only | Present volumes | Baseline unsourced; with Nigel |
+| 15 | Air traffic and cargo | Jet | Regression on GDP and passengers | Airport traffic to August 2026 | Movements grow with GDP | Tracked separately; cargo open |
 
-Levers 8 to 13 are not in Nigel's list of seven. They are argued in section B.
+Levers 8 to 12 are not in Nigel's list of seven. They are argued in section B.
 
 ## A. The levers Nigel named
 
@@ -192,21 +191,7 @@ up 300% between 2022 and 2023. No measured volume for private generation was fou
 *Proposed cases.* Base: no return of load-shedding. High fuel demand: it
 returns at 2023 intensity.
 
-### 10. Which demand is being sized: recorded or supplied
-
-*Why add it.* This is a lever on the starting level, not on growth. About 3 to
-4 bn litres of diesel a year appears to be supplied but is missing from the
-department's sales series. It shows in the product balance, in operators'
-reported output, in customs data and in fuel levy volumes
-(`workstreams/WS1_data_validation/fuel_balance_2026-10-06.md`). If Vopak's
-market is sized on recorded sales it may be understated by a fifth or more for
-diesel.
-
-*Proposed cases.* Base: recorded sales, with the gap shown beside it. Variant:
-supplied volume. Manish has referred how to report this to Nigel, together
-with the 2024 diesel import figure; Henry to review.
-
-### 11. Neighbouring countries' sourcing through South Africa
+### 10. Neighbouring countries' sourcing through South Africa
 
 *Why add it.* Fuel for Botswana, Lesotho and Eswatini moves through South
 African ports and terminals. It is throughput for Vopak though not South
@@ -221,7 +206,7 @@ about 80% of its fuel came through South Africa.
 *Proposed cases.* Base: present volumes. Low throughput: Botswana completes
 the shift. This ties to the competing-gateways page of Nigel's pack.
 
-### 12. Domestic refining
+### 11. Domestic refining
 
 *Why it matters.* It sets the import requirement, which is the quantity Vopak's
 terminals serve. Nigel's pack treats capacity; these are the events that would
@@ -246,7 +231,7 @@ is redeveloped, no earlier than the early 2030s.
 
 *Needed.* Output by product, which no operator publishes.
 
-### 13. Passengers returning to rail
+### 12. Passengers returning to rail
 
 *Why add it.* Commuter rail collapsed and is recovering; the displaced
 journeys moved largely to minibus taxis and cars.
@@ -273,11 +258,10 @@ uptake, efficiency and load-shedding. A fuller matrix, for discussion:
 | 7 Growth | Below Treasury | Treasury, then 2% | Above Treasury |
 | 8 Price | Stays at October 2026 | Settles at a stated level | Back to early 2026 |
 | 9 Backup generation | None | None | Load-shedding returns |
-| 14 Efficiency | Faster improvement | Present rate | Slower |
+| 13 Efficiency | Faster improvement | Present rate | Slower |
 
-Levers 10, 11 and 12 do not sit on this axis: 10 is about the starting level,
-11 about throughput and 12 about the import requirement. They would be shown
-as separate variants.
+Levers 10 and 11 do not sit on this axis: 10 is about throughput and 11 about
+the import requirement. They would be shown as separate variants.
 
 Levers 3 and 9 move together (both follow load-shedding), as do 2 and 8 (high
 prices favour electric vehicles). The matrix should not treat them as
@@ -294,10 +278,9 @@ independent.
 | 6 | Fuel split by class; distance driven after 2014 |
 | 8 | A price path; whether the 2012 elasticities still hold |
 | 9 | Any measure of private generator diesel |
-| 10 | An explanation of the gap; a decision on which level to size against |
-| 11 | Neighbours' plans, by country |
-| 12 | Output by product; each plant's compliance plan |
-| 13 | Minibus taxi and car journeys, which no survey covers |
+| 10 | Neighbours' plans, by country |
+| 11 | Output by product; each plant's compliance plan |
+| 12 | Minibus taxi and car journeys, which no survey covers |
 
 ## Sources
 
