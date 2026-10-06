@@ -26,8 +26,10 @@ def frame(s, title, heading, source, text, brand):
             q.text_frame.paragraphs[0].text='Source: '+source
         elif q.is_placeholder and q.has_text_frame and 'Title' in q.name:
             q.text_frame.paragraphs[0].runs[0].text=title
-    text(s,heading,.5,1.78,7.05,.42,15,True)
-    for a,b in [((.5,2.13),(7.55,2.13)),((7.88,1.99),(7.88,6.86)),((8.12,2.13),(12.15,2.13))]:
+    if heading:
+        text(s,heading,.5,1.78,7.05,.42,15,True)
+        line(s,(.5,2.13),(7.55,2.13),brand.ink,.55)
+    for a,b in [((7.88,1.99),(7.88,6.86)),((8.12,2.13),(12.15,2.13))]:
         line(s,a,b,brand.ink,.55)
 
 

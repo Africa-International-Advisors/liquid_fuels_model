@@ -243,6 +243,11 @@ Durban–Lesedi transfers once. Nigel supplies client flows and agrees destinati
 and thresholds. No volume milestone is a forecast until these conditions close.
 # Demand-driver page 7 — indexed evidence
 
+Display update: the redundant left-hand exhibit heading is removed on every
+analytical page, including the SCR overview. Main titles and chart titles remain;
+only compact units/index notes are retained. Exhibit descriptions remain in
+speaker notes. This is applied centrally in `scr_navigation.py` on each rebuild.
+
 The expanded page 7 contains six native line charts, all normalised as
 `100 × observed value / that series' 2024 value`, with the same 0–120 vertical
 scale: passenger cars/minibuses, trucks/light-commercial vehicle stock,
