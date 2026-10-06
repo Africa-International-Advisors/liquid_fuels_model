@@ -58,7 +58,10 @@ def apply_editorial(prs, text, root, brand):
             replace(q, 'LAEA/WGS84. Sites approximate. Lease tanks are conditional. *Magdala location needs verification. Jet excluded.')
     for page in (9, 11):
         s = prs.slides[page-1]
-        for q in s.shapes:
+        for q in list(s.shapes):
+            if q.has_text_frame and q.text.startswith('Diamonds: Vopak'):
+                q._element.getparent().remove(q._element)
+                continue
             if q.has_text_frame and q.text.startswith('   Transnet lease offers'):
                 replace(q, '   Lease offers (context)\n1 Ladysmith | 2 Standerton\n3 Kroonstad | 4 Bethlehem\n5 Magdala*')
             elif q.has_text_frame and q.top == Inches(1.78) and q.left < Inches(8):

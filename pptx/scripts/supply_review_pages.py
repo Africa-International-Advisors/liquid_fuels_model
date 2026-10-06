@@ -3,7 +3,7 @@ import csv
 import json
 import yaml
 from pptx.util import Inches, Pt
-from pptx.enum.chart import XL_CHART_TYPE
+from pptx.enum.chart import XL_CHART_TYPE, XL_DATA_LABEL_POSITION
 from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
 from pptx.enum.dml import MSO_LINE_DASH_STYLE
 from pptx.enum.text import MSO_ANCHOR
@@ -76,7 +76,6 @@ def national_page(s,text,root,brand):
     frame(s,'Collect the national fuel balance and expose source disagreements',
           'National petrol/diesel | 2024, billion litres',
           'Government Energy Trade Report 2024, printed pp.12–13; FIASA 2025, pp.47–49; energy balance 2021. Rounded trade figures.',text,brand)
-    text(s,'COLLECTED | trade and sales; production/stock reconciliation remains open',.5,2.38,7.05,.32,11,True,brand.accent_primary)
     rows=[['Product','Reported\nsales','Imports','Exports','Net imports']]
     for product in ('petrol','diesel'):
         imp=lookup[2024,product,'import'];exp=lookup[2024,product,'export']
@@ -85,13 +84,34 @@ def national_page(s,text,root,brand):
     total_imports=sum(lookup[2024,p,'import'] for p in products)
     total_exports=sum(lookup[2024,p,'export'] for p in products)
     rows.append(['Combined',f'{sum(demand[p] for p in products):.3f}',f'{total_imports:.3f}',f'{total_exports:.3f}',f'{total_imports-total_exports:.3f}'])
-    table(s,rows,.5,2.91,[1.35,1.40,1.40,1.40,1.50],1.37,brand,12)
-    text(s,'Source flag | 2024 diesel imports',.5,4.53,7.05,.34,14,True,brand.accent_primary)
+    series_values=[('Reported sales',[demand[p] for p in products]),
+                   ('Imports',[lookup[2024,p,'import'] for p in products]),
+                   ('Exports',[lookup[2024,p,'export'] for p in products])]
+    chart=add_themed_chart(s,XL_CHART_TYPE.BAR_CLUSTERED,
+                          Inches(.5),Inches(2.81),Inches(7.05),Inches(1.88),
+                          [p.title() for p in products],series_values,
+                          show_legend=False,value_axis_format='0',axis_font_size=11,brand=brand)
+    chart.value_axis.minimum_scale=0;chart.value_axis.maximum_scale=14;chart.value_axis.major_unit=2
+    chart.plots[0].gap_width=55
+    chart.plots[0].has_data_labels=True
+    labels=chart.plots[0].data_labels
+    labels.position=XL_DATA_LABEL_POSITION.OUTSIDE_END
+    labels.number_format='0.000';labels.font.name=cfg.THEME_FONT;labels.font.size=Pt(12)
+    labels.font.color.rgb=brand.ink
+    for i,(series,color) in enumerate(zip(chart.series,[brand.accent_primary,brand.accent_secondary,brand.grey_fill])):
+        series.format.fill.solid();series.format.fill.fore_color.rgb=color;series.format.line.fill.background()
+        x=.5+i*2.35
+        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(2.43),Inches(.12),Inches(.12))
+        q.fill.solid();q.fill.fore_color.rgb=color;q.line.fill.background()
+        text(s,series.name,x+.20,2.37,2.1,.28,11)
+    text(s,f'Net imports: petrol {rows[1][-1]}, diesel {rows[2][-1]}; combined {total_imports-total_exports:.3f} bn litres.',
+         .5,4.78,7.05,.28,11,True,brand.accent_primary)
+    text(s,'Source flag | 2024 diesel imports',.5,5.17,7.05,.34,14,True,brand.accent_primary)
     staged=float(next(r['value'] for r in old if r['period']=='2024' and r['product']=='diesel' and r['flow']=='import'))/1e9
-    text(s,f'FIASA staged: {staged:.3f}  |  Government report: 10.800\nDifference: {10.8-staged:+.3f} bn L. Preserve both; investigate scope and vintage.',.5,4.95,7.05,.63,12)
-    text(s,'Domestic production remains a dated observation',.5,5.86,7.05,.34,14,True,brand.accent_primary)
+    text(s,f'FIASA staged: {staged:.3f}  |  Government report: 10.800\nDifference: {10.8-staged:+.3f} bn L. Preserve both; investigate scope and vintage.',.5,5.56,7.05,.54,11.5)
+    text(s,'Domestic production remains a dated observation',.5,6.18,7.05,.34,14,True,brand.accent_primary)
     production={r['product']:float(r['value'])/1e9 for r in read(base/'energy_balance_department.csv') if r['period']=='2021' and r['flow_key']=='production'}
-    text(s,f'Latest staged balance: 2021 petrol {production["petrol"]:.2f}; diesel {production["diesel"]:.2f} bn L.\nDo not combine 2021 output with 2024 sales/trade to close a balance.',.5,6.26,7.05,.54,12)
+    text(s,f'Latest staged balance: 2021 petrol {production["petrol"]:.2f}; diesel {production["diesel"]:.2f} bn L.\nDo not combine 2021 output with 2024 sales/trade to close a balance.',.5,6.55,7.05,.48,11.5)
     panel(s,text,brand,[('Public figures are collectable','2024 petrol/diesel imports total 14.8 bn L in the government report. Exports total 1.71 bn L; these are rounded reported figures.'),
         ('The sources disagree','FIASA reports 14.793 bn L of diesel imports for 2024 versus 10.8 bn L in the government report. Neither value has been silently replaced.'),
         ('Port cargo has wider coverage','TNPA publishes liquid-bulk cargo by port, but it includes crude and other liquids. It does not establish petrol/diesel import allocation.')],
