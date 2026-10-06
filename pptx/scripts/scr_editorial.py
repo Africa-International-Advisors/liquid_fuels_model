@@ -115,3 +115,20 @@ def apply_divider_markers(prs,brand):
         for a,b in [((x-.035,y-.065),(x+.035,y)),((x+.035,y),(x-.035,y+.065))]:
             q=s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,Inches(a[0]),Inches(a[1]),Inches(b[0]),Inches(b[1]))
             q.name='SCR divider marker: arrow';q.line.color.rgb=brand.accent_primary;q.line.width=Pt(1.1)
+
+
+def apply_confidentiality(prs):
+    """Fixed bottom-left footer below sources, including cover and appendix."""
+    from pptx.dml.color import RGBColor
+    for i,s in enumerate(prs.slides):
+        for q in list(s.shapes):
+            if q.name=='Strictly Confidential footer':
+                q._element.getparent().remove(q._element)
+        q=s.shapes.add_textbox(Inches(.5),Inches(7.34),Inches(2.2),Inches(.14))
+        q.name='Strictly Confidential footer'
+        f=q.text_frame;f.word_wrap=False
+        f.margin_left=f.margin_right=f.margin_top=f.margin_bottom=0
+        p=f.paragraphs[0];p.text='Strictly Confidential'
+        p.font.name=cfg.THEME_FONT;p.font.size=Pt(8)
+        p.font.color.rgb=RGBColor.from_string('BDBEC1' if i in (0,15) else '767676')
+        p.space_before=p.space_after=Pt(0)

@@ -26,3 +26,5 @@ Additional design feedback: p3 map labels use transparent backgrounds and shadin
 Divider follow-up: create missing vertical divider and subtitle rules on two-panel pages, including p15. Every evidence-panel page checked for circle/right-arrow marker; p15 visually rendered.
 
 Preliminary p15 exhibit: working-inventory sensitivity for the existing illustrative additional 5.5 bn L/year at authored 7/14/21/28 inventory days. Vintaged reporting CSV records owner/status/expiry. Uniform flow and 365-day conversion; excludes spare capacity, peaks and operating allowances. Required working stock is not new gross capacity or an investment recommendation.
+
+Confidentiality: each of all 17 pages has one Strictly Confidential label, Lato 8 pt, bottom-left below the source line. Grey #767676 on white pages, #BDBEC1 on navy bookends. Checked count, package/bounds and cover/body/appendix rendering; same delivered filenames.
