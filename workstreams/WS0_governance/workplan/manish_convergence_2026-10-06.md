@@ -12,8 +12,8 @@ All files below are tracked and available after merging current `origin/main`.
 
 | File | Purpose |
 |---|---|
-| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v7.pdf) | The 22-page draft: overview, market baseline, market changes and Vopak outlook |
-| [Editable PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v7.pptx) | Same story with editable charts and clickable navigation |
+| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v8.pdf) | The 22-page draft: overview, market baseline, market changes and Vopak outlook |
+| [Editable PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v8.pptx) | Same story with editable charts and clickable navigation |
 | [Branch review](../../WS1_data_validation/manish_branch_review_2026-10-06.md) | Findings against `manish-branch` at `4e64c8c`; checks and baseline decisions |
 | [Morning handover](manish_handover_2026-10-06.md) | Original five-package objective: evidence before lever quantification |
 | [Morning meeting record](../meetings/2026-10-06_vopak_standup.docx) | Received stand-up transcript; meeting context, not separately approved minutes |
@@ -48,7 +48,7 @@ the collected observations without replacing engine inputs. The agriculture
 and industry baseline changes remain a separate Nigel decision. The analyst
 branch has not been merged wholesale into main.
 
-Overview rows are numbered S1, S2, S/C3, C4, C5, R6 and R7. Every analytical page carries matching footer references linked back to page 2; page 9 supports both rows 3 and 4.
+Overview rows are numbered S1, S2, S/C3, C4, C5, R6 and R7. Every analytical page title begins with its matching row references; the Overview chevron links back to page 2; page 9 supports both rows 3 and 4.
 
 ## Henry storyboard coverage
 
