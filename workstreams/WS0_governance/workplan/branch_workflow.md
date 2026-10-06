@@ -20,12 +20,12 @@ then repeat the checks on the combined result.
 
 ## Manish creates a branch
 
-Commit or stash existing work first. Use a descriptive name such as
-`manish/data-validation-2026-10-06`:
+Commit or stash existing work first. Use the agreed branch name
+`manish-branch`:
 
 ```powershell
 git fetch origin
-git switch -c manish/data-validation-2026-10-06 origin/main
+git switch -c manish-branch origin/main
 ```
 
 If the branch already exists, switch to it rather than recreating it. During work,

@@ -15,7 +15,7 @@ Preserve any local work, then start from the latest shared main:
 
 ```powershell
 git fetch origin
-git switch -c manish/data-validation-2026-10-06 origin/main
+git switch -c manish-branch origin/main
 ```
 
 If that branch already exists, switch to it and merge `origin/main` using the
