@@ -159,3 +159,29 @@ Text boxes and legends were resized/repositioned to fit. Cost units remain expli
 in the exhibit heading. Data, quantitative axes, illustrative disclosures and the
 ten-page structure are unchanged. Rendered pages 2-8, shared font assertions and
 package checks passed. The same current PPT/PDF filenames are used.
+
+
+## SCR-led delivery order
+
+The former page 9 now leads immediately after the cover. Evidence/implications are separated from a ruled Next steps block with proposed owners. Regional competitor detail remains on its own inventory panel. Placeholder pages explicitly specify gaps and closure outputs, with complete source/refresh/model-connection records in notes; they do not imply actual results or forecast capture.
+
+| Page | Content | Status |
+|---|---|---|
+| 1 | Cover | Retained |
+| 2 | Situation?Complication?Resolution overview | Moved and reframed |
+| 3 | Provincial demand and infrastructure map | Sourced historical evidence |
+| 4 | Provincial sales time series | Sourced; six years flagged |
+| 5 | National balance and import entry ports | New gap specification SA03/04 |
+| 6 | Provincial domestic/import split | Explicit illustration |
+| 7 | Power, rail, fleet and economic drivers | New gap specification SA05?08 |
+| 8 | Refinery scenarios and Sasol/Natref | New gap specification SA09/10 |
+| 9 | Delivered-cost accessibility map | Explicit illustration |
+| 10 | Competing route cost comparison | New gap specification SA11 |
+| 11 | Unique flows and conditional market envelope | Explicit illustration |
+| 12 | Four regional markets and competitors | Demand sourced; share unknown |
+| 13 | Actual share and contestable demand | New gap specification SA12/13 |
+| 14 | Storage by location | Partial published inventory |
+| 15 | Optional investment/service assessment | New deferred gap specification SA14 |
+| 16 | Closing | Retained |
+
+SA01 is covered by pages 3?4; SA02 by page 9 and the access specifications. All fourteen partner questions have an evidence page or explicit placeholder. Rendered in PowerPoint, exported to a matching 16-page PDF and checked for package integrity and slide-edge bounds. Governance coverage passes with the existing 50 open exceptions; this remains a review draft.
