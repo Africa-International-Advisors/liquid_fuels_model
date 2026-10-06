@@ -38,6 +38,11 @@ unknown status on each future input; unknown commercial access is not zero.
 
 ## Manish handoff for 6 October: use diagnostics to start integration
 
+Use the [6 October feedback checklist and ordered focus](feedback_focus_2026-10-06.md)
+for today's discussion. It consolidates the current SCR pack, completed feedback,
+exact source flags and required integration handbacks; the priorities below remain
+the Week 1 framework.
+
 Pull `origin/main` before working. The source audit and profile provide the starting
 inventory; do not rebuild them manually. Manish investigates and proposes changes;
 Nigel reviews the evidence and modelling choices. No existing input has been approved
