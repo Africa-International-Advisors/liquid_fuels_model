@@ -2,11 +2,11 @@
   "scope": "Week 1 convergence draft: SARS primary trade and updated driver evidence accepted for reporting; provincial estimates separate; accounting, model calibration and Vopak capture remain open. Supplied master and slide order retained.",
   "titles": {
     "2": "Size the fuel market, reconcile supply, then test Vopak access",
-    "3": "Three provinces account for 69% of reported fuel sales",
-    "4": "Provincial sales show different demand patterns over time",
-    "5": "Customs records 10.0 billion litres of net diesel imports in 2024",
+    "3": "Three provinces account for 69% of reported fuel sales; the top two contain Vopak’s storage facilities",
+    "4": "Reported fuel sales were broadly steady through 2022, despite the pandemic dip",
+    "5": "Diesel drives import volumes, while conflicting reports leave 2024 sales unresolved",
     "6": "Provincial demand is known; its supply origin still needs evidence",
-    "7": "Observed activity helps define the fuel levers; intensities remain open",
+    "7": "Activity trends show potential demand shifts; fuel used per unit of activity still needs validation",
     "8": "Refinery capacity has fallen; redevelopment remains conditional",
     "9": "Transport cost shapes the market Durban and Lesedi can reach",
     "10": "Compare Durban, Matola and Walvis Bay for the same inland customer",
@@ -46,7 +46,7 @@
         ],
         [
           "Historical differences are traced",
-          "The 2013 national parser is corrected on the analyst branch. 2014/2015 source versions differ; 2018 district coverage is incomplete. Preserve the flags."
+          "The analyst branch corrects the 2013 parser. Sources differ in 2014/2015; 2018 district coverage is incomplete. Retain these flags."
         ]
       ],
       "action": "Manish: reconcile source selections and retain estimate labels. Nigel: decide whether estimated petrol volumes belong in the outlook; diesel booking shares are less stable."

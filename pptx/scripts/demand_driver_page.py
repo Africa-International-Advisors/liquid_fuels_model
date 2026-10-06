@@ -92,8 +92,8 @@ def add_driver_page(s,text,root,brand):
             lx=x+.32+j*1.78
             rule(s,(lx,y+.96),(lx+.20,y+.96),color,1.8)
             text(s,raw_series[j][0],lx+.24,y+.87,3.9 if len(raw_series)==1 else 1.50,.20,10)
-    text(s,'Latest staged: activity Jul 2026; GDP Q2 2026; inland prices Oct 2026. Charts use complete years. Fuel intensities remain open; FY ends March.',
-         .5,6.92,11.65,.18,8.5)
+    text(s,'Latest staged: activity Jul 2026; GDP Q2 2026; inland prices Oct 2026. Charts use complete years. Fuel-use rates need validation; FY ends March.',
+         .5,6.88,11.65,.18,8.5)
     power_change=100*(power[2026]/power[2024]-1)
     rail_change=100*(rail[2025]/rail[2024]-1);road_change=100*(road[2025]/road[2024]-1)
     notes={'base_year':2024,'formula':'100 * observed value / own 2024 value','series':datasets,
