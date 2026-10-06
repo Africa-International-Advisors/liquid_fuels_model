@@ -510,3 +510,26 @@ repeat what the chart can already communicate. Reduce competing text levels.
 Owner: Nigel (hierarchy and message); presentation builder implements after
 instruction. No illustrative inputs or model calculations change in this task.
 Revisit with the consolidated visual feedback before rebuilding the current pack.
+
+
+## Approved feedback implementation - 6 October 2026
+
+Nigel requested implementation of the logged feedback and document scope.
+This status supersedes the earlier "pending" design entries, which remain as
+feedback history. Model inputs and illustrative source values are unchanged.
+
+| Item | Implemented treatment | Status |
+|---|---|---|
+| VIS-01 | Explanatory blue text changed to the theme charcoal; navy remains for chart marks, navigation and filled divider circles. | Implemented |
+| VIS-02 | Divider remains logo-derived #0A2373 with white arrow. | Verified / retained |
+| VIS-03 | Chart category/value text regular weight; main and section headings retained. | Implemented |
+| VIS-04 / R6 | Page 14 arrow flow: TAM, infrastructure reach, competitive price/service, commercial access and captured deliveries. Current and incremental volumes remain unquantified; prior examples retained in notes. | Implemented |
+| VIS-05 / R6 | Page 13 aligned demand/storage graphics, separate scales, compact no-listed-site/unknown key and one inventory note. | Implemented |
+| VIS-06 / R7 | Page 17 full-width native inventory chart, concise assumption note, direct values and operating limits; calculation retained in notes. | Implemented |
+| SCN-01 presentation | Page 9 covers L/M/H settings across demand, supply/trade, access, cost/service and capacity; baseline/ample/tight worlds defined as a framework. | Framework implemented; SCN-01.1-8 analytical tasks remain open |
+| APP-01 | Main story ends on page 17. Appendix divider p18; scope p19; Henry responses pp20-22; closing p23; palette p24. | Implemented |
+| SCOPE-01 | About-document page states Week 1 market evidence, scenarios and customer-access purpose; forecasts, share, closed balance and investment conclusions remain unestablished. | Implemented |
+
+The canonical current filenames remain unchanged. Previous delivered versions
+are archived before replacement. Package checks, page/reference checks, rendering
+and governance verification are recorded with the delivery.

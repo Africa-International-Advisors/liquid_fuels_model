@@ -2,7 +2,7 @@
 
 Open [PDF](Vopak_Week1_Convergence_2026_10_06.pdf) or
 [editable PowerPoint](Vopak_Week1_Convergence_2026_10_06.pptx).
-This is the latest 22-page storyline, formerly v13. The content is unchanged.
+This is the current 24-page storyline, incorporating the approved visual feedback and document scope. The main story ends on page 17.
 Use this pair for review and further revisions; do not create numbered copies
 in the delivered root.
 
@@ -12,8 +12,9 @@ in the delivered root.
 | Market baseline | 3-6 | National accounting, provincial demand and supply allocation |
 | Market changes | 7-11 | Demand drivers, supply cases, forecasting and competing routes |
 | Vopak outlook | 12-17 | Customer flows, footprint, opportunity gates and inventory sensitivity |
-| Henry storyboard trace | 18-20 | Responses to every original storyboard prompt |
-| Closing and palette | 21-22 | Closing page and presentation colours |
+| Appendix divider and scope | 18-19 | Clear story ending; what the document covers and does not establish |
+| Henry storyboard trace | 20-22 | Responses to every original storyboard prompt |
+| Closing and palette | 23-24 | Closing page and presentation colours |
 
 The storyline remains a draft with explicitly labelled evidence gaps and
 illustrations. Consolidation does not resolve those gaps or approve the model.
@@ -22,7 +23,10 @@ illustrations. Consolidation does not resolve those gaps or approve the model.
 
 Superseded Convergence v1-v12 and the earlier Analytical Pack are preserved in
 [archive/2026-10-06_storyline](archive/2026-10-06_storyline/).
-Earlier shipped map and analytical vintages remain in the existing archive.
+The pre-feedback canonical pair and the local hierarchy revision are preserved in
+[archive/2026-10-06_visual-feedback](archive/2026-10-06_visual-feedback/).
+Its delivery manifest records verification and hashes. Earlier shipped map and
+analytical vintages remain in the existing archive.
 The [cleanup manifest](archive/2026-10-06_storyline/cleanup_manifest.json)
 records the current pair's SHA-256 hashes and 42 deleted QA exports, each an
 exact duplicate of a retained delivered file. Unique QA drafts, review images,

@@ -12,7 +12,7 @@ All files below are tracked and available after merging current `origin/main`.
 
 | File | Purpose |
 |---|---|
-| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf) | The 22-page draft: overview, market baseline, market changes and Vopak outlook |
+| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf) | The 24-page draft: overview, market baseline, market changes and Vopak outlook |
 | [Editable PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx) | Same story with editable charts and clickable navigation |
 | [Branch review](../../WS1_data_validation/manish_branch_review_2026-10-06.md) | Findings against `manish-branch` at `4e64c8c`; checks and baseline decisions |
 | [Morning handover](manish_handover_2026-10-06.md) | Original five-package objective: evidence before lever quantification |
@@ -26,7 +26,7 @@ All files below are tracked and available after merging current `origin/main`.
 3. **Market changes (pages 7?11):** historical drivers and refinery change, then the forecast framework and route competition. Forecasts must connect assumptions to annual fuel demand and supply, with uncertainty explicit.
 4. **Vopak outlook (pages 12?17):** access and unique flows, regional opportunity and assets, then where to play, how to win and when to act. Inventory sensitivity follows the decision gates.
 
-Pages 18?20 respond to every Henry storyboard prompt, with partial/open status and linked evidence. Page 21 closes the pack; page 22 is the palette appendix. Chevrons link to the first page of each section (2, 3, 7, 12). The forecast framework establishes the analysis sequence; it does not add calibrated fuel forecasts.
+Pages 20-22 respond to every Henry storyboard prompt, with partial/open status and linked evidence. Page 18 starts the appendix; page 19 sets out document scope. Page 23 closes the pack; page 24 is the palette reference. Chevrons link to the first page of each section (2, 3, 7, 12). The forecast framework establishes the analysis sequence; it does not add calibrated fuel forecasts.
 
 ## What is agreed for the draft
 
@@ -54,7 +54,7 @@ Overview rows are numbered S1, S2, S/C3, C4, C5, R6 and R7. Every analytical pag
 
 Start with [Henry's verbatim wording and evidence trace](../../WS3_reporting_delivery/henry_verbatim_trace_2026-10-06.md). It maps every source prompt on slides 30?32 to the current response and deck pages; exact words are also in the appendix speaker notes.
 
-The opening answer is that imports are material, but Vopak growth depends on accessible customer flows. The agenda-led summary is on page 2; every prompt from received storyboard pages 30?32 has a current response on pages 18?20. The exact response register is [henry_question_answers_2026_10_06.json](../../../pptx/story/henry_question_answers_2026_10_06.json). Partial/open responses are explicit gaps, not completed analyses. Review Mossgas dates/status, vehicle efficiency, rail participation, price/mileage response, plant mechanisms, fleet penetration and import growth/entry ports before closing those prompts.
+The opening answer is that imports are material, but Vopak growth depends on accessible customer flows. The agenda-led summary is on page 2; every prompt from received storyboard pages 30?32 has a current response on pages 20-22. The exact response register is [henry_question_answers_2026_10_06.json](../../../pptx/story/henry_question_answers_2026_10_06.json). Partial/open responses are explicit gaps, not completed analyses. Review Mossgas dates/status, vehicle efficiency, rail participation, price/mileage response, plant mechanisms, fleet penetration and import growth/entry ports before closing those prompts.
 
 ## What Manish must do next
 

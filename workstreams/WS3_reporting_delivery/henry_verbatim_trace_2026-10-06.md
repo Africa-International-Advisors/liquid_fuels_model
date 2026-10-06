@@ -4,7 +4,7 @@
 
 Original images: [Situation ? slide 30](../../external/partner_story_20261006/situation.png), [Complication ? slide 31](../../external/partner_story_20261006/complication.png), [Resolution ? slide 32](../../external/partner_story_20261006/resolution.png).
 
-Current pack: [Week 1 PDF](../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf). Opening summary: page 2. Response appendices: pages 18?20.
+Current pack: [Week 1 PDF](../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf). Opening summary: page 2. Response appendices: pages 20-22.
 
 Trace each item as **Henry wording ? current response ? linked deep dive**. The source words are also stored in the appendix speaker notes and the [machine-readable register](../../pptx/story/henry_question_answers_2026_10_06.json).
 
@@ -60,12 +60,14 @@ The overview separates evidence from the verdict on Henry's storyline; supported
 
 | Overview row | Evidence / decision pages | Supporting appendix |
 |---|---|---|
-| S1 | 3 / 6 | 18 |
-| S2 | 4 / 5 | 18 |
-| S/C3 | 7 / 9 | 18 / 19 |
-| C4 | 8 / 9 | 18 / 19 |
-| C5 | 10 / 11 | 19 |
-| R6 | 12 / 13 / 14 | 20 |
-| R7 | 15 / 16 / 17 | 20 |
+| S1 | 3 / 6 | 20 |
+| S2 | 4 / 5 | 20 |
+| S/C3 | 7 / 9 | 20 / 21 |
+| C4 | 8 / 9 | 20 / 21 |
+| C5 | 10 / 11 | 21 |
+| R6 | 12 / 13 / 14 | 22 |
+| R7 | 15 / 16 / 17 | 22 |
 
-Pages 3?17 are each summarised in the overview. Pages 18?20 trace the original prompts; pages 1, 21 and 22 are cover, closing and palette reference. See the [evidence and verdict register](../../pptx/story/overview_story_verdicts_2026_10_06.json).
+Pages 3?17 are each summarised in the overview. Pages 20-22 trace the original prompts; pages 1, 23 and 24 are cover, closing and palette reference. See the [evidence and verdict register](../../pptx/story/overview_story_verdicts_2026_10_06.json).
+
+The main story ends at page 17; Appendix divider page 18 and document scope page 19 precede the Henry response pages.

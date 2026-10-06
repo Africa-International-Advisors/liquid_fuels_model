@@ -26,8 +26,8 @@
         7,
         9
       ],
-      "verdict": "Partly supported: diesel generation is falling.\nRail, EV and price effects remain unquantified; a uniform demand decline is unproven.",
-      "evidence": "Diesel generation is falling; other drivers differ\nFreight, EV uptake and prices follow different paths. Fuel used per km or unit of output is needed to quantify litres."
+      "verdict": "Partly supported: diesel generation has fallen.\nBaseline, ample and tight worlds still need sourced assumptions and tested fuel/customer-volume effects.",
+      "evidence": "Demand drivers differ; L/M/H cases cover all key levers\nPower, freight, fleet, prices, supply and customer access need explicit assumptions; fuel effects remain uncalibrated."
     },
     {
       "ref": "C4",
