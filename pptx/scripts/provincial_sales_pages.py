@@ -1,3 +1,4 @@
+from exhibit_typography import CHART_LABEL, CHART_SECONDARY, LEGEND
 """Presentation of declared sales, with an explicitly authored supply illustration."""
 import csv,json
 from collections import defaultdict
@@ -50,7 +51,7 @@ def add_trend_page(slide,exhibit_layout,text,line,root,brand):
     s.notes_slide.notes_text_frame.text += 'mechanical flag tolerance 1 litre, not a materiality or validation threshold:\n'+json.dumps(differences,indent=2)
     chart=add_themed_chart(s,XL_CHART_TYPE.LINE,Inches(.5),Inches(2.37),Inches(7.05),Inches(3.93),
         [str(y) for y in years],[(NAMES[p],[annual[y].get(p) for y in years]) for p in NAMES],
-        show_legend=False,value_axis_format='0.0',axis_font_size=9,brand=brand)
+        show_legend=False,value_axis_format='0.0',axis_font_size=CHART_SECONDARY,brand=brand)
     chart.value_axis.minimum_scale=0;chart.value_axis.maximum_scale=8;chart.value_axis.major_unit=2
     colours=['0A2373','546CA2','404040','546CA2','767676','0A2373','404040','767676','BDBEC1']
     dashes=[None,None,None,MSO_LINE_DASH_STYLE.DASH,MSO_LINE_DASH_STYLE.DASH,
@@ -59,8 +60,8 @@ def add_trend_page(slide,exhibit_layout,text,line,root,brand):
         colour=RGBColor.from_string(colours[i]);series.format.line.color.rgb=colour
         series.format.line.width=Pt(2 if i<3 else 1.4)
         if dashes[i]:series.format.line.dash_style=dashes[i]
-        x=.55+(i%3)*2.30;y=6.43+(i//3)*.23
-        line(s,(x,y+.07),(x+.27,y+.07),colour,1.7,dashes[i]);text(s,NAMES[p],x+.34,y,1.95,.19,8.5)
+        x=.55+(i%3)*2.30;y=6.36+(i//3)*.26
+        line(s,(x,y+.07),(x+.27,y+.07),colour,1.7,dashes[i]);text(s,NAMES[p],x+.34,y,1.95,.26,LEGEND)
     return s
 
 def add_supply_page(slide,exhibit_layout,text,root,brand):
@@ -86,19 +87,19 @@ def add_supply_page(slide,exhibit_layout,text,root,brand):
         x=x0+width*v/limit
         q=s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,Inches(x),Inches(2.70),Inches(x),Inches(6.02))
         q.line.color.rgb=brand.grey_fill;q.line.width=Pt(.5)
-        text(s,str(v),x-.09,2.42,.35,.19,9)
+        text(s,str(v),x-.09,2.42,.40,.26,CHART_SECONDARY)
     for i,p in enumerate(sorted(NAMES,key=actual.get,reverse=True)):
         y=2.84+i*.34; domestic,total=values[p];assert 0<=domestic<=total
-        text(s,NAMES[p],.5,y+.01,1.52,.22,10)
+        text(s,NAMES[p],.5,y+.01,1.52,.29,CHART_LABEL,True)
         x=x0
         for value,colour in [(domestic,brand.accent_primary),(total-domestic,RGBColor.from_string('809CC7'))]:
             w=width*value/limit
-            q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(y),Inches(w),Inches(.22))
+            q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(y),Inches(w),Inches(.27))
             q.fill.solid();q.fill.fore_color.rgb=colour;q.line.fill.background();x+=w
-        text(s,f'{total:.2f}',x+.07,y,.5,.22,9,True)
+        text(s,f'{total:.2f}',x+.07,y,.61,.29,CHART_LABEL,True)
     for x,label,colour in [( .5,'Illustrative domestic fuel',brand.accent_primary),(3.55,'Illustrative finished-product imports',RGBColor.from_string('809CC7'))]:
         q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(6.25),Inches(.12),Inches(.12))
         q.fill.solid();q.fill.fore_color.rgb=colour;q.line.fill.background()
-        text(s,label,x+.18,6.20,3.5,.24,9)
+        text(s,label,x+.18,6.20,3.5,.27,LEGEND)
     text(s,'Units: bn litres/year. Imported/domestic segments are a scenario illustration, not measured provincial flows.',.5,6.63,7.05,.41,10,True,brand.accent_primary)
     return s

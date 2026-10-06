@@ -36,6 +36,7 @@ from competitive_market_page import add_competitive_page
 from storage_capacity_page import add_storage_capacity_page
 from provincial_sales_pages import add_trend_page,add_supply_page
 from partner_story_page import add_partner_story_page
+from exhibit_typography import standardise_reused_map_callouts
 
 ROOT = Path(__file__).resolve().parents[1]
 # Reuse validated cost-map pages when only reporting evidence/layout changes.
@@ -450,6 +451,7 @@ else:
     for i in [0,4,5,6,1,2,7,8,9,3]: prs.slides._sldIdLst.append(ids[i])
 # Refresh context on retained cost maps without recomputing their illustrative surfaces.
 for s in [prs.slides[4],prs.slides[5]]:
+    standardise_reused_map_callouts(s)
     for q in list(s.shapes):
         if q.name.startswith('Transnet lease overlay:'):
             q._element.getparent().remove(q._element)

@@ -4,6 +4,7 @@ from pptx.util import Inches,Pt
 from pptx.enum.shapes import MSO_SHAPE,MSO_CONNECTOR
 from pptx.dml.color import RGBColor
 from storage_footprint import inventory,storage_notes
+from exhibit_typography import CHART_LABEL, CHART_SECONDARY, LEGEND
 
 
 def add_storage_capacity_page(slide,exhibit_layout,text,root,brand):
@@ -40,11 +41,11 @@ def add_storage_capacity_page(slide,exhibit_layout,text,root,brand):
         x=x0+width*v/maximum
         q=s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,Inches(x),Inches(2.97),Inches(x),Inches(6.00))
         q.line.color.rgb=brand.grey_fill;q.line.width=Pt(.5)
-        text(s,str(v),x-.15,2.70,.45,.24,11)
+        text(s,str(v),x-.15,2.70,.45,.24,CHART_SECONDARY)
     for i,site in enumerate(order):
         y=3.04+i*.38
         label=site+('*' if site=='Ladysmith' else '')
-        q=text(s,label,.5,y,1.65,.29,12,True);q.name='Storage location label: '+site
+        q=text(s,label,.5,y,1.65,.29,CHART_LABEL,True);q.name='Storage location label: '+site
         x=x0
         for r in sorted(locations[site],key=lambda r:r['operator']!='Vopak'):
             w=width*capacity(r)/maximum
@@ -55,14 +56,14 @@ def add_storage_capacity_page(slide,exhibit_layout,text,root,brand):
             if lease:q.line.color.rgb=brand.accent_primary;q.line.width=Pt(.8)
             else:q.line.fill.background()
             x+=w
-        q=text(s,f'{totals[site]:,.2f}',x+.09,y,.72,.29,12,True)
+        q=text(s,f'{totals[site]:,.2f}',x+.09,y,.72,.29,CHART_LABEL,True)
         q.name='Storage value label: '+site
     for x,name,operator in [(.5,'Vopak','Vopak'),(2.00,'Bidvest','Bidvest Tank Terminals'),(3.48,'Burgan Cape','VTTI Burgan Cape Terminal'),(5.35,'Transnet (lease)','Transnet Pipelines')]:
         q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(6.19),Inches(.13),Inches(.13))
         q.fill.solid();q.fill.fore_color.rgb=colours[operator]
         if operator=='Transnet Pipelines':q.line.color.rgb=brand.accent_primary;q.line.width=Pt(.8)
         else:q.line.fill.background()
-        text(s,name,x+.19,6.14,1.98,.26,11)
+        text(s,name,x+.19,6.14,1.98,.26,LEGEND)
     text(s,'Small lease bars reflect smaller tank volumes; they are not operating supply.',.5,6.53,7.05,.30,11,True,brand.accent_primary)
     text(s,'*Ladysmith excludes 0.474 intermixture. Unquantified: Bethlehem, Magdala, Sasol, Tarlton, Jameson Park.',.5,6.91,7.05,.22,9)
     return s

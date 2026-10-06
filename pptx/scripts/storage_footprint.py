@@ -1,6 +1,7 @@
 """Dated presentation evidence, not an operational-capacity or routing input."""
 import csv
 from pptx.enum.shapes import MSO_SHAPE
+from exhibit_typography import MAP_CALLOUT
 
 def inventory(root):
     with (root/'story/storage_operator_inventory_2026_10_06.csv').open(encoding='utf-8-sig',newline='') as f:
@@ -23,15 +24,15 @@ def draw_storage_footprint(m,text,line,marker,root,brand,inland_position=(5.15,2
         marker(m.s,x,y,.055,brand.accent_primary,MSO_SHAPE.HEXAGON,hollow=True)
     # Grouped callouts keep tightly clustered inland assets legible at national scale.
     callouts=[
-        (31.03,-29.88,'Durban\nVopak / Bidvest',5.47,4.55,1.65,.45),
-        (32.06,-28.8,'Richards Bay\nBidvest',5.63,3.95,1.7,.45),
-        (18.43,-33.91,'Cape Town\nBurgan Cape',.62,5.00,1.42,.44),
-        (28.2,-26.2,'Lesedi / inland storage\nVopak / Bidvest\nSasol / Transnet',*inland_position,2.05,.66),
+        (31.03,-29.88,'Durban\nVopak / Bidvest',5.47,4.55,1.65,.55),
+        (32.06,-28.8,'Richards Bay\nBidvest',5.63,3.95,1.7,.55),
+        (18.43,-33.91,'Cape Town\nBurgan Cape',.62,5.18,1.65,.54),
+        (28.2,-26.2,'Lesedi / inland storage\nVopak / Bidvest\nSasol / Transnet',*inland_position,2.20,.76),
     ]
     for lon,lat,label,x,y,w,h in callouts:
         anchor=m.xy(lon,lat)
         line(m.s,anchor,(x,y+h/2),brand.accent_primary,.65)
-        q=text(m.s,label,x,y,w,h,10,True,brand.accent_primary)
+        q=text(m.s,label,x,y,w,h,MAP_CALLOUT,True,brand.accent_primary)
         q.fill.solid();q.fill.fore_color.rgb=brand.white
 
 
@@ -48,7 +49,7 @@ def draw_transnet_leases(m,text,line,marker,root,brand,box=(.65,4.04)):
         q=text(m.s,r['site_id'][1:],x+dx,y+dy,.15,.17,8,True,brand.ink)
         q.fill.solid();q.fill.fore_color.rgb=brand.white
     x,y=box
-    q=text(m.s,'   Transnet lease offers\n1 Ladysmith | 2 Standerton\n3 Kroonstad | 4 Bethlehem\n5 Magdala*',x,y,2.04,.86,9,True,brand.ink)
+    q=text(m.s,'   Transnet lease offers\n1 Ladysmith | 2 Standerton\n3 Kroonstad | 4 Bethlehem\n5 Magdala*',x,y,2.22,1.02,MAP_CALLOUT,True,brand.ink)
     q.fill.solid();q.fill.fore_color.rgb=brand.white
     marker(m.s,x+.06,y+.075,.040,brand.ink,MSO_SHAPE.ISOSCELES_TRIANGLE,hollow=True)
     for q in list(m.s.shapes)[before:]:q.name='Transnet lease overlay: '+q.name

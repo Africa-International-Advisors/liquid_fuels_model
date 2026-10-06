@@ -144,3 +144,18 @@ engine assumptions changed. The current nine-page PPT/PDF filenames are retained
 ## Partner story consolidated
 
 The current pack adds page 9 linking Situation, Complication and Resolution to existing evidence and closure actions; closing is page 10. See [the detailed partner alignment review](partner_story_alignment_2026-10-06.md) and `pptx/story/partner_story_gap_register_2026_10_06.json` for 14 open gaps with owners, planning windows, source/refresh routes, model connections and evidence required for closure. Earlier nine-page references above describe prior shipped revisions. No model inputs or calculation logic changed.
+
+## Shared exhibit typography
+
+Nigel identified inconsistent map callout and chart font sizes. The builders now
+use `pptx/scripts/exhibit_typography.py`: primary chart labels/values 12pt;
+secondary chart labels, axes and legends 11pt; map callout text 11pt. These apply
+to the provincial history/supply, regional-demand and storage charts and the
+storage/market callouts on the maps. Regional competitor headings/body match
+the other takeaway panels at 14pt/12.5pt. Smaller source notes and cartographic
+point identifiers retain a separate supporting hierarchy.
+
+Text boxes and legends were resized/repositioned to fit. Cost units remain explicit
+in the exhibit heading. Data, quantitative axes, illustrative disclosures and the
+ten-page structure are unchanged. Rendered pages 2-8, shared font assertions and
+package checks passed. The same current PPT/PDF filenames are used.

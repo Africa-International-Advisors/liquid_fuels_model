@@ -5,6 +5,7 @@ from pptx.util import Pt, Inches
 from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
 from provincial_demand_map import sales
 from storage_footprint import storage_notes
+from exhibit_typography import CHART_LABEL, CHART_SECONDARY
 
 
 def add_competitive_page(slide, exhibit_layout, Map, text, table, root, brand, regional):
@@ -44,29 +45,29 @@ def add_competitive_page(slide, exhibit_layout, Map, text, table, root, brand, r
             q.text_frame.paragraphs[0].runs[0].text = 'Key takeaways | competitors'
     text(s, f'National total {sum(totals.values()):.2f} bn L | petrol + diesel; jet excluded',
          .5, 2.38, 7.05, .27, 11, True, brand.accent_primary)
-    text(s, 'Region / provinces', .5, 2.87, 1.42, .48, 10, True)
-    text(s, 'Reported demand', 2.02, 2.87, 2.78, .25, 10, True)
-    text(s, 'Vopak\nserved', 4.98, 2.87, 1.15, .48, 10, True)
-    text(s, 'Additional\ncontestable', 6.30, 2.87, 1.25, .48, 10, True)
+    text(s, 'Region / provinces', .5, 2.87, 1.42, .56, CHART_LABEL, True)
+    text(s, 'Reported demand', 2.02, 2.87, 2.78, .29, CHART_LABEL, True)
+    text(s, 'Vopak\nserved', 4.98, 2.87, 1.15, .56, CHART_LABEL, True)
+    text(s, 'Additional\ncontestable', 6.30, 2.87, 1.25, .56, CHART_LABEL, True)
     bar_x = 2.02; bar_width = 2.42; maximum = 12
     for v in [0, 4, 8, 12]:
         x = bar_x + bar_width*v/maximum
-        text(s, str(v), x-.10, 3.32, .30, .20, 9)
+        text(s, str(v), x-.10, 3.32, .40, .24, CHART_SECONDARY)
         q = s.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, Inches(x), Inches(3.61), Inches(x), Inches(5.93))
         q.line.color.rgb = brand.grey_fill; q.line.width = Pt(.5)
     labels = [('Eastern coast', 'EC / KZN'), ('Inland', 'GP / FS / LP / MP / NW'),
               ('Western coast', 'WC'), ('Other', 'Northern Cape')]
     for i, (name, label) in enumerate(labels):
         y = 3.69 + i*.59; value = totals[region_names[i]]
-        text(s, name, .5, y, 1.47, .26, 11, True)
-        text(s, label, .5, y+.27, 1.47, .23, 8.5)
+        text(s, name, .5, y, 1.47, .29, CHART_LABEL, True)
+        text(s, label.replace(" / ","/"), .5, y+.29, 1.47, .26, CHART_SECONDARY)
         width = bar_width*value/maximum
         q = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(bar_x), Inches(y+.08), Inches(width), Inches(.27))
         q.name = f'Reported 2022 petrol/diesel demand: {region_names[i]}: {value:.9f} bn L'
         q.fill.solid(); q.fill.fore_color.rgb = brand.accent_primary; q.line.fill.background()
-        text(s, f'{value:.2f}', bar_x+width+.07, y+.08, .48, .26, 10.5, True)
+        text(s, f'{value:.2f}', bar_x+width+.07, y+.08, .61, .29, CHART_LABEL, True)
         for x in [4.98, 6.30]:
-            q = text(s, 'Not\nestablished', x, y+.02, 1.20, .43, 9.5)
+            q = text(s, 'Not\nestablished', x, y+.02, 1.20, .49, CHART_LABEL)
             q.name = f'Unknown share input: {region_names[i]} at {x}'
     text(s, 'To calculate share: unique Vopak customer deliveries / same-year regional demand.',
          .5, 6.17, 7.05, .29, 10.5, True, brand.accent_primary)
@@ -76,15 +77,15 @@ def add_competitive_page(slide, exhibit_layout, Map, text, table, root, brand, r
         (2.40, '01 Eastern coast',
          'Vopak: Durban [1]. Bidvest: Durban and Richards Bay [2]; mixed-product capacity.\nTransnet: Ladysmith lease tanks [7].', .77),
         (3.55, '02 Inland',
-         'Vopak: Lesedi [1]. Bidvest: Isando [2].\nSasol: Alrode, Pretoria West, Waltloo and Sasolburg [6]. Transnet: Tarlton / Jameson Park plus four lease sites [7].', .91),
+         'Vopak: Lesedi [1]. Bidvest: Isando [2].\nSasol: Alrode, Pretoria West, Waltloo, Sasolburg [6]. Transnet: Tarlton / Jameson Park + four lease sites [7].', .91),
         (4.93, '03 Western coast',
          'Burgan Cape: Cape Town petrol/diesel terminal [3]. Confirm current tank availability and customer access.', .73),
-        (6.07, '04 Other / Northern Cape',
-         'Regional operator inventory is incomplete. Extend it using Shell site notices [4] and NERSA licences / access records [5].', .57),
+        (6.00, '04 Other / Northern Cape',
+         'Operator coverage incomplete. Check Shell site notices [4] and NERSA licences/access records [5].', .63),
     ]
     for y, heading, body, height in cards:
-        text(s, heading, 8.12, y, 4.03, .28, 13.5, True, brand.accent_primary)
-        text(s, body, 8.12, y+.36, 4.03, height, 11.5)
+        text(s, heading, 8.12, y, 4.03, .31, 14, True, brand.accent_primary)
+        text(s, body, 8.12, y+.36, 4.03, height, 12.5)
     # Every source number remains directly clickable in PPT and exported PDF.
     for i, r in enumerate(evidence):
         label = f"[{r['source_id']}] " + ['Vopak', 'Bidvest', 'Burgan', 'Shell', 'NERSA', 'Sasol', 'Transnet'][i]
