@@ -1,0 +1,40 @@
+# Evidence record for refinery_output_operators.csv
+what_this_is: Refined output reported by the operators of South Africa's three running fuel plants. Reported
+  units only; nothing is converted to litres here.
+retrieved: '2026-10-06'
+transcription: Typed by hand from the tables cited. Overlapping years agree across editions (Sasol FY2024
+  and FY2025; Glencore 2023 and 2024).
+sasol:
+  publication: Sasol Limited, Production and sales metrics, years ended 30 June 2022, 2025 and 2026, Fuels
+    table, page 4
+  kept_in: external/data/raw/sasol/
+  files:
+  - file: sasol-metrics-fy2022.pdf
+    sha256: 95642d163558ebb08165b694c57a595e4d9ef488e5fc298ca06e7e5666df2056
+    url: https://www.sasol.com/sites/default/files/2023-11/Production%20and%20sales%20metrics%20for%20the%20year%20ended%2030%20June%202022_0.pdf
+  - file: sasol-metrics-fy2025.pdf
+    sha256: f6632e4e6acb09f6220bca536c06ceaadf57ec462e5c6e653cbb6ab19a285940
+    url: https://www.sasol.com/sites/default/files/2025-07/Production%20and%20sales%20metrics%20for%20the%20year%20ended%2030%20June%202025%20updated.pdf
+  - file: sasol-metrics-fy2026.pdf
+    sha256: 085421af9275a79c1566a663966fbdb73b6c32cb4b7a51d9d2ad2f6dd1db56fa
+    url: https://www.sasol.com/sites/default/files/2026-07/Production%20and%20sales%20metrics%20for%20the%20year%20ended%2030%20June%202026.pdf
+glencore:
+  publication: Glencore plc Annual Reports 2023 (p.104), 2024 (p.85) and 2025 (p.69), 'Astron Energy -
+    energy content of refined products'
+  kept_in: not in the repository (large files); download from the addresses below
+  files:
+  - file: GLEN-2023-Annual-Report.pdf
+    url: https://www.glencore.com/.rest/api/v1/documents/static/d09d8212-4a9f-4034-b2d4-49152e5a0aff/GLEN-2023-Annual-Report.pdf
+  - file: GLEN-2024-Annual-Report.pdf
+    url: https://www.glencore.com/.rest/api/v1/documents/static/7a4295e4-3674-45e9-94c4-7d7fb285faff/GLEN-2024-Annual-Report.pdf
+  - file: GLEN-2025-Annual-Report.pdf
+    url: https://www.glencore.com/.rest/api/v1/documents/static/9b103e11-72e7-40bf-ae7c-eabe57361522/GLEN-2025-Annual-Report.pdf
+limits:
+- All refined products together; neither operator publishes a split by product.
+- Sasol's year runs July to June; Glencore's is the calendar year.
+- Natref is Sasol's reported production. To FY2025 that is its 63.64% share; the whole refinery is the
+  figure divided by 0.6364. FY2026 includes 6.9 million barrels above the share.
+- Astron is reported as energy content. Litres need an assumed energy content per litre.
+- Astron did not operate in 2022; the 2023 report prints a dash for that year.
+- Glencore's 2025 report also says sold products processed by Astron rose 28% in 2025, which does not
+  sit with the 1% fall in energy content; not reconciled.

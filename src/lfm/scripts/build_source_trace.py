@@ -33,6 +33,9 @@ DEPT = "Department of Mineral and Petroleum Resources (energy department)"
 DEPT_URL = "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/"
 DEPT_CMD = "python -m lfm.scripts.fetch_energy_dept --vintage 2026"
 ECON_CMD = "python -m lfm.scripts.fetch_economy --vintage 2026"
+SARS_URL = "https://tools.sars.gov.za/tradestatsportal/data_download.aspx"
+SARS_CMD = "python -m lfm.scripts.fetch_sars --vintage 2026"
+MAIN_BRANCH = "on manish-branch (external/data/raw/sars/)"
 
 # csv -> publisher, url, original, original_location, method, command, parser,
 #        pack_use, latest_partial, issue, owner
@@ -139,13 +142,37 @@ TRACE: dict[str, tuple[str, ...]] = {
         "annual-report-<year>.pdf; 2025 edition pp.47-49", BOTH_LOCAL + "; 2025 edition on main", "download",
         "python -m lfm.scripts.fetch_fuel_sales --vintage 2026", "fiasa.read_table / fiasa.combine",
         "pack p5 (source flag)", "",
-        "'Kerosene' is jet plus paraffin. 2024 diesel imports 14.793 bn L against 10.8.", "Manish (package 4)"),
+        "Cross-check, and the record before 2014; SARS is primary from 2014. 'Kerosene' is jet plus "
+        "paraffin. Its 2024 diesel import figure is 4.000 bn L above customs.", "Nigel: confirm 2024 figure"),
     "timeseries/refinery_capacity_reported.csv": (
         "Fuels Industry Association of South Africa",
         "https://fuelsindustry.org.za/publications/annual-reports/",
         "external/data/raw/fuel_supply_review_20261006/annual-report-2025.pdf, p.49", MAIN, "download",
         "python -m lfm.scripts.collect_supply_review", "collect_supply_review.extract_capacity", "pack p8", "",
         "Nameplate capacity, not output.", "Manish (package 4/5)"),
+    "timeseries/fuel_trade_sars.csv": (
+        "South African Revenue Service, trade statistics", SARS_URL,
+        "sars-<imports|exports>-chapter27-fuels-<year>.xlsx, 2010-2026", MAIN_BRANCH, "download (web form)",
+        SARS_CMD, "sars.read_report / sars.annual", "supersedes FIASA trade on pack p5", "2026 (to August)",
+        "Primary record of imports and exports from 2014. Kilograms to 2012, litres from 2014, both in 2013.",
+        "Nigel: confirm"),
+    "timeseries/fuel_trade_sars_by_office.csv": (
+        "South African Revenue Service, trade statistics", SARS_URL,
+        "same workbooks", MAIN_BRANCH, "download (web form)", SARS_CMD, "sars.read_report / sars.annual",
+        "imports by entry office (pack p5 gap)", "2026 (to August)",
+        "Customs office that cleared the goods: a proxy for entry port, not a terminal record.",
+        "Nigel: confirm"),
+    "timeseries/fuel_trade_sars_by_partner.csv": (
+        "South African Revenue Service, trade statistics", SARS_URL,
+        "same workbooks", MAIN_BRANCH, "download (web form)", SARS_CMD, "sars.read_report / sars.annual",
+        "", "2026 (to August)", "Origin for imports, destination for exports.", "Nigel: confirm"),
+    "reference/refinery_output_operators.csv": (
+        "Sasol (production and sales metrics); Glencore (annual reports)", "https://www.sasol.com/",
+        "sasol-metrics-fy2022/2025/2026.pdf, p.4; GLEN-2023/2024/2025-Annual-Report.pdf",
+        "Sasol files on manish-branch (external/data/raw/sasol/); Glencore reports by link only",
+        "manual transcription", "none", "typed by hand", "", "",
+        "All refined products, no product split; fiscal and calendar years; Astron as energy content.",
+        "Nigel: confirm"),
     # ---- economy ----------------------------------------------------------------
     "timeseries/macro_statssa.csv": (
         "Statistics South Africa (P0441 GDP; P0302 mid-year population)",

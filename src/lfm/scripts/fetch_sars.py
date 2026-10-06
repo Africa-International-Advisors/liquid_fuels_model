@@ -18,8 +18,11 @@ from 2014, kilograms to 2012, both in 2013. ``district_office`` is the customs
 office that cleared the goods, the nearest public indication of entry port.
 ``partner`` is the country of origin for imports and of destination for exports.
 
-These CSVs are not yet declared in the vintage. Until they are registered, run
-with ``LFM_ASSUMPTIONS_DIR`` pointing at a candidate copy of the vintage.
+The three CSVs are declared in ``sources.yaml`` and registered. A refresh
+changes recent months, so the register must be reconciled afterwards with
+``python -m lfm.scripts.sync_register`` for the three ``sources.fuel_trade_sars*``
+blocks. SARS is the primary record of imports and exports from 2014; FIASA's
+trade table is kept as a cross-check and for earlier years.
 
 Run:
     python -m lfm.scripts.fetch_sars --vintage 2026

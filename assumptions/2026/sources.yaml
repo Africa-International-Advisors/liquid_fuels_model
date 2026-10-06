@@ -294,3 +294,49 @@ refinery_capacity_reported:
     in timeseries/supply_review.sources.json
   last_updated: '2026-10-06'
   shared: true
+fuel_trade_sars:
+  register_id: REG-SOURCE-FUEL_TRADE_SARS
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_trade_sars.csv
+  units: mixed; see unit column
+  source: SARS trade statistics portal, chapter 27 fuel tariff lines; primary record of imports and exports
+    from 2014 (litres). FIASA's trade table is kept as a cross-check and for years before 2014. Provenance
+    in timeseries/fuel_trade_sars.sources.yaml
+  last_updated: '2026-10-06'
+  shared: true
+fuel_trade_sars_by_office:
+  register_id: REG-SOURCE-FUEL_TRADE_SARS_BY_OFFICE
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_trade_sars_by_office.csv
+  units: mixed; see unit column
+  source: SARS trade statistics portal, chapter 27 fuel tariff lines; primary record of imports and exports
+    from 2014 (litres). FIASA's trade table is kept as a cross-check and for years before 2014. Provenance
+    in timeseries/fuel_trade_sars.sources.yaml
+  last_updated: '2026-10-06'
+  shared: true
+fuel_trade_sars_by_partner:
+  register_id: REG-SOURCE-FUEL_TRADE_SARS_BY_PARTNER
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/fuel_trade_sars_by_partner.csv
+  units: mixed; see unit column
+  source: SARS trade statistics portal, chapter 27 fuel tariff lines; primary record of imports and exports
+    from 2014 (litres). FIASA's trade table is kept as a cross-check and for years before 2014. Provenance
+    in timeseries/fuel_trade_sars.sources.yaml
+  last_updated: '2026-10-06'
+  shared: true
+refinery_output_operators:
+  register_id: REG-SOURCE-REFINERY_OUTPUT_OPERATORS
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/refinery_output_operators.csv
+  units: mixed; see unit column
+  source: Sasol production and sales metrics; Glencore annual reports. Provenance and limits in reference/refinery_output_operators.sources.yaml
+  last_updated: '2026-10-06'
+  shared: true

@@ -107,11 +107,10 @@ no balance after 2021. Refinery capacity (pack p8) is nameplate, not output.
 
 | Item | Owner | Next action |
 |---|---|---|
-| Customs data by tariff line (petrol, diesel; volume and partner country) | Nigel | Obtained (see the SARS section); review and decide on registering the three extracts in the vintage |
+| Customs data by tariff line (petrol, diesel; volume and partner country) | Nigel | Obtained and registered on manish-branch (see review outcomes); confirm |
 | Actual production 2022 onward | Manish | Sasol, Natref and Astron totals obtained (see follow-up and the all-product check); product split still missing; ask the department whether a 2022 or 2023 balance exists |
 | Stock movements | Manish / Nigel | JODI carries a stock series of low reliability (see the fuel levy section); ask the department or FIASA |
 | Diesel residual from 2022 | Manish, Henry review | Test each candidate explanation; exports to neighbouring countries by partner from SARS is the first check |
-| FIASA: 2024 diesel misprint (confirmed by customs), duplicated 2025 sales row, and the 2018 difference | Nigel | Query FIASA |
 | Imports by entry port | Nigel | Customs office now gives a public proxy (see the SARS section); terminal-level data still needs client or port access |
 
 ## Follow-up, later on 6 October
@@ -137,11 +136,10 @@ most two years at a time. The page then serves the workbook from a second
 address in the same session. 34 workbooks (imports and exports, each year 2010
 to August 2026; 31,982 lines) are in `external/data/raw/sars/`, uncommitted.
 
-Candidate extracts, kept beside this note and not in the vintage:
-`fuel_trade_sars_candidate_2026-10-06.csv` (by product and year),
-`fuel_trade_sars_by_office_candidate_2026-10-06.csv` (by customs office and
-transport mode) and `fuel_trade_sars_by_partner_candidate_2026-10-06.csv` (by
-country of origin or destination).
+Extracts, now in the vintage under `assumptions/2026/timeseries/`:
+`fuel_trade_sars.csv` (by product and year), `fuel_trade_sars_by_office.csv`
+(by customs office and transport mode) and `fuel_trade_sars_by_partner.csv`
+(by country of origin or destination).
 
 Tariff lines used: petrol 27101102, 27101202; diesel 27101130, 27101230,
 27101930; biodiesel blends 27102000; jet 27101107, 27101207, 27101907;
@@ -318,3 +316,28 @@ stock 0.65 bn litres at December 2023, 0.55 at December 2024). They are not
 usable as they stand: reported diesel imports are 6.8 bn litres for 2023
 against 12.9 in customs, the statistical differences are 1 to 3.5 bn litres,
 and every entry has JODI's lowest reliability code.
+
+## Review outcomes, 6 October
+
+Manish reviewed this package. Applied on `manish-branch` for Nigel to confirm:
+
+- **SARS is the primary record of imports and exports from 2014.** FIASA's
+  trade table is kept as a cross-check and for years before 2014. The three
+  SARS extracts are declared in `sources.yaml`, registered (7,509 rows) and
+  `fetch_sars` is part of `refresh_sources`. The engine does not read them, so
+  no output changes.
+- **Operator output is recorded** in
+  `assumptions/2026/reference/refinery_output_operators.csv` (17 rows: Secunda
+  and Natref for the years to June 2020-2026, Astron for 2023-2025) with its
+  evidence record, in reported units only.
+
+Left for Nigel:
+
+- Which 2024 diesel import figure to use, together with how to report the
+  diesel residual. Customs gives 10.793 bn litres; the residual is supported by
+  the balance, operators' output, customs and fuel levy volumes.
+- Whether implied production may stand in for petrol output after 2021.
+- Whether to stop using the 2019 and 2020 energy balances for trade.
+
+Dropped: querying FIASA about its 2024 misprint, duplicated 2025 row and the
+2018 difference.
