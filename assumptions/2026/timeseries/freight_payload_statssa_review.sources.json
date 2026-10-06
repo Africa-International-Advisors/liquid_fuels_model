@@ -1,0 +1,33 @@
+{
+  "retrieved": "2026-10-06",
+  "status": "staged reporting; no diesel displacement inferred",
+  "refresh": "Download next P7162 December report; rerun extractor and compare overlapping years before adoption.",
+  "sources": [
+    {
+      "file": "P7162December2024.pdf",
+      "url": "https://www.statssa.gov.za/publications/P7162/P7162December2024.pdf",
+      "sha256": "ba0941c72c8f84b5dfbd2799e73b053ca45b421009c03eb286dbaaa9f271d9a6"
+    },
+    {
+      "file": "P7162December2025.pdf",
+      "url": "https://www.statssa.gov.za/publications/P7162/P7162December2025.pdf",
+      "sha256": "d6285729813c880a13582c9cda057c8f3c4c8ce0fe5788a93c84747dd33bcf51"
+    }
+  ],
+  "overlap_2024": [
+    {
+      "mode": "rail",
+      "old_value": 160993,
+      "new_value": 160745,
+      "delta": -248,
+      "status": "source revision; do not splice vintages"
+    },
+    {
+      "mode": "road",
+      "old_value": 790611,
+      "new_value": 979798,
+      "delta": 189187,
+      "status": "source revision; do not splice vintages"
+    }
+  ]
+}

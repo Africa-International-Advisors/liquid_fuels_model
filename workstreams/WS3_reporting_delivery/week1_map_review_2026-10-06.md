@@ -234,3 +234,29 @@ contract/switching evidence and final delivered litres. Mark each condition
 passed, failed or unassessed, identify the binding constraint, and count shared
 Durban–Lesedi transfers once. Nigel supplies client flows and agrees destinations
 and thresholds. No volume milestone is a forecast until these conditions close.
+# Demand-driver page 7 — indexed evidence
+
+Page 7 now contains four native line charts, all normalised as
+`100 × observed value / that series' 2024 value`, with the same 0–120 vertical
+scale: Eskom + IPP OCGT generation, road/rail freight payload, BEV/conventional
+hybrid new sales, and real GDP. OCGT is financial year ending March; the other
+series are calendar years. Indices compare relative movement, not equal fuel
+weights or causal contributions. Conventional hybrids remain fuel users;
+vehicle sales do not establish fleet penetration. PHEVs are not in this chart.
+
+New Stats SA P7162 freight data use the December 2025 report consistently for
+both 2024 and 2025. The prior December 2024 report had 2024 road payload of
+790.611 million tonnes; the later report has 979.798 million tonnes. The
+189.187 million-tonne difference is an explicit source revision flag, not an
+inferred modal shift. No 2023 old-vintage values are spliced into this chart.
+The two original PDFs are preserved in `external/data/raw/demand_drivers_20261006/`.
+Refresh with the next December report and rerun
+`python -m lfm.scripts.collect_freight_review`, comparing overlapping years
+before updating any declared input. Four observations are registered, owned
+by Manish, and remain unreviewed under EXC-FREIGHT-REVIEW-2026-10-06.
+
+Fuel-price annual history ends in 2023. Inland petrol-95 is R23.14/litre nominal
+in 2023; no 2024 price base or extrapolation is invented. Manish should refresh
+prices, source freight tonne-km/diesel intensity, generation-to-fuel conversion,
+fleet survival/mileage/efficiency and real-price activity response before
+converting these observed drivers into fuel-demand scenarios.

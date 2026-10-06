@@ -55,6 +55,8 @@ def table(s,rows,x,y,widths,h,brand,size=11):
 
 
 def populate_review_exhibits(prs,text,root,brand):
+    from demand_driver_page import add_driver_page
+    add_driver_page(prs.slides[6],text,root,brand)
     national_page(prs.slides[4],text,root,brand)
     capacity_page(prs.slides[7],text,root,brand)
     corridor_page(prs.slides[9],text,root,brand)

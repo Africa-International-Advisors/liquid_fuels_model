@@ -12,7 +12,7 @@ ROWS = [
      'Manish\nNigel review', 'W1–W2\nSourced demand baseline', [3,4]),
     ('S2\nSituation', 'Domestic supply, finished imports and entry ports\nHave: 2024 sales/trade; diesel imports conflict. Gap: matched output/stocks and product-specific port allocation.',
      'Manish\nNigel access', 'W1–W3\nFuel balance + port bridge', [5,6]),
-    ('C1\nComplication', 'Demand drivers and levers\nPower diesel; road/rail; BEV/hybrid and efficiency; GDP/price/activity. Define baselines and alternatives, then calibrate litres effects.',
+    ('C1\nComplication', 'Demand drivers and levers\nHave: indexed power, road/rail, BEV/hybrid sales and real GDP. Refresh prices; calibrate baseline/alternatives into litres effects.',
      'Manish\nNigel review', 'W1 define; W2–W4 test\nLever-to-demand bridge', [7]),
     ('C2\nComplication', 'Refinery and plant scenarios\nHave: published capacity history and conditional CEF case. Agree timing/yields; resolve repeated keys and plant mechanisms.',
      'Manish\nHenry / Nigel', 'W1–W3\nPlant output + imports', [8]),

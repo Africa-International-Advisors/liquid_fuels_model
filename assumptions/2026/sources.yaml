@@ -262,6 +262,16 @@ vehicle_population_natis:
     .sources.yaml files
   last_updated: '2026-10-05'
   shared: true
+freight_payload_statssa_review:
+  register_id: REG-SOURCE-FREIGHT-PAYLOAD-REVIEW
+  exception_id: EXC-FREIGHT-REVIEW-2026-10-06
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/freight_payload_statssa_review.csv
+  units: thousand tonnes; unadjusted all-freight payload
+  source: Stats SA P7162 December 2025 Table 1; preserved reports and revisions in timeseries/freight_payload_statssa_review.sources.json
+  last_updated: '2026-10-06'
+  shared: true
 fuel_trade_department_review:
   register_id: REG-SOURCE-FUEL_TRADE_DEPARTMENT_REVIEW
   exception_id: EXC-SUPPLY-REVIEW-2026-10-06
