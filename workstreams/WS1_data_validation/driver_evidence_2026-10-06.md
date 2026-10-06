@@ -70,7 +70,7 @@ Not collected.
 
 | Item | Owner | Next action |
 |---|---|---|
-| Stats SA provincial GDP (P0441.2) | Manish | Downloaded; reader not written yet |
+| Stats SA provincial GDP (P0441.2) | Manish | Done 6 October: `timeseries/gdp_by_province_statssa.csv`, nine provinces, 2013–2024; see the provincial note |
 | Tonne-kilometres for road and rail | Manish | Rail tonnes confirmed (see second follow-up); tonne-km is not in the results coverage read; no road series identified |
 | Diesel burned for power, litres | Manish | FY2024 litres not found (only R23.4 bn of spend); primary replies for FY2022 and FY2023 not retrieved |
 | Fuel prices after February 2026 | Manish | Nothing posted by the department yet; the fetcher will pick new months up when they appear |
@@ -227,7 +227,7 @@ distance values therefore stay as they are, marked partial.
 The four releases were downloaded through the browser (the site refuses
 scripts but serves a signed-in browser session) and are kept as downloaded in
 `external/data/raw/statssa/`, with the provincial GDP release (P0441.2, 2024),
-which has not been read yet. Reader: `statssa.parse_monthly_series`; command:
+which is read by `statssa.parse_provincial_gdp`. Reader: `statssa.parse_monthly_series`; command:
 `python -m lfm.scripts.fetch_statssa_monthly --vintage 2026`. Output: `activity_statssa_monthly.csv` (2,753 monthly values), in the vintage
 from 6 October (see below).
 

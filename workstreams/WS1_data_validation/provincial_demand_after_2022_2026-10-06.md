@@ -106,8 +106,8 @@ points over the three years, which is consistent with holding petrol shares.
 Vehicle stock is all fuels together and is not fuel sold; it has not been used
 to adjust the estimate.
 
-Not yet collected: Stats SA provincial GDP (P0441.2, 2024). The site blocks
-scripted downloads; it needs a manual download like the other Stats SA files.
+Stats SA provincial GDP (P0441.2, 2024) has since been collected; see
+"Provincial GDP obtained" at the end of this note.
 
 ## Open items
 
