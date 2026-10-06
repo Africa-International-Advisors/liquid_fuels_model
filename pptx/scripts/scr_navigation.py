@@ -1,6 +1,7 @@
 """Story navigation with section highlighting and internal slide links."""
 from pptx.util import Pt, Inches
 from pptx.enum.shapes import MSO_CONNECTOR
+from pptx.enum.text import MSO_ANCHOR
 from brand_configs import vopak as cfg
 
 
@@ -40,3 +41,18 @@ def apply_navigation(prs, brand):
             q.fill.fore_color.rgb=brand.accent_primary if index-1==active else brand.grey_fill
             q.click_action.target_slide=prs.slides[first_page-1]
         slide.notes_slide.notes_text_frame.text+='\nFinal story navigation: Overview p2; Market baseline p3; Market changes p7; Vopak outlook p12. Henry SCR naming remains in the overview.'
+
+    compact_navigation(prs)
+
+def compact_navigation(prs):
+    """Keep navigation visibly subordinate to the slide title."""
+    for slide in prs.slides:
+        for q in slide.shapes:
+            if not q.name.startswith('Section navigation '):
+                continue
+            q.height=Inches(.28)
+            q.text_frame.margin_top=q.text_frame.margin_bottom=0
+            q.text_frame.vertical_anchor=MSO_ANCHOR.MIDDLE
+            for p in q.text_frame.paragraphs:
+                p.font.size=Pt(10.5)
+                for r in p.runs:r.font.size=Pt(10.5)
