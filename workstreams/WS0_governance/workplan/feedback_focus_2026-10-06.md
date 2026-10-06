@@ -24,7 +24,88 @@ reviewed evidence; broader infrastructure and investment work remain secondary.
 | 4 Reconcile domestic production and trade | [Energy balance](../../../assumptions/2026/timeseries/energy_balance_department.csv), [FIASA trade](../../../assumptions/2026/timeseries/fuel_trade_fiasa.csv), [government trade](../../../assumptions/2026/timeseries/fuel_trade_department_review.csv), [flags](../../../output/delivered/supply_review_2026_10_06/trade_source_flags.csv) | Assemble actual production, imports, exports and stock movements for the same petrol/diesel periods. Use SARS product-specific trade data and energy/operator production evidence. Resolve the competing 2024 diesel-import values. | Product by period balance with units, definitions, source, stock treatment and unexplained residual. Separate finished fuel from crude and other petroleum products. |
 | 5 Source all driver/lever pages | Existing CSVs and official source links below; pack p7 demand drivers and p8 refining history | Collect and reconcile observed series first: passenger/freight, agriculture, manufacturing, mining, power, EVs and refinery output/status. | One source-and-coverage row per chart series; original download, extract, dates, geography, units, revisions and open gaps. No high/medium/low lever calibration required today. |
 
-## New source leads to use today
+## Commands for Manish's LLM
+
+Run from the repository root on Manish's branch. These fetchers write CSVs,
+so use a separate candidate folder first. This setup preserves the existing
+assumptions and available raw cache; new downloads and extracts remain under runs.
+
+```powershell
+$fetchRoot = Join-Path (Get-Location) ("runs/manish_fetch_" + (Get-Date -Format yyyyMMdd_HHmmss))
+New-Item -ItemType Directory -Path "$fetchRoot/assumptions", "$fetchRoot/data/raw" -Force | Out-Null
+Copy-Item -LiteralPath 'assumptions/2026' -Destination "$fetchRoot/assumptions/2026" -Recurse
+if (Test-Path -LiteralPath 'external/data/raw') {
+    Get-ChildItem -LiteralPath 'external/data/raw' | Copy-Item -Destination "$fetchRoot/data/raw" -Recurse
+}
+$priorAssumptionsDir = $env:LFM_ASSUMPTIONS_DIR
+$priorDataDir = $env:LFM_DATA_DIR
+$env:LFM_ASSUMPTIONS_DIR = "$fetchRoot/assumptions"
+$env:LFM_DATA_DIR = "$fetchRoot/data"
+```
+
+In this same PowerShell session, execute the fetchers in order. Capture each
+command's stdout/stderr, exit code, source warnings and resulting coverage.
+When running commands separately, a failure in one must not be hidden by the
+exit code of a later successful command.
+
+| Order | Dataset | Command | Main candidate extracts under `$fetchRoot/assumptions/2026/timeseries/` |
+|---|---|---|---|
+| 1 | Department sales, provincial history, balances and prices | `.\.venv\Scripts\python.exe -m lfm.scripts.fetch_energy_dept --vintage 2026` | `fuel_sales_department.csv`, `fuel_sales_department_by_province.csv`, quarterly companions, `energy_balance_department.csv`, price CSVs |
+| 2 | FIASA sales and imports/exports | `.\.venv\Scripts\python.exe -m lfm.scripts.fetch_fuel_sales --vintage 2026` | `fuel_sales_fiasa.csv`, `fuel_trade_fiasa.csv` |
+| 3 | GDP/population, Treasury and locally downloaded Stats SA GDP | `.\.venv\Scripts\python.exe -m lfm.scripts.fetch_economy --vintage 2026` | `macro_worldbank.csv`, `macro_statssa.csv` if the required workbook is present, `gdp_growth_treasury.csv` |
+| 4 | Vehicle stock and registrations | `.\.venv\Scripts\python.exe -m lfm.scripts.fetch_natis --vintage 2026` | `vehicle_population_natis.csv`, `new_vehicle_registrations_natis.csv`, annual companion |
+| 5 | BEV/PHEV/hybrid sales and vehicle market | `.\.venv\Scripts\python.exe -m lfm.scripts.fetch_naamsa --vintage 2026` | `nev_sales_naamsa.csv`, `new_vehicle_market_naamsa.csv` |
+| 6 | Eskom/IPP OCGT generation | `.\.venv\Scripts\python.exe -m lfm.scripts.fetch_eskom --vintage 2026` | `ocgt_generation_eskom.csv` |
+
+For an individual parser rerun without downloading, append `--offline`. It only
+works if the original files are already in the candidate raw folders. An offline
+rerun is not a test of current publisher connectivity or freshness.
+
+The existing single-command orchestrator is
+`.\.venv\Scripts\python.exe -m lfm.scripts.refresh_sources --vintage 2026`.
+It runs the above fetchers plus ACSA, lists failed commands, returns nonzero on
+failure and compares department/FIASA sales. Use it instead of rerunning all six
+individually once source-specific problems are understood. It does not fetch all
+the new source leads below or perform a complete production/trade reconciliation.
+
+**Required work not covered by those six commands:**
+
+- Download the latest Stats SA **GDP Time series** workbook from P0441 into
+  `$fetchRoot/data/raw/statssa/` before the economy fetch. The existing reader
+  expects `GDP P0441*Time series*.xlsx` and reads the **Annual** sheet. Quarterly
+  2026 observations need parser support; presence of the Q2 workbook alone does
+  not establish a quarterly extract.
+- Add and test extraction for the newer provincial market report; the department
+  workbook fetcher does not automatically extract its provincial PDF charts.
+- Add and test current Stats SA mining P2041, manufacturing P3041.2 and land
+  transport P7162 downloads/parsers. The existing freight-review extractor only
+  rereads two fixed December PDFs; it is not a current monthly downloader.
+- Add and test product-specific SARS trade collection or ingest a documented
+  manual export. The FIASA command does not download SARS records.
+
+The LLM should first inspect existing modules under `src/lfm/sources/` and
+`src/lfm/scripts/`, then implement missing retrieval/parsing there. Preserve
+originals, compare overlapping old/new values and test source values, units,
+duplicates, coverage, revisions and failed-fetch preservation. Do not adopt
+candidate CSVs just because a command exits zero.
+
+Restore the original environment settings before running the normal repository
+governance check. If the LLM wraps the commands in a script, put restoration in
+`finally` so failures cannot leave candidate inputs selected:
+
+```powershell
+$env:LFM_ASSUMPTIONS_DIR = $priorAssumptionsDir
+$env:LFM_DATA_DIR = $priorDataDir
+.\.venv\Scripts\python.exe -m lfm check --vintage 2026
+.\.venv\Scripts\python.exe -m pytest -q tests/test_sources_energy_dept_eskom.py tests/test_sources_economy.py tests/test_sources_statssa.py tests/test_sources_natis.py tests/test_sources_naamsa.py tests/test_sources_fiasa.py tests/test_supply_review.py tests/test_freight_review.py
+```
+
+Also run new tests for any retrieval/parser changes. Return per-source outcomes,
+original and candidate paths, old/new flags and unresolved gaps. Reviewed data
+promotion must deliberately update the vintage declarations/register; today's
+candidate downloads do not alter the existing fuel baseline.
+
+## Official source leads
 
 Checked on 6 October. A publisher listing is evidence of availability, not a
 completed extraction. Keep last complete year and latest YTD separate.
