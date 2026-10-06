@@ -4,8 +4,8 @@ from pptx.enum.shapes import MSO_CONNECTOR
 from brand_configs import vopak as cfg
 
 
-SECTIONS = [('1  SCR overview', 2), ('2  Situation', 3),
-            ('3  Complication', 7), ('4  Resolution', 11)]
+SECTIONS = [('1  Overview', 2), ('2  Market baseline', 3),
+            ('3  Market changes', 7), ('4  Vopak playbook', 12)]
 
 
 def apply_navigation(prs, brand):
@@ -28,7 +28,7 @@ def apply_navigation(prs, brand):
                     p.font.name=cfg.THEME_FONT;p.font.size=Pt(14);p.font.bold=True
                     for run in p.runs:
                         run.font.name=cfg.THEME_FONT;run.font.size=Pt(14);run.font.bold=True
-        active = 0 if page==2 else 1 if page<=6 else 2 if page<=10 else 3
+        active = 0 if page==2 else 1 if page<=6 else 2 if page<=11 else 3
         for index, (label, first_page) in enumerate(SECTIONS, 1):
             q = next(s for s in slide.shapes if s.name==f'Section navigation {index}')
             q.text_frame.paragraphs[0].text=label
@@ -39,4 +39,4 @@ def apply_navigation(prs, brand):
             q.fill.solid()
             q.fill.fore_color.rgb=brand.accent_primary if index-1==active else brand.grey_fill
             q.click_action.target_slide=prs.slides[first_page-1]
-        slide.notes_slide.notes_text_frame.text+='\nClickable story chevrons: overview p2; Situation p3; Complication p7; Resolution p11.'
+        slide.notes_slide.notes_text_frame.text+='\nFinal story navigation: Overview p2; Market baseline p3; Market changes p7; Vopak playbook p12. Henry SCR naming remains in the overview.'
