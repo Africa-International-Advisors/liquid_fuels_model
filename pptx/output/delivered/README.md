@@ -11,7 +11,8 @@ This is the current named delivery; no version suffix is needed to find it.
 6. Market volumes and shared-transfer reconciliation — illustrative
 7. Four regional demand totals and competitor footprint; Vopak share and contestable volumes unknown
 8. Published storage by location: one shared scale; gross and lease-capacity bases flagged
-9. Closing
+9. Partner SA story: evidence, open gaps and closure actions
+10. Closing
 
 Earlier shipped numbered map packs are preserved under `archive/2026-10-06/`.
 Unshipped working drafts were moved to ignored `pptx/qa/week1_maps/drafts/`.
@@ -20,3 +21,5 @@ Other delivered projects, templates, source data and model runs were not reorgan
 
 Five Transnet lease-offer sites are mapped on pages 2, 5 and 6 as context only.
 Their capacities are not counted as operating supply or used as cost origins.
+
+Detailed gap review: `workstreams/WS3_reporting_delivery/partner_story_alignment_2026-10-06.md`.

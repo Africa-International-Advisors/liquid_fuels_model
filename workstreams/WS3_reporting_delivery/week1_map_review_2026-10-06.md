@@ -1,7 +1,7 @@
 # Week 1 analytical map review — 6 October 2026
 
 Nigel requested geographic demand regions, a demand heatmap, richer operator
-storage context and regional stacked share bars. The current nine-page Vopak pack keeps
+storage context and regional stacked share bars. The current ten-page Vopak pack keeps
 the supplied master, cover, closing, chevrons and exhibit/key-takeaway structure.
 
 ## Evidence and presentation status
@@ -140,3 +140,7 @@ two-decimal formatting; Kroonstad remains approximate in the source inventory.
 The prior two-panel display is superseded. The mixed capacity bases, unquantified
 sites and conditions for reactivation remain explicit. No source numbers or
 engine assumptions changed. The current nine-page PPT/PDF filenames are retained.
+
+## Partner story consolidated
+
+The current pack adds page 9 linking Situation, Complication and Resolution to existing evidence and closure actions; closing is page 10. See [the detailed partner alignment review](partner_story_alignment_2026-10-06.md) and `pptx/story/partner_story_gap_register_2026_10_06.json` for 14 open gaps with owners, planning windows, source/refresh routes, model connections and evidence required for closure. Earlier nine-page references above describe prior shipped revisions. No model inputs or calculation logic changed.

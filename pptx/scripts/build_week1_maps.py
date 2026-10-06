@@ -35,6 +35,7 @@ from storage_footprint import draw_storage_footprint, storage_notes, draw_transn
 from competitive_market_page import add_competitive_page
 from storage_capacity_page import add_storage_capacity_page
 from provincial_sales_pages import add_trend_page,add_supply_page
+from partner_story_page import add_partner_story_page
 
 ROOT = Path(__file__).resolve().parents[1]
 # Reuse validated cost-map pages when only reporting evidence/layout changes.
@@ -279,9 +280,9 @@ class Map:
 
 prs = Presentation(REUSE or ROOT/cfg.SOURCE_TEMPLATE)
 if REUSE:
-    assert len(prs.slides) in (5,6,7,9), 'Reuse requires a prior Week 1 pack'
+    assert len(prs.slides) in (5,6,7,9,10), 'Reuse requires a prior Week 1 pack'
     # Remove only the infrastructure/evidence pages; preserve expensive cost exhibits.
-    positions={5:[1],6:[1,4],7:[1,4,5],9:[1,2,3,6,7]}[len(prs.slides)]
+    positions={5:[1],6:[1,4],7:[1,4,5],9:[1,2,3,6,7],10:[1,2,3,6,7,8]}[len(prs.slides)]
     for i in reversed(positions):
         sid=prs.slides._sldIdLst[i]
         prs.part.drop_rel(sid.rId)
@@ -440,12 +441,13 @@ if not REUSE:
 
 add_competitive_page(slide,exhibit_layout,Map,text,table,ROOT,brand,regional)
 add_storage_capacity_page(slide,exhibit_layout,text,ROOT,brand)
+add_partner_story_page(slide,exhibit_layout,text,ROOT,brand)
 if not REUSE:
     bookend(reference.slides[-1],closing=True)
 else:
     ids=list(prs.slides._sldIdLst)
     for sid in ids: prs.slides._sldIdLst.remove(sid)
-    for i in [0,4,5,6,1,2,7,8,3]: prs.slides._sldIdLst.append(ids[i])
+    for i in [0,4,5,6,1,2,7,8,9,3]: prs.slides._sldIdLst.append(ids[i])
 # Refresh context on retained cost maps without recomputing their illustrative surfaces.
 for s in [prs.slides[4],prs.slides[5]]:
     for q in list(s.shapes):
@@ -455,7 +457,7 @@ for s in [prs.slides[4],prs.slides[5]]:
     draw_transnet_leases(m,text,line,marker,ROOT,brand,box=(.65,4.13))
     lease_note='\nTransnet lease offers are context only, not cost-model origins or available supply.\n'
     s.notes_slide.notes_text_frame.text=s.notes_slide.notes_text_frame.text.split(lease_note)[0]+lease_note+storage_notes(ROOT)
-assert len(prs.slides)==9
+assert len(prs.slides)==10
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:
         assert q.left>=0 and q.top>=0 and q.left+q.width<=prs.slide_width+10 and q.top+q.height<=prs.slide_height+10,(index,q.name)
@@ -465,7 +467,7 @@ prs.core_properties.subject='Illustrative demand geography and conditional Vopak
 prs.save(PATH)
 qa=ROOT/'qa/week1_maps';qa.mkdir(parents=True,exist_ok=True)
 (qa/'build_manifest.json').write_text(json.dumps({
- 'output':str(PATH),'slides':9,'template':str(cfg.SOURCE_TEMPLATE),
+ 'output':str(PATH),'slides':len(prs.slides),'template':str(cfg.SOURCE_TEMPLATE),
  'template_sha256':hashlib.sha256((ROOT/cfg.SOURCE_TEMPLATE).read_bytes()).hexdigest(),
  'projection':CRS_MAP.to_proj4(),'volumes':'Illustrative only',
  'boundary_source':'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson',
