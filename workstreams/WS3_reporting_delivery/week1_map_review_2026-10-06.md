@@ -126,3 +126,17 @@ Manish: fill unique matched-year Vopak customer deliveries and accessible candid
 volumes after checking destinations, double-counted transfers, costs, product
 compatibility and contracts. Do not equate provincial geography with a terminal
 catchment. Obtain later complete demand observations before reporting a current share.
+
+## Storage chart readability correction
+
+Nigel found the enlarged lease inset and smaller lower-panel fonts confusing.
+Page 8 now shows all eight quantified locations on one 0-850 thousand m3 linear
+scale. All location and value labels use 12pt; ticks and legend use 11pt. Every
+operator segment retains its true proportional width, including the small lease
+tanks. No scale break or minimum artificial bar width is used. Transnet lease
+segments have an outline and a separate legend category. Values use consistent
+two-decimal formatting; Kroonstad remains approximate in the source inventory.
+
+The prior two-panel display is superseded. The mixed capacity bases, unquantified
+sites and conditions for reactivation remain explicit. No source numbers or
+engine assumptions changed. The current nine-page PPT/PDF filenames are retained.

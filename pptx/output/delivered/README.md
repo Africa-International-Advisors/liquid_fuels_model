@@ -10,7 +10,7 @@ This is the current named delivery; no version suffix is needed to find it.
 5. Conditional delivered-cost accessibility — illustrative
 6. Market volumes and shared-transfer reconciliation — illustrative
 7. Four regional demand totals and competitor footprint; Vopak share and contestable volumes unknown
-8. Published gross storage capacity by location — partial inventory
+8. Published storage by location: one shared scale; gross and lease-capacity bases flagged
 9. Closing
 
 Earlier shipped numbered map packs are preserved under `archive/2026-10-06/`.
