@@ -345,12 +345,16 @@ Revisit when Nigel finishes the feedback round and requests action. This entry
 changes no deck, model input or analytical conclusion.
 
 
-### SCN-01: low / medium / high demand and supply world view
+### SCN-01: low / medium / high cases for all key levers and assumptions
 
-Nigel requested an explicit framework for the baseline, ample-supply and
-tight-supply worlds. Status: design feedback logged; no deck or model changes.
+Nigel requested L/M/H cases for every key lever and assumption, across demand,
+supply, customer access, cost, service and capacity. These combine into coherent
+baseline, ample-supply and tight-supply worlds. Imports are one resulting output.
+Status: tracked work package; tasks below are open. No deck or model changes.
 
-- Construct a 3 x 3 matrix of low, medium and high demand against low, medium
+- Use a 3 x 3 demand/supply matrix as a summary of the market worlds, supported
+  by L/M/H settings for all underlying key levers and assumptions. It does not
+  replace those settings. Construct low, medium and high demand against low, medium
   and high domestic supply. Medium demand / medium supply is the working
   reference case, subject to agreed assumptions; it is not yet a calibrated forecast.
 - Demand cases need sourced historical petrol/diesel demand, explicit growth
@@ -375,3 +379,24 @@ Proposed owners: Nigel agrees the market worlds and narrative; Manish sources
 and reconciles the assumptions and tests the balance; Henry reviews plant cases.
 Revisit after the feedback round, once demand/output evidence and the assumption
 ranges are agreed. Keep assumptions in vintaged registered YAML/CSV when built.
+
+
+#### SCN-01 tracked task list
+
+All tasks are open. Owners below are proposed; no completion dates are committed.
+Use these IDs in handbacks and record evidence links when a task closes.
+
+| ID | Task / completion criterion | Proposed lead / review | Depends on | Status |
+|---|---|---|---|---|
+| SCN-01.1 | Inventory every key lever and assumption; map each to its consuming equation, source, unit, product, geography, period and owner. Cover demand, supply, trade/stocks, customer access, cost, service and capacity. Record missing evidence and replacement triggers. | Manish / Nigel | Current source audit | Open |
+| SCN-01.2 | Define sourced or explicitly proposed L/M/H settings for every key input, with rationale, uncertainty, timing and provenance. Include growth, activity, freight mode, power diesel use, fleet mix/efficiency, mileage and price response. Use discrete states where numeric ranges would be misleading. | Manish / Nigel | SCN-01.1 | Open |
+| SCN-01.3 | Specify plant-level supply alternatives: product yields, output, availability, downtime and restart/redevelopment timing. Specify exports, import availability and stock policy; reconcile calendar years and ownership bases. | Manish / Henry | SCN-01.1 | Open |
+| SCN-01.4 | Specify customer/route alternatives: delivered cost, service, rights/switching, compatible tanks, receipt/dispatch capacity, inventory days and usable spare space. Quantify unique final deliveries; remove shared transfers. | Nigel / Manish, Henry | SCN-01.1 | Open |
+| SCN-01.5 | Assemble coherent baseline, ample-supply and tight-supply worlds from the input settings. Document linked assumptions, incompatible combinations and what must be true. Confirm the medium reference case; do not set every lever to the same letter automatically. | Nigel / Manish, Henry | SCN-01.2-4 | Open |
+| SCN-01.6 | Implement accepted settings in registered vintaged YAML/CSV and existing model modules. Produce annual product/region demand, domestic output, trade requirements, stock changes, accessible customer flows, Vopak throughput and usable-capacity implications. Keep unresolved residuals explicit. | Manish / Nigel | SCN-01.5 and accepted inputs | Open |
+| SCN-01.7 | Test accounting identities, stock signs, units, input dependencies and double counting. Back-test demand methods against simple benchmarks; compare sensitivity by lever and report uncertainty. Run governance and relevant tests; record limitations and peer-review status. | Manish / Nigel, Henry | SCN-01.6 | Open |
+| SCN-01.8 | Update the canonical Convergence overview, market changes and Vopak outlook with consistent world definitions and outputs. Explain where/how/when Vopak can act, what changes the decision and which Henry storyline claims hold in each world. Verify every summary against its supporting page and source. | Nigel / Manish, Henry | SCN-01.7 | Open |
+
+Acceptance: an auditable assumption-to-equation-to-result-to-decision chain for
+all key levers, with L/M/H definitions, coherent worlds, tested outputs and linked
+exhibits. A high import requirement alone is not a customer-volume or investment case.

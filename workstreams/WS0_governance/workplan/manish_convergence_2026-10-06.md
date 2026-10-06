@@ -118,3 +118,6 @@ list. Nigel will review the combined result before model integration.
 The current draft passed PowerPoint package/off-canvas checks and was exported
 and visually reviewed. The branch review recorded 159 passing tests and 52
 open governance exceptions; those checks do not establish input approval.
+
+
+Scenario work package: [SCN-01 task list](feedback_focus_2026-10-06.md#scn-01-tracked-task-list) tracks L/M/H settings for all key levers and assumptions, coherent market worlds, model validation and the canonical story update. Tasks are open; owners are proposed.
