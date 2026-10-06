@@ -59,51 +59,42 @@ def penetration_flow(s, root, brand, map_slide):
         if q.name == 'Title 1': replace(q, 'R6. Reach and commercial access narrow the illustrative customer opportunity')
     text(s,'Illustrative reach and volume bridge | bn litres/year; customer capture unverified',.5,1.78,11.65,.35,14,True)
     line(s,(.5,2.13),(12.15,2.13),brand.ink,.55)
-    text(s,'Durban and Lesedi: illustrative road reach',.5,2.43,4.65,.35,12,True)
-    # Reuse the editable geographic exhibit; no new catchment or cost calculation.
-    scale=4.55/7.05
-    ns='{http://schemas.openxmlformats.org/officeDocument/2006/relationships}'
-    for q in map_slide.shapes:
-        if not (Inches(.5)<=q.left<Inches(7.55) and Inches(2.38)<=q.top<Inches(6.70)):
-            continue
-        if q.name.startswith('Transnet lease overlay:') or (q.has_text_frame and 'Lease offers' in q.text):continue
-        el=deepcopy(q._element)
-        for node in el.iter():
-            for attr,value in list(node.attrib.items()):
-                if attr.startswith(ns):
-                    rel=map_slide.part.rels[value]
-                    node.set(attr,s.part.relate_to(rel.target_ref if rel.is_external else rel.target_part,rel.reltype,is_external=rel.is_external))
-        s.shapes._spTree.insert_element_before(el,'p:extLst')
-        dest=s.shapes[-1]
-        dest.left=int(Inches(.5)+(q.left-Inches(.5))*scale)
-        dest.top=int(Inches(3.03)+(q.top-Inches(2.38))*scale)
-        dest.width=int(q.width*scale);dest.height=int(q.height*scale)
-        if dest.has_text_frame:
-            for p in dest.text_frame.paragraphs:
-                for font in [p.font]+[r.font for r in p.runs]:
-                    if font.size:font.size=Pt(max(7,font.size.pt*scale))
-    text(s,'Darker shading = lower example road cost. Physical and commercial access remain unverified.',.5,6.04,4.6,.48,10)
+    text(s,'Selected market and illustrated road reach',.5,2.43,4.65,.35,12,True)
+    from reach_waterfall_map import draw_reach_map
+    draw_reach_map(s,map_slide,root,brand,text)
     import csv
     rows=list(csv.DictReader((root/'story/illustrative_market_catchments.csv').open(encoding='utf-8-sig')))
     assessed=[r for r in rows if r['commercial_envelope_bn_l']]
     total,reachable,envelope,current=[sum(float(r[k]) for r in assessed) for k in ['demand_bn_l','feasible_service_bn_l','commercial_envelope_bn_l','current_unique_vopak_bn_l']]
     candidate=envelope-current
-    stages=[('Illustrative\nmarket',total,0,total),('Outside\nfeasible reach',total-reachable,reachable,total),('Fails price /\nservice / access',reachable-envelope,envelope,reachable),('Assumed\nalready served',current,candidate,envelope),('Additional\nopportunity to test',candidate,0,candidate)]
+    stages=[('Illustrative\nmarket',total,0,total),('Outside\nillustrated reach',total-reachable,reachable,total),('Fails price /\nservice / access',reachable-envelope,envelope,reachable),('Assumed\nalready served',current,candidate,envelope),('Additional\nopportunity to test',candidate,0,candidate)]
     text(s,'Illustrative volume waterfall',5.30,2.43,6.85,.35,12,True)
-    x0,ybottom,height,width=5.55,5.76,2.52,.68
+    x0,ybottom,height,width=5.55,5.76,2.30,.68
     for i,(label,value,bottom,top) in enumerate(stages):
         x=x0+i*1.31; yy=ybottom-height*top/total; hh=height*value/total
-        colour=brand.accent_primary if i==4 else (brand.accent_secondary if i==0 else brand.grey_fill)
+        colour=brand.accent_primary if i==4 else (brand.accent_secondary if i==0 else (brand.grey_fill if i==1 else RGBColor.from_string(cfg.THEME_COLOURS['accent4'])))
         bar(s,x,yy,width,hh,colour,f'Illustrative waterfall {label}: {value} bn L/year')
         text(s,('−' if i in (1,2,3) else '')+f'{value:.1f}',x-.13,yy-.35,.95,.28,12)
         text(s,label,x-.22,5.96,1.25,.56,9)
         if i<4:
             level=[total,reachable,envelope,candidate][i]
             line(s,(x+width,ybottom-height*level/total),(x+1.31,ybottom-height*level/total),brand.ink,.6)
-    text(s,f'All volumes illustrative. Assumed already served is not verified throughput; the {candidate:.1f} bn L/year remainder is an opportunity to test.',.5,6.63,11.65,.35,11)
+    # The first deduction is spatial; later deductions are customer screens.
+    line(s,(5.02,4.30),(5.20,4.30),brand.accent_secondary,.8)
+    line(s,(5.20,4.30),(5.20,3.06),brand.accent_secondary,.8)
+    line(s,(5.20,3.06),(7.20,3.06),brand.accent_secondary,.8)
+    line(s,(7.20,3.06),(7.20,3.43),brand.accent_secondary,.8)
+    line(s,(7.20,3.43),(7.15,3.34),brand.accent_secondary,.8)
+    line(s,(7.20,3.43),(7.25,3.34),brand.accent_secondary,.8)
+    text(s,'Reach screen',5.34,2.82,1.55,.22,10,color=brand.accent_secondary)
+    text(s,'Customer screens: price, service, access and volumes already served.',7.62,6.53,4.45,.42,9)
+    text(s,f'All volumes illustrative. Already served is assumed; {candidate:.1f} bn L/year remains an opportunity to test.',5.30,6.80,6.85,.18,8.5)
+    for q in s.shapes:
+        if q.has_text_frame and q.text.startswith('Source:'):
+            replace(q,'Source: Authored catchment CSV; existing schematic road surface; declared reporting regions. Reach and customer volumes unverified.')
     # Keep authored volume examples in notes, rather than presenting them as measured penetration.
     s.notes_slide.notes_text_frame.text += '\nVIS-04: unquantified market-penetration flow. Earlier authored milestones remain illustrations, not measured current or captured volumes. L/M/H cost, reach, service, rights and capacity settings feed the SCN-01 task list.'
-    s.notes_slide.notes_text_frame.text+='\nWaterfall uses only existing authored Eastern coastal/inland catchment values. Commercial-screen loss combines commercial constraints; it is not a measured price elasticity or separate rights effect. Current example is not verified Vopak share. All withdrawals/screens are illustrative, not observed lost customers. The inset is the existing page-10 road-cost illustration, with schematic routes and no verified catchment.'
+    s.notes_slide.notes_text_frame.text+='\nWaterfall uses only existing authored Eastern coastal/inland catchment values. Commercial-screen loss combines commercial constraints; it is not a measured price elasticity or separate rights effect. Current example is not verified Vopak share. All withdrawals/screens are illustrative, not observed lost customers. The inset collapses the existing road-cost surface into illustrated road connection within selected eastern/inland reporting regions. It does not quantify the reach deduction; customer screens cannot be located on this map.'
 
 
 def scenario_framework(s, root, brand):

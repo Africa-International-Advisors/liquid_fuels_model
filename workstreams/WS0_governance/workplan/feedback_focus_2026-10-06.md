@@ -604,3 +604,20 @@ against each acceptance test is recorded in convergence_workplan_review_2026-10-
 All dates, client slots and final acceptance remain unconfirmed; no meetings scheduled.
 Main story ends p19; appendix starts p20. Every analysis/roadmap page is linked
 from its overview row; Henry trace tables retain their slide targets after reordering.
+
+
+## Map and waterfall share a reach language
+
+Approved page 15 redesign: selected Eastern coastal/Inland reporting regions are
+outlined; the existing schematic road-connection cells collapse to one blue layer,
+with grey outside illustrated reach. A Reach screen connector links the map to
+the first waterfall deduction. Price/service/access and assumed already served
+remain distinct customer screens, not mapped geographies. Detailed road-cost
+bands remain on page 11.
+
+No new cost cutoff, operational catchment or volume calibration is claimed.
+The 14.5 starting market, 2.5 reach deduction and 5.5 opportunity endpoint retain
+the existing authored CSV values; coloured area does not determine these litres.
+The selected province outline is a reporting-market definition, not verified
+terminal reach. Replace the illustration when customer destinations, delivered
+cost/service tests and commercial rights become available (Manish; Nigel review).
