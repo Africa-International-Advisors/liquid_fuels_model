@@ -65,6 +65,8 @@ def populate_review_exhibits(prs,text,root,brand):
     corridor_page(prs.slides[9],text,root,brand)
     market_page(prs.slides[10],text,root,brand)
     volume_page(prs.slides[12],text,root,brand)
+    from storage_sensitivity_page import add_storage_sensitivity_page
+    add_storage_sensitivity_page(prs.slides[14],text,root,brand)
 
 
 def national_page(s,text,root,brand):

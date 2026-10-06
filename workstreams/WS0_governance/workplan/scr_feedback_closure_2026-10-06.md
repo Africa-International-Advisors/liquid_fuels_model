@@ -24,3 +24,5 @@ Additional p10 review: separate legends for sales colour bands (bn litres/year),
 Additional design feedback: p3 map labels use transparent backgrounds and shading-aware contrast; two-panel pages have a native circle/right-arrow divider marker at the subtitle junction; p5 chart is taller with source/accounting notes in two columns; p17 is an editable palette appendix with actual theme/map HEX values. Original SCR page numbering retained.
 
 Divider follow-up: create missing vertical divider and subtitle rules on two-panel pages, including p15. Every evidence-panel page checked for circle/right-arrow marker; p15 visually rendered.
+
+Preliminary p15 exhibit: working-inventory sensitivity for the existing illustrative additional 5.5 bn L/year at authored 7/14/21/28 inventory days. Vintaged reporting CSV records owner/status/expiry. Uniform flow and 365-day conversion; excludes spare capacity, peaks and operating allowances. Required working stock is not new gross capacity or an investment recommendation.

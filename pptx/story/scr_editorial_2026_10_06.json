@@ -14,7 +14,7 @@
     "12": "Compare regional demand with Vopak’s published storage footprint",
     "13": "The illustrative additional opportunity is 5.5 billion litres a year",
     "14": "Durban leads the published storage subset",
-    "15": "Assess new storage only after the incremental flow case"
+    "15": "Translate additional fuel flows into a preliminary inventory requirement"
   },
   "panels": {
     "3": {
@@ -122,19 +122,19 @@
     "15": {
       "findings": [
         [
-          "Flows set the service requirement",
-          "Incremental customer flows determine receipt, dispatch and inventory needs. A national import gap alone does not size new storage."
+          "Inventory days set working stock",
+          "At the illustrative 5.5 bn litres/year, 14 days needs about 211 thousand m³. More inventory days require more stock."
         ],
         [
-          "Published tanks are a starting point",
-          "The inventory has mixed capacity bases and incomplete coverage. Usable petrol/diesel space and operating availability need confirmation."
+          "Existing tanks may cover part",
+          "Usable spare tanks may absorb this inventory. Published gross capacity does not establish spare petrol/diesel space."
         ],
         [
-          "Investment follows the market case",
-          "Storage sizing and returns remain optional until customer access and incremental flows are evidenced. No investment conclusion is established."
+          "Sizing needs an operating case",
+          "Test peak receipts, product segregation, tank heels and dispatch limits. This is a sensitivity, not an investment recommendation."
         ]
       ],
-      "action": "Nigel: decide whether to prioritise investment after the flow case. Manish and Henry: assess inventory days, turnover, usable tanks and dispatch limits."
+      "action": "Nigel: confirm candidate flows and inventory policy. Manish and Henry: test usable spare tanks, peak flows and operating allowances before sizing new capacity."
     }
   },
   "overview_rows": [
