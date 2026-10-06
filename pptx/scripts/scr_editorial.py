@@ -56,7 +56,7 @@ def apply_editorial(prs, text, root, brand):
             replace(q, 'Provincial totals, not density')
         elif q.text.startswith('Lease offers are not operating capacity.'):
             replace(q, 'LAEA/WGS84. Sites approximate. Lease tanks are conditional. *Magdala location needs verification. Jet excluded.')
-    for page in (9, 11):
+    for page in (9,):
         s = prs.slides[page-1]
         for q in list(s.shapes):
             if q.has_text_frame and q.text.startswith('Diamonds: Vopak'):

@@ -63,6 +63,7 @@ def populate_review_exhibits(prs,text,root,brand):
     national_page(prs.slides[4],text,root,brand)
     capacity_page(prs.slides[7],text,root,brand)
     corridor_page(prs.slides[9],text,root,brand)
+    market_page(prs.slides[10],text,root,brand)
     volume_page(prs.slides[12],text,root,brand)
 
 
@@ -88,7 +89,7 @@ def national_page(s,text,root,brand):
                    ('Imports',[lookup[2024,p,'import'] for p in products]),
                    ('Exports',[lookup[2024,p,'export'] for p in products])]
     chart=add_themed_chart(s,XL_CHART_TYPE.BAR_CLUSTERED,
-                          Inches(.5),Inches(2.81),Inches(7.05),Inches(1.88),
+                          Inches(.5),Inches(3.21),Inches(7.05),Inches(1.44),
                           [p.title() for p in products],series_values,
                           show_legend=False,value_axis_format='0',axis_font_size=11,brand=brand)
     chart.value_axis.minimum_scale=0;chart.value_axis.maximum_scale=14;chart.value_axis.major_unit=2
@@ -101,17 +102,19 @@ def national_page(s,text,root,brand):
     for i,(series,color) in enumerate(zip(chart.series,[brand.accent_primary,brand.accent_secondary,brand.grey_fill])):
         series.format.fill.solid();series.format.fill.fore_color.rgb=color;series.format.line.fill.background()
         x=.5+i*2.35
-        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(2.43),Inches(.12),Inches(.12))
+        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(3.03),Inches(.12),Inches(.12))
         q.fill.solid();q.fill.fore_color.rgb=color;q.line.fill.background()
-        text(s,series.name,x+.20,2.37,2.1,.28,11)
+        text(s,series.name,x+.20,2.97,2.1,.28,11)
+    text(s,'Production + imports − exports − stock build = consumption',.5,2.35,7.05,.29,12,True,brand.accent_primary)
+    text(s,'Compare consumption with reported sales; explain coverage and the residual.',.5,2.68,7.05,.23,10.5)
     text(s,f'Net imports: petrol {rows[1][-1]}, diesel {rows[2][-1]}; combined {total_imports-total_exports:.3f} bn litres.',
          .5,4.78,7.05,.28,11,True,brand.accent_primary)
     text(s,'Source flag | 2024 diesel imports',.5,5.17,7.05,.34,14,True,brand.accent_primary)
     staged=float(next(r['value'] for r in old if r['period']=='2024' and r['product']=='diesel' and r['flow']=='import'))/1e9
     text(s,f'FIASA staged: {staged:.3f}  |  Government report: 10.800\nDifference: {10.8-staged:+.3f} bn L. Preserve both; investigate scope and vintage.',.5,5.56,7.05,.54,11.5)
-    text(s,'Domestic production remains a dated observation',.5,6.18,7.05,.34,14,True,brand.accent_primary)
-    production={r['product']:float(r['value'])/1e9 for r in read(base/'energy_balance_department.csv') if r['period']=='2021' and r['flow_key']=='production'}
-    text(s,f'Latest staged balance: 2021 petrol {production["petrol"]:.2f}; diesel {production["diesel"]:.2f} bn L.\nDo not combine 2021 output with 2024 sales/trade to close a balance.',.5,6.55,7.05,.48,11.5)
+    text(s,'2024 accounting remains open',.5,6.18,7.05,.30,14,True,brand.accent_primary)
+    residual=sum(demand[p] for p in products)-(total_imports-total_exports)
+    text(s,f'Sales less net imports = {residual:.3f} bn L. This is a balancing requirement,\nnot measured production. 2024 production, stocks and coverage residual are unresolved.',.5,6.55,7.05,.48,11.5)
     panel(s,text,brand,[('Public figures are collectable','2024 petrol/diesel imports total 14.8 bn L in the government report. Exports total 1.71 bn L; these are rounded reported figures.'),
         ('The sources disagree','FIASA reports 14.793 bn L of diesel imports for 2024 versus 10.8 bn L in the government report. Neither value has been silently replaced.'),
         ('Port cargo has wider coverage','TNPA publishes liquid-bulk cargo by port, but it includes crude and other liquids. It does not establish petrol/diesel import allocation.')],
@@ -158,7 +161,7 @@ def corridor_page(s,text,root,brand):
     config=json.loads((root/'story/corridor_comparison_2026_10_06.json').read_text())
     frame(s,'Locate alternative gateways to the same inland customers',
           'Durban, Matola and Walvis Bay | schematic corridor comparison',
-          'WBCG Trans-Kalahari; TRAC N4/Maputo corridor; kickoff NMPP schematic; Natural Earth 1:50m. Locations approximate.',text,brand)
+          'DMPR 2022 sales; NAMCOR NOSF; Galp GIMTL; WBCG / TRAC corridors; Natural Earth. Capacities and URLs in notes.',text,brand)
     project=Transformer.from_crs('EPSG:4326',CRS.from_proj4(config['projection']),always_xy=True)
     ext=config['extent'];bounds=[project.transform(lon,lat) for lon in (ext[0],ext[2]) for lat in (ext[1],ext[3])]
     xmin=min(p[0] for p in bounds);xmax=max(p[0] for p in bounds);ymin=min(p[1] for p in bounds);ymax=max(p[1] for p in bounds)
@@ -176,6 +179,26 @@ def corridor_page(s,text,root,brand):
             coords=[(int(Inches(a)),int(Inches(b))) for a,b in [xy(lon,lat) for lon,lat,*_ in polygon.exterior.coords]]
             fb=s.shapes.build_freeform(*coords[0]);fb.add_line_segments(coords[1:],close=True);q=fb.convert_to_shape()
             q.fill.solid();q.fill.fore_color.rgb=brand.grey_fill;q.line.color.rgb=brand.white;q.line.width=Pt(.7)
+    from provincial_demand_map import sales, NAMES, COLOURS, CLASSES
+    from pptx.dml.color import RGBColor
+    observations,_,_=sales(root)
+    for feature in json.loads((root/'assets/maps/geoboundaries_zaf_adm1_simplified.geojson').read_text())['features']:
+        code=NAMES[feature['properties']['shapeName']]
+        geo=shape(feature['geometry'])
+        for polygon in list(geo.geoms) if geo.geom_type=='MultiPolygon' else [geo]:
+            coords=[(int(Inches(a)),int(Inches(b))) for a,b in [xy(lon,lat) for lon,lat,*_ in polygon.exterior.coords]]
+            fb=s.shapes.build_freeform(*coords[0]);fb.add_line_segments(coords[1:],close=True);q=fb.convert_to_shape()
+            q.fill.solid();q.fill.fore_color.rgb=RGBColor.from_string(COLOURS[sum(observations[code]>=limit for limit in CLASSES)])
+            q.line.color.rgb=brand.white;q.line.width=Pt(.4)
+    # Names and verified capacity annotations; circles encode neither share nor throughput.
+    capacity=json.loads((root/'story/gateway_storage_2026_10_06.json').read_text())
+    for r in capacity['sites']:
+        lon,lat=config['points'][r['gateway']];x,y=xy(lon,lat)
+        if r['gateway']=='Walvis Bay':px,py=x-1.42,y+.42
+        else:px,py=x+.10,y+.28
+        q=text(s,f"{r['operator']}\n{r['petrol_diesel_m3']/1000:.0f}k m³ petrol/diesel",px,py,1.72,.43,9,True,brand.accent_primary)
+        q.fill.solid();q.fill.fore_color.rgb=brand.white
+    text(s,'SA colour: 2022 sales totals. Grey: demand unassessed.',.5,2.23,7.05,.18,9,True,brand.accent_primary)
     for label,lon,lat in [('NAMIBIA',17.0,-19.7),('BOTSWANA',23.6,-20.0),('SOUTH AFRICA',24.2,-30.0),('MOZAMBIQUE',32.4,-20.0)]:
         x,y=xy(lon,lat);text(s,label,x-.4,y,1.45,.25,9,True)
     colors={'vopak':brand.accent_primary,'pipe':brand.accent_primary,'east':brand.ink,'west':brand.accent_secondary if hasattr(brand,'accent_secondary') else brand.ink}
@@ -203,12 +226,12 @@ def corridor_page(s,text,root,brand):
         line(s,(x,y+.10),(x+.38,y+.10),colors[style],1.6,
              MSO_LINE_DASH_STYLE.DASH if style in ('west','pipe') else None)
         text(s,label,x+.48,y,3.0,.23,10.5)
-    text(s,'LAEA/WGS84. Squares: alternative gateways. Diamonds: Vopak. Points/routes approximate; access unverified.',.5,6.99,7.05,.14,7.5)
+    text(s,'LAEA/WGS84. SA: DMPR sales; storage: NAMCOR / Galp (6 Oct 2026). Squares: ports/storage; diamonds: Vopak. Access unverified.',.5,6.99,7.05,.14,7.5)
     panel(s,text,brand,[('Compare the same inland destination','Gauteng is the common comparison market. Lesedi is a Vopak facility, not a destination every competing route must pass through.'),
         ('Matola approaches from the east','N4/Maputo connects Mozambique to Gauteng via Komatipoort and Mpumalanga. Fuel-compatible terminal access and road/rail service need testing.'),
         ('Walvis is an inland comparator','Trans-Kalahari links Walvis Bay via Namibia and Botswana to Gauteng. Its competitiveness for specific inland customers is unassessed.')],
         'Nigel: select the customer destination. Manish: compare handling, transport, border/FX costs and access on the same R/litre basis; keep unevidenced routes unassessed.')
-    s.notes_slide.notes_text_frame.text+='\n'+json.dumps(config,indent=2)
+    s.notes_slide.notes_text_frame.text+='\n'+json.dumps(config,indent=2)+'\n'+json.dumps(capacity,indent=2)
 
 
 def volume_page(s,text,root,brand):
@@ -220,21 +243,44 @@ def volume_page(s,text,root,brand):
           'Accessibility gates and volume milestones | illustrative bn L/year',
           'Existing illustrative catchment CSV; conditions authored for review. No actual Vopak share, cost threshold or forecast capture established.',text,brand)
     text(s,'ILLUSTRATIVE | each increment requires evidence; not cumulative terminal receipts',.5,2.38,7.05,.30,11,True,brand.accent_primary)
-    targets=[('Current example',current),('+ coastal candidate',current+coastal),('+ inland candidate',current+coastal+inland)]
-    for i,(label,value) in enumerate(targets):
-        y=2.97+i*.61;text(s,label,.5,y,2.02,.29,12,True)
-        w=4.2*value/(current+coastal+inland)
-        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(2.60),Inches(y+.04),Inches(w),Inches(.27));q.fill.solid();q.fill.fore_color.rgb=brand.accent_primary;q.line.fill.background()
-        text(s,f'{value:.1f}',2.6+w+.07,y, .6,.29,12,True)
-    text(s,'What must be true for the additional volume?',.5,4.91,7.05,.33,14,True,brand.accent_primary)
-    table(s,[['Gate','Coastal +1.5','Inland +4.0'],
-        ['Delivered cost','≤ agreed customer threshold','Competitive full route R/litre'],
-        ['Physical access','Compatible receipt / dispatch','NMPP or alternative route capacity'],
-        ['Commercial rights','Customer access / switching','Destination / contract access'],
-        ['Volume accounting','Unique final deliveries','Remove shared Durban–Lesedi transfers']],
-        .5,5.37,[1.6,2.55,2.9],1.48,brand,10.5)
+    text(s,f'{coastal+inland:.1f} bn L/year additional candidate',.5,2.98,7.05,.50,22,True,brand.accent_primary)
+    text(s,f'{current:.1f} current example + {coastal+inland:.1f} additional = {current+coastal+inland:.1f} total envelope',.5,3.56,7.05,.31,12)
+    total=current+coastal+inland
+    x=.5
+    for label,value,color in [('Current',current,brand.accent_primary),('Coastal +',coastal,brand.accent_secondary),('Inland +',inland,brand.grey_fill)]:
+        w=7.05*value/total
+        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(4.17),Inches(w),Inches(.65))
+        q.fill.solid();q.fill.fore_color.rgb=color;q.line.fill.background()
+        text(s,f'{label} {value:.1f}',x+.07,4.34,w-.14,.30,12,True,brand.white if label=='Current' else brand.ink)
+        x+=w
+    text(s,'What must hold before any additional litres are counted?',.5,5.25,7.05,.33,14,True,brand.accent_primary)
+    table(s,[['Competitive cost','Usable capacity','Customer access','Unique deliveries']],.5,5.85,[1.76,1.76,1.76,1.77],.63,brand,11)
+    text(s,'Detailed customer-by-route gates belong in the evidence register.\nIllustration only; 5.5 is neither a forecast nor a confirmed capturable market.',.5,6.60,7.05,.40,11)
     panel(s,text,brand,[('Reach is necessary, not sufficient','Accessibility map p9 and competing routes p10 locate candidate access. Neither currently links a verified cost threshold to customer litres.'),
         ('Example milestones are conditional',f'The current example is {current:.1f}. Coastal candidate {coastal:.1f} raises it to {current+coastal:.1f}; inland candidate {inland:.1f} raises it to {current+coastal+inland:.1f}. These are authored volumes.'),
         ('Every increment needs four gates','Evidence cost, route/tank capacity, customer rights and unique deliveries for the same product and period. Unassessed litres remain explicit.')],
         'Nigel: agree destinations and acceptable delivered cost. Manish: build a customer-by-route gate table; record passed, failed and unassessed litres, with sources and conditions.')
     s.notes_slide.notes_text_frame.text+='\nVolume milestones derive only from the existing illustrative catchment CSV. Gates specify required evidence, not calculated allocation. No threshold assigned and no new model volume invented.'
+
+
+def market_page(s,text,root,brand):
+    rows=read(root/'story/illustrative_market_catchments.csv')
+    selected=[r for r in rows if r['commercial_envelope_bn_l']]
+    totals={key:sum(float(r[key]) for r in selected) for key in ('demand_bn_l','feasible_service_bn_l','commercial_envelope_bn_l','current_unique_vopak_bn_l')}
+    frame(s,'Separate demand, accessible volume and unique deliveries',
+          'Market screens | illustrative bn litres/year',
+          'Existing illustrative market catchment and transfer examples. Not reported sales or actual Vopak flows.',text,brand)
+    text(s,'Successive screens; these volumes are illustrative',.5,2.37,7.05,.28,11,True,brand.accent_primary)
+    labels=[('Catchment demand','demand_bn_l'),('Physically feasible','feasible_service_bn_l'),('Commercial envelope','commercial_envelope_bn_l'),('Current unique deliveries','current_unique_vopak_bn_l')]
+    for i,(label,key) in enumerate(labels):
+        y=2.95+i*.63;v=totals[key]
+        text(s,label,.5,y,2.25,.32,12,True)
+        w=4.05*v/totals['demand_bn_l']
+        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(2.85),Inches(y+.05),Inches(w),Inches(.30))
+        q.fill.solid();q.fill.fore_color.rgb=brand.accent_primary if i==3 else brand.accent_secondary;q.line.fill.background()
+        text(s,f'{v:.1f}',2.85+w+.06,y,.6,.30,12,True)
+    text(s,'Count Durban–Lesedi transfers once',.5,5.70,7.05,.33,14,True,brand.accent_primary)
+    # Existing receipt example is retained, not introduced as an observed input.
+    text(s,'Durban 2.8 + Lesedi 2.0 − shared transfer 1.8 = unique 3.0',.5,6.16,7.05,.35,12,True)
+    text(s,'Demand ≠ terminal receipts ≠ storage capacity. Incremental opportunity is on page 13.',.5,6.70,7.05,.28,10.5)
+    s.notes_slide.notes_text_frame.text+='\nSuccessive volumes summed from illustrative_market_catchments.csv for assessed Eastern coastal / Inland rows only. Transfer arithmetic retained from existing pack; replace with matched customer records.'

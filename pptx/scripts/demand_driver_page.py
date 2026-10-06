@@ -31,62 +31,63 @@ def add_driver_page(s,text,root,brand):
             and 2021<=int(r['period'][:4])<=2025}
     cars=december_stock('cars');minibuses=december_stock('minibuses')
     trucks=december_stock('trucks');lcv=december_stock('light_commercial')
-    datasets=[('Passenger stock | all fuels; Dec',[('Cars',cars),('Minibuses',minibuses)]),
-              ('Freight stock | all fuels; Dec',[('Trucks',trucks),('Light commercial',lcv)]),
+    prices=read(base/'fuel_prices_department.csv')
+    price_series=[]
+    for key,label in [('petrol_95_inland_retail','Petrol retail'),('diesel_005_inland_wholesale','Diesel wholesale')]:
+        groups={}
+        for r in prices:
+            year=int(r['period'][:4])
+            if r['series']==key and 2019<=year<=2023:
+                groups.setdefault(year,[]).append(float(r['value'])/100)
+        price_series.append((label,{year:sum(vals)/len(vals) for year,vals in groups.items() if len(vals)==12}))
+    datasets=[('Passenger travel | all-fuel stock, Dec',[('Cars',cars),('Minibuses',minibuses)]),
+              ('Freight demand | payload, CY',[('Road',road),('Rail',rail)]),
               ('Agriculture | real value added, CY',[('Agriculture / forestry / fishing',agriculture)]),
-              ('Industry | real value added, CY',[('Manufacturing',manufacturing),('Mining',mining)]),
-              ('Power | OCGT generation, FY',[('Eskom + IPP',power)]),
-              ('Freight activity | payload, CY',[('Road',road),('Rail',rail)])]
-    frame(s,'Track passenger, freight and sector activity driving fuel demand',
-          'Demand-driver dashboard | every series indexed to 2024 = 100',
-          'NaTIS Dec snapshots; Stats SA P0441 Q2 2026 / P7162 Dec 2025; Eskom integrated reports; naamsa Q2 2026. Series and scope in notes.',text,brand)
-    text(s,'Activity charts: common 0–120 scale. Vehicle fleet by fuel type: data gap.',.5,2.35,7.05,.28,11,True,brand.accent_primary)
+              ('Manufacturing | real value added, CY',[('Manufacturing',manufacturing)]),
+              ('Mining | real value added, CY',[('Mining',mining)]),
+              ('Diesel power | OCGT generation, FY',[('Eskom + IPP',power)]),
+              ('Electrification | annual new sales, CY',[('BEV',bev),('Plug-in hybrid',phev),('Hybrid',hybrid)]),
+              ('Price response | annual nominal R/litre',price_series)]
+    frame(s,'Compare observed evidence for potential demand levers',
+          None,'NaTIS; Stats SA P0441 / P7162; Eskom; naamsa; Department fuel-price history. Scope and observations in notes.',text,brand)
+    # A full-width, even grid replaces the asymmetric evidence sidebar.
+    for q in list(s.shapes):
+        if Inches(1.7)<=q.top<Inches(7.05):q._element.getparent().remove(q._element)
+    text(s,'Potential demand levers | 2024 = 100; price panel uses nominal R/litre',.5,1.78,11.65,.32,14,True)
+    rule(s,(.5,2.13),(12.15,2.13),brand.ink,.55)
+    text(s,'Observed proxies, not fuel-volume effects. Activity axes 0–120; EV 0–400; prices 0–30 R/L.',.5,2.20,11.65,.22,10,True,brand.accent_primary)
+    colors=(brand.accent_primary,brand.accent_secondary,brand.ink)
     for i,(heading,raw_series) in enumerate(datasets):
-        x=.5+(i%2)*3.64;y=2.74+(i//2)*1.32
-        text(s,heading,x,y,3.40,.29,12,True,brand.accent_primary)
-        years=sorted(raw_series[0][1])
-        assert all(sorted(v)==years for _,v in raw_series)
-        chart=add_themed_chart(s,XL_CHART_TYPE.LINE,Inches(x),Inches(y+.28),Inches(3.4),Inches(.78),
-            [str(year) for year in years],[(name,[index(v)[year] for year in years]) for name,v in raw_series],
-            show_legend=False,value_axis_format='0',axis_font_size=11,brand=brand)
-        chart.value_axis.minimum_scale=0;chart.value_axis.maximum_scale=120;chart.value_axis.major_unit=100
-        chart.has_legend=False
+        x=.5+(i%2)*6.0;y=2.51+(i//2)*1.08
+        text(s,heading,x,y,5.65,.22,12,True,brand.accent_primary)
+        years=sorted(set().union(*(v.keys() for _,v in raw_series)))
+        assert years,heading
+        values=[(name,[v.get(year) for year in years]) if i==7 else
+                (name,[index(v).get(year) for year in years]) for name,v in raw_series]
+        chart=add_themed_chart(s,XL_CHART_TYPE.LINE,Inches(x),Inches(y+.22),Inches(5.65),Inches(.65),
+            [str(year) for year in years],values,show_legend=False,value_axis_format='0',axis_font_size=10,brand=brand)
+        chart.value_axis.minimum_scale=0
+        chart.value_axis.maximum_scale=30 if i==7 else 400 if i==6 else 120
+        chart.value_axis.major_unit=15 if i==7 else 200 if i==6 else 100
+        plot=chart._chartSpace.chart.plotArea
+        layout=plot.find("{http://schemas.openxmlformats.org/drawingml/2006/chart}layout")
+        if layout is None:
+            layout=OxmlElement("c:layout");plot.insert(0,layout)
+        manual=OxmlElement("c:manualLayout")
+        for tag,val in [("layoutTarget","inner"),("xMode","factor"),("yMode","factor"),("wMode","factor"),("hMode","factor"),("x","0.09"),("y","0.06"),("w","0.89"),("h","0.62")]:
+            node=OxmlElement("c:"+tag);node.set("val",val);manual.append(node)
+        layout.append(manual)
         skip=OxmlElement('c:tickLblSkip');skip.set('val','2' if len(years)>4 else '1')
         chart.category_axis._element.insert_element_before(skip,'c:tickMarkSkip','c:noMultiLvlLbl','c:extLst')
-        for curve,color in zip(chart.series,(brand.accent_primary,brand.accent_secondary)):
+        for j,(curve,color) in enumerate(zip(chart.series,colors)):
             curve.format.line.color.rgb=color;curve.format.line.width=Pt(1.8)
-        for j,(name,_) in enumerate(raw_series):
-            color=(brand.accent_primary,brand.accent_secondary)[j]
-            lx=x+.37+j*1.51
-            # Native external legend keeps the plot from collapsing on short charts.
-            rule(s,(lx,y+1.17),(lx+.22,y+1.17),color,1.8)
-            text(s,name,lx+.26,y+1.06,2.77 if len(raw_series)==1 else 1.4,.22,11)
-    text(s,'FY ends March; CY is calendar year. Stock is December snapshot. ICE = internal combustion engine.',.5,6.83,7.05,.20,9)
+            lx=x+.32+j*1.78
+            rule(s,(lx,y+.96),(lx+.20,y+.96),color,1.8)
+            text(s,raw_series[j][0],lx+.24,y+.87,3.9 if len(raw_series)==1 else 1.50,.20,10)
+    text(s,'To quantify: mileage × fleet/fuel mix × litres/km; sector fuel intensity; OCGT litres/kWh; price elasticity. FY ends March. Price 2024 incomplete.',
+         .5,6.92,11.65,.18,8.5)
     power_change=100*(power[2026]/power[2024]-1)
     rail_change=100*(rail[2025]/rail[2024]-1);road_change=100*(road[2025]/road[2024]-1)
-    text(s,'Evidence and implications',8.12,1.78,4.03,.42,14,True)
-    text(s,'01 | Fleet fuel mix remains a data gap',8.12,2.36,4.03,.32,14,True,brand.accent_primary)
-    text(s,'NaTIS stock totals include all fuels. New EV sales show uptake; they do not establish fleet penetration or litres displaced.',8.12,2.77,4.03,.65,12)
-    text(s,'02 | EV and hybrid new-sales trend',8.12,3.43,4.03,.32,14,True,brand.accent_primary)
-    years=sorted(bev)
-    uptake=[('BEV',bev),('Plug-in hybrid',phev),('Hybrid',hybrid)]
-    colors=(brand.accent_primary,brand.accent_secondary,brand.ink)
-    chart=add_themed_chart(s,XL_CHART_TYPE.LINE,Inches(8.12),Inches(3.91),Inches(4.03),Inches(1.34),
-        [str(year) for year in years],[(name,[index(v)[year] for year in years]) for name,v in uptake],
-        show_legend=False,value_axis_format='0',axis_font_size=11,brand=brand)
-    chart.value_axis.minimum_scale=0;chart.value_axis.maximum_scale=400;chart.value_axis.major_unit=100
-    skip=OxmlElement('c:tickLblSkip');skip.set('val','2')
-    chart.category_axis._element.insert_element_before(skip,'c:tickMarkSkip','c:noMultiLvlLbl','c:extLst')
-    for j,(curve,color) in enumerate(zip(chart.series,colors)):
-        curve.format.line.color.rgb=color;curve.format.line.width=Pt(1.8)
-        lx=8.12+j*1.38
-        rule(s,(lx,5.42),(lx+.20,5.42),color,1.8)
-        text(s,uptake[j][0],lx+.24,5.30,1.16,.25,11)
-    text(s,'2024 = 100; EV chart scale 0–400',8.12,3.77,4.03,.22,11)
-    text(s,f'2025 sales: BEV {bev[2025]:,.0f}; plug-in hybrid {phev[2025]:,.0f}; hybrid {hybrid[2025]:,.0f}. Both hybrid types still use fuel.',8.12,5.65,4.03,.55,11)
-    rule(s,(8.12,6.20),(12.15,6.20),brand.accent_primary,.8)
-    text(s,'Next steps | proposed owners',8.12,6.26,4.03,.30,14,True,brand.accent_primary)
-    text(s,'Manish: source fleet fuel mix, retirements, mileage and sector fuel intensities. Nigel: agree lever alternatives.',8.12,6.61,4.03,.40,11)
     notes={'base_year':2024,'formula':'100 * observed value / own 2024 value','series':datasets,
            'status':'descriptive evidence; not causal contributions or forecast demand',
            'price':'Annual extract stops 2023; no 2024 base available. Diesel prices are wholesale, petrol retail; no real-price elasticity calibrated.',
