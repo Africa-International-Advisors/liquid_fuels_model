@@ -14,7 +14,11 @@
             3,
             4,
             5
-          ]
+          ],
+          "trace_id": "S01",
+          "henry_verbatim": "Outline total SA demand development over the last few years and the market of interest for Vopak (eastern part of SA, within economic striking distance of its storage infrastructure and NMPP",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         },
         {
           "question": "Eastern SA market within economic striking distance",
@@ -24,7 +28,11 @@
             10,
             12,
             14
-          ]
+          ],
+          "trace_id": "S02",
+          "henry_verbatim": "Outline total SA demand development over the last few years and the market of interest for Vopak (eastern part of SA, within economic striking distance of its storage infrastructure and NMPP",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         },
         {
           "question": "Greater diesel use in power generation",
@@ -32,7 +40,11 @@
           "pages": [
             7,
             9
-          ]
+          ],
+          "trace_id": "S03",
+          "henry_verbatim": "Greater use of diesel in power gen",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         },
         {
           "question": "Rail to road",
@@ -40,7 +52,11 @@
           "pages": [
             7,
             9
-          ]
+          ],
+          "trace_id": "S04",
+          "henry_verbatim": "Rail to road",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         },
         {
           "question": "Changes in fuel price",
@@ -48,7 +64,11 @@
           "pages": [
             7,
             9
-          ]
+          ],
+          "trace_id": "S05",
+          "henry_verbatim": "Changes in fuel price",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         },
         {
           "question": "More fuel-efficient vehicles",
@@ -56,7 +76,11 @@
           "pages": [
             7,
             9
-          ]
+          ],
+          "trace_id": "S06",
+          "henry_verbatim": "Shift to more fuel efficient vehicles",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         },
         {
           "question": "Slow GDP growth",
@@ -64,14 +88,22 @@
           "pages": [
             7,
             9
-          ]
+          ],
+          "trace_id": "S07",
+          "henry_verbatim": "Slow GDP growth",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         },
         {
           "question": "Refinery closures",
           "answer": "Partial: published capacity falls to 358 thousand bbl/day. Capacity is distinct from output and operating availability.",
           "pages": [
             8
-          ]
+          ],
+          "trace_id": "S08",
+          "henry_verbatim": "Refinery closure",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         },
         {
           "question": "Challenges at Secunda",
@@ -79,7 +111,11 @@
           "pages": [
             8,
             9
-          ]
+          ],
+          "trace_id": "S09",
+          "henry_verbatim": "Challenges at Secunda",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         },
         {
           "question": "Closure of Mossgas",
@@ -87,7 +123,11 @@
           "pages": [
             8,
             9
-          ]
+          ],
+          "trace_id": "S10",
+          "henry_verbatim": "Closure of Mossgas",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         },
         {
           "question": "Growth in imports and where they enter",
@@ -95,7 +135,11 @@
           "pages": [
             3,
             6
-          ]
+          ],
+          "trace_id": "S11",
+          "henry_verbatim": "Show growth in imports and where they have been coming in",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
         }
       ]
     },
@@ -109,7 +153,11 @@
           "pages": [
             7,
             9
-          ]
+          ],
+          "trace_id": "C01",
+          "henry_verbatim": "Road to rail (use the stats SA land transport survey, provide a projection of the shift based on private sector participation in rail",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
         },
         {
           "question": "End of loadshedding and spare power capacity",
@@ -117,7 +165,11 @@
           "pages": [
             7,
             9
-          ]
+          ],
+          "trace_id": "C02",
+          "henry_verbatim": "End of loadshedding and large spare capacity in power generation",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
         },
         {
           "question": "EV / HEV penetration projection",
@@ -125,7 +177,11 @@
           "pages": [
             7,
             9
-          ]
+          ],
+          "trace_id": "C03",
+          "henry_verbatim": "Penetration of EVs and HEVs (Need to provide a projection of penetration, show how this may impact litres per km calc)",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
         },
         {
           "question": "Effect of EV / HEV on litres per km",
@@ -133,7 +189,11 @@
           "pages": [
             7,
             9
-          ]
+          ],
+          "trace_id": "C04",
+          "henry_verbatim": "Penetration of EVs and HEVs (Need to provide a projection of penetration, show how this may impact litres per km calc)",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
         },
         {
           "question": "Higher fuel prices and km travelled",
@@ -141,7 +201,11 @@
           "pages": [
             7,
             9
-          ]
+          ],
+          "trace_id": "C05",
+          "henry_verbatim": "Large increase in fuel prices (need to show how this may impact km’s travelled)",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
         },
         {
           "question": "Mega refinery / SAPREF restart",
@@ -149,7 +213,11 @@
           "pages": [
             8,
             9
-          ]
+          ],
+          "trace_id": "C06",
+          "henry_verbatim": "Talk of a mega refinery (restart Sapref)",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
         },
         {
           "question": "Secunda gas, coal and MRG diversion to 2032",
@@ -157,7 +225,11 @@
           "pages": [
             8,
             9
-          ]
+          ],
+          "trace_id": "C07",
+          "henry_verbatim": "Secunda production - linked to improved pure gas production from coal, however diversion away from fuel production due to sale of MRG and potential extension to 2032",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
         },
         {
           "question": "Natref future?",
@@ -165,7 +237,11 @@
           "pages": [
             8,
             9
-          ]
+          ],
+          "trace_id": "C08",
+          "henry_verbatim": "Natref future?",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
         },
         {
           "question": "Durban storage / NMPP / Lesedi vs road and rail",
@@ -174,7 +250,11 @@
             10,
             11,
             14
-          ]
+          ],
+          "trace_id": "C09",
+          "henry_verbatim": "Competitiveness of Vopak supply chain of Durban storage, NMPP and storage in Lesedi vs. the alternatives:\nRoad and rail transport from Durban",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
         },
         {
           "question": "Transport from Matola and Walvis Bay",
@@ -183,7 +263,11 @@
             11,
             14,
             16
-          ]
+          ],
+          "trace_id": "C10",
+          "henry_verbatim": "Competitiveness of Vopak supply chain of Durban storage, NMPP and storage in Lesedi vs. the alternatives:\nTransport from Matola\nTransport from Walvis Bay",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
         }
       ]
     },
@@ -198,7 +282,11 @@
             12,
             13,
             14
-          ]
+          ],
+          "trace_id": "R01",
+          "henry_verbatim": "Market share of Vopak in Dbn and Lesedi",
+          "source_slide": 32,
+          "source_image": "external/partner_story_20261006/resolution.png"
         },
         {
           "question": "Potential scope for new investment?",
@@ -207,9 +295,14 @@
             15,
             16,
             17
-          ]
+          ],
+          "trace_id": "R02",
+          "henry_verbatim": "Potential scope for new investment?",
+          "source_slide": 32,
+          "source_image": "external/partner_story_20261006/resolution.png"
         }
       ]
     }
-  ]
+  ],
+  "transcription_note": "Verbatim transcription from received images; original incomplete parentheses retained. Wrapped lines joined; Secunda dash normalised to a hyphen. Repeated prompts map separately to their analytical components."
 }

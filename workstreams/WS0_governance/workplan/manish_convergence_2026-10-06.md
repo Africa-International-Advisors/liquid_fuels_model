@@ -12,8 +12,8 @@ All files below are tracked and available after merging current `origin/main`.
 
 | File | Purpose |
 |---|---|
-| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v5.pdf) | The 22-page draft: overview, market baseline, market changes and Vopak outlook |
-| [Editable PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v5.pptx) | Same story with editable charts and clickable navigation |
+| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v6.pdf) | The 22-page draft: overview, market baseline, market changes and Vopak outlook |
+| [Editable PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06_v6.pptx) | Same story with editable charts and clickable navigation |
 | [Branch review](../../WS1_data_validation/manish_branch_review_2026-10-06.md) | Findings against `manish-branch` at `4e64c8c`; checks and baseline decisions |
 | [Morning handover](manish_handover_2026-10-06.md) | Original five-package objective: evidence before lever quantification |
 | [Morning meeting record](../meetings/2026-10-06_vopak_standup.docx) | Received stand-up transcript; meeting context, not separately approved minutes |
@@ -49,6 +49,8 @@ and industry baseline changes remain a separate Nigel decision. The analyst
 branch has not been merged wholesale into main.
 
 ## Henry storyboard coverage
+
+Start with [Henry's verbatim wording and evidence trace](../../WS3_reporting_delivery/henry_verbatim_trace_2026-10-06.md). It maps every source prompt on slides 30?32 to the current response and deck pages; exact words are also in the appendix speaker notes.
 
 The opening answer is that imports are material, but Vopak growth depends on accessible customer flows. The agenda-led summary is on page 2; every prompt from received storyboard pages 30?32 has a current response on pages 18?20. The exact response register is [henry_question_answers_2026_10_06.json](../../../pptx/story/henry_question_answers_2026_10_06.json). Partial/open responses are explicit gaps, not completed analyses. Review Mossgas dates/status, vehicle efficiency, rail participation, price/mileage response, plant mechanisms, fleet penetration and import growth/entry ports before closing those prompts.
 
