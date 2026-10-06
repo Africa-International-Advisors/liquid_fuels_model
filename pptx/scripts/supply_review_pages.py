@@ -260,25 +260,38 @@ def volume_page(s,text,root,brand):
     frame(s,'Show what must hold to reach each candidate volume',
           'Accessibility gates and volume milestones | illustrative bn L/year',
           'Existing illustrative catchment CSV; conditions authored for review. No actual Vopak share, cost threshold or forecast capture established.',text,brand)
-    text(s,'ILLUSTRATIVE | each increment requires evidence; not cumulative terminal receipts',.5,2.38,7.05,.30,11,True,brand.accent_primary)
-    text(s,f'{coastal+inland:.1f} bn L/year additional candidate',.5,2.98,7.05,.50,22,True,brand.accent_primary)
-    text(s,f'{current:.1f} current example + {coastal+inland:.1f} additional = {current+coastal+inland:.1f} total envelope',.5,3.56,7.05,.31,12)
+    text(s,'ILLUSTRATIVE OPPORTUNITY',.5,2.40,7.05,.25,10,True,brand.accent_secondary)
+    text(s,f'{coastal+inland:.1f}',.5,2.83,2.05,.70,40,True,brand.accent_primary)
+    text(s,'bn litres / year\nadditional candidate volume',2.50,2.98,4.95,.62,17,True,brand.accent_primary)
+    text(s,f'{current:.1f} current + {coastal+inland:.1f} additional = {current+coastal+inland:.1f} total illustrative envelope',.5,3.65,7.05,.28,11)
     total=current+coastal+inland
     x=.5
     for label,value,color in [('Current',current,brand.accent_primary),('Coastal +',coastal,brand.accent_secondary),('Inland +',inland,brand.grey_fill)]:
         w=7.05*value/total
-        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(4.17),Inches(w),Inches(.65))
+        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(4.12),Inches(w),Inches(.66))
         q.fill.solid();q.fill.fore_color.rgb=color;q.line.fill.background()
-        text(s,f'{label} {value:.1f}',x+.07,4.34,w-.14,.30,12,True,brand.white if label=='Current' else brand.ink)
+        text(s,f'{label} {value:.1f}',x+.07,4.32,w-.14,.27,12,True,brand.white if label!='Inland +' else brand.ink)
         x+=w
-    text(s,'What must hold before any additional litres are counted?',.5,5.25,7.05,.33,14,True,brand.accent_primary)
-    table(s,[['Competitive cost','Usable capacity','Customer access','Unique deliveries']],.5,5.85,[1.76,1.76,1.76,1.77],.63,brand,11)
-    text(s,'Detailed customer-by-route gates belong in the evidence register.\nIllustration only; 5.5 is neither a forecast nor a confirmed capturable market.',.5,6.60,7.05,.40,11)
-    panel(s,text,brand,[('Reach is necessary, not sufficient','Accessibility map p9 and competing routes p10 locate candidate access. Neither currently links a verified cost threshold to customer litres.'),
-        ('Example milestones are conditional',f'The current example is {current:.1f}. Coastal candidate {coastal:.1f} raises it to {current+coastal:.1f}; inland candidate {inland:.1f} raises it to {current+coastal+inland:.1f}. These are authored volumes.'),
-        ('Every increment needs four gates','Evidence cost, route/tank capacity, customer rights and unique deliveries for the same product and period. Unassessed litres remain explicit.')],
-        'Nigel: agree destinations and acceptable delivered cost. Manish: build a customer-by-route gate table; record passed, failed and unassessed litres, with sources and conditions.')
-    s.notes_slide.notes_text_frame.text+='\nVolume milestones derive only from the existing illustrative catchment CSV. Gates specify required evidence, not calculated allocation. No threshold assigned and no new model volume invented.'
+    text(s,'Four gates before additional litres can be counted',.5,5.18,7.05,.35,14,True,brand.accent_primary)
+    table(s,[['Competitive cost','Usable capacity','Customer access','Unique deliveries'],
+             ['Delivered-cost threshold','Route / tank capacity','Customer rights','Same product and period']],
+          .5,5.72,[1.76,1.76,1.76,1.77],.85,brand,10.5)
+    text(s,'Candidate volume is neither a forecast nor confirmed capture.',.5,6.76,7.05,.22,10)
+    text(s,'What the evidence shows',8.12,1.78,4.03,.34,14,True)
+    findings=[('Access still needs a cost test','Maps locate possible reach; verified cost thresholds are not yet linked to customer litres.'),
+              ('Volumes are authored examples',f'{current:.1f} current + {coastal:.1f} coastal + {inland:.1f} inland = {total:.1f}; none is confirmed capture.'),
+              ('Unassessed litres stay explicit','Count an increment only after cost, capacity, customer rights and unique-delivery checks.')]
+    for i,(heading,body) in enumerate(findings):
+        y=2.48+i*.95
+        text(s,f'{i+1:02d} | {heading}',8.12,y,4.03,.30,12,True)
+        text(s,body,8.12,y+.36,4.03,.54,11)
+    line(s,(8.12,5.53),(12.15,5.53),brand.accent_primary,.8)
+    text(s,'Next actions',8.12,5.73,4.03,.30,14,True,brand.accent_primary)
+    text(s,'Nigel',8.12,6.16,.76,.27,11,True)
+    text(s,'Agree destinations and delivered-cost thresholds.',8.93,6.16,3.22,.40,11)
+    text(s,'Manish',8.12,6.65,.76,.27,11,True)
+    text(s,'Record passed, failed and unassessed customer-route gates.',8.93,6.65,3.22,.40,11)
+    s.notes_slide.notes_text_frame.text+='\nVolume milestones derive only from existing illustrative catchment CSV. Accessibility map and competing routes locate potential access, not verified cost-linked customer litres. Coastal and inland increments are conditional, authored volumes, not cumulative terminal receipts. Record dated sources, thresholds, capacity, rights and deduplicated deliveries by product and period. No threshold or new model volume assigned.'
 
 
 def market_page(s,text,root,brand):

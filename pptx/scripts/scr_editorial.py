@@ -21,10 +21,14 @@ def replace(q, value):
 def apply_editorial(prs, text, root, brand):
     copy = json.loads((root/'story/scr_editorial_2026_10_06.json').read_text(encoding='utf-8'))
     for page, title in copy['titles'].items():
+        if page == '15':
+            continue  # Inventory title is derived from the declared chart case.
         s = prs.slides[int(page)-1]
         q = next(q for q in s.shapes if q.is_placeholder and q.has_text_frame and 'Title' in q.name)
         replace(q, title)
     for page, content in copy['panels'].items():
+        if page == '15':
+            continue  # Inventory exhibit is deliberately full-width and chart-first.
         panel(prs.slides[int(page)-1], text, brand, content['findings'], content['action'])
     history=prs.slides[3]
     for q in history.shapes:
