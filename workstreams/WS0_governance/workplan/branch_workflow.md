@@ -1,57 +1,55 @@
-# Shared main workflow
+# Main and analyst branch workflow
 
-Nigel clarified on 5 October 2026 that both Nigel and Manish work directly on
-`main`. This supersedes the separate baseline-branch workflow described earlier
-that day. Manish pushes his work to `main`; Nigel pulls, reviews, gives feedback,
-and pushes corrections to `main`. Both pull before continuing.
+Nigel clarified on 6 October 2026: Nigel works on `main`; Manish creates a
+named working branch from current `origin/main`. This supersedes the 5 October
+instruction that both people push directly to main. The historical baseline
+branch is retained; it is not the daily analyst branch.
 
-## One-time switch: Manish
+## Nigel on main
 
-Commit or stash unfinished work before switching. All work published on
-`basecase-2026-10` through commit `dba3a54` is already merged into `main`.
-Any newer local or remote commits need to be preserved and reviewed before
-bringing them into `main`; do not discard them or overwrite shared history.
+Preserve local work, then pull before starting and before publishing:
 
 ```powershell
-git status --short
+git switch main
+git pull --ff-only origin main
+```
+
+Commit only the intended files. Run governance and relevant tests before pushing
+main. Never force-push. If origin/main has advanced, merge and resolve conflicts,
+then repeat the checks on the combined result.
+
+## Manish creates a branch
+
+Commit or stash existing work first. Use a descriptive name such as
+`manish/data-validation-2026-10-06`:
+
+```powershell
 git fetch origin
-git switch main
-git pull --ff-only origin main
+git switch -c manish/data-validation-2026-10-06 origin/main
 ```
 
-If no local `main` exists, use `git switch --track origin/main` instead of
-`git switch main`. The old branch is retained for history; no routine merge
-from it is required.
-
-## Each morning and before starting work: both people
-
-Start with committed or stashed local work, then:
+If the branch already exists, switch to it rather than recreating it. During work,
+bring Nigel's latest updates into the analyst branch:
 
 ```powershell
-git switch main
-git pull --ff-only origin main
-```
-
-Manish must pull again after Nigel pushes corrections, before continuing work.
-Daily sync is manual; no scheduled pull or message has been set up.
-
-## Before pushing: both people
-
-Commit the intended changes, then pull again to catch the other person's work.
-If both have committed since the last pull, preserve both sets of commits with
-a merge. Resolve conflicts, run checks on the combined result, and push:
-
-```powershell
-git pull --no-rebase origin main
+git fetch origin
+git merge origin/main
 .\.venv\Scripts\python.exe -m lfm check --vintage 2026
 .\.venv\Scripts\python.exe -m pytest -q
-git push origin main
 ```
 
-If Git rejects the push because `main` advanced again, repeat the pull, resolve
-any conflicts, and rerun relevant checks before retrying. Never force-push.
-An unsuccessful fast-forward morning pull means local commits need explicit
-reconciliation; use the same merge-and-check process above.
+Resolve conflicts and commit intended changes. A commit message must explain the
+problem, changed values/logic, source evidence, checks and remaining limitations.
+Publish the analyst branch, not main:
+
+```powershell
+git push -u origin HEAD
+```
+
+Nigel reviews the branch or pull request and integrates accepted changes into main.
+Run governance and relevant tests on the integrated result before publishing main.
+Do not infer data approval from a successful merge or automated check. No branch
+has been created on Manish's behalf by this documentation update.
 
 ## Published baseline: 5 October 2026
 

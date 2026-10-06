@@ -2,11 +2,14 @@
 
 ## Shared branch workflow
 
-Both Nigel and Manish work on `main`. Pull the latest `origin/main` before
-starting work and before pushing. Preserve local work, resolve any conflicts,
-run the governance check and relevant tests, then push to `main`. Do not
-force-push shared history. `basecase-2026-10` is retained for history, not daily
-work. See `workstreams/WS0_governance/workplan/branch_workflow.md` for commands.
+Nigel works on `main`; Manish creates a named working branch from current
+`origin/main`. This is Nigel's clarified workflow of 6 October 2026. Pull or
+merge the latest `origin/main` before starting work and before publishing.
+Manish pushes his branch for Nigel's review; reviewed changes are integrated
+into `main` after governance and relevant checks. Preserve local work and
+resolve conflicts. Do not force-push shared history. `basecase-2026-10` is
+retained for history, not daily work. See
+`workstreams/WS0_governance/workplan/branch_workflow.md` for commands.
 
 Read `CLAUDE.md` for the model architecture and `GATE_CHECKLIST.md` for release readiness.
 The repository follows project-canon's model plus engagement profile with the agreed optional `pptx/` workspace.

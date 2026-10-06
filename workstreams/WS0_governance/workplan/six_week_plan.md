@@ -39,9 +39,11 @@ unknown status on each future input; unknown commercial access is not zero.
 ## Manish handoff for 6 October: use diagnostics to start integration
 
 Use the [6 October feedback checklist and ordered focus](feedback_focus_2026-10-06.md)
-for today's discussion. It consolidates the current SCR pack, completed feedback,
-exact source flags and required integration handbacks; the priorities below remain
-the Week 1 framework.
+for today's discussion. Nigel clarified that 6 October is data-first: source and
+reconcile observations for provincial demand, the national fuel balance and all
+driver pages before quantifying levers or adopting replacements. Nigel works on
+main; Manish uses a named branch. The priorities below remain the Week 1 framework,
+not a requirement to quantify scenarios or deliver an integration today.
 
 Pull `origin/main` before working. The source audit and profile provide the starting
 inventory; do not rebuild them manually. Manish investigates and proposes changes;
@@ -70,12 +72,13 @@ Distinguish interventions from observed input data; do not label a raw historica
 time series a lever. Define demand and supply axes independently before implementing
 the nine-scenario matrix. Gather infrastructure evidence only where a lever needs it.
 
-End-of-day review material: completed source-to-model mapping, row-level investigation
-results, proposed lever definitions and one reviewed integration candidate with a
-before/after output comparison. Implement a replacement only after its source,
-transformation and forecast boundary are explained; preserve the current baseline
-and show remaining gaps explicitly. Full history/fleet reconciliation continues
-into Week 2. Push source changes and delivered review evidence to `main` after checks.
+6 October end-of-day review material: source-to-model mapping, row-level flag
+investigations, verified newer provincial data or explicit missing coverage,
+matched domestic production/import/export records, and sourced driver series
+with periods, units and revisions. Collect the data underpinning lever choices
+today; quantitative scenario settings and adoption follow evidence review.
+Full history/fleet reconciliation continues into Week 2. Manish publishes his
+named branch; Nigel reviews and integrates accepted changes into main after checks.
 
 Preserve dated cockpit snapshots. Existing root governance exceptions and GATE_CHECKLIST.md remain in force; this plan does not close or extend them. New engine assumptions must be vintaged and registered before use. Passing tests does not establish approval.
 

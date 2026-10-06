@@ -1,23 +1,69 @@
 # 6 October: feedback checklist and Manish discussion
 
-Purpose: turn the current diagnostics and partner story into a reproducible,
-traceable fuel baseline and one defensible integration candidate. South Africa
+Purpose: source and reconcile the evidence behind the current diagnostics and
+partner story before quantifying levers or adopting replacements. South Africa
 petrol and diesel are the client focus; jet remains tracked separately.
 Nigel reviews proposed changes; Manish investigates and implements explained
 replacements. Henry reviews the technical mechanisms. Assignments and dates
 below are proposed discussion targets, not recorded meeting commitments.
 
-## Start the conversation here
+## Today's direction confirmed by Nigel
 
-Ask Manish for three things today: **reproduce the baseline, explain the flagged
-data, and propose one source-backed integration change**. Define the demand and
-supply levers alongside that work. Do not ask him to rebuild all the maps first.
+Nigel works on main. Manish creates his own branch from current origin/main and
+returns his changes for review. See [branch commands](branch_workflow.md).
+Today's objective is **data first**, not quantified lever scenarios or a GDP
+integration candidate. Source the evidence needed to update the client pages,
+resolve integrity flags, and expose missing observations. Integration follows
+reviewed evidence; broader infrastructure and investment work remain secondary.
 
-| Start with | Exact files to open | What Manish returns |
+| Priority | Exact files to start with | Work today | Handback |
+|---|---|---|---|
+| 1 Data integrity | [Audit workbook](../../../output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx): Direction, Provincial gaps, Repeated keys; [source profile](../../../output/delivered/source_profile_2026_10_05.html) | Check incomplete quarters, province/national differences, repeated refinery/history keys, unsupported baselines/elasticities and missing originals. Use the source-file table below. | Flag -> old value -> source cell/page -> competing/proposed value -> reason -> resolved/open. Preserve originals; no silent deduplication. |
+| 2 Source traceability | [Source profile CSV](../../../output/delivered/source_profile_2026_10_05.csv), [sources.yaml](../../../assumptions/2026/sources.yaml), fetchers under `src/lfm/scripts/` | Trace each priority dataset from publisher/API/download to original file, extracted CSV and consuming function. Distinguish engine-used, staged unused and reporting-only. | Source URL, exact file path, period/units/geography, extraction function, consuming calculation, refresh method and any failure. |
+| 3 Provincial demand from 2022 to date | [Annual provincial CSV](../../../assumptions/2026/timeseries/fuel_sales_department_by_province.csv), [quarterly provincial CSV](../../../assumptions/2026/timeseries/fuel_sales_department_by_province_quarterly.csv), [national sales](../../../assumptions/2026/timeseries/fuel_sales_department.csv), [FIASA sales](../../../assumptions/2026/timeseries/fuel_sales_fiasa.csv) | First verify the department report's provincial petrol/diesel charts through 2024. Look for underlying tables. Then seek 2025 and latest 2026 YTD evidence; source provincial drivers for any period without observed fuel sales. | Province by petrol/diesel by period table; observed/reconstructed/estimated status, source page and national tie. Do not present a chart-read estimate as an exact published table value or annualise incomplete YTD silently. |
+| 4 Reconcile domestic production and trade | [Energy balance](../../../assumptions/2026/timeseries/energy_balance_department.csv), [FIASA trade](../../../assumptions/2026/timeseries/fuel_trade_fiasa.csv), [government trade](../../../assumptions/2026/timeseries/fuel_trade_department_review.csv), [flags](../../../output/delivered/supply_review_2026_10_06/trade_source_flags.csv) | Assemble actual production, imports, exports and stock movements for the same petrol/diesel periods. Use SARS product-specific trade data and energy/operator production evidence. Resolve the competing 2024 diesel-import values. | Product by period balance with units, definitions, source, stock treatment and unexplained residual. Separate finished fuel from crude and other petroleum products. |
+| 5 Source all driver/lever pages | Existing CSVs and official source links below; pack p7 demand drivers and p8 refining history | Collect and reconcile observed series first: passenger/freight, agriculture, manufacturing, mining, power, EVs and refinery output/status. | One source-and-coverage row per chart series; original download, extract, dates, geography, units, revisions and open gaps. No high/medium/low lever calibration required today. |
+
+## New source leads to use today
+
+Checked on 6 October. A publisher listing is evidence of availability, not a
+completed extraction. Keep last complete year and latest YTD separate.
+
+| Page / data need | Official source to open | What it gives / remaining limit |
 |---|---|---|
-| 1. Find what the model actually uses | [Source audit workbook](../../../output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx), then [source profile](../../../output/delivered/source_profile_2026_10_05.html) | Input name → current file → consuming function → output; distinguish unused sources and presentation-only evidence. |
-| 2. Investigate the flagged numbers | Workbook tabs **Direction**, **Provincial gaps**, **Repeated keys**; open the CSVs in the file table below | Old value → competing/proposed value → original source cell → explanation. Keep unresolved cases open. |
-| 3. Propose the first integration | [Current GDP/capita input](../../../assumptions/2026/timeseries/gdp_per_capita.csv) versus [World Bank extract](../../../assumptions/2026/timeseries/macro_worldbank.csv) and [Stats SA extract](../../../assumptions/2026/timeseries/macro_statssa.csv) | Explain units, GDP/population consistency and forecast extension; one before/after petrol/diesel comparison. No automatic substitution. |
+| pp3-4 Provincial petrol/diesel | [Department petrol and diesel market overview 2015-2024](https://www.dmre.gov.za/LinkClick.aspx?fileticket=ExxZyYuQywM%3D&portalid=0) | Search-indexed report includes provincial sales charts through 2024, including petrol Figure 8. Verify original PDF and underlying numbers before adoption; web PDF fetch timed out during this review. Existing CSV remains through 2022. |
+| Provincial update proxies | [Stats SA provincial GDP P0441.2 for 2024](https://www.statssa.gov.za/?PPN=P0441.2&SCH=74226&page_id=1854) | Provincial economic activity, not fuel litres. Collect price basis/sector detail and release vintage; do not apply national sector indices as observed provincial fuel sales. |
+| p7 Agriculture and macro/sector activity | [Stats SA GDP P0441](https://www.statssa.gov.za/?page_id=1854&PPN=P0441) | Q2 2026 listing has the GDP time-series workbook. Current macro_statssa.csv holds annual series; inspect/download quarterly observations for the 2026 update. Agriculture includes forestry/fishing; GVA is not diesel consumption. |
+| p7 Manufacturing | [Stats SA manufacturing P3041.2](https://www.statssa.gov.za/?page_id=1854&PPN=P3041.2) | July 2026 release and Excel/ASCII time series listed. Collect production-volume index and distinguish it from nominal sales. |
+| p7 Mining | [Stats SA mining P2041 archive](https://www.statssa.gov.za/?PPN=P2041&SCH=1039&page_id=1866&page_no=1) | July 2026 listed as latest at review. Collect production indices by relevant mineral group; preserve revisions and index base. |
+| p7 Freight and passenger activity | [Stats SA land transport P7162](https://www.statssa.gov.za/?page_id=1854&PPN=P7162) | Inspect freight/passenger tables and scope. Payload is not tonne-km; public passenger transport is not the complete private-car market. Keep one revision vintage. |
+| p7 Passenger/freight fleet and EVs | NaTIS/naamsa existing extract links in the file table; their fetchers contain publisher URLs | Vehicle classes/fleet counts and BEV/PHEV/hybrid sales need their own sources. Stats SA activity series do not establish fleet fuel mix or EV penetration. |
+| p7 Diesel for power | Eskom generation extract/source metadata in the file table | Source OCGT generation and actual diesel use where reported. General electricity output is not OCGT diesel consumption. |
+| p7 Prices | [Existing annual prices](../../../assumptions/2026/timeseries/fuel_prices_department_annual.csv), [monthly prices](../../../assumptions/2026/timeseries/fuel_prices_department.csv), department price publications; Stats SA CPI for deflation | Collect later monthly petrol/diesel prices; identify inland/coastal and retail/wholesale scope. Current annual extract ends 2023. CPI is a deflator, not petrol/diesel sales volume. |
+| pp9-10 Competing routes | Transnet/NERSA tariffs, operator quotations, route access and border evidence; existing route exhibits | Stats SA activity data does not provide a full delivered R/litre route cost. Obtain dated comparable components for the same destination; keep unsupported costs illustrative. |
+| p5 Domestic production/imports/exports; p8 refinery status | [SARS detailed trade downloads](https://tools.sars.gov.za/tradestatsportal/data_download.aspx), [SARS trade statistics](https://www.sars.gov.za/customs-and-excise/trade-statistics/), energy balance, FIASA and plant/operator reports | Filter petrol/diesel tariff lines and verify quantities/units, not only rand values. SARS trade is not domestic production. Production requires matched energy/operator records; nameplate capacity is not actual output. |
+
+Use the existing extracted inputs and fetchers first. Preserve any new downloads
+under a dated `external/data/raw/` folder, then extract and register reviewed
+observations deliberately. No new series is adopted into the engine by this brief.
+
+For priority 1, inspect these baseline settings:
+[vehicles.yaml](../../../assumptions/2026/vehicles.yaml),
+[agriculture.yaml](../../../assumptions/2026/agriculture.yaml),
+[industrial.yaml](../../../assumptions/2026/industrial.yaml) and
+[marine.yaml](../../../assumptions/2026/marine.yaml), alongside the
+[refinery CSV](../../../assumptions/2026/timeseries/refinery_production.csv) and
+[historical demand CSV](../../../assumptions/2026/timeseries/historical_demand.csv).
+For an unsupported baseline/elasticity, return the current parameter, its claimed
+source, the exact evidence located and any unresolved definition; do not replace
+it with an activity index or a borrowed parameter just to remove the flag.
+
+For priority 2, use these columns in the handback: dataset; source URL; original
+file path and page/sheet/cell; extracted CSV/YAML path; API/download/manual;
+fetcher and parser function; engine/reporting consumer; used/staged/reporting;
+latest complete year and latest partial period; units; geography; old/new value
+and vintage; refresh outcome; unresolved issue and owner. Publisher availability,
+download success, parse success and numerical verification are separate checks.
 
 ## Where the files are
 
@@ -86,18 +132,6 @@ folder, compare overlapping observations and review changes before adoption.
 | R1 / 11–14 | Unique-flow arithmetic, all four regional demand totals, competitor detail, volume conditions and common-scale storage chart including Transnet lease sites. | Actual Vopak unique deliveries and share; compatible usable tanks, routes, contracts and switching rights. Gross capacity and conditional lease tanks are not throughput or available supply. Illustrative volumes are not forecast capture. | Nigel client records; Manish reconciliation |
 | R2 / 15 | Investment/service assessment retained as optional after the flow case. | Do not prioritise storage sizing ahead of model integration and evidenced incremental customer demand. | Nigel |
 
-## Today's focus: ordered work and specific handbacks
-
-| Priority | Manish's work on 6 October | Concrete handback / acceptance evidence | Decision or support |
-|---|---|---|---|
-| 1 | Pull main, reproduce both existing scenarios without changing inputs, retain dated outputs. | Commands, commit, input hashes, run folders and key petrol/diesel totals. Explain any difference from the existing baseline. | Nigel agrees comparison outputs/tolerances. |
-| 2 | Extend the existing source-to-model mapping. The 5 October diagnostic found 29 of 66 blocks requested by the engine; all 24 sources.* blocks were staged. | For every block: used, staged unused, reporting-only or unresolved; source file/cell, scalar/time-series/group/snapshot, units, transformation, consuming function and affected output. No claim of 100% source accuracy from coverage alone. | Nigel reviews the first integration choice. |
-| 3 | Investigate exact flagged records before changing values: provincial completeness/ties; 558 extra refinery rows; 15 extra historical rows including repeated jet keys. | Old value and source vintage, competing/proposed value, original workbook cell, reason, proposed resolution, affected calculation/output, owner and review status. Missing quarters are not zero; do not sum/deduplicate repeated keys automatically. | Nigel reviews corrections separately from assumption changes. |
-| 4 | Define demand and supply levers now, using the page 7 evidence as context. | Baseline and alternatives, units, start/ramp dates, evidence, equation/product, dependency and expected direction for each lever. Priorities: freight to rail; BEV/PHEV/hybrid uptake; mileage/efficiency; OCGT diesel; agriculture/industry intensity; plant availability/yields. | Nigel agrees alternatives; Henry reviews production mechanisms. |
-| 5 | Prepare one integration candidate, starting with macro/GDP per capita if its basis and forecast boundary can be reconciled. | Current input → source-backed proposal → transformation → consuming function; explain GDP/population consistency, real-price basis, actual/forecast boundary and extension to 2050. Before/after petrol/diesel output comparison; registered inputs and targeted checks. If evidence is insufficient, return the exact blocker rather than invent an extension. | Nigel reviews the candidate before adoption. |
-| 6 | Record refresh reliability for the candidate and its key URLs. | Separate URL response, successful full download, parser completeness and latest observation; retain original and retry failures, hashes, API/download/manual method and safe fallback. Partial failures must not erase prior data. | Manish verifies; Nigel resolves inaccessible evidence. |
-| Supporting | Define the first customer/product/destination comparison and client data request. Use the existing storage/route inventory. | Client receipt/delivery/transfer/destination fields and matched period; delivered R/litre cost components, capacity and access gates. Do not turn Week 1 into a broad infrastructure rebuild. | Nigel obtains client data; route work follows integration capacity. |
-
 ## Exact new source flags to discuss
 
 | Flag | Existing / earlier record | New / competing record | Required disposition |
@@ -109,11 +143,14 @@ folder, compare overlapping observations and review changes before adoption.
 
 ## End-of-day and Week 1 review
 
-Today's proposed handback is a reproducible baseline, completed first-pass mapping,
-row-level investigation results, lever definitions and one reviewed integration
-candidate (or its precise evidence blocker). Full fleet/history reconciliation
-continues into Week 2. The proposed 9 October Week 1 review tests those outputs;
-infrastructure inventory and first-route construction are secondary, not Week 1 gates.
+Today's handback is a resolved/open flag table, source-to-file-to-function map,
+new provincial demand evidence or an explicit evidence gap, a matched national
+production/import/export reconciliation, and sourced driver series with coverage
+and revisions. It is not a quantified lever matrix or an approved integration.
+Nigel tightens the SCR pack; the afternoon review links Manish's evidence to the
+exhibits and identifies remaining gaps. The proposed 9 October Week 1 gate remains
+a reproducible baseline, reviewed mapping and defined integration gaps. Lever
+quantification follows sourcing; infrastructure is not a Week 1 gate.
 
 For current share, require unique final customer deliveries divided by matched
 regional demand for the same product/period. Count shared Durban–Lesedi transfers
