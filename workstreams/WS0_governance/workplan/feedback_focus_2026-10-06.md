@@ -697,3 +697,6 @@ Custom trade legend, four driver charts per page and refinery qualifications
 in notes are implemented. New sequence: framework 11; fuel inputs 12?14;
 footprint 17; transfers 18; opportunity 19; handling 20; stock 21; outlook 22;
 roadmap 23; appendix 24; turnover 25; Henry responses 26?28.
+
+### Driver legend correction
+Nigel confirmed pages 8–9: the previous update left their keys beneath the charts. Move all eight editable legend groups into compact right-aligned rows above their plots, retain 11pt labels and series colours, and reposition plots for clear spacing. Native chart data and the page 4 trade legend remain unchanged. The source splitter applies this placement on every rebuild.

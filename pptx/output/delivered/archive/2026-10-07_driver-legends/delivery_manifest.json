@@ -1,0 +1,20 @@
+﻿{
+    "checks":  [
+                   "PowerPoint PDF render visually reviewed",
+                   "Package check passed; no off-canvas shapes",
+                   "Every native chart series unchanged",
+                   "Governance coverage passed; 54 existing open exceptions"
+               ],
+    "pages":  30,
+    "change":  "Pages 8-9: all eight chart legends moved above plots, right aligned; source builder corrected",
+    "model_change":  "None",
+    "date":  "2026-10-07",
+    "previous_sha256":  {
+                            "pptx":  "28A4D5AC0D8EE5A692F35512097FE179A8AACB5F40DDA89293E654DA7DA8DB15",
+                            "pdf":  "0F9471092090C731408489E217D451744CF3992688C0CB2C3E2A8A6109529DFC"
+                        },
+    "current_sha256":  {
+                           "pptx":  "710C761A8E767CFA3113805D9B2C815FBE0C59EC42B71FBA4685BFC689F9D45E",
+                           "pdf":  "F51407EEEC1923763B91D0FF41DF3B1E99BB960FAAA6665B6A4DF689F996F188"
+                       }
+}

@@ -8,7 +8,7 @@ roadmap on page 23; the appendix starts on page 24. Previous deliveries remain a
 The 7 October update adds diesel, jet and petrol input tables at **pages 12?14**,
 each with current references, explicit **2030 and 2035 L/M/H** settings and rationale.
 These are registered proposed sensitivities, not calibrated or approved forecasts.
-The driver dashboard is split into four charts per page (8?9). The trade page has
+The driver dashboard is split into four charts per page (8?9), with compact right-aligned legends above each plot. The trade page has
 a compact custom legend; refinery qualifications are retained in notes.
 
 | Agenda | Pages | Purpose |

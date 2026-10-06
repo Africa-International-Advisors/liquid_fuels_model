@@ -18,6 +18,43 @@ def clone_shape(q,source,dest):
     return dest.shapes[-1]
 
 
+def move_driver_legends(prs):
+    """Place editable series keys above each plot on both four-chart pages."""
+    for slide in prs.slides:
+        charts=[q for q in slide.shapes if q.has_chart]
+        if len(charts)!=4:continue
+        title=next((q.text for q in slide.shapes if q.name=='Title 1'),'')
+        if not title.startswith('S/C3. Test'):continue
+        for chart_shape in charts:
+            col=0 if chart_shape.left<Inches(6) else 1
+            row=0 if chart_shape.top<Inches(4.5) else 1
+            x=.5+6*col;y=2.45+2.29*row
+            # Match the original editable keys or those previously repositioned.
+            keys=[q for q in slide.shapes if x<=q.left/Inches(1)<x+5.65 and
+                  (y+1.85<=q.top/Inches(1)<y+2.10 or
+                   (q.name.startswith('Driver header legend ') and y+.30<=q.top/Inches(1)<y+.60))]
+            labels=sorted([q for q in keys if q.has_text_frame],key=lambda q:q.left)
+            strokes=sorted([q for q in keys if not q.has_text_frame and q.width<=Inches(.25)],key=lambda q:q.left)
+            assert len(labels)==len(strokes)==len(chart_shape.chart.series)
+            # Text widths are stable at 11pt and keep the key inside its panel.
+            widths={
+                'Cars':.38,'Minibuses':.82,'Road':.40,'Rail':.32,
+                'Agriculture / forestry / fishing':2.45,'Manufacturing':1.18,
+                'Mining':.52,'Eskom + IPP':.97,'BEV':.52,
+                'Plug-in hybrid':1.12,'Hybrid':.56,
+                'Petrol retail':.95,'Diesel wholesale':1.35
+            }
+            total=sum(.24+widths[q.text]+.22 for q in labels)-.22
+            start=x+5.65-total
+            for label,stroke in zip(labels,strokes):
+                stroke.left=Inches(start);stroke.top=Inches(y+.44);stroke.name='Driver header legend swatch '+label.text
+                label.left=Inches(start+.24);label.top=Inches(y+.35);label.width=Inches(widths[label.text]);label.height=Inches(.24)
+                label.name='Driver header legend label '+label.text
+                start+=.24+widths[label.text]+.22
+            chart_shape.top=Inches(y+.68);chart_shape.height=Inches(1.30)
+        slide.notes_slide.notes_text_frame.text+='\nLegend correction: editable series keys moved from beneath the charts into compact right-aligned rows above each plot. Series data, colours and 11pt legend type preserved.'
+
+
 def split_drivers(prs,root,brand):
     assert len(prs.slides)==26
     source=prs.slides[7]
@@ -108,3 +145,4 @@ def split_drivers(prs,root,brand):
             if q.get('id') in seen:q.set('id',str(n));n+=1
             seen.add(q.get('id'))
     assert len(prs.slides)==27
+    move_driver_legends(prs)
