@@ -1,0 +1,4 @@
+country,period,period_basis,series,value,unit,source,url,note
+ZAF,2022,year to 31 March,eskom_ocgt,571000000,litres,press report of a reply by the Minister of Public Enterprises,https://forgood.org.za/eskoms-diesel-consumption-starkly-reveals-continuing-slide/,rounded to the million
+ZAF,2023,year to 31 March,eskom_ocgt,937508149,litres,press report of a parliamentary reply,https://www.iol.co.za/capetimes/news/eskom-has-spent-r3bn-burning-diesel-a-month-into-the-financial-year-6a3a2cae-95c8-4e48-9d12-c358903ed556,reply itself not retrieved
+ZAF,2025,year to 31 March,eskom_ocgt,679000000,litres,"reply to parliamentary question NW1980, Minister of Electricity and Energy, 14 May 2025",https://pmg.org.za/committee-question/30686/,rounded to the million

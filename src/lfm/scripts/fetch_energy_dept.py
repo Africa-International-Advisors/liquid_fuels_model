@@ -287,7 +287,27 @@ def _prices(raw_dir: Path, out_dir: Path, offline: bool, warnings: list[str]) ->
                   for f in files],
         "monthly_breakdown_page": dept.PRICE_ARCHIVE_PAGE,
         "monthly_breakdown_files": breakdown_files,
+        "series_with_no_value_in_latest_months": _gaps(monthly),
     }
+
+
+def _gaps(monthly: list[dict]) -> dict[str, str]:
+    """Series that stop before the latest month, with the first month they are missing.
+
+    The monthly breakdown pages do not carry every series of the yearly history
+    (coastal diesel is not published there), so a series can end early.
+    """
+    last: dict[str, str] = {}
+    for row in monthly:
+        last[row["series"]] = max(last.get(row["series"], ""), row["period"])
+    latest = max(last.values(), default="")
+    out = {}
+    for series, period in sorted(last.items()):
+        if period < latest:
+            year, month = int(period[:4]), int(period[5:])
+            nxt = f"{year + month // 12}-{month % 12 + 1:02d}"
+            out[series] = f"not published from {nxt} (latest month in the file is {latest})"
+    return out
 
 
 def _breakdowns(raw_dir: Path, offline: bool, monthly: list[dict], warnings: list[str]) -> list:

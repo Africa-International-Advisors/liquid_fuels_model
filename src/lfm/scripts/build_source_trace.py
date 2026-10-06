@@ -116,13 +116,13 @@ TRACE: dict[str, tuple[str, ...]] = {
         "Ends 2021. Sector definitions shift in 2016. Fuel oil not extracted.",
         "Manish: later balance (package 4)"),
     "timeseries/fuel_prices_department.csv": (
-        DEPT, DEPT_URL, "fuel-price-history-<year>.pdf, 2011-2025 (2024-2025 from the Fuel Prices Per Zone folders)", BOTH_LOCAL, "download", DEPT_CMD,
+        DEPT, DEPT_URL, "fuel-price-history-<year>.pdf, 2011-2025; price-breakdown-<year>-<month>.pdf from November 2025", BOTH_LOCAL, "download", DEPT_CMD,
         "energy_dept.parse_price_history", "", "2024 (to April)",
-        "Vintage CSV stops April 2024. Fetcher now reads the newer monthly folders; candidate runs to "
-        "November 2025. 2026 not collected.", "Nigel: approve candidate"),
+        "Runs to February 2026 (promoted on manish-branch). Coastal diesel has no value from December "
+        "2025: the department stopped publishing it. Nothing posted after February 2026.", "Nigel: confirm"),
     "timeseries/fuel_prices_department_annual.csv": (
         DEPT, DEPT_URL, "derived from fuel_prices_department.csv", "derived", "derived", DEPT_CMD,
-        "fetch_energy_dept (12-month average)", "", "", "Vintage CSV ends 2023; candidate adds 2024.", "Nigel: approve candidate"),
+        "fetch_energy_dept (12-month average)", "", "", "Complete years to 2025 for six series; coastal diesel to 2024 only.", "Nigel: confirm"),
     "timeseries/fuel_trade_department_review.csv": (
         DEPT, "https://www.dmpr.gov.za/ (SA Energy Trade Report 2024)",
         "external/data/raw/fuel_supply_review_20261006/trade2024.pdf, printed pp.12-13", MAIN, "download",
@@ -182,6 +182,12 @@ TRACE: dict[str, tuple[str, ...]] = {
         ECON_CMD, "statssa.parse_constant_price_series; statssa.parse_population", "pack p7 (sector value added)",
         "", "Manual placement each release. Years after 2026 are projections, not observations.",
         "Nigel: commit originals?"),
+    "timeseries/macro_statssa_quarterly.csv": (
+        "Statistics South Africa (P0441 GDP)", "https://www.statssa.gov.za/?page_id=1854&PPN=P0441",
+        "GDP P0441 - GDP Time series Q2 2026.xlsx (Quarterly sheet)",
+        "on manish-branch (external/data/raw/statssa/)", "manual download (site blocks scripts)", ECON_CMD,
+        "statssa.parse_quarterly_constant_price_series", "", "2026 (to Q2)",
+        "Not seasonally adjusted; four quarters add to the annual figure.", "Nigel: confirm"),
     "timeseries/macro_worldbank.csv": (
         "World Bank (republishing Stats SA and UN)", "https://api.worldbank.org/v2/country/ZAF/indicator/",
         "worldbank-<indicator>.json", BOTH_LOCAL, "API", ECON_CMD, "economy.parse_world_bank", "", "",
@@ -237,6 +243,12 @@ TRACE: dict[str, tuple[str, ...]] = {
         "integrated report PDFs, years to March 2022-2026", BOTH_LOCAL, "download",
         "python -m lfm.scripts.fetch_eskom --vintage 2026", "eskom.parse_report", "pack p7 (power)", "",
         "GWh for financial years; diesel litres not reported in the extract.", "Manish (package 5)"),
+    "reference/ocgt_diesel_burn_reported.csv": (
+        "Parliament (replies by the Ministers of Public Enterprises and of Electricity and Energy)",
+        "https://pmg.org.za/committee-question/30686/", "reply NW1980 (2025); press reports for 2022 and 2023",
+        "by link only", "manual transcription", "none", "typed by hand", "", "",
+        "Three years; none for the year to March 2024. Implies 0.31 litres per kWh; not adopted in the model.",
+        "Nigel: decide on the factor"),
     "timeseries/air_traffic_acsa.csv": (
         "Airports Company South Africa", "https://www.airports.co.za/StatisticsLib/",
         "acsa-group-passengers.pdf; acsa-group-aircraft_movements.pdf", BOTH_LOCAL, "download",

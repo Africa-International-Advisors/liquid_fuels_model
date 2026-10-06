@@ -1,4 +1,4 @@
-retrieved: '2026-10-05'
+retrieved: '2026-10-06'
 statistics_south_africa:
   publisher: Statistics South Africa, Gross domestic product (P0441)
   file: GDP P0441 - GDP Time series Q2 2026.xlsx
@@ -37,6 +37,11 @@ statistics_south_africa:
     projection_rate: 0.011866
     note: Stats SA publishes no population figures beyond the release year; later
       years are a base-case assumption.
+  quarterly:
+    first_quarter: 1993-Q1
+    latest_quarter: 2026-Q2
+    series: 15
+    series_years_not_matching_annual: 0
 world_bank:
   role: cross-check for GDP; source of GDP per capita and population until the Stats
     SA population file is read

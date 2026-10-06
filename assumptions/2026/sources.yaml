@@ -340,3 +340,23 @@ refinery_output_operators:
   source: Sasol production and sales metrics; Glencore annual reports. Provenance and limits in reference/refinery_output_operators.sources.yaml
   last_updated: '2026-10-06'
   shared: true
+macro_statssa_quarterly:
+  register_id: REG-SOURCE-MACRO_STATSSA_QUARTERLY
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/macro_statssa_quarterly.csv
+  units: rand, constant 2015 prices, not seasonally adjusted
+  source: Stats SA P0441 GDP time series, Quarterly sheet; provenance in timeseries/economy.sources.yaml
+  last_updated: '2026-10-06'
+  shared: true
+ocgt_diesel_burn_reported:
+  register_id: REG-SOURCE-OCGT_DIESEL_BURN_REPORTED
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/ocgt_diesel_burn_reported.csv
+  units: litres
+  source: Parliamentary replies and press reports of them; provenance and limits in reference/ocgt_diesel_burn_reported.sources.yaml
+  last_updated: '2026-10-06'
+  shared: true

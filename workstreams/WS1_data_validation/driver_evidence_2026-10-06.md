@@ -73,8 +73,6 @@ Not collected.
 | Stats SA P3041.2 manufacturing, P2041 mining, P7162 land transport (time-series workbooks), P0141 CPI | Manish | Manual download into `external/data/raw/statssa/`; the site returns a block page to scripts. Then add readers and tests, as for GDP |
 | Tonne-kilometres for road and rail | Manish | Rail tonnes confirmed (see second follow-up); tonne-km is not in the results coverage read; no road series identified |
 | Diesel burned for power, litres | Manish | FY2024 litres not found (only R23.4 bn of spend); primary replies for FY2022 and FY2023 not retrieved |
-| Fleet by fuel type after 2023; split by vehicle class | Nigel | Request from RTMC; not published |
-| Distance driven newer than 2014 | Nigel | Decide whether to approach the paper's authors or a commercial source |
 | Fuel prices after February 2026 | Manish | Nothing posted by the department yet; the fetcher will pick new months up when they appear |
 | Refinery output and utilisation by plant | Manish, Henry review | Operator reports (Sasol, Natref, Astron) |
 
@@ -199,3 +197,27 @@ retrieved; figures are from Engineering News and other coverage.
 **Not obtained.** The port authority's statistics site did not respond from
 this network, so no official bunker series. Sasol and Glencore publish no
 split of refinery output by product.
+
+## Review outcomes, 6 October
+
+Manish reviewed this package and accepted this checklist as the record. Applied
+on `manish-branch` for Nigel to confirm:
+
+- **Fuel prices to February 2026** are in the vintage
+  (`fuel_prices_department.csv`, 1,264 monthly values; annual averages to
+  2025). No earlier value changed. **Flag: coastal diesel
+  (`diesel_005_coast_wholesale`) has no value from December 2025, because the
+  department stopped publishing it** when it moved to monthly breakdown pages;
+  the gap is recorded in `energy_department.sources.yaml`.
+- **Quarterly GDP and industry value added** are in the vintage
+  (`macro_statssa_quarterly.csv`, 1993-Q1 to 2026-Q2), declared and registered.
+- **Reported power diesel litres** are recorded in
+  `reference/ocgt_diesel_burn_reported.csv` (years to March 2022, 2023 and
+  2025), declared and registered.
+
+Left for Nigel: whether to adopt 0.31 litres per kWh for power diesel in place
+of the workbook's implied 0.244. It changes model results.
+
+Dropped by Manish: requests to RTMC for the fleet by fuel type and to the
+paper's authors for newer distance figures. The fleet fuel split and the 2014
+distance values therefore stay as they are, marked partial.
