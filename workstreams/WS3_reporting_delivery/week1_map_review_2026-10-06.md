@@ -296,3 +296,5 @@ in 2023; no 2024 price base or extrapolation is invented. Manish should refresh
 prices, source freight tonne-km/diesel intensity, generation-to-fuel conversion,
 fleet survival/mileage/efficiency and real-price activity response before
 converting these observed drivers into fuel-demand scenarios.
+
+EV visual restored on page 7: native line chart of BEV, plug-in hybrid and conventional hybrid new sales, 2019-2025, each indexed to 2024 = 100. All six activity charts retained. EV chart has an explicit 0-400 axis to include PHEV growth without clipping; activity charts remain 0-120. NaTIS fleet fuel mix remains a data gap. Sales do not establish fleet penetration or fuel displacement. Existing declared naamsa observations consumed; no engine or assumption changes.
