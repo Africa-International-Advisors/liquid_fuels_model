@@ -40,6 +40,7 @@ import yaml
 
 from lfm.config import Paths
 from lfm.sources import energy_dept as dept
+from lfm.sources import cef
 
 
 def main() -> int:
@@ -260,6 +261,7 @@ def _prices(raw_dir: Path, out_dir: Path, offline: bool, warnings: list[str]) ->
                     "series": series, "value": price, "unit": "cents per litre",
                     "source_file": f.path.name})
     breakdown_files = _breakdowns(raw_dir, offline, monthly, warnings)
+    cef_files = _cef_sheets(raw_dir, offline, monthly, warnings)
     _write(out_dir / "fuel_prices_department.csv", monthly,
            ["country", "period", "scenario", "series", "value", "unit", "source_file"])
 
@@ -287,8 +289,76 @@ def _prices(raw_dir: Path, out_dir: Path, offline: bool, warnings: list[str]) ->
                   for f in files],
         "monthly_breakdown_page": dept.PRICE_ARCHIVE_PAGE,
         "monthly_breakdown_files": breakdown_files,
+        "cef_daily_sheets_page": cef.INDEX_URL,
+        "cef_daily_sheets": cef_files,
         "series_with_no_value_in_latest_months": _gaps(monthly),
     }
+
+
+def _cef_sheets(raw_dir: Path, offline: bool, monthly: list[dict], warnings: list[str]) -> list:
+    """Add months after the department's latest from CEF's daily sheets (inland series only).
+
+    ``monthly`` is extended in place. The latest month the department does
+    cover is read from CEF as well and compared, as a check that the two
+    publishers print the same prices.
+    """
+    have = {(r["period"], r["series"]): r["value"] for r in monthly}
+    latest = max((r["period"] for r in monthly), default="0000-00")
+    listed: dict[tuple[int, int], tuple[date, str]] = {}
+    if offline:
+        for path in sorted(raw_dir.glob("cef-daily-*.pdf")):
+            year, month, day = (int(x) for x in path.stem.split("-")[-3:])
+            listed[(year, month)] = (date(year, month, day), "(offline)")
+    else:
+        try:
+            pages = cef.discover_year_pages(cef.fetch(cef.INDEX_URL).decode("utf-8", "replace"))
+            sheets: list = []
+            for year in sorted(y for y in pages if y >= int(latest[:4])):
+                sheets += cef.discover_daily_sheets(cef.fetch(pages[year]).decode("utf-8", "replace"))
+            listed = cef.pick_monthly(sheets)
+        except Exception as exc:  # noqa: BLE001
+            warnings.append(f"fuel prices: CEF daily sheet pages not reachable ({exc})")
+    files = []
+    for (year, month), (when, url) in sorted(listed.items()):
+        period = f"{year}-{month:02d}"
+        if period < latest:
+            continue
+        path = raw_dir / f"cef-daily-{when.isoformat()}.pdf"
+        if not offline and not path.exists():
+            try:
+                data = cef.fetch(url)
+                if not data.startswith(b"%PDF"):
+                    raise ValueError("not a PDF")
+                path.write_bytes(data)
+            except Exception as exc:  # noqa: BLE001
+                warnings.append(f"fuel prices {period}: CEF sheet download failed ({exc})")
+                continue
+        if not path.exists():
+            continue
+        try:
+            effective, prices, problems = cef.parse_daily_sheet(_pdf_text(path))
+        except Exception as exc:  # noqa: BLE001
+            warnings.append(f"fuel prices {period}: could not read {path.name} ({exc})")
+            continue
+        warnings += [f"fuel prices {period} CEF: {p}" for p in problems]
+        if effective is None:
+            continue
+        if (effective.year, effective.month) != (year, month):
+            warnings.append(f"fuel prices {period}: CEF sheet of {when} shows the price effective "
+                            f"{effective}; month left out")
+            continue
+        files.append({"period": period, "effective": effective.isoformat(), "url": url,
+                      "file": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+        for series, price in prices.items():
+            if (period, series) in have:
+                if abs(have[(period, series)] - price) > 0.005:
+                    warnings.append(f"fuel prices {period} {series}: department "
+                                    f"{have[(period, series)]} but CEF {price}")
+                continue
+            monthly.append({
+                "country": "ZAF", "period": period, "scenario": "shared", "series": series,
+                "value": price, "unit": "cents per litre", "source_file": path.name})
+    return files
 
 
 def _gaps(monthly: list[dict]) -> dict[str, str]:

@@ -84,7 +84,7 @@ fuel_sales_by_province:
     sha256: e35e025b5770c11d3235a04b9a5049b5986e996261df0ea0e4bff9cb491f1586
 fuel_prices:
   index_page: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/petroleum_arch.html
-  months: 2011-01 to 2026-02
+  months: 2011-01 to 2026-10
   full_years:
   - 2012
   - 2013
@@ -180,9 +180,59 @@ fuel_prices:
     url: (offline)
     file: price-breakdown-2026-02.pdf
     sha256: f6f329e3c2c5a88ec1e032bfe8bade8e7fd4e6ce5a8c57a25996b8073b4a234f
+  cef_daily_sheets_page: https://cefgroup.co.za/daily-basic-fuel-price/
+  cef_daily_sheets:
+  - period: 2026-02
+    effective: '2026-02-04'
+    url: (offline)
+    file: cef-daily-2026-02-16.pdf
+    sha256: e1f5065d8365366f7050fba8ffb291a55ad603a2e19545d17f68f0212ba544d1
+  - period: 2026-03
+    effective: '2026-03-04'
+    url: (offline)
+    file: cef-daily-2026-03-16.pdf
+    sha256: f9fc4e413f2de95ec971eaf4a46f5b6583a3aea4ce69eceb0a8eb4c02a9fa265
+  - period: 2026-04
+    effective: '2026-04-01'
+    url: (offline)
+    file: cef-daily-2026-04-15.pdf
+    sha256: 5589188f0fa45f3b9e5cfee88e26a0b3084e11de3899a68e2824a1fc550d2845
+  - period: 2026-05
+    effective: '2026-05-06'
+    url: (offline)
+    file: cef-daily-2026-05-15.pdf
+    sha256: ac9d40f63414df4c002b3d6b7f3a8f88c5b75ffb6a1b247c4ae2eb302da021c8
+  - period: 2026-06
+    effective: '2026-06-03'
+    url: (offline)
+    file: cef-daily-2026-06-15.pdf
+    sha256: 299ebe8c16e8dc03f8afb0b96cc623d7da6bd8bbf0c2aa22d07c31b0390de1a2
+  - period: 2026-07
+    effective: '2026-07-01'
+    url: (offline)
+    file: cef-daily-2026-07-15.pdf
+    sha256: 6b230b571f53028bd0bc738f5d9ff90919eccca8eac96f213c6bafd627395bdb
+  - period: 2026-08
+    effective: '2026-08-05'
+    url: (offline)
+    file: cef-daily-2026-08-14.pdf
+    sha256: 8daeb8219d17ba88f6ba16c5fa77d910f52e1f9bc453f8eb0554fdb670471cf3
+  - period: 2026-09
+    effective: '2026-09-02'
+    url: (offline)
+    file: cef-daily-2026-09-15.pdf
+    sha256: 2960f730fdc1af799d7c53135edc2b9c2e8416945ea4f40aff1e20761f7d8c6e
+  - period: 2026-10
+    effective: '2026-10-07'
+    url: (offline)
+    file: cef-daily-2026-10-05.pdf
+    sha256: 2f617bef6381033a2b4225010af9c116f22c71759297582c32f9f039675d3ed6
   series_with_no_value_in_latest_months:
     diesel_005_coast_wholesale: not published from 2025-12 (latest month in the file
-      is 2026-02)
+      is 2026-10)
+    paraffin_coast: not published from 2026-03 (latest month in the file is 2026-10)
+    petrol_95_coast_retail: not published from 2026-03 (latest month in the file is
+      2026-10)
 index_pages:
 - https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/media_SAVolumes.html
 - https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/Energy_Balances.html

@@ -27,8 +27,8 @@ Extract paths are under `assumptions/2026/`; where each original is held is in
 | | Diesel used by agriculture | Department energy balances | `timeseries/energy_balance_department.csv` | 2007–2021 | litres | 2016–2017 are about double the other years | Partial: ends 2021; definition break |
 | Industry | Manufacturing, real value added | P0441, code AR1003 | `timeseries/macro_statssa.csv` | 1993–2025 | rand, constant 2015 prices | One release vintage | Sourced |
 | | Mining and quarrying, real value added | P0441, code AR1002 | `timeseries/macro_statssa.csv` | 1993–2025 | rand, constant 2015 prices | One release vintage | Sourced |
-| | Manufacturing production volume index | Stats SA P3041.2, July 2026 | candidate `activity_statssa_monthly.csv` | Jan 1998 – Jul 2026 | index, 2019=100 | One release | Sourced (candidate) |
-| | Mining production volume index | Stats SA P2041, July 2026 | candidate `activity_statssa_monthly.csv` | Jan 2003 – Jul 2026 | index, 2019=100 | One release | Sourced (candidate) |
+| | Manufacturing production volume index | Stats SA P3041.2, July 2026 | `timeseries/activity_statssa_monthly.csv` | Jan 1998 – Jul 2026 | index, 2019=100 | One release | Sourced |
+| | Mining production volume index | Stats SA P2041, July 2026 | `timeseries/activity_statssa_monthly.csv` | Jan 2003 – Jul 2026 | index, 2019=100 | One release | Sourced |
 | | Diesel used by industry and mining | Department energy balances | `timeseries/energy_balance_department.csv` | 2007–2021 | litres | Sector boundaries shift in 2016 | Partial: ends 2021 |
 | Power | Gas turbine output, Eskom and independent producers | Eskom integrated reports, years to March | `timeseries/ocgt_generation_eskom.csv` | FY2022–FY2026 (Eskom); FY2023–FY2026 (combined) | GWh | Overlapping years agree across reports (none revised) | Sourced |
 | | Diesel burned, litres | Minister of Public Enterprises, replies reported in the press (Eskom's own turbines) | Not extracted | FY2022: 571 ML; FY2023: 937.5 ML; FY2025: 679 ML | litres | FY2025 from the reply itself (NW1980); the other two from press reports | Partial: three years, FY2024 missing; see follow-up |
@@ -37,7 +37,7 @@ Extract paths are under `assumptions/2026/`; where each original is held is in
 | Economic context | Real GDP and GDP per person | P0441 (code AR1000) and P0302 population | `timeseries/macro_statssa.csv` | 1993–2025; population to 2026 | rand, constant 2015 prices; persons | One release vintage; years after 2026 are projections | Sourced |
 | | Growth forecast | National Treasury Budget Review 2026, chapter 2 | `timeseries/gdp_growth_treasury.csv` | 2024–2028 | % a year, real | Single edition | Sourced |
 | | Petrol and diesel prices, monthly | Department "Fuel Price History" | `timeseries/fuel_prices_department.csv`; **candidate to November 2025** in `runs/manish_candidate_20261006/timeseries/` | Vintage: Jan 2011 – Apr 2024. Candidate: Jan 2011 – Nov 2025 | cents per litre, nominal | All 1,113 overlapping values unchanged in the candidate | Sourced to Feb 2026 as a candidate (six of seven series from Dec 2025); later months not posted |
-| | Consumer price index for real prices | Stats SA P0141, August 2026 | candidate `activity_statssa_monthly.csv` | Jan 2008 – Aug 2026 | index, December 2024=100 | One release | Sourced (candidate) |
+| | Consumer price index for real prices | Stats SA P0141, August 2026 | `timeseries/activity_statssa_monthly.csv` | Jan 2008 – Aug 2026 | index, December 2024=100 | One release | Sourced |
 | Plant | Refinery nameplate capacity | FIASA annual report 2025, p.49 | `timeseries/refinery_capacity_reported.csv` | 2016–2025 | barrels a day | Single edition | Sourced (capacity, not output) |
 | | Refinery output by product | Department energy balances | `timeseries/energy_balance_department.csv` | 2007–2021 | litres | — | Partial: ends 2021; implied 2022–2024 output in the package 4 balance |
 | | Secunda and Natref refined output, all products | Sasol production and sales metrics, years to June | Not extracted | FY2020–FY2026 | million barrels | Overlapping years agree across the three editions read | Partial: no product split |
@@ -228,9 +228,8 @@ The four releases were downloaded through the browser (the site refuses
 scripts but serves a signed-in browser session) and are kept as downloaded in
 `external/data/raw/statssa/`, with the provincial GDP release (P0441.2, 2024),
 which has not been read yet. Reader: `statssa.parse_monthly_series`; command:
-`python -m lfm.scripts.fetch_statssa_monthly --vintage 2026`. Output so far is
-a candidate, `activity_statssa_monthly.csv` (2,753 monthly values), not in the
-vintage.
+`python -m lfm.scripts.fetch_statssa_monthly --vintage 2026`. Output: `activity_statssa_monthly.csv` (2,753 monthly values), in the vintage
+from 6 October (see below).
 
 | Series | Release | Coverage | Unit |
 |---|---|---|---|
@@ -252,3 +251,46 @@ extracted; road for 2025 is 975.2 against 976.5 in that release, a revision of
 What the freight series shows: rail carried 214 million tonnes in 2019, 156 in
 2022 and 168 in 2025; road carried 896, 1,049 and 975. Tonnes are not
 tonne-kilometres, which Stats SA does not publish.
+
+## Prices to October 2026 from the Central Energy Fund, and Stats SA monthly series promoted
+
+Manish pointed to the Central Energy Fund's daily basic fuel price sheets
+(cefgroup.co.za > Petrol Price > Daily Basic Fuel Price), which run to
+5 October 2026. Each sheet restates the regulated Gauteng pump price for petrol
+and the wholesale price for diesel and paraffin, with the date they took
+effect. Reader: `lfm.sources.cef`; `fetch_energy_dept` now takes one sheet a
+month, the one nearest the 15th, for months after the department's latest.
+
+- `fuel_prices_department.csv` now runs from January 2011 to October 2026
+  (1,296 monthly values). No earlier value changed.
+- Check: CEF's February 2026 sheet equals the department's February breakdown
+  for all four series it carries.
+- **Flags.** CEF prints inland prices only. Four series continue to October
+  2026 (petrol 93 and 95 inland retail, diesel 0.05% inland wholesale, paraffin
+  inland). Three stop: coastal diesel from December 2025, and coastal petrol 95
+  and coastal paraffin from March 2026. The gaps are recorded in
+  `energy_department.sources.yaml`.
+- The file keeps its name, but from March 2026 its rows come from CEF; the
+  `source_file` column shows which.
+
+Regulated inland prices for 2026, rand per litre:
+
+| Effective | Petrol 95 retail | Diesel 0.05% wholesale |
+|---|---|---|
+| 4 February | 20.10 | 17.92 |
+| 4 March | 20.30 | 18.54 |
+| 1 April | 23.36 | 25.91 |
+| 6 May | 26.63 | 31.18 |
+| 3 June | 28.06 | 27.93 |
+| 1 July | 26.10 | 24.79 |
+| 5 August | 25.58 | 26.17 |
+| 2 September | 26.92 | 29.11 |
+| 7 October | 30.25 | 31.95 |
+
+Diesel has risen by 78% and petrol by 50% since February. Any work on demand
+response to price has to use the series to October, not to February.
+
+The Stats SA monthly series (previous section) are now in the vintage,
+declared, registered (2,753 rows) and part of `refresh_sources`. That fetcher
+never downloads; it reads whatever release zips are in
+`external/data/raw/statssa/`.

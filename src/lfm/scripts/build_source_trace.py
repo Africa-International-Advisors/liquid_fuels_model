@@ -116,10 +116,12 @@ TRACE: dict[str, tuple[str, ...]] = {
         "Ends 2021. Sector definitions shift in 2016. Fuel oil not extracted.",
         "Manish: later balance (package 4)"),
     "timeseries/fuel_prices_department.csv": (
-        DEPT, DEPT_URL, "fuel-price-history-<year>.pdf, 2011-2025; price-breakdown-<year>-<month>.pdf from November 2025", BOTH_LOCAL, "download", DEPT_CMD,
+        DEPT, DEPT_URL, "fuel-price-history-<year>.pdf, 2011-2025; price-breakdown-<year>-<month>.pdf to February 2026; "
+        "cef-daily-<date>.pdf from February 2026 (Central Energy Fund)", BOTH_LOCAL, "download", DEPT_CMD,
         "energy_dept.parse_price_history", "", "2024 (to April)",
-        "Runs to February 2026 (promoted on manish-branch). Coastal diesel has no value from December "
-        "2025: the department stopped publishing it. Nothing posted after February 2026.", "Nigel: confirm"),
+        "Runs to October 2026. Department to February 2026, then CEF daily sheets, which give inland "
+        "prices only: coastal diesel has no value from December 2025, coastal petrol and paraffin none "
+        "from March 2026.", "Nigel: confirm"),
     "timeseries/fuel_prices_department_annual.csv": (
         DEPT, DEPT_URL, "derived from fuel_prices_department.csv", "derived", "derived", DEPT_CMD,
         "fetch_energy_dept (12-month average)", "", "", "Complete years to 2025 for six series; coastal diesel to 2024 only.", "Nigel: confirm"),
@@ -188,6 +190,14 @@ TRACE: dict[str, tuple[str, ...]] = {
         "on manish-branch (external/data/raw/statssa/)", "manual download (site blocks scripts)", ECON_CMD,
         "statssa.parse_quarterly_constant_price_series", "", "2026 (to Q2)",
         "Not seasonally adjusted; four quarters add to the annual figure.", "Nigel: confirm"),
+    "timeseries/activity_statssa_monthly.csv": (
+        "Statistics South Africa (P2041 mining, P3041.2 manufacturing, P7162 land transport, P0141 CPI)",
+        "https://www.statssa.gov.za/?page_id=1847", "release zips, July and August 2026",
+        "on manish-branch (external/data/raw/statssa/)", "manual or browser download (site blocks scripts)",
+        "python -m lfm.scripts.fetch_statssa_monthly --vintage 2026", "statssa.parse_monthly_series",
+        "extends pack p7 (industry, freight)", "2026 (to July; CPI to August)",
+        "Activity measures, not fuel volumes. Not seasonally adjusted. Tonnes, not tonne-kilometres.",
+        "Nigel: confirm"),
     "timeseries/macro_worldbank.csv": (
         "World Bank (republishing Stats SA and UN)", "https://api.worldbank.org/v2/country/ZAF/indicator/",
         "worldbank-<indicator>.json", BOTH_LOCAL, "API", ECON_CMD, "economy.parse_world_bank", "", "",

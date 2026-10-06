@@ -360,3 +360,14 @@ ocgt_diesel_burn_reported:
   source: Parliamentary replies and press reports of them; provenance and limits in reference/ocgt_diesel_burn_reported.sources.yaml
   last_updated: '2026-10-06'
   shared: true
+activity_statssa_monthly:
+  register_id: REG-SOURCE-ACTIVITY_STATSSA_MONTHLY
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/activity_statssa_monthly.csv
+  units: mixed; see unit column
+  source: Stats SA monthly releases P2041, P3041.2, P7162 and P0141; activity measures, not fuel volumes;
+    provenance in timeseries/activity_statssa_monthly.sources.yaml
+  last_updated: '2026-10-06'
+  shared: true
