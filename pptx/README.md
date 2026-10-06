@@ -1,4 +1,11 @@
-# Liquid fuels analyst briefing
+# Liquid fuels presentations
+
+Current Week 1 storyline: **Convergence**, 22 pages. Open the
+[PDF](output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf) or
+[PowerPoint](output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx).
+[Delivery index](output/delivered/README.md) explains current and archived files.
+
+## Analyst kickoff (separate briefing)
 
 Presentation project for the analyst walkthrough and six-week model development plan.
 Status: 12-slide editable Vopak kickoff deck built and rendered through PowerPoint.
@@ -246,12 +253,12 @@ The chart is a partial inventory, not a national fuel-storage census or market s
 
 The current pack adds a native provincial sales line chart and an illustrative
 domestic/import stack for every province. It is delivered as
-`output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pptx` plus matching PDF.
+`output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx` plus matching PDF.
 Earlier shipped numbered packs are preserved under `output/delivered/archive/`;
 unshipped drafts are kept under ignored `qa/week1_maps/drafts/`. The builder
 archives the previous current pair before replacing the stable filenames.
 Run reporting revisions with `--reuse-deck` pointing at the current pack or an
-archived predecessor. Page references follow the current nine-page sequence.
+archived predecessor. The current Convergence pack has 22 pages; earlier page sequences below are historical review notes.
 
 `scripts/provincial_sales_pages.py` sums only complete four-quarter product/year
 series. 2023 Q1 is not annualised. Historical provincial/national gaps are shown

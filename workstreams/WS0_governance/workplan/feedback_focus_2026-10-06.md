@@ -232,7 +232,7 @@ folder, compare overlapping observations and review changes before adoption.
 
 ## Pack and diagnostic reference files
 
-- [Current PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pptx) and [PDF](../../../pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pdf): stable filenames, 16 pages; original cover/closing retained.
+- [Current PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx) and [PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf): current Convergence storyline, 22 pages; supersedes the earlier Analytical Pack reviewed below.
 - [Source audit workbook](../../../output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx): Direction, provincial gaps and repeated keys give row-level investigation leads.
 - [Source profile](../../../output/delivered/source_profile_2026_10_05.html): input shapes, consuming functions and refresh routes. Its engine-use counts describe the 5 October diagnostic, not a new 6 October adoption audit.
 - [Partner-story gap register](../../../pptx/story/partner_story_gap_register_2026_10_06.json): questions, closure evidence and owners. Use current pack page numbers below; older evidence strings retain earlier page references.

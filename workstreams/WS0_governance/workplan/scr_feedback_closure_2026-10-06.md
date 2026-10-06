@@ -1,6 +1,8 @@
 ﻿# SCR presentation feedback closure — 6 October 2026
 
-Delivered pair: `pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pptx` and same-name PDF. Existing filenames retained. Original Vopak master and 16-page SCR structure retained; chevrons link to section starts.
+Historical feedback record for the earlier 16-page pack. Current storyline: [Convergence PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf), 22 pages. Page numbers below refer to the earlier pack.
+
+Archived delivered pair: `pptx/output/delivered/archive/2026-10-06_storyline/Vopak_Week1_Analytical_Pack_2026_10_06.pptx` and same-name PDF. Existing filenames retained. Original Vopak master and 16-page SCR structure retained; chevrons link to section starts.
 
 | Feedback | Applied revision | Evidence still open |
 |---|---|---|

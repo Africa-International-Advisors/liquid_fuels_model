@@ -63,7 +63,7 @@ REGIONS = {
 }
 OUT = ROOT / 'output/delivered'
 OUT.mkdir(parents=True, exist_ok=True)
-PATH = (Path(sys.argv[sys.argv.index('--output')+1]).resolve() if '--output' in sys.argv else OUT / 'Vopak_Week1_Analytical_Pack_2026_10_06.pptx')
+PATH = (Path(sys.argv[sys.argv.index('--output')+1]).resolve() if '--output' in sys.argv else OUT / 'Vopak_Week1_Convergence_2026_10_06.pptx')
 PATH.parent.mkdir(parents=True,exist_ok=True)
 if PATH.exists() and PATH.parent == OUT:
     archive=OUT/'archive'/datetime.now().strftime('%Y-%m-%d_%H%M%S')
