@@ -49,11 +49,11 @@ corresponding local files.
 | Analytical pack | [pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pdf](../../../pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pdf) | SCR story and the exhibits your evidence will support. |
 | Repository rules | [AGENTS.md](../../../AGENTS.md), [CLAUDE.md](../../../CLAUDE.md), [GATE_CHECKLIST.md](../../../GATE_CHECKLIST.md) | Working rules, model architecture and release readiness. |
 
-**Availability:** the stand-up transcript and prior raw-download payload are
-currently local to Nigel's machine; they are not on shared `main`. Their links
-will not open in a fresh clone until the files are shared. Flag missing originals
-and request them from Nigel; do not assume the extracted CSV proves access to
-the original. The PDF and runbook are available on `main`.
+**Availability:** the stand-up meeting record, PDF and runbook are tracked on
+shared `main` and come with a clone or merge of the latest `origin/main`.
+The prior raw-download payload remains local to Nigel's machine and is not
+included. Flag missing source originals and request them from Nigel; do not
+assume an extracted CSV proves access to its original.
 
 ## 3. Give your LLM this instruction
 

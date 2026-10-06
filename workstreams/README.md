@@ -17,6 +17,7 @@ These are responsibilities across one team: Manish (analyst, available 100%), Ni
 
 ## Start here
 
+- [6 October stand-up transcript](WS0_governance/meetings/2026-10-06_vopak_standup.docx)
 - [6 October feedback checklist and Manish focus](WS0_governance/workplan/feedback_focus_2026-10-06.md)
 - [Current pre-kickoff cockpit](WS0_governance/workplan/reflection_2026-10-01_internal.html)
 - [Six-week plan](WS0_governance/workplan/six_week_plan.md)
