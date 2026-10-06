@@ -41,7 +41,7 @@ Extract paths are under `assumptions/2026/`; where each original is held is in
 | Plant | Refinery nameplate capacity | FIASA annual report 2025, p.49 | `timeseries/refinery_capacity_reported.csv` | 2016–2025 | barrels a day | Single edition | Sourced (capacity, not output) |
 | | Refinery output by product | Department energy balances | `timeseries/energy_balance_department.csv` | 2007–2021 | litres | — | Partial: ends 2021; implied 2022–2024 output in the package 4 balance |
 | | Secunda and Natref refined output, all products | Sasol production and sales metrics, years to June | Not extracted | FY2020–FY2026 | million barrels | Overlapping years agree across the three editions read | Partial: no product split |
-| | Astron (Cape Town) refined output, all products | Glencore 2025 Annual Report, p.69, "Astron Energy – energy content of refined products" | Not extracted | 2024, 2025 | billion Btu | Single edition; 2023 not read | Partial: energy content, not litres; no product split |
+| | Astron (Cape Town) refined output, all products | Glencore Annual Reports 2023 (p.104), 2024 (p.85), 2025 (p.69), "Astron Energy – energy content of refined products" | Not extracted | 2023–2025; nil in 2022 | billion Btu | 2023 and 2024 agree across editions | Partial: energy content, not litres; no product split |
 | | Utilisation and yields by plant | Reatile workbook only | `timeseries/refinery_production.csv` | 2022–2050 | fraction | — | Open: no published source |
 
 ## What was added today
@@ -145,19 +145,23 @@ with no split by product. What this means for the balance is in
 
 **Astron's output is published by its owner.** An earlier version of this note
 said Astron publishes no output; that was wrong. Astron Energy (Pty) Ltd issues
-no report of its own, but Glencore, which holds 68%, reports it. Glencore 2025
-Annual Report, page 69 (copy in `external/data/raw/glencore/`, uncommitted):
+no report of its own, but Glencore, which holds 68%, reports it in its Annual
+Reports for 2023 (page 104), 2024 (page 85) and 2025 (page 69); copies are in
+`external/data/raw/glencore/`, uncommitted:
 
 | Calendar year | Energy content of refined products | In PJ | Litres at 36 MJ a litre |
 |---|---|---|---|
+| 2022 | nil (refinery not operating) | — | — |
+| 2023 | 136,665 billion Btu | 144.2 | about 4.0 bn |
 | 2024 | 166,204 billion Btu | 175.4 | about 4.9 bn |
 | 2025 | 164,365 billion Btu | 173.4 | about 4.8 bn |
 
 The litres are a conversion, not a reported figure: 36 MJ a litre is an assumed
 average for a mixed slate (petrol is about 34, diesel about 38), which puts the
 2024 figure between 4.6 and 5.1 bn litres, about 84% of the 100,000 barrels a
-day nameplate. Two cautions: the same report says (p.30 of the TCFD section)
+day nameplate, and the 2023 figure between 3.8 and 4.2 bn litres (the refinery
+restarted in early 2023, so that is a part year). Two cautions: the same report says (p.30 of the TCFD section)
 that "sold oil products processed by our Astron Energy Refinery" rose 28% in
 2025, which does not sit with a 1% fall in energy content and has not been
-reconciled; and Glencore's 2023 production report says only that the refinery
-restarted in early 2023, so no 2023 figure was found.
+reconciled. The 2023 and 2024 values are the same in each edition that prints
+them.
