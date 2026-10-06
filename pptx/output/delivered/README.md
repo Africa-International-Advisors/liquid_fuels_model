@@ -6,6 +6,15 @@ This is the current 26-page storyline, aligned to the kickoff workplan and the
 approved sequence. The main story ends with the delivery roadmap on page 19.
 Use this pair for review; previous deliveries are archived together.
 
+The 7 October editorial review makes main-story titles implication/action led,
+standardises chart typography and replaces repetitive evidence panels with
+"Implication for Vopak" and "Next action". Pages 13-17 have distinct jobs:
+footprint, unique deliveries, additional opportunity, annual handling and working
+stock. Page 14 removes shared transfers using the existing illustrative route
+values; page 15 retains the opportunity waterfall. Inputs and native chart series
+are unchanged. Editorial copy and fixed type roles are held in
+[partner_review_2026_10_07.json](../../story/partner_review_2026_10_07.json).
+
 | Agenda | Pages | Purpose |
 |---|---|---|
 | Overview | 1-3 | Cover, document scope and answer-led summary |

@@ -193,6 +193,8 @@ def apply_story_order(prs, root, brand):
                 node.set('id',str(next_id));next_id+=1
             seen.add(node.get('id'))
     assert len(prs.slides)==26
+    from partner_review import apply_partner_review
+    apply_partner_review(prs,root,brand)
 
 
 if __name__=='__main__':

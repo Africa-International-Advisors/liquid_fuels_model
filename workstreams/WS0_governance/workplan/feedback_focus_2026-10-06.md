@@ -636,3 +636,33 @@ observed commercial losses or calibrated spatial allocations. The page labels
 them as illustrative. Existing waterfall volumes and original road-cost exhibit
 are unchanged. Real destinations, served volumes and cost/service/access tests
 remain Manish's evidence task, with Nigel review.
+
+
+## 7 October: partner-style editorial and chart hierarchy review
+
+Nigel requested an action/so-what review of titles, evidence panels and variable
+chart text sizes. The main analytical story (pp3-19) now leads with implications
+and decisions grounded in existing evidence. The overview title is narrowed to
+an import-led market and accessible customer growth; it no longer presents
+sustained future import volumes as an established forecast. Henry's S/C/R IDs,
+verbatim appendix prompts and deep-dive targets remain intact.
+
+Right-hand evidence panels become Implication for Vopak, with concise findings
+and a separate Next action. Typography is defined by role: titles 24pt; subtitles
+14pt; panel headings/body 12pt; chart labels 11pt; direct values 12pt; axes 10pt.
+Compact map/dashboard labels use 9pt; source band stays 7.5pt. No per-page font
+shrinking is used to fit title copy. Chart size follows the exhibit's job.
+
+The R6/R7 exhibit sequence is deliberate:
+- p13: regional published storage footprint (stock, thousand m3).
+- p14: shared transfers removed to establish unique served demand (annual flow).
+- p15: additional customer screening waterfall with matching schematic map markers.
+- p16: turnover converts tankage to an annual handling screen, not assured supply.
+- p17: inventory days convert additional annual flow into working stock.
+
+Page 14's duplicate market-screen bars are replaced with a transfer waterfall
+using the existing route CSV: 2.8 + 2.0 - 1.8 = 3.0 bn litres/year. This is still
+an authored illustration, not actual throughput. No model inputs, forecasts or
+existing native chart values changed. Stale page references and crowded notes
+are corrected. Presentation build now applies this review after canonical ordering.
+Editorial copy and type roles: pptx/story/partner_review_2026_10_07.json.

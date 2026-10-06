@@ -1,0 +1,213 @@
+{
+  "status": "Editorial review of existing evidence; no new data or forecast",
+  "typography": {
+    "title": 24,
+    "subtitle": 14,
+    "panel_heading": 12,
+    "body": 12,
+    "chart_label": 11,
+    "chart_value": 12,
+    "chart_axis": 10,
+    "compact_map": 9,
+    "note": 9,
+    "source": 7.5
+  },
+  "titles": {
+    "3": "Vopak’s 2026 Liquid Fuels Outlook: target accessible customers in an import-led market",
+    "4": "S1. Use diesel-led imports as the trade baseline; reconcile 2024 sales before forecasting",
+    "5": "S2. Target Gauteng and KZN first; three provinces account for 69% of reported fuel sales",
+    "6": "S2. Anchor demand cases in broadly steady pre-2023 sales; keep later estimates separate",
+    "7": "S1. Reconcile national supply before assigning imports to provincial demand",
+    "8": "S/C3. Falling diesel generation weakens one driver; test the others separately",
+    "9": "C4. Published refinery capacity has halved; keep restart upside conditional",
+    "10": "S/C3 / C4. Agree low, base and high levers before using the outlook for decisions",
+    "11": "C5. Test delivered cost and service before treating road reach as customer access",
+    "12": "C5. Compare Durban, Matola and Walvis Bay on cost and service for the same customer",
+    "13": "R6. Prioritise Durban and Lesedi; verify usable capacity before sizing growth",
+    "14": "R6. Remove Durban–Lesedi transfers to count customer deliveries once",
+    "15": "R6. Test the illustrative 5.5 bn litre opportunity against reach, price, service and access",
+    "16": "R6. Verify turnover before translating tankage into annual handling",
+    "17": "R7. Test spare space: the 5.5 bn litre example needs 211,000 m³ at 14 days",
+    "18": "R7. Win Durban and Lesedi customer flows before adding storage",
+    "19": "R7. Close evidence gaps through six-week gates and four proposed client checkpoints"
+  },
+  "panels": {
+    "4": {
+      "findings": [
+        [
+          "Use customs for the trade baseline",
+          "SARS records 10.793 bn litres of diesel imports and 0.796 of exports in 2024: net imports of 9.997 bn litres."
+        ],
+        [
+          "Reconcile the sales proxy",
+          "FIASA reports 20.763 bn litres of petrol/diesel sales. Editions conflict; this is an unverified consumption proxy."
+        ],
+        [
+          "Do not call the residual production",
+          "Sales less net imports leaves 7.685 bn litres. Production, stock changes and coverage must explain that residual."
+        ]
+      ],
+      "action": "Manish: match production, trade and stocks by product/year. Nigel: agree the sales source before forecasting."
+    },
+    "5": {
+      "findings": [
+        [
+          "Concentrate the first customer tests",
+          "Gauteng, KZN and Western Cape hold 68.6% of reported 2022 sales. Vopak sites sit in the top two provinces."
+        ],
+        [
+          "Use consistent reporting regions",
+          "Eastern: EC/KZN. Inland: GP/FS/LP/MP/NW. Western: WC. Other: NC. These groups align the demand and storage tests."
+        ],
+        [
+          "Establish access customer by customer",
+          "Provincial sales locate the market; they do not prove terminal reach, customer rights or Vopak deliveries."
+        ]
+      ],
+      "action": "Nigel: select Durban/Lesedi customer destinations. Manish: retain observed 2022 sales and label later estimates."
+    },
+    "6": {
+      "findings": [
+        [
+          "Start with the observed pattern",
+          "Gauteng remains the largest province through 2013–2022. Volumes were broadly steady, with a clear pandemic dip."
+        ],
+        [
+          "Keep 2024 estimates separate",
+          "Petrol estimates hold 2022 shares: GP 3.47, KZN 1.47 and WC 1.41 bn litres. These are not observed provincial sales."
+        ],
+        [
+          "Resolve the remaining source choices",
+          "Manish fixed the 2013 parser and traced 2015 to a revision. The 2014 conflict and incomplete 2018 coverage still need decisions."
+        ]
+      ],
+      "action": "Manish: close the source choices. Nigel: decide whether held-share petrol estimates support the outlook; test diesel separately."
+    },
+    "7": {
+      "findings": [
+        [
+          "Use sourced provincial totals",
+          "The total bars use reported 2022 petrol/diesel sales. This establishes provincial demand, not where the fuel came from."
+        ],
+        [
+          "Treat origin shares as an example",
+          "Domestic/import segments are authored illustrations. No measured provincial supply-origin allocation is established."
+        ],
+        [
+          "Close the national balance first",
+          "Match production, exports and stock movements to the demand year before allocating an import requirement to provinces."
+        ]
+      ],
+      "action": "Manish: reconcile the national balance, then obtain origin/destination evidence. Keep unsupported provincial origin unknown."
+    },
+    "9": {
+      "findings": [
+        [
+          "Plan around the smaller footprint",
+          "Published capacity falls from 718 to 358 thousand bbl/day between 2020 and 2022. A restart remains conditional."
+        ],
+        [
+          "Use output for the fuel balance",
+          "FY2024 output is 29.1 million barrels at Secunda and 17.8 for Sasol’s Natref share; both cover all products and fiscal years."
+        ],
+        [
+          "Keep the restart as a separate case",
+          "Match yields, downtime and calendar years before estimating imports. Nameplate capacity does not establish petrol/diesel output."
+        ]
+      ],
+      "action": "Manish: build the product/year output bridge. Henry: review plant assumptions. Nigel: agree conditional restart timing."
+    },
+    "11": {
+      "findings": [
+        [
+          "Use road cost as the first screen",
+          "Darker cells show lower illustrative road cost from Durban or Lesedi. Fuel price, storage and pipeline tariffs are excluded."
+        ],
+        [
+          "Keep grey areas unassessed",
+          "Grey marks no assessed connection under the schematic rule. It does not establish that a customer is unreachable."
+        ],
+        [
+          "Prove the full service proposition",
+          "Pipeline/rail lines are context. Route capacity, product compatibility, receipt/dispatch and customer rights still need evidence."
+        ]
+      ],
+      "action": "Nigel: choose a destination and cost/service threshold. Manish: replace example rates with dated route quotes and access evidence."
+    },
+    "12": {
+      "findings": [
+        [
+          "Keep Durban in the inland comparison",
+          "Durban and Lesedi form Vopak’s SA footprint. Compare their full delivered service with alternatives for the same customer."
+        ],
+        [
+          "Test the eastern alternative",
+          "Matola’s GIMTL lists 60,000 m³ of petrol/diesel tanks. Test availability, N4 route cost and customer access."
+        ],
+        [
+          "Test the western alternative",
+          "Walvis Bay’s NOSF lists 65,000 m³ of petrol/diesel capacity. Test the Trans-Kalahari route on the same cost/service basis."
+        ]
+      ],
+      "action": "Manish: compare one product and destination across all three gateways. Nigel: agree the service standard and commercial access test."
+    },
+    "13": {
+      "findings": [
+        [
+          "Anchor the test in Durban and Lesedi",
+          "Vopak lists 360,200 m³ in Durban and 140,000 m³ at Lesedi. These anchor the eastern and inland customer tests."
+        ],
+        [
+          "Verify working fuel capacity",
+          "Published gross tankage covers mixed products. It does not establish usable petrol/diesel space, annual deliveries or customer share."
+        ],
+        [
+          "Keep coverage gaps explicit",
+          "Missing operator capacities remain unknown. Conditional Transnet leases are excluded from the operating bars."
+        ]
+      ],
+      "action": "Manish: confirm fuel-compatible working space and dispatch by site. Nigel: obtain operating data for Durban and Lesedi."
+    },
+    "14": {
+      "findings": [
+        [
+          "Remove inter-terminal transfers",
+          "The example includes 1.8 bn litres transferred through both Durban and Lesedi. Counting both receipts would count that fuel twice."
+        ],
+        [
+          "Use 3.0 in this illustration",
+          "Receipts of 2.8 plus 2.0, less the shared 1.8 transfer, leave 3.0 bn litres of unique deliveries. Actual throughput is unverified."
+        ],
+        [
+          "Establish served demand before growth",
+          "Match customer, product and period records. The opportunity waterfall on page 15 then removes already-served volumes once."
+        ]
+      ],
+      "action": "Nigel: obtain customer deliveries and transfer records. Manish: reconcile unique served volumes before estimating growth."
+    },
+    "16": {
+      "findings": [
+        [
+          "Test turnover against operating data",
+          "Two monthly turns is an authored base, not a verified SA site rate. The appendix tests one and three turns."
+        ],
+        [
+          "Estimate achievable handling",
+          "Use compatible working space, downtime and receipt/dispatch limits. Gross tankage alone overstates what may be handled."
+        ],
+        [
+          "Avoid a regional shortage conclusion",
+          "Inland inventory omits material operators. Coastal tanks can serve inland demand, and transfers can count the same fuel twice."
+        ]
+      ],
+      "action": "Manish: verify working capacity and unique dispatch. Nigel: obtain site records. Replace common turns with site-specific evidence."
+    }
+  },
+  "exhibit_roles": {
+    "13": "Where the published storage footprint sits; stock in thousand m³",
+    "14": "Remove shared transfers to establish unique served demand; illustrative annual flow",
+    "15": "Screen additional customer opportunity; illustrative annual flow and schematic map",
+    "16": "Translate tankage through turnover into an annual handling screen",
+    "17": "Translate additional annual flow through inventory policy into working stock"
+  }
+}
