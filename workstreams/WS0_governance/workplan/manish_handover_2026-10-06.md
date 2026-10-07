@@ -41,7 +41,7 @@ corresponding local files.
 
 | Open | Exact path | Purpose |
 |---|---|---|
-| Handover PDF | [pptx/output/delivered/Vopak_Manish_Handover_2026_10_06.pdf](../../../pptx/output/delivered/Vopak_Manish_Handover_2026_10_06.pdf) | Pages 6–7: work-package and driver checklists. Pages 3–5: files, fetch commands and staging. |
+| Handover PDF | [pptx/output/delivered/supporting/Vopak_Manish_Handover_2026_10_06.pdf](../../../pptx/output/delivered/supporting/Vopak_Manish_Handover_2026_10_06.pdf) | Pages 6–7: work-package and driver checklists. Pages 3–5: files, fetch commands and staging. |
 | Detailed runbook | [workstreams/WS0_governance/workplan/feedback_focus_2026-10-06.md](feedback_focus_2026-10-06.md) | Exact source paths, public source links, candidate fetch setup and known flags. |
 | Meeting record / minutes reference | [workstreams/WS0_governance/meetings/2026-10-06_vopak_standup.docx](../meetings/2026-10-06_vopak_standup.docx) | Received stand-up transcript; consult for meeting context. This is the transcript, not a separately approved set of minutes. |
 | Source audit | [output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx](../../../output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx) | Start with Direction, Provincial gaps and Repeated keys. |

@@ -16,7 +16,7 @@
   "build": {
     "engine": "auto",
     "mode": "editable",
-    "output": "output/delivered/Vopak_Analyst_Kickoff.pptx",
+    "output": "output/delivered/supporting/Vopak_Analyst_Kickoff.pptx",
     "template_aware": true,
     "command": [
       "@python",
@@ -26,6 +26,6 @@
   "check": {},
   "pdf": {
     "renderer": "powerpoint",
-    "output": "output/delivered/Vopak_Analyst_Kickoff.pdf"
+    "output": "output/delivered/supporting/Vopak_Analyst_Kickoff.pdf"
   }
 }

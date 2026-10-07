@@ -29,7 +29,7 @@ sizing is optional. The kickoff appendix pp. 31-38 supplies the infrastructure
 starting geography, not verified route capacities or customer flows.
 
 The analytical data-shape example is
-`pptx/output/delivered/Vopak_market_envelope_illustrative_2026_10_06.html`.
+`pptx/output/delivered/supporting/Vopak_market_envelope_illustrative_2026_10_06.html`.
 It links national fuel balances, regional demand/access and terminal route rows.
 Every volume is illustrative; current Vopak actuals are not supplied. Keep facility
 receipt throughput separate from unique demand served, subtracting shared Durban-

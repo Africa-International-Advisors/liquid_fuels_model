@@ -12,7 +12,7 @@ import shutil
 
 ROOT=Path(__file__).resolve().parents[2]
 STORY=ROOT/'pptx'/'story'
-OUT=ROOT/'pptx'/'output'/'delivered'
+OUT=ROOT/'pptx'/'output'/'delivered'/'supporting'
 
 def read(name):
     with (STORY/name).open(encoding='utf-8',newline='') as f:

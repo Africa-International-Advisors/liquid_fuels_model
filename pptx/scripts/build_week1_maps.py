@@ -309,7 +309,7 @@ for master in prs.slide_masters:
         if q.has_text_frame and ('Click to edit' in q.text or q.name=='Text Placeholder 6'):
             q.text_frame.clear()
 
-reference = Presentation(ROOT/'output/delivered/Vopak_Analyst_Kickoff.pptx')
+reference = Presentation(ROOT/'output/delivered/supporting/Vopak_Analyst_Kickoff.pptx')
 
 def bookend(source, closing=False):
     """Reuse the delivered kickoff cover/closing composition and its original photos."""
