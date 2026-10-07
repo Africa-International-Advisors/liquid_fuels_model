@@ -1,0 +1,97 @@
+{
+  "status": "Nigel approved the revised editorial structure in chat on 7 October 2026. This does not approve model inputs, evidence or investment conclusions.",
+  "source": "pptx/output/Vopak_Week1_Convergence_candidate_notes.pdf",
+  "page_numbers": "Refer to the 31-page annotated candidate, before any reordering.",
+  "scope": "Editorial and exhibit changes only. No model assumptions or evidence values replaced.",
+  "pages": [
+    {
+      "page": 1,
+      "layout": "Existing cover shapes and master. Align title, subtitle, date and confidentiality text to one left edge.",
+      "copy": "Retain existing cover copy."
+    },
+    {
+      "page": 3,
+      "title": "Diesel dominates net imports, and fuel sales concentrate in Gauteng, KZN and Western Cape",
+      "layout": "Retain native PowerPoint table: Agenda / SCR / Finding / Implication for Vopak / Supporting pages. Retain existing shapes for SCR labels. Update links after final ordering.",
+      "rows": [
+        ["Market baseline", "S1", "Diesel accounts for most net imports. In 2024, net diesel imports were 9.997 bn litres, compared with 3.081 bn litres for petrol.", "Diesel import flows are the largest observed trade component to assess against Vopak's services."],
+        ["", "S2", "Gauteng, KZN and Western Cape account for 68.6% of reported 2022 petrol and diesel sales.", "Gauteng and KZN are the first demand markets to assess against Lesedi and Durban."],
+        ["Market changes", "C3", "OCGT generation has fallen sharply since FY2024. Freight activity and changing vehicle sales affect other parts of fuel demand.", "Forecast each end use separately. A single growth rate would miss changes in the demand mix."],
+        ["", "C4", "Published refining capacity fell from 718 to 358 thousand barrels/day between 2020 and 2022. Future plant output remains uncertain.", "Domestic production assumptions materially affect the forecast import requirement."],
+        ["", "C5", "Matola and Walvis Bay provide alternative fuel supply nodes. Their effect on inland competition still needs route and volume evidence.", "Compare competing supply routes to the same inland market."],
+        ["Vopak outlook", "R6", "Vopak has facilities in Durban and Lesedi, alongside the coastal and inland markets identified in the demand analysis.", "Establish current fuel volumes and usable capacity at these sites before estimating additional business."],
+        ["", "R7", "The evidence does not yet establish a need for additional storage. Customer volumes and usable spare capacity remain unverified.", "Determine how much additional fuel existing assets could handle, then assess any remaining capacity requirement."]
+      ]
+    },
+    {
+      "page": 4,
+      "title": "S1. Net diesel imports were more than three times net petrol imports in 2024",
+      "layout": "Retain the editable product chart and right-hand text shapes. Show separate petrol and diesel series. Remove the combined sales headline and combined residual from the main slide.",
+      "sections": [
+        ["Diesel", "Imports of 10.793 bn litres less exports of 0.796 bn litres give net imports of 9.997 bn litres."],
+        ["Petrol", "Imports of 4.001 bn litres less exports of 0.920 bn litres give net imports of 3.081 bn litres."],
+        ["Demand comparison", "Reported sales and model estimates remain separate. The workbook reconciles each product and identifies the missing coverage."],
+        ["Current work", "Match production, trade, sales and stock movements by product and year."]
+      ],
+      "speaker_note": "The former 20.763 bn litre figure sums selected 2024 reported petrol and diesel sales. It is not a model demand result. The recorded workbook has 16.433 bn litres of road petrol/diesel demand and 23.984 bn litres when the additional modelled diesel sectors are included. The broader diesel scope includes marine and remains unreconciled. Neither total is presented as a verified replacement market size."
+    },
+    {
+      "page": 5,
+      "title": "S2. Gauteng, KZN and Western Cape account for 68.6% of reported petrol and diesel sales",
+      "layout": "Retain map shapes. Add a compact native table in the right-hand panel with province, volume and share. Place legends together above the map without obscuring its labels.",
+      "table": [
+        ["Province", "2022 bn litres", "National share"],
+        ["Gauteng", "6.81", "31.1%"],
+        ["KwaZulu-Natal", "4.28", "19.6%"],
+        ["Western Cape", "3.93", "17.9%"],
+        ["Combined", "15.02", "68.6%"]
+      ],
+      "note": "Shares use unrounded 2022 provincial source values. Reported sales locate demand; they do not establish Vopak customer access."
+    },
+    {
+      "pages": [7, 17, 20],
+      "layout": "Keep current editable charts and shapes. Move each legend to the exhibit header area above the plot, using consistent swatches and spacing. Preserve all chart values and qualifications."
+    },
+    {
+      "page": 16,
+      "title": "C5. Matola and Walvis Bay add alternative supply nodes to the inland market",
+      "layout": "Retain the editable regional map. Label gateway origins and the common Gauteng destination clearly. Right-hand text shapes distinguish existing alternatives, proposed inland nodes and evidence of market change.",
+      "sections": [
+        ["Existing alternative gateways", "The published inventory includes 60,000 m3 of petrol/diesel storage at Matola's GIMTL and 65,000 m3 at Walvis Bay's NOSF."],
+        ["Potential inland nodes", "The Transnet depot lease offers identify possible inland distribution nodes. Refurbishment, licensing and commercial operation remain conditional."],
+        ["What would demonstrate a market shift", "Commissioning dates, growth in handled volumes and changes in delivered cost would show whether these nodes are changing inland supply patterns."]
+      ],
+      "note": "Published capacity establishes a footprint, not recent growth or diversion from Durban. The existing evidence does not establish a winning gateway. User confirmed this is original page 16, not page 26."
+    },
+    {
+      "pages": [18, 19, 21],
+      "layout": "Proposed move to supporting methods, preserving native exhibits and marking them as illustrative. Remove the example numbers from the main overview and conclusion.",
+      "reason": "The shared-transfer, opportunity and inventory examples form one illustrative chain. Moving only the first or last page would leave an unsupported intermediate opportunity in the main story.",
+      "supporting_titles": [
+        "Supporting method: terminal transfers can count the same fuel twice",
+        "Supporting method: how route and customer evidence would narrow an opportunity",
+        "Supporting method: inventory days convert annual flow into working stock"
+      ]
+    },
+    {
+      "page": 22,
+      "title": "Gauteng and KZN are the first markets to assess against Vopak's existing facilities",
+      "layout": "Replace the four-column playbook with a native PowerPoint table. Columns: Site / Current evidence / Implication for Vopak / Evidence still needed. Remove decorative icons and jargon headings.",
+      "rows": [
+        ["Durban", "KZN accounts for 19.6% of reported 2022 fuel sales. Diesel is the largest component of national net imports.", "Assess coastal demand and inland flows that Durban could handle.", "Current product volumes, customer destinations and usable fuel capacity."],
+        ["Lesedi", "Gauteng accounts for 31.1% of reported 2022 fuel sales, the largest provincial share.", "Assess inland demand against Lesedi's receipt and dispatch capability.", "Current throughput and the full delivered cost from competing gateways."],
+        ["Competing nodes", "Matola and Walvis Bay have published petrol/diesel storage. Inland depot lease offers could add distribution points.", "Establish where alternative supply routes could change Vopak's inland business.", "Operating status, handled volumes, route costs and service to the same destinations."]
+      ],
+      "closing_copy": "The current evidence identifies priority markets. It does not yet quantify additional Vopak volumes or a requirement for new tanks."
+    },
+    {
+      "page": 23,
+      "title": "Fuel-baseline reconciliation and assumption review are active",
+      "layout": "Retain the existing native workplan table and timing grid. Use a clearly labelled Active now marker for current work. Keep proposed future timing visually distinct from current activity and completion.",
+      "active_now": ["Fuel-baseline reconciliation", "Demand-driver and assumption review", "Storyline and evidence integration"],
+      "active_scope": "The linked workbook is under review. Source choices, sector baselines, national/provincial logic and H/M/L definitions remain open.",
+      "future_scope": "Route costing, customer opportunity sizing and storage requirements follow the agreed baseline and supporting evidence. Existing public inventory work does not establish that these packages are complete.",
+      "footer": "Activity status reflects the current working discussion. Timing and client checkpoints remain proposed. Active does not mean complete."
+    }
+  ]
+}

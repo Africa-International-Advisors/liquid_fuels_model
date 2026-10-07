@@ -6,14 +6,15 @@ the same files, without creating a second copy here.
 
 | File | Use |
 |---|---|
-| [Current PDF](../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf) | Read and annotate the story |
-| [Current PowerPoint](../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx) | Editable version of the same 31-page pack |
+| [Current PDF](../../pptx/output/delivered/Vopak_Week1_Convergence_review_2026_10_07.pdf) | Read and annotate the story |
+| [Current PowerPoint](../../pptx/output/delivered/Vopak_Week1_Convergence_review_2026_10_07.pptx) | Editable version of the same 31-page pack |
 | [Fuel input matrix](../../assumptions/2026/timeseries/fuel_lever_design_2026_10_07.csv) | Proposed diesel, jet and petrol L/M/H inputs at 2030 and 2035 |
 | [Manish review tasks](../../workstreams/WS0_governance/workplan/fuel_lever_review_2026-10-07.md) | Sources, dependencies, owners and acceptance tasks |
 
-The deck's filename retains the Week 1 date, 6 October. Its latest content was
-updated on 7 October, including the legends above the charts on pages 8-9
-and Manish’s priorities and review decisions on page 24.
+The current deck incorporates Nigel?s annotated review: competing gateways on page 16, practical site implications on page 19, active work on page 20, and illustrative methods on pages 23?25.
+
+[Demand baseline workshop](Demand_baseline_workshop_2026_10_07_compact.xlsx) is the compact, formula-linked review workbook. Full descriptions are retained on Notes; HML is the last tab. Current model results are a frozen run, and sales/model scope reconciliation remains open.
+
 The input ranges are proposed review inputs; they have not been calibrated or approved.
 
 ## Dated source-review reports
