@@ -41,7 +41,7 @@ def test_only_the_source_selection_changes_in_nigels_sheets():
             for cell in row:
                 new = after[ws.title][cell.coordinate].value
                 # Saving rewrites floats to fifteen significant digits; that is not a change.
-                same_number = (isinstance(new, float) and isinstance(cell.value, (int, float))
+                same_number = (isinstance(new, (int, float)) and isinstance(cell.value, (int, float))
                                and new == pytest.approx(cell.value, rel=1e-12))
                 if new != cell.value and not same_number:
                     changed.append((ws.title, cell.coordinate, cell.value, new))
