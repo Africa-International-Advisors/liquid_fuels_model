@@ -293,6 +293,12 @@ TRACE: dict[str, tuple[str, ...]] = {
         "Transnet Pipelines, leasing RFPs 2026", "https://www.transnet.net/TPL-Leasing-Opportunities",
         "external/sources/transnet_tpl_leasing_2026/tpl-rfp-<site>.pdf", MAIN, "manual transcription", "none",
         "typed by hand", "pack p3, p9, p14", "", "Two of five RFPs state no product storage.", "none"),
+    "reference/fuel_levy_revenue_raf.csv": (
+        "Road Accident Fund", "https://static.pmg.org.za/RAF_Annual_Report_2025.pdf",
+        "raf-annual-report-2024-25.pdf, note 16 (p.183)", "on manish-branch (external/data/raw/raf/)",
+        "manual transcription", "none", "typed by hand", "hand-back deck section 1", "",
+        "Gross levies and diesel rebate in rand; litres derived in the balance note. Fiscal years; "
+        "petrol and diesel together.", "Nigel: weigh against the 2024 sales figures"),
     "infrastructure/terminal_site_assumptions.csv": (
         "NERSA; Vopak; Transnet Pipelines", "https://www.nersa.org.za/regulator-decisions",
         "external/data/raw/vopak_storage_20261006/nersa-vopak-*.pdf, durban.html, lesedi.html",

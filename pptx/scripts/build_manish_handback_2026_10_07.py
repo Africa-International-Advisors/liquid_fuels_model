@@ -241,7 +241,8 @@ table(s, [
     ["2024 sales",
      f"FIASA 2025 edition, p.47: petrol {show('petrol', 2024, 'sales_fiasa')}, "
      f"diesel {show('diesel', 2024, 'sales_fiasa')}. FIASA 2024 edition, p.32: 8.76 and 11.81. "
-     "JODI: 10.14 and 10.04 (lowest reliability code). Department: not published.",
+     "JODI: 10.14 and 10.04 (lowest reliability code). Department: not published. Road Accident Fund levy: "
+     "24.4 bn litres for both fuels in the year to March 2025, up 0.7%, against 20.76 here.",
      "FIASA 2025 edition, flagged unverified", "Nigel: agree the 2024 sales source"],
     ["2024 diesel imports",
      f"Customs {show('diesel', 2024, 'imports_sars', 3)}. Department trade report 10.8 (rounded). "

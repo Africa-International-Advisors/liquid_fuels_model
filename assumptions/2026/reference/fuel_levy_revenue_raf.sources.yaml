@@ -1,0 +1,14 @@
+publisher: Road Accident Fund
+publication: Annual Report 2024/25, audited annual financial statements for the year ended 31 March 2025
+url: https://static.pmg.org.za/RAF_Annual_Report_2025.pdf
+retrieved: '2026-10-07'
+kept_in: external/data/raw/raf/raf-annual-report-2024-25.pdf
+what_it_is: The Road Accident Fund levy is charged in cents per litre on petrol and diesel sold in South
+  Africa. Gross levies divided by the rate gives litres levied; it is not a sales survey.
+reported_units_only: rand and cents per litre as printed; litres are derived in the notes, not stored
+  here
+limits:
+- fiscal years April to March, not calendar years
+- petrol and diesel together; no split by product
+- accrual basis; cash received was lower in 2024/25 and SARS withheld R995 million in a dispute over Eskom
+- whether the base includes fuel later exported to neighbouring countries is not stated

@@ -91,6 +91,16 @@ would be about 0.47 bn litres (20% of 1.06 plus 1.29). That is not evidence
 and no allowance is applied. SARS does not publish litres claimed by sector;
 its refund data would settle it.
 
+**Added later on 7 October.** The Road Accident Fund's accounts give the levy
+rebated on diesel: R3,174 million in the year to March 2025, which is 1.46 bn
+litres at 218 cents (R4,246 million and 1.95 bn the year before). That covers
+farming, forestry, mining, electricity generation, rail, harbour and offshore
+use together, with no split. It is the first measured figure for rebated
+diesel, and it is below the 2.35 bn litres the energy balance gives for
+agriculture and mining alone, even before power and rail are taken out. So
+either a good part of those sectors' diesel is not claimed, or the balance
+overstates them. It does not size on-road use directly.
+
 ## Decisions for Nigel
 
 1. Accept 1.06 (agriculture) and 1.50 (industry) as provisional starting

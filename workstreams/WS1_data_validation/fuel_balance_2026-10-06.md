@@ -387,6 +387,39 @@ The litres in the table above come from these through three assumptions: 159
 litres a barrel, scaling Natref from Sasol's share to the whole refinery, and
 36 MJ a litre for Astron.
 
+### Road Accident Fund levy: an independent count of litres, found 7 October
+
+The Road Accident Fund levy is a fixed 218 cents on every litre of petrol and
+diesel sold. The Fund's audited statements give gross levies before diesel
+rebates (Annual Report 2024/25, note 16, p.183; reported figures in
+`assumptions/2026/reference/fuel_levy_revenue_raf.csv`). Dividing by the rate:
+
+| Year to 31 March | Gross levies, R million | Litres levied, bn | Recorded petrol and diesel sales, bn | Difference, bn |
+|---|---|---|---|---|
+| 2024 | 52,857 | 24.25 | 21.94 (calendar 2023, department) | 2.3 |
+| 2025 | 53,245 | 24.42 | 20.76 (calendar 2024, FIASA 2025 edition) | 3.7 |
+
+Two things follow, both as indications:
+
+- **Level.** Litres levied are 2.3 to 3.7 bn above recorded sales, which is
+  the same order as the other comparisons in this section.
+- **Direction.** Litres levied rose 0.7% between the two years. The Fund says
+  the volume of petrol and diesel consumed "saw a year-on-year increase"
+  (p.64). FIASA's 2024 figures show a fall of 5.4% from 2023 (6.3% on its
+  earlier edition). The two do not agree on whether 2024 fell.
+
+Limits: fiscal years against calendar years; both fuels together; accrual
+basis, while cash received fell from R48.6 bn to R47.4 bn and SARS withheld
+R995 million in a dispute over Eskom's claims; and the report does not say
+whether fuel later exported to neighbours (about 1.5 bn litres) is in the
+base. It also conflicts with SARS's own statement of 21 bn litres against 24
+bn (next section), which has not been reconciled.
+
+Diesel rebates on the same levy were R4,246 million and R3,174 million, which
+is 1.95 and 1.46 bn litres rebated across farming, forestry, mining,
+electricity generation, rail, harbour and offshore use. The fall of
+0.49 bn litres is in line with lower diesel burn for power.
+
 ### Fuel levy volumes
 
 SARS collects the fuel levy on petrol and diesel as they leave refineries and
@@ -472,3 +505,17 @@ Nigel reviewed this package at commit `4e64c8c`
 
 Still open: production by product after 2021, stock changes, coverage of the
 sales series, and which 2024 national sales figure to use (Nigel).
+
+## Other sources checked for 2024 national sales, 7 October
+
+| Source | Result |
+|---|---|
+| Department's sales volumes page, re-read | Latest national file is still 2023 quarter 4, posted 8 April 2024 |
+| Road Accident Fund Annual Report 2024/25 | Litres levied for both fuels together; see the sensitivities section |
+| FIASA quarterly industry review (FTI Consulting, 2024 Q1) | Charts only, sourced to the department; no 2024 volumes |
+| SARS media releases on the fuel levy | Round figures, already recorded |
+| Not checked | South African Reserve Bank series, the International Energy Agency's paid data, and operators' sales disclosures |
+
+None gives 2024 petrol and diesel separately. The Road Accident Fund figure is
+the only independent count found, and it does not show the fall in 2024 that
+FIASA's figures show.

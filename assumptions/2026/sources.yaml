@@ -395,3 +395,13 @@ terminal_site_assumptions:
   provisional: true
   needs_verification: true
   shared: true
+fuel_levy_revenue_raf:
+  register_id: REG-SOURCE-FUEL_LEVY_REVENUE_RAF
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/fuel_levy_revenue_raf.csv
+  units: per-row unit column
+  source: Road Accident Fund Annual Report 2024/25, note 16; provenance and limits in the companion .sources.yaml
+  last_updated: '2026-10-07'
+  shared: true
