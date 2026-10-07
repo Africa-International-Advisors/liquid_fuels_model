@@ -23,6 +23,7 @@ from pptx.enum.chart import XL_CHART_TYPE, XL_LEGEND_POSITION, XL_MARKER_STYLE
 from pptx.enum.shapes import MSO_CONNECTOR, MSO_SHAPE
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.oxml.ns import nsdecls, qn
+from pptx.opc.packuri import PackURI
 from pptx.util import Inches, Pt
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -201,6 +202,9 @@ for index in range(len(prs.slides) - 1, 0, -1):
         drop_slide(index)
 cover, closing = prs.slides[0], prs.slides[1]
 assert "Agree priorities" in slide_text(closing)
+# New slides are named by their position, so the kept closing page (slide16 in the base pack) would
+# collide with the sixteenth slide added here. Move it out of the way.
+closing.part.partname = PackURI("/ppt/slides/slide999.xml")
 
 
 def retitle(slide, replacements):
@@ -548,6 +552,71 @@ text(s, f"The high case needs {durban_op * durban_turns[2]:,.0f} m3 a month, {du
         "of the whole trunk line if it all went inland by pipe. Durban-to-Lesedi volume is handled at both "
         "sites and must be counted once.", LEFT, 6.4, WIDTH, 0.6, 11, True, BLUE)
 set_note(s, SITE_NOTE)
+
+# --- 5 Hand-back -------------------------------------------------------------
+DECISIONS = REPO / "workstreams/WS0_governance/workplan/manish_decision_log_2026-10-07.csv"
+with DECISIONS.open(encoding="utf-8", newline="") as fh:
+    DECISION_ROWS = list(csv.DictReader(fh))
+HANDBACK_NOTE = ("Source: manish_handback_2026-10-07.md and manish_decision_log_2026-10-07.csv on manish-branch. "
+                 "Statuses are the analyst's; nothing is accepted until Nigel decides.")
+count = {status: sum(r["status"] == status for r in DECISION_ROWS) for status in ("Ready", "Proposed", "Unresolved")}
+
+s = page(4, "Four priorities have outputs to review; the fifth is partly done",
+         "Status against the five priorities of 7 October | ready, proposed or partial")
+table(s, [
+    ["Priority", "Status", "Ready to review", "Not done or not available"],
+    ["1 National balance", "Ready, with stated gaps",
+     "Balance rebuilt on customs trade with tests; source differences listed; 2018-2019 traced as far as data allows",
+     "Production by product after 2021 and stocks exist in no source found"],
+    ["2 Forecast levers", "Proposed",
+     "20 levers with baseline, rationale and source; 39 of 120 values with a replacement; seven levers added",
+     "Some baselines are placeholders; freight is in tonnes"],
+    ["3 Sector baselines", "Proposed",
+     "Agriculture 1.06 and industry 1.50 bn litres, with the forecast effect and an overlap table",
+     "On-road overlap not sized; power generation is 2 bn litres above reported burn"],
+    ["4 Tank handling", "Proposed",
+     "Lesedi and Durban site assumptions; eight values marked to confirm with the client",
+     "No Vopak operating data; other operators' sites not done"],
+    ["5 Hand-back", "Partial",
+     "This deck, the hand-back note, a 21-item decision log, and the workshop workbook with history from 2012",
+     "Pack figures not yet checked against originals; vehicle block not done"],
+], [1.9, 1.75, 4.6, 3.4], height=3.9, size=10.5)
+text(s, "New evidence today: Road Accident Fund accounts give 24.4 bn litres of petrol and diesel levied in the year "
+        "to March 2025, against 20.8 recorded as sold, and show volumes rising where FIASA shows a fall.",
+     LEFT, 6.3, WIDTH, 0.6, 11, True, BLUE)
+set_note(s, HANDBACK_NOTE)
+
+s = page(4, f"Decision log: {count['Ready']} ready, {count['Proposed']} proposed, {count['Unresolved']} unresolved",
+         "Decisions for Nigel | the nine that are unresolved, with the analyst's proposal | full log in the csv")
+body = [["Decision", "Evidence in brief", "Proposal"]]
+for r in DECISION_ROWS:
+    if r["status"] == "Unresolved":
+        body.append([f'{r["id"]}  {r["decision"]}', r["evidence_in_brief"], r["analyst_proposal"]])
+table(s, body, [3.1, 5.75, 2.8], y=2.2, height=4.7, size=8.5)
+set_note(s, HANDBACK_NOTE)
+
+s = page(4, "The workshop workbook now carries sourced history from 2012 and labelled provincial estimates",
+         "Demand_baseline_workshop_2026_10_08_history.xlsx | built by one command | Nigel's sheets unchanged")
+table(s, [
+    ["Sheet added", "What it holds", "What it shows"],
+    ["History", "Department sales by province, customs imports and exports, refinery production, the balance and "
+     "the Road Accident Fund count, 2012-2025; totals and balances are formulas",
+     "Net imports of petrol and diesel rose from 3.7 bn litres (2014) to 15.7 bn (2022). Production by product "
+     "stops at 2021"],
+    ["History, section 6", "Estimated provincial shares and volumes for 2023-2025, kept apart from observed rows",
+     "Quarter 1 2023 shares are the best of six methods tested: 2.5 share points misallocated for petrol, 5.3 "
+     "for diesel"],
+    ["Sector history", "Mining, manufacturing and agriculture diesel beside their activity measures, with litres "
+     "per unit of activity",
+     "Mining swings between 11 and 17 million litres per index point; indicative 2024: mining 1.40, agriculture "
+     "0.96 bn litres"],
+    ["Checks", "66 values on the Evidence sheet recomputed from registered inputs", "All match"],
+    ["History sources", "Publisher, link, original file, extract and refresh command for each dataset", ""],
+], [2.0, 5.1, 4.55], height=3.9, size=10)
+text(s, "One change to an existing sheet: source selection for 2022 and 2023 is set to the department instead of "
+        "FIASA. 2024 stays on FIASA, unverified. 2025 has no national sales figure from any source.",
+     LEFT, 6.3, WIDTH, 0.6, 11)
+set_note(s, HANDBACK_NOTE)
 
 # --- order, navigation, bounds ----------------------------------------------
 ids = prs.slides._sldIdLst
