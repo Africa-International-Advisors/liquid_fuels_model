@@ -1,6 +1,6 @@
 # Current files: Convergence
 
-Updated **7 October 2026**. Share this matching **30-page** pair with Manish:
+Updated **7 October 2026**. Share this matching **31-page** pair with Manish:
 
 - [Current PDF](Vopak_Week1_Convergence_2026_10_06.pdf)
 - [Current editable PowerPoint](Vopak_Week1_Convergence_2026_10_06.pptx)
@@ -18,7 +18,8 @@ The filenames retain the Week 1 date, 6 October. Latest deck content includes:
 | 12-14 | Diesel, jet and petrol inputs: 2030/2035 L/M/H values and rationale |
 | 15-16 | Competing routes and gateways |
 | 17-23 | Footprint, unique deliveries, opportunity, handling, stock, decision and roadmap |
-| 24-30 | Appendix, turnover sensitivity, Henry trace, closing and palette |
+| 24 | Manish’s focus: five priorities, outputs and Nigel’s review decisions |
+| 25-31 | Appendix, turnover sensitivity, Henry trace, closing and palette |
 
 Input ranges and client touchpoints remain proposed. The current review task list
 records the source gaps, dependencies and acceptance evidence still required.

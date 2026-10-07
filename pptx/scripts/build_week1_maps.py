@@ -491,6 +491,8 @@ finish_footer_and_markers(prs,brand)
 assert len(prs.slides)==22
 from convergence_feedback import apply_feedback
 apply_feedback(prs,ROOT,brand)
+from manish_focus_page import add_manish_focus
+add_manish_focus(prs,ROOT,brand)
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:
         assert q.left>=0 and q.top>=0 and q.left+q.width<=prs.slide_width+10 and q.top+q.height<=prs.slide_height+10,(index,q.name)

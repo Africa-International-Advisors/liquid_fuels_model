@@ -3,7 +3,7 @@
 **Latest files:** [PDF review pack](pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf),
 [editable PowerPoint](pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx)
 and [Manish's review tasks](workstreams/WS0_governance/workplan/fuel_lever_review_2026-10-07.md).
-The [delivery index](output/delivered/README.md) identifies the current 30-page
+The [delivery index](output/delivered/README.md) identifies the current 31-page
 story, proposed input matrix, supporting material and archived versions.
 
 Nigel and Manish both work on `main`. Pull before starting work and before
