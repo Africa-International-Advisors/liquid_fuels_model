@@ -52,3 +52,27 @@ def test_only_the_source_selection_changes_in_nigels_sheets():
 def test_every_checked_evidence_value_matches_the_inputs():
     results = [row[5].value for row in load_workbook(ROOT / build.OUT)["Checks"].iter_rows(min_row=5)]
     assert results.count("matches") > 50 and "differs" not in results
+
+
+def test_provincial_estimates_are_marked_and_kept_apart_from_observations():
+    from lfm.scripts import backtest_provincial_shares as shares
+
+    history = _rows(load_workbook(ROOT / build.OUT)["History"])
+    at = {year: build.FIRST - 1 + build.YEARS.index(year) for year in build.YEARS}
+    assert history["Gauteng petrol"][at[2023]].value is None                 # observed rows stay empty after 2022
+    estimated = [history[f"{name} share of petrol"][at[2023]].value for name in build.PROVINCE_NAMES.values()]
+    assert sum(estimated) == pytest.approx(100)
+    quarter1 = shares.share(shares.load(VINTAGE / "timeseries")["quarter1"][("petrol", 2023)])
+    assert history["Gauteng share of petrol"][at[2023]].value == pytest.approx(quarter1["GP"] * 100)
+    assert history["Gauteng share of petrol"][2].value == "Proposed estimate"
+    assert str(history["Gauteng petrol, estimated"][at[2024]].value).startswith("=")
+    assert history["Gauteng petrol, estimated"][at[2022]].value is None
+
+
+def test_quarter_one_shares_beat_holding_last_year_in_the_back_test():
+    from lfm.scripts import backtest_provincial_shares as shares
+
+    scores = {(r["product"], r["method"], r["years_ahead"]): r["mean_share_points_misallocated"]
+              for r in shares.backtest(shares.load(VINTAGE / "timeseries"))}
+    for product in ("petrol", "diesel"):
+        assert scores[(product, "quarter1", 0)] < scores[(product, "hold", 1)] < scores[(product, "trend3", 3)]
