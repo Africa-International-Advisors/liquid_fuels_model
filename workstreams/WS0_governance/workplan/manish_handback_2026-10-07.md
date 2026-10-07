@@ -21,7 +21,7 @@ Read first:
 | 2 | Forecast levers | Three fuel tables with baseline and low / medium / high for 2030 and 2035 | Proposed | All 20 levers have a baseline, rationale and source; 39 of 120 values have a proposed replacement; seven levers added | Several baselines are placeholders; freight is in tonnes; replacements await your challenge |
 | 3 | Sector baselines | Agriculture and industry starting values; overlaps | Proposed | 1.06 and 1.50 bn litres with the forecast effect; overlap table by model segment | On-road overlap not sized; power generation is 2 bn litres above reported burn |
 | 4 | Tank handling | Site assumptions, evidence and estimates labelled | Proposed | Lesedi and Durban, every value marked; eight marked to confirm with the client | No Vopak operating data; other operators' sites not done |
-| 5 | Reviewable hand-back | Figures checked, hand-back refreshed, ready / proposed / unresolved listed | Partial | This note, the decision log and the deck | Pack figure check and vehicle block: see below |
+| 5 | Reviewable hand-back | Figures checked, hand-back refreshed, ready / proposed / unresolved listed | Ready | This note, the decision log, the deck, and 224 pack figures on pages 4-10 checked with none differing | Pack pages 12-31 not checked; vehicle block: see below |
 
 ## Three review corrections from 6 October
 
@@ -75,7 +75,8 @@ Nothing else on the branch changes model results.
 
 ## Not done
 
-- Figures in the 31-page review pack have not been checked against originals.
+- Pack pages 12 to 31 are not checked. Pages 4 to 10 are: 224 figures, all match
+  (`workstreams/WS3_reporting_delivery/pack_figure_check_2026-10-07.md`, with seven points on labels).
 - Vehicle block: opening stock, new sales, scrapping and electrification are
   not yet lined up against sources.
 - The Reatile workbook's own demand history is about 1 bn litres above the
@@ -91,3 +92,4 @@ Nothing else on the branch changes model results.
 | `python -m lfm.scripts.build_sector_baseline_review --vintage 2026` | Diesel by model segment, with and without the sourced baselines |
 | `python -m lfm.scripts.backtest_provincial_shares --vintage 2026` | Scores for six ways of estimating provincial shares |
 | `python -m lfm.scripts.build_demand_baseline_workbook --vintage 2026` | The extended workbook |
+| `python -m lfm.scripts.check_pack_figures --vintage 2026` | The pack figure check |

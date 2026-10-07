@@ -561,7 +561,7 @@ HANDBACK_NOTE = ("Source: manish_handback_2026-10-07.md and manish_decision_log_
                  "Statuses are the analyst's; nothing is accepted until Nigel decides.")
 count = {status: sum(r["status"] == status for r in DECISION_ROWS) for status in ("Ready", "Proposed", "Unresolved")}
 
-s = page(4, "Four priorities have outputs to review; the fifth is partly done",
+s = page(4, "All five priorities have outputs to review; the vehicle block is still to do",
          "Status against the five priorities of 7 October | ready, proposed or partial")
 table(s, [
     ["Priority", "Status", "Ready to review", "Not done or not available"],
@@ -577,9 +577,10 @@ table(s, [
     ["4 Tank handling", "Proposed",
      "Lesedi and Durban site assumptions; eight values marked to confirm with the client",
      "No Vopak operating data; other operators' sites not done"],
-    ["5 Hand-back", "Partial",
-     "This deck, the hand-back note, a 21-item decision log, and the workshop workbook with history from 2012",
-     "Pack figures not yet checked against originals; vehicle block not done"],
+    ["5 Hand-back", "Ready",
+     "This deck, the hand-back note, a 21-item decision log, the workshop workbook with history from 2012, and "
+     "224 pack figures on pages 4-10 checked with none differing",
+     "Pack pages 12-31 not checked; vehicle block not done"],
 ], [1.9, 1.75, 4.6, 3.4], height=3.9, size=10.5)
 text(s, "New evidence today: Road Accident Fund accounts give 24.4 bn litres of petrol and diesel levied in the year "
         "to March 2025, against 20.8 recorded as sold, and show volumes rising where FIASA shows a fall.",

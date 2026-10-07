@@ -1,0 +1,289 @@
+page,item,pack_value,recomputed,result,input_file,note
+4,"Petrol sales 2024, bn litres",9.029,9.029,matches,fuel_sales_fiasa.csv,quoted in page text
+4,"Diesel sales 2024, bn litres",11.734,11.734,matches,fuel_sales_fiasa.csv,quoted in page text
+4,Petrol imports 2024,4.001,4.00085,matches,fuel_trade_sars.csv,quoted in page text
+4,Diesel imports 2024,10.793,10.79255,matches,fuel_trade_sars.csv,quoted in page text
+4,Petrol exports 2024,0.92,0.91975,matches,fuel_trade_sars.csv,quoted in page text
+4,Diesel exports 2024,0.796,0.79583,matches,fuel_trade_sars.csv,quoted in page text
+4,Diesel net imports 2024,9.997,9.99671,matches,fuel_trade_sars.csv,quoted in page text
+4,Petrol net imports 2024,3.081,3.08111,matches,fuel_trade_sars.csv,quoted in page text
+5,"Gauteng share of 2022 sales, %",31.1,31.09,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"KZN share, %",19.6,19.562,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"Western Cape share, %",17.9,17.947,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"Three provinces combined, %",68.6,68.599,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"Three provinces combined, bn litres",15.02,15.0247,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"Gauteng and KZN together, %",50.7,50.652,matches,fuel_sales_department_by_province.csv,quoted in page text
+6,"Gauteng petrol 2024, held 2022 shares",3.47,3.4705,matches,fuel_sales_department_by_province.csv,quoted in page text
+6,"KZN petrol 2024, held 2022 shares",1.47,1.4735,matches,fuel_sales_department_by_province.csv,quoted in page text
+6,"Western Cape petrol 2024, held 2022 shares",1.41,1.4067,matches,fuel_sales_department_by_province.csv,quoted in page text
+10,"Published capacity 2020, thousand bbl/day",718,718.0,matches,refinery_capacity_reported.csv,quoted in page text
+10,"Published capacity 2022, thousand bbl/day",358,358.0,matches,refinery_capacity_reported.csv,quoted in page text
+5,"GP petrol and diesel 2022, bn litres",6.81,6.8094,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"KZN petrol and diesel 2022, bn litres",4.28,4.2845,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"WC petrol and diesel 2022, bn litres",3.93,3.9308,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"MP petrol and diesel 2022, bn litres",1.76,1.7572,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"EC petrol and diesel 2022, bn litres",1.74,1.7355,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"FS petrol and diesel 2022, bn litres",1.37,1.3693,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"NW petrol and diesel 2022, bn litres",1.07,1.0681,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"LP petrol and diesel 2022, bn litres",0.5,0.4956,matches,fuel_sales_department_by_province.csv,quoted in page text
+5,"NC petrol and diesel 2022, bn litres",0.45,0.4518,matches,fuel_sales_department_by_province.csv,quoted in page text
+10,"Secunda output, year to June 2024, million barrels",29.1,29.1,matches,refinery_output_operators.csv,quoted in page text
+10,"Natref (Sasol share), year to June 2024",17.8,17.8,matches,refinery_output_operators.csv,quoted in page text
+6,Gauteng 2013,6.96,6.96,matches,fuel_sales_department_by_province.csv,chart point
+6,Gauteng 2014,7.1,7.1,matches,fuel_sales_department_by_province.csv,chart point
+6,Gauteng 2015,7.28,7.28,matches,fuel_sales_department_by_province.csv,chart point
+6,Gauteng 2016,7.13,7.13,matches,fuel_sales_department_by_province.csv,chart point
+6,Gauteng 2017,7.21,7.21,matches,fuel_sales_department_by_province.csv,chart point
+6,Gauteng 2018,7.32,7.32,matches,fuel_sales_department_by_province.csv,chart point
+6,Gauteng 2019,7.64,7.64,matches,fuel_sales_department_by_province.csv,chart point
+6,Gauteng 2020,6.09,6.09,matches,fuel_sales_department_by_province.csv,chart point
+6,Gauteng 2021,6.65,6.65,matches,fuel_sales_department_by_province.csv,chart point
+6,Gauteng 2022,6.81,6.81,matches,fuel_sales_department_by_province.csv,chart point
+6,KwaZulu-Natal 2013,4.06,4.06,matches,fuel_sales_department_by_province.csv,chart point
+6,KwaZulu-Natal 2014,3.85,3.85,matches,fuel_sales_department_by_province.csv,chart point
+6,KwaZulu-Natal 2015,3.91,3.91,matches,fuel_sales_department_by_province.csv,chart point
+6,KwaZulu-Natal 2016,3.94,3.94,matches,fuel_sales_department_by_province.csv,chart point
+6,KwaZulu-Natal 2017,4.19,4.19,matches,fuel_sales_department_by_province.csv,chart point
+6,KwaZulu-Natal 2018,4.01,4.01,matches,fuel_sales_department_by_province.csv,chart point
+6,KwaZulu-Natal 2019,4.25,4.25,matches,fuel_sales_department_by_province.csv,chart point
+6,KwaZulu-Natal 2020,4.06,4.06,matches,fuel_sales_department_by_province.csv,chart point
+6,KwaZulu-Natal 2021,4.27,4.27,matches,fuel_sales_department_by_province.csv,chart point
+6,KwaZulu-Natal 2022,4.28,4.28,matches,fuel_sales_department_by_province.csv,chart point
+6,Western Cape 2013,3.71,3.71,matches,fuel_sales_department_by_province.csv,chart point
+6,Western Cape 2014,4.09,4.09,matches,fuel_sales_department_by_province.csv,chart point
+6,Western Cape 2015,4.7,4.7,matches,fuel_sales_department_by_province.csv,chart point
+6,Western Cape 2016,3.72,3.72,matches,fuel_sales_department_by_province.csv,chart point
+6,Western Cape 2017,3.63,3.63,matches,fuel_sales_department_by_province.csv,chart point
+6,Western Cape 2018,3.54,3.54,matches,fuel_sales_department_by_province.csv,chart point
+6,Western Cape 2019,3.72,3.72,matches,fuel_sales_department_by_province.csv,chart point
+6,Western Cape 2020,3.16,3.16,matches,fuel_sales_department_by_province.csv,chart point
+6,Western Cape 2021,4.01,4.01,matches,fuel_sales_department_by_province.csv,chart point
+6,Western Cape 2022,3.93,3.93,matches,fuel_sales_department_by_province.csv,chart point
+6,Mpumalanga 2013,2.32,2.32,matches,fuel_sales_department_by_province.csv,chart point
+6,Mpumalanga 2014,2.34,2.34,matches,fuel_sales_department_by_province.csv,chart point
+6,Mpumalanga 2015,2.45,2.45,matches,fuel_sales_department_by_province.csv,chart point
+6,Mpumalanga 2016,2.66,2.66,matches,fuel_sales_department_by_province.csv,chart point
+6,Mpumalanga 2017,2.51,2.51,matches,fuel_sales_department_by_province.csv,chart point
+6,Mpumalanga 2018,2.46,2.46,matches,fuel_sales_department_by_province.csv,chart point
+6,Mpumalanga 2019,2.24,2.24,matches,fuel_sales_department_by_province.csv,chart point
+6,Mpumalanga 2020,2.0,2.0,matches,fuel_sales_department_by_province.csv,chart point
+6,Mpumalanga 2021,1.94,1.94,matches,fuel_sales_department_by_province.csv,chart point
+6,Mpumalanga 2022,1.76,1.76,matches,fuel_sales_department_by_province.csv,chart point
+6,Eastern Cape 2013,1.59,1.59,matches,fuel_sales_department_by_province.csv,chart point
+6,Eastern Cape 2014,1.63,1.63,matches,fuel_sales_department_by_province.csv,chart point
+6,Eastern Cape 2015,1.8,1.8,matches,fuel_sales_department_by_province.csv,chart point
+6,Eastern Cape 2016,1.79,1.79,matches,fuel_sales_department_by_province.csv,chart point
+6,Eastern Cape 2017,1.77,1.77,matches,fuel_sales_department_by_province.csv,chart point
+6,Eastern Cape 2018,1.77,1.77,matches,fuel_sales_department_by_province.csv,chart point
+6,Eastern Cape 2019,1.79,1.79,matches,fuel_sales_department_by_province.csv,chart point
+6,Eastern Cape 2020,1.62,1.62,matches,fuel_sales_department_by_province.csv,chart point
+6,Eastern Cape 2021,1.77,1.77,matches,fuel_sales_department_by_province.csv,chart point
+6,Eastern Cape 2022,1.74,1.74,matches,fuel_sales_department_by_province.csv,chart point
+6,Free State 2013,2.26,2.26,matches,fuel_sales_department_by_province.csv,chart point
+6,Free State 2014,2.19,2.19,matches,fuel_sales_department_by_province.csv,chart point
+6,Free State 2015,2.18,2.18,matches,fuel_sales_department_by_province.csv,chart point
+6,Free State 2016,1.94,1.94,matches,fuel_sales_department_by_province.csv,chart point
+6,Free State 2017,1.74,1.74,matches,fuel_sales_department_by_province.csv,chart point
+6,Free State 2018,1.98,1.98,matches,fuel_sales_department_by_province.csv,chart point
+6,Free State 2019,1.88,1.88,matches,fuel_sales_department_by_province.csv,chart point
+6,Free State 2020,1.75,1.75,matches,fuel_sales_department_by_province.csv,chart point
+6,Free State 2021,1.72,1.72,matches,fuel_sales_department_by_province.csv,chart point
+6,Free State 2022,1.37,1.37,matches,fuel_sales_department_by_province.csv,chart point
+6,North West 2013,1.27,1.27,matches,fuel_sales_department_by_province.csv,chart point
+6,North West 2014,1.16,1.16,matches,fuel_sales_department_by_province.csv,chart point
+6,North West 2015,1.19,1.19,matches,fuel_sales_department_by_province.csv,chart point
+6,North West 2016,1.16,1.16,matches,fuel_sales_department_by_province.csv,chart point
+6,North West 2017,1.1,1.1,matches,fuel_sales_department_by_province.csv,chart point
+6,North West 2018,0.99,0.99,matches,fuel_sales_department_by_province.csv,chart point
+6,North West 2019,1.01,1.01,matches,fuel_sales_department_by_province.csv,chart point
+6,North West 2020,0.85,0.85,matches,fuel_sales_department_by_province.csv,chart point
+6,North West 2021,0.95,0.95,matches,fuel_sales_department_by_province.csv,chart point
+6,North West 2022,1.07,1.07,matches,fuel_sales_department_by_province.csv,chart point
+6,Limpopo 2013,0.83,0.83,matches,fuel_sales_department_by_province.csv,chart point
+6,Limpopo 2014,0.79,0.79,matches,fuel_sales_department_by_province.csv,chart point
+6,Limpopo 2015,0.78,0.78,matches,fuel_sales_department_by_province.csv,chart point
+6,Limpopo 2016,0.67,0.67,matches,fuel_sales_department_by_province.csv,chart point
+6,Limpopo 2017,0.63,0.63,matches,fuel_sales_department_by_province.csv,chart point
+6,Limpopo 2018,0.66,0.66,matches,fuel_sales_department_by_province.csv,chart point
+6,Limpopo 2019,0.62,0.62,matches,fuel_sales_department_by_province.csv,chart point
+6,Limpopo 2020,0.49,0.49,matches,fuel_sales_department_by_province.csv,chart point
+6,Limpopo 2021,0.49,0.49,matches,fuel_sales_department_by_province.csv,chart point
+6,Limpopo 2022,0.5,0.5,matches,fuel_sales_department_by_province.csv,chart point
+6,Northern Cape 2013,0.59,0.59,matches,fuel_sales_department_by_province.csv,chart point
+6,Northern Cape 2014,0.63,0.63,matches,fuel_sales_department_by_province.csv,chart point
+6,Northern Cape 2015,0.67,0.67,matches,fuel_sales_department_by_province.csv,chart point
+6,Northern Cape 2016,0.53,0.53,matches,fuel_sales_department_by_province.csv,chart point
+6,Northern Cape 2017,0.54,0.54,matches,fuel_sales_department_by_province.csv,chart point
+6,Northern Cape 2018,0.52,0.52,matches,fuel_sales_department_by_province.csv,chart point
+6,Northern Cape 2019,0.53,0.53,matches,fuel_sales_department_by_province.csv,chart point
+6,Northern Cape 2020,0.44,0.44,matches,fuel_sales_department_by_province.csv,chart point
+6,Northern Cape 2021,0.46,0.46,matches,fuel_sales_department_by_province.csv,chart point
+6,Northern Cape 2022,0.45,0.45,matches,fuel_sales_department_by_province.csv,chart point
+8,Cars 2021,96.26,96.26,matches,vehicle_population_natis.csv,chart point
+8,Cars 2022,96.68,96.68,matches,vehicle_population_natis.csv,chart point
+8,Cars 2023,98.05,98.05,matches,vehicle_population_natis.csv,chart point
+8,Cars 2024,100.0,100.0,matches,vehicle_population_natis.csv,chart point
+8,Cars 2025,102.95,102.95,matches,vehicle_population_natis.csv,chart point
+8,Minibuses 2021,98.46,98.46,matches,vehicle_population_natis.csv,chart point
+8,Minibuses 2022,98.37,98.37,matches,vehicle_population_natis.csv,chart point
+8,Minibuses 2023,100.03,100.03,matches,vehicle_population_natis.csv,chart point
+8,Minibuses 2024,100.0,100.0,matches,vehicle_population_natis.csv,chart point
+8,Minibuses 2025,100.0,100.0,matches,vehicle_population_natis.csv,chart point
+8,Road 2019,91.4,91.4,matches,activity_statssa_monthly.csv,chart point
+8,Road 2020,80.54,80.54,matches,activity_statssa_monthly.csv,chart point
+8,Road 2021,87.83,87.83,matches,activity_statssa_monthly.csv,chart point
+8,Road 2022,107.02,107.02,matches,activity_statssa_monthly.csv,chart point
+8,Road 2023,108.23,108.23,matches,activity_statssa_monthly.csv,chart point
+8,Road 2024,100.0,100.0,matches,activity_statssa_monthly.csv,chart point
+8,Road 2025,99.53,99.53,matches,activity_statssa_monthly.csv,chart point
+8,Rail 2019,133.15,133.15,matches,activity_statssa_monthly.csv,chart point
+8,Rail 2020,118.37,118.37,matches,activity_statssa_monthly.csv,chart point
+8,Rail 2021,110.21,110.21,matches,activity_statssa_monthly.csv,chart point
+8,Rail 2022,96.99,96.99,matches,activity_statssa_monthly.csv,chart point
+8,Rail 2023,99.6,99.6,matches,activity_statssa_monthly.csv,chart point
+8,Rail 2024,100.0,100.0,matches,activity_statssa_monthly.csv,chart point
+8,Rail 2025,104.67,104.67,matches,activity_statssa_monthly.csv,chart point
+8,Agriculture / forestry / fishing 2019,91.28,91.28,matches,macro_statssa.csv,chart point
+8,Agriculture / forestry / fishing 2020,107.04,107.04,matches,macro_statssa.csv,chart point
+8,Agriculture / forestry / fishing 2021,112.36,112.36,matches,macro_statssa.csv,chart point
+8,Agriculture / forestry / fishing 2022,114.79,114.79,matches,macro_statssa.csv,chart point
+8,Agriculture / forestry / fishing 2023,109.54,109.54,matches,macro_statssa.csv,chart point
+8,Agriculture / forestry / fishing 2024,100.0,100.0,matches,macro_statssa.csv,chart point
+8,Agriculture / forestry / fishing 2025,117.43,117.43,matches,macro_statssa.csv,chart point
+8,Manufacturing 2019,107.13,107.12,matches,activity_statssa_monthly.csv,chart point
+8,Manufacturing 2020,93.93,93.93,matches,activity_statssa_monthly.csv,chart point
+8,Manufacturing 2021,99.77,99.77,matches,activity_statssa_monthly.csv,chart point
+8,Manufacturing 2022,99.79,99.79,matches,activity_statssa_monthly.csv,chart point
+8,Manufacturing 2023,100.41,100.41,matches,activity_statssa_monthly.csv,chart point
+8,Manufacturing 2024,100.0,100.0,matches,activity_statssa_monthly.csv,chart point
+8,Manufacturing 2025,98.72,98.72,matches,activity_statssa_monthly.csv,chart point
+9,Mining 2019,106.9,106.9,matches,activity_statssa_monthly.csv,chart point
+9,Mining 2020,95.26,95.26,matches,activity_statssa_monthly.csv,chart point
+9,Mining 2021,107.85,107.85,matches,activity_statssa_monthly.csv,chart point
+9,Mining 2022,99.44,99.44,matches,activity_statssa_monthly.csv,chart point
+9,Mining 2023,99.45,99.45,matches,activity_statssa_monthly.csv,chart point
+9,Mining 2024,100.0,100.0,matches,activity_statssa_monthly.csv,chart point
+9,Mining 2025,100.19,100.19,matches,activity_statssa_monthly.csv,chart point
+9,Eskom + IPP 2023,80.03,80.03,matches,ocgt_generation_eskom.csv,chart point
+9,Eskom + IPP 2024,100.0,100.0,matches,ocgt_generation_eskom.csv,chart point
+9,Eskom + IPP 2025,55.18,55.18,matches,ocgt_generation_eskom.csv,chart point
+9,Eskom + IPP 2026,20.98,20.98,matches,ocgt_generation_eskom.csv,chart point
+9,BEV 2019,12.25,12.25,matches,nev_sales_naamsa.csv,chart point
+9,BEV 2020,7.32,7.32,matches,nev_sales_naamsa.csv,chart point
+9,BEV 2021,17.34,17.34,matches,nev_sales_naamsa.csv,chart point
+9,BEV 2022,39.94,39.94,matches,nev_sales_naamsa.csv,chart point
+9,BEV 2023,73.91,73.91,matches,nev_sales_naamsa.csv,chart point
+9,BEV 2024,100.0,100.0,matches,nev_sales_naamsa.csv,chart point
+9,BEV 2025,86.56,86.56,matches,nev_sales_naamsa.csv,chart point
+9,Plug-in hybrid 2019,9.76,9.76,matches,nev_sales_naamsa.csv,chart point
+9,Plug-in hybrid 2020,10.43,10.43,matches,nev_sales_naamsa.csv,chart point
+9,Plug-in hybrid 2021,6.91,6.91,matches,nev_sales_naamsa.csv,chart point
+9,Plug-in hybrid 2022,16.53,16.53,matches,nev_sales_naamsa.csv,chart point
+9,Plug-in hybrid 2023,49.86,49.86,matches,nev_sales_naamsa.csv,chart point
+9,Plug-in hybrid 2024,100.0,100.0,matches,nev_sales_naamsa.csv,chart point
+9,Plug-in hybrid 2025,380.76,380.76,matches,nev_sales_naamsa.csv,chart point
+9,Hybrid 2019,1.33,1.33,matches,nev_sales_naamsa.csv,chart point
+9,Hybrid 2020,1.14,1.14,matches,nev_sales_naamsa.csv,chart point
+9,Hybrid 2021,4.6,4.6,matches,nev_sales_naamsa.csv,chart point
+9,Hybrid 2022,29.89,29.89,matches,nev_sales_naamsa.csv,chart point
+9,Hybrid 2023,47.63,47.63,matches,nev_sales_naamsa.csv,chart point
+9,Hybrid 2024,100.0,100.0,matches,nev_sales_naamsa.csv,chart point
+9,Hybrid 2025,94.14,94.14,matches,nev_sales_naamsa.csv,chart point
+9,Petrol retail 2019,15.73,15.73,matches,fuel_prices_department_annual.csv,chart point
+9,Petrol retail 2020,14.75,14.75,matches,fuel_prices_department_annual.csv,chart point
+9,Petrol retail 2021,17.56,17.56,matches,fuel_prices_department_annual.csv,chart point
+9,Petrol retail 2022,22.8,22.8,matches,fuel_prices_department_annual.csv,chart point
+9,Petrol retail 2023,23.14,23.14,matches,fuel_prices_department_annual.csv,chart point
+9,Petrol retail 2024,23.12,23.12,matches,fuel_prices_department_annual.csv,chart point
+9,Petrol retail 2025,21.66,21.66,matches,fuel_prices_department_annual.csv,chart point
+9,Diesel wholesale 2019,14.4,14.4,matches,fuel_prices_department_annual.csv,chart point
+9,Diesel wholesale 2020,12.93,12.93,matches,fuel_prices_department_annual.csv,chart point
+9,Diesel wholesale 2021,15.14,15.14,matches,fuel_prices_department_annual.csv,chart point
+9,Diesel wholesale 2022,22.35,22.35,matches,fuel_prices_department_annual.csv,chart point
+9,Diesel wholesale 2023,21.52,21.52,matches,fuel_prices_department_annual.csv,chart point
+9,Diesel wholesale 2024,20.58,20.58,matches,fuel_prices_department_annual.csv,chart point
+9,Diesel wholesale 2025,19.47,19.47,matches,fuel_prices_department_annual.csv,chart point
+10,Reported footprint / held flat 2016,718.0,718.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2017,718.0,718.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2018,718.0,718.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2019,718.0,718.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2020,718.0,718.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2021,538.0,538.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2022,358.0,358.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2023,358.0,358.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2024,358.0,358.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2025,358.0,358.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2026,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2027,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2028,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2029,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2030,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2031,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2032,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2033,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2034,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2035,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2036,358.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2016,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2017,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2018,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2019,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2020,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2021,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2022,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2023,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2024,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2025,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2026,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2027,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2028,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2029,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2030,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2031,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2032,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2033,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2034,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2035,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2036,0.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2016,718.0,718.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2017,718.0,718.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2018,718.0,718.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2019,718.0,718.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2020,718.0,718.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2021,538.0,538.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2022,358.0,358.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2023,358.0,358.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2024,358.0,358.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2025,358.0,358.0,matches,refinery_capacity_reported.csv,chart point
+10,Reported footprint / held flat 2026,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2027,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2028,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2029,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2030,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2031,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2032,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2033,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2034,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2035,358.0,,not checked,,"authored scenario point, not an observation"
+10,Reported footprint / held flat 2036,358.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2016,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2017,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2018,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2019,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2020,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2021,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2022,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2023,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2024,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2025,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2026,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2027,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2028,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2029,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2030,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2031,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2032,0.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2033,400.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2034,400.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2035,400.0,,not checked,,"authored scenario point, not an observation"
+10,Conditional addition 2036,400.0,,not checked,,"authored scenario point, not an observation"
