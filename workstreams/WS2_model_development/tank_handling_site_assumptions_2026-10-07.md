@@ -57,6 +57,24 @@ sea, or if Vopak holds most of the line.
 Fuel may also be held in Durban's older tanks. Those are not counted, so
 162,000 m3 is a floor for fuel-compatible capacity, not a measured total.
 
+## To confirm with the client
+
+These values are marked `to confirm with client` in the csv
+(`client_confirmation` column) and on the deck pages. The first six are the
+analyst's estimates; the last two come from Vopak documents but are not
+measurements.
+
+| # | Site | Value to confirm | Current value | Why it needs confirming |
+|---|---|---|---|---|
+| 1 | Lesedi | Operational capacity of the two new tanks | 18,000 m3 each | Copied from the identical original tanks; the licence leaves it blank |
+| 2 | Lesedi | Practical road dispatch | About 300,000 m3 a month | Assumes bays pump half the time, 20 hours a day; neither has a source |
+| 3 | Lesedi | Monthly turns, base | 2 | Borrowed from Vopak's Durban target |
+| 4 | Lesedi | Monthly turns, high | 2.4 | Follows from item 2 |
+| 5 | Durban | Operational fuel capacity | 146,000 m3 | 90% of design, by analogy with Lesedi |
+| 6 | Both | Monthly turns, low | 1 | Generic figure from a 2013 trade article |
+| 7 | Durban | Monthly turns, base and high | 2 and 3 | Vopak's stated target of about 2020, not a realised rate |
+| 8 | Durban | Capacity for petrol and diesel | 162,000 m3 | Counts only the ten tanks of the 2017 expansion; fuel in older tanks is not included |
+
 ## Counting
 
 Product moved from Durban to Lesedi by pipeline is handled at both sites.
