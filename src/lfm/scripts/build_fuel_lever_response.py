@@ -29,6 +29,11 @@ PROPOSED = "fuel_lever_design_2026_10_07.csv"
 CASES = ("low", "medium", "high")
 YEARS = ("2030", "2035")
 LITRES_PER_BARREL = 158.987
+# Published tonne-kilometres, billions. Road, 2013: Havenga et al. (2016), "A Logistics Barometer for South
+# Africa", J. Transport and Supply Chain Management. Rail-friendly general freight and what rail carried of
+# it, 2019: Department of Transport, Roadmap for the Freight Logistics System (draft 7, 2023), p.38.
+ROAD_TKM_2013 = 221.0
+RAIL_FRIENDLY_GENERAL_TKM, RAIL_GENERAL_TKM = 47.0, 18.0
 MJ_PER_BTU, MJ_PER_LITRE_ASSUMED = 0.00105506, 36.0
 FIELDS = ["fuel", "lever", "unit", "baseline", "baseline_basis", "period", "case", "proposed_by_nigel",
           "analyst_value", "changed", "evidence"]
@@ -79,6 +84,14 @@ def baselines(ts: Path, ref: Path) -> dict:
     b["slate"] = {y: {p: v / sum(production[y].values()) * 100 for p, v in production[y].items()}
                   for y in (2017, 2018, 2019, 2021)}
 
+    jodi = defaultdict(lambda: defaultdict(float))
+    with (ts.parents[2] / "external/data/raw/jodi/jodi-secondary-zaf-2023-2025.csv").open(encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            if r["FLOW_BREAKDOWN"] == "REFGROUT" and r["UNIT_MEASURE"] == "KL" and r["OBS_VALUE"] not in ("x", "-"):
+                jodi[int(r["TIME_PERIOD"][:4])][r["ENERGY_PRODUCT"]] += float(r["OBS_VALUE"])
+    b["jodi"] = {y: {"petrol": v["GASOLINE"] / v["TOTPRODS"] * 100, "diesel": v["GASDIES"] / v["TOTPRODS"] * 100}
+                 for y, v in jodi.items() if v.get("TOTPRODS")}
+
     stone = {r["vehicle_type"]: r for r in _read(ref / "vehicle_parameters_stone2018.csv")}
     b["stone_km"] = float(stone["CarGasoline"]["km_per_year_fleet_average"])
     b["stone_l100"] = float(stone["CarGasoline"]["l_per_100km_fleet_average"])
@@ -116,32 +129,41 @@ def review(b: dict) -> dict[tuple[str, str], dict]:
     bev_share = b["bev"][2025] / (b["nev_total_2025"] / 0.028) * 100
     util = b["utilisation"]
     slate = b["slate"]
-    ratio = [slate[y]["diesel"] / slate[y]["petrol"] for y in (2017, 2018, 2019, 2021)]
     plant = {
         "baseline": f"{util['all']:.0f}", "basis": "reported 2024 output over reported capacity, three plants; indicative",
         "evidence": (f"Secunda {util['Secunda']:.0f}%, Natref {util['Natref']:.0f}%, Astron {util['Astron']:.0f}%. "
                      "Output is all refined products against crude-equivalent capacity; Sasol's year ends June; "
-                     "Astron converted at an assumed 36 MJ a litre. The model's registered Secunda nameplate is "
-                     "75 thousand barrels a day; FIASA reports 150."), "changes": {}}
+                     "Astron converted at an assumed 36 MJ a litre. The model's Secunda capacity was 75 thousand "
+                     "barrels a day and is now FIASA's 150, with utilisation re-based so output is unchanged; "
+                     "the model then gives 62 thousand barrels a day for 2024 against 80 reported."), "changes": {}}
     none = {"baseline": "0", "basis": "no committed addition", "changes": {},
             "evidence": "Existing conditional illustration; no investment decision, timing or product slate is sourced."}
     return {
         ("diesel", "road_activity"): {
             "baseline": "100", "basis": f"road freight payload {road[2024]:.0f} Mt in 2024 (Stats SA P7162)",
-            "evidence": (f"Tonnes, not tonne-kilometres. 2014-2024 growth {_growth(road[2014], road[2024], 10):.1f}% a year; "
-                         f"fastest eleven years (2012-2023) {_growth(road[2012], road[2023], 11):.1f}%; 2025 is "
+            "evidence": (f"2014-2024 growth {_growth(road[2014], road[2024], 10):.1f}% a year; fastest eleven years "
+                         f"(2012-2023) {_growth(road[2012], road[2023], 11):.1f}%; 2025 is "
                          f"{road[2025] / road[2024] * 100:.1f}. The 2035 high of 175 needs 5.2% a year for eleven years, "
-                         "without precedent; 150 matches the fastest observed. Part of past growth was freight leaving "
-                         "rail, so this overlaps the rail lever."),
+                         "without precedent; 150 matches the fastest observed. In tonne-kilometres the only "
+                         f"published road figure found is {ROAD_TKM_2013:.0f} bn for 2013 (Havenga et al. 2016, Logistics "
+                         f"Barometer), an average haul of about {ROAD_TKM_2013 * 1000 / road[2013]:.0f} km against Stats SA's "
+                         "tonnes. No annual tonne-kilometre series exists, so the index stays on tonnes. Part of "
+                         "past growth was freight leaving rail, so this overlaps the rail lever."),
             "changes": {("2035", "high"): 150}},
         ("diesel", "rail_diversion"): {
             "baseline": "0", "basis": f"rail {rail[2024]:.0f} Mt and road {road[2024]:.0f} Mt in 2024 (Stats SA P7162)",
-            "evidence": (f"As a share of 2024 road tonnes: rail back to its 2020 level ({rail[2020]:.0f} Mt) is "
+            "evidence": (f"In tonnes, as a share of 2024 road tonnes: rail back to its 2020 level ({rail[2020]:.0f} Mt) is "
                          f"{share(rail[2020]):.0f}%; back to its 2017 peak ({rail[2017]:.0f} Mt) is {share(rail[2017]):.0f}%; "
-                         f"Transnet's 250 Mt target for 2029/30 met in full is {share(250):.0f}%. The proposed 2030 medium "
-                         "of 10% is therefore the full target, and 20% would put rail far above its peak. The 2035 "
-                         "high of 15% has no source. Tonnes understate rail's share of tonne-kilometres."),
-            "changes": {("2030", "medium"): 3, ("2030", "high"): 9, ("2035", "medium"): 7, ("2035", "high"): 15}},
+                         f"the 250 Mt target for 2029/30 (Draft National Rail Master Plan, April 2026) is {share(250):.0f}%; "
+                         f"the market appetite of about 280 Mt reported with that plan is {share(280):.0f}%. In "
+                         f"tonne-kilometres: rail-friendly general freight was {RAIL_FRIENDLY_GENERAL_TKM:.0f} bn in 2019 and "
+                         f"rail carried {RAIL_GENERAL_TKM:.0f} bn (Freight Logistics Roadmap, 2023, p.38); the "
+                         f"{RAIL_FRIENDLY_GENERAL_TKM - RAIL_GENERAL_TKM:.0f} bn left on road is "
+                         f"{(RAIL_FRIENDLY_GENERAL_TKM - RAIL_GENERAL_TKM) / ROAD_TKM_2013 * 100:.0f}% of road tonne-kilometres "
+                         "(2013 base). Both routes put the ceiling at 12-13%, so the 2035 high is 13 and the "
+                         "proposed 20 and 35 exceed all rail-friendly freight. The 2030 medium of 10 is the full "
+                         "official target, not a middle case."),
+            "changes": {("2030", "medium"): 3, ("2030", "high"): 9, ("2035", "medium"): 7, ("2035", "high"): 13}},
         ("diesel", "ocgt_generation"): {
             "baseline": "100", "basis": f"Eskom and independent OCGT output {b['ocgt'][2024]:,.0f} GWh, year to March 2024",
             "evidence": (f"Year to March 2025 is {b['ocgt'][2025] / b['ocgt'][2024] * 100:.0f} and year to March 2026 is "
@@ -154,12 +176,14 @@ def review(b: dict) -> dict[tuple[str, str], dict]:
             "changes": {}},
         ("diesel", "plant_utilisation"): plant,
         ("diesel", "product_yield"): {
-            "baseline": "25", "basis": "registered legacy yield; share of throughput, not observed",
-            "evidence": (f"Energy balances report {min(ratio):.2f} to {max(ratio):.2f} litres of diesel per litre of petrol "
-                         "(2017-2021); the legacy yields imply 0.56. JODI gives 0.61 and 0.53 for 2023 and 2024 at its "
-                         "lowest reliability. The evidence does not settle a value; set diesel and petrol yields "
-                         "together, by plant. No change proposed."),
-            "changes": {}},
+            "baseline": f"{b['jodi'][2024]['diesel']:.0f}", "basis": "diesel share of refinery output in 2024 (JODI; lowest reliability)",
+            "evidence": (f"Share of all refinery output: {b['jodi'][2023]['diesel']:.0f}% in 2023 and "
+                         f"{b['jodi'][2024]['diesel']:.0f}% in 2024 (JODI). Before the Durban refineries closed, diesel was "
+                         f"{min(slate[y]['diesel'] for y in slate):.0f} to {max(slate[y]['diesel'] for y in slate):.0f}% of the "
+                         "five fuels in the 2017-2021 energy balances, which overstates its share of all output. "
+                         "The registered legacy yield is 25%. Replacement: legacy as the low, the recent observed "
+                         "share as the medium, the pre-closure share as the high. No plant-level slate is published."),
+            "changes": {(y, c): v for y in YEARS for c, v in (("low", 25), ("medium", 30), ("high", 40))}},
         ("diesel", "restart_capacity"): none,
         ("jet", "aircraft_movements"): {
             "baseline": "100", "basis": f"{mov[2024]:,.0f} movements at ACSA airports in 2024",
@@ -209,24 +233,28 @@ def review(b: dict) -> dict[tuple[str, str], dict]:
             "baseline": f"{bev_share:.1f}",
             "basis": f"{b['bev'][2025]:,.0f} battery electric vehicles sold in 2025, share of all new vehicles (naamsa)",
             "evidence": (f"Battery electric sales fell from {b['bev'][2024]:,.0f} in 2024 to {b['bev'][2025]:,.0f} in 2025. "
-                         "The policy target of 20% of sales by 2025 was missed by a wide margin. Electric cars were "
-                         "over 6% of sales in Brazil and 9% across Southeast Asia in 2024 (International Energy "
-                         "Agency). The proposed low of 5% by 2030 is a 27-fold rise in five years. Replacement: low "
-                         "continues near today, medium reaches Brazil's 2024 level by about 2032, high follows "
-                         "Southeast Asia. Hybrids are excluded here and enter through fuel use per kilometre."),
-            "changes": {("2030", "low"): 0.5, ("2030", "medium"): 3, ("2030", "high"): 10,
-                        ("2035", "low"): 2, ("2035", "medium"): 10, ("2035", "high"): 30}},
+                         "No South African forecast was found; each case is tied to a market's observed 2025 share "
+                         "of new car sales (IEA, Global EV Outlook 2026). Low: South Africa stays under 1%, as in "
+                         "2022-2025. Medium: India's share (nearly 4%) by 2030 and Indonesia's (15%) by 2035. High: "
+                         "Turkiye's path, from just over 1% in 2022 to over 20% in 2025, by 2030, and Vietnam's "
+                         "share (nearly 40%) by 2035. The IEA shares include plug-in hybrids, so they overstate "
+                         "battery electric alone. The proposed 2035 high of 60 is above every market cited."),
+            "changes": {("2030", "low"): 0.5, ("2030", "medium"): 4, ("2030", "high"): 20,
+                        ("2035", "low"): 2, ("2035", "medium"): 15, ("2035", "high"): 40}},
         ("petrol", "new_cohort_efficiency"): {
             "baseline": "1.0 to 1.5", "basis": "registered petrol efficiency paths (low and high demand cases)",
             "evidence": "Low and high equal the registered endpoints. Neither has a source. No change proposed.",
             "changes": {}},
         ("petrol", "plant_utilisation"): plant,
         ("petrol", "product_yield"): {
-            "baseline": "45", "basis": "registered legacy yield; share of throughput, not observed",
-            "evidence": (f"Petrol was {min(slate[y]['petrol'] for y in slate):.0f} to "
-                         f"{max(slate[y]['petrol'] for y in slate):.0f}% of the five fuels produced in the 2017-2021 "
-                         "energy balances; as a share of all throughput it would be lower. Set together with the "
-                         "diesel yield, by plant. No change proposed."), "changes": {}},
+            "baseline": f"{b['jodi'][2024]['petrol']:.0f}", "basis": "petrol share of refinery output in 2024 (JODI; lowest reliability)",
+            "evidence": (f"Share of all refinery output: {b['jodi'][2023]['petrol']:.0f}% in 2023 and "
+                         f"{b['jodi'][2024]['petrol']:.0f}% in 2024 (JODI). Petrol was "
+                         f"{min(slate[y]['petrol'] for y in slate):.0f} to {max(slate[y]['petrol'] for y in slate):.0f}% of the five "
+                         "fuels in the 2017-2021 energy balances. The registered legacy yield is 45%. Replacement: "
+                         "legacy as the low, 50 as the medium, the recent observed share as the high. Petrol and "
+                         "diesel yields must be chosen together; their highs cannot both hold."),
+            "changes": {(y, c): v for y in YEARS for c, v in (("low", 45), ("medium", 50), ("high", 55))}},
         ("petrol", "restart_capacity"): none,
     }
 
