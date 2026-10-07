@@ -474,7 +474,8 @@ table(s, [
     ["Item", "Value", "Basis", "Source"],
     ["Design capacity", f"{site('V2', 'design_capacity'):,.0f} m3: petrol {site('V2', 'design_capacity', 'petrol'):,.0f}, "
      f"diesel {site('V2', 'design_capacity', 'diesel'):,.0f}, one {site('V2', 'design_capacity', 'diesel or petrol'):,.0f} "
-     "tank for either", "Evidence", "NERSA licence amendment, 6 August 2025"],
+     "tank for either. New tanks in service since October 2025", "Evidence",
+     "NERSA licence amendment, 6 August 2025; Vopak Q3 2025 release"],
     ["Operational capacity", f"{lesedi_op:,.0f} m3: 88,000 in the six original tanks; 18,000 assumed for each new tank",
      "Evidence; new tanks estimated", "Vopak licence application to NERSA, 2020, p.8-9"],
     ["Receipts", f"Pipeline only, at most {site('V2', 'receipt_limit'):,.0f} m3 an hour", "Evidence",
@@ -489,8 +490,8 @@ table(s, [
     ["Annual handling", handling(lesedi_op, lesedi_turns) + " million m3", "Calculated",
      "Pack today: 1.7 / 3.4 / 5.0 on gross capacity and 1 / 2 / 3 turns"],
 ], [2.0, 5.1, 2.0, 2.55], height=4.0, size=10)
-text(s, "Still needed from Vopak: twelve months of outbound volume by product and mode, the new tanks' "
-        "operational capacity and loading hours. These replace every estimate above.",
+text(s, "Vopak's website publishes none of the operating data. Still needed from Vopak: twelve months of "
+        "outbound volume by product and mode, the new tanks' operational capacity and loading hours.",
      LEFT, 6.4, WIDTH, 0.6, 11, True, BLUE)
 set_note(s, SITE_NOTE)
 

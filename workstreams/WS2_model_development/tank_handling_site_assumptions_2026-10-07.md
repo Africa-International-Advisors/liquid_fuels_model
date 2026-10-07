@@ -28,9 +28,9 @@ million m3. The pack's current sensitivity, 1, 2 and 3 turns of the 140,000 m3
 gross figure, gives 1.68, 3.36 and 5.04. The high case falls because eight
 loading bays cannot plausibly dispatch three turns a month.
 
-The two new tanks were licensed in August 2025 with commercial operation
-scheduled for early January 2026; the dates of actual commissioning are
-redacted. Vopak's terminal page now shows 140,000 m3.
+The two new tanks were licensed in August 2025 and commissioned in October
+2025, ahead of schedule (Vopak Q3 2025 press release, p.4). Vopak's terminal
+page shows 880,574 barrels, which is 140,000 m3.
 
 ## Vopak Durban (Island View)
 
@@ -70,6 +70,29 @@ No site-specific evidence was found for the Bidvest, VTTI, Sasol or Transnet
 sites in `pptx/story/storage_operator_inventory_2026_10_06.csv`. They keep the
 generic 1, 2 and 3 turns in `terminal_handling.yaml`. Sasol and Transnet
 capacities are still unquantified.
+
+## Checked on Vopak's website, 7 October
+
+Pages and documents read: the Lesedi and Durban terminal pages, the 2017
+expansion release, the Q3 2025 press release and the Q3 2025 analyst
+presentation (both kept with the other originals).
+
+| Looked for | Found |
+|---|---|
+| Whether the two new Lesedi tanks are in service | Yes: 40,000 m3 commissioned in October 2025 |
+| Outbound volume or throughput by terminal | Not published |
+| Tank turns by terminal | Not published |
+| Operational capacity by tank or site | Not published; only total capacity in m3 and barrels |
+| Loading rates, bay counts, berth rates, operating hours | Not published; the pages list access modes and berth count only |
+| Split of Durban capacity between fuel and chemicals | Not published |
+| Occupancy for South Africa | Not published. The group reports 91% of capacity rented out and 2% out of service for the first nine months of 2025; the presentation shows no South African or African unit separately |
+| Durban-to-Lesedi volumes, pipeline allocation | Not published |
+
+Vopak reports operating figures for the group and for five named business
+units only. None of the estimates above can be replaced from its website; they
+need the items below from Vopak directly. The group occupancy figure is the
+share of capacity under contract, not how full tanks are, and is not applied
+to either site.
 
 ## Still needed from Vopak
 
