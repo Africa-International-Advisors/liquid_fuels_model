@@ -1,0 +1,47 @@
+{
+  "branch": "origin/manish-branch",
+  "commit": "4e64c8c",
+  "purpose": "Reporting evidence snapshot accepted for the Week 1 convergence draft; no engine inputs replaced. Manual/operator transcriptions remain for source review.",
+  "files": [
+    {
+      "source_path": "assumptions/2026/timeseries/fuel_trade_sars.csv",
+      "reporting_copy": "fuel_trade_sars.csv",
+      "sha256": "a1e7865b9eb66fef459e209cfd6f75463a5bd3329cfa4f8597a92b9563303543"
+    },
+    {
+      "source_path": "assumptions/2026/timeseries/activity_statssa_monthly.csv",
+      "reporting_copy": "activity_statssa_monthly.csv",
+      "sha256": "de313b5a19824fc9a32a44852db80024b38c97fc31dcf3ebed5e3dd59503f2cf"
+    },
+    {
+      "source_path": "assumptions/2026/timeseries/fuel_prices_department.csv",
+      "reporting_copy": "fuel_prices_department.csv",
+      "sha256": "d1069ad9f94d8deb494c7f0be39031017561817da4147a5c3e18a8d339d4bd29"
+    },
+    {
+      "source_path": "assumptions/2026/timeseries/fuel_prices_department_annual.csv",
+      "reporting_copy": "fuel_prices_department_annual.csv",
+      "sha256": "0d8c677b1b5673493e9f700007a61083537d935cdb875e3ba36d55ade1a034e0"
+    },
+    {
+      "source_path": "assumptions/2026/timeseries/macro_statssa.csv",
+      "reporting_copy": "macro_statssa.csv",
+      "sha256": "d829a1710f8099206aa34fae2349ffaa10fe2c8dafb836d16b4d1950e1bc666e"
+    },
+    {
+      "source_path": "assumptions/2026/timeseries/macro_statssa_quarterly.csv",
+      "reporting_copy": "macro_statssa_quarterly.csv",
+      "sha256": "8a5ec96eca26545dfc0ae63df8e14a94874c63bb4e0d2e050ed225f0ca70f09f"
+    },
+    {
+      "source_path": "assumptions/2026/reference/refinery_output_operators.csv",
+      "reporting_copy": "refinery_output_operators.csv",
+      "sha256": "217356db17209c95dfa43b11debe125f2ef903dcec4ae64496f114971985d561"
+    },
+    {
+      "source_path": "workstreams/WS1_data_validation/provincial_petrol_diesel_2013_2024_2026-10-06.csv",
+      "reporting_copy": "provincial_petrol_diesel_2013_2024_2026-10-06.csv",
+      "sha256": "c0107a39bc1cf91404d644e6982fb1b7bc215622138329f92f0328e456aa06b1"
+    }
+  ]
+}

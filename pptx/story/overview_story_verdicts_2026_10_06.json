@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-06",
+  "status": "Evidence verdicts for review; not business approval",
+  "rows": [
+    {
+      "ref": "S1",
+      "pages": [
+        4,
+        7
+      ],
+      "verdict": "Supported: imports are material.\nSustained future volumes remain a forecast case; the matched balance is open.",
+      "evidence": "Diesel drives imports; sales reports conflict\n2024 net petrol/diesel imports: 13.078 bn L. Production, stocks, sales coverage and port allocation remain open."
+    },
+    {
+      "ref": "S2",
+      "pages": [
+        5,
+        6
+      ],
+      "verdict": "Supported: concentrated demand.\nFocus on Gauteng/KZN; sales totals do not establish accessible customers.",
+      "evidence": "Demand sits around Vopak’s footprint\nGP, KZN and WC account for 68.6% of 2022 sales. Historical volumes were broadly steady; later provinces are estimates."
+    },
+    {
+      "ref": "S/C3",
+      "pages": [
+        8,
+        10
+      ],
+      "verdict": "Partly supported: diesel generation has fallen.\nBaseline, ample and tight worlds still need sourced assumptions and tested fuel/customer-volume effects.",
+      "evidence": "Demand drivers differ; L/M/H cases cover all key levers\nPower, freight, fleet, prices, supply and customer access need explicit assumptions; fuel effects remain uncalibrated."
+    },
+    {
+      "ref": "C4",
+      "pages": [
+        9,
+        10
+      ],
+      "verdict": "Supported: refining capacity fell.\nPlant futures are conditional; capacity alone does not determine imports.",
+      "evidence": "Supply change makes import needs conditional\nCapacity has declined; redevelopment is conditional. Secunda/Natref product output and future cases remain open."
+    },
+    {
+      "ref": "C5",
+      "pages": [
+        11,
+        12
+      ],
+      "verdict": "Open: gateway competition.\nNo route winner without comparable cost, service and customer access.",
+      "evidence": "Alternative gateways challenge the same inland market\nMatola and Walvis Bay have storage; their competitiveness depends on full costs, route capacity and access."
+    },
+    {
+      "ref": "R6",
+      "pages": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "verdict": "Footprint established; customer share unquantified.\nValidate cost, service, rights and unique deliveries.",
+      "evidence": "Footprint ? reach ? estimated handling\nDefine regions, screen customers and compare annual demand with handling at two turns/month."
+    },
+    {
+      "ref": "R7",
+      "pages": [
+        17,
+        18,
+        19
+      ],
+      "verdict": "Conditional: secure customer flows first.\nUse existing assets; validate a capacity gap, then test investment.",
+      "evidence": "Working stock ? outlook ? delivery gates\nThe 5.5 bn L/year example needs 211,000 m? at 14 days; test usable spare space before adding tanks."
+    }
+  ],
+  "appendices": {
+    "21": "Turnover sensitivity supports R6 annual handling comparison",
+    "22": "Henry situation prompts",
+    "23": "Henry complication prompts",
+    "24": "Henry resolution prompts"
+  },
+  "non_analytical_pages": {
+    "1": "cover",
+    "2": "document scope",
+    "3": "answer-led summary",
+    "20": "appendix divider",
+    "25": "closing",
+    "26": "palette reference"
+  }
+}

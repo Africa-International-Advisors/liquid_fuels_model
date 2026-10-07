@@ -20,8 +20,8 @@ sys.path.insert(0, str(ROOT))
 from brand_configs import vopak as cfg
 
 brand = BrandStyle.from_module(cfg)
-source = Presentation(ROOT/'output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pptx')
-prs = Presentation(ROOT/'output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pptx')
+source = Presentation(ROOT/'output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx')
+prs = Presentation(ROOT/'output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx')
 remove_all_slides_cleanly(prs)
 REPO_URL = 'https://github.com/Africa-International-Advisors/liquid_fuels_model/blob/main/'
 QA = ROOT/'qa/manish_handover'

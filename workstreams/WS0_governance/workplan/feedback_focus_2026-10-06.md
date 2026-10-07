@@ -232,7 +232,7 @@ folder, compare overlapping observations and review changes before adoption.
 
 ## Pack and diagnostic reference files
 
-- [Current PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pptx) and [PDF](../../../pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pdf): stable filenames, 16 pages; original cover/closing retained.
+- [Current PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx) and [PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf): current Convergence storyline, 22 pages; supersedes the earlier Analytical Pack reviewed below.
 - [Source audit workbook](../../../output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx): Direction, provincial gaps and repeated keys give row-level investigation leads.
 - [Source profile](../../../output/delivered/source_profile_2026_10_05.html): input shapes, consuming functions and refresh routes. Its engine-use counts describe the 5 October diagnostic, not a new 6 October adoption audit.
 - [Partner-story gap register](../../../pptx/story/partner_story_gap_register_2026_10_06.json): questions, closure evidence and owners. Use current pack page numbers below; older evidence strings retain earlier page references.
@@ -328,3 +328,375 @@ The local raw-download payload remains a sharing gap pending approval; do not
 claim Manish can access it from main. Manish should pull main after publication.
 Record actual meeting decisions separately; this document contains preparation
 and proposed actions.
+
+
+## Pending visual feedback - canonical Convergence pack, 6 October 2026
+
+Status: logged only. Nigel requested feedback collection before implementation.
+Reference: current 22-page [Convergence PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf), page 8 (C4 refinery capacity).
+
+| Item | Feedback / finding | Proposed action | Status |
+|---|---|---|---|
+| VIS-01: blue explanatory text | Scenario headings, history disclaimer, 2036 volume labels and reported-output note feel too prominent; they compete with the title and charts. | Review dark grey for these text elements; retain navy for charts, navigation and the divider. Nigel to review the treatment before applying it across the pack. | Pending; no slide changes |
+| VIS-02: divider brand colour | Nigel asked whether the filled circle uses the Vopak logo blue. Page 8 PPTX shape XML confirms circle fill and outline are both `#0A2373`. `pptx/brand_configs/vopak.py` records the same value as the dominant opaque pixel sampled from the supplied logo; `footer_layout.py` uses the brand primary accent and a white arrow. | Keep the existing colour pending further feedback. The current divider matches the recorded logo-derived primary blue. | Checked; no slide changes |
+
+Owner: Nigel (visual direction); presentation builder implements after instruction.
+Revisit when Nigel finishes the feedback round and requests action. This entry
+changes no deck, model input or analytical conclusion.
+
+
+### SCN-01: low / medium / high cases for all key levers and assumptions
+
+Nigel requested L/M/H cases for every key lever and assumption, across demand,
+supply, customer access, cost, service and capacity. These combine into coherent
+baseline, ample-supply and tight-supply worlds. Imports are one resulting output.
+Status: tracked work package; tasks below are open. No deck or model changes.
+
+- Use a 3 x 3 demand/supply matrix as a summary of the market worlds, supported
+  by L/M/H settings for all underlying key levers and assumptions. It does not
+  replace those settings. Construct low, medium and high demand against low, medium
+  and high domestic supply. Medium demand / medium supply is the working
+  reference case, subject to agreed assumptions; it is not yet a calibrated forecast.
+- Demand cases need sourced historical petrol/diesel demand, explicit growth
+  assumptions and quantified levers: activity, freight mode, power generation,
+  fleet efficiency/EV uptake and fuel-price response. Preserve product, year
+  and geography; avoid counting the same effect twice.
+- Domestic supply cases represent actual petrol/diesel output by plant and year,
+  with availability, downtime, product yields and restart/redevelopment timing.
+  Published nameplate capacity is a constraint, not actual production.
+- Calculate required net imports = consumption - domestic production + stock
+  build. Gross imports additionally depend on exports. Match the consumption
+  estimate to reported sales and retain any coverage residual separately.
+- Label high-demand / low-domestic-supply as the candidate tight-supply corner,
+  and low-demand / high-domestic-supply as the candidate ample-supply corner.
+  These are hypotheses: assess import availability, terminal/route capacity,
+  delivered cost and service before concluding actual shortage or surplus.
+- Each world should show demand, domestic output, net import requirement and
+  the implication for accessible Vopak customer flows. Import need alone does
+  not establish Vopak throughput, market share or new-storage demand.
+
+Proposed owners: Nigel agrees the market worlds and narrative; Manish sources
+and reconciles the assumptions and tests the balance; Henry reviews plant cases.
+Revisit after the feedback round, once demand/output evidence and the assumption
+ranges are agreed. Keep assumptions in vintaged registered YAML/CSV when built.
+
+
+#### SCN-01 tracked task list
+
+All tasks are open. Owners below are proposed; no completion dates are committed.
+Use these IDs in handbacks and record evidence links when a task closes.
+
+| ID | Task / completion criterion | Proposed lead / review | Depends on | Status |
+|---|---|---|---|---|
+| SCN-01.1 | Inventory every key lever and assumption; map each to its consuming equation, source, unit, product, geography, period and owner. Cover demand, supply, trade/stocks, customer access, cost, service and capacity. Record missing evidence and replacement triggers. | Manish / Nigel | Current source audit | Open |
+| SCN-01.2 | Define sourced or explicitly proposed L/M/H settings for every key input, with rationale, uncertainty, timing and provenance. Include growth, activity, freight mode, power diesel use, fleet mix/efficiency, mileage and price response. Use discrete states where numeric ranges would be misleading. | Manish / Nigel | SCN-01.1 | Open |
+| SCN-01.3 | Specify plant-level supply alternatives: product yields, output, availability, downtime and restart/redevelopment timing. Specify exports, import availability and stock policy; reconcile calendar years and ownership bases. | Manish / Henry | SCN-01.1 | Open |
+| SCN-01.4 | Specify customer/route alternatives: delivered cost, service, rights/switching, compatible tanks, receipt/dispatch capacity, inventory days and usable spare space. Quantify unique final deliveries; remove shared transfers. | Nigel / Manish, Henry | SCN-01.1 | Open |
+| SCN-01.5 | Assemble coherent baseline, ample-supply and tight-supply worlds from the input settings. Document linked assumptions, incompatible combinations and what must be true. Confirm the medium reference case; do not set every lever to the same letter automatically. | Nigel / Manish, Henry | SCN-01.2-4 | Open |
+| SCN-01.6 | Implement accepted settings in registered vintaged YAML/CSV and existing model modules. Produce annual product/region demand, domestic output, trade requirements, stock changes, accessible customer flows, Vopak throughput and usable-capacity implications. Keep unresolved residuals explicit. | Manish / Nigel | SCN-01.5 and accepted inputs | Open |
+| SCN-01.7 | Test accounting identities, stock signs, units, input dependencies and double counting. Back-test demand methods against simple benchmarks; compare sensitivity by lever and report uncertainty. Run governance and relevant tests; record limitations and peer-review status. | Manish / Nigel, Henry | SCN-01.6 | Open |
+| SCN-01.8 | Update the canonical Convergence overview, market changes and Vopak outlook with consistent world definitions and outputs. Explain where/how/when Vopak can act, what changes the decision and which Henry storyline claims hold in each world. Verify every summary against its supporting page and source. | Nigel / Manish, Henry | SCN-01.7 | Open |
+
+Acceptance: an auditable assumption-to-equation-to-result-to-decision chain for
+all key levers, with L/M/H definitions, coherent worlds, tested outputs and linked
+exhibits. A high import requirement alone is not a customer-volume or investment case.
+
+
+### VIS-03: chart font weight - provincial supply allocation, page 6
+
+Status: pending visual feedback; no slide changes.
+Nigel questioned the bold treatment of province names and end-of-bar volume
+labels in the S1 provincial supply-origin illustration. The annotations also
+highlight the top axis; it is already regular weight and should remain so.
+Proposed treatment: regular-weight province names and volume labels, regular
+axis labels, and a quieter explanatory note. Keep the main title and section
+headings bold. Preserve font size and numeric legibility, units and the explicit
+illustrative-allocation warning. Review alongside VIS-01 text colour feedback
+before applying the treatment to comparable charts across the pack.
+Owner: Nigel (visual direction); builder implementation after instruction.
+
+
+### VIS-04 / R6: show the path from current volumes to greater market penetration
+
+Status: logged for design review; no slide or model changes.
+Nigel requested a clearer arrow-led explanation of how current customer volumes
+can increase through price, reach/access and the limits of infrastructure catchments.
+Avoid prominent red emphasis; use the restrained presentation palette and simple
+arrows to communicate progression.
+
+Proposed flow: total relevant petrol/diesel demand (TAM) -> physically reachable
+customer demand -> demand competitive on delivered price and service -> demand
+with commercial customer access -> captured unique final customer deliveries.
+Show current verified served volumes within the reachable market, then the
+additional candidate volumes that could pass these gates. Until those volumes
+are evidenced, show an unquantified path rather than invented penetration values.
+
+- Define TAM by product, year and customer geography. Provincial totals alone
+  do not define an infrastructure catchment or Vopak-addressable market.
+- Define reach from ports, storage and feasible pipeline/road/rail routes to
+  customer destinations. Show receipt/dispatch limits, compatible tanks and
+  route constraints; published storage capacity is not annual customer demand.
+- Compare full delivered price and service with alternatives for the same
+  customer/product/period. Price can expand the economically viable catchment;
+  physical reach alone does not establish competitive access.
+- Test contracts, switching and customer rights before identifying capture.
+  Remove shared Durban-Lesedi transfers from unique final-delivery volumes.
+- Present gates as constraints and assumptions, linked to SCN-01 L/M/H cases.
+  They need not be a fixed chronological sequence; failed or unknown gates
+  should explain what limits further penetration.
+
+Placement to review: use the market-penetration flow in the R6 outlook exhibits
+and summarize it on page 2. Page 6 currently addresses provincial supply origin;
+if repurposed, retain its national-versus-provincial accounting explanation in a
+supporting exhibit and update overview references. Do not imply that the existing
+illustrative domestic/import split measures Vopak penetration.
+Owner: Nigel (story/visual direction); Manish (customer/route evidence and gates).
+Revisit at the end of the feedback round, before layout implementation.
+
+
+### VIS-05 / R6: make the regional demand and storage graphic tell its story
+
+Status: pending feedback; no deck changes. Reference: Convergence page 13.
+Nigel requested the chart itself convey the regional comparison, rather than
+relying on the adjacent prose and multiple prominent blue caveats.
+
+- Use an answer-led chart heading and direct labels to make Vopak's eastern
+  coast/inland footprint and the other regions' different positions apparent.
+- Replace repeated "No listed Vopak site" wording with a compact, consistent
+  marker and one clear key. This means no site in the reviewed inventory;
+  it does not mean zero customer reach or zero served demand.
+- Distinguish unavailable competitor capacity from zero with an explicit
+  unknown marker/key. Show positive published capacities visibly, using a
+  shared storage scale for Vopak and other operators where bases are comparable.
+- Keep demand (bn litres/year) and storage (thousand cubic metres) in separate
+  aligned panels/scales; never treat their ratio as Vopak's demand share.
+- Move the national total/product scope and inventory caveats into one concise
+  note. Preserve the partial inventory, mixed-product capacity bases, missing
+  Sasol/Transnet values and unknown fuel-compatible capacity/actual demand share.
+- Apply the restrained colour and regular-weight chart-label treatment from
+  VIS-01 and VIS-03. Keep provenance links and notes clear of the footer.
+
+Suggested story to test: Vopak's published tanks are concentrated on the eastern
+coast and inland, alongside the largest grouped historical demand markets.
+Customer-volume share, spare capacity and addressable catchments still require
+separate evidence. Review this graphic with VIS-04's reach/price/access flow.
+Owner: Nigel (message and visual direction); Manish (capacity bases and evidence).
+Revisit when the feedback round is complete and implementation is requested.
+
+
+### VIS-06 / R7: reduce text hierarchy and let the inventory chart speak
+
+Status: pending feedback; no slide changes. Reference: Convergence page 17.
+Nigel highlighted the multiple blue lines above the inventory sensitivity chart:
+the illustrative-input banner and "More inventory days require more working stock"
+repeat what the chart can already communicate. Reduce competing text levels.
+
+- Keep the slide title, one concise exhibit heading and the chart as the main
+  hierarchy. Remove the redundant explanatory headline above the bars.
+- Consolidate the illustrative 5.5 bn litres/year input, uniform-flow assumption
+  and units into a short regular-weight chart note. Keep illustrative status
+  visible; reducing prominence must not make the values appear observed.
+- Give the chart more space and retain direct bar labels. Consider one restrained
+  callout at the reference 14-day case: approximately 211 thousand cubic metres.
+- Place the calculation in a compact methodology/source note or speaker notes,
+  with an auditable reference. Avoid repeating the same numeric result below
+  the chart and in the commentary column.
+- Shorten the right-hand prose to the decision implication and unresolved tests:
+  working inventory is not new tank capacity; usable spare tanks, peak receipts,
+  segregation, tank heels and dispatch constraints determine any addition.
+- Apply the calmer text-colour and font-weight direction from VIS-01/VIS-03.
+  Review repeated banners and formula blocks on other pages for the same issue.
+
+Owner: Nigel (hierarchy and message); presentation builder implements after
+instruction. No illustrative inputs or model calculations change in this task.
+Revisit with the consolidated visual feedback before rebuilding the current pack.
+
+
+## Approved feedback implementation - 6 October 2026
+
+Nigel requested implementation of the logged feedback and document scope.
+This status supersedes the earlier "pending" design entries, which remain as
+feedback history. Model inputs and illustrative source values are unchanged.
+
+| Item | Implemented treatment | Status |
+|---|---|---|
+| VIS-01 | Explanatory blue text changed to the theme charcoal; navy remains for chart marks, navigation and filled divider circles. | Implemented |
+| VIS-02 | Divider remains logo-derived #0A2373 with white arrow. | Verified / retained |
+| VIS-03 | Chart category/value text regular weight; main and section headings retained. | Implemented |
+| VIS-04 / R6 | Page 14 arrow flow: TAM, infrastructure reach, competitive price/service, commercial access and captured deliveries. Current and incremental volumes remain unquantified; prior examples retained in notes. | Implemented |
+| VIS-05 / R6 | Page 13 aligned demand/storage graphics, separate scales, compact no-listed-site/unknown key and one inventory note. | Implemented |
+| VIS-06 / R7 | Page 17 full-width native inventory chart, concise assumption note, direct values and operating limits; calculation retained in notes. | Implemented |
+| SCN-01 presentation | Page 9 covers L/M/H settings across demand, supply/trade, access, cost/service and capacity; baseline/ample/tight worlds defined as a framework. | Framework implemented; SCN-01.1-8 analytical tasks remain open |
+| APP-01 | Main story ends on page 17. Appendix divider p18; scope p19; Henry responses pp20-22; closing p23; palette p24. | Implemented |
+| SCOPE-01 | About-document page states Week 1 market evidence, scenarios and customer-access purpose; forecasts, share, closed balance and investment conclusions remain unestablished. | Implemented |
+
+The canonical current filenames remain unchanged. Previous delivered versions
+are archived before replacement. Package checks, page/reference checks, rendering
+and governance verification are recorded with the delivery.
+
+
+## Follow-up corrections after visual review - 6 October 2026
+
+- Cover and closing: white text on navy, with a separate bookend contrast rule.
+- Page 13: annual demand (million m3/year) and tank stock (million m3), separate
+  scales; explicit flow-versus-stock distinction. Source values are unchanged.
+- Page 14: restore the editable road-reach map and an illustrative waterfall
+  using existing catchment values. It does not quantify actual customer capture
+  or isolate price effects; commercial screening combines constraints.
+- End the main narrative with the market outlook on p16; appendix divider p17,
+  scope p18 and illustrative inventory sensitivity p19. Henry responses remain
+  pp20-22; closing p23 and palette p24.
+- Review and respond to Manish's latest push, 4e64c8c, in the convergence handback
+  response matrix. Proposed lever assumptions and unresolved balance remain open.
+- Teams sending was attempted only after Nigel requested a note. The connector
+  required reauthentication; nothing was sent. Nigel then asked why Teams was
+  being used; leave Teams alone and provide the recorded note for manual sharing.
+
+
+### VIS-05 follow-up: stacked horizontal storage comparison
+
+Nigel requested one horizontal stacked bar per region in the second graph,
+so demand and storage can be read across the row. Vopak is the first segment;
+other listed operators follow on the same stock scale. End labels show the
+known subtotal; component labels follow legend order. Unlisted/unknown values
+remain explicit, not zero. Source capacities, demand, units and story order
+are unchanged; annual flow and stock still use separate scales.
+
+
+### VIS-05 / SCN-01 follow-up: provisional tank turnover
+
+Nigel authorised a light internet search and provisional estimates. Page 13 now
+compares annual handling equivalents with annual historical demand on one scale,
+using the same partial site inventory as page 15. Base bars remain stacked by
+operator; low/high ranges use 1/2/3 monthly gross-equivalent turns, registered in
+assumptions/2026/terminal_handling.yaml. These are authored sensitivities informed
+by Blackmer/Dover (2013), not verified Vopak performance or measured fuel supply.
+Working space/product compatibility and receipt/dispatch constraints remain open.
+2022 demand vs 2026 inventory is historical context, not a matched-year adequacy test.
+Do not sum coastal/inland handling as unique sales; transfers can be counted twice.
+
+| Task | Owner | Status / replacement trigger |
+|---|---|---|
+| Obtain 12 months of outbound volumes and matching gross/working capacity per page-15 site | Manish; Nigel client access | Open; first operating-data review |
+| Separate fuel-compatible working space, occupancy, seasonal turns and downtime | Manish | Open; before capacity recommendation |
+| Verify berth/pipeline/road/rail receipt and dispatch ceilings; exclude inactive lease offers | Manish / Henry | Open; before operating supply conclusion |
+| Remove Durban-Lesedi transfers when calculating served demand and customer share | Manish / Nigel | Open; before R6 share conclusion |
+
+Evidence and limits: pptx/story/terminal_turnover_evidence_2026_10_06.json.
+Governance exception EXC-TERMINAL-HANDLING-TURNS expires 12 November 2026 or at
+its earlier review/recommendation trigger. Forecast engine results are unchanged.
+
+
+## Top-down story and kickoff-plan alignment
+
+Nigel requested implementation after reviewing the page sequence and supplied a
+Gantt reference for client touchpoints. Scope moves after the cover. Regional
+footprint precedes customer screening, annual handling and working inventory;
+inventory returns to the main story before the outlook. The base handling
+comparison has two bars per region; L/M/H detail moves to the appendix. Waterfall
+labels distinguish illustrative market, screening losses, assumed already served
+and opportunity to test. Only the endpoint is navy.
+
+Roadmap p19 follows the six-week plan, with proposed W1/W3/W5/W6 client checkpoints
+from the kickoff p27. Technical and partner reviews are weekly. The later
+fuel-first priority supersedes the kickoff's W1 infrastructure gate. Readiness
+against each acceptance test is recorded in convergence_workplan_review_2026-10-06.md.
+All dates, client slots and final acceptance remain unconfirmed; no meetings scheduled.
+Main story ends p19; appendix starts p20. Every analysis/roadmap page is linked
+from its overview row; Henry trace tables retain their slide targets after reordering.
+
+
+## Map and waterfall share a reach language
+
+Approved page 15 redesign: selected Eastern coastal/Inland reporting regions are
+outlined; the existing schematic road-connection cells collapse to one blue layer,
+with grey outside illustrated reach. A Reach screen connector links the map to
+the first waterfall deduction. Price/service/access and assumed already served
+remain distinct customer screens, not mapped geographies. Detailed road-cost
+bands remain on page 11.
+
+No new cost cutoff, operational catchment or volume calibration is claimed.
+The 14.5 starting market, 2.5 reach deduction and 5.5 opportunity endpoint retain
+the existing authored CSV values; coloured area does not determine these litres.
+The selected province outline is a reporting-market definition, not verified
+terminal reach. Replace the illustration when customer destinations, delivered
+cost/service tests and commercial rights become available (Manish; Nigel review).
+
+
+## 7 October: visually pair all five screening stages
+
+Nigel requested a visual representation across the map and waterfall. Page 15
+now uses five numbered schematic map markers, cluster halos and short labels
+matching the five bar badges: market, reach limit, commercial screen, already
+served and opportunity. The single reach elbow connector is replaced by this
+consistent visual key. Only the opportunity retains the strongest navy emphasis.
+
+Marker positions and halo sizes are editorial placements, not geocoded customers,
+observed commercial losses or calibrated spatial allocations. The page labels
+them as illustrative. Existing waterfall volumes and original road-cost exhibit
+are unchanged. Real destinations, served volumes and cost/service/access tests
+remain Manish's evidence task, with Nigel review.
+
+
+## 7 October: partner-style editorial and chart hierarchy review
+
+Nigel requested an action/so-what review of titles, evidence panels and variable
+chart text sizes. The main analytical story (pp3-19) now leads with implications
+and decisions grounded in existing evidence. The overview title is narrowed to
+an import-led market and accessible customer growth; it no longer presents
+sustained future import volumes as an established forecast. Henry's S/C/R IDs,
+verbatim appendix prompts and deep-dive targets remain intact.
+
+Right-hand evidence panels become Implication for Vopak, with concise findings
+and a separate Next action. Typography is defined by role: titles 24pt; subtitles
+14pt; panel headings/body 12pt; chart labels 11pt; direct values 12pt; axes 10pt.
+Compact map/dashboard labels use 9pt; source band stays 7.5pt. No per-page font
+shrinking is used to fit title copy. Chart size follows the exhibit's job.
+
+The R6/R7 exhibit sequence is deliberate:
+- p13: regional published storage footprint (stock, thousand m3).
+- p14: shared transfers removed to establish unique served demand (annual flow).
+- p15: additional customer screening waterfall with matching schematic map markers.
+- p16: turnover converts tankage to an annual handling screen, not assured supply.
+- p17: inventory days convert additional annual flow into working stock.
+
+Page 14's duplicate market-screen bars are replaced with a transfer waterfall
+using the existing route CSV: 2.8 + 2.0 - 1.8 = 3.0 bn litres/year. This is still
+an authored illustration, not actual throughput. No model inputs, forecasts or
+existing native chart values changed. Stale page references and crowded notes
+are corrected. Presentation build now applies this review after canonical ordering.
+Editorial copy and type roles: pptx/story/partner_review_2026_10_07.json.
+
+
+## 7 October: inventory evidence panel
+
+Requested p17 change: remove all chart gridlines and restore the standard
+two-column exhibit/evidence layout. The right panel explains inventory policy,
+spare working space and the distinction between stock and new tankage, with
+Nigel/Manish/Henry actions. Existing 105/211/316/422 thousand m3 values and the
+14-day navy highlight remain unchanged. No new inputs or capacity conclusion.
+
+
+## 7 October: reduce national trade-page repetition
+
+Nigel marked the two lower blocks on p4 as taking space and making the slide
+text-heavy. Remove Primary trade / SARS customs and 2024 accounting remains open
+from the body; preserve their source discrepancy and residual details in notes.
+The existing RHS panel carries source selection and the unresolved balance once.
+Enlarge the grouped bars, remove chart gridlines and retain one net-import summary.
+No customs, sales or residual values changed.
+
+
+## 7 October: three fuel lever pages and readable evidence
+
+Confirmed 2030/2035 snapshots. Add main-story diesel/jet/petrol pages with
+registered proposed L/M/H values and rationale; keep current reference distinct
+from accepted inputs. See fuel_lever_review_2026-10-07.md for owned acceptance
+tasks and dependencies. Ranges require review; no new forecast was run.
+Custom trade legend, four driver charts per page and refinery qualifications
+in notes are implemented. New sequence: framework 11; fuel inputs 12?14;
+footprint 17; transfers 18; opportunity 19; handling 20; stock 21; outlook 22;
+roadmap 23; appendix 24; turnover 25; Henry responses 26?28.
+
+### Driver legend correction
+Nigel confirmed pages 8–9: the previous update left their keys beneath the charts. Move all eight editable legend groups into compact right-aligned rows above their plots, retain 11pt labels and series colours, and reposition plots for clear spacing. Native chart data and the page 4 trade legend remain unchanged. The source splitter applies this placement on every rebuild.

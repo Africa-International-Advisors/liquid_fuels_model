@@ -1,0 +1,220 @@
+﻿{
+    "archived":  26,
+    "removed_duplicate_exports":  42,
+    "canonical_sha256":  {
+                             "pptx":  "0EDB110EC6E3BE257C55DC05644F0DB89FCC9C0DD5A7DCC0DBFA3DADDEDC814C",
+                             "pdf":  "C6DC64A3DC34684BFD34B11C749C8FC1A82D83E949DB02318C3773AD99C5DE31"
+                         },
+    "duplicates":  [
+                       {
+                           "removed":  "pptx\\qa\\convergence_20261006\\Vopak_Week1_Convergence_2026_10_06.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_storyline\\Vopak_Week1_Convergence_2026_10_06.pdf",
+                           "sha256":  "3BC4C6E10EBCD3EB8A194E913F617AD1032D8C6643EE8FCAEC271096EDCEC974"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\convergence_20261006\\Vopak_Week1_Convergence_2026_10_06.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_storyline\\Vopak_Week1_Convergence_2026_10_06.pptx",
+                           "sha256":  "23F4D0E6959CAB109BB8C9F163084F9F4B5EECC0AF2A86AA7CE4033CED47FC8F"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\convergence_20261006\\Vopak_Week1_Convergence_2026_10_06_v2.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_storyline\\Vopak_Week1_Convergence_2026_10_06_v2.pdf",
+                           "sha256":  "4658DC017C3F2250B8D780CB1269A775D12D2E68011E8AA51F9F8CB0A3D797F7"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\convergence_20261006\\Vopak_Week1_Convergence_2026_10_06_v2.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_storyline\\Vopak_Week1_Convergence_2026_10_06_v2.pptx",
+                           "sha256":  "B735A174440C6EC692CA95E7A1F430A63C23E220B1B48EDAC599F276FE349042"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\convergence_20261006\\Vopak_Week1_Convergence_2026_10_06_v3.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_storyline\\Vopak_Week1_Convergence_2026_10_06_v3.pdf",
+                           "sha256":  "12E3AABD3EA9C5581A2FB15D2995B6AC17F499668D6E667B7ED1CDFD23408777"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\convergence_20261006\\Vopak_Week1_Convergence_2026_10_06_v3.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_storyline\\Vopak_Week1_Convergence_2026_10_06_v3.pptx",
+                           "sha256":  "59F5BFBC9A8A1006E7696F241FCBB3ACD712CD57E112C7612DDC658BF46A5507"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\convergence_20261006\\Vopak_Week1_Convergence_2026_10_06_v5.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_storyline\\Vopak_Week1_Convergence_2026_10_06_v5.pdf",
+                           "sha256":  "A4447D34348B6615907630339355658908005F228FBE3CE4D68B8FB9074218AA"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\convergence_20261006\\Vopak_Week1_Convergence_2026_10_06_v5.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_storyline\\Vopak_Week1_Convergence_2026_10_06_v5.pptx",
+                           "sha256":  "60791A1491DC7F76B35318BF7647A660767091ED1C877C2DE873A792CB57CEF2"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\capacity_contrast_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_042647\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "05470EDC3E8502E4E9507F1A9C0F8961CA0BB9151E6332A9E8B60AECEE77A586"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\capacity_contrast_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_042647\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "5DEB39C42B1C3836AFB51651CD3DFF700190C4E8E64215A6E0A76E98A8401A55"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\demand_driver_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_041608\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "33A2D216D7BCD00E6FC460158E365EDA81919CAF3CC6D2BFA499917AEF2FE26C"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\demand_driver_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_041608\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "91480B276245B851558D0FCED3A4B8FCA60E7595BC63A590F913FC2DCA49033E"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\no_panel_headings_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_073002\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "0FAF194EF16AC922BDB0F9D54F549AC9B5A55D27C6AB3751ACD5F3938BFD661B"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\no_panel_headings_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_073002\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "479BECA2F61CEB3B4C0178ECE44780613B9F84002317CD0512C13D08CCB35AEC"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\no_repeated_headings_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_074733\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "41CCE2956CF23C3C305CAA738C61359D2A184598A101ACEAF2889ED2C018E9AC"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\no_repeated_headings_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_074733\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "A821D79F5649ECF74C5A3B14B48BB16985CF7D5D5C88F259CD0CE3F972066015"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\partner_story_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_030343\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "603EA86929D1739DC1B906B8D56FACE0977ABD65E9CC44FB6A506E5B26DC392C"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\partner_story_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_030343\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "DC33521B2C6D5A300F55BD2C3F9FDC576AF9E72ADB1182FB288C8BC8B2A9CD19"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\regional_competition_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_024032\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "C4DEB90E2B8C60732BD7B457085816785C10EACA7013FC1923737B60856B76BC"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\regional_competition_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_024032\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "26BEB338672E0E26DAE854A510C6410B7CD96EAFDE36BD95AD303F04E8809AD5"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\scr_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_032014\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "46C68AADB4A367951DCD6EE3EBC18F91265AE22C1423A788075917955A1935A4"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\scr_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_032014\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "69DF1B4FCDF091AAB6647171DDE88B6BDA09B719E4797E707DF01C045100A3F1"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\scr_navigation_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_035154\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "C874EBC199B53641A52A80F9521919F3C689EF9706EEE5DFD00DE3BAF1EDCE86"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\scr_navigation_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_035154\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "25286FA83D6E17005988DF03ED89FDFC5468F1A7C35E9765A6C941673E16C657"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\scr_table_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_032637\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "03ABC2598558937D21B656A538F400060F026A9AEB6811E8F4D706D3D6DE52EC"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\scr_table_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_032637\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "21C0B1A3FFD6B68E72656B4F1D6157A48BCD15B8AF793025970ABC28D744A332"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\sector_driver_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_042127\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "DAF464802381FFAF79784DBF1F6A916C904AB847C17986D5B035026A46929E0B"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\sector_driver_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_042127\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "20C1185686843F28F7BE16BCAEBBCD7A54573526AAFE3F6582040CCA9F8E4298"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\storage_consistent_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_025421\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "91CE2AB10EADE2C99A82C7E7418B279E16828D9D7102680E11881B6B9BAFE679"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\storage_consistent_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_025421\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "6026228FAC58C1770F86D92325BB6CF565E9FA9BC343A9C7CCDEB8B29FC20C2E"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\subtitles14_no_breadcrumb_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_081026\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "391DB9898C682E266CB694C7C65A5D7D3B97931A1994EDDB502C93ADEE00E814"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\subtitles14_no_breadcrumb_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_081026\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "BEFB558A1B33F36F21BEFFA271237E6515CD280063A94EA265180B8C6BFC59D9"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\supply_review_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_040508\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "51B1A70AE4EBC0AEF4A28EFBA649181E9F1767B04461CC6342DF769773E819DE"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\supply_review_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_040508\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "A3264D6D2DDAE27B9D05DDA84FA8D123809EE6B94CC10AAE55F2E71BDBBB64B3"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\transnet_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_023412\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "C30D6F42256B6B2515766B21FDDB4EEF964778AE0A7CB62069AC7BEF4DD6EEFC"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\transnet_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_023412\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "9CF65A0E04C6E9D66CEF9B40684B56D2031F05EF0618FF921F5EB884B001964B"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\type_consistent_candidate.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_031321\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "6DFD89B387AD9A5D23B2D433D420D94A4FE9092A1F9811CC2C8DC73BDB90CC7A"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\type_consistent_candidate.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_031321\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "29371D51D6DAAD98254376447342E0CE632CB95731ED16BF8F87EC2882B7A92F"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\drafts\\2026-10-06_021133\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_021040\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "BA3CDEFFD488BE2C857AB392B3965099D24CBC4B7F47CBB7B58A26435A2CB601"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\week1_maps\\drafts\\2026-10-06_021133\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_021040\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "021A34D5C39A23A2594A8449357F13CB834562DFE7748412A0E6DB2F7633ECBA"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\scr_editorial\\hierarchy.pdf",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_storyline\\Vopak_Week1_Analytical_Pack_2026_10_06.pdf",
+                           "sha256":  "680BCF72D61AD6268851C625ABCC94523462656166FFBA8D1C41214EB0C61A1C"
+                       },
+                       {
+                           "removed":  "pptx\\qa\\scr_editorial\\hierarchy.pptx",
+                           "retained":  "pptx\\output\\delivered\\archive\\2026-10-06_storyline\\Vopak_Week1_Analytical_Pack_2026_10_06.pptx",
+                           "sha256":  "A115AAA1B9E2E1D7CAD0B34CA39D0F31088D6061D2440C247DF5DB73FBCE4547"
+                       }
+                   ]
+}

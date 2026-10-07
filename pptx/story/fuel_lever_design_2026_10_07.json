@@ -1,0 +1,205 @@
+{
+  "status": "Proposed sensitivity inputs for review; not calibrated, approved or wired into forecasts",
+  "horizons": [
+    2030,
+    2035
+  ],
+  "case_order": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "sources": {
+    "vehicles": "assumptions/2026/vehicles.yaml and timeseries/efficiency_improvement_{diesel,gasoline}.csv; provisional vehicle mileage and legacy efficiency paths",
+    "supply": "assumptions/2026/supply.yaml; legacy yields, not plant-specific verified yields",
+    "macro": "assumptions/2026/macro.yaml; 2% continuation beyond 2028 is a team proposal, not an official 2030/2035 forecast",
+    "treasury": "https://www.treasury.gov.za/documents/national%20budget/2026/review/FullBR.pdf",
+    "aviation": "assumptions/2026/aviation.yaml; Manish's 5 October movement-driver proposal; re-estimation outstanding",
+    "icao": "https://www.icao.int/environmental-protection/trends-emissions-affect-climate-change",
+    "saf": "https://www.icao.int/SAF; global emissions-reduction aspiration is NOT a South African volume-blend requirement",
+    "restart": "pptx/scripts/supply_review_pages.py; existing illustrative refinery capacity branch, not committed output"
+  },
+  "fuels": [
+    {
+      "fuel": "diesel",
+      "title": "S/C3 / C4. Test freight, rail and power before setting diesel import requirements",
+      "bridge": "More road activity and power use raise diesel demand; efficiency, rail and domestic output reduce the import requirement.",
+      "levers": [
+        {
+          "id": "road_activity",
+          "label": "Freight activity\n2024 = 100",
+          "unit": "index_2024_100",
+          "reference": "2024 = 100\nObserved proxy",
+          "rationale": "Authored flat / recovery / expansion tests. Apply before rail diversion; calibrate litres per activity unit.",
+          "anchor": "Observed freight proxy, not fuel demand"
+        },
+        {
+          "id": "rail_diversion",
+          "label": "Road freight moved to rail\n% of reference road work",
+          "unit": "percent",
+          "reference": "No agreed diversion\nM is proposed",
+          "rationale": "Higher diversion lowers road diesel. Avoid subtracting rail again if already embedded in the activity path.",
+          "anchor": "Authored modal-shift sensitivity; rail capacity unverified"
+        },
+        {
+          "id": "ocgt_generation",
+          "label": "Diesel OCGT generation\nFY2024 = 100",
+          "unit": "index_FY2024_100",
+          "reference": "FY2024 = 100\nLatest trend is lower",
+          "rationale": "Test grid recovery versus stress. Use one generation path; do not add a second load-shedding allowance.",
+          "anchor": "Observed OCGT trend; all target-year indices authored"
+        },
+        {
+          "id": "new_cohort_efficiency",
+          "label": "New-vehicle efficiency gain\n% per year",
+          "unit": "percent_per_year",
+          "reference": "Legacy: 0.5–1.0%\nNew cohorts only",
+          "rationale": "Existing low/high input endpoints; M is a proposed midpoint. Higher gain lowers new-cohort fuel use.",
+          "anchor": "Registered diesel efficiency CSV; unreviewed"
+        },
+        {
+          "id": "plant_utilisation",
+          "label": "Existing plant utilisation\n% of operable capacity",
+          "unit": "percent",
+          "reference": "Actual output unresolved\n75% is a test",
+          "rationale": "Shared across fuels. Higher utilisation raises domestic output; exclude closed capacity and count downtime once.",
+          "anchor": "Authored utilisation range; not observed plant operation"
+        },
+        {
+          "id": "product_yield",
+          "label": "Diesel product yield\n% of plant throughput",
+          "unit": "percent",
+          "reference": "Legacy yield: 25%\nPlant mix unverified",
+          "rationale": "Brackets the legacy yield. Higher yield raises diesel output; enforce a consistent cross-product yield slate.",
+          "anchor": "Registered legacy supply mix; range authored"
+        },
+        {
+          "id": "restart_capacity",
+          "label": "Conditional added capacity\nthousand bbl/day",
+          "unit": "thousand_bbl_per_day",
+          "reference": "No committed addition\nConditional case only",
+          "rationale": "Shared refinery branch, counted once. H requires FID, timing, ramp-up and product yields; it is not committed output.",
+          "anchor": "Existing illustrative refinery case"
+        }
+      ]
+    },
+    {
+      "fuel": "jet",
+      "title": "S/C3 / C4. Build jet demand from aircraft movements and fuel burn before estimating imports",
+      "bridge": "Traffic and fuel burn set total jet demand; SAF changes the fossil share, while refinery output sets the import balance.",
+      "levers": [
+        {
+          "id": "aircraft_movements",
+          "label": "Aircraft movements\n2024 = 100",
+          "unit": "index_2024_100",
+          "reference": "2024 = 100\nACSA coverage only",
+          "rationale": "Authored flat / recovery / expansion tests. Follow Manish's movement driver; re-fit against matched jet deliveries.",
+          "anchor": "Registered ACSA movement source; target indices authored"
+        },
+        {
+          "id": "fuel_burn_per_movement",
+          "label": "Fuel burn per movement\n2024 = 100",
+          "unit": "index_2024_100",
+          "reference": "2024 = 100 assumed\nNot yet measured",
+          "rationale": "Lower burn lowers litres. Separate aircraft efficiency from route length, aircraft size and international mix.",
+          "anchor": "Authored intensity tests; ICAO supports mechanism, not these SA values"
+        },
+        {
+          "id": "saf_volume_share",
+          "label": "SAF share of jet deliveries\n% by volume",
+          "unit": "percent",
+          "reference": "SA blend baseline unknown\nNot a local mandate",
+          "rationale": "Changes fossil jet share, not total jet litres. Authored blend tests; ICAO's 5% emissions vision is not a volume target.",
+          "anchor": "Authored SA sensitivity; ICAO global framework only"
+        },
+        {
+          "id": "plant_utilisation",
+          "label": "Existing plant utilisation\n% of operable capacity",
+          "unit": "percent",
+          "reference": "Actual output unresolved\n75% is a test",
+          "rationale": "Same plant setting as diesel and petrol. Higher utilisation raises jet output, subject to actual product capability.",
+          "anchor": "Authored shared utilisation range"
+        },
+        {
+          "id": "product_yield",
+          "label": "Jet product yield\n% of capable plant throughput",
+          "unit": "percent",
+          "reference": "Legacy capable plants: 10%\nOther plants: 0%",
+          "rationale": "Apply only to jet-capable plants. Brackets the legacy yield; cannot assume every refinery produces aviation fuel.",
+          "anchor": "Registered legacy supply mix; range authored"
+        },
+        {
+          "id": "restart_capacity",
+          "label": "Conditional added capacity\nthousand bbl/day",
+          "unit": "thousand_bbl_per_day",
+          "reference": "No committed addition\nJet capability unknown",
+          "rationale": "Same refinery branch, counted once. Jet output depends on a verified yield and specification, not nameplate alone.",
+          "anchor": "Existing illustrative refinery case; jet eligibility unresolved"
+        }
+      ]
+    },
+    {
+      "fuel": "petrol",
+      "title": "S/C3 / C4. Test travel, fleet growth and electrification before setting petrol import requirements",
+      "bridge": "Travel and fleet additions raise petrol demand; electrification and new-cohort efficiency offset growth before supply is matched.",
+      "levers": [
+        {
+          "id": "passenger_mileage",
+          "label": "Passenger mileage\nkm / vehicle / year",
+          "unit": "km_per_vehicle_year",
+          "reference": "Registered: 17,000\nProvisional placeholder",
+          "rationale": "Authored ±20% around the current mileage placeholder. Higher mileage raises petrol demand at a given fleet.",
+          "anchor": "Registered provisional passenger mileage"
+        },
+        {
+          "id": "gdp_growth",
+          "label": "Real GDP growth\n% per year",
+          "unit": "percent_per_year",
+          "reference": "Team continuation: 2%\nBeyond official 2028",
+          "rationale": "Bracket the 2% continuation proposal. Drives fleet additions through the fitted relationship, not a second fuel multiplier.",
+          "anchor": "Registered macro proposal; outer range authored"
+        },
+        {
+          "id": "bev_new_sales_share",
+          "label": "BEV share of new sales\n% of passenger sales",
+          "unit": "percent",
+          "reference": "Legacy uptake curves\nSales/fleet basis to resolve",
+          "rationale": "Authored sales-share tests. Higher BEV uptake lowers new ICE additions; total-fleet effect depends on survival.",
+          "anchor": "Authored replacement design, not values from legacy S-curves"
+        },
+        {
+          "id": "new_cohort_efficiency",
+          "label": "New-vehicle efficiency gain\n% per year",
+          "unit": "percent_per_year",
+          "reference": "Legacy: 1.0–1.5%\nNew cohorts only",
+          "rationale": "Existing low/high input endpoints; M is a proposed midpoint. Preserve each cohort's entry-year consumption.",
+          "anchor": "Registered gasoline efficiency CSV; unreviewed"
+        },
+        {
+          "id": "plant_utilisation",
+          "label": "Existing plant utilisation\n% of operable capacity",
+          "unit": "percent",
+          "reference": "Actual output unresolved\n75% is a test",
+          "rationale": "Shared across fuels. Higher utilisation raises domestic petrol output; use actual operable capacity and downtime.",
+          "anchor": "Authored shared utilisation range"
+        },
+        {
+          "id": "product_yield",
+          "label": "Petrol yield (conventional)\n% of plant throughput",
+          "unit": "percent",
+          "reference": "Legacy conventional: 45%\nSynthetic plants differ",
+          "rationale": "Brackets conventional-plant legacy yield. Keep synthetic plants separate and enforce the product-slate constraint.",
+          "anchor": "Registered legacy supply mix; range authored"
+        },
+        {
+          "id": "restart_capacity",
+          "label": "Conditional added capacity\nthousand bbl/day",
+          "unit": "thousand_bbl_per_day",
+          "reference": "No committed addition\nConditional case only",
+          "rationale": "Shared refinery branch, counted once. Petrol output requires FID, ramp-up and a verified product bridge.",
+          "anchor": "Existing illustrative refinery case"
+        }
+      ]
+    }
+  ]
+}

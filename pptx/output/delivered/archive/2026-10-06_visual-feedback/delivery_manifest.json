@@ -1,0 +1,35 @@
+{
+  "pages": 24,
+  "story_end": 17,
+  "appendix_divider": 18,
+  "scope": 19,
+  "henry_responses": [
+    20,
+    21,
+    22
+  ],
+  "closing": 23,
+  "palette": 24,
+  "checks": [
+    "package integrity",
+    "physical bounds",
+    "all-page confidentiality",
+    "logo-blue circles and white arrows",
+    "internal slide links",
+    "unchanged plotted evidence and inventory values",
+    "24-page rebuild smoke check"
+  ],
+  "governance": "coverage passed; 52 open exceptions; draft",
+  "rendering": "PowerPoint PDF export; installed local PyMuPDF renderer used for PNG visual review",
+  "current_files": {
+    "Vopak_Week1_Convergence_2026_10_06.pptx": "2843facbed1e7a12e1b5f8b287d41a3dd9fcad8a1b254734baa65ee844e36db2",
+    "Vopak_Week1_Convergence_2026_10_06.pdf": "dc193d7bc8eb4c2541ba5fb799e9dd6be772b1d91396f094d9f901473d4eb5ca"
+  },
+  "previous_files": {
+    "Vopak_Week1_Convergence_2026_10_06.pdf": "c6dc64a3dc34684bfd34b11c749c8fc1a82d83e949db02318c3773ad99c5de31",
+    "Vopak_Week1_Convergence_2026_10_06.pptx": "0edb110ec6e3be257c55dc05644f0db89fcc9c0dd5a7dcc0dbfa3daddedc814c",
+    "Vopak_Week1_Convergence_Hierarchy_2026_10_06.pdf": "eddc8daa9542b197352a505e6bb7f82a46d22446178a99425d349912cd74a3b9",
+    "Vopak_Week1_Convergence_Hierarchy_2026_10_06.pptx": "2754ef594f4c9a5981716bbb6ae57685b68aa5c4af4f0f8ab50e1edc781de243"
+  },
+  "changes": "VIS-01 to VIS-06, scenario framework, appendix divider and document scope. Model inputs and source values unchanged."
+}

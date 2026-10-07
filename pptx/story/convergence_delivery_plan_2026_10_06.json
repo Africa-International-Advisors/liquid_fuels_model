@@ -1,0 +1,24 @@
+{
+  "status": "Proposed timing and client checkpoints; no meetings scheduled or acceptance inferred",
+  "sources": ["Vopak_Analyst_Kickoff.pdf pp23-27", "workstreams/WS0_governance/workplan/six_week_plan.md", "workstreams/WS0_governance/workplan/feedback_focus_2026-10-06.md", "workstreams/WS1_data_validation/manish_branch_review_2026-10-06.md", "GATE_CHECKLIST.md"],
+  "weeks": ["W1\n02 Oct", "W2\n09 Oct", "W3\n16 Oct", "W4\n23 Oct", "W5\n30 Oct", "W6\n06 Nov"],
+  "rows": [
+    {"activity": "1  Establish the fuel baseline", "owner": "Manish / Nigel", "active": [1,2], "gate_week": 2, "gate": "Reconcile history, sources and opening assumptions", "now": "Reference runs reproduced; source proposals staged. Balance and acceptance open."},
+    {"activity": "2  Test demand and supply cases", "owner": "Manish / Henry", "active": [2,3,4], "gate_week": 4, "gate": "Reviewed drivers and independent nine-case matrix", "now": "Historical evidence and lever framework available; calibrated settings and integration pending."},
+    {"activity": "3  Prove reach and handling", "owner": "Manish / Nigel", "active": [2,3,4], "gate_week": 3, "gate": "One evidenced route; usable capacity and access", "now": "Public inventory and schematic routes assembled; operating capacity/access unverified."},
+    {"activity": "4  Quantify customer opportunity", "owner": "Nigel / Manish", "active": [3,4,5], "gate_week": 4, "gate": "Competitive delivered cost, rights and unique litres", "now": "Illustrative waterfall only; actual customer volumes and cost/service screens needed."},
+    {"activity": "5  Test working stock and constraints", "owner": "Manish / Henry", "active": [4,5], "gate_week": 5, "gate": "Working stock versus usable spare space; sensitivities", "now": "Turnover and inventory-day illustrations available; spare fuel space and peaks unknown."},
+    {"activity": "6  Challenge, reproduce and hand over", "owner": "Nigel / Henry", "active": [5,6], "gate_week": 6, "gate": "Reviewed decision pack, repeatable outputs and open gates", "now": "Convergence draft exists; peer review and business acceptance not recorded."},
+    {"activity": "Storyline and evidence integration", "owner": "Nigel / Manish", "active": [1,2,3,4,5,6], "gate_week": null, "gate": "Every claim traced to evidence and acceptance status", "now": "Henry prompts traced; partial/open answers remain explicit."}
+  ],
+  "client_touchpoints": [
+    {"week": 1, "label": "Scope / data", "decision": "Agree reporting boundaries, source access and priority customer data"},
+    {"week": 3, "label": "Emerging findings", "decision": "Challenge scenarios, first-route evidence and customer hypotheses"},
+    {"week": 5, "label": "Draft implications", "decision": "Challenge reachable flows, operating constraints and storage needs"},
+    {"week": 6, "label": "Final review", "decision": "Accept outputs or record remaining conditions; handover target 12 November"}
+  ],
+  "cadence": "Daily internal check-in / written check-out; weekly technical and partner reviews; Henry at gates. Client touchpoints proposed in W1/W3/W5/W6.",
+  "priority": "Fuel baseline and source-to-model integration take priority. Infrastructure is not a Week 1 gate; route breadth depends on shared team capacity.",
+  "owner": "Nigel leads priorities and client alignment; Manish builds evidence; Henry reviews readiness",
+  "expiry_trigger": "Revise at next workplan review or when client checkpoint dates and data-access commitments are agreed"
+}

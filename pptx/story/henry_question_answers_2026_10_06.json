@@ -1,0 +1,308 @@
+{
+  "source": "external/partner_story_20261006/situation.png; complication.png; resolution.png (Henry storyboard pp30-32)",
+  "date": "2026-10-06",
+  "status": "Every prompt has a current response; partial/open responses are not closed findings",
+  "sections": [
+    {
+      "pill": "S",
+      "agenda": "Market baseline",
+      "questions": [
+        {
+          "question": "Total SA demand development",
+          "answer": "Partial: reported 2024 sales are 20.763 bn L; coverage awaits reconciliation. Provincial history ends in 2022.",
+          "pages": [
+            3,
+            4,
+            5
+          ],
+          "trace_id": "S01",
+          "henry_verbatim": "Outline total SA demand development over the last few years and the market of interest for Vopak (eastern part of SA, within economic striking distance of its storage infrastructure and NMPP",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        },
+        {
+          "question": "Eastern SA market within economic striking distance",
+          "answer": "Open: location and illustrative costs show reach, not accessible customer litres. Need destinations, tariffs and rights.",
+          "pages": [
+            4,
+            10,
+            12,
+            14
+          ],
+          "trace_id": "S02",
+          "henry_verbatim": "Outline total SA demand development over the last few years and the market of interest for Vopak (eastern part of SA, within economic striking distance of its storage infrastructure and NMPP",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        },
+        {
+          "question": "Greater diesel use in power generation",
+          "answer": "Partial: generation history is shown; recent OCGT use falls. Diesel-litres attribution still needs fuel-use evidence.",
+          "pages": [
+            7,
+            9
+          ],
+          "trace_id": "S03",
+          "henry_verbatim": "Greater use of diesel in power gen",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        },
+        {
+          "question": "Rail to road",
+          "answer": "Partial: road/rail payload history is shown. Payload alone does not prove modal substitution or diesel effects.",
+          "pages": [
+            7,
+            9
+          ],
+          "trace_id": "S04",
+          "henry_verbatim": "Rail to road",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        },
+        {
+          "question": "Changes in fuel price",
+          "answer": "Partial: complete-year price history is staged. Travel response and real-price effects remain uncalibrated.",
+          "pages": [
+            7,
+            9
+          ],
+          "trace_id": "S05",
+          "henry_verbatim": "Changes in fuel price",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        },
+        {
+          "question": "More fuel-efficient vehicles",
+          "answer": "Open: fleet stocks and new EV/hybrid sales do not establish fleet efficiency. Need fuel mix, mileage and intensity.",
+          "pages": [
+            7,
+            9
+          ],
+          "trace_id": "S06",
+          "henry_verbatim": "Shift to more fuel efficient vehicles",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        },
+        {
+          "question": "Slow GDP growth",
+          "answer": "Partial: GDP and sector activity evidence is available; growth-to-fuel effects require explicit assumptions.",
+          "pages": [
+            7,
+            9
+          ],
+          "trace_id": "S07",
+          "henry_verbatim": "Slow GDP growth",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        },
+        {
+          "question": "Refinery closures",
+          "answer": "Partial: published capacity falls to 358 thousand bbl/day. Capacity is distinct from output and operating availability.",
+          "pages": [
+            8
+          ],
+          "trace_id": "S08",
+          "henry_verbatim": "Refinery closure",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        },
+        {
+          "question": "Challenges at Secunda",
+          "answer": "Partial: FY2024 output is 29.1 million barrels, all products. Availability and petrol/diesel yields remain open.",
+          "pages": [
+            8,
+            9
+          ],
+          "trace_id": "S09",
+          "henry_verbatim": "Challenges at Secunda",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        },
+        {
+          "question": "Closure of Mossgas",
+          "answer": "Open: plant-specific shutdown dates, operating status and lost product output need explicit source confirmation.",
+          "pages": [
+            8,
+            9
+          ],
+          "trace_id": "S10",
+          "henry_verbatim": "Closure of Mossgas",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        },
+        {
+          "question": "Growth in imports and where they enter",
+          "answer": "Partial: 2024 net imports are 13.078 bn L. Import-growth attribution, product-specific ports and origin remain open.",
+          "pages": [
+            3,
+            6
+          ],
+          "trace_id": "S11",
+          "henry_verbatim": "Show growth in imports and where they have been coming in",
+          "source_slide": 30,
+          "source_image": "external/partner_story_20261006/situation.png"
+        }
+      ]
+    },
+    {
+      "pill": "C",
+      "agenda": "Market changes",
+      "questions": [
+        {
+          "question": "Road to rail; private-sector rail projection",
+          "answer": "Open: historical payload is available; private-sector service, timing and modal-shift assumptions need evidence.",
+          "pages": [
+            7,
+            9
+          ],
+          "trace_id": "C01",
+          "henry_verbatim": "Road to rail (use the stats SA land transport survey, provide a projection of the shift based on private sector participation in rail",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
+        },
+        {
+          "question": "End of loadshedding and spare power capacity",
+          "answer": "Partial: observed OCGT generation falls. Future dispatch, spare capacity and diesel demand remain conditional.",
+          "pages": [
+            7,
+            9
+          ],
+          "trace_id": "C02",
+          "henry_verbatim": "End of loadshedding and large spare capacity in power generation",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
+        },
+        {
+          "question": "EV / HEV penetration projection",
+          "answer": "Open: sales uptake is shown, not fleet penetration. Separate BEV, PHEV and conventional hybrids; model turnover.",
+          "pages": [
+            7,
+            9
+          ],
+          "trace_id": "C03",
+          "henry_verbatim": "Penetration of EVs and HEVs (Need to provide a projection of penetration, show how this may impact litres per km calc)",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
+        },
+        {
+          "question": "Effect of EV / HEV on litres per km",
+          "answer": "Open: require stock mix, mileage and fuel intensity. BEVs and hybrids have different fuel-use mechanisms.",
+          "pages": [
+            7,
+            9
+          ],
+          "trace_id": "C04",
+          "henry_verbatim": "Penetration of EVs and HEVs (Need to provide a projection of penetration, show how this may impact litres per km calc)",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
+        },
+        {
+          "question": "Higher fuel prices and km travelled",
+          "answer": "Open: prices are sourced; mileage response and elasticity must be specified and tested before forecasting.",
+          "pages": [
+            7,
+            9
+          ],
+          "trace_id": "C05",
+          "henry_verbatim": "Large increase in fuel prices (need to show how this may impact km’s travelled)",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
+        },
+        {
+          "question": "Mega refinery / SAPREF restart",
+          "answer": "Conditional: redevelopment capacity is a scenario, not sanctioned output. Confirm FID, ramp-up and product yields.",
+          "pages": [
+            8,
+            9
+          ],
+          "trace_id": "C06",
+          "henry_verbatim": "Talk of a mega refinery (restart Sapref)",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
+        },
+        {
+          "question": "Secunda gas, coal and MRG diversion to 2032",
+          "answer": "Open: no liquid-fuel displacement is inferred. Need dated gas allocation, plant mechanism and product-output evidence.",
+          "pages": [
+            8,
+            9
+          ],
+          "trace_id": "C07",
+          "henry_verbatim": "Secunda production - linked to improved pure gas production from coal, however diversion away from fuel production due to sale of MRG and potential extension to 2032",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
+        },
+        {
+          "question": "Natref future?",
+          "answer": "Open: reported FY output is available; future ownership, availability and product yields require a dated case.",
+          "pages": [
+            8,
+            9
+          ],
+          "trace_id": "C08",
+          "henry_verbatim": "Natref future?",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
+        },
+        {
+          "question": "Durban storage / NMPP / Lesedi vs road and rail",
+          "answer": "Open: compare the same customer and product. Need full delivered costs, capacity, tariffs and service availability.",
+          "pages": [
+            10,
+            11,
+            14
+          ],
+          "trace_id": "C09",
+          "henry_verbatim": "Competitiveness of Vopak supply chain of Durban storage, NMPP and storage in Lesedi vs. the alternatives:\nRoad and rail transport from Durban",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
+        },
+        {
+          "question": "Transport from Matola and Walvis Bay",
+          "answer": "Partial: gateways, published storage and schematic routes are shown. Full costs, borders and customer access remain open.",
+          "pages": [
+            11,
+            14,
+            16
+          ],
+          "trace_id": "C10",
+          "henry_verbatim": "Competitiveness of Vopak supply chain of Durban storage, NMPP and storage in Lesedi vs. the alternatives:\nTransport from Matola\nTransport from Walvis Bay",
+          "source_slide": 31,
+          "source_image": "external/partner_story_20261006/complication.png"
+        }
+      ]
+    },
+    {
+      "pill": "R",
+      "agenda": "Vopak outlook",
+      "questions": [
+        {
+          "question": "Market share of Vopak in Dbn and Lesedi",
+          "answer": "Open: published storage is an asset footprint, not served demand. Need unique deliveries, transfers and matched demand.",
+          "pages": [
+            12,
+            13,
+            14
+          ],
+          "trace_id": "R01",
+          "henry_verbatim": "Market share of Vopak in Dbn and Lesedi",
+          "source_slide": 32,
+          "source_image": "external/partner_story_20261006/resolution.png"
+        },
+        {
+          "question": "Potential scope for new investment?",
+          "answer": "Conditional: prioritise customer flows and service first. New storage requires secured incremental flows and a usable-capacity gap.",
+          "pages": [
+            15,
+            16,
+            17
+          ],
+          "trace_id": "R02",
+          "henry_verbatim": "Potential scope for new investment?",
+          "source_slide": 32,
+          "source_image": "external/partner_story_20261006/resolution.png"
+        }
+      ]
+    }
+  ],
+  "transcription_note": "Verbatim transcription from received images; original incomplete parentheses retained. Wrapped lines joined; Secunda dash normalised to a hyphen. Repeated prompts map separately to their analytical components."
+}

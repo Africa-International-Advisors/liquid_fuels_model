@@ -63,7 +63,8 @@ REGIONS = {
 }
 OUT = ROOT / 'output/delivered'
 OUT.mkdir(parents=True, exist_ok=True)
-PATH = (Path(sys.argv[sys.argv.index('--output')+1]).resolve() if '--output' in sys.argv else OUT / 'Vopak_Week1_Analytical_Pack_2026_10_06.pptx')
+PATH = (Path(sys.argv[sys.argv.index('--output')+1]).resolve() if '--output' in sys.argv else OUT / 'Vopak_Week1_Convergence_2026_10_06.pptx')
+PATH.parent.mkdir(parents=True,exist_ok=True)
 if PATH.exists() and PATH.parent == OUT:
     archive=OUT/'archive'/datetime.now().strftime('%Y-%m-%d_%H%M%S')
     archive.mkdir(parents=True,exist_ok=True)
@@ -282,9 +283,9 @@ class Map:
 
 prs = Presentation(REUSE or ROOT/cfg.SOURCE_TEMPLATE)
 if REUSE:
-    assert len(prs.slides) in (5,6,7,9,10,16,17), 'Reuse requires a prior Week 1 pack'
+    assert len(prs.slides) in (5,6,7,9,10,16,17,18,19,22,24,26,27,30), 'Reuse requires a prior Week 1 pack'
     # Remove only the infrastructure/evidence pages; preserve expensive cost exhibits.
-    positions={5:[1],6:[1,4],7:[1,4,5],9:[1,2,3,6,7],10:[1,2,3,6,7,8],16:[i for i in range(16) if i not in (0,8,10,15)],17:[i for i in range(17) if i not in (0,8,10,15)]}[len(prs.slides)]
+    positions={5:[1],6:[1,4],7:[1,4,5],9:[1,2,3,6,7],10:[1,2,3,6,7,8],16:[i for i in range(16) if i not in (0,8,10,15)],17:[i for i in range(17) if i not in (0,8,10,15)],18:[i for i in range(18) if i not in (0,8,10,16)],19:[i for i in range(19) if i not in (0,9,11,17)],22:[i for i in range(22) if i not in (0,9,11,20)],24:[i for i in range(24) if i not in (0,9,11,22)],26:[i for i in range(26) if i not in (0,10,13,24)],27:[i for i in range(27) if i not in (0,11,14,25)],30:[i for i in range(30) if i not in (0,14,17,28)]}[len(prs.slides)]
     for i in reversed(positions):
         sid=prs.slides._sldIdLst[i]
         prs.part.drop_rel(sid.rId)
@@ -470,13 +471,26 @@ for s in [prs.slides[4],prs.slides[5]]:
     s.notes_slide.notes_text_frame.text=s.notes_slide.notes_text_frame.text.split(lease_note)[0]+lease_note+storage_notes(ROOT)
 from scr_structure import structure_scr
 structure_scr(prs,slide,text,ROOT,brand)
-from scr_editorial import apply_editorial, apply_divider_markers, apply_confidentiality
+from scr_editorial import apply_editorial, apply_divider_markers, apply_confidentiality, apply_commentary_hierarchy
 apply_editorial(prs,text,ROOT,brand)
+from scr_editorial import lead_with_national_accounting
+lead_with_national_accounting(prs,brand)
+from market_playbook_page import add_market_playbook
+add_market_playbook(prs,slide,text,ROOT,brand)
+from forecast_story_page import add_forecast_story
+add_forecast_story(prs,slide,text,ROOT,brand)
 apply_divider_markers(prs,brand)
 from palette_reference_page import add_palette_page
 add_palette_page(prs,text,brand,cfg)
 apply_confidentiality(prs)
-assert len(prs.slides)==17
+apply_commentary_hierarchy(prs)
+from agenda_answer_page import apply_agenda_answer
+apply_agenda_answer(prs,ROOT,brand)
+from footer_layout import finish_footer_and_markers
+finish_footer_and_markers(prs,brand)
+assert len(prs.slides)==22
+from convergence_feedback import apply_feedback
+apply_feedback(prs,ROOT,brand)
 for index,s in enumerate(prs.slides,1):
     for q in s.shapes:
         assert q.left>=0 and q.top>=0 and q.left+q.width<=prs.slide_width+10 and q.top+q.height<=prs.slide_height+10,(index,q.name)

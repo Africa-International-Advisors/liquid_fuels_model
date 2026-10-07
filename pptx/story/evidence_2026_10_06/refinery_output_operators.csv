@@ -1,0 +1,18 @@
+country,period,period_basis,plant,operator,measure,value,unit,source_file,source_page,note
+ZAF,2020,year to 30 June,Secunda,Sasol,total refined product,31.2,million barrels,sasol-metrics-fy2022.pdf,4,all refined products; no split by product
+ZAF,2020,year to 30 June,Natref,Sasol,production reported by Sasol,16.8,million barrels,sasol-metrics-fy2022.pdf,4,Sasol's reported Natref production (its 63.64% share)
+ZAF,2021,year to 30 June,Secunda,Sasol,total refined product,32.1,million barrels,sasol-metrics-fy2022.pdf,4,all refined products; no split by product
+ZAF,2021,year to 30 June,Natref,Sasol,production reported by Sasol,17.7,million barrels,sasol-metrics-fy2022.pdf,4,Sasol's reported Natref production (its 63.64% share)
+ZAF,2022,year to 30 June,Secunda,Sasol,total refined product,29.2,million barrels,sasol-metrics-fy2022.pdf,4,all refined products; no split by product
+ZAF,2022,year to 30 June,Natref,Sasol,production reported by Sasol,18.9,million barrels,sasol-metrics-fy2022.pdf,4,Sasol's reported Natref production (its 63.64% share)
+ZAF,2023,year to 30 June,Secunda,Sasol,total refined product,29.9,million barrels,sasol-metrics-fy2025.pdf,4,all refined products; no split by product
+ZAF,2023,year to 30 June,Natref,Sasol,production reported by Sasol,17.2,million barrels,sasol-metrics-fy2025.pdf,4,Sasol's reported Natref production (its 63.64% share)
+ZAF,2024,year to 30 June,Secunda,Sasol,total refined product,29.1,million barrels,sasol-metrics-fy2025.pdf,4,all refined products; no split by product
+ZAF,2024,year to 30 June,Natref,Sasol,production reported by Sasol,17.8,million barrels,sasol-metrics-fy2025.pdf,4,Sasol's reported Natref production (its 63.64% share)
+ZAF,2025,year to 30 June,Secunda,Sasol,total refined product,27.6,million barrels,sasol-metrics-fy2025.pdf,4,all refined products; no split by product
+ZAF,2025,year to 30 June,Natref,Sasol,production reported by Sasol,14.7,million barrels,sasol-metrics-fy2025.pdf,4,Sasol's reported Natref production (its 63.64% share)
+ZAF,2026,year to 30 June,Secunda,Sasol,total refined product,30.6,million barrels,sasol-metrics-fy2026.pdf,4,all refined products; no split by product
+ZAF,2026,year to 30 June,Natref,Sasol,production reported by Sasol,25.8,million barrels,sasol-metrics-fy2026.pdf,4,includes 6.9 million barrels produced above Sasol's 63.64% shareholding
+ZAF,2023,calendar year,Astron Energy (Cape Town),Glencore,energy content of refined products,136665,billion Btu,GLEN-2023-Annual-Report.pdf,104,all refined products; no split by product
+ZAF,2024,calendar year,Astron Energy (Cape Town),Glencore,energy content of refined products,166204,billion Btu,GLEN-2024-Annual-Report.pdf,85,all refined products; no split by product
+ZAF,2025,calendar year,Astron Energy (Cape Town),Glencore,energy content of refined products,164365,billion Btu,GLEN-2025-Annual-Report.pdf,69,all refined products; no split by product

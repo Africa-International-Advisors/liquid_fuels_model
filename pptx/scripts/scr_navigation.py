@@ -1,16 +1,17 @@
 """Story navigation with section highlighting and internal slide links."""
 from pptx.util import Pt, Inches
 from pptx.enum.shapes import MSO_CONNECTOR
+from pptx.enum.text import MSO_ANCHOR
 from brand_configs import vopak as cfg
 
 
-SECTIONS = [('1  SCR overview', 2), ('2  Situation', 3),
-            ('3  Complication', 7), ('4  Resolution', 11)]
+SECTIONS = [('1  Overview', 2), ('2  Market baseline', 3),
+            ('3  Market changes', 7), ('4  Vopak outlook', 12)]
 
 
 def apply_navigation(prs, brand):
     for page, slide in enumerate(prs.slides, 1):
-        if page in (1,16):
+        if not any(q.name=='Section navigation 1' for q in slide.shapes):
             continue  # Preserve the supplied photographic cover and closing.
         retained_headings={9:'Road-delivery accessibility | illustrative transport cost, R/litre',
                            11:'Illustrative road cost (R/litre) and market volumes'}
@@ -28,7 +29,7 @@ def apply_navigation(prs, brand):
                     p.font.name=cfg.THEME_FONT;p.font.size=Pt(14);p.font.bold=True
                     for run in p.runs:
                         run.font.name=cfg.THEME_FONT;run.font.size=Pt(14);run.font.bold=True
-        active = 0 if page==2 else 1 if page<=6 else 2 if page<=10 else 3
+        active = 0 if page==2 else 1 if page<=6 else 2 if page<=11 else 3
         for index, (label, first_page) in enumerate(SECTIONS, 1):
             q = next(s for s in slide.shapes if s.name==f'Section navigation {index}')
             q.text_frame.paragraphs[0].text=label
@@ -39,4 +40,19 @@ def apply_navigation(prs, brand):
             q.fill.solid()
             q.fill.fore_color.rgb=brand.accent_primary if index-1==active else brand.grey_fill
             q.click_action.target_slide=prs.slides[first_page-1]
-        slide.notes_slide.notes_text_frame.text+='\nClickable story chevrons: overview p2; Situation p3; Complication p7; Resolution p11.'
+        slide.notes_slide.notes_text_frame.text+='\nFinal story navigation: Overview p2; Market baseline p3; Market changes p7; Vopak outlook p12. Henry SCR naming remains in the overview.'
+
+    compact_navigation(prs)
+
+def compact_navigation(prs):
+    """Keep navigation visibly subordinate to the slide title."""
+    for slide in prs.slides:
+        for q in slide.shapes:
+            if not q.name.startswith('Section navigation '):
+                continue
+            q.height=Inches(.28)
+            q.text_frame.margin_top=q.text_frame.margin_bottom=0
+            q.text_frame.vertical_anchor=MSO_ANCHOR.MIDDLE
+            for p in q.text_frame.paragraphs:
+                p.font.size=Pt(10.5)
+                for r in p.runs:r.font.size=Pt(10.5)

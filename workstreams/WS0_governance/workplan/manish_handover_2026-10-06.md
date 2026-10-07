@@ -46,7 +46,7 @@ corresponding local files.
 | Meeting record / minutes reference | [workstreams/WS0_governance/meetings/2026-10-06_vopak_standup.docx](../meetings/2026-10-06_vopak_standup.docx) | Received stand-up transcript; consult for meeting context. This is the transcript, not a separately approved set of minutes. |
 | Source audit | [output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx](../../../output/delivered/Liquid_fuels_source_audit_2026_10_05.xlsx) | Start with Direction, Provincial gaps and Repeated keys. |
 | Source profile | [output/delivered/source_profile_2026_10_05.html](../../../output/delivered/source_profile_2026_10_05.html) | Inputs, refresh routes and consuming functions. |
-| Analytical pack | [pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pdf](../../../pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pdf) | SCR story and the exhibits your evidence will support. |
+| Analytical pack | [pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf) | SCR story and the exhibits your evidence will support. |
 | Repository rules | [AGENTS.md](../../../AGENTS.md), [CLAUDE.md](../../../CLAUDE.md), [GATE_CHECKLIST.md](../../../GATE_CHECKLIST.md) | Working rules, model architecture and release readiness. |
 
 **Availability:** the stand-up meeting record, PDF and runbook are tracked on

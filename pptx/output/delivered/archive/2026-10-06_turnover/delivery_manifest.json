@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-06",
+  "change": "Registered provisional 1/2/3 monthly gross-equivalent turns; annual handling screen p13 linked to p15 inventory and overview R6. Prior paired delivery archived.",
+  "validation": [
+    "5 terminal handling tests passed",
+    "Governance coverage passed; 53 exceptions remain open; draft",
+    "PPTX package integrity and native shape bounds passed; 24 slides",
+    "PowerPoint PDF export: 24 pages; visual review pages 2/13/15, final p13 ranges/footer corrected"
+  ],
+  "assumption_status": "Unreviewed industry-informed authored sensitivity, not measured Vopak performance or assured fuel supply",
+  "files": {
+    "pptx\\output\\delivered\\Vopak_Week1_Convergence_2026_10_06.pdf": "95f5b8b81105eae1a9c55f5543d34212f55d4275a211be61b4d52dc65f29c9cf",
+    "pptx\\output\\delivered\\Vopak_Week1_Convergence_2026_10_06.pptx": "91e637a7a4b2b59b02b00d29fddeaa52287584148e9bc3b5e646af20db2aa800",
+    "pptx\\output\\delivered\\archive\\2026-10-06_turnover\\Vopak_Week1_Convergence_2026_10_06.pdf": "0eea6fc6f6ddded0199a35866d80cba3c6c12dbbe6104065b2ad2f4dd38f9350",
+    "pptx\\output\\delivered\\archive\\2026-10-06_turnover\\Vopak_Week1_Convergence_2026_10_06.pptx": "a6852672ac7171b115a178fee0def0a5c9b12bc8512da997acb0dd73585e76db"
+  }
+}

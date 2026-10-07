@@ -198,6 +198,13 @@ TRACE: dict[str, tuple[str, ...]] = {
         "extends pack p7 (industry, freight)", "2026 (to July; CPI to August)",
         "Activity measures, not fuel volumes. Not seasonally adjusted. Tonnes, not tonne-kilometres.",
         "Nigel: confirm"),
+    "timeseries/fuel_lever_design_2026_10_07.csv": (
+        "AIA (Nigel Zhuwaki), authored proposal, not a publisher", "",
+        "pptx/story/fuel_lever_design_2026_10_07.json (anchors and mechanisms)",
+        "on main (authored in the repository)", "authored by hand", "", "", "pack p12-14", "",
+        "120 proposed low/medium/high lever values for diesel, jet and petrol at 2030 and 2035. "
+        "A sensitivity proposal, not an observation and not an approved forecast.",
+        "Nigel: ranges under review (fuel_lever_review_2026-10-07.md)"),
     "timeseries/gdp_by_province_statssa.csv": (
         "Statistics South Africa (P0441.2 Provincial GDP)", "https://www.statssa.gov.za/?page_id=1847",
         "P0441.2  Provincial Gross Domestic Product(2024).zip, Tables 2-10, block c",

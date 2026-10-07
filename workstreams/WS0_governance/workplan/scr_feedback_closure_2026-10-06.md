@@ -1,6 +1,8 @@
 ﻿# SCR presentation feedback closure — 6 October 2026
 
-Delivered pair: `pptx/output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pptx` and same-name PDF. Existing filenames retained. Original Vopak master and 16-page SCR structure retained; chevrons link to section starts.
+Historical feedback record for the earlier 16-page pack. Current storyline: [Convergence PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf), 22 pages. Page numbers below refer to the earlier pack.
+
+Archived delivered pair: `pptx/output/delivered/archive/2026-10-06_storyline/Vopak_Week1_Analytical_Pack_2026_10_06.pptx` and same-name PDF. Existing filenames retained. Original Vopak master and 16-page SCR structure retained; chevrons link to section starts.
 
 | Feedback | Applied revision | Evidence still open |
 |---|---|---|
@@ -28,3 +30,5 @@ Divider follow-up: create missing vertical divider and subtitle rules on two-pan
 Preliminary p15 exhibit: working-inventory sensitivity for the existing illustrative additional 5.5 bn L/year at authored 7/14/21/28 inventory days. Vintaged reporting CSV records owner/status/expiry. Uniform flow and 365-day conversion; excludes spare capacity, peaks and operating allowances. Required working stock is not new gross capacity or an investment recommendation.
 
 Confidentiality: each of all 17 pages has one Strictly Confidential label, Lato 8 pt, bottom-left below the source line. Grey #767676 on white pages, #BDBEC1 on navy bookends. Checked count, package/bounds and cover/body/appendix rendering; same delivered filenames.
+
+Commentary hierarchy: all 37 numbered right-panel headings use Lato 12 pt bold dark grey #404040. Main panel subtitles remain 14 pt. Body copy unchanged; p3/p4 rendered and deck package/bounds checked.

@@ -1,0 +1,34 @@
+{
+  "status": "Priority hypotheses for review; no agreed customer capture or investment commitment",
+  "title": "Prioritise customer markets, win on service and cost, then expand",
+  "rows": [
+    [
+      "Where to play",
+      "How to win",
+      "When to act",
+      "What must be true"
+    ],
+    [
+      "Durban coastal customers\nFirst market to test",
+      "Competitive delivered cost; reliable receipt and dispatch; compatible tanks",
+      "Now: identify customers and test service using existing assets",
+      "Named customer, product and unique litres; cost threshold; usable tank and dispatch space"
+    ],
+    [
+      "Lesedi inland customers\nFirst inland market to test",
+      "Reliable inland supply; competitive full-route cost versus other gateways",
+      "After route and customer validation: negotiate incremental flows",
+      "NMPP or alternative route access; receipt/dispatch capacity; customer rights and switching"
+    ],
+    [
+      "Matola / Walvis Bay port-storage gateways\nCompare inland supply routes",
+      "Test storage, handling and transport to the same inland destination",
+      "During the inland comparison; pursue an opportunity only if access and economics are evidenced",
+      "Available compatible tanks; border/route feasibility; partner and customer access; full delivered cost"
+    ]
+  ],
+  "investment_gate": "New storage follows secured incremental flows and a gap in usable capacity; the illustrative 5.5 bn litres does not establish a commitment.",
+  "nigel_action": "Choose the first customer/product and acceptable cost. Confirm the service proposition and commercial access.",
+  "manish_action": "Build a customer-by-route evidence table: litres, cost, capacity, rights, timing and owner. Mark each gate passed, failed or unassessed.",
+  "expiry_trigger": "Replace priority hypotheses when customer flows, route costs and usable capacity are reviewed. Timing is conditional, not a calendar commitment."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Connect historical changes to forecast cases and market decisions",
+  "status": "Forecast structure only; growth assumptions and fuel effects await calibration and review",
+  "rows": [
+    ["Historical evidence", "Forecast cases to define", "Output to calculate", "Decision it supports"],
+    ["Fleet, activity and prices\nObserved history and recent partial periods", "Base: observed performance continues. High / low: explicit growth, mileage and price assumptions", "Petrol / diesel demand by year; forecast bands and sensitivity", "Which customer markets grow, contract or change product mix?"],
+    ["EV, freight, sectors and power\nSeparate activity from fuel use", "Change uptake, modal share, fuel intensity and OCGT use; separate BEV and hybrids", "Incremental litres by lever; avoid overlap with the base growth path", "Which service proposition and customer segment should Vopak prioritise?"],
+    ["Refinery capacity and reported output\nSeparate actual from conditional additions", "Existing plants: output, downtime and yields. Redevelopment: conditional timing and ramp-up", "Product-specific domestic output; matched imports, exports and stock changes", "When could additional import handling or storage be needed?"],
+    ["Provincial sales and competing routes\nLater fuel shares are estimates", "Allocate national cases with explicit regional assumptions; test route cost and access", "Reachable customer litres by region and route; actual Vopak deliveries separately", "Where to play, how to win and the conditions for committing capacity"]
+  ],
+  "bridge": "Historical evidence → agreed assumptions and levers → annual demand and supply → regional access → Vopak decision",
+  "gate": "History is observed; forecast cases are proposed. No new fuel forecast is shown until the assumptions, source selections and back-tests are reviewed."
+}

@@ -76,7 +76,7 @@ in 2013, 2014, 2015, 2017, 2018 and 2021; the largest combined gaps are approxim
 +0.54 bn L in 2013 and -0.43 bn L in 2018. Review the raw workbooks and product-level
 differences without silently changing received data.
 
-Use `Vopak_Week1_Analytical_Pack_2026_10_06.pptx` / `.pdf` as the current delivery.
+Use `Vopak_Week1_Convergence_2026_10_06.pptx` / `.pdf` as the current delivery.
 Earlier shipped packs remain in `pptx/output/delivered/archive/2026-10-06/`;
 unshipped drafts are kept in ignored QA. Preserve that history and avoid creating
 further numbered variants in the delivery folder.

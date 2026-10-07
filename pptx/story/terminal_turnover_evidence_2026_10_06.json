@@ -1,0 +1,32 @@
+{
+  "checked_on": "2026-10-06",
+  "status": "Authored L/M/H sensitivity; unreviewed; no site-specific Vopak turn rate established",
+  "assumptions": "assumptions/2026/terminal_handling.yaml",
+  "register": "governance/assumption_register.csv: REG-TERMINAL-HANDLING-TURNS",
+  "sources": [
+    {
+      "url": "https://www.dovercorporation.com/docs/libraries/articles/fluids/article-blackmer-smartenergy-tsm-june13.pdf",
+      "title": "Making Smart Energy Choices",
+      "author": "Tom Stone, Blackmer director of marketing, Pump Solutions Group",
+      "date": "May-June 2013",
+      "page": 1,
+      "finding": "Manufacturer-authored article discusses historical one-turn/month operation and then targets of three to four monthly turns across liquid-storage terminals.",
+      "limitation": "Old promotional industry material covering diverse liquids and terminals; not empirical SA fuel-terminal calibration. Does not state our base value of two."
+    },
+    {
+      "url": "https://assets.publishing.service.gov.uk/media/5a796669e5274a2acd18c873/1_20091214104502_e____ukdownstreamoilinfrastructurewoodmackenzie.pdf",
+      "title": "UK Downstream Oil Infrastructure, Wood Mackenzie Final Report",
+      "date": "2009",
+      "printed_page": 56,
+      "finding": "Uses throughput divided by tank capacity as the turn measure; coastal and inland operating patterns differ. Receipt and dispatch facilities can constrain throughput.",
+      "limitation": "Method and operating context only; no numeric SA turnover benchmark."
+    }
+  ],
+  "inference": "Use 1/2/3 monthly gross-capacity-equivalent turns as a deliberately simple authored sensitivity, with two as an interpolated base. These are not statistical confidence bounds or verified technical maxima.",
+  "capacity_basis": "Apply to the existing partial gross site inventory, without assuming a fuel-compatible fraction. Outputs are gross handling equivalents, not assured petrol/diesel supply or spare capacity.",
+  "counting": "One outbound volume per terminal; receipts plus dispatches would double count. Do not sum regional terminal handling as unique national sales: Durban-Lesedi transfers may appear at both sites.",
+  "vintage_limit": "Reported 2022 petrol/diesel sales are historical context against inventory checked October 2026; this is not a matched-year adequacy test.",
+  "owner": "Manish; Nigel client access",
+  "expiry_trigger": "Replace at the first site-specific monthly dispatch/working-capacity review or before any capacity/investment recommendation",
+  "task": "Obtain 12 months of unique outbound volume, compatible working capacity, tank occupancy, product split, downtime and berth/pipeline/road/rail limits for each page-15 site. Derive seasonal realised gross and working-capacity turns separately; retain leases as conditional."
+}

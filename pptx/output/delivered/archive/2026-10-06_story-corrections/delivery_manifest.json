@@ -1,0 +1,35 @@
+{
+  "slides": 24,
+  "story_end": 16,
+  "appendix_divider": 17,
+  "document_scope": 18,
+  "inventory_sensitivity": 19,
+  "henry_responses": [
+    20,
+    21,
+    22
+  ],
+  "closing": 23,
+  "palette": 24,
+  "manish_branch_reviewed": "4e64c8c",
+  "branch_model_changes_merged": false,
+  "checks": [
+    "package integrity and physical bounds passed",
+    "white text on navy bookends verified",
+    "internal targets and inventory deep-dive labels verified",
+    "native map/waterfall and page order visually reviewed",
+    "source chart values unchanged",
+    "24-page full-builder smoke check passed",
+    "governance coverage passed; 52 open exceptions; draft"
+  ],
+  "teams_note": "Prepared in manish_convergence_2026-10-06.md; not sent. Connector required reauthentication; user asked to leave Teams alone.",
+  "current_hashes": {
+    "Vopak_Week1_Convergence_2026_10_06.pptx": "663a29a8ac0d94d1de727a7e63cb9ed57647d8f423d0585e723833cbf5ebaf9a",
+    "Vopak_Week1_Convergence_2026_10_06.pdf": "211e5cf0999d851a6c75786dd4840a8f967b068607ae98cbe60f7e7383b8a490"
+  },
+  "previous_hashes": {
+    "Vopak_Week1_Convergence_2026_10_06.pdf": "dc193d7bc8eb4c2541ba5fb799e9dd6be772b1d91396f094d9f901473d4eb5ca",
+    "Vopak_Week1_Convergence_2026_10_06.pptx": "2843facbed1e7a12e1b5f8b287d41a3dd9fcad8a1b254734baa65ee844e36db2"
+  },
+  "illustrative_catchment_sha256": "3e8472ee14a1c5539a6817e9bab017f3a9a8718b9e7f1b6e989d08ce24afe701"
+}

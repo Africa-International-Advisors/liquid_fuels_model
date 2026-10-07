@@ -71,14 +71,15 @@ def populate_review_exhibits(prs,text,root,brand):
 
 def national_page(s,text,root,brand):
     base=root.parent/'assumptions/2026/timeseries'
-    trade=read(base/'fuel_trade_department_review.csv')
+    evidence=root/'story/evidence_2026_10_06'
+    trade=[r for r in read(evidence/'fuel_trade_sars.csv') if r['unit']=='litres' and r['months_reported']=='12']
     sales=read(base/'fuel_sales_fiasa.csv')
     old=read(base/'fuel_trade_fiasa.csv')
     lookup={(int(r['period']),r['product'],r['flow']):float(r['value'])/1e9 for r in trade}
     demand={r['product']:float(r['value'])/1e9 for r in sales if r['period']=='2024'}
     frame(s,'Collect the national fuel balance and expose source disagreements',
           'National petrol/diesel | 2024, billion litres',
-          'Government Energy Trade Report 2024, printed pp.12–13; FIASA 2025, pp.47–49; energy balance 2021. Rounded trade figures.',text,brand)
+          'SARS customs extracts, 2024, litres / 12 months; FIASA 2025 sales, p.47 (unverified). Evidence manifest in notes.',text,brand)
     rows=[['Product','Reported\nsales','Imports','Exports','Net imports']]
     for product in ('petrol','diesel'):
         imp=lookup[2024,product,'import'];exp=lookup[2024,product,'export']
@@ -87,7 +88,7 @@ def national_page(s,text,root,brand):
     total_imports=sum(lookup[2024,p,'import'] for p in products)
     total_exports=sum(lookup[2024,p,'export'] for p in products)
     rows.append(['Combined',f'{sum(demand[p] for p in products):.3f}',f'{total_imports:.3f}',f'{total_exports:.3f}',f'{total_imports-total_exports:.3f}'])
-    series_values=[('Reported sales',[demand[p] for p in products]),
+    series_values=[('Reported sales (proxy)',[demand[p] for p in products]),
                    ('Imports',[lookup[2024,p,'import'] for p in products]),
                    ('Exports',[lookup[2024,p,'export'] for p in products])]
     chart=add_themed_chart(s,XL_CHART_TYPE.BAR_CLUSTERED,
@@ -108,13 +109,13 @@ def national_page(s,text,root,brand):
         q.fill.solid();q.fill.fore_color.rgb=color;q.line.fill.background()
         text(s,series.name,x+.20,2.97,2.1,.28,11)
     text(s,'Production + imports − exports − stock build = consumption',.5,2.35,7.05,.29,12,True,brand.accent_primary)
-    text(s,'Compare consumption with reported sales; explain coverage and the residual.',.5,2.68,7.05,.23,10.5)
+    text(s,'Reported sales are a consumption proxy; production and stock changes are missing.',.5,2.68,7.05,.23,10.5)
     text(s,f'Net imports: petrol {rows[1][-1]}, diesel {rows[2][-1]}; combined {total_imports-total_exports:.3f} bn litres.',
          .5,5.44,7.05,.28,11,True,brand.accent_primary)
     staged=float(next(r['value'] for r in old if r['period']=='2024' and r['product']=='diesel' and r['flow']=='import'))/1e9
     residual=sum(demand[p] for p in products)-(total_imports-total_exports)
-    text(s,'Source flag | diesel imports',.5,5.97,3.35,.32,14,True,brand.accent_primary)
-    text(s,f'FIASA {staged:.3f}; government 10.800.\nDifference {10.8-staged:+.3f} bn L. Preserve both;\ninvestigate scope and vintage.',.5,6.40,3.35,.59,11.5)
+    text(s,'Primary trade | SARS customs',.5,5.97,3.35,.32,14,True,brand.accent_primary)
+    text(s,f'Diesel imports {lookup[2024,"diesel","import"]:.3f} bn L.\nGovernment rounds to 10.800; FIASA {staged:.3f}.\nUse SARS; retain the source discrepancy.',.5,6.40,3.35,.59,11.5)
     line(s,(4.03,5.96),(4.03,6.99),brand.grey_fill,.7)
     text(s,'2024 accounting remains open',4.22,5.97,3.33,.32,14,True,brand.accent_primary)
     text(s,f'Sales less net imports = {residual:.3f} bn L.\nBalancing requirement, not production.\nProduction, stocks and coverage unresolved.',4.22,6.40,3.33,.59,11.5)
@@ -122,7 +123,7 @@ def national_page(s,text,root,brand):
         ('The sources disagree','FIASA reports 14.793 bn L of diesel imports for 2024 versus 10.8 bn L in the government report. Neither value has been silently replaced.'),
         ('Port cargo has wider coverage','TNPA publishes liquid-bulk cargo by port, but it includes crude and other liquids. It does not establish petrol/diesel import allocation.')],
         'Manish: reconcile raw SARS product codes and units, then source matched-year production and stocks. Nigel: confirm access to product-specific port data.')
-    s.notes_slide.notes_text_frame.text+='\n'+(base/'supply_review.sources.json').read_text()+'\nTrade source flag: '+str(rows)
+    s.notes_slide.notes_text_frame.text+='\n'+(evidence/'manifest.json').read_text()+'\nConvergence selection: SARS primary trade; FIASA reported sales unverified. No production inferred. '+str(rows)
 
 
 def capacity_page(s,text,root,brand):
@@ -136,7 +137,7 @@ def capacity_page(s,text,root,brand):
     extra=[settings['proposed_addition_bpd']/1000 if year>=completion else 0 for year in years]
     frame(s,'Compare the capacity history with a conditional redevelopment case',
           'Published footprint + illustrative scenarios | thousand bbl/day',
-          'FIASA Annual Report 2025, p.49; CEF statement 23 Sep 2026. Nameplate / crude-equivalent capacity; not actual fuel output.',text,brand)
+          'FIASA 2025 p.49; CEF 23 Sep 2026; Sasol FY2025 metrics p.4. Capacity is not output; Sasol output is all products / FY.',text,brand)
     text(s,'History 2016–2025 is sourced; 2026 onward is illustrative, not a forecast',.5,2.38,7.05,.32,11,True,brand.accent_primary)
     for i,(heading,addition) in enumerate([('A | No new refinery capacity',[0]*len(years)),('B | Conditional CEF redevelopment',extra)]):
         x=.5+i*3.64
@@ -151,8 +152,11 @@ def capacity_page(s,text,root,brand):
             series.format.fill.solid();series.format.fill.fore_color.rgb=color
             series.format.line.color.rgb=color
         text(s,f'{settings["horizon_year"]}: {baseline[-1]+addition[-1]:.0f} thousand bbl/day',x,6.01,3.40,.30,12,True,brand.accent_primary)
-    text(s,f'B adds {settings["proposed_addition_bpd"]/1000:.0f} from {completion}; darker navy = existing footprint; lighter blue = conditional addition.',.5,6.46,7.05,.42,11)
-    text(s,f'B assumes illustrative FID {settings["illustrative_fid_year"]} + {settings["construction_months"]} months; no sanctioned date. Both hold existing capacity flat.',.5,6.80,7.05,.22,9)
+    output=read(root/'story/evidence_2026_10_06/refinery_output_operators.csv')
+    fy={r['plant']:float(r['value']) for r in output if r['period']=='2024' and r['operator']=='Sasol'}
+    text(s,f'Reported FY2024 output: Secunda {fy["Secunda"]:.1f}; Natref Sasol share {fy["Natref"]:.1f} million barrels.',.5,6.46,7.05,.34,11,True,brand.accent_primary)
+    text(s,f'All products; year to June, not calendar-year petrol/diesel. B adds 400 from {completion}, conditional on FID.',.5,6.80,7.05,.22,9)
+    s.notes_slide.notes_text_frame.text+='\nOperator observations: '+json.dumps(output)+'\nSource: Sasol FY2025 metrics p4; Natref 17.8 is Sasol share, not whole-plant output. No product split or year matching inferred.'
     panel(s,text,brand,[('History shows a structural decline','Published total falls from 718 in 2016–2020 to 538 in 2021 and 358 from 2022–2025. Capacity does not measure realised output.'),
         ('Redevelopment is conditional','CEF proposes approximately 400 thousand bbl/day after FID. Construction is approximately 48 months; the 2029 FID here is authored for comparison.'),
         ('Product output still needs modelling','Source utilisation, downtime and product yields before translating capacity into domestic supply. Secunda/Natref cases remain open.')],
@@ -256,25 +260,38 @@ def volume_page(s,text,root,brand):
     frame(s,'Show what must hold to reach each candidate volume',
           'Accessibility gates and volume milestones | illustrative bn L/year',
           'Existing illustrative catchment CSV; conditions authored for review. No actual Vopak share, cost threshold or forecast capture established.',text,brand)
-    text(s,'ILLUSTRATIVE | each increment requires evidence; not cumulative terminal receipts',.5,2.38,7.05,.30,11,True,brand.accent_primary)
-    text(s,f'{coastal+inland:.1f} bn L/year additional candidate',.5,2.98,7.05,.50,22,True,brand.accent_primary)
-    text(s,f'{current:.1f} current example + {coastal+inland:.1f} additional = {current+coastal+inland:.1f} total envelope',.5,3.56,7.05,.31,12)
+    text(s,'ILLUSTRATIVE OPPORTUNITY',.5,2.40,7.05,.25,10,True,brand.accent_secondary)
+    text(s,f'{coastal+inland:.1f}',.5,2.83,2.05,.70,40,True,brand.accent_primary)
+    text(s,'bn litres / year\nadditional candidate volume',2.50,2.98,4.95,.62,17,True,brand.accent_primary)
+    text(s,f'{current:.1f} current + {coastal+inland:.1f} additional = {current+coastal+inland:.1f} total illustrative envelope',.5,3.65,7.05,.28,11)
     total=current+coastal+inland
     x=.5
     for label,value,color in [('Current',current,brand.accent_primary),('Coastal +',coastal,brand.accent_secondary),('Inland +',inland,brand.grey_fill)]:
         w=7.05*value/total
-        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(4.17),Inches(w),Inches(.65))
+        q=s.shapes.add_shape(MSO_SHAPE.RECTANGLE,Inches(x),Inches(4.12),Inches(w),Inches(.66))
         q.fill.solid();q.fill.fore_color.rgb=color;q.line.fill.background()
-        text(s,f'{label} {value:.1f}',x+.07,4.34,w-.14,.30,12,True,brand.white if label=='Current' else brand.ink)
+        text(s,f'{label} {value:.1f}',x+.07,4.32,w-.14,.27,12,True,brand.white if label!='Inland +' else brand.ink)
         x+=w
-    text(s,'What must hold before any additional litres are counted?',.5,5.25,7.05,.33,14,True,brand.accent_primary)
-    table(s,[['Competitive cost','Usable capacity','Customer access','Unique deliveries']],.5,5.85,[1.76,1.76,1.76,1.77],.63,brand,11)
-    text(s,'Detailed customer-by-route gates belong in the evidence register.\nIllustration only; 5.5 is neither a forecast nor a confirmed capturable market.',.5,6.60,7.05,.40,11)
-    panel(s,text,brand,[('Reach is necessary, not sufficient','Accessibility map p9 and competing routes p10 locate candidate access. Neither currently links a verified cost threshold to customer litres.'),
-        ('Example milestones are conditional',f'The current example is {current:.1f}. Coastal candidate {coastal:.1f} raises it to {current+coastal:.1f}; inland candidate {inland:.1f} raises it to {current+coastal+inland:.1f}. These are authored volumes.'),
-        ('Every increment needs four gates','Evidence cost, route/tank capacity, customer rights and unique deliveries for the same product and period. Unassessed litres remain explicit.')],
-        'Nigel: agree destinations and acceptable delivered cost. Manish: build a customer-by-route gate table; record passed, failed and unassessed litres, with sources and conditions.')
-    s.notes_slide.notes_text_frame.text+='\nVolume milestones derive only from the existing illustrative catchment CSV. Gates specify required evidence, not calculated allocation. No threshold assigned and no new model volume invented.'
+    text(s,'Four gates before additional litres can be counted',.5,5.18,7.05,.35,14,True,brand.accent_primary)
+    table(s,[['Competitive cost','Usable capacity','Customer access','Unique deliveries'],
+             ['Delivered-cost threshold','Route / tank capacity','Customer rights','Same product and period']],
+          .5,5.72,[1.76,1.76,1.76,1.77],.85,brand,10.5)
+    text(s,'Candidate volume is neither a forecast nor confirmed capture.',.5,6.76,7.05,.22,10)
+    text(s,'What the evidence shows',8.12,1.78,4.03,.34,14,True)
+    findings=[('Access still needs a cost test','Maps locate possible reach; verified cost thresholds are not yet linked to customer litres.'),
+              ('Volumes are authored examples',f'{current:.1f} current + {coastal:.1f} coastal + {inland:.1f} inland = {total:.1f}; none is confirmed capture.'),
+              ('Unassessed litres stay explicit','Count an increment only after cost, capacity, customer rights and unique-delivery checks.')]
+    for i,(heading,body) in enumerate(findings):
+        y=2.48+i*.95
+        text(s,f'{i+1:02d} | {heading}',8.12,y,4.03,.30,12,True)
+        text(s,body,8.12,y+.36,4.03,.54,11)
+    line(s,(8.12,5.53),(12.15,5.53),brand.accent_primary,.8)
+    text(s,'Next actions',8.12,5.73,4.03,.30,14,True,brand.accent_primary)
+    text(s,'Nigel',8.12,6.16,.76,.27,11,True)
+    text(s,'Agree destinations and delivered-cost thresholds.',8.93,6.16,3.22,.40,11)
+    text(s,'Manish',8.12,6.65,.76,.27,11,True)
+    text(s,'Record passed, failed and unassessed customer-route gates.',8.93,6.65,3.22,.40,11)
+    s.notes_slide.notes_text_frame.text+='\nVolume milestones derive only from existing illustrative catchment CSV. Accessibility map and competing routes locate potential access, not verified cost-linked customer litres. Coastal and inland increments are conditional, authored volumes, not cumulative terminal receipts. Record dated sources, thresholds, capacity, rights and deduplicated deliveries by product and period. No threshold or new model volume assigned.'
 
 
 def market_page(s,text,root,brand):

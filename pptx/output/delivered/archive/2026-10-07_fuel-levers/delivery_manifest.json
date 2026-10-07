@@ -1,0 +1,30 @@
+﻿{
+    "checks":  [
+                   "Full template-aware rebuild passed",
+                   "PowerPoint PDF rendered and visually reviewed",
+                   "Package checks passed: 30 pages, no off-canvas shapes",
+                   "Original eight driver chart data preserved",
+                   "Shared refinery settings and yield bounds checked",
+                   "Governance coverage passed; 54 open exceptions",
+                   "26 relevant tests passed"
+               ],
+    "current_sha256":  {
+                           "pptx":  "28A4D5AC0D8EE5A692F35512097FE179A8AACB5F40DDA89293E654DA7DA8DB15",
+                           "pdf":  "0F9471092090C731408489E217D451744CF3992688C0CB2C3E2A8A6109529DFC"
+                       },
+    "changes":  [
+                    "Compact custom trade legend",
+                    "Split eight drivers over pages 8 and 9",
+                    "Refinery qualifications moved to notes",
+                    "Diesel jet petrol lever pages 12-14; 2030 and 2035 snapshots"
+                ],
+    "current_pages":  30,
+    "date":  "2026-10-07",
+    "status":  "Draft proposed input ranges; not calibrated or approved; forecast engine unchanged",
+    "previous_pages":  26,
+    "proposed_input_observations":  120,
+    "previous_sha256":  {
+                            "pptx":  "80DF2AD4817E41FD2BF271DB82385CDB1C8D6EEF10A3867CBF8C03130FC3C76F",
+                            "pdf":  "2B5DA18B99630E1E7ACB7765DFE80FC87F98E38AA43A936861A7CC051239A80C"
+                        }
+}
