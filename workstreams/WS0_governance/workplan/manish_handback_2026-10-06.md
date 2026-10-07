@@ -21,8 +21,9 @@ it does not mention them.
   sales. Stats SA provincial GDP to 2024 is in the inputs and shows shares of
   activity barely moving.
 - **Fuel balance:** SARS customs data is the primary trade source from 2014,
-  with FIASA kept as a cross-check and for earlier years. The diesel gap of 3
-  to 4 bn litres a year is supported by several sources.
+  with FIASA kept as a cross-check and for earlier years. A diesel gap of 3
+  to 4 bn litres a year is a hypothesis to test, not a finding (corrected
+  7 October after Nigel's review; see below).
 - **Driver evidence:** Stats SA monthly activity and fuel prices to October
   2026 are in the inputs and the one-command refresh. Coastal diesel has no
   value from December 2025 because the department stopped publishing it.
@@ -47,3 +48,18 @@ it does not mention them.
 `workstreams/WS1_data_validation/`: `integrity_flag_log_2026-10-06.md`,
 `source_trace_2026-10-06.csv`, `provincial_demand_after_2022_2026-10-06.md`,
 `fuel_balance_2026-10-06.md`, `driver_evidence_2026-10-06.md`.
+
+## Update, 7 October: Nigel's review findings
+
+Nigel reviewed the branch at `4e64c8c` (`manish_branch_review_2026-10-06.md`).
+Main was merged into `manish-branch` and his three findings addressed:
+
+| Finding | Status | What changed |
+|---|---|---|
+| 1. Balance must use customs trade from 2014 | Ready | `build_fuel_balance.py` rebuilds the file from registered inputs; customs selected in all 24 product-years from 2014, other sources in their own columns; tests check it against the customs extract |
+| 2. Residual is a hypothesis, not production | Ready | "Implied production" renamed "sales less net imports"; operator and fuel levy comparisons moved to a sensitivities section in reported units |
+| 3. Separate battery electric and hybrids | Ready | Lever sheet gives each kind its own 2025 share of new sales, its effect on fuel and its place in the model; case values left for Nigel |
+
+Still to do from `manish_convergence_2026-10-06.md`: check pack figures against
+originals, forecast specification, agriculture and industry baseline proposal,
+review of the proposed lever ranges, and a refreshed hand-back deck.

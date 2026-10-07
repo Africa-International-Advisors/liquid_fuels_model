@@ -1,71 +1,91 @@
 # Petrol and diesel balance — 6 October 2026 (work package 4)
 
-Investigated by Manish on `manish-branch`; for Nigel's review. Supports pack
-pages 5, 6 and 8. Nothing under `assumptions/2026/` was changed.
+Investigated by Manish on `manish-branch`; for Nigel's review. Supports the
+national accounting page of the Week 1 Convergence pack. Revised 7 October
+after Nigel's branch review (`manish_branch_review_2026-10-06.md`, findings 1
+and 2): the table is rebuilt on customs trade, and the residual is described
+as a balancing requirement, not as production.
 
 Status: **partial.** Sales, imports and exports are matched by product and
-year for 2009–2024. Actual production stops at 2021 and stock movements are
-not available, so the balance is not closed after 2021. The 2024 diesel import
-disagreement is explained. A diesel residual of roughly 3 bn litres a year
-from 2022 is left explicitly open.
+calendar year. Production after 2021, stock changes and what the sales series
+covers are **unresolved**, so the balance is not closed.
 
 Table: `fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv`, one row per
-product and year, one column per source, litres.
+product and year, one column per source, litres. It is built from the
+registered inputs only:
+
+    python -m lfm.scripts.build_fuel_balance --vintage 2026
+
+`tests/test_build_fuel_balance.py` checks that the committed file equals a
+fresh build and that selected imports and exports equal the customs extract
+for every product and year from 2014.
 
 ## Sources lined up
 
-| Flow | Source | Years | Note |
+| Flow | Selected source | Years | Kept for comparison (own columns) |
 |---|---|---|---|
-| Sales | Department national sales (`fuel_sales_department.csv`) | 2009–2023 | 2013 uses the corrected figure (flag log, section 2) |
-| Sales | FIASA annual report 2025, p.47 | 2024 | See flag B |
-| Imports, exports | FIASA annual reports (customs data), p.48 of the 2025 edition | 2009–2025 | Finished product; "kerosene" not used here |
-| Imports, exports | Department Energy Trade Report 2024, printed pp.12–15 (customs data) | 2023–2024 | Rounded narrative figures |
-| Production, final consumption | Department energy balances | 2009–2021 | No balance published after 2021 |
-| Stock change | — | — | Not in the extract; not found elsewhere |
+| Sales | Department national sales (`fuel_sales_department.csv`), complete years | 2009–2023 | FIASA annual reports |
+| Sales | FIASA annual report, 2025 edition, p.47 | 2024 | Unverified; see flag B |
+| Imports, exports | FIASA annual reports | 2009–2013 | Energy balances |
+| Imports, exports | SARS customs (`fuel_trade_sars.csv`), complete years in litres | 2014–2025 | FIASA; department trade report (2023–2024, rounded); energy balances |
+| Production, final consumption | Department energy balances | 2009–2021 | None published after 2021 |
+| Stock change | — | — | Not available |
 
-Implied production is sales minus imports plus exports. Where the energy
-balance reports production, the two can be compared.
+Customs records before 2014 are in kilograms or mixed units and are not used.
+All periods are calendar years. The columns `sales_used_source`,
+`trade_used_source`, `sars_months_reported` and the two FIASA edition columns
+record what was selected for each row.
 
 ## Result, billion litres
 
-| Year | Petrol sales | Imports | Exports | Implied production | Reported production | Diesel sales | Imports | Exports | Implied production | Reported production |
+**Sales less net imports** is sales minus imports plus exports. It is the
+volume that domestic production, stock changes and differences in what
+"sales" covers would together have to supply. It is a balancing requirement,
+not a measurement of production.
+
+| Year | Petrol sales | Imports | Exports | Sales less net imports | Balance-reported production | Diesel sales | Imports | Exports | Sales less net imports | Balance-reported production |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 2017 | 11.17 | 2.11 | 1.08 | 10.14 | 9.43 | 12.15 | 6.04 | 1.78 | 7.90 | 7.92 |
-| 2018 | 11.14 | 2.19 | 1.32 | 10.27 | 9.97 | 12.54 | 6.10 | 1.84 | 8.27 | 8.43 |
-| 2019 | 10.77 | 1.48 | 1.18 | 10.48 | 10.42 | 12.91 | 5.86 | 1.79 | 8.84 | 9.08 |
-| 2020 | 8.76 | 1.72 | 1.16 | 8.20 | 7.90 | 11.69 | 6.82 | 0.91 | 5.79 | 6.45 |
-| 2021 | 9.30 | 4.01 | 1.05 | 6.35 | 6.35 | 12.95 | 9.57 | 0.90 | 4.27 | 5.31 |
-| 2022 | 9.18 | 5.46 | 0.79 | 4.52 | — | 12.72 | 11.91 | 0.70 | 1.50 | — |
-| 2023 | 9.04 | 4.48 | 1.02 | 5.57 | — | 12.91 | 12.79 | 0.94 | 1.05 | — |
-| 2024 | 9.03 | 4.00 | 0.94 | 5.97 | — | 11.73 | 10.80 | 0.82 | 1.76 | — |
+| 2014 | 10.89 | 1.15 | 0.99 | 10.73 | 10.83 | 12.62 | 4.99 | 1.49 | 9.12 | 9.59 |
+| 2015 | 11.48 | 1.87 | 1.09 | 10.69 | 10.46 | 13.52 | 6.45 | 1.61 | 8.68 | 9.37 |
+| 2016 | 11.46 | 1.40 | 1.16 | 11.22 | 10.39 | 12.08 | 4.42 | 1.89 | 9.54 | 9.01 |
+| 2017 | 11.17 | 2.11 | 1.08 | 10.14 | 9.43 | 12.15 | 6.04 | 1.78 | 7.89 | 7.92 |
+| 2018 | 11.14 | 1.83 | 1.14 | 10.45 | 9.97 | 12.54 | 5.12 | 1.58 | 9.00 | 8.43 |
+| 2019 | 10.77 | 1.48 | 1.17 | 10.47 | 10.42 | 12.91 | 5.59 | 1.74 | 9.06 | 9.08 |
+| 2020 | 8.76 | 1.72 | 1.15 | 8.20 | 7.89 | 11.69 | 6.81 | 0.91 | 5.79 | 6.45 |
+| 2021 | 9.30 | 4.01 | 1.05 | 6.35 | 6.35 | 12.95 | 9.76 | 0.89 | 4.08 | 5.31 |
+| 2022 | 9.18 | 5.46 | 0.85 | 4.58 | — | 12.72 | 11.95 | 0.89 | 1.65 | — |
+| 2023 | 9.04 | 4.48 | 0.99 | 5.55 | — | 12.91 | 12.87 | 0.89 | 0.93 | — |
+| 2024 | 9.03 | 4.00 | 0.92 | 5.95 | — | 11.73 | 10.79 | 0.80 | 1.74 | — |
+| 2025 | — | 4.45 | 0.80 | — | — | — | 12.25 | 0.75 | — | — |
 
-2024 diesel imports use the trade report figure (flag A). Earlier years are in
-the CSV.
+Earlier years are in the CSV. For 2024, both products together: sales 20.76,
+net imports 13.08, sales less net imports 7.69 bn litres.
 
-**Petrol balances.** For 2013–2021 implied production is within 0.8 bn litres
-of reported production every year and within 0.3 bn in five of the last six.
-The implied 2022–2024 figures (4.5, 5.6, 6.0 bn litres) are a usable indication
-of domestic petrol output, pending actual production data.
+What changed from the 6 October table: imports and exports from 2014 are now
+customs figures throughout, where the earlier table used FIASA and, for 2024
+diesel imports, the department's rounded 10.8. Most years move by less than
+0.02 bn litres. The exception is 2018, where customs is lower than FIASA
+(diesel imports 5.12 against 6.11; petrol 1.83 against 2.19); the cause is not known.
 
-**Diesel balances to 2019, then stops balancing.** Implied and reported
-production agree within 0.25 bn litres for 2017–2019. The gap is 0.7 in 2020
-and 1.0 in 2021. For 2022–2024 implied diesel production is only 1.1–1.8 bn
-litres while implied petrol production is 4.5–6.0. Over 2017–2019 the plants
-made 0.84–0.87 litres of diesel per litre of petrol. If anything like that
-ratio still held, diesel output would be about 3.8, 4.7 and 5.1 bn litres,
-leaving roughly 2.3, 3.6 and 3.3 bn litres of diesel supply a year that is
-imported but appears in neither recorded sales nor recorded exports. That ratio
-is an assumption: the surviving plants (Natref, Secunda, Astron) need not have
-the old fleet's product mix.
+**Against balance-reported production, 2014–2021.** The largest difference is
++0.83 bn litres for petrol (2016) and -1.24 for diesel (2021). Flag C
+applies: the 2019 and 2020 energy balances repeat the previous year's trade.
 
-Candidate explanations for the diesel residual, none yet evidenced:
+**2022–2024.** No production is reported. Sales less net imports is
+4.58, 5.55 and 5.95 bn litres for petrol and 1.65, 0.93 and 1.74 for diesel. These
+are not estimates of output and are not used as such.
 
-- sales by importers and wholesalers who do not report to the department
-  (recorded 2024 diesel sales fell 9% while imports stayed high);
-- product moving to neighbouring countries without appearing as exports;
-- diesel supplied directly to power generation or to ships;
-- stock build;
-- a real change in plant product mix.
+**Hypothesis to test, not a finding.** The diesel figure is low next to
+petrol, and comparisons in the sensitivity section point to 3 to 4 bn litres
+a year of diesel supply above recorded sales. That is one reading. It is not
+added to demand anywhere. Explanations to test, none yet evidenced:
+
+- stock changes (no usable stock series);
+- product scope: the surviving plants' petrol-to-diesel mix is not published;
+- coverage of the sales series (importers and wholesalers not reporting);
+- product moving to neighbouring countries without an export record;
+- diesel supplied directly to power generation or ships;
+- period mismatch between sources.
 
 ## Flags
 
@@ -83,8 +103,8 @@ prints 14 793 ML; the department's trade report says 10.8 bn litres. Evidence:
   one-digit misprint (14 793 for 10 793) is the simplest reading. This is an
   inference; FIASA has not confirmed it.
 
-Proposed: use 10.8 bn litres for 2024 diesel imports, keep FIASA's figure
-recorded as a suspected misprint, and ask FIASA. FIASA's 2025 figure
+Since 7 October the balance uses the customs figure, 10.793 bn litres; FIASA's
+figure stays recorded as a suspected misprint. FIASA's 2025 figure
 (12 249 ML) has no second source yet.
 
 **B. FIASA's 2024 sales appear in two versions.** The 2024 edition (p.32) gives
@@ -112,20 +132,6 @@ no balance after 2021. Refinery capacity (pack p8) is nameplate, not output.
 | Stock movements | Manish / Nigel | JODI carries a stock series of low reliability (see the fuel levy section); ask the department or FIASA |
 | Diesel residual from 2022 | Manish, Henry review | Test each candidate explanation; exports to neighbouring countries by partner from SARS is the first check |
 | Imports by entry port | Nigel | Customs office now gives a public proxy (see the SARS section); terminal-level data still needs client or port access |
-
-## Follow-up, later on 6 October
-
-**Operator output supports the diesel residual.** Sasol reports Secunda and
-Natref refined output of about 9.0 bn litres in each of the years to June 2023
-and 2024 (all products; table in `driver_evidence_2026-10-06.md`). Implied
-petrol plus diesel production for calendar 2023 and 2024 is 6.6 and 7.7 bn
-litres. Natref's white product yield was 87–89% in the last years it was
-reported (FY2020–FY2022), so petrol, diesel and jet make up most of that
-9.0 bn, and Astron's output comes on top from 2023. Domestic petrol and diesel
-output is therefore likely to be higher than the implied figure, which is the
-same direction as the residual: more product is supplied than recorded sales
-and exports account for. The size cannot be fixed without a product split and
-Astron's output.
 
 ## SARS customs data, obtained 6 October
 
@@ -204,40 +210,8 @@ diesel exports to all destinations are 0.8–0.9 bn litres a year, and Botswana'
 recorded purchases fell from 0.45 to 0.28 bn litres between 2023 and 2024. The
 roughly 3 bn litres a year therefore sits in sales not reported to the
 department, unrecorded cross-border movement, direct supply to power or
-shipping, or stocks.
-
-## All-product check for 2023 and 2024, with Astron included
-
-Astron's output is reported by Glencore (Annual Reports 2023–2025; detail in
-`driver_evidence_2026-10-06.md`): about 4.0 bn litres in 2023 and 4.9 bn in
-2024 after converting energy content at an assumed 36 MJ a litre. With Sasol's figures this gives a
-supply check that does not depend on a product split. Petrol, diesel, jet,
-paraffin and fuel oil together, billion litres:
-
-| | 2023 | 2024 | Source |
-|---|---|---|---|
-| Recorded sales | 25.7 | 24.2 | Department (2023); FIASA 2025 edition (2024) |
-| Imports | 20.2 | 17.2 | SARS |
-| Exports | 3.1 | 3.6 | SARS |
-| Production needed to balance | 8.7 | 10.6 | sales − imports + exports |
-| Secunda | 4.75 | 4.6 | Sasol, years to June 2023 and 2024 |
-| Natref, whole refinery | 4.3 | 4.5 | Sasol, scaled from its 63.64% share |
-| Astron | about 4.0 | about 4.9 | Glencore, calendar years, converted from energy content |
-| Reported output, three plants | about 13.1 | about 14.0 | |
-| **Output above what the balance needs** | **about 4.4** | **about 3.3** | |
-
-The three operators report roughly 4.4 bn litres (2023) and 3.3 bn litres
-(2024) more refined product than recorded sales, imports and exports can
-absorb. That is the same order as the diesel residual found product by
-product, reached by a separate route, and it holds in both years.
-
-Limits: the operator figures are all refined products, so they include
-liquefied gas, bitumen and other products that are not in the five fuels
-counted on the sales side (liquefied gas sales were 0.3 bn litres); Sasol's
-year runs July to June; Astron's litres depend on the assumed energy content
-(the gap is 4.2 to 4.6 bn for 2023 and 3.1 to 3.6 bn for 2024 across the plausible range); and ships' bunkers may
-be supplied from this output without appearing in sales. These reduce the gap
-but are unlikely to remove it.
+shipping, or stocks, or reflects plant product mix. This is a hypothesis until
+production and stocks are matched.
 
 ## Neighbours' own customs records, 6 October
 
@@ -274,7 +248,82 @@ Limits: Mozambique's 2021 quantity in Comtrade is implausible against its
 value and was left out; Malawi has no matching SARS rows; the comparison is
 for all fuel lines together because neighbours' data is at six-digit level.
 
-## Fuel levy volumes: the likeliest explanation of the residual, 6 October
+## Sensitivities: indicative comparisons, not matched accounting
+
+Nothing in this section is part of the balance. Each comparison mixes periods,
+product scope or units, as stated, and is kept as a lead to test. Reported
+figures are given in their original units; conversions are assumptions.
+
+### Diesel-to-petrol ratio
+
+Over 2017–2019 the energy balances report 0.84 to 0.87 litres of diesel
+produced per litre of petrol. Applying that to petrol's sales less net imports
+would put diesel at 3.8, 4.7 and 5.0 bn litres for 2022–2024, which is 2.2, 3.7 and
+3.3 bn above diesel's own figure. The ratio is an assumption: Natref, Secunda
+and Astron need not have the old fleet's product mix, and petrol's figure is
+itself a balancing requirement.
+
+### Operator output for petrol and diesel
+
+Sasol reports Secunda and
+Natref refined output of about 9.0 bn litres in each of the years to June 2023
+and 2024 (all products; table in `driver_evidence_2026-10-06.md`). Sales
+less net imports for petrol plus diesel in calendar 2023 and 2024 is 6.5 and 7.7 bn
+litres. Natref's white product yield was 87–89% in the last years it was
+reported (FY2020–FY2022), so petrol, diesel and jet make up most of that
+9.0 bn, and Astron's output comes on top from 2023. Domestic petrol and diesel
+output may therefore be higher than sales less net imports. The periods (years
+to June against calendar years) and the products (all refined products against
+two fuels) do not match, so this is an indication only. The size cannot be fixed without a product split and
+Astron's output.
+
+### All refined products, 2023 and 2024, with Astron included
+
+Astron's output is reported by Glencore (Annual Reports 2023–2025; detail in
+`driver_evidence_2026-10-06.md`): about 4.0 bn litres in 2023 and 4.9 bn in
+2024 after converting energy content at an assumed 36 MJ a litre. With Sasol's figures this gives a
+supply check that does not depend on a product split. Petrol, diesel, jet,
+paraffin and fuel oil together, billion litres:
+
+| | 2023 | 2024 | Source |
+|---|---|---|---|
+| Recorded sales | 25.7 | 24.2 | Department (2023); FIASA 2025 edition (2024) |
+| Imports | 20.2 | 17.2 | SARS |
+| Exports | 3.1 | 3.6 | SARS |
+| Production needed to balance | 8.7 | 10.6 | sales − imports + exports |
+| Secunda | 4.75 | 4.6 | Sasol, years to June 2023 and 2024 |
+| Natref, whole refinery | 4.3 | 4.5 | Sasol, scaled from its 63.64% share |
+| Astron | about 4.0 | about 4.9 | Glencore, calendar years, converted from energy content |
+| Reported output, three plants | about 13.1 | about 14.0 | |
+| **Output above what the balance needs** | **about 4.4** | **about 3.3** | |
+
+The three operators report roughly 4.4 bn litres (2023) and 3.3 bn litres
+(2024) more refined product than recorded sales, imports and exports can
+absorb. That is the same order as the diesel residual found product by
+product, reached by a separate route, and it holds in both years.
+
+Limits: the operator figures are all refined products, so they include
+liquefied gas, bitumen and other products that are not in the five fuels
+counted on the sales side (liquefied gas sales were 0.3 bn litres); Sasol's
+year runs July to June; Astron's litres depend on the assumed energy content
+(the gap is 4.2 to 4.6 bn for 2023 and 3.1 to 3.6 bn for 2024 across the plausible range); and ships' bunkers may
+be supplied from this output without appearing in sales. Together these could
+account for part or all of the gap; it has not been reconciled.
+
+As reported by the operators, before any conversion
+(`assumptions/2026/reference/refinery_output_operators.csv`):
+
+| Plant | Period | Reported | Basis |
+|---|---|---|---|
+| Secunda | Year to 30 June 2023; 2024 | 29.9; 29.1 million barrels | Sasol; all refined products |
+| Natref | Year to 30 June 2023; 2024 | 17.2; 17.8 million barrels | Sasol's 63.64% share only |
+| Astron (Cape Town) | Calendar 2023; 2024 | 136,665; 166,204 billion Btu | Glencore; energy content of all refined products |
+
+The litres in the table above come from these through three assumptions: 159
+litres a barrel, scaling Natref from Sasol's share to the whole refinery, and
+36 MJ a litre for Astron.
+
+### Fuel levy volumes
 
 SARS collects the fuel levy on petrol and diesel as they leave refineries and
 import terminals, so the volume declared for levy is a measure of fuel entering
@@ -291,11 +340,11 @@ against recorded petrol plus diesel sales for roughly the same months:
 | 2025 | 21 bn litres | about 19.0 (2024: 20.76, FIASA) | about 2.0 |
 
 In the first period the levy was declared on about 3.9 bn litres more than the
-department recorded as sold, which is the size of the residual found from the
-balance (3 to 4 bn), from operators' output (4.4 bn in 2023) and now from tax.
-The simplest reading is that the fuel is real, taxed and consumed, and that the
-department's sales series undercounts, most plausibly sales by importers and
-wholesalers who do not file returns with it. A second SARS release (12 November
+department recorded as sold, which is of the same order as the all-product comparison above (4.4 bn in 2023).
+One reading is that the fuel is taxed and consumed and that the department's
+sales series undercounts. The comparison rests on an assumed April-to-February
+period set against eleven-twelfths of calendar-year sales, so a period mismatch
+or stock movement could produce the same difference. A second SARS release (12 November
 2025) points the same way: declarations by importers rose 133% (3.6 bn litres)
 in April to September 2025 while those by local manufacturers fell 39% (3.4 bn).
 
@@ -334,10 +383,28 @@ Manish reviewed this package. Applied on `manish-branch` for Nigel to confirm:
 Left for Nigel:
 
 - Which 2024 diesel import figure to use, together with how to report the
-  diesel residual. Customs gives 10.793 bn litres; the residual is supported by
-  the balance, operators' output, customs and fuel levy volumes.
+  diesel residual. Customs gives 10.793 bn litres; the residual is a
+  hypothesis (see the sensitivities section).
 - Whether implied production may stand in for petrol output after 2021.
 - Whether to stop using the 2019 and 2020 energy balances for trade.
 
 Dropped: querying FIASA about its 2024 misprint, duplicated 2025 row and the
 2018 difference.
+
+## Nigel's review and changes made, 7 October
+
+Nigel reviewed this package at commit `4e64c8c`
+(`manish_branch_review_2026-10-06.md`). His answers to the items above:
+
+- 2024 diesel imports: the customs figure, 10.793 bn litres, in line with
+  customs as the primary source. Done: the balance now selects customs for
+  every product and year from 2014.
+- The residual is a balancing requirement and the 3 to 4 bn litre diesel gap
+  is a hypothesis. It does not stand in for petrol output and is not added to
+  demand. Done: wording and column names changed
+  (`sales_less_net_imports`, with its basis stated in the file).
+- Operator and fuel levy comparisons moved to the sensitivities section, in
+  reported units, with fiscal and calendar years marked.
+
+Still open: production by product after 2021, stock changes, coverage of the
+sales series, and which 2024 national sales figure to use (Nigel).

@@ -91,10 +91,35 @@ for road and for rail. None is sourced.
 - The model's current curve (30% ceiling, midpoint 2040) gives 0.2% in 2025,
   which happens to equal the battery electric share, but it has no source.
 
-*Proposed cases.* Base: uptake continues from actual sales, far below the
-policy targets, with hybrids treated as efficient petrol cars. Low fuel demand:
-purchase incentives or sustained high pump prices bring a Southeast Asian
-pattern. High fuel demand: uptake stalls near 3%.
+*Definitions (revised 7 October after Nigel's review).* Every share below is a
+share of **new vehicle sales in a year**, not of the fleet. The three kinds are
+kept apart because they displace different amounts of fuel.
+
+| Kind | 2025 sales | Share of new sales | Effect on fuel | Where it enters the model |
+|---|---|---|---|---|
+| Battery electric | 1,088 | about 0.2% | Uses no liquid fuel | The electric adoption curve; this is the only kind that belongs there |
+| Plug-in hybrid | 2,810 | about 0.5% | Uses fuel for the share of distance not driven on the battery; that share is unsourced | Fuel use per kilometre of new petrol vehicles |
+| Conventional hybrid | 12,818 | about 2.1% | Uses fuel for all distance, at lower consumption; the saving is unsourced | Fuel use per kilometre of new petrol vehicles |
+
+From sales to fleet to fuel: about 0.6 million vehicles are sold a year into a
+fleet of about 12 million, so one year's sales replace roughly 5% of the fleet.
+A kind holding x% of new sales for a year adds about x% of 5% to its share of
+the fleet. Fuel then changes by that fleet share times the fuel each vehicle
+no longer uses: all of it for battery electric, part for the two hybrids.
+Efficiency changes apply to new vehicles only, never to the existing fleet.
+
+*Proposed cases (directions only; values are Nigel's to agree, see
+`fuel_lever_review_2026-10-07.md`).*
+
+| Case | Battery electric | Plug-in hybrid | Conventional hybrid |
+|---|---|---|---|
+| Base | Grows from 0.2% of new sales along actual sales | Grows from 0.5% | Grows from 2.1%; treated as efficient petrol cars |
+| Lower fuel demand | Purchase incentives or sustained high pump prices bring a Southeast Asian pattern | Rises with battery electric | Rises as the cheaper alternative |
+| Higher fuel demand | Stays near 0.2% of new sales | Stays near 0.5% | Stays near 2.1% |
+
+The earlier wording "uptake stalls near 3%" meant all three kinds together
+staying near their combined 2.8%. It must not be applied to the battery
+electric curve, which would overstate fuel displacement about fifteenfold.
 
 *Needed.* AIA's own view, as Nigel asked: which of the peer paths South Africa
 resembles and why. Also fleet turnover: about 0.6 million sales a year into a

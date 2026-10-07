@@ -1,0 +1,98 @@
+"""The petrol and diesel balance: source selection and agreement with the customs extract."""
+import csv
+from pathlib import Path
+
+import pytest
+
+from lfm.scripts import build_fuel_balance as bfb
+
+ROOT = Path(__file__).resolve().parents[1]
+TIMESERIES = ROOT / "assumptions" / "2026" / "timeseries"
+BALANCE = ROOT / bfb.DEFAULT_OUT
+
+
+def _inputs(sars_rows):
+    def trade(period, flow, value, report="2024"):
+        return {"period": period, "flow": flow, "product": "diesel", "value": value, "source_report": report}
+    return {
+        "fuel_sales_department": [
+            {"period": "2013", "product": "diesel", "value": "100", "quarters_reported": "4"},
+            {"period": "2014", "product": "diesel", "value": "110", "quarters_reported": "4"},
+            {"period": "2015", "product": "diesel", "value": "999", "quarters_reported": "3"},
+        ],
+        "fuel_sales_fiasa": [
+            {"period": "2015", "product": "diesel", "value": "118", "source_report": "2024"},
+            {"period": "2015", "product": "diesel", "value": "120", "source_report": "2025"},
+        ],
+        "fuel_trade_fiasa": [trade("2013", "import", "40"), trade("2013", "export", "10"),
+                             trade("2014", "import", "55"), trade("2014", "export", "12"),
+                             trade("2015", "import", "60"), trade("2015", "export", "15")],
+        "fuel_trade_sars": sars_rows,
+        "fuel_trade_department_review": [],
+        "energy_balance_department": [
+            {"period": "2013", "flow_key": "production", "product": "diesel", "value": "65"},
+            {"period": "2013", "flow_key": "exports", "product": "diesel", "value": "-9"},
+        ],
+    }
+
+
+def _sars(period, flow, value, unit="litres", months="12"):
+    return {"period": period, "flow": flow, "product": "diesel", "value": value, "unit": unit,
+            "months_reported": months}
+
+
+def _row(rows, year):
+    return next(r for r in rows if r["product"] == "diesel" and r["period"] == year)
+
+
+def test_customs_is_selected_from_2014_and_other_sources_stay_in_their_own_columns():
+    rows = bfb.build(_inputs([_sars("2013", "import", "41"), _sars("2013", "export", "11"),
+                              _sars("2014", "import", "50"), _sars("2014", "export", "13")]))
+    before, after = _row(rows, 2013), _row(rows, 2014)
+    assert (before["trade_used_source"], before["imports_used"], before["exports_used"]) == ("FIASA", 40, 10)
+    assert (after["trade_used_source"], after["imports_used"], after["exports_used"]) == ("SARS customs", 50, 13)
+    assert (after["imports_fiasa"], after["exports_fiasa"]) == (55, 12)
+    assert after["sales_less_net_imports"] == 110 - (50 - 13)
+    assert before["exports_energy_balance"] == 9
+    assert before["sales_less_net_imports_minus_energy_balance_production"] == (100 - 30) - 65
+
+
+def test_part_years_and_kilogram_records_are_not_selected():
+    rows = bfb.build(_inputs([_sars("2014", "import", "50", unit="kilograms"), _sars("2014", "export", "13"),
+                              _sars("2015", "import", "30", months="8"), _sars("2015", "export", "7", months="8")]))
+    assert _row(rows, 2014)["trade_used_source"] == "FIASA"
+    assert _row(rows, 2014)["imports_sars"] == ""
+    assert _row(rows, 2015)["trade_used_source"] == "FIASA"
+
+
+def test_incomplete_department_year_falls_back_to_the_latest_fiasa_edition():
+    row = _row(bfb.build(_inputs([])), 2015)
+    assert (row["sales_used"], row["sales_used_source"], row["sales_fiasa_edition"]) == (120, "FIASA", "2025")
+
+
+@pytest.mark.skipif(not BALANCE.exists(), reason="balance file not built")
+def test_committed_balance_matches_the_registered_inputs_and_the_customs_extract():
+    def read(path):
+        with path.open(encoding="utf-8", newline="") as fh:
+            return list(csv.DictReader(fh))
+
+    stems = ["fuel_sales_department", "fuel_sales_fiasa", "fuel_trade_sars", "fuel_trade_fiasa",
+             "fuel_trade_department_review", "energy_balance_department"]
+    inputs = {stem: read(TIMESERIES / f"{stem}.csv") for stem in stems}
+    expected = [{k: str(round(v)) if isinstance(v, float) else str(v) for k, v in row.items()}
+                for row in bfb.build(inputs)]
+    committed = read(BALANCE)
+    assert committed == expected, "rebuild with: python -m lfm.scripts.build_fuel_balance --vintage 2026"
+
+    customs = bfb.sars_annual(inputs["fuel_trade_sars"])
+    for row in committed:
+        year = int(row["period"])
+        if year < bfb.SARS_PRIMARY_FROM:
+            assert row["trade_used_source"] == "FIASA"
+            continue
+        assert row["trade_used_source"] == "SARS customs", (year, row["product"])
+        for flow, name in (("import", "imports"), ("export", "exports")):
+            assert float(row[f"{name}_used"]) == round(customs[(row["period"], flow, row["product"])][0])
+        if row["sales_used"]:
+            residual = float(row["sales_used"]) - float(row["imports_used"]) + float(row["exports_used"])
+            assert abs(float(row["sales_less_net_imports"]) - residual) <= 2
