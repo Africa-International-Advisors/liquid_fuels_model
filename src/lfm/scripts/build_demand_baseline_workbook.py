@@ -24,6 +24,8 @@ from __future__ import annotations
 import argparse
 import csv
 import sys
+
+import yaml
 from collections import defaultdict
 from pathlib import Path
 
@@ -99,6 +101,18 @@ def load(ts: Path, ref: Path) -> dict:
         y2023 = shares.share(observed["quarter1"][(product, 2023)])
         y2024 = shares.moved(y2023, shares.share(observed["gdp"][2023]), shares.share(observed["gdp"][2024]))
         d["estimated_share"][product] = {2023: y2023, 2024: y2024, 2025: y2024}
+    # Vehicle block.
+    d["stock"] = {(r["vehicle_class"], int(r["period"][:4])): float(r["value"])
+                  for r in _read(ts / "vehicle_population_natis.csv")
+                  if r["province"] == "ZAF" and r["period"].endswith("-12")}
+    d["new_sales"] = {(r["segment"], int(r["period"])): float(r["value"])
+                      for r in _read(ts / "new_vehicle_market_naamsa.csv") if r["basis"] == "actual"}
+    d["nev"] = {(r["drivetrain"], int(r["period"])): float(r["value"]) for r in _read(ts / "nev_sales_naamsa.csv")}
+    d["by_fuel_2023"] = {r["fuel_type"]: float(r["vehicles"]) for r in _read(ref / "vehicle_population_by_fuel_dot2023.csv")}
+    d["stone"] = {r["vehicle_type"]: r for r in _read(ref / "vehicle_parameters_stone2018.csv")}
+    model = yaml.safe_load((ts.parent / "vehicles.yaml").read_text(encoding="utf-8"))
+    d["model_vehicles"] = {key: model[key]["by_country"]["ZAF"] for key in (
+        "annual_km_per_vehicle", "fuel_consumption", "petrol_diesel_split", "scrappage_rate", "new_vehicle_segment_split")}
     d["macro"] = {(r["series"], int(r["period"])): float(r["value"]) / 1e9
                   for r in _read(ts / "macro_statssa.csv") if r["basis"] == "actual" and r["unit"].startswith("rand")}
     return d
@@ -350,6 +364,123 @@ def sector_sheet(wb, d: dict) -> None:
           "2016 and 2017 are about double the other years in the balance and look like reclassification.")
 
 
+def vehicle_sheet(wb, d: dict, history_rows: dict) -> None:
+    s = Sheet(wb, "Vehicle history", "Vehicle block: what is observed beside what the model assumes",
+              "Stock, new sales, scrapping, drivetrain, fuel split and use. Observations are values from the registered "
+              "inputs; the model's settings are in column D; shares, retirements and cross-checks are formulas.")
+    m = d["model_vehicles"]
+    natis, naamsa = "NaTIS live vehicle population, December", "naamsa industry vehicle sales"
+
+    s.section("1. Registered vehicles at December")
+    stock = {}
+    for key, label in (("cars", "Cars"), ("light_commercial", "Light commercial vehicles"), ("trucks", "Trucks"),
+                       ("buses", "Buses"), ("minibuses", "Minibuses"), ("motorcycles", "Motorcycles")):
+        stock[key] = s.line(label, "vehicles", "Source observation", "Live (licensed) vehicles, all fuels together.",
+                            {y: d["stock"].get((key, y)) for y in YEARS}, status="2021-2025", source=natis, fmt="#,##0",
+                            action="No split by fuel or by age in this source")
+
+    s.section("2. New vehicle sales")
+    sales = {}
+    for key, label, model_key in (("cars", "Cars", "passenger"), ("light_commercial", "Light commercial vehicles", "lcv"),
+                                  ("medium_heavy_commercial", "Medium and heavy commercial vehicles", "hcv")):
+        sales[key] = s.line(f"{label}, new sales", "vehicles/year", "Source observation", "Actual new sales, all drivetrains.",
+                            {y: d["new_sales"].get((key, y)) for y in YEARS}, status="2017-2025", source=naamsa, fmt="#,##0")
+    total = s.line("All segments, new sales", "vehicles/year", "Source observation", "Total market as reported.",
+                   {y: d["new_sales"].get(("total", y)) for y in YEARS}, status="2017-2025", source=naamsa, fmt="#,##0")
+    for key, label, model_key in (("cars", "Cars", "passenger"), ("light_commercial", "Light commercial", "lcv"),
+                                  ("medium_heavy_commercial", "Medium and heavy commercial", "hcv")):
+        s.line(f"{label} share of new sales", "%", "Reporting formula",
+               "Observed share. Column D is the model's fixed split of new vehicles.",
+               formula=both(sales[key], total, "{c}{a}/{c}{b}*100"), kind="formula",
+               scalar=m["new_vehicle_segment_split"][model_key] * 100, fmt="0.0",
+               status="Model setting in column D", source="assumptions/2026/vehicles.yaml: new_vehicle_segment_split")
+
+    s.section("3. Apparent retirements: last December's stock plus this year's sales less this December's stock")
+    for key, sale, label, model_key in (("cars", "cars", "Cars", "passenger"),
+                                        ("light_commercial", "light_commercial", "Light commercial vehicles", "lcv"),
+                                        ("trucks", "medium_heavy_commercial", "Trucks", "hcv")):
+        def retired(y, a=stock[key], b=sales[sale]):
+            if y - 1 not in YEARS:
+                return None
+            prev, now = col(y - 1), col(y)
+            return f'=IF(COUNT({prev}{a},{now}{a},{now}{b})<3,"",{prev}{a}+{now}{b}-{now}{a})'
+        gone = s.line(f"{label} retired", "vehicles/year", "Reporting formula",
+                      "Includes deregistration, export and write-off; used imports and re-registration would lower it.",
+                      formula=retired, kind="formula", fmt="#,##0")
+        s.line(f"{label} retirement rate", "% of last December's stock", "Reporting formula",
+               "Retired divided by last December's stock. Column D is the model's scrappage rate.",
+               formula=lambda y, a=gone, b=stock[key]: (None if y - 1 not in YEARS else
+                                                       f'=IF(ISNUMBER({col(y)}{a}),{col(y)}{a}/{col(y - 1)}{b}*100,"")'),
+               kind="formula", scalar=m["scrappage_rate"][model_key] * 100, fmt="0.0",
+               status="Model setting in column D", source="assumptions/2026/vehicles.yaml: scrappage_rate")
+
+    s.section("4. Electrified new sales (all segments)")
+    for key, label in (("battery_electric", "Battery electric"), ("plug_in_hybrid", "Plug-in hybrid"),
+                       ("traditional_hybrid", "Conventional hybrid")):
+        row = s.line(f"{label}, new sales", "vehicles/year", "Source observation", "Total market, not passenger cars only.",
+                     {y: d["nev"].get((key, y)) for y in YEARS}, status="2019-2025", source="naamsa new-energy vehicle sales",
+                     fmt="#,##0")
+        s.line(f"{label} share of new sales", "%", "Reporting formula", "Share of all new vehicles sold in the year.",
+               formula=both(row, total, "{c}{a}/{c}{b}*100"), kind="formula", fmt="0.00",
+               action="Share of the fleet is not observed after December 2023")
+
+    s.section("5. Fuel split of the registered fleet")
+    fuel = d["by_fuel_2023"]
+    petrol = s.line("Petrol vehicles registered", "vehicles", "Source observation", "All classes, December 2023.",
+                    {2023: fuel["petrol"]}, status="One date only", source="Department of Transport, 2023", fmt="#,##0")
+    diesel = s.line("Diesel vehicles registered", "vehicles", "Source observation", "All classes, December 2023.",
+                    {2023: fuel["diesel"]}, status="One date only", source="Department of Transport, 2023", fmt="#,##0")
+    s.line("Electric vehicles registered", "vehicles", "Source observation", "All classes, December 2023.",
+           {2023: fuel["electricity"]}, status="One date only", source="Department of Transport, 2023", fmt="#,##0")
+    split = m["petrol_diesel_split"]
+    implied = s.line("Diesel vehicles implied by the model's split", "vehicles", "Reporting formula",
+                     f"Cars x {split['passenger']['diesel']:.0%} plus light commercial x {split['lcv']['diesel']:.0%} plus "
+                     "trucks and buses. The model's split is for new sales; applied here to stock as a test.",
+                     formula=lambda y: (f'=IF(COUNT({col(y)}{stock["cars"]},{col(y)}{stock["light_commercial"]})<2,"",'
+                                        f'{col(y)}{stock["cars"]}*{split["passenger"]["diesel"]}+'
+                                        f'{col(y)}{stock["light_commercial"]}*{split["lcv"]["diesel"]}+'
+                                        f'{col(y)}{stock["trucks"]}+{col(y)}{stock["buses"]})'),
+                     kind="formula", fmt="#,##0", source="assumptions/2026/vehicles.yaml: petrol_diesel_split")
+    s.line("Implied less registered diesel vehicles", "vehicles", "Reporting formula",
+           "Positive means the model's split puts more diesel vehicles on the road than are registered. Minibuses and "
+           "motorcycles are left out of the implied figure.",
+           formula=both(implied, diesel, "{c}{a}-{c}{b}"), kind="formula", fmt="#,##0")
+
+    s.section("6. Distance and fuel use: model settings beside the published study")
+    stone, km, use = d["stone"], m["annual_km_per_vehicle"], m["fuel_consumption"]
+    for label, model_value, study_key, column, unit in (
+            ("Passenger cars, distance", km["passenger"], "CarGasoline", "km_per_year_fleet_average", "km/vehicle/year"),
+            ("Light commercial, distance", km["lcv"], "LCVDiesel", "km_per_year_fleet_average", "km/vehicle/year"),
+            ("Heavy commercial, distance", km["hcv"], "HCV5Diesel", "km_per_year_fleet_average", "km/vehicle/year"),
+            ("Petrol cars, fuel use", use["passenger"]["ice_petrol"], "CarGasoline", "l_per_100km_fleet_average", "L/100 km"),
+            ("Diesel light commercial, fuel use", use["lcv"]["ice_diesel"], "LCVDiesel", "l_per_100km_fleet_average", "L/100 km"),
+            ("Heavy commercial, fuel use", use["hcv"]["ice_diesel"], "HCV5Diesel", "l_per_100km_fleet_average", "L/100 km")):
+        s.line(label, unit, "Model setting", f"Column D is the model's value. The study gives {float(stone[study_key][column]):,.1f} "
+               f"for {study_key} (fleet average, 2014 base).", scalar=model_value, kind="comparison", fmt="#,##0.0",
+               status="Model value is a placeholder with no source", source="Stone et al. (2018); assumptions/2026/vehicles.yaml",
+               action="The heavy class in the study spans nine weight classes; HCV5 is shown as a mid-point")
+    per_vehicle = s.line("Petrol sold per registered petrol vehicle", "litres/vehicle/year", "Reporting formula",
+                         "National petrol sales used (History) divided by registered petrol vehicles.",
+                         formula=lambda y: f'=IF(COUNT(History!{col(y)}{history_rows["sales_petrol"]},{col(y)}{petrol})<2,"",'
+                                           f'History!{col(y)}{history_rows["sales_petrol"]}*1000000/{col(y)}{petrol})',
+                         kind="formula", fmt="#,##0")
+    study_use = float(stone["CarGasoline"]["l_per_100km_fleet_average"])
+    s.line("Distance implied by petrol sales", "km/vehicle/year", "Reporting formula",
+           f"Litres per vehicle divided by {study_use} L/100 km (the study's petrol car average). Column D is the model's "
+           "passenger distance.", formula=lambda y: f'=IF(ISNUMBER({col(y)}{per_vehicle}),{col(y)}{per_vehicle}/{study_use}*100,"")',
+           kind="formula", scalar=km["passenger"], fmt="#,##0",
+           action="If the model's distance and fuel use both held, petrol sales would be far above what is recorded")
+
+    s.section("7. Not available from any source held")
+    for label, why in (
+            ("Stock by age (year of first registration)", "Needed for the cohort calculation; NaTIS publishes totals by class only."),
+            ("Stock by fuel within each class", "Only an all-class fuel count exists, for December 2023."),
+            ("Electric and hybrid vehicles in the fleet by year", "Sales are known from 2019; stock only for December 2023."),
+            ("Distance driven after 2014", "The study's figures are a 2014 base; no later survey is held."),
+            ("Petrol and diesel split of new sales by segment", "naamsa reports drivetrain for the total market only.")):
+        s.line(label, "", "Missing input", why, kind="estimate", status="Gap", action="Source to be found or assumption agreed")
+
+
 def checks_sheet(wb, d: dict, changes: list[str]) -> int:
     ws = wb.create_sheet("Checks")
     ws["A1"] = "Checks on the workshop workbook, 7 October 2026"
@@ -468,10 +599,11 @@ def main() -> int:
             changes.append(f"Source selection!{cells[4].coordinate}: {cells[0].value} {cells[1].value} FIASA -> Department "
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 left on FIASA, which is unverified; the department has published no 2024 figure.")
-    changes.append("Sheets added: History, Sector history, Checks, History sources. No other cell changed.")
+    changes.append("Sheets added: History, Sector history, Vehicle history, Checks, History sources. No other cell changed.")
 
-    history_sheet(wb, d)
+    history_rows = history_sheet(wb, d)
     sector_sheet(wb, d)
+    vehicle_sheet(wb, d, history_rows)
     differs = checks_sheet(wb, d, changes)
     sources_sheet(wb)
     wb.save(args.out)

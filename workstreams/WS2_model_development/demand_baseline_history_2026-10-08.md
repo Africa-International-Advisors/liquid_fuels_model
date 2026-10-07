@@ -101,13 +101,41 @@ and 40% for diesel when holding shares. Diesel is roughly twice as uncertain
 as petrol by every method, because its provincial figures follow where bulk
 sales are booked. Trend extension is the worst method and should not be used.
 
+## Vehicle block: observed beside the model's settings
+
+The Vehicle history sheet lines up registered vehicles (NaTIS, December
+2021-2025), new sales (naamsa, 2017-2025), electrified sales, the fuel split
+of the fleet and the model's settings. Retirements, shares and cross-checks
+are formulas.
+
+| Item | Observed | Model setting | Reading |
+|---|---|---|---|
+| Cars' share of new sales | 65-71% (2019-2025) | 78% | Model puts too many new vehicles in the passenger class |
+| Light commercial share | 24-29% | 18% | Too few |
+| Medium and heavy share | 5-6% | 4% | Slightly low |
+| Cars retired, % of stock a year | 4.3, 3.1, 2.5, 2.4 (2022-2025) | 4.0% | Model is at the top of the observed range, which is falling |
+| Light commercial retired | 5.6, 4.5, 3.6, 3.4 | 5.0% | Same pattern |
+| Trucks retired | 8.5, 6.8, 6.4, 6.2 | 6.0% | Close |
+| Diesel vehicles on the road, December 2023 | 3.34 million registered | 3.66 million implied by the model's split | Model's split gives about 0.33 million too many |
+| Petrol per registered petrol vehicle, 2023 | 1,056 litres | 1,615 litres (17,000 km at 9.5 L/100 km) | Model's distance and fuel use together are about 50% above what sales support |
+| Distance implied by petrol sales | about 12,900 km | 17,000 km | Published study gives 14,457 km |
+| Battery electric share of new sales | 0.03% (2019) to 0.24% (2024), 0.18% (2025) | S-curve to 30% | See the lever response |
+
+Retirements are apparent: last December's stock plus the year's sales less
+this December's stock. Used imports and re-registrations would lower the true
+figure, and naamsa's segments do not map exactly onto NaTIS classes.
+
+Not available from any source held: stock by age, stock by fuel within each
+class, electric and hybrid vehicles in the fleet by year, distance driven
+after 2014, and the petrol and diesel split of new sales by segment.
+
 ## Not done
 
 - History starts where each source does: customs in litres from 2014,
   provinces from 2013. FIASA trade is shown for 2012-2013 as a comparison.
 - Stock change is not in the balance; no usable series exists.
-- The vehicle block (opening stock, new sales, scrapping, electrification) is
-  not yet sourced or checked.
+- Opening stock by age and by fuel within class is not available from any
+  source held, so the cohort start cannot yet be checked.
 - Jet, power, marine and the provincial forecast are not touched.
 - The Mining, Manufacturing and Agriculture sheets' workshop inputs are left
   blank for Nigel to agree; the evidence for them is on Sector history.
