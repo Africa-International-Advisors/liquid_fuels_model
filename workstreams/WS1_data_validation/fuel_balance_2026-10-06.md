@@ -63,9 +63,22 @@ net imports 13.08, sales less net imports 7.69 bn litres.
 
 What changed from the 6 October table: imports and exports from 2014 are now
 customs figures throughout, where the earlier table used FIASA and, for 2024
-diesel imports, the department's rounded 10.8. Most years move by less than
-0.02 bn litres. The exception is 2018, where customs is lower than FIASA
-(diesel imports 5.12 against 6.11; petrol 1.83 against 2.19); the cause is not known.
+diesel imports, the department's rounded 10.8. Apart from FIASA's 2024 diesel
+import misprint (flag A), customs and FIASA differ by 0.05 bn litres or more in
+these cases; every other figure from 2014 is closer than that. The causes are
+not known.
+
+| Year | Flow | Customs | FIASA | Difference |
+|---|---|---|---|---|
+| 2018 | petrol imports | 1.83 | 2.19 | -0.37 |
+| 2018 | petrol exports | 1.14 | 1.32 | -0.19 |
+| 2022 | petrol exports | 0.85 | 0.79 | +0.06 |
+| 2018 | diesel imports | 5.12 | 6.11 | -0.98 |
+| 2018 | diesel exports | 1.58 | 1.84 | -0.26 |
+| 2019 | diesel imports | 5.59 | 5.86 | -0.27 |
+| 2021 | diesel imports | 9.76 | 9.57 | +0.19 |
+| 2022 | diesel exports | 0.89 | 0.70 | +0.19 |
+| 2023 | diesel imports | 12.87 | 12.79 | +0.08 |
 
 **Against balance-reported production, 2014–2021.** The largest difference is
 +0.83 bn litres for petrol (2016) and -1.24 for diesel (2021). Flag C
