@@ -371,6 +371,84 @@ for fuel in ("diesel", "jet", "petrol"):
         if shape.has_text_frame and shape.text_frame.text == NOTE:
             shape.text_frame.paragraphs[0].runs[0].text = LEVER_NOTE
 
+# --- 3 Sector baselines ------------------------------------------------------
+SECTORS = REPO / "workstreams/WS1_data_validation/sector_baselines_2026-10-07.csv"
+with SECTORS.open(encoding="utf-8", newline="") as fh:
+    SECTOR_ROWS = list(csv.DictReader(fh))
+SECTOR_NOTE = ("Source: sector_baselines_2026-10-07.md and .csv on manish-branch; department energy balances "
+               "2012-2021. A proposal for Nigel's decision; nothing is accepted.")
+
+
+def sector(segment, year, column="with_sourced_baselines", scenario="high_demand"):
+    return sum(float(r[column]) for r in SECTOR_ROWS
+               if (r["scenario"], r["segment"], int(r["period"])) == (scenario, segment, year)
+               and r["product"].startswith("diesel")) / 1e9
+
+
+def effect(segments, year, scenario):
+    return sum(sector(seg, year, "difference", scenario) for seg in segments)
+
+
+def set_note(slide, note):
+    for shape in slide.shapes:
+        if shape.has_text_frame and shape.text_frame.text == NOTE:
+            shape.text_frame.paragraphs[0].runs[0].text = note
+
+
+both = ("agriculture", "industrial")
+s = page(2, f"Sourced starting values lower 2024 diesel demand by {-effect(both, 2024, 'high_demand'):.2f} bn litres",
+         "Agriculture and industry | diesel, billion litres a year | proposed as provisional starting values")
+table(s, [
+    ["Sector", "Earlier\nplaceholder", "On the branch", "Range in the evidence", "Proposed", "Effect in 2024; 2035"],
+    ["Agriculture", f"{sector('agriculture', 2024, 'with_placeholders'):.2f}\nno source",
+     "1.06 for 2021\nenergy balance, agriculture and forestry",
+     "0.90-1.09 in eight of ten years, 2012-2021; 1.89 and 1.88 in 2016 and 2017",
+     "1.06\nprovisional, about +/-0.1",
+     f"{effect(('agriculture',), 2024, 'high_demand'):+.2f}; {effect(('agriculture',), 2035, 'high_demand'):+.2f}"],
+    ["Industry", f"{sector('industrial', 2024, 'with_placeholders'):.2f}\nno source",
+     "1.50 for 2021\nenergy balance, industry; mining is 1.29 of it",
+     "1.32-1.93 over 2012-2021. Mining volume is 7% lower in 2024 than 2021, which would give 1.40",
+     "1.50\nprovisional, about +/-0.3",
+     f"{effect(('industrial',), 2024, 'high_demand'):+.2f}; {effect(('industrial',), 2035, 'high_demand'):+.2f} (high), "
+     f"{effect(('industrial',), 2035, 'low_demand'):+.2f} (low)"],
+    ["Both", f"{sector('agriculture', 2024, 'with_placeholders') + sector('industrial', 2024, 'with_placeholders'):.2f}",
+     "2.56", "", "2.56",
+     f"{effect(both, 2024, 'high_demand'):+.2f}; {effect(both, 2035, 'high_demand'):+.2f} (high), "
+     f"{effect(both, 2035, 'low_demand'):+.2f} (low)"],
+], [1.3, 1.25, 2.5, 3.0, 1.6, 2.0], height=2.9, size=10.5)
+text(s, "Why 2021 and not an average: it is the latest balance and one consistent year for both sectors. "
+        "A 2018-2021 average gives 0.98 and 1.68; the industry average is pulled up by the years before mining "
+        "output fell.\nDecision for Nigel: accept both as provisional, or take the activity-adjusted 1.40 for "
+        "industry. Both keep the needs-verification flag.", LEFT, 5.45, WIDTH, 1.2, 11)
+set_note(s, SECTOR_NOTE)
+
+total = sum(sector(seg, 2024) for seg in ("vehicles", "agriculture", "industrial", "generation", "marine"))
+s = page(2, "The totals show no double counting from the two sectors; the excess is in power generation",
+         "Overlaps and double counting | model diesel for 2024 by segment against the evidence, billion litres")
+table(s, [
+    ["Model segment", "Model\n2024", "Evidence", "Overlap or gap"],
+    ["Road vehicles", f"{sector('vehicles', 2024):.2f}",
+     "Balance 2021: road 6.33; commercial and public services 4.30; together 10.63",
+     "The two balance lines swap volume between years while their sum holds, so the split shows who bought "
+     "the fuel, not where it was burned"],
+    ["Agriculture", f"{sector('agriculture', 2024):.2f}", "Balance 2021: 1.06",
+     "Includes farm vehicles on public roads, which are also in the registered fleet. Size unknown"],
+    ["Industry", f"{sector('industrial', 2024):.2f}", "Balance 2021: 1.50; mining 1.29, construction 0.05",
+     "Mine haul trucks are unregistered, so no overlap; mines' road vehicles do overlap"],
+    ["Power generation", f"{sector('generation', 2024):.2f}",
+     "Eskom: 0.94 (year to March 2023), 0.68 (to March 2025); about 1.6 for all plants in the peak year",
+     "Not an overlap: the model is at least 2 bn litres above reported burn"],
+    ["Marine gas oil", f"{sector('marine', 2024):.2f}", "No observed figure",
+     "Not established whether ships' diesel is inside inland sales"],
+    ["Total", f"{total:.2f}", "Recorded sales: 12.91 (2023); 11.73 (2024, unverified)",
+     f"Model is {total - 12.91:.1f} to {total - 11.73:.1f} above recorded sales"],
+], [1.75, 0.9, 4.0, 5.0], height=4.0, size=10)
+text(s, f"Road vehicles, agriculture and industry are {sector('vehicles', 2024) + sector('agriculture', 2024) + sector('industrial', 2024):.2f} "
+        "in the model against 13.41 of final consumption in the 2021 balance, so those three are short, not "
+        "double counted. At most 2.56 could overlap with road vehicles; no source sizes it.",
+     LEFT, 6.4, WIDTH, 0.6, 11, True, BLUE)
+set_note(s, SECTOR_NOTE)
+
 # --- order, navigation, bounds ----------------------------------------------
 ids = prs.slides._sldIdLst
 closing_id = ids[1]
