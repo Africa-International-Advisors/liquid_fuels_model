@@ -534,7 +534,7 @@ prs.core_properties.title = 'Liquid fuels model: full assumption inventory' if i
 prs.core_properties.author = cfg.AUTHOR
 prs.core_properties.subject = 'Complete registered inputs and current calculation conventions' if inventory_only else 'Reusable model development and proposed six-week analyst plan'
 pdf_only = os.environ.get('LFM_PDF_ONLY') == '1'
-out = ROOT / ('qa/pdf-review' if pdf_only else 'output/delivered')
+out = ROOT / ('qa/pdf-review' if pdf_only else 'output/delivered/supporting')
 out.mkdir(parents=True, exist_ok=True)
 path = out / ('Vopak_Assumption_Inventory.pptx' if inventory_only else 'Vopak_Analyst_Kickoff.pptx')
 prs.save(path)

@@ -23,7 +23,7 @@ git switch -c manish-branch origin/main
 
 If that branch already exists, switch to it and merge `origin/main` using the
 [branch workflow](branch_workflow.md). Do not recreate it or discard local changes.
-Open [the PDF handover](../../../pptx/output/delivered/Vopak_Manish_Handover_2026_10_06.pdf):
+Open [the PDF handover](../../../pptx/output/delivered/supporting/Vopak_Manish_Handover_2026_10_06.pdf):
 page 6 is the five-package handback checklist; page 7 is the driver evidence checklist.
 
 Copy this instruction into the LLM working on Manish's branch:
@@ -300,7 +300,7 @@ Every series needs source URL/table, original path, extracted CSV, coverage,
 units and revision check. Source collection, checking and reviewed integration
 are distinct stages; collecting an activity series does not quantify a fuel lever.
 
-[PDF handover checklist](../../../pptx/output/delivered/Vopak_Manish_Handover_2026_10_06.pdf)
+[PDF handover checklist](../../../pptx/output/delivered/supporting/Vopak_Manish_Handover_2026_10_06.pdf)
 uses the same five work packages and seven driver categories.
 
 Today's handback is a resolved/open flag table, source-to-file-to-function map,
@@ -700,3 +700,6 @@ roadmap 23; appendix 24; turnover 25; Henry responses 26?28.
 
 ### Driver legend correction
 Nigel confirmed pages 8–9: the previous update left their keys beneath the charts. Move all eight editable legend groups into compact right-aligned rows above their plots, retain 11pt labels and series colours, and reposition plots for clear spacing. Native chart data and the page 4 trade legend remain unchanged. The source splitter applies this placement on every rebuild.
+
+## 7 October: delivery cleanup
+The current 30-page Convergence pair is the only review pack at the top of pptx/output/delivered. Nine ancillary files moved to supporting/, and the alternate 23-page governance pair moved to archive/2026-10-07_delivery-cleanup. Twelve local candidates moved into QA drafts. All moved hashes match and the canonical pair is unchanged. The root output/delivered/README.md now points to the deck, input matrix and current Manish review tasks. Builder/config references use the supporting paths. Historical files and received inputs are preserved.

@@ -1,0 +1,1242 @@
+{
+  "inventory_date": "2026-10-06",
+  "status": "Preserved prior local public-source downloads; inventory does not verify extraction, freshness or source accuracy.",
+  "source_urls": "Not reconstructed in this inventory; use source profile and fetcher metadata. Missing exact download provenance remains a review item.",
+  "files": [
+    {
+      "file": "raw/acsa/acsa-group-aircraft_movements.pdf",
+      "bytes": 487467,
+      "sha256": "87e5a69bd21bcbbb38de010b9f51a0dcb1c1062090029acabe70172730d35c86"
+    },
+    {
+      "file": "raw/acsa/acsa-group-passengers.pdf",
+      "bytes": 493382,
+      "sha256": "475e1cab09667db574a2de6df479a3a94efc20ab1199d8b5e8bf4fa0bc243368"
+    },
+    {
+      "file": "raw/economy/worldbank-gdp.json",
+      "bytes": 7652,
+      "sha256": "95102f86b7db9dbbf625f3b08a4f2496faf3034bc535f74ff535fa17343d8e23"
+    },
+    {
+      "file": "raw/economy/worldbank-gdp_current_prices.json",
+      "bytes": 7606,
+      "sha256": "e65842d8e1b474cf9e8b5e185f54261a8751ad29c49600bf2946874f98a486ea"
+    },
+    {
+      "file": "raw/economy/worldbank-gdp_per_capita.json",
+      "bytes": 8147,
+      "sha256": "cb76218f7a32b2202b928b626f068dfed336748b02b1e9164d07decda61e0765"
+    },
+    {
+      "file": "raw/economy/worldbank-population.json",
+      "bytes": 7328,
+      "sha256": "8f7c093bb90447c6489bd02e1b65b4e40ab788eb5eaf1d6bb17f2bbc96f9fade"
+    },
+    {
+      "file": "raw/economy/worldbank-population_projection.json",
+      "bytes": 12354,
+      "sha256": "c7ecad8d01fad06308746d76b0aa114291a36a82eb557ca85d164e27621bd833"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2007-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 193540,
+      "sha256": "71f31cda65b2cc7dea0540bfd68f4269f2dafcec26a1a5c1e1e8e808a1ef3886"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2008-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 192246,
+      "sha256": "f164b240730aa6038cf89d78154842f5de586d99c6c842899f876e04c6eed139"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2009-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 207761,
+      "sha256": "7a6fcc46e38e9e341aa11d91b0adac0d50977fe4f4db1bfd20cb47523e0625da"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2010-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 199583,
+      "sha256": "a4959ca0c06e140b37c66bd4c145ba2cf39deb4a021f8525c4dabf067d724804"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2011-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 202481,
+      "sha256": "6adca2b21fb8d24238c14bac32de32d0989c67c655331ab018b0133aad9855a8"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2012-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 202574,
+      "sha256": "a529d1421783f3a1a7af1c425af18f85d70a1eb4dc6e5edbcde925376ec83c1e"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2013-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 214691,
+      "sha256": "cfe126accb36fc07c2aad29be47957bd5cb5deffbad87466e79059ec9444a056"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2014-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 201278,
+      "sha256": "6f7d8ac87e4de709c231d62681cf9cddfe3c95a29146ff7d634df49ca0608190"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2015-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 6121922,
+      "sha256": "2ee38d6ba316f14461d5eaf34a48ba214a7181ded88ee4ae300000f5f6ca8941"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2016-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 198322,
+      "sha256": "a856b8dd7fddc3818af922952606c471cf306da4c1a283c8742ffebe5f56d1c2"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2017-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 202693,
+      "sha256": "4ca3b11b875fea83ae3d0ba84ebd1555839c2fde6cd3bd6ef06fdb435479e3d7"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2018-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 161294,
+      "sha256": "311c192615cdb838fad66c7baaf271684f485fdd76a77f94f095915196fdccd9"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2019-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 161279,
+      "sha256": "4096f1e63e0aefa47ebe1d1035b66d50a684a9d7592353986456af214e9b62fc"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2020-Commodity-Flow-and-Energy-Balance.xlsx",
+      "bytes": 203483,
+      "sha256": "9df995f06d0d448c8b87cf7ea55bf56e715e5d222b163d0dbd160d78c57704c5"
+    },
+    {
+      "file": "raw/energy_dept/energy_balance/2021-Commodity-Flow-and-Energy-Balance.xlsm",
+      "bytes": 1438083,
+      "sha256": "c88f209e1082e84b5cf7340765ca51a50fb05e005e21b5fb76675ae3e7284609"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2013-FSV-Disaggregated-FSV-at-Magisterial-District-Quarter4-16Jan2015.xlsx",
+      "bytes": 207366,
+      "sha256": "a3168ab77ad70d640bcd390b54608f1341ec182f9e6d1d5cb8537926796fa0ec"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2014-Quarterly-Disaggregated-FSV-Data-Magisterial-District-Level-01Dec2015.xlsx",
+      "bytes": 240363,
+      "sha256": "de17d3723f638438f166eb969aa73466d5dd3a615a49d4f6aa6c9510b657abfd"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2015-Quarterly-Disaggregated-data-Magisterial-Districts-13January2017.xlsx",
+      "bytes": 266756,
+      "sha256": "9b0ac8c9c484480c6d6414d3170a02eacb58ac4c4d93e7fbf85974b9b20b75ed"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2016-Quarter4-Magisterial-Districts-data.xlsx",
+      "bytes": 190299,
+      "sha256": "d88a7eb5d29a18ec990573ae3527e787127aecdee171c8f51b18de60bac2a080"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2017-Quarter4-Magisterial-Districts-data.xlsx",
+      "bytes": 181104,
+      "sha256": "ca2fb932a249c0bb6fa4d3c251c6bd87689bc34bc143df6c3dd56fe289a44759"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2018-Quarter4-Magisterial-Districts-data.xlsx",
+      "bytes": 182194,
+      "sha256": "72d32380ad37b249fd15923d0d6bbeda4753962d7db4b57d0b5b999ed2ec7c14"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2019-Quarter4-Magisterial-Districts-data.xlsx",
+      "bytes": 177752,
+      "sha256": "fd2d56c3053d6c4e5dbfd6077f2f79f9f8f87236e151949a6c14b68f43236092"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2020-Quarter1-4Magisterial-Districts-data.xlsx",
+      "bytes": 176751,
+      "sha256": "11211914826e929218b5b5ed8387562b54c68ae1218af3b754b7821298e12dae"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2021-Quarter4-Magisterial-Districts-data.xlsx",
+      "bytes": 173880,
+      "sha256": "18db0f3b3863d9c8e46c70b03efef703d9643cac10f0442d4d5bb441af30f399"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2022-Quarter4-Magisterial-Districts-data.xlsx",
+      "bytes": 166821,
+      "sha256": "4f65e5f4f54a5bc3561643dd872255860579b292483bca89468a1b9dee98950c"
+    },
+    {
+      "file": "raw/energy_dept/fsv_district/2023-Quarter1-Magisterial-Districts-data.xlsx",
+      "bytes": 51725,
+      "sha256": "e35e025b5770c11d3235a04b9a5049b5986e996261df0ea0e4bff9cb491f1586"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2005-Fuel-Sales-Volume.xlsx",
+      "bytes": 10079,
+      "sha256": "657327826ac2acc586fc1721e8b0696adb9f630403f48f007b3785db6b1e795d"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2006-Fuel-Sales-Volume.xlsx",
+      "bytes": 9134,
+      "sha256": "3f0208939b98ed302cc58dae18dda0f881b08d5f6a903bab1d969b5af30de25d"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2007-Fuel-Sales-Volume.xlsx",
+      "bytes": 9133,
+      "sha256": "3b53af957cbef2ef5c95f257b73cb26a829ac89f46dae99d04b8af71e8e949b8"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2008-Fuel-Sales-Volume.xlsx",
+      "bytes": 9130,
+      "sha256": "470f2c34fb5c56a7d2d6022514a25e540c7fa7634bf3a8933062f0cde0c7b76a"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2009-Fuel-Sales-Volume.xlsx",
+      "bytes": 9073,
+      "sha256": "e7b4eca1a7843adf5a40789edc18aa9f855af2e7b4d1c6ff35eae1090a466c42"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2010-National-Aggregated-FSV.xls",
+      "bytes": 28672,
+      "sha256": "fb067ab514d4dcb528f8ea3ddab136ff56e8afd84c41e20965db6ea42ccdc08e"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2011-National-Aggregated-FSV.xls",
+      "bytes": 28672,
+      "sha256": "03c0527015abcec1e5b88010850293b497a5feb4961295e2a8cd4964b457e430"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2012-National-Aggregated-FSV.xls",
+      "bytes": 28672,
+      "sha256": "647a967a91f51b58d474dc348e5f143a384aeb62e55f8d34317c1d745838caa2"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2013-Annual-FSV-at-National-Level-07-February-2014.xlsx",
+      "bytes": 18629,
+      "sha256": "95b43d31377ad612a5b870d3d90d11bd9a6dfda15910ad62400a934046775d95"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2014-Annual-FSV-at-National-Level-Quarter-3-16Jan2015.xlsx",
+      "bytes": 10986,
+      "sha256": "00e52ffab899933e0bcb2cfab16c6514666beb7bc1eb304d3a171326cc7775c4"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2015-Annual-FSV-at-National-Level.xlsx",
+      "bytes": 10766,
+      "sha256": "a226689b3689e9b14b58bcbe95db448eaaa415e9ad2fde23e493d7319b5a7ba2"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2016-National-Aggregated-Fuel-Sales-Volumes-data.xlsx",
+      "bytes": 10854,
+      "sha256": "95b7d5113376fa2f7329b1e0f11ee89f7d5669c6c017e5e539b5fe34e04207e9"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2017-Quarter3-FSV-Annual-data.xls",
+      "bytes": 37376,
+      "sha256": "95924354cf83a33daf1afdd9b2c424735f8db4669eab0c23fc4f8c3211369a37"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2018-National-Aggregated-FSV.xls",
+      "bytes": 29184,
+      "sha256": "80b6edf6f367e0fa7f29d446118b5743b0286437289b68ce439fe561f3a17033"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2019-National-Aggregated-FSV.xls",
+      "bytes": 30720,
+      "sha256": "1105a01b88c3f9566501ce3b7ff659a2cf7e009dd232bda5a5107fcb3d658e6b"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2020-National-Aggregated-FSV-data-Quarter4.xls",
+      "bytes": 29184,
+      "sha256": "22706657c1823437f8402bed0669be121dc00aa0cbd423fe0a8b4115166dd195"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2021-National-Aggregated-FSV-data-Quarter4.xls",
+      "bytes": 29184,
+      "sha256": "825464b3294671d5f114e17393ad5993efd1d51596c5e6f32b63f62e42c8cd41"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2022-National-Aggregated-FSV-data-Quarter4.xls",
+      "bytes": 29184,
+      "sha256": "e364fbfdecd5f1531da4d6a7553f763a64763624017540b941b342e5a110d83a"
+    },
+    {
+      "file": "raw/energy_dept/fsv_national/2023-National-Aggregated-FSV-data-Quarter4.xls",
+      "bytes": 29696,
+      "sha256": "b37099ea8311eebebc4c353dfb40b9e0decf10fb7977fa6a0c7c3c6e7a8547b1"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2011.pdf",
+      "bytes": 71658,
+      "sha256": "63f7c295f645460afebd608578a1be1fe8ca29357424090a20052503ed22e3bb"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2012.pdf",
+      "bytes": 72411,
+      "sha256": "67913f6c8b510b50bb11d5212a0250614916ac14fc4ce15402765cc60c13dd0b"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2013.pdf",
+      "bytes": 57928,
+      "sha256": "2e5baf0a6b66c82b8e4de766a84b91934b9d80865fd99e0792426e745fbe19be"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2014.pdf",
+      "bytes": 72144,
+      "sha256": "f7102580cffdfcb176409fef6ec60f4cce26a24e35771f079726c63a1a7567a9"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2015.pdf",
+      "bytes": 72425,
+      "sha256": "acc4c176ef95f9b674b5a944601ed90e35ea3accf5822232cf3435b2fed2ab88"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2016.pdf",
+      "bytes": 73980,
+      "sha256": "4217c5623f3fb485b649ba27648a5617f6fc972ae38555e1fba6817fba457d2d"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2017.pdf",
+      "bytes": 71770,
+      "sha256": "a341f2495f02bac90de078541c091a0efcf7ddc061b47336be0b65f87e2612d5"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2018.pdf",
+      "bytes": 73490,
+      "sha256": "ac03f26524b2f168a4e0c7b1b3be7b9f4be1fae3b49fc731a7aa31e9d9201d68"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2019.pdf",
+      "bytes": 92315,
+      "sha256": "2e3e1c904f7b1d63b51ae337e66e47b10c5fb960a2dbe086b1af7c1c21932d57"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2020.pdf",
+      "bytes": 91991,
+      "sha256": "c64d0c7bb9ae2471ed3aaa45a88e927d05c1aae56d6212c8312e890f37265399"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2021.pdf",
+      "bytes": 65003,
+      "sha256": "bb4049bc144992e9f6b533d15f1fb2bd56674f69d159147960f3cda26d5a33be"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2022.pdf",
+      "bytes": 64687,
+      "sha256": "53b21992e0342936c6591c698981a8fef509b76a03e8bb354d31fbac5105dbbb"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2023.pdf",
+      "bytes": 95218,
+      "sha256": "260a9a3ede47b9a1efe72cae77bc110f2fa862446056ba23b1b9b68fd4793ae7"
+    },
+    {
+      "file": "raw/energy_dept/prices/fuel-price-history-2024.pdf",
+      "bytes": 82902,
+      "sha256": "f0046b5de3714ab06e58eb6ea8452be1dce8b58f5dbaa6be1dc5418b64b564ea"
+    },
+    {
+      "file": "raw/eskom/eskom-integrated-report-2024.pdf",
+      "bytes": 11598744,
+      "sha256": "9f4fb9bde4ccb83b428e8106292dd32781d2ec3938a9053ad38c312527e9eca6"
+    },
+    {
+      "file": "raw/eskom/eskom-integrated-report-2025.pdf",
+      "bytes": 12261174,
+      "sha256": "f93ca0d57a40ac159bb8342c77e8cb2b10639825a2abbcdaf6219e6b2f1e702d"
+    },
+    {
+      "file": "raw/eskom/eskom-integrated-report-2026.pdf",
+      "bytes": 6952045,
+      "sha256": "7de8dacdfe2f125a0f5fe81f2cc55cde4bb77b010a521b15922745f22dce1fe6"
+    },
+    {
+      "file": "raw/fiasa/annual-report-2021.pdf",
+      "bytes": 13349003,
+      "sha256": "d99f43cf65ec7d0f80a508ac89ffb41673566a45ba03254a049f572d0453a036"
+    },
+    {
+      "file": "raw/fiasa/annual-report-2022.pdf",
+      "bytes": 6081494,
+      "sha256": "29308ca0ab89d43348a9044cb96a9cf02a30c96c4d6c51b015f328117c342ade"
+    },
+    {
+      "file": "raw/fiasa/annual-report-2023.pdf",
+      "bytes": 4175683,
+      "sha256": "a2897b2dd4a786a0c4b42fa246ed8548f4a05804facaedb66fa7c200eb228802"
+    },
+    {
+      "file": "raw/fiasa/annual-report-2024.pdf",
+      "bytes": 7887600,
+      "sha256": "60a7da9c3dc856dfeafd2aee1a1c1e603ccc67f1838650c7127c8b1e2d0f0191"
+    },
+    {
+      "file": "raw/fiasa/annual-report-2025.pdf",
+      "bytes": 4681208,
+      "sha256": "a37e04143fd3e2eb672cd79d16c26e8b7a027171172b38d689949e6b0b502ef7"
+    },
+    {
+      "file": "raw/naamsa/2024-02_20240220-Industry-Vehicle-Sales-2015-2025-Actual-and-Projections-4th-quarter-2023.xlsx-Read-Only.pdf",
+      "bytes": 81754,
+      "sha256": "c2050a7a38ea7278a3f620be59c7fcc27b1426e38f8734ffaa3b90456b01f2f3"
+    },
+    {
+      "file": "raw/naamsa/2024-02_20240220-naamsa-4th-Quarter-Review-of-Business-Conditions-2023.pdf",
+      "bytes": 412007,
+      "sha256": "f20e30d3fd51a9a4b4e51adde7e4b61f631876ff0d7177f95c08cbaed9383c0b"
+    },
+    {
+      "file": "raw/naamsa/2024-05_20240515-Industry-Vehicle-Sales-2015-2025-Actual-and-Projections.pdf",
+      "bytes": 83355,
+      "sha256": "8d012ba87212525c3c0cc4bfc5bd394451da4777a651c88dfaa826dd8cfdb64e"
+    },
+    {
+      "file": "raw/naamsa/2024-05_20240521-naamsa-Q1-2024-Review-of-Business-Conditions-2024.pdf",
+      "bytes": 1132773,
+      "sha256": "39f129db268e820c9c8e57a8cba490e98824a3dfea61c75797dfe4aa98eaeb41"
+    },
+    {
+      "file": "raw/naamsa/2024-08_20240815-Industry-Vehicle-Sales-2015-2025-Actual-and-Projections-1.pdf",
+      "bytes": 83347,
+      "sha256": "d5519acfa480c34e511aee84f50ab293608ceb363c3294225046451076cd9c3b"
+    },
+    {
+      "file": "raw/naamsa/2024-08_20240819-naamsa-Q2-Review-of-Business-Conditions-2024.pdf",
+      "bytes": 1350992,
+      "sha256": "cef269fc248a7c6fcadd7c977106d56db23d6acff4691d90a932c0fb495b2f7f"
+    },
+    {
+      "file": "raw/naamsa/2024-11_20241118-Industry-Vehicle-Sales-2015-2025-Actual-and-Projections.pdf",
+      "bytes": 151606,
+      "sha256": "b9eadaacdde0411b97966ed98d37a58df96e60f7be961c2c9eb8508bca21a1e0"
+    },
+    {
+      "file": "raw/naamsa/2024-11_20241118-naamsa-Q3-Review-of-Business-Conditions-2024.pdf",
+      "bytes": 1174224,
+      "sha256": "e10e69bfa9371ed99f7f9de3f089d36c21c24237d116506fca580cc971a3c9cc"
+    },
+    {
+      "file": "raw/naamsa/2025-02_20250220-naamsa-Q4-Review-of-Business-Conditions-2024.pdf",
+      "bytes": 1166187,
+      "sha256": "06bbdd14436708c88d0d6e7e3bf7441042e9b9a29b4f852be06ab856b3b9b934"
+    },
+    {
+      "file": "raw/naamsa/2025-02_Industry-Vehicle-Sales-2016-2026-Actual-and-Projections.pdf",
+      "bytes": 81287,
+      "sha256": "4cb5c38828fdf74462f0930e493882dabffb33dd6dd7460d1482c0924e210a0b"
+    },
+    {
+      "file": "raw/naamsa/2025-05_20250526-naamsa-Q1-Review-of-Business-Conditions-2025.pdf",
+      "bytes": 1183126,
+      "sha256": "5a557bb31e816ec55f37f6a953f6aff0b7993a1b4545b1baf02dce94c8c78e2d"
+    },
+    {
+      "file": "raw/naamsa/2025-05_Industry-Vehicle-Sales-2016-2026-Actual-and-Projections.pdf",
+      "bytes": 150438,
+      "sha256": "01592386c3518c6b45de10c49b5134e752e53fc04c880474bf94c0d582dd37f3"
+    },
+    {
+      "file": "raw/naamsa/2025-08_20250815-Industry-Vehicle-Sales-2016-2026-Actual-and-Projections.pdf",
+      "bytes": 150441,
+      "sha256": "d331beef7cd37102b1516096d92995b518191de0bab529362a27f2e59b6416f0"
+    },
+    {
+      "file": "raw/naamsa/2025-08_20250815-naamsa-Quarter-2-2025-Review-of-Business-Conditions.pdf",
+      "bytes": 381102,
+      "sha256": "074f24d94ec43f1f7c81ac2937772c513821db7c89d606f6f72cf9dbcd93a1ce"
+    },
+    {
+      "file": "raw/naamsa/2025-11_20251117-Industry-Vehicle-Sales-2016-2026-Actual-and-Projections.pdf",
+      "bytes": 150443,
+      "sha256": "4a61df612db6faf98ceff552f01ac73c31b190e7c71698d4baa653216e63c802"
+    },
+    {
+      "file": "raw/naamsa/2025-11_20251119-naamsa-Quarter-3-2025-Review-of-Business-Conditions.pdf",
+      "bytes": 357140,
+      "sha256": "d2626b501ee85cc66c7ab417db56dbbd7510bbcd15fbaca896cde57c07d82086"
+    },
+    {
+      "file": "raw/naamsa/2026-02_20260217-naamsa-4th-Quarter-2025-Review-of-Business-Conditions.pdf",
+      "bytes": 699376,
+      "sha256": "e8a09c6f6727b399c7711e6dd39c661632fe4dfa313d10c106fad465cf6a6181"
+    },
+    {
+      "file": "raw/naamsa/2026-02_Industry-Vehicle-Sales-2017-2027-Actual-and-Projections.pdf",
+      "bytes": 150281,
+      "sha256": "84b2dccfc05ffddffe7f186c09db933d3af0c7f1254bcffb26b463fc28630f3a"
+    },
+    {
+      "file": "raw/naamsa/2026-05_20260527-SIGNED-naamsa-1st-Quarter-2026-Review-of-Business-Conditions_E.pdf",
+      "bytes": 690441,
+      "sha256": "bbd27363ade26e48cd6cc16913797a08ac9c47c5ff29620b4924f6c867284c60"
+    },
+    {
+      "file": "raw/naamsa/2026-05_Industry-Vehicle-Sales-2017-2027-Actual-and-Projections-updated-1.pdf",
+      "bytes": 236810,
+      "sha256": "3879c76f7533cc25a61c282e5ed3cd7241cecdd09694ccd406cfc23dfeb7e1a2"
+    },
+    {
+      "file": "raw/naamsa/2026-08_20260817-Industry-Vehicle-Sales-2017-2027-Actual-and-Projections-updated.pdf",
+      "bytes": 236810,
+      "sha256": "123b87ff168ce1d714bc85e932ade0dff5f3c50bdefe7d603cb22f69a88b1b1b"
+    },
+    {
+      "file": "raw/naamsa/2026-08_20260820-naamsa-2nd-Quarter-2026-Review-of-Business-Conditions.pdf",
+      "bytes": 702802,
+      "sha256": "46a20e3d62c6a23f47ee506be0149a5c74a528e3b78b9d4bf13decaf3dd943f5"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2017-05.pdf",
+      "bytes": 112886,
+      "sha256": "5b15708cb54beddc5f9d04d24de6cd9c17fd6cd461becf803edf42669985fd41"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2017-06.pdf",
+      "bytes": 112952,
+      "sha256": "8e3ad246cc9a385dd3b7b7ecef98d06c1c27c80248e399b628ef6eef9696d152"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2017-07.pdf",
+      "bytes": 112983,
+      "sha256": "a5552ca4640de7d6483a1b98fb31442bf79c1031161f3984983a162c5bfbc440"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2017-08.pdf",
+      "bytes": 112827,
+      "sha256": "f424562e67bcd71b2e5a2b7ee4c706c24941ff0c209194def0ecb63dabf7a83f"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2017-09.pdf",
+      "bytes": 15234,
+      "sha256": "9ed8b0c64d6606ae75a4f4deac829b563e3cbe7774e36c108750f977e8525025"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2017-11.pdf",
+      "bytes": 115280,
+      "sha256": "9d42a8c78bcf6e69ec3ed475189c19911c728ee252d3ce40730b5d6bf71b167c"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2017-12.pdf",
+      "bytes": 115936,
+      "sha256": "6508278564f53f9e2348bb72f891cae4d74237fc8772b3c943dfe9bd74a95ce8"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-01.pdf",
+      "bytes": 115972,
+      "sha256": "8b588c3c8d71e6b8a82319b36650fe03e368b9879138795ebdcab64b134a1a9b"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-02.pdf",
+      "bytes": 115310,
+      "sha256": "68377f555dca5e00bcbcbb0e0db902694ca0018c04ae3ba49370eea5fb740619"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-03.pdf",
+      "bytes": 115953,
+      "sha256": "f1357218fde102c1dd37f2afaf91178f12d60370cdf66be994feb2d30d9123ec"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-04.pdf",
+      "bytes": 115913,
+      "sha256": "fb72b70063b098a373d050effbe8ba899b9dded631481556453ef2309b57582c"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-05.pdf",
+      "bytes": 115317,
+      "sha256": "0ed850ca90f634f31658e1dddc07cf1b08d4162564a6e6c3e662fcd780c46b0a"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-06.pdf",
+      "bytes": 116191,
+      "sha256": "a34c32bdbb2dc5941b3e02411e62fa5a80d9cd529863559c01b2128c9716bcc1"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-07.pdf",
+      "bytes": 115446,
+      "sha256": "606f236cffc42ff19d324c99471680f30a73b7e4473845e7e2e4b0286de6bb68"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-08.pdf",
+      "bytes": 115344,
+      "sha256": "6b6cd341c66e16d9c289708d8bf656a68e9acdbdf3360bc8eb0c02a64766392f"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-09.pdf",
+      "bytes": 115299,
+      "sha256": "8d62f0c27d440c9a7facc41083582eadf177b32420391b18961bf7b8be44999a"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-10.pdf",
+      "bytes": 115955,
+      "sha256": "4c060e085fb1d3dba27e7d04c00b0b7117d2dbb2950cb5cc1716efc8378c4f12"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-11.pdf",
+      "bytes": 116135,
+      "sha256": "81e989cfc3df6c0d64608b1b058ac2aff429c43c7da3cd6c1116c67d4bc04296"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2018-12.pdf",
+      "bytes": 115920,
+      "sha256": "8cab15ddd6c55494ab5fc85740743436dfd456115e6154d21ac9d0a6124f6661"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-01.pdf",
+      "bytes": 116282,
+      "sha256": "f06b113f2c19b0176226103552b9351828fb30b9d8bf396d27900e698717ccc7"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-02.pdf",
+      "bytes": 116116,
+      "sha256": "fc017bb221021edc9767d91258535d14ec707e0d8eec89ae6964c68512c986d8"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-03.pdf",
+      "bytes": 115311,
+      "sha256": "9d63e76a41ecf582d93931e21593f2da0ecd73b140b51ce40c2760884121a9d6"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-04.pdf",
+      "bytes": 116036,
+      "sha256": "2bdf9cafbeb81411ce82375d32442fb19cc664c0829ba20174c448902c424c11"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-05.pdf",
+      "bytes": 115978,
+      "sha256": "c46efe1374477414da672d16589bd461eb140f0b2b0b334488c050cb71ab9fb3"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-06.pdf",
+      "bytes": 116211,
+      "sha256": "b6b95e50342858cfb5dfe774d8d10aed5c9694fcffcfb61b83a9f2f05eff38cd"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-07.pdf",
+      "bytes": 115413,
+      "sha256": "8beae259ad036ea80ab7744c8821cf6e64113dc686aef57d587129fab2313ea5"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-08.pdf",
+      "bytes": 116127,
+      "sha256": "3f5f68fc76e9c6a6beaea5e594c7cae6519bbb175453aca4de80a9ae5610f1b8"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-09.pdf",
+      "bytes": 116087,
+      "sha256": "73802d464fa527f77e9233148d8af9be332600598ab950467f902ef4f45e21ed"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-10.pdf",
+      "bytes": 116132,
+      "sha256": "808a34bf7ccba2802532d49851d057c8db06f75d15f433b48edd850a3f76f1db"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-11.pdf",
+      "bytes": 116174,
+      "sha256": "a8a98c9dd326c502ff97e8558264d767413c0b107094d7c6bbe91e77a13e71c6"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2019-12.pdf",
+      "bytes": 116010,
+      "sha256": "4b8796ec6f661e37e29cd702b9d84a9098cc0f63b494e3d6b092231ac60b73cc"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2020-01.pdf",
+      "bytes": 116760,
+      "sha256": "79f04d6d9b2e05fca91a8cdc32e9aecd542e102fb518ba7048c6cde0019b45fa"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2020-02.pdf",
+      "bytes": 115354,
+      "sha256": "c7e202baa438defd4267a7efab8e747abdf5d88840c9416a237fb70b137c69ea"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2020-03.pdf",
+      "bytes": 116703,
+      "sha256": "ab24f7d20bbe83834775fc6505dedaafdf57476cc3a6b013dc228ea2464a015e"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2020-09.pdf",
+      "bytes": 116716,
+      "sha256": "8437dc66c2979ec3f534f97d42d278bef7bf9e0948361f6a6e1c704e6b357a91"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2021-01.pdf",
+      "bytes": 116232,
+      "sha256": "dd1a8fed44742dbfc69e80ec7c0028dcfe530ae24206628a74dd08ff59eb88bd"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2021-02.pdf",
+      "bytes": 115466,
+      "sha256": "dd8b1250a30dc2ab7eae5431d4bad6a1f5498714271d1adae4133367527e73b5"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2021-03.pdf",
+      "bytes": 115387,
+      "sha256": "143ed05682a3850def4a01adb2e058285e8211186620659a6e18aa96df111355"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2021-04.pdf",
+      "bytes": 77816,
+      "sha256": "df7871fb6d71c74ec3e8abe072b674a1ec9126283ccce7dfac509ddd2b2719f5"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2021-05.pdf",
+      "bytes": 77533,
+      "sha256": "11d9ca611763de8543066db12157d065d8c6e6a57c406d40a71a2956c57df13c"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2021-06.pdf",
+      "bytes": 116231,
+      "sha256": "495d391b78b27d8f5ff616b259f8de1b9d9d26f793d29e1e249c4f5eed4cb5e6"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2021-07.pdf",
+      "bytes": 116211,
+      "sha256": "30504349cce456a27a8b041f77e5b4e41586e41dedb49e3f17731b7535d0ef26"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2021-08.pdf",
+      "bytes": 116148,
+      "sha256": "119bb9ebb38c8936d50f42049379afb8e3a38e4f71e1585f898c8b838cbc2bba"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2021-09.pdf",
+      "bytes": 116137,
+      "sha256": "7bfd340ef9fef8fdede3a5562e3e03c64a0154db127c2370787a3b9070d4035b"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2021-10.pdf",
+      "bytes": 116665,
+      "sha256": "895b455896a68b3c76174fb53ad302d37c095795948ed28aff410964f2ab1a5a"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-02.pdf",
+      "bytes": 116665,
+      "sha256": "ef9960f6b06ef5d8fee15f993008b3a05417af21a990158549e2cf8868de32e4"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-03.pdf",
+      "bytes": 116687,
+      "sha256": "07b675f34f2ddaebfbe3f487b010d8f4ba07a73938c91e636cf35397a18b3a53"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-04.pdf",
+      "bytes": 116636,
+      "sha256": "4df69973c05dd9e0902242a265c66c895a402411cd0898fd824c1dbd55b3db30"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-05.pdf",
+      "bytes": 115451,
+      "sha256": "8d80e57009f5e22173b2f45969601012589396ea263d545d361825bca194b722"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-06.pdf",
+      "bytes": 116787,
+      "sha256": "1c5be0d1c22721a80c2601cc9f60b5fbb92359c584fc8278c514feb46f991824"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-07.pdf",
+      "bytes": 115493,
+      "sha256": "ead99782cd4b4f8164274d99038ba10870eb27b7661959d8b30f50aaaa0210e9"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-08.pdf",
+      "bytes": 116682,
+      "sha256": "d6529407d1dfd3494da214f35942c6dd5ef39ba686e863805592b4782c94026d"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-09.pdf",
+      "bytes": 116694,
+      "sha256": "a305c286b1e32feaf5133feefe899dad9addc038ec0a73ed96bef075a79c9bcc"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-10.pdf",
+      "bytes": 116731,
+      "sha256": "d07cb12f05ba8ea6259d05092eff749f28ff3ab133c2c56e595e24cf126ad181"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-11.pdf",
+      "bytes": 116708,
+      "sha256": "6946a56d66896dfcb369649bc3c2927f549ca3b9d48b4cfd8288bada171715e0"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2022-12.pdf",
+      "bytes": 116617,
+      "sha256": "121712d7cd333bdb1015ef17bbb88f990cbc9f2f2a420c96bf3999c7970fce68"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-01.pdf",
+      "bytes": 116762,
+      "sha256": "0493eef68d79cb6abdb1acf811ec07e73bd78e8f6ebd8c7e8e26b7d75cbc23e5"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-02.pdf",
+      "bytes": 116652,
+      "sha256": "2ef79a445d94fcc827e61ee562fa30448bf8d1cd75d9271770b54b8b415f9746"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-03.pdf",
+      "bytes": 116670,
+      "sha256": "fb440c1daf5fa79490cc378a123135d6beab81eea655a1c43b3af52823984aaa"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-04.pdf",
+      "bytes": 116643,
+      "sha256": "f3f9ae8c5155f6edf14a3949a927a3169741a080740882a910f88416e077bdc8"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-05.pdf",
+      "bytes": 143845,
+      "sha256": "e6c7bdfb7543d62ba26442d39e0c706fd2f0df038be3b3cb3c29033ae21ef232"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-06.pdf",
+      "bytes": 143942,
+      "sha256": "7ef366e282fa9789047d153cf508d517fe9cd8421e60ee74c70564e7e6496457"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-07.pdf",
+      "bytes": 115554,
+      "sha256": "1494d42a5fcaf21f3bf8e3ccb6327f3962db5bd677aff1bb12fd354672fc25b2"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-08.pdf",
+      "bytes": 115475,
+      "sha256": "3bad1fde38bdcb15ed0ced40d6e4b34c55a49277e7753dada4329a45efc0c50d"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-09.pdf",
+      "bytes": 115479,
+      "sha256": "35c7bd22531e87edd123df22dcfa7889c385e5846fa4e283a6b6bdc751874eec"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-10.pdf",
+      "bytes": 115472,
+      "sha256": "6625b1e378e49b4a65c21ab34e2ed71cc3f65d4c749daffd07a9c3308f3ec960"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2023-11.pdf",
+      "bytes": 115153,
+      "sha256": "4b0b36ffc5b4e1e0b86ddab1e29942c048dc1878833588e85cb545e45fb9f047"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-01.pdf",
+      "bytes": 115456,
+      "sha256": "84b326035b2df22c773e8c458c14faaf50cad7df8d34f10d2872dec532ffeac4"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-02.pdf",
+      "bytes": 115321,
+      "sha256": "4b2421be262a5ac4710f6b1ca60434c3c133f1d74fde2074e17f18070c7feb39"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-03.pdf",
+      "bytes": 115369,
+      "sha256": "9b1b312a3afbbfbcccac165f1e298e0c98c8bb8c18cf88cbe52de2a07ca55489"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-04.pdf",
+      "bytes": 115251,
+      "sha256": "f11276741fdce495a7c731ee8332317c296dae44b8546f1786e00c4763418aa2"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-05.pdf",
+      "bytes": 115379,
+      "sha256": "ff9af2524dc67af0c9fc3e7c8ac6b13c92a4ee2c9c28fb2418bd5b446b13b5e2"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-06.pdf",
+      "bytes": 115315,
+      "sha256": "3bb4f2b7474e724ba3fddd156f4a3a89400f9b3b436fa96c9c8d449fedbb6ec4"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-07.pdf",
+      "bytes": 115699,
+      "sha256": "07d72c0680a98f87d07e2302b29ac6dd6866afea688d03bd44bf88db53896784"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-08.pdf",
+      "bytes": 115261,
+      "sha256": "4ed7e80f8859721f44f8e5981f71d63b50a336fc145ca5c1296b0420c3c451d7"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-09.pdf",
+      "bytes": 116410,
+      "sha256": "e56262eed8ee3b7134b0a7adf05929768842fa40cc0e40f0cc42550d4c8ba3c8"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-10.pdf",
+      "bytes": 116430,
+      "sha256": "c76f81e12d9c338e23b72211cfe3a9fa841f9f48e9aa2bebd343407baa52d8f0"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-11.pdf",
+      "bytes": 116410,
+      "sha256": "4ca29f52fb6d6f9e4ba43eb2ea05956366b0da9785575ddc49fb7732621059c6"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2024-12.pdf",
+      "bytes": 116243,
+      "sha256": "72c796cca8ce1f48c3c86d71beb81f70c3056602534f1644f2b1c4d1a8fcfc14"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-01.pdf",
+      "bytes": 116517,
+      "sha256": "6d4baaaa54dd95e874fae8de8cce666225d594b22e22d8c2a30b973831dfa2c9"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-02.pdf",
+      "bytes": 116474,
+      "sha256": "64f82c2b126dd51db809da38dd71d9b12e958c6e661087cd3bb3f5473837c6f6"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-03.pdf",
+      "bytes": 116387,
+      "sha256": "444eb333116d6323c4c46b92c4ef4adc62f70aa0093296be45850a6cc80076e9"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-04.pdf",
+      "bytes": 116345,
+      "sha256": "1c2155614838695b396e9fd51206192c0ba3d4191d13a1fc7d45d3a3a6abe38e"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-05.pdf",
+      "bytes": 116442,
+      "sha256": "595697e7dedef917776e56e404e6b4a3a7e04122922046baaa9ee99bf4e22ca9"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-06.pdf",
+      "bytes": 116326,
+      "sha256": "f318349f6765f0fe21a1ed898ca0847a857113f837f9f08d14278c75b347c9ce"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-07.pdf",
+      "bytes": 116394,
+      "sha256": "98fb8e861961360550183be1e3ec8a82a91afb20c78af2bec9d581cd1c5a969c"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-08.pdf",
+      "bytes": 116117,
+      "sha256": "f786ea9b6466e93403f31cbed2eff53b941df550f359ee0547c3e2981e7882b8"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-09.pdf",
+      "bytes": 116217,
+      "sha256": "fc877240409c5a929e4eee924e17303f04094bf243b65f13df509adcd2dba165"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-10.pdf",
+      "bytes": 116309,
+      "sha256": "ce8a1e2338ec1d1e51464e85351769a23744c30027ec964b9686d2bd1c03abdd"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-11.pdf",
+      "bytes": 116297,
+      "sha256": "2f631e08e234b1769a5e277baf331c7c34ff24db26806710189947b12ca4dd61"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2025-12.pdf",
+      "bytes": 116164,
+      "sha256": "31fce32f1caf01f82f9e6b4231551159cc099874ae38d74ca679f295f0a5bce5"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2026-01.pdf",
+      "bytes": 116236,
+      "sha256": "a588a50e0678c6c3f691d22f430e3ec2b982d9e5d3aab6d30e63e4c1bad1575f"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2026-02.pdf",
+      "bytes": 116364,
+      "sha256": "104996dff50b0217e4e4131654a699017f7a76074cdaa2c712b4b825043f489b"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2026-03.pdf",
+      "bytes": 116216,
+      "sha256": "c33e3976d6e5a92542280d7f62bd16e5269a6bb9c3bf68dfc215aa76c98e0e31"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2026-04.pdf",
+      "bytes": 116352,
+      "sha256": "cb0a2cb7bf20375ed20bba6b070de39744007a9e4bc99d5ee8f3aea6e0a416fa"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2026-05.pdf",
+      "bytes": 116389,
+      "sha256": "ac0bc3e96b4d50e44f7f71bb87dc9c146d602c15ba085d85bf6d4de85dfae2b9"
+    },
+    {
+      "file": "raw/natis/new_registrations/NewVehicleRegistration-2026-06.pdf",
+      "bytes": 116355,
+      "sha256": "8a70d33b701e50366de31995f6aca53faf5581b245578118ee066dfc4c941118"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-01.pdf",
+      "bytes": 116186,
+      "sha256": "5646a4cf8017b1eaf92d2c9811e4217821ef146c160ff3a8df1374cedb8a3c0f"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-02.pdf",
+      "bytes": 117705,
+      "sha256": "2fb05c5fa5b962c9d1eae476eaa4472f8967ecf954c9ce986f36ecb439339a2f"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-03.pdf",
+      "bytes": 153162,
+      "sha256": "cd97903266f33f536d85c7d25a80acc1d2e1598e5bcc1c2220a23177b7d20ae5"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-04.pdf",
+      "bytes": 153463,
+      "sha256": "32e9b1423afac618f1057ee9029db08f326ac8c0c6020906986fa51bcb6d25d0"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-05.pdf",
+      "bytes": 117634,
+      "sha256": "d0e291bbde0d73d23cec0863c00e46351e7914390b90645b5bc858bd35e0c7aa"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-06.pdf",
+      "bytes": 117717,
+      "sha256": "90b1a3a82077b3f1b6b92ce2f57b18fe9c06b5505007ef02291a3e579a45283c"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-07.pdf",
+      "bytes": 117711,
+      "sha256": "1594f69880f4cf22aff35eb6eb2df264be0a636bb0effffc7dc0f7a52d2cd842"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-08.pdf",
+      "bytes": 117695,
+      "sha256": "26d61786e75b9531f450964d7c88d33d2e97e12b008b8eb749f5640b4c6e7b34"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-09.pdf",
+      "bytes": 117663,
+      "sha256": "d938027015c83ec46ff2f4edd86ac78e5224888b7e78bd4dd251a6fd92791d2c"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-10.pdf",
+      "bytes": 117650,
+      "sha256": "c4b632d5e674f61e530fa42ea8e28a25e31190e1f59b857f03fcfd4f5db150e8"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-11.pdf",
+      "bytes": 117774,
+      "sha256": "f87b00b73044a58322b2190c8b2cd4091c424b931b22c7c161faec87bceb9eab"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2022-12.pdf",
+      "bytes": 117602,
+      "sha256": "b03d521d8b5f4af9bcca8bad785212391e774a48413db83e7ed5bd07ba307f64"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-01.pdf",
+      "bytes": 117742,
+      "sha256": "045dbeaeec885bb78d039395274da96c882fc13a9979ecab8165ec3d943a8e6a"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-02.pdf",
+      "bytes": 117747,
+      "sha256": "97ba65acb1873b7058b9be8fe72a9ff5db9efc694ff42fc384711704614b1315"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-03.pdf",
+      "bytes": 117634,
+      "sha256": "2c45c662f3ea704439dfa6950f980ab6501e2381be99bf1cfc64a045f062e1fa"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-04.pdf",
+      "bytes": 117624,
+      "sha256": "2387968704bef9228b1d725c1d7ef9a87b3db1e0321da4ee3e57a816fd53a887"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-05.pdf",
+      "bytes": 144577,
+      "sha256": "ee9a6deae2b660c589d1cc161e7a1ad2538f740cf34bf70f177804e343420a6e"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-06.pdf",
+      "bytes": 144690,
+      "sha256": "3a143224fd4bbf94697d9a71e0ba94c06c32962f84ef27ac099fda20b625fb72"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-07.pdf",
+      "bytes": 116368,
+      "sha256": "e3371e53e209aa382ac1234b411dd73e26900b3f33e6e07ac8701022724c1cb6"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-08.pdf",
+      "bytes": 116339,
+      "sha256": "0851e16d5bc5d4d488d20bc57919ed818e12889b10e5c7a5f017e24d35ccced3"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-09.pdf",
+      "bytes": 116236,
+      "sha256": "240276d29b4b1e4d7b321b5b22ba086bdb13175eaf480df11aaf90965767f59c"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-10.pdf",
+      "bytes": 116313,
+      "sha256": "18c768cb54950a0f1ea0c38243d9d0a5a358af388b134c29549636c2fcfdb008"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-11.pdf",
+      "bytes": 116131,
+      "sha256": "ddfc148c4172920592c4b78600177ad46c1c9de70ea2d5796e87e6ea90007b86"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2023-12.pdf",
+      "bytes": 116142,
+      "sha256": "85a6f2237b653305ccddde0c33a4624f1975155920669179807d120bf33a4457"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-01.pdf",
+      "bytes": 116228,
+      "sha256": "38df608289123fd7da6699c0dd64d71445abd36d273f997faf88affdf55a35ce"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-02.pdf",
+      "bytes": 116219,
+      "sha256": "782a0362ea3de5dfa6165ddb300f623b1245d53557b3d605ecb51505bd122458"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-03.pdf",
+      "bytes": 116092,
+      "sha256": "69715e65de8460332fabc1c902d4a53651d4b3f1fcc232c81e57a8ae322cec95"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-04.pdf",
+      "bytes": 116088,
+      "sha256": "a9e4b7a4f991a48775f23f0f54595ffbc4ebf8015d8a53623fbce82e09bb3552"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-05.pdf",
+      "bytes": 116151,
+      "sha256": "1ea7295a92352cb89b217088b96e0f2e07a48e0a4919cebb326f1048f8761416"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-06.pdf",
+      "bytes": 116213,
+      "sha256": "4aab70c524bb276526edcfb4e3ede533c27c31231eae3be27259c6ee8dc9a5e2"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-07.pdf",
+      "bytes": 117369,
+      "sha256": "d7bf29ed813d41d6c8182cac75e7cc790d4041bb2182cea1719f50344a1bf6c6"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-08.pdf",
+      "bytes": 116240,
+      "sha256": "d736869db1e0593cf24c271e4723ed280398a5443695b12421487f4e4789173b"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-09.pdf",
+      "bytes": 117480,
+      "sha256": "fc5aba9019268b12d0b25da03e863f82ef20d827d3c3cb49a2b12eda31f77a7c"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-10.pdf",
+      "bytes": 117535,
+      "sha256": "19c20b520cfd8b4a4a62e1c7cf38728968db6449474f06977d55a7c4eb553a46"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-11.pdf",
+      "bytes": 117466,
+      "sha256": "f0d7a9003323023f965827c9ff31edc6ce3cc2373ed0653f79667a2813dd2dd1"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2024-12.pdf",
+      "bytes": 117425,
+      "sha256": "adb84738d56ce36f32f6befecd96aefce253bcdfba2dd347fa0387e3253f7873"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-01.pdf",
+      "bytes": 117591,
+      "sha256": "da6376ab8bddb6ac45e0b7171cf973b54a438cbc9a6b33ce6d54a2ab3cf10f89"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-02.pdf",
+      "bytes": 117600,
+      "sha256": "9e8ccb4acc64751f769029af14200751e4089e6d4101f4c2a6dbd72637334630"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-03.pdf",
+      "bytes": 117483,
+      "sha256": "a01bf164a582c4be6fe084e31023b6a4ab41330c972d3e162457e6cff18a0b2d"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-04.pdf",
+      "bytes": 117470,
+      "sha256": "77b77f6667c657b4173343df619110be388119219e35b5aaae7d5f9bb5589033"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-05.pdf",
+      "bytes": 117471,
+      "sha256": "135ecc77096d1eb9a0081a47f35e4c602e0e22692c4b9d21274ecd3eabbae123"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-06.pdf",
+      "bytes": 117532,
+      "sha256": "844abb5b4008baf155a3491b3add688933cfcb792ec74aefa31781031a821010"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-07.pdf",
+      "bytes": 117540,
+      "sha256": "8792a0a442c6ba72a41394d586891b913653cf4cd73a1017e8fca0b8e2ddce37"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-08.pdf",
+      "bytes": 117568,
+      "sha256": "d27688debaf094d9ee1466eebe7aebc354bcfca5d32424b22fadd837176d1fde"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-09.pdf",
+      "bytes": 117483,
+      "sha256": "7f31219d45d57a07d0e322a47203a6fa4a31818f0aba5ba3e9820d6d18ad37e1"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-10.pdf",
+      "bytes": 117496,
+      "sha256": "8c0157995727b0a49ad492fa12bbc2b21bc86f50dc2d8d432d680725b4e1aada"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2025-11.pdf",
+      "bytes": 117500,
+      "sha256": "47189574245abdc89641db507ef4b99d7ed21e1e4b872acb343103c2bb5d45e4"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2026-01.pdf",
+      "bytes": 117604,
+      "sha256": "7e65a16d6c986c1cbbcc206c3abcf4ac9b953b62afff7b3e9428fa3f12631eef"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2026-02.pdf",
+      "bytes": 117576,
+      "sha256": "28a61174e038f2c95671e393cf85221c9464ec346eef697daed0e71cfba1af8c"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2026-03.pdf",
+      "bytes": 117524,
+      "sha256": "3b39270a8471f0d4d87ae93d6e0f49c3c42965d3c23a80668055f79f5af0ab27"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2026-04.pdf",
+      "bytes": 117490,
+      "sha256": "00e4e7954c9d84bc59045a83b5b211107db20958a8b252ec066258cf1351c2e6"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2026-05.pdf",
+      "bytes": 117535,
+      "sha256": "1edca0db0a887b101c889aecdce0dba6f06116c02d71c44e9f0315d1405828f1"
+    },
+    {
+      "file": "raw/natis/population/LiveVehPopPerClassProv-2026-06.pdf",
+      "bytes": 117583,
+      "sha256": "d894d52e9403780cd14fc7ae45b298678c00e09e0156eac9bc54acba9cd1032e"
+    },
+    {
+      "file": "raw/treasury/budget-review-2026-chapter-2.pdf",
+      "bytes": 511883,
+      "sha256": "176b33a05e0d95a5f7b3ed49a626080b218a40ff3838763a146b63c48324d7d8"
+    }
+  ]
+}

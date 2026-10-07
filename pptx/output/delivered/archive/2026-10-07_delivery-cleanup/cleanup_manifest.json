@@ -1,0 +1,148 @@
+﻿{
+    "files":  [
+                  {
+                      "from":  "pptx\\output\\delivered\\Vopak_Analyst_Kickoff.pptx",
+                      "to":  "pptx\\output\\delivered\\supporting\\Vopak_Analyst_Kickoff.pptx",
+                      "sha256":  "652E23230D9D7350BEDB8A00BB74E8AD4F1B8276A67EFC84B77B2AE33C13FAB8",
+                      "action":  "moved to supporting"
+                  },
+                  {
+                      "from":  "pptx\\output\\delivered\\Vopak_Analyst_Kickoff.pdf",
+                      "to":  "pptx\\output\\delivered\\supporting\\Vopak_Analyst_Kickoff.pdf",
+                      "sha256":  "AE9EBB2387D13D6AEABF9DDC0BD8876F2601E18E1F55C7E33F25AF19BC10D2A5",
+                      "action":  "moved to supporting"
+                  },
+                  {
+                      "from":  "pptx\\output\\delivered\\Vopak_Assumption_Inventory.pdf",
+                      "to":  "pptx\\output\\delivered\\supporting\\Vopak_Assumption_Inventory.pdf",
+                      "sha256":  "2FAC038E8424B9ACEB7096C559E35BB4F23368AFF8F258D6D69128ABF91C1936",
+                      "action":  "moved to supporting"
+                  },
+                  {
+                      "from":  "pptx\\output\\delivered\\Vopak_Manish_Handover_2026_10_06.pdf",
+                      "to":  "pptx\\output\\delivered\\supporting\\Vopak_Manish_Handover_2026_10_06.pdf",
+                      "sha256":  "3DA2731A583F16F9351BC3061907BBD7BBE2A1CCF04C1D891B59B24D9CFA326D",
+                      "action":  "moved to supporting"
+                  },
+                  {
+                      "from":  "pptx\\output\\delivered\\Vopak_market_envelope_illustrative_2026_10_06.html",
+                      "to":  "pptx\\output\\delivered\\supporting\\Vopak_market_envelope_illustrative_2026_10_06.html",
+                      "sha256":  "EEDE67AE1CB6CA3ACAAEC7D7E73E92CE8EC2734C419BCCD11E10DADAED873FC5",
+                      "action":  "moved to supporting"
+                  },
+                  {
+                      "from":  "pptx\\output\\delivered\\Vopak_market_envelope_illustrative_2026_10_06.png",
+                      "to":  "pptx\\output\\delivered\\supporting\\Vopak_market_envelope_illustrative_2026_10_06.png",
+                      "sha256":  "507326704BCB6283F1863301DFDAA43AEE4B26D083B78F4B69B83DA8670742A9",
+                      "action":  "moved to supporting"
+                  },
+                  {
+                      "from":  "pptx\\output\\delivered\\illustrative_market_catchments.csv",
+                      "to":  "pptx\\output\\delivered\\supporting\\illustrative_market_catchments.csv",
+                      "sha256":  "3E8472EE14A1C5539A6817E9BAB017F3A9A8718B9E7F1B6E989D08CE24AFE701",
+                      "action":  "moved to supporting"
+                  },
+                  {
+                      "from":  "pptx\\output\\delivered\\illustrative_national_balance.csv",
+                      "to":  "pptx\\output\\delivered\\supporting\\illustrative_national_balance.csv",
+                      "sha256":  "E3869FCBE65E7B8DB379D292BAC8F1D5CEE0183CAE2B7D9AC154DF7F76648F4A",
+                      "action":  "moved to supporting"
+                  },
+                  {
+                      "from":  "pptx\\output\\delivered\\illustrative_terminal_routes.csv",
+                      "to":  "pptx\\output\\delivered\\supporting\\illustrative_terminal_routes.csv",
+                      "sha256":  "9AEA9A702242BDA25EDD6B63111546A755F8815EC72CE97F173CEB91A42A57C3",
+                      "action":  "moved to supporting"
+                  },
+                  {
+                      "from":  "pptx\\output\\delivered\\Vopak_Week1_Convergence_Governance_2026_10_06.pptx",
+                      "to":  "pptx\\output\\delivered\\archive\\2026-10-07_delivery-cleanup\\Vopak_Week1_Convergence_Governance_2026_10_06.pptx",
+                      "sha256":  "41A826DB4D25489E8FCC5AC0E6C537572B5B650453FEA476818DBD54A5F4B03C",
+                      "action":  "archived alternate 23-page pack"
+                  },
+                  {
+                      "from":  "pptx\\output\\delivered\\Vopak_Week1_Convergence_Governance_2026_10_06.pdf",
+                      "to":  "pptx\\output\\delivered\\archive\\2026-10-07_delivery-cleanup\\Vopak_Week1_Convergence_Governance_2026_10_06.pdf",
+                      "sha256":  "36B6E8221E86ECE7DE993DD6DFB4CBD0D959191C2B592D77389760F822C0C534",
+                      "action":  "archived alternate 23-page pack"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_candidate.pdf",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_candidate.pdf",
+                      "sha256":  "D3A4DE6126832617EF9FBD829F98BFDF0073F8C4428632766AAF65AE5143C2A4",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_candidate.pptx",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_candidate.pptx",
+                      "sha256":  "000FA64E2445D0602CBC18CB6176EDA8EB07FF081B464B9A3984759FA956C2FE",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_legend_candidate.pdf",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_legend_candidate.pdf",
+                      "sha256":  "F51407EEEC1923763B91D0FF41DF3B1E99BB960FAAA6665B6A4DF689F996F188",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_legend_candidate.pptx",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_legend_candidate.pptx",
+                      "sha256":  "710C761A8E767CFA3113805D9B2C815FBE0C59EC42B71FBA4685BFC689F9D45E",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_levers_candidate.pdf",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_levers_candidate.pdf",
+                      "sha256":  "C1C6AD963272D06C96967DA870A37458C8EF6C6A6FD9D55A0006A397E53E6F26",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_levers_candidate.pptx",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_levers_candidate.pptx",
+                      "sha256":  "A0EB7C6FD14AE0C7E6E2456E2A19435812873187E9AD29F1532D8E9B62400B04",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_rebuild.pdf",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_rebuild.pdf",
+                      "sha256":  "0F9471092090C731408489E217D451744CF3992688C0CB2C3E2A8A6109529DFC",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_rebuild.pptx",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_rebuild.pptx",
+                      "sha256":  "28A4D5AC0D8EE5A692F35512097FE179A8AACB5F40DDA89293E654DA7DA8DB15",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_rebuild_check.pptx",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_rebuild_check.pptx",
+                      "sha256":  "04A1BB2D0A1BD08ED117D427386601952EB3929309CC0F6CE4120DA97C667362",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_story_final.pdf",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_story_final.pdf",
+                      "sha256":  "BABA7A2211922FDE5216E023DB93BB70C98127EA01B95DDDCAE38DE22D0FC8E4",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_story_final.pptx",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_story_final.pptx",
+                      "sha256":  "B7DD0C8F0D815C9D9CCC5C5E7E4F635A17269AC3D46EA382095C4119BF7D8EFE",
+                      "action":  "local draft archived; unshipped"
+                  },
+                  {
+                      "from":  "pptx\\output\\Vopak_Week1_Convergence_story_review.pdf",
+                      "to":  "pptx\\qa\\week1_maps\\drafts\\2026-10-07_cleanup\\Vopak_Week1_Convergence_story_review.pdf",
+                      "sha256":  "FE15382FAEDA222DEFE7219422AA60B0718F66C78192A770AF57E22703BA743D",
+                      "action":  "local draft archived; unshipped"
+                  }
+              ],
+    "canonical_pages":  30,
+    "canonical_pptx_sha256":  "710C761A8E767CFA3113805D9B2C815FBE0C59EC42B71FBA4685BFC689F9D45E",
+    "deleted_files":  0,
+    "date":  "2026-10-07",
+    "preserved":  "All moved files verified byte-for-byte; canonical deck unchanged; local model outputs, inputs and received evidence untouched",
+    "canonical_pdf_sha256":  "F51407EEEC1923763B91D0FF41DF3B1E99BB960FAAA6665B6A4DF689F996F188"
+}
