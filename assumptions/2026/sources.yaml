@@ -382,3 +382,16 @@ gdp_by_province_statssa:
     volumes; provenance in timeseries/economy.sources.yaml
   last_updated: '2026-10-06'
   shared: true
+terminal_site_assumptions:
+  register_id: REG-SOURCE-TERMINAL_SITE_ASSUMPTIONS
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: infrastructure/terminal_site_assumptions.csv
+  units: per-row unit column
+  source: NERSA licence documents, Vopak terminal pages and news release, Transnet Pipelines; each row
+    is marked evidence or estimate in its basis column. Proposed site assumptions, not accepted inputs
+  last_updated: '2026-10-07'
+  provisional: true
+  needs_verification: true
+  shared: true

@@ -293,6 +293,13 @@ TRACE: dict[str, tuple[str, ...]] = {
         "Transnet Pipelines, leasing RFPs 2026", "https://www.transnet.net/TPL-Leasing-Opportunities",
         "external/sources/transnet_tpl_leasing_2026/tpl-rfp-<site>.pdf", MAIN, "manual transcription", "none",
         "typed by hand", "pack p3, p9, p14", "", "Two of five RFPs state no product storage.", "none"),
+    "infrastructure/terminal_site_assumptions.csv": (
+        "NERSA; Vopak; Transnet Pipelines", "https://www.nersa.org.za/regulator-decisions",
+        "external/data/raw/vopak_storage_20261006/nersa-vopak-*.pdf, durban.html, lesedi.html",
+        "on manish-branch (external/data/raw/vopak_storage_20261006/)", "manual transcription", "none",
+        "typed by hand", "hand-back deck section 4", "",
+        "Site assumptions for Vopak Lesedi and Durban. Each row is marked evidence or estimate; "
+        "estimates are the analyst's.", "Nigel: agree provisional operating ranges"),
 }
 
 FIELDS = [

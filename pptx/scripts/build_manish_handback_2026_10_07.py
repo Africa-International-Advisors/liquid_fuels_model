@@ -449,6 +449,77 @@ text(s, f"Road vehicles, agriculture and industry are {sector('vehicles', 2024) 
      LEFT, 6.4, WIDTH, 0.6, 11, True, BLUE)
 set_note(s, SECTOR_NOTE)
 
+# --- 4 Tank handling ---------------------------------------------------------
+SITES = REPO / "assumptions/2026/infrastructure/terminal_site_assumptions.csv"
+with SITES.open(encoding="utf-8", newline="") as fh:
+    SITE_ROWS = list(csv.DictReader(fh))
+SITE_NOTE = ("Source: terminal_site_assumptions.csv and tank_handling_site_assumptions_2026-10-07.md on "
+             "manish-branch; NERSA licence documents, Vopak and Transnet. No Vopak operating data used.")
+
+
+def site(site_id, parameter, product=None):
+    return sum(float(r["value"]) for r in SITE_ROWS
+               if r["site_id"] == site_id and r["parameter"] == parameter and (product is None or r["product"] == product))
+
+
+def handling(capacity, turns):
+    return " / ".join(f"{capacity * t * 12 / 1e6:.1f}" for t in turns)
+
+
+lesedi_op = site("V2", "operational_capacity")
+lesedi_turns = [site("V2", f"monthly_turns_{c}") for c in ("low", "base", "high")]
+s = page(3, "Lesedi: eight loading bays cap the high case near 2.4 turns a month, not 3",
+         "Vopak Lesedi, Jameson Park | proposed site assumptions | each row marked evidence or estimate")
+table(s, [
+    ["Item", "Value", "Basis", "Source"],
+    ["Design capacity", f"{site('V2', 'design_capacity'):,.0f} m3: petrol {site('V2', 'design_capacity', 'petrol'):,.0f}, "
+     f"diesel {site('V2', 'design_capacity', 'diesel'):,.0f}, one {site('V2', 'design_capacity', 'diesel or petrol'):,.0f} "
+     "tank for either", "Evidence", "NERSA licence amendment, 6 August 2025"],
+    ["Operational capacity", f"{lesedi_op:,.0f} m3: 88,000 in the six original tanks; 18,000 assumed for each new tank",
+     "Evidence; new tanks estimated", "Vopak licence application to NERSA, 2020, p.8-9"],
+    ["Receipts", f"Pipeline only, at most {site('V2', 'receipt_limit'):,.0f} m3 an hour", "Evidence",
+     "Licence application, p.9"],
+    ["Dispatch", f"At most {site('V2', 'dispatch_limit'):,.0f} m3 an hour; 80% road, 20% pipeline. "
+     f"{site('V2', 'road_loading_bays'):.0f} bays at {site('V2', 'road_loading_rate'):.0f} m3 an hour", "Evidence",
+     "Licence application, p.9; NERSA 2025"],
+    ["Practical road dispatch", f"About {site('V2', 'road_dispatch_practical'):,.0f} m3 a month", "Estimate",
+     "Bays pumping half the time, 20 hours a day"],
+    ["Monthly turns", " / ".join(f"{t:g}" for t in lesedi_turns) + " (low / base / high), on operational capacity",
+     "Estimate", "Base from Vopak's Durban target; high from road dispatch"],
+    ["Annual handling", handling(lesedi_op, lesedi_turns) + " million m3", "Calculated",
+     "Pack today: 1.7 / 3.4 / 5.0 on gross capacity and 1 / 2 / 3 turns"],
+], [2.0, 5.1, 2.0, 2.55], height=4.0, size=10)
+text(s, "Still needed from Vopak: twelve months of outbound volume by product and mode, the new tanks' "
+        "operational capacity and loading hours. These replace every estimate above.",
+     LEFT, 6.4, WIDTH, 0.6, 11, True, BLUE)
+set_note(s, SITE_NOTE)
+
+durban_op = site("V1", "operational_capacity")
+durban_turns = [site("V1", f"monthly_turns_{c}") for c in ("low", "base", "high")]
+trunk_month = site("V1", "pipeline_dispatch_ceiling") * 52 / 12
+s = page(3, "Durban: fuel tanks are under half the site, so handling is far below the gross-capacity figure",
+         "Vopak Durban, Island View | proposed site assumptions | each row marked evidence or estimate")
+table(s, [
+    ["Item", "Value", "Basis", "Source"],
+    ["Gross capacity", f"{site('V1', 'gross_capacity'):,.0f} m3 for petroleum, chemicals and oleochemicals", "Evidence",
+     "Vopak terminal page, checked 6 October 2026"],
+    ["Built for petrol and diesel", f"{site('V1', 'design_capacity'):,.0f} m3 in ten tanks; a floor, older tanks not counted",
+     "Evidence", "Vopak news release, 17 February 2017"],
+    ["Operational capacity, fuel", f"{durban_op:,.0f} m3", "Estimate", "90% of design, as at Lesedi"],
+    ["Receipts and dispatch", "Vessel (five berths), pipeline, rail, truck. No rate published for any mode",
+     "Evidence; rates not found", "Vopak terminal page"],
+    ["Pipeline to Gauteng", f"{site('V1', 'pipeline_dispatch_ceiling'):,.0f} m3 a week for all shippers and products",
+     "Evidence", "Transnet Pipelines, 24 inch trunk line"],
+    ["Monthly turns", " / ".join(f"{t:g}" for t in durban_turns) + " (low / base / high), on operational fuel capacity",
+     "Evidence of intent", "Vopak to NERSA: 'targeting 2-3 throughputs in Durban'"],
+    ["Annual handling, fuel", handling(durban_op, durban_turns) + " million m3", "Calculated",
+     "Pack today: 4.3 / 8.6 / 13.0 on gross capacity"],
+], [2.0, 5.1, 2.0, 2.55], height=4.0, size=10)
+text(s, f"The high case needs {durban_op * durban_turns[2]:,.0f} m3 a month, {durban_op * durban_turns[2] / trunk_month:.0%} "
+        "of the whole trunk line if it all went inland by pipe. Durban-to-Lesedi volume is handled at both "
+        "sites and must be counted once.", LEFT, 6.4, WIDTH, 0.6, 11, True, BLUE)
+set_note(s, SITE_NOTE)
+
 # --- order, navigation, bounds ----------------------------------------------
 ids = prs.slides._sldIdLst
 closing_id = ids[1]
