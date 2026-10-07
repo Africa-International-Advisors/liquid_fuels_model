@@ -76,17 +76,22 @@ def with_placeholders(vintage: str, scenario: str) -> dict[tuple[int, str, str],
                 os.environ["LFM_ASSUMPTIONS_DIR"] = previous
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    parser.add_argument("--vintage", required=True)
-    args = parser.parse_args()
+def build_rows(vintage: str, scenarios: tuple[str, ...]) -> list[dict]:
     rows = []
-    for scenario in SCENARIOS:
-        new, old = segment_volumes(args.vintage, scenario), with_placeholders(args.vintage, scenario)
+    for scenario in scenarios:
+        new, old = segment_volumes(vintage, scenario), with_placeholders(vintage, scenario)
         for key in sorted(new):
             rows.append({"scenario": scenario, "period": key[0], "segment": key[1], "product": key[2],
                          "with_sourced_baselines": round(new[key]), "with_placeholders": round(old[key]),
                          "difference": round(new[key] - old[key])})
+    return rows
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    parser.add_argument("--vintage", required=True)
+    args = parser.parse_args()
+    rows = build_rows(args.vintage, SCENARIOS)
     with OUT.open("w", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()

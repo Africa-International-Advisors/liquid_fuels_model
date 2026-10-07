@@ -75,20 +75,37 @@ The same is likely true of the agriculture and mining lines.
 - The excess over recorded sales comes from power generation, not from these
   two sectors. With generation at about 1.6, the model total would be 13.4.
 
+## Sizing the on-road overlap: looked for, not found
+
+National Treasury's *Review of the Diesel Fuel Tax Refund System* (2017, kept
+in `external/data/raw/literature/`) was read for volumes claimed by sector. It
+gives none. It does confirm the mechanism: farming, forestry and on-land mining
+may claim on 80% of eligible diesel purchases, and the review names "refunds
+of the transport component for transportation that occurs on public roads" as
+a compliance concern (p.16). The 80% was set on "fiscal affordability" (p.9),
+not on a measurement of off-road use. From 1 April 2026 the share is 100%.
+
+So the scheme does not measure on-road use. As an indication of scale only: if
+20% of agriculture's and mining's diesel were on public roads, the overlap
+would be about 0.47 bn litres (20% of 1.06 plus 1.29). That is not evidence
+and no allowance is applied. SARS does not publish litres claimed by sector;
+its refund data would settle it.
+
 ## Decisions for Nigel
 
 1. Accept 1.06 (agriculture) and 1.50 (industry) as provisional starting
    values, or choose the activity-adjusted 1.40 for industry.
 2. Whether to deduct an allowance for on-road use from the two sectors. No
-   source sizes it; SARS diesel refund statistics would, and have not been
-   obtained.
+   published source sizes it; SARS's refund data by sector would, and is not
+   published.
 3. The power generation starting value, which is outside this priority but is
    the largest difference from the evidence.
 4. Whether marine gas oil belongs inside the inland diesel total.
 
 ## Not done
 
-- No allowance for on-road overlap is applied.
+- No allowance for on-road overlap is applied; the published sources do not
+  size it.
 - The balances stop at 2021; no later sector split exists.
 - The growth driver is still GDP per person for both sectors. Mining volume
   and agricultural output would fit better and are now in the inputs; that is

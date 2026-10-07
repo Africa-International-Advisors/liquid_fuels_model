@@ -360,7 +360,8 @@ for fuel in ("diesel", "jet", "petrol"):
     count = sum(r["changed"] == "yes" for r in LEVER_ROWS if r["fuel"] == fuel)
     s = page(1, FUEL_TITLES[fuel],
              f"{fuel.capitalize()} inputs | low / medium / high for 2030 and 2035 | {count} of "
-             f"{sum(r['fuel'] == fuel for r in LEVER_ROWS)} values have a proposed replacement")
+             f"{sum(r['fuel'] == fuel and r['changed'] != 'added' for r in LEVER_ROWS)} values have a proposed "
+             "replacement")
     body = [["Lever and unit", "Baseline", "2030\nlow / medium / high", "2035\nlow / medium / high",
              "Rationale and source"]]
     for (lever_fuel, lever), (label, baseline, why) in LEVER_TEXT.items():
@@ -370,6 +371,32 @@ for fuel in ("diesel", "jet", "petrol"):
     for shape in s.shapes:
         if shape.has_text_frame and shape.text_frame.text == NOTE:
             shape.text_frame.paragraphs[0].runs[0].text = LEVER_NOTE
+
+ADDED_TEXT = {
+    ("diesel", "real_fuel_price"): ("Real diesel price\n2024 = 100", "100\nwholesale, inland",
+        "Department and CEF prices over CPI: 76-120 in 2011-2025, 143 in October 2026. Boshoff (2012): response -0.13."),
+    ("diesel", "private_backup_generation"): ("Private backup generation\nbn litres a year", "Not measured",
+        "Diesel sales fell 1.2 bn litres in 2024 as load-shedding ended; grid turbines explain about 0.7. Indicative."),
+    ("petrol", "real_fuel_price"): ("Real petrol price\n2024 = 100", "100\nretail, inland",
+        "79-109 in 2011-2025, 121 in October 2026. Boshoff (2012): response -0.5, so the high case is about -10%."),
+    ("petrol", "plug_in_hybrid_new_sales_share"): ("Plug-in hybrid share\n% of new sales", "0.5\n2,810 sold, 2025",
+        "naamsa: 0.02% in 2022 to 0.47% in 2025. Extrapolates South Africa's own sales; not a forecast."),
+    ("petrol", "conventional_hybrid_new_sales_share"): ("Conventional hybrid share\n% of new sales", "2.1\n12,818 sold, 2025",
+        "naamsa: 0.77% in 2022 to 2.15% in 2025. Extrapolates South Africa's own sales; not a forecast."),
+    ("petrol", "rail_passenger_journeys"): ("Rail passenger journeys\nmillion a year", "74\n2024",
+        "Stats SA: 317 in 2017, 175 in 2019, 19 in 2022, 103 in 2025. Effect in litres cannot yet be stated."),
+    ("throughput", "exports_to_neighbours"): ("Exports to nine neighbours\nbn litres a year, petrol and diesel",
+        "1.48\n2024", "SARS: 2.66 in 2019, 1.37 in 2025; Botswana 1.05 to 0.68. Terminal throughput, not South African demand."),
+}
+s = page(1, "Seven levers added: price, backup generation, hybrids, rail passengers and neighbours",
+         "Added by the analyst; not in Nigel's file | low / medium / high for 2030 and 2035 | proposals for review")
+body = [["Lever and unit", "Baseline", "2030\nlow / medium / high", "2035\nlow / medium / high", "Rationale and source"]]
+for (lever_fuel, lever), (label, baseline, why) in ADDED_TEXT.items():
+    body.append([label, baseline, lever_values(lever_fuel, lever, "2030"), lever_values(lever_fuel, lever, "2035"), why])
+table(s, body, [2.35, 1.6, 1.75, 1.75, 4.2], y=2.2, height=4.6, size=9.5)
+for shape in s.shapes:
+    if shape.has_text_frame and shape.text_frame.text == NOTE:
+        shape.text_frame.paragraphs[0].runs[0].text = LEVER_NOTE
 
 # --- 3 Sector baselines ------------------------------------------------------
 SECTORS = REPO / "workstreams/WS1_data_validation/sector_baselines_2026-10-07.csv"

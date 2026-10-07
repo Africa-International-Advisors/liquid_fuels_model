@@ -33,6 +33,8 @@ LITRES_PER_BARREL = 158.987
 # Africa", J. Transport and Supply Chain Management. Rail-friendly general freight and what rail carried of
 # it, 2019: Department of Transport, Roadmap for the Freight Logistics System (draft 7, 2023), p.38.
 ROAD_TKM_2013 = 221.0
+NEIGHBOURS = ("Botswana", "Lesotho", "Eswatini", "Namibia", "Zimbabwe", "Mozambique", "Zambia", "Malawi",
+              "Democratic Republic Of Congo")
 RAIL_FRIENDLY_GENERAL_TKM, RAIL_GENERAL_TKM = 47.0, 18.0
 MJ_PER_BTU, MJ_PER_LITRE_ASSUMED = 0.00105506, 36.0
 FIELDS = ["fuel", "lever", "unit", "baseline", "baseline_basis", "period", "case", "proposed_by_nigel",
@@ -99,6 +101,39 @@ def baselines(ts: Path, ref: Path) -> dict:
                                 if r["fuel_type"] == "petrol")
     b["petrol_sales_2023"] = next(float(r["value"]) for r in _read(ts / "fuel_sales_department.csv")
                                   if r["period"] == "2023" and r["product"] == "petrol")
+
+    # Inputs for the levers added by the analyst.
+    cpi, journeys = {}, defaultdict(list)
+    for r in _read(ts / "activity_statssa_monthly.csv"):
+        if r["series"] == "consumer_price_index_headline":
+            cpi[r["period"]] = float(r["value"])
+        elif r["series"] == "passenger_journeys_rail":
+            journeys[int(r["period"][:4])].append(float(r["value"]) / 1000)
+    b["rail_journeys"] = {y: sum(v) for y, v in journeys.items() if len(v) == 12}      # millions a year
+    latest_cpi = cpi[max(cpi)]
+    real = {"petrol_95_inland_retail": defaultdict(list), "diesel_005_inland_wholesale": defaultdict(list)}
+    for r in _read(ts / "fuel_prices_department.csv"):
+        if r["series"] in real and r["value"]:
+            deflated = float(r["value"]) / cpi.get(r["period"], latest_cpi)
+            real[r["series"]][r["period"][:4]].append(deflated)
+            real[r["series"]][r["period"]] = [deflated]
+    b["real_price"] = {}
+    for key, series in (("petrol", "petrol_95_inland_retail"), ("diesel", "diesel_005_inland_wholesale")):
+        base = sum(real[series]["2024"]) / len(real[series]["2024"])
+        annual = {int(k): sum(v) / len(v) / base * 100 for k, v in real[series].items() if len(k) == 4 and int(k) <= 2025}
+        b["real_price"][key] = {"annual": annual, "oct_2026": real[series]["2026-10"][0] / base * 100}
+    exports = defaultdict(float)
+    for r in _read(ts / "fuel_trade_sars_by_partner.csv"):
+        if (r["flow"] == "export" and r["product"] in ("petrol", "diesel") and r["unit"] == "litres"
+                and int(r["months_reported"]) and r["partner"] in NEIGHBOURS and int(r["period"]) <= 2025):
+            exports[(int(r["period"]), "all")] += float(r["value"]) / 1e9
+            if r["partner"] == "Botswana":
+                exports[(int(r["period"]), "Botswana")] += float(r["value"]) / 1e9
+    b["neighbours"] = dict(exports)
+    market = {int(r["period"]): float(r["value"]) for r in _read(ts / "new_vehicle_market_naamsa.csv")
+              if r["segment"] == "total" and r["basis"] != "projection"}
+    b["hybrid_share"] = {kind: {y: nev[(y, kind)] / market[y] * 100 for y in range(2022, 2026)}
+                         for kind in ("traditional_hybrid", "plug_in_hybrid")}
 
     capacity = {r["asset"]: float(r["value"]) / 1000 for r in _read(ts / "refinery_capacity_reported.csv")
                 if r["period"] == "2024"}
@@ -259,7 +294,79 @@ def review(b: dict) -> dict[tuple[str, str], dict]:
     }
 
 
-def build(proposed: list[dict], notes: dict) -> list[dict]:
+def additional(b: dict) -> list[dict]:
+    """Levers the analyst adds to the tables; not in Nigel's proposed file. Values are ``{case: (2030, 2035)}``."""
+    price, journeys, exports = b["real_price"], b["rail_journeys"], b["neighbours"]
+    hybrid = b["hybrid_share"]["traditional_hybrid"]
+    plug_in = b["hybrid_share"]["plug_in_hybrid"]
+    hybrid_step = (hybrid[2025] - hybrid[2022]) / 3
+    plug_in_step, plug_in_last = (plug_in[2025] - plug_in[2022]) / 3, plug_in[2025] - plug_in[2024]
+
+    def price_lever(fuel, elasticity):
+        annual, october = price[fuel]["annual"], price[fuel]["oct_2026"]
+        low, high = round(min(annual.values()), -1), round(october, -1)
+        return {"fuel": fuel, "lever": "real_fuel_price", "unit": "index_2024_100", "baseline": "100",
+                "basis": "regulated inland price deflated by headline CPI, 2024 average",
+                "evidence": (f"Annual range 2011-2025 is {min(annual.values()):.0f} to {max(annual.values()):.0f}; October "
+                             f"2026 is {october:.0f}. Low is the bottom of that range, medium a return to 2024, high "
+                             f"October 2026 held. Boshoff (2012) puts the long-run response at {elasticity}, so the "
+                             f"high case lowers demand by about {abs(elasticity) * (high - 100):.0f}%. One study; the "
+                             "model has no price response today."),
+                "values": {"low": (low, low), "medium": (100, 100), "high": (high, high)}}
+
+    return [
+        price_lever("diesel", -0.13),
+        {"fuel": "diesel", "lever": "private_backup_generation", "unit": "bn_litres_per_year", "baseline": "not measured",
+         "basis": "no measured volume exists",
+         "evidence": ("Recorded diesel sales fell by 1.2 bn litres between 2023 and 2024 as load-shedding ended; grid "
+                      "turbines account for about 0.7 of that at 0.31 litres per kWh, leaving about 0.5 that may be "
+                      "private generators. Indicative only: other causes are not excluded. High is load-shedding "
+                      "returning at 2023 intensity. Move together with diesel power generation."),
+         "values": {"low": (0, 0), "medium": (0, 0), "high": (0.5, 0.5)}},
+        price_lever("petrol", -0.5),
+        {"fuel": "petrol", "lever": "plug_in_hybrid_new_sales_share", "unit": "percent", "baseline": f"{plug_in[2025]:.1f}",
+         "basis": "share of all new vehicles in 2025 (naamsa)",
+         "evidence": (f"Share rose from {plug_in[2022]:.2f}% in 2022 to {plug_in[2025]:.2f}% in 2025. Low holds 2025; "
+                      f"medium adds the 2022-2025 average of {plug_in_step:.2f} points a year; high adds the 2025 "
+                      f"increase of {plug_in_last:.2f} points a year. An extrapolation of South Africa's own sales, "
+                      "not a forecast. Enters through fuel use per kilometre; the share of distance on the "
+                      "battery is unsourced."),
+         "values": {c: tuple(round(plug_in[2025] + step * n, 1) for n in (5, 10))
+                    for c, step in (("low", 0), ("medium", plug_in_step), ("high", plug_in_last))}},
+        {"fuel": "petrol", "lever": "conventional_hybrid_new_sales_share", "unit": "percent",
+         "baseline": f"{hybrid[2025]:.1f}", "basis": "share of all new vehicles in 2025 (naamsa)",
+         "evidence": (f"Share rose from {hybrid[2022]:.2f}% in 2022 to {hybrid[2024]:.2f}% in 2024 and was "
+                      f"{hybrid[2025]:.2f}% in 2025. Low holds 2025; medium adds the 2022-2025 average of "
+                      f"{hybrid_step:.2f} points a year; high adds twice that. An extrapolation of South Africa's "
+                      "own sales, not a forecast. Enters through fuel use per kilometre; the saving per vehicle "
+                      "is unsourced."),
+         "values": {c: tuple(round(hybrid[2025] + step * n, 1) for n in (5, 10))
+                    for c, step in (("low", 0), ("medium", hybrid_step), ("high", 2 * hybrid_step))}},
+        {"fuel": "petrol", "lever": "rail_passenger_journeys", "unit": "million_per_year",
+         "baseline": f"{journeys[2024]:.0f}", "basis": "rail passenger journeys in 2024 (Stats SA P7162)",
+         "evidence": (f"Journeys were {journeys[2017]:.0f} million in 2017 and {journeys[2019]:.0f} in 2019, fell to "
+                      f"{journeys[2022]:.0f} in 2022 and recovered to {journeys[2025]:.0f} in 2025. Low holds 2025; "
+                      "medium returns to 2019 by 2030 and to 2018 by 2035; high returns to 2017 by 2030 and "
+                      "holds. More rail journeys lower petrol use, but no survey covers the minibus taxi and "
+                      "car trips displaced, so the effect in litres cannot yet be stated."),
+         "values": {"low": (round(journeys[2025], -1),) * 2,
+                    "medium": (round(journeys[2019], -1), round(journeys[2018], -1)),
+                    "high": (round(journeys[2017], -1),) * 2}},
+        {"fuel": "throughput", "lever": "exports_to_neighbours", "unit": "bn_litres_per_year",
+         "baseline": f"{exports[(2024, 'all')]:.2f}",
+         "basis": "petrol and diesel exported to nine neighbouring countries in 2024 (SARS customs)",
+         "evidence": (f"{exports[(2019, 'all')]:.2f} bn litres in 2019, {exports[(2023, 'all')]:.2f} in 2023 and "
+                      f"{exports[(2025, 'all')]:.2f} in 2025. Botswana took {exports[(2023, 'Botswana')]:.2f} in 2023 and "
+                      f"{exports[(2025, 'Botswana')]:.2f} in 2025 and has said it is moving to Walvis Bay and Maputo. Low "
+                      "is 2025 with Botswana gone; medium holds 2025; high returns to 2023. This is throughput for "
+                      "South African terminals, not South African demand, and must not be added to it."),
+         "values": {"low": (round(exports[(2025, "all")] - exports[(2025, "Botswana")], 1),) * 2,
+                    "medium": (round(exports[(2025, "all")], 1),) * 2,
+                    "high": (round(exports[(2023, "all")], 1),) * 2}},
+    ]
+
+
+def build(proposed: list[dict], notes: dict, extra: list[dict] | None = None) -> list[dict]:
     rows = []
     for r in proposed:
         note = notes[(r["fuel"], r["lever"])]
@@ -270,6 +377,14 @@ def build(proposed: list[dict], notes: dict) -> list[dict]:
             "baseline_basis": note["basis"], "period": r["period"], "case": r["case"],
             "proposed_by_nigel": r["value"], "analyst_value": r["value"] if value is None else f"{value:g}",
             "changed": "yes" if value is not None and float(value) != given else "no", "evidence": note["evidence"]})
+    for lever in extra or []:
+        for index, year in enumerate(YEARS):
+            for case in CASES:
+                rows.append({
+                    "fuel": lever["fuel"], "lever": lever["lever"], "unit": lever["unit"], "baseline": lever["baseline"],
+                    "baseline_basis": lever["basis"], "period": year, "case": case, "proposed_by_nigel": "",
+                    "analyst_value": f"{lever['values'][case][index]:g}", "changed": "added",
+                    "evidence": lever["evidence"]})
     return rows
 
 
@@ -279,10 +394,11 @@ def markdown(rows: list[dict]) -> str:
         for case in CASES:
             r = next(x for x in lever_rows if x["period"] == year and x["case"] == case)
             parts.append(f'{r["proposed_by_nigel"]} → **{r["analyst_value"]}**' if r["changed"] == "yes"
-                         else r["proposed_by_nigel"])
+                         else f'**{r["analyst_value"]}**' if r["changed"] == "added" else r["proposed_by_nigel"])
         return " / ".join(parts)
 
     changed = sum(r["changed"] == "yes" for r in rows)
+    added = len({(r["fuel"], r["lever"]) for r in rows if r["changed"] == "added"})
     out = ["# Diesel, jet and petrol input tables: analyst response, 7 October 2026", "",
            "Priority 2 on Manish's focus page (Convergence pack p24). Built by",
            "`python -m lfm.scripts.build_fuel_lever_response --vintage 2026`; the same content, one row per",
@@ -291,9 +407,13 @@ def markdown(rows: list[dict]) -> str:
            f"Of 120 proposed values, {changed} have a replacement proposed here and {120 - changed} are left as they",
            "are. Replacements are shown as proposed → **replacement**. Each baseline is computed from a",
            "registered input and is an observation unless its basis says otherwise. Cases order the input",
-           "(low / medium / high), not the resulting demand. Nothing here is an accepted input.", ""]
-    for fuel in ("diesel", "jet", "petrol"):
-        out += [f"## {fuel.capitalize()}", "",
+           "(low / medium / high), not the resulting demand. Nothing here is an accepted input.", "",
+           f"{added} levers are added by the analyst and are not in Nigel's file: real fuel price (diesel and",
+           "petrol), private backup generation, plug-in and conventional hybrids, rail passengers, and exports",
+           "to neighbours. Their values are shown in bold with no earlier value.", ""]
+    for fuel in ("diesel", "jet", "petrol", "throughput"):
+        heading = "Throughput for terminals (not South African demand)" if fuel == "throughput" else fuel.capitalize()
+        out += [f"## {heading}", "",
                 "| Lever | Unit | Baseline | Baseline basis | 2030 low / medium / high | 2035 low / medium / high |",
                 "|---|---|---|---|---|---|"]
         levers = list(dict.fromkeys(r["lever"] for r in rows if r["fuel"] == fuel))
@@ -315,13 +435,15 @@ def main() -> int:
     args = parser.parse_args()
     vintage = Paths.default().vintage_dir(args.vintage)
     proposed = _read(vintage / "timeseries" / PROPOSED)
-    rows = build(proposed, review(baselines(vintage / "timeseries", vintage / "reference")))
+    observed = baselines(vintage / "timeseries", vintage / "reference")
+    rows = build(proposed, review(observed), additional(observed))
     with (OUT_DIR / f"{STEM}.csv").open("w", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     (OUT_DIR / f"{STEM}.md").write_text(markdown(rows), encoding="utf-8", newline="\n")
-    print(f"wrote {len(rows)} values; {sum(r['changed'] == 'yes' for r in rows)} with a replacement", file=sys.stderr)
+    print(f"wrote {len(rows)} values; {sum(r['changed'] == 'yes' for r in rows)} with a replacement; "
+          f"{sum(r['changed'] == 'added' for r in rows)} added", file=sys.stderr)
     return 0
 
 

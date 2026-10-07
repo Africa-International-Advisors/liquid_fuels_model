@@ -3,7 +3,7 @@
 Reply to `manish_handover_2026-10-06.md`. All work is on `manish-branch`, up to
 commit `1416197`. Nothing has gone to `main`.
 
-Update deck: `pptx/output/delivered/Vopak_Manish_Handback_2026_10_06.pptx` (PDF
+Update deck: `pptx/output/delivered/supporting/Vopak_Manish_Handback_2026_10_06.pptx` (PDF
 alongside). It covers the five packages, the lever sheet and the decisions
 below. It was built before the provincial GDP and 2015 items were closed, so
 it does not mention them.

@@ -20,8 +20,8 @@ from pptx.oxml.ns import nsdecls, qn
 from pptx.util import Inches, Pt
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "output/delivered/Vopak_Week1_Analytical_Pack_2026_10_06.pptx"
-OUT = ROOT / "output/delivered/Vopak_Manish_Handback_2026_10_06.pptx"
+SOURCE = ROOT / "output/delivered/archive/2026-10-06_storyline/Vopak_Week1_Analytical_Pack_2026_10_06.pptx"
+OUT = ROOT / "output/delivered/supporting/Vopak_Manish_Handback_2026_10_06.pptx"
 
 FONT = "Lato"
 BLUE = RGBColor.from_string("0A2373")
@@ -31,7 +31,8 @@ GREY_FILL = RGBColor.from_string("EEEEEE")
 RULE_HEAD = RGBColor.from_string("A0A0A0")
 RULE_BODY = RGBColor.from_string("B8B8B8")
 LEFT, WIDTH = 0.5, 11.65
-NOTE = "Source: evidence notes on manish-branch, 6 October 2026. Changes are the analyst's position, pending review."
+NOTE = ("Source: evidence notes on manish-branch, 6 October 2026; diesel gap wording corrected 7 October after "
+        "Nigel's review. Changes are the analyst's position, pending review.")
 
 prs = Presentation(SOURCE)
 
@@ -124,8 +125,12 @@ def page(section, title, subtitle):
 
 
 # --- keep the supplied cover and closing pages, drop the rest ----------------
-for index in range(len(prs.slides) - 2, 0, -1):
-    drop_slide(index)
+# The base pack ends with a palette reference page; the closing page is the one before it.
+closing_index = next(i for i, slide in enumerate(prs.slides)
+                     if any(shape.has_text_frame and "Agree priorities" in shape.text_frame.text for shape in slide.shapes))
+for index in range(len(prs.slides) - 1, 0, -1):
+    if index != closing_index:
+        drop_slide(index)
 cover, closing = prs.slides[0], prs.slides[1]
 
 
@@ -154,8 +159,8 @@ table(s, [
      "The engine still reads six files, all from the Reatile workbook.", "Complete"],
     ["3 Provincial demand", "Nothing official exists after 2023-Q1; the department's own schedule promised data "
      "to end-2024. Estimate for 2023-24: petrol within 2-3%, diesel 5-11%.", "Partial: no later data exists"],
-    ["4 Fuel balance", "SARS customs data fetched by script, 2010 to August 2026. Petrol balances. "
-     "Diesel does not: 3-4 bn litres a year is supplied but not in recorded sales.",
+    ["4 Fuel balance", "SARS customs data fetched by script, 2010 to August 2026. Sales less net imports "
+     "computed by product. A diesel gap of 3-4 bn litres a year is a hypothesis to test.",
      "Partial: no product split or stocks"],
     ["5 Driver evidence", "All seven categories sourced or marked. Prices to October 2026, quarterly GDP, "
      "mining, manufacturing, freight and CPI series added.", "Complete; open rows listed"],
@@ -208,22 +213,24 @@ text(s, "03 | Botswana is sourcing less through South Africa", 7.1, 5.0, 5.0, 0.
 text(s, "Its recorded imports from South Africa fell from 1.02 to 0.63 bn litres between 2023 and 2024; "
         "SARS exports show the same direction.", 7.1, 5.35, 5.0, 0.9, 11.5)
 
-s = page(1, "More diesel is supplied than recorded sales explain",
-         "Four separate routes point to 3-4 bn litres a year | how to report it is left for Nigel and Henry")
+s = page(1, "Four indicative comparisons point to a possible diesel gap; none is matched accounting",
+         "Hypothesis to test: 3-4 bn litres a year | not added to demand | production and stocks unresolved")
 table(s, [
     ["Route", "What it shows", "Size"],
-    ["Product balance", "Sales less imports plus exports implies 1.1-1.8 bn litres of local diesel output in 2022-24, "
-     "beside 4.5-6.0 bn of petrol. The plants made 0.85 litres of diesel per litre of petrol in 2017-19.",
-     "About 3 bn a year"],
-    ["Operators' output", "Secunda, Natref and Astron report 13-14 bn litres of refined products; the balance needs "
-     "8.7 (2023) and 10.6 (2024).", "4.4 and 3.3 bn"],
+    ["Product balance", "Sales less net imports is 0.9-1.7 bn litres for diesel in 2022-24, beside 4.6-6.0 bn for "
+     "petrol. It is a balancing requirement, not output. The plants made 0.85 litres of diesel per litre of "
+     "petrol in 2017-19; that ratio need not hold now.",
+     "2.2-3.7 bn on that ratio"],
+    ["Operators' output", "Secunda, Natref and Astron report 13-14 bn litres of all refined products; the balance needs "
+     "8.7 (2023) and 10.6 (2024). Fiscal against calendar years; conversions assumed.", "4.4 and 3.3 bn"],
     ["Customs, both sides", "SARS confirms the import and export figures. Nine neighbours report importing 1.8-2.0 bn "
      "litres from South Africa against 1.6-1.9 recorded as exported.", "Exports do not explain it"],
     ["Fuel levy volumes", "SARS: levy declared on 24 bn litres in the eleven months to February 2024, against about "
-     "20 bn of recorded sales for the same months.", "About 3.9 bn"],
+     "20 bn of recorded sales for roughly the same months. The period is assumed.", "About 3.9 bn"],
 ], [2.0, 7.45, 2.2], height=3.55)
-text(s, "Likeliest reading: the fuel is real, taxed and used, and the department's sales series undercounts. "
-        "That is an inference; the levy figures are round and cover both fuels.", LEFT, 6.05, WIDTH, 0.55, 11.5, True, BLUE)
+text(s, "One reading is that the department's sales series undercounts. Stock changes, plant product mix and "
+        "mismatched periods could give the same differences. It stays a hypothesis until production and stocks "
+        "are matched.", LEFT, 6.05, WIDTH, 0.55, 11.5, True, BLUE)
 
 s = page(1, "Fuel prices have risen sharply in 2026 and the model has no price response",
          "Regulated inland prices, rand per litre | department to February 2026, Central Energy Fund sheets after")
@@ -288,7 +295,7 @@ table(s, [
     ["Decision", "Evidence in brief", "Suggestion"],
     ["Confirm the five applied changes", "Slide 3; flag log", "Accept"],
     ["2024 diesel imports and how to report the diesel gap", "Customs 10.793 bn litres; four routes to 3-4 bn",
-     "Use 10.79; report the gap as a finding"],
+     "Use 10.79; report the gap as a hypothesis"],
     ["Power diesel factor", "0.31 litres per kWh in three years against 0.244", "Adopt 0.31"],
     ["Marine baseline", "2.2 bn litres equals the department's 2007 figure; trade press now about 1 bn",
      "Hold until an official figure"],
@@ -296,7 +303,8 @@ table(s, [
      "Keep 1.0 for industry; review the vehicle mapping"],
     ["Provincial 2023-24 in the pack; 2014 and 2018 treatment", "Estimate and back-test; original cells",
      "Petrol only, labelled; national stands"],
-    ["Implied petrol output after 2021; 2019-20 balances for trade", "Balance note", "Petrol only; stop using them"],
+    ["Sales less net imports after 2021; 2019-20 balances for trade", "Balance note",
+     "Not a measure of output; stop using them"],
     ["Remaining originals; register layout", "16 datasets held locally", "Nigel's call"],
 ], [4.1, 4.55, 3.0], height=4.3, size=10.5)
 

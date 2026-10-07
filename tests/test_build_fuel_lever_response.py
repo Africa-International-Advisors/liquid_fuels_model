@@ -15,8 +15,11 @@ def _read(path):
 
 def test_response_covers_every_proposed_value_without_altering_it():
     proposed = _read(VINTAGE / "timeseries" / resp.PROPOSED)
-    rows = resp.build(proposed, resp.review(resp.baselines(VINTAGE / "timeseries", VINTAGE / "reference")))
-    assert len(rows) == len(proposed) == 120
+    observed = resp.baselines(VINTAGE / "timeseries", VINTAGE / "reference")
+    rows = resp.build(proposed, resp.review(observed), resp.additional(observed))
+    assert len(proposed) == 120
+    added = rows[120:]
+    assert len(added) == 7 * 6 and all(r["changed"] == "added" and r["proposed_by_nigel"] == "" for r in added)
     for given, row in zip(proposed, rows):
         assert (row["fuel"], row["lever"], row["period"], row["case"]) == (
             given["fuel"], given["lever"], given["period"], given["case"])
@@ -27,7 +30,8 @@ def test_response_covers_every_proposed_value_without_altering_it():
 
 def test_replacements_keep_low_medium_high_in_order():
     proposed = _read(VINTAGE / "timeseries" / resp.PROPOSED)
-    rows = resp.build(proposed, resp.review(resp.baselines(VINTAGE / "timeseries", VINTAGE / "reference")))
+    observed = resp.baselines(VINTAGE / "timeseries", VINTAGE / "reference")
+    rows = resp.build(proposed, resp.review(observed), resp.additional(observed))
     by_lever = {}
     for row in rows:
         by_lever.setdefault((row["fuel"], row["lever"], row["period"]), {})[row["case"]] = float(row["analyst_value"])
@@ -37,5 +41,6 @@ def test_replacements_keep_low_medium_high_in_order():
 
 def test_committed_response_matches_a_fresh_build():
     proposed = _read(VINTAGE / "timeseries" / resp.PROPOSED)
-    rows = resp.build(proposed, resp.review(resp.baselines(VINTAGE / "timeseries", VINTAGE / "reference")))
+    observed = resp.baselines(VINTAGE / "timeseries", VINTAGE / "reference")
+    rows = resp.build(proposed, resp.review(observed), resp.additional(observed))
     assert _read(ROOT / resp.OUT_DIR / f"{resp.STEM}.csv") == rows
