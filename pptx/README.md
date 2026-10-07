@@ -1,6 +1,6 @@
 # Liquid fuels presentations
 
-The current review story is **Convergence, 30 pages**, updated 7 October 2026.
+The current review story is **Convergence, 31 pages**, updated 7 October 2026.
 
 - [Current PDF](output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf)
 - [Matching editable PowerPoint](output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx)
@@ -9,7 +9,8 @@ The current review story is **Convergence, 30 pages**, updated 7 October 2026.
 
 The stable filenames retain the Week 1 date, 6 October. Latest changes include
 2030/2035 fuel lever proposals on pages 12-14 and legends above the driver
-plots on pages 8-9. The main story ends on page 23; appendix starts on page 24.
+plots on pages 8-9. Page 24 sets out Manish’s five priorities, expected outputs
+and Nigel’s review decisions. The main story ends there; appendix starts on page 25.
 
 ## File locations
 

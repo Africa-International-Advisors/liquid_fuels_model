@@ -1,0 +1,15 @@
+{
+  "title": "R7. Close the baseline and agree forecast inputs before integrating Manish’s handback",
+  "subtitle": "Manish’s focus | 7 October 2026 | proposed outputs and Nigel’s review decisions",
+  "rows": [
+    ["1  National balance", "Present the corrected petrol/diesel balance, source differences and missing production / stocks", "Agree 2024 sales source; review corrected SARS trade"],
+    ["2  Forecast levers", "Complete diesel, jet and petrol tables: baseline and L/M/H inputs for 2030 / 2035, with units, rationale and sources", "Challenge ranges; agree the reference case"],
+    ["3  Sector baselines", "Propose agriculture / industry starting values; identify overlaps and double counting", "Agree starting values for the model"],
+    ["4  Tank handling", "Set site assumptions for usable fuel capacity, monthly turns and receipt / dispatch limits; label evidence and estimates", "Agree provisional operating ranges"],
+    ["5  Reviewable handback", "Check pack figures against originals; refresh handback and list ready, proposed and unresolved items", "Review corrections before integration into main"]
+  ],
+  "target": "End-of-day target: a reviewed baseline, three comparable fuel input tables and an owned decision log",
+  "status": "Latest balance and EV corrections are supplied on Manish’s branch; review and integration remain outstanding.",
+  "source": "Manish handback update, 7 Oct 2026 (ef1720a); Nigel’s agreed focus table. Targets proposed; no acceptance inferred.",
+  "handback": "https://github.com/Africa-International-Advisors/liquid_fuels_model/blob/manish-branch/workstreams/WS0_governance/workplan/manish_handback_2026-10-06.md"
+}
