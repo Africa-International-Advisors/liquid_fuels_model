@@ -190,9 +190,17 @@ def show(product, year, column, places=2):
 
 
 # --- keep the supplied cover and closing pages, drop the rest ----------------
-for index in range(len(prs.slides) - 2, 0, -1):
-    drop_slide(index)
+def slide_text(slide):
+    return " ".join(shape.text_frame.text for shape in slide.shapes if shape.has_text_frame)
+
+
+# The base pack ends with a palette reference page; the closing page is the one before it.
+closing_index = next(i for i, slide in enumerate(prs.slides) if "Agree priorities" in slide_text(slide))
+for index in range(len(prs.slides) - 1, 0, -1):
+    if index != closing_index:
+        drop_slide(index)
 cover, closing = prs.slides[0], prs.slides[1]
+assert "Agree priorities" in slide_text(closing)
 
 
 def retitle(slide, replacements):
@@ -203,9 +211,9 @@ def retitle(slide, replacements):
                     run.text = replacements.get(run.text, run.text)
 
 
-retitle(cover, {"Week 1 analytical pack": "Manish hand-back",
+retitle(cover, {"6 October 2026": "7 October 2026", "Week 1 analytical pack": "Manish hand-back",
                 "South Africa | Petrol and diesel": "7 October | Baseline, fuel input tables and decision log"})
-retitle(closing, {"Agree priorities": "Review the branch", "and next steps": "and decide",
+retitle(closing, {"6 October 2026": "7 October 2026", "Agree priorities": "Review the branch", "and next steps": "and decide",
                   "Confirm demand, routes and access": "manish-branch | checks pass | nothing merged to main"})
 
 # --- 1 National balance ------------------------------------------------------
@@ -278,6 +286,90 @@ table(s, [
 text(s, "A diesel gap of 3 to 4 bn litres a year remains a hypothesis to test. It is not added to demand. "
         "Needed to close: output by product and plant, a stock series, and matched periods.",
      LEFT, 6.2, WIDTH, 0.6, 11, True, BLUE)
+
+# --- 2 Forecast levers -------------------------------------------------------
+LEVERS = REPO / "workstreams/WS2_model_development/fuel_lever_response_2026-10-07.csv"
+with LEVERS.open(encoding="utf-8", newline="") as fh:
+    LEVER_ROWS = list(csv.DictReader(fh))
+LEVER_NOTE = ("Source: fuel_lever_response_2026-10-07.md on manish-branch; Nigel's proposed inputs of 7 October are "
+              "not edited. Replacements are the analyst's proposals, pending review.")
+# (label and unit, baseline, short rationale and source); values come from the response file.
+LEVER_TEXT = {
+    ("diesel", "road_activity"): ("Road freight activity\n2024 = 100", "100\n980 Mt road payload, 2024",
+        "Stats SA road tonnes grew 2.4% a year over 2014-2024; fastest eleven years 3.7%. 175 has no precedent."),
+    ("diesel", "rail_diversion"): ("Road freight moved to rail\n% of 2024 road tonnes", "0\nrail 161 Mt, 2024",
+        "Stats SA: rail back to its 2017 peak is 7%; Transnet's 250 Mt target met in full is 9%. 15% is unsourced."),
+    ("diesel", "ocgt_generation"): ("Diesel power generation\nyear to March 2024 = 100", "100\n5,143 GWh",
+        "Eskom: year to March 2026 is already 21. Agreed."),
+    ("diesel", "new_cohort_efficiency"): ("New-vehicle efficiency gain\n% a year", "0.5 to 1.0\nregistered",
+        "Equals the registered endpoints, which have no source. Agreed for now."),
+    ("diesel", "plant_utilisation"): ("Plant utilisation\n% of capacity, all fuels", "67\nindicative, 2024",
+        "Operators' reports: Secunda 53%, Natref 71%, Astron 84%. Registered Secunda nameplate (75) is half FIASA's."),
+    ("diesel", "product_yield"): ("Diesel yield\n% of throughput", "25\nlegacy, not observed",
+        "Energy balances give 0.84-0.87 litres of diesel per litre of petrol; legacy yields imply 0.56. Unsettled."),
+    ("diesel", "restart_capacity"): ("Added refining capacity\nthousand barrels a day", "0",
+        "Conditional illustration; no investment decision sourced."),
+    ("jet", "aircraft_movements"): ("Aircraft movements\n2024 = 100", "100\n456,214 at ACSA airports",
+        "ACSA: 2019 was 112 and the 2016 peak 125. Proposed highs of 140 and 190 exceed every year on record."),
+    ("jet", "fuel_burn_per_movement"): ("Jet fuel per movement\n2024 = 100", "100\n4,090 litres",
+        "Sales over movements: the 2013-2019 average was 4,608 litres (113). High case should allow a return to it."),
+    ("jet", "saf_volume_share"): ("Sustainable fuel share\n% of jet volume", "0\nunsourced",
+        "No South African blend requirement sourced. Agreed as a sensitivity."),
+    ("jet", "plant_utilisation"): ("Plant utilisation\n% of capacity, all fuels", "67\nindicative, 2024",
+        "Same setting as diesel and petrol; count once."),
+    ("jet", "product_yield"): ("Jet yield\n% of capable throughput", "10\nlegacy",
+        "Jet was 5-8% of the five fuels produced, 2017-2021 energy balances. Agreed."),
+    ("jet", "restart_capacity"): ("Added refining capacity\nthousand barrels a day", "0",
+        "Jet capability of any restart is not established."),
+    ("petrol", "passenger_mileage"): ("Passenger mileage\nkm a vehicle a year", "17,000\nplaceholder",
+        "Stone et al. (2018): 14,457 km for petrol cars. 2023 sales over registered petrol vehicles imply about 12,900."),
+    ("petrol", "gdp_growth"): ("Real GDP growth\n% a year", "0.5\n2024 actual",
+        "Stats SA: 0.7% a year over 2014-2024, 1.6% over 2010-2019. Treasury: 2.0% by 2028. Registered cases 1.0, 1.6."),
+    ("petrol", "bev_new_sales_share"): ("Battery electric share\n% of new sales", "0.2\n1,088 sold, 2025",
+        "naamsa: sales fell in 2025. IEA: Brazil over 6%, Southeast Asia 9% in 2024. 5% by 2030 is a 27-fold rise."),
+    ("petrol", "new_cohort_efficiency"): ("New-vehicle efficiency gain\n% a year", "1.0 to 1.5\nregistered",
+        "Equals the registered endpoints, which have no source. Agreed for now."),
+    ("petrol", "plant_utilisation"): ("Plant utilisation\n% of capacity, all fuels", "67\nindicative, 2024",
+        "Same setting as diesel and jet; count once."),
+    ("petrol", "product_yield"): ("Petrol yield\n% of throughput", "45\nlegacy, not observed",
+        "Petrol was 47-50% of the five fuels produced, 2017-2021; set together with diesel, by plant."),
+    ("petrol", "restart_capacity"): ("Added refining capacity\nthousand barrels a day", "0",
+        "Conditional illustration; no investment decision sourced."),
+}
+FUEL_TITLES = {
+    "diesel": "Diesel: rail diversion and the top of the freight range need lower values",
+    "jet": "Jet: movement highs exceed every year on record; fuel per movement can also rise",
+    "petrol": "Petrol: mileage, growth and battery electric uptake all sit above the evidence",
+}
+
+
+def lever_number(value):
+    return f"{float(value):,.0f}" if float(value) >= 1000 else f"{float(value):g}"
+
+
+def lever_values(fuel, lever, year):
+    cells = {r["case"]: r for r in LEVER_ROWS if (r["fuel"], r["lever"], r["period"]) == (fuel, lever, year)}
+    order = ("low", "medium", "high")
+    mine = " / ".join(lever_number(cells[c]["analyst_value"]) for c in order)
+    if any(cells[c]["changed"] == "yes" for c in order):
+        mine += "\nwas " + " / ".join(lever_number(cells[c]["proposed_by_nigel"]) for c in order)
+    return mine
+
+
+for fuel in ("diesel", "jet", "petrol"):
+    count = sum(r["changed"] == "yes" for r in LEVER_ROWS if r["fuel"] == fuel)
+    s = page(1, FUEL_TITLES[fuel],
+             f"{fuel.capitalize()} inputs | low / medium / high for 2030 and 2035 | {count} of "
+             f"{sum(r['fuel'] == fuel for r in LEVER_ROWS)} values have a proposed replacement")
+    body = [["Lever and unit", "Baseline", "2030\nlow / medium / high", "2035\nlow / medium / high",
+             "Rationale and source"]]
+    for (lever_fuel, lever), (label, baseline, why) in LEVER_TEXT.items():
+        if lever_fuel == fuel:
+            body.append([label, baseline, lever_values(fuel, lever, "2030"), lever_values(fuel, lever, "2035"), why])
+    table(s, body, [2.35, 1.6, 1.75, 1.75, 4.2], y=2.2, height=4.6, size=9.5)
+    for shape in s.shapes:
+        if shape.has_text_frame and shape.text_frame.text == NOTE:
+            shape.text_frame.paragraphs[0].runs[0].text = LEVER_NOTE
 
 # --- order, navigation, bounds ----------------------------------------------
 ids = prs.slides._sldIdLst
