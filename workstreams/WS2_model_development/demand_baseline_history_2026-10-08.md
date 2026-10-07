@@ -68,6 +68,39 @@ The indicative figures hold the 2018-2021 average intensity and apply the
 swings by 40% between years with little change in output, which says the
 balance's sector lines are not steady enough to calibrate on without care.
 
+## Provincial sales for 2023-2025: estimated, with a tested method
+
+The department's district data stops at quarter 1 of 2023. Six ways of
+estimating provincial shares were tested against 2013-2022
+(`python -m lfm.scripts.backtest_provincial_shares --vintage 2026`; results in
+`workstreams/WS1_data_validation/provincial_share_backtest_2026-10-08.csv`).
+The score is the share points placed in the wrong province.
+
+| Method | Petrol, 1 / 2 / 3 years ahead | Diesel, 1 / 2 / 3 years ahead |
+|---|---|---|
+| Same year's quarter 1 shares | 2.5 (same year) | 5.3 (same year) |
+| Hold the last year's shares | 3.4 / 4.4 / 4.9 | 7.5 / 10.9 / 12.6 |
+| Move shares with provincial GDP | 3.2 / 4.1 / 4.7 | 7.4 / 10.6 / 12.3 |
+| Average of the last three years | 3.7 / 4.4 / 4.9 | 9.2 / 11.7 / 13.6 |
+| Extend the three-year trend | 4.4 / 6.8 / 8.4 | 7.7 / 12.0 / 16.7 |
+| Move shares with registered cars | 3.8 (one test only) | 6.1 (one test only) |
+
+Method used on the History sheet (section 6), marked as estimates:
+
+- **2023:** the quarter 1 2023 shares, which are observed, times the
+  department's national total for 2023. This is the best method tested.
+- **2024:** the 2023 shares moved with each province's share of real GDP,
+  times the 2024 national total, which is FIASA's and unverified.
+- **2025:** 2024 shares held. No national sales figure exists for 2025 from
+  any source, so the shares are shown and the volumes are blank.
+
+What the scores mean: 2.5 share points for petrol is about 1.2% of national
+volume in the wrong province. A single province can still be far out; the
+worst case in the tests was 15-18% for one province using quarter 1 shares,
+and 40% for diesel when holding shares. Diesel is roughly twice as uncertain
+as petrol by every method, because its provincial figures follow where bulk
+sales are booked. Trend extension is the worst method and should not be used.
+
 ## Not done
 
 - History starts where each source does: customs in litres from 2014,

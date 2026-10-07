@@ -32,6 +32,7 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 from lfm.config import Paths
+from lfm.scripts import backtest_provincial_shares as shares
 
 SOURCE = Path("output/delivered/Demand_baseline_workshop_2026_10_07_compact.xlsx")
 OUT = Path("output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx")
@@ -91,6 +92,13 @@ def load(ts: Path, ref: Path) -> dict:
     for r in _read(ts / "activity_statssa_monthly.csv"):
         monthly[(r["series"], int(r["period"][:4]))].append(float(r["value"]))
     d["index"] = {k: sum(v) / len(v) for k, v in monthly.items() if len(v) == 12}
+    # Estimated provincial shares after the last full year of provincial data (2022).
+    observed = shares.load(ts)
+    d["estimated_share"] = {}
+    for product in ("petrol", "diesel"):
+        y2023 = shares.share(observed["quarter1"][(product, 2023)])
+        y2024 = shares.moved(y2023, shares.share(observed["gdp"][2023]), shares.share(observed["gdp"][2024]))
+        d["estimated_share"][product] = {2023: y2023, 2024: y2024, 2025: y2024}
     d["macro"] = {(r["series"], int(r["period"])): float(r["value"]) / 1e9
                   for r in _read(ts / "macro_statssa.csv") if r["basis"] == "actual" and r["unit"].startswith("rand")}
     return d
@@ -259,6 +267,24 @@ def history_sheet(wb, d: dict) -> dict:
     s.line("Litres levied less recorded sales", ML, "Reporting formula",
            "An indication that recorded sales may undercount. A hypothesis to test; not added to demand.",
            formula=both(raf, recorded, "{c}{a}-{c}{b}"), kind="formula")
+
+    for product in ("petrol", "diesel"):
+        s.section(f"6. Estimated sales by province, 2023-2025: {product} (estimates, not observations)")
+        share_rows = {}
+        for code in PROVINCES:
+            share_rows[code] = s.line(
+                f"{PROVINCE_NAMES[code]} share of {product}", "% of national", "Proposed estimate",
+                "2023: the province's share of quarter 1 2023 sales, as observed. 2024: the 2023 share moved with the "
+                "province's share of real GDP. 2025: 2024 held.",
+                {y: d["estimated_share"][product][y][code] * 100 for y in (2023, 2024, 2025)}, kind="estimate",
+                status="Estimate", source="Department district data, quarter 1 2023; Stats SA P0441.2", fmt="0.0")
+        for code in PROVINCES:
+            s.line(f"{PROVINCE_NAMES[code]} {product}, estimated", ML, "Proposed estimate",
+                   "Estimated share times national sales used (section 4). Blank where no national figure exists.",
+                   formula=lambda y, a=share_rows[code], b=rows[f"sales_{product}"]:
+                   (f'=IF(COUNT({col(y)}{a},{col(y)}{b})<2,"",{col(y)}{a}/100*{col(y)}{b})' if y >= 2023 else None),
+                   kind="estimate", status="Estimate; 2024 also carries the unverified national total",
+                   action="Replace when the department publishes district data after 2023 quarter 1")
     return rows
 
 
@@ -428,6 +454,7 @@ def sources_sheet(wb) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--vintage", required=True)
+    parser.add_argument("--out", default=str(OUT), help="where to write the extended workbook")
     args = parser.parse_args()
     vintage = Paths.default().vintage_dir(args.vintage)
     d = load(vintage / "timeseries", vintage / "reference")
@@ -447,8 +474,8 @@ def main() -> int:
     sector_sheet(wb, d)
     differs = checks_sheet(wb, d, changes)
     sources_sheet(wb)
-    wb.save(OUT)
-    print(f"wrote {OUT}; evidence values that differ from the inputs: {differs}", file=sys.stderr)
+    wb.save(args.out)
+    print(f"wrote {args.out}; evidence values that differ from the inputs: {differs}", file=sys.stderr)
     return 0
 
 
