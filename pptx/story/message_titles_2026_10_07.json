@@ -1,0 +1,31 @@
+{
+  "scope": "Approved message-title revision. Existing numbering and exhibit content retained. No prior-engagement comparison or new forecast inferred.",
+  "titles": [
+    {"page": 3, "title": "Diesel dominates net imports; additional Vopak volumes still need customer evidence", "basis": "Overview findings: 2024 net trade and unquantified customer opportunity."},
+    {"page": 4, "title": "Net diesel imports were more than three times net petrol imports in 2024", "basis": "Existing SARS exhibit: diesel 9.997 versus petrol 3.081 bn litres."},
+    {"page": 5, "title": "Gauteng, KZN and Western Cape accounted for 68.6% of reported fuel sales in 2022", "basis": "Existing 2022 provincial petrol and diesel table; jet excluded in exhibit."},
+    {"page": 6, "title": "Gauteng led provincial sales through 2022; later estimates do not establish a shift", "basis": "Observed provincial history and explicitly held-share 2024 petrol estimates."},
+    {"page": 7, "title": "Provincial sales locate demand, but do not show where imported fuel is delivered", "basis": "Sales totals are sourced; origin split is authored illustration."},
+    {"page": 8, "title": "The car fleet grew 3% in 2025 while road-freight payload was broadly flat", "basis": "Native charts: car index 102.954 and road payload 99.528; 2024=100. No fuel-demand elasticity inferred."},
+    {"page": 9, "title": "OCGT generation fell 79% from FY2024 to FY2026, reducing a driver of diesel use", "basis": "Native Eskom+IPP generation index: 100 to 20.97997. This is generation, not a measured 79% fall in diesel litres."},
+    {"page": 10, "title": "Published refinery capacity halved between 2020 and 2022; new capacity remains conditional", "basis": "Existing capacity series: 718 to 358 thousand bbl/day; capacity distinguished from output."},
+    {"page": 11, "title": "Demand growth alone cannot determine imports, accessible volumes or storage needs", "basis": "Existing framework separates demand, domestic supply, customer access and operations."},
+    {"page": 12, "title": "Rail diversion and lower OCGT use could offset freight-led diesel growth", "basis": "Proposed lever relationships, not a calibrated forecast result."},
+    {"page": 13, "title": "Flight activity and fuel burn set jet demand; SAF changes its fossil-fuel share", "basis": "Proposed aircraft-movement, fuel-burn and volumetric SAF levers in existing table."},
+    {"page": 14, "title": "Fleet growth raises petrol demand; electrification and efficiency could offset it", "basis": "Existing proposed fleet, mileage, BEV and new-cohort efficiency relationships; no forecast magnitude inferred."},
+    {"page": 15, "title": "Road costs alone cannot establish the competitiveness of Durban and Lesedi", "basis": "Illustrative road surface excludes other delivered-cost and service factors."},
+    {"page": 16, "title": "Matola and Walvis Bay offer alternative gateways; their impact on Durban is unproven", "basis": "Published gateway storage and schematic routes; handled volumes and competitive access unresolved."},
+    {"page": 17, "title": "Published Vopak tankage does not establish spare fuel capacity at Durban or Lesedi", "basis": "Mixed-product gross capacity distinguished from compatible working space."},
+    {"page": 18, "title": "Illustrative tank handling cannot establish a regional fuel surplus or shortage", "basis": "Unverified turnover, incomplete inventory and overlapping coastal/inland flows."},
+    {"page": 19, "title": "Additional Durban and Lesedi volumes depend on customer access, not national demand alone", "basis": "Existing site implications table identifies customer destinations, routes and usable capacity evidence."},
+    {"page": 20, "title": "Baseline reconciliation and assumption review are active; forecast runs follow reviewed inputs", "basis": "Existing active-work table and stated delivery dependencies."},
+    {"page": 21, "title": "Manish's handback needs source decisions and agreed inputs before integration", "basis": "Existing proposed handback priorities and Nigel review decisions; no acceptance implied."},
+    {"page": 23, "title": "Inter-terminal transfers can count the same fuel twice and overstate unique deliveries", "basis": "Existing illustrative transfer example and stock-change qualification."},
+    {"page": 24, "title": "Route limits, commercial access and existing business reduce the addressable opportunity", "basis": "Illustrative screening waterfall; no actual opportunity quantified."},
+    {"page": 25, "title": "Additional throughput requires new tanks only if existing usable capacity is insufficient", "basis": "Illustrative stock calculation requires verified flows, inventory policy and operating constraints."},
+    {"page": 26, "title": "At fixed tankage, three monthly turns imply three times the handling of one turn", "basis": "Existing sensitivity is handling at fixed tankage, not storage sizing at fixed throughput."},
+    {"page": 27, "title": "Sales and trade establish market scale; supply origins and fuel-use attribution remain open", "basis": "Existing baseline trace table."},
+    {"page": 28, "title": "The outlook still depends on unverified rail, fleet, refinery and route assumptions", "basis": "Existing market-change trace table."},
+    {"page": 29, "title": "Vopak market share and new investment needs remain unquantified", "basis": "Existing two-row asset-outlook trace table."}
+  ]
+}

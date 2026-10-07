@@ -11,6 +11,42 @@ Proposed window: 2 October to 12 November 2026. Manish is available 100%; Nigel 
 | 5 | Validate history and sensitivities | Henry reviews constraints and access | Challenge opportunity claims and narrative | Review findings, sensitivity explanations and limitations |
 | 6 | Reproducible outputs and refresh | Bottleneck map, capacity tables and provenance | Board pack and handover | Reproduction evidence and passed or outstanding release gates |
 
+## Current progress - 7 October 2026, Week 1
+
+Nigel is broadly aligned with the revised story, as confirmed in the 7 October review. This records storyline alignment; data reconciliation, forecast assumptions and formal-use approval remain open. Current week: **5-9 October**. The next proposed progress review is **9 October**.
+
+| Area | Current position and evidence | Next concrete handback | Owner / review trigger |
+|---|---|---|---|
+| Story and review pack | Broadly aligned by Nigel. Current 30-page PPTX/PDF incorporates national time series, provincial map/history, refinery scenarios, competing gateways, logistics tests and regional workplan. | Change the story only for new evidence or specific review feedback; retain one current delivery pair. | Nigel; next evidence/story review |
+| Baseline workbook | Formula-linked compact workbook prepared and shared with Manish by Nigel. Evidence, source choice, sector blocks and demand comparisons are exposed; H/M/L is last. | Return source choices, reconciled discrepancies and owned data gaps, with cell/source references. No completed Manish review is recorded yet. | Manish / Nigel; Week 1 review |
+| SA historical demand and production | Active. Product and provincial evidence assembled; sector baselines, sales scope and comparable domestic production remain unresolved. | Reconcile selected national history and sector totals; separate observed data from model results; resolve production period/product/ownership coverage before charting it. | Manish / Nigel; before baseline adoption |
+| Assumptions and outlook | Active assumption review; current calculations remain provisional. H/M/L brackets and demand/supply axes are not signed off. | Evidence-backed low/mid/high settings with units, dates, equations and national/provincial linkage; review before forecast reruns. | Manish / Henry, Nigel decision; before input adoption |
+| Logistics and storage | Competitive and supplier-margin tests defined. Numerical breakpoints, working fuel space and achievable handling remain unverified. | Comparable customer-route costs/prices and required margins; site working-capacity/dispatch evidence. | Manish / Nigel; before quantified customer opportunity |
+| Namibia / Walvis Bay | Explicit focused assessment track, proposed Weeks 2-4. Gateway context exists; a completed assessment is not recorded. | Source inventory, corridor economics and focused implications; confirm effort within shared capacity. | Manish / Nigel; Week 2 start review |
+| Wider Africa | Explicit regional screening track, proposed Weeks 2-4; no completed shortlist recorded. | Screening criteria, evidence coverage and ranked shortlist; detailed country modelling only after prioritisation. | Nigel / Manish; Week 2 start review |
+| Delivery and version control | Stable current files retained; earlier review versions archived. Workplan dates corrected and geography made explicit. | Keep this table and the slide-plan JSON consistent when status or timing changes. | Nigel; each progress review |
+
+Current artifacts: [PDF](../../../pptx/output/delivered/Vopak_Convergence_current.pdf), [PowerPoint](../../../pptx/output/delivered/Vopak_Convergence_current.pptx), [baseline workbook](../../../output/delivered/Demand_baseline_workshop_2026_10_07_compact.xlsx). Slide-plan source: [regional delivery plan](../../../pptx/story/regional_delivery_plan_2026_10_07.json).
+
+At each review, record the dated handback, evidence link, reviewer decision, remaining blocker and next owner/action. Do not use a percentage complete without agreed acceptance criteria. No completion of regional assessments, numerical breakpoints or model validation is implied by the presentation progress.
+
+## 7 October correction: Week 1 and geographic tracks
+
+Nigel clarified that the current work is **Week 1**. The 2 October date is kickoff context, not a completed delivery week. Use W1 5-9 Oct, W2 12-16 Oct, W3 19-23 Oct, W4 26-30 Oct, W5 2-6 Nov and W6 9-12 Nov. The 12 November handover remains a proposed target, not a new commitment.
+
+| Geographic track | Proposed sequence | Intended output | Lead / support |
+|---|---|---|---|
+| South Africa baseline and assumptions | Active W1; review W2 | Reconciled opening baseline and reviewed driver inputs | Manish / Nigel |
+| South Africa demand and supply | W2 build; W3 tests; W4 draft; W5 review | Product scenarios and national import requirements | Manish / Henry |
+| South Africa access and asset implications | W2 inputs; W3 routes; W4 tests; W5 review; W6 final | Customer route economics, reachable volumes and usable capacity | Nigel / Manish |
+| Namibia / Walvis Bay | W2 source; W3 assess; W4 review | Local demand, transit flows and gateway opportunity | Manish / Nigel |
+| Wider Africa | W2-W3 screen; W4 shortlist | Comparable regional screen and priority markets | Nigel / Manish |
+| Integration and handover | Active W1; weekly updates; W4 draft; W5 review; W6 handover | One evidence-led pack across the geographic tracks | Nigel / Henry |
+
+Wider Africa covers East, West and North Africa plus SADC excluding SACU, as recorded in scope_and_roles.md. Detailed country modelling follows prioritisation and evidence. No Namibia or Africa task is claimed as already active or complete. Manish is one shared analyst; parallel work depends on capacity after the South African baseline and on source access. Specific effort allocation and client checkpoint dates remain open for Nigel to agree at the next weekly review.
+
+The editable presentation plan is [regional_delivery_plan_2026_10_07.json](../../../pptx/story/regional_delivery_plan_2026_10_07.json). Update status, timing, intended outputs and ownership there at each weekly review. An ACTIVE cell reports current work; a shaded future cell is a proposal, not progress or acceptance. The historical six-week task table above remains background; this section corrects its week-date interpretation and makes the geographic tracks explicit.
+
 ## Delivery controls
 
 WS0 resolves priorities against shared capacity. Complete one defensible route before claiming national infrastructure coverage. WS1 sources evidence; WS2 calculates fuel demand and production; WS5 calculates infrastructure feasibility; WS3 integrates reporting. WS4 supports practical delivery tasks.

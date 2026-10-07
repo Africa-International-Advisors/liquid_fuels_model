@@ -4,7 +4,7 @@
 
 Original images: [Situation ? slide 30](../../../external/partner_story_20261006/situation.png), [Complication ? slide 31](../../../external/partner_story_20261006/complication.png), [Resolution ? slide 32](../../../external/partner_story_20261006/resolution.png).
 
-Current pack: [Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf). Opening summary: page 3. Response appendices: pages 22-24.
+Current pack: [Week 1 PDF](../../../pptx/output/delivered/archive/2026-10-07_review_iterations/Vopak_Week1_Convergence_2026_10_06.pdf). Opening summary: page 3. Response appendices: pages 22-24.
 
 Trace each item as **Henry wording ? current response ? linked deep dive**. The source words are also stored in the appendix speaker notes and the [machine-readable register](../../../pptx/story/henry_question_answers_2026_10_06.json).
 

@@ -12,8 +12,8 @@ All files below are tracked and available after merging current `origin/main`.
 
 | File | Purpose |
 |---|---|
-| [Updated Week 1 PDF](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf) | The 24-page draft: overview, market baseline, market changes and Vopak outlook |
-| [Editable PowerPoint](../../../pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx) | Same story with editable charts and clickable navigation |
+| [Updated Week 1 PDF](../../../pptx/output/delivered/archive/2026-10-07_review_iterations/Vopak_Week1_Convergence_2026_10_06.pdf) | The 24-page draft: overview, market baseline, market changes and Vopak outlook |
+| [Editable PowerPoint](../../../pptx/output/delivered/archive/2026-10-07_review_iterations/Vopak_Week1_Convergence_2026_10_06.pptx) | Same story with editable charts and clickable navigation |
 | [Branch review](../../WS1_data_validation/manish_branch_review_2026-10-06.md) | Findings against `manish-branch` at `4e64c8c`; checks and baseline decisions |
 | [Morning handover](manish_handover_2026-10-06.md) | Original five-package objective: evidence before lever quantification |
 | [Morning meeting record](../meetings/2026-10-06_vopak_standup.docx) | Received stand-up transcript; meeting context, not separately approved minutes |
