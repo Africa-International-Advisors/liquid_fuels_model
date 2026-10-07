@@ -243,15 +243,16 @@ table(s, [
      f"2018 diesel: customs {show('diesel', 2018, 'imports_sars')}, FIASA {show('diesel', 2018, 'imports_fiasa')}; "
      f"petrol: {show('petrol', 2018, 'imports_sars')} and {show('petrol', 2018, 'imports_fiasa')}. "
      f"2019 diesel: {show('diesel', 2019, 'imports_sars')} and {show('diesel', 2019, 'imports_fiasa')}. "
-     "2018 exports are also lower in customs. Cause not found.",
-     "Customs", "Nigel: review; Manish to trace"],
+     "2018 exports are also lower in customs. FIASA and the department's 2018 balance share one earlier "
+     "reading; today's customs data and UN Comtrade agree with each other. No missing month or tariff line.",
+     "Customs; likely a later customs revision, not proven", "Nigel: review"],
     ["2022 diesel exports",
      f"Customs {show('diesel', 2022, 'exports_sars')}, FIASA {show('diesel', 2022, 'exports_fiasa')}.",
      "Customs", "Nigel: review"],
     ["2019 and 2020 energy balances",
      "Their import and export lines repeat the previous year's figures.",
      "Not used for trade", "Nigel: confirm"],
-], [2.3, 5.2, 2.2, 1.95], height=3.6, size=10.5)
+], [2.3, 5.2, 2.2, 1.95], height=3.6, size=10)
 text(s, "In the other years from 2014, customs and FIASA differ by 0.2 bn litres or less; the full list is in "
         "the balance note. Before 2014 customs is in kilograms or mixed units, so FIASA is used.",
      LEFT, 6.2, WIDTH, 0.6, 11)

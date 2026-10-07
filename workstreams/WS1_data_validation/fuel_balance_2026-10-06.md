@@ -226,6 +226,57 @@ department, unrecorded cross-border movement, direct supply to power or
 shipping, or stocks, or reflects plant product mix. This is a hypothesis until
 production and stocks are matched.
 
+## The 2018 and 2019 differences between customs and FIASA, traced 7 October
+
+Status: **partly traced.** The customs download is complete and internally
+consistent; the higher FIASA figure is an older reading that two publications
+share. Which entries changed cannot be shown without a customs extract from
+that time.
+
+What was checked in the customs downloads kept on this branch
+(`external/data/raw/sars/`, 2017–2020):
+
+- **No missing month.** All twelve months of 2018 and 2019 are present for
+  both products and both flows, and no month is near zero.
+- **No fuel under another tariff line.** The 2018 files contain only the lines
+  already counted; nothing of the missing size sits under an unmapped code.
+- **No unit problem.** Every 2018 and 2019 petrol and diesel line is in litres.
+- **No window that reproduces FIASA.** Adding neighbouring months (a 13- or
+  14-month year) does not give FIASA's 2018 figures for all four flows.
+
+Where each 2018 figure appears, million litres:
+
+| Source | Diesel imports | Petrol imports | Diesel exports | Petrol exports |
+|---|---|---|---|---|
+| SARS customs, downloaded October 2026 | 5,123 | 1,830 | 1,582 | 1,135 |
+| FIASA annual report (2025 edition) | 6,105 | 2,195 | 1,838 | 1,321 |
+| Department energy balance, 2018 | 6,105 | 2,195 | 1,838 | 1,321 |
+
+FIASA and the department's balance carry the same four figures to the million
+litres, so they are one reading, not two confirmations. South Africa's own
+submission to UN Comtrade agrees with today's customs data, not with that
+reading: for all lines under heading 2710.12 it reports 2018 imports of 8,020
+million litres and exports of 5,295, against 7,371 and 5,133 for the six fuel
+lines in the SARS download. The differences (649 and 162) are in line with
+2017 (681 and 230) and 2019 (785 and 172), which are the other products under
+that heading. On FIASA's figures the 2018 differences would be negative.
+Comtrade files: `external/data/raw/comtrade/`.
+
+For 2019 only diesel imports differ materially (customs 5,590, FIASA 5,858).
+December 2019 is the lowest month in the customs series (295 against a monthly
+average of 481 for January to November), which would fit a later correction to
+that month, but this is not shown.
+
+Reading: today's customs record and Comtrade agree, and the higher 2018
+figure is an earlier reading repeated in two publications. The likeliest cause
+is a later revision of customs entries, but no dated extract is held to prove
+it. Customs stays the selected source. The effect on 2018 is that sales less
+net imports is 9.00 bn litres for diesel and 10.45 for petrol, against 8.27
+and 10.27 on FIASA's figures.
+
+To settle it: a customs extract for 2018 as published in 2019, or SARS's own
+statement of revisions. Neither has been requested.
+
 ## Neighbours' own customs records, 6 October
 
 A test of whether the diesel residual leaves by land without being recorded as
