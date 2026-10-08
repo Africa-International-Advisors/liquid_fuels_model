@@ -33,6 +33,11 @@ LITRES_PER_BARREL = 158.987
 # Africa", J. Transport and Supply Chain Management. Rail-friendly general freight and what rail carried of
 # it, 2019: Department of Transport, Roadmap for the Freight Logistics System (draft 7, 2023), p.38.
 ROAD_TKM_2013 = 221.0
+# Electric share of new sales in 2025, per cent. Trucks and light commercial vehicles: International Energy
+# Agency, Global EV Outlook 2026, "Trends in other EV modes". Brazil trucks: ICCT, as reported by REGlobal.
+ELECTRIC_TRUCK_SHARE_2025 = {"Brazil": 0.4, "Europe": 3.0, "World": 9.0, "China": 25.0}
+ELECTRIC_LCV_SHARE_2025 = {"India": 1.0, "Europe": 10.0, "China": 14.0}
+TRUCK_TURNOVER = 0.06          # share of the truck fleet replaced each year; observed 6.2-8.5% for 2022-2025
 NEIGHBOURS = ("Botswana", "Lesotho", "Eswatini", "Namibia", "Zimbabwe", "Mozambique", "Zambia", "Malawi",
               "Democratic Republic Of Congo")
 RAIL_FRIENDLY_GENERAL_TKM, RAIL_GENERAL_TKM = 47.0, 18.0
@@ -294,6 +299,12 @@ def review(b: dict) -> dict[tuple[str, str], dict]:
     }
 
 
+def _fleet_share(start: float, at_2030: float, at_2035: float) -> float:
+    """Rough share of the truck fleet that is electric in 2035 if the sales share rises in straight lines."""
+    yearly = [start + (at_2030 - start) * n / 5 for n in range(1, 6)] + [at_2030 + (at_2035 - at_2030) * n / 5 for n in range(1, 6)]
+    return sum(share * TRUCK_TURNOVER for share in yearly)
+
+
 def additional(b: dict) -> list[dict]:
     """Levers the analyst adds to the tables; not in Nigel's proposed file. Values are ``{case: (2030, 2035)}``."""
     price, journeys, exports = b["real_price"], b["rail_journeys"], b["neighbours"]
@@ -323,6 +334,30 @@ def additional(b: dict) -> list[dict]:
                       "private generators. Indicative only: other causes are not excluded. High is load-shedding "
                       "returning at 2023 intensity. Move together with diesel power generation."),
          "values": {"low": (0, 0), "medium": (0, 0), "high": (0.5, 0.5)}},
+        {"fuel": "diesel", "lever": "electric_share_of_new_truck_sales", "unit": "percent", "baseline": "not reported",
+         "basis": "naamsa reports electrified sales for the whole market only; assumed close to zero",
+         "evidence": ("No South African figure exists for electric trucks sold or on the road. Benchmarks, share of "
+                      f"new truck sales in 2025: Brazil {ELECTRIC_TRUCK_SHARE_2025['Brazil']}% (ICCT); India about 800 trucks, "
+                      f"well under 1%; Europe {ELECTRIC_TRUCK_SHARE_2025['Europe']:g}%; world {ELECTRIC_TRUCK_SHARE_2025['World']:g}%; "
+                      f"China {ELECTRIC_TRUCK_SHARE_2025['China']:g}%, which is over 90% of all electric trucks sold (IEA, "
+                      "Global EV Outlook 2026). Brazil and India are the closest comparators: long hauls, little "
+                      "purchase support. Low stays at zero; medium reaches Brazil's 2025 share by 2030 and "
+                      "Europe's by 2035; high reaches Europe's by 2030 and the world average by 2035. China is "
+                      "not used. The effect on diesel is small within the horizon: about 6% of trucks are "
+                      f"replaced a year, so the high case puts roughly {_fleet_share(0, 3, 9):.1f}% of the fleet on "
+                      "electricity by 2035."),
+         "values": {"low": (0, 0), "medium": (ELECTRIC_TRUCK_SHARE_2025["Brazil"], ELECTRIC_TRUCK_SHARE_2025["Europe"]),
+                    "high": (ELECTRIC_TRUCK_SHARE_2025["Europe"], ELECTRIC_TRUCK_SHARE_2025["World"])}},
+        {"fuel": "diesel", "lever": "electric_share_of_new_light_commercial_sales", "unit": "percent",
+         "baseline": "not reported", "basis": "naamsa reports electrified sales for the whole market only; assumed close to zero",
+         "evidence": ("No South African figure by segment. Benchmarks, share of new light commercial sales in 2025: "
+                      f"India {ELECTRIC_LCV_SHARE_2025['India']:g}%, Europe {ELECTRIC_LCV_SHARE_2025['Europe']:g}%, China "
+                      f"{ELECTRIC_LCV_SHARE_2025['China']:g}% (IEA, Global EV Outlook 2026). Low stays at zero; medium reaches "
+                      "India's 2025 share by 2030 and half of Europe's by 2035; high reaches half of Europe's by "
+                      "2030 and Europe's by 2035. Light commercial vehicles are mostly bakkies here, which differ "
+                      "from the vans that dominate electric sales elsewhere, so these are loose comparators."),
+         "values": {"low": (0, 0), "medium": (ELECTRIC_LCV_SHARE_2025["India"], ELECTRIC_LCV_SHARE_2025["Europe"] / 2),
+                    "high": (ELECTRIC_LCV_SHARE_2025["Europe"] / 2, ELECTRIC_LCV_SHARE_2025["Europe"])}},
         price_lever("petrol", -0.5),
         {"fuel": "petrol", "lever": "plug_in_hybrid_new_sales_share", "unit": "percent", "baseline": f"{plug_in[2025]:.1f}",
          "basis": "share of all new vehicles in 2025 (naamsa)",
@@ -409,8 +444,9 @@ def markdown(rows: list[dict]) -> str:
            "registered input and is an observation unless its basis says otherwise. Cases order the input",
            "(low / medium / high), not the resulting demand. Nothing here is an accepted input.", "",
            f"{added} levers are added by the analyst and are not in Nigel's file: real fuel price (diesel and",
-           "petrol), private backup generation, plug-in and conventional hybrids, rail passengers, and exports",
-           "to neighbours. Their values are shown in bold with no earlier value.", ""]
+           "petrol), private backup generation, electric share of new truck and light commercial sales, plug-in",
+           "and conventional hybrids, rail passengers, and exports to neighbours. Their values are shown in bold",
+           "with no earlier value.", ""]
     for fuel in ("diesel", "jet", "petrol", "throughput"):
         heading = "Throughput for terminals (not South African demand)" if fuel == "throughput" else fuel.capitalize()
         out += [f"## {heading}", "",

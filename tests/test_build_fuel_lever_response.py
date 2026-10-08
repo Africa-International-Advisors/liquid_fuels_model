@@ -19,7 +19,7 @@ def test_response_covers_every_proposed_value_without_altering_it():
     rows = resp.build(proposed, resp.review(observed), resp.additional(observed))
     assert len(proposed) == 120
     added = rows[120:]
-    assert len(added) == 7 * 6 and all(r["changed"] == "added" and r["proposed_by_nigel"] == "" for r in added)
+    assert len(added) == 9 * 6 and all(r["changed"] == "added" and r["proposed_by_nigel"] == "" for r in added)
     for given, row in zip(proposed, rows):
         assert (row["fuel"], row["lever"], row["period"], row["case"]) == (
             given["fuel"], given["lever"], given["period"], given["case"])

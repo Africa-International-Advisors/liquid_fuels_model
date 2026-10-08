@@ -10,9 +10,10 @@ are. Replacements are shown as proposed → **replacement**. Each baseline is co
 registered input and is an observation unless its basis says otherwise. Cases order the input
 (low / medium / high), not the resulting demand. Nothing here is an accepted input.
 
-7 levers are added by the analyst and are not in Nigel's file: real fuel price (diesel and
-petrol), private backup generation, plug-in and conventional hybrids, rail passengers, and exports
-to neighbours. Their values are shown in bold with no earlier value.
+9 levers are added by the analyst and are not in Nigel's file: real fuel price (diesel and
+petrol), private backup generation, electric share of new truck and light commercial sales, plug-in
+and conventional hybrids, rail passengers, and exports to neighbours. Their values are shown in bold
+with no earlier value.
 
 ## Diesel
 
@@ -27,6 +28,8 @@ to neighbours. Their values are shown in bold with no earlier value.
 | restart_capacity | thousand_bbl_per_day | 0 | no committed addition | 0 / 0 / 0 | 0 / 0 / 400 |
 | real_fuel_price | index_2024_100 | 100 | regulated inland price deflated by headline CPI, 2024 average | **80** / **100** / **140** | **80** / **100** / **140** |
 | private_backup_generation | bn_litres_per_year | not measured | no measured volume exists | **0** / **0** / **0.5** | **0** / **0** / **0.5** |
+| electric_share_of_new_truck_sales | percent | not reported | naamsa reports electrified sales for the whole market only; assumed close to zero | **0** / **0.4** / **3** | **0** / **3** / **9** |
+| electric_share_of_new_light_commercial_sales | percent | not reported | naamsa reports electrified sales for the whole market only; assumed close to zero | **0** / **1** / **5** | **0** / **5** / **10** |
 
 Evidence and rationale:
 
@@ -39,6 +42,8 @@ Evidence and rationale:
 - **restart_capacity.** Existing conditional illustration; no investment decision, timing or product slate is sourced.
 - **real_fuel_price.** Annual range 2011-2025 is 76 to 120; October 2026 is 143. Low is the bottom of that range, medium a return to 2024, high October 2026 held. Boshoff (2012) puts the long-run response at -0.13, so the high case lowers demand by about 5%. One study; the model has no price response today.
 - **private_backup_generation.** Recorded diesel sales fell by 1.2 bn litres between 2023 and 2024 as load-shedding ended; grid turbines account for about 0.7 of that at 0.31 litres per kWh, leaving about 0.5 that may be private generators. Indicative only: other causes are not excluded. High is load-shedding returning at 2023 intensity. Move together with diesel power generation.
+- **electric_share_of_new_truck_sales.** No South African figure exists for electric trucks sold or on the road. Benchmarks, share of new truck sales in 2025: Brazil 0.4% (ICCT); India about 800 trucks, well under 1%; Europe 3%; world 9%; China 25%, which is over 90% of all electric trucks sold (IEA, Global EV Outlook 2026). Brazil and India are the closest comparators: long hauls, little purchase support. Low stays at zero; medium reaches Brazil's 2025 share by 2030 and Europe's by 2035; high reaches Europe's by 2030 and the world average by 2035. China is not used. The effect on diesel is small within the horizon: about 6% of trucks are replaced a year, so the high case puts roughly 2.5% of the fleet on electricity by 2035.
+- **electric_share_of_new_light_commercial_sales.** No South African figure by segment. Benchmarks, share of new light commercial sales in 2025: India 1%, Europe 10%, China 14% (IEA, Global EV Outlook 2026). Low stays at zero; medium reaches India's 2025 share by 2030 and half of Europe's by 2035; high reaches half of Europe's by 2030 and Europe's by 2035. Light commercial vehicles are mostly bakkies here, which differ from the vans that dominate electric sales elsewhere, so these are loose comparators.
 
 ## Jet
 

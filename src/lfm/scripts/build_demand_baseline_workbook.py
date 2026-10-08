@@ -648,6 +648,17 @@ def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> N
                               action="Diesel vehicles have doubled since 2010 while trucks grew about a quarter, so "
                                      "today's heavy share is probably lower")
 
+    s.section("3b. Heavy vehicle diesel against road freight carried")
+    tonnes = s.line("Road freight payload", "million tonnes/year", "Source observation",
+                    "Tonnes carried by road, calendar years. Tonnes, not tonne-kilometres.",
+                    {y: d["index"].get(("freight_payload_road", y), 0) * 12 / 1000 or None for y in YEARS},
+                    status="2012-2025", source="Statistics South Africa P7162")
+    s.line("Heavy vehicle diesel per tonne of road freight", "litres/tonne", "Reporting formula",
+           "Heavy vehicle diesel divided by road freight payload. This is the link from freight activity to litres: "
+           "road freight grows or shifts to rail in tonnes, and diesel follows at this intensity.",
+           formula=both(split["Heavy vehicles"], tonnes, "{c}{a}/{c}{b}"), kind="formula", fmt="0.00",
+           action="A tonne-kilometre series would be better; only 2013 is published (221 bn)")
+
     s.section("4. Checks")
     s.line("Sum of the six branches", ML, "Reporting formula", "Should equal diesel sales used.",
            formula=lambda y: (f'=IF(ISNUMBER({col(y)}{road}),{col(y)}{mining}+N({col(y)}{manufacturing})+{col(y)}{agriculture}'
@@ -714,12 +725,17 @@ GAP_STATUS = [
     ("G03", "Passenger electrification", "Narrowed",
      "Battery electric, plug-in and conventional hybrid sales and shares, 2019-2025.",
      "Passenger-only denominators; electric vehicles in the fleet after 2023; fuel saved by hybrids.", "Vehicle history, section 4"),
-    ("G04", "Road freight activity", "Open",
-     "Tonnes only. One tonne-kilometre figure (221 bn, 2013). Stats SA fuel purchases by road freight firms give a "
-     "floor of about 2.9 bn litres (2019) and 3.2 bn (2023).",
-     "An annual tonne-kilometre series; distance and payload; light commercial freight scope.", "Diesel by use, section 4"),
-    ("G05", "Freight electrification", "Open", "No truck electric or hybrid sales or stock data found.",
-     "Everything listed.", ""),
+    ("G04", "Road freight activity", "Narrowed",
+     "Heavy vehicle diesel is estimated for every year and set against road freight tonnes, giving litres per tonne. "
+     "Stats SA fuel purchases by road freight firms give a floor of about 2.9 bn litres (2019) and 3.2 bn (2023).",
+     "An annual tonne-kilometre series (only 2013 is published); distance, payload and empty running; light "
+     "commercial freight scope.", "Diesel by use, sections 3, 3b and 4"),
+    ("G05", "Freight electrification", "Proposed",
+     "No South African data on electric trucks exists, so the gap cannot be closed with observation. Benchmarks for "
+     "2025: Brazil 0.4% of new truck sales, India well under 1%, Europe 3%, world 9%, China 25%. Low / medium / high "
+     "proposed from Brazil and Europe; even the high case electrifies about 2.5% of trucks by 2035.",
+     "South African sales of electric trucks by size; duty cycles that could switch first; charging at depots.",
+     "HML response"),
     ("G06", "Manufacturing", "Narrowed",
      "Manufacturing and other industry diesel by difference, 2016-2021 (0.16-0.23 bn litres), with litres per index point.",
      "Sub-sector detail; the balance has no manufacturing lines before 2016.", "Sector history"),
@@ -743,7 +759,7 @@ GAP_STATUS = [
     ("G12", "Marine and other coverage", "Open", "Nothing new. The model's marine placeholder equals the 2007 balance figure.",
      "Everything listed.", ""),
     ("G13", "Ranges and annual forecast paths", "Proposed",
-     "Baseline, rationale and source for all 20 levers; 39 of 120 values with a proposed replacement; seven levers added.",
+     "Baseline, rationale and source for all 20 levers; 39 of 120 values with a proposed replacement; nine levers added.",
      "Agreement on the reference case and annual paths.", "HML response"),
 ]
 

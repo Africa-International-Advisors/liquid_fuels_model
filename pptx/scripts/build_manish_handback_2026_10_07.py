@@ -382,6 +382,12 @@ ADDED_TEXT = {
         "Department and CEF prices over CPI: 76-120 in 2011-2025, 143 in October 2026. Boshoff (2012): response -0.13."),
     ("diesel", "private_backup_generation"): ("Private backup generation\nbn litres a year", "Not measured",
         "Diesel sales fell 1.2 bn litres in 2024 as load-shedding ended; grid turbines explain about 0.7. Indicative."),
+    ("diesel", "electric_share_of_new_truck_sales"): ("Electric share of new trucks\n% of new truck sales", "Not reported",
+        "No South African data. 2025 benchmarks: Brazil 0.4%, Europe 3%, world 9%, China 25% (IEA; ICCT). High case is "
+        "about 2.5% of the fleet by 2035."),
+    ("diesel", "electric_share_of_new_light_commercial_sales"): ("Electric share of new light commercial\n% of new sales",
+        "Not reported", "2025 benchmarks: India 1%, Europe 10%, China 14% (IEA). Bakkies differ from vans, so loose "
+        "comparators."),
     ("petrol", "real_fuel_price"): ("Real petrol price\n2024 = 100", "100\nretail, inland",
         "79-109 in 2011-2025, 121 in October 2026. Boshoff (2012): response -0.5, so the high case is about -10%."),
     ("petrol", "plug_in_hybrid_new_sales_share"): ("Plug-in hybrid share\n% of new sales", "0.5\n2,810 sold, 2025",
@@ -393,12 +399,12 @@ ADDED_TEXT = {
     ("throughput", "exports_to_neighbours"): ("Exports to nine neighbours\nbn litres a year, petrol and diesel",
         "1.48\n2024", "SARS: 2.66 in 2019, 1.37 in 2025; Botswana 1.05 to 0.68. Terminal throughput, not South African demand."),
 }
-s = page(1, "Seven levers added: price, backup generation, hybrids, rail passengers and neighbours",
+s = page(1, "Nine levers added: price, backup generation, freight electrification, hybrids, rail and neighbours",
          "Added by the analyst; not in Nigel's file | low / medium / high for 2030 and 2035 | proposals for review")
 body = [["Lever and unit", "Baseline", "2030\nlow / medium / high", "2035\nlow / medium / high", "Rationale and source"]]
 for (lever_fuel, lever), (label, baseline, why) in ADDED_TEXT.items():
     body.append([label, baseline, lever_values(lever_fuel, lever, "2030"), lever_values(lever_fuel, lever, "2035"), why])
-table(s, body, [2.35, 1.6, 1.75, 1.75, 4.2], y=2.2, height=4.6, size=9.5)
+table(s, body, [2.6, 1.3, 1.6, 1.6, 4.55], y=2.2, height=4.7, size=8.5)
 for shape in s.shapes:
     if shape.has_text_frame and shape.text_frame.text == NOTE:
         shape.text_frame.paragraphs[0].runs[0].text = LEVER_NOTE
@@ -569,7 +575,7 @@ table(s, [
      "Balance rebuilt on customs trade with tests; source differences listed; 2018-2019 traced as far as data allows",
      "Production by product after 2021 and stocks exist in no source found"],
     ["2 Forecast levers", "Proposed",
-     "20 levers with baseline, rationale and source; 39 of 120 values with a replacement; seven levers added",
+     "20 levers with baseline, rationale and source; 39 of 120 values with a replacement; nine levers added",
      "Some baselines are placeholders; freight is in tonnes"],
     ["3 Sector baselines", "Proposed",
      "Agriculture 1.06 and industry 1.50 bn litres, with the forecast effect and an overlap table",

@@ -239,13 +239,13 @@ international flights is recorded as an export is not established. Cargo,
 aircraft mix, route length and airports outside ACSA are not separated; this
 is a starting point, not a jet model.
 
-**HML response sheet.** The 27 levers (Nigel's 20 and seven added) with
+**HML response sheet.** The 29 levers (Nigel's 20 and nine added) with
 baseline, his low / medium / high values and the analyst's, for 2030 and 2035,
 and the evidence. The HML sheet itself is unchanged.
 
 **Gap status sheet.** A status against each of the 13 gaps on the Data gaps
-sheet: nine narrowed, three open (road freight activity, freight
-electrification, marine), one proposed (ranges). None is marked closed; that
+sheet: ten narrowed, one open (marine), two proposed (freight
+electrification and ranges). None is marked closed; that
 is for the owner.
 
 **History sources sheet.** Now 25 rows, covering every added sheet, including

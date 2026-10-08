@@ -119,9 +119,9 @@ def test_diesel_by_use_splits_road_diesel_with_the_studys_shares():
 def test_lever_response_gap_status_jet_and_sources_are_in_the_workbook():
     wb = load_workbook(ROOT / build.OUT)
     levers = [row for row in wb["HML response"].iter_rows(min_row=5, values_only=True) if row[0]]
-    assert len(levers) == 27                                                 # 20 proposed levers and 7 added
+    assert len(levers) == 29                                                 # 20 proposed levers and 9 added
     results = [row[9] for row in levers]
-    assert results.count("added lever") == 7 and "replacement proposed" in results and "no change" in results
+    assert results.count("added lever") == 9 and "replacement proposed" in results and "no change" in results
     gaps = [row[0] for row in wb["Gap status"].iter_rows(min_row=5, values_only=True) if row[0]]
     assert gaps == [f"G{n:02d}" for n in range(1, 14)]
     history = _rows(wb["History"])
