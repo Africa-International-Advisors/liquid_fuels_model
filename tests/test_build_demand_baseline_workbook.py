@@ -34,7 +34,8 @@ def test_history_carries_the_registered_inputs_and_uses_formulas_for_the_balance
 def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
-        "History", "Sector history", "Diesel by use", "Vehicle history", "Checks", "History sources"]
+        "History", "Sector history", "Diesel by use", "Vehicle history", "HML response", "Gap status", "Checks",
+        "History sources"]
     changed = []
     for ws in before.worksheets:
         for row in ws.iter_rows():
@@ -113,3 +114,20 @@ def test_diesel_by_use_splits_road_diesel_with_the_studys_shares():
     assert sheet["Fuel bought by road freight businesses"][at[2023]].value == pytest.approx(d["freight_floor"][2023][0])
     for label in ("Road vehicles and uses not listed above", "Heavy vehicles", "Sum of the six branches"):
         assert str(sheet[label][at[2023]].value).startswith("="), label
+
+
+def test_lever_response_gap_status_jet_and_sources_are_in_the_workbook():
+    wb = load_workbook(ROOT / build.OUT)
+    levers = [row for row in wb["HML response"].iter_rows(min_row=5, values_only=True) if row[0]]
+    assert len(levers) == 27                                                 # 20 proposed levers and 7 added
+    results = [row[9] for row in levers]
+    assert results.count("added lever") == 7 and "replacement proposed" in results and "no change" in results
+    gaps = [row[0] for row in wb["Gap status"].iter_rows(min_row=5, values_only=True) if row[0]]
+    assert gaps == [f"G{n:02d}" for n in range(1, 14)]
+    history = _rows(wb["History"])
+    at = {year: build.FIRST - 1 + build.YEARS.index(year) for year in build.YEARS}
+    assert history["Department national file, jet"][at[2023]].value == pytest.approx(1843.97, abs=0.01)
+    assert str(history["Jet sold per aircraft movement"][at[2024]].value).startswith("=")
+    used_for = " ".join(str(row[0]) for row in wb["History sources"].iter_rows(min_row=5, values_only=True))
+    for sheet in ("History section 7", "Diesel by use", "Vehicle history", "HML response"):
+        assert sheet in used_for, sheet

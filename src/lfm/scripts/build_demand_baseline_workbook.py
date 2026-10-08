@@ -39,6 +39,7 @@ from lfm.scripts import backtest_provincial_shares as shares
 SOURCE = Path("output/delivered/Demand_baseline_workshop_2026_10_07_compact.xlsx")
 OUT = Path("output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx")
 TRACE = Path("workstreams/WS1_data_validation/source_trace_2026-10-06.csv")
+LEVERS = Path("workstreams/WS2_model_development/fuel_lever_response_2026-10-07.csv")
 YEARS = list(range(2012, 2026))
 FIRST = 6                                  # column F holds the first year, as in the other sheets
 PROVINCES = ("GP", "KZN", "WC", "EC", "MP", "FS", "NW", "LP", "NC")
@@ -139,6 +140,8 @@ def load(ts: Path, ref: Path) -> dict:
     for year, (rand_million, first, last) in ROAD_FREIGHT_FUEL_RAND.items():
         months = [v for k, v in price.items() if first <= k <= last]
         d["freight_floor"][year] = (rand_million / (sum(months) / len(months)), sum(months) / len(months))
+    d["movements"] = {int(r["period"]): float(r["value"]) for r in _read(ts / "air_traffic_acsa_annual.csv")
+                      if (r["measure"], r["flight_type"], r["direction"]) == ("aircraft_movements", "total", "total")}
     d["macro"] = {(r["series"], int(r["period"])): float(r["value"]) / 1e9
                   for r in _read(ts / "macro_statssa.csv") if r["basis"] == "actual" and r["unit"].startswith("rand")}
     return d
@@ -338,6 +341,46 @@ def history_sheet(wb, d: dict) -> dict:
                    (f'=IF(COUNT({col(y)}{a},{col(y)}{b})<2,"",{col(y)}{a}/100*{col(y)}{b})' if y >= 2023 else None),
                    kind="estimate", status="Estimate; 2024 also carries the unverified national total",
                    action="Replace when the department publishes district data after 2023 quarter 1")
+
+    s.section("7. Jet fuel: sales, trade, production and aircraft movements")
+    jet_dept = s.line("Department national file, jet", ML, "Source observation",
+                      "National annual workbook, years with four quarters reported.",
+                      {y: d["dept"].get(("jet", y)) for y in YEARS}, status="2012-2023", source=dept_src + ", national workbooks")
+    jet_fiasa = s.line("FIASA sales, jet", ML, "Comparison only", "FIASA annual report, latest edition.",
+                       {y: d["fiasa_sales"].get(("jet", y)) for y in YEARS}, kind="comparison",
+                       status="2024: 1,754 in FIASA's 2024 edition, 1,955 in its 2025 edition",
+                       source="Fuels Industry Association of South Africa, annual reports")
+    jet_sales = s.line("Sales used, jet", ML, "Reporting formula", "Department where published; otherwise FIASA, unverified.",
+                       formula=lambda y: f'=IF(ISNUMBER({col(y)}{jet_dept}),{col(y)}{jet_dept},IF(ISNUMBER({col(y)}{jet_fiasa}),{col(y)}{jet_fiasa},""))',
+                       kind="formula")
+    jet_in = s.line("Imports, jet", ML, "Source observation", "Complete years reported in litres.",
+                    {y: d["sars"].get(("import", "jet", y)) for y in YEARS},
+                    status="From 2014; 2019 blank because one month is missing", source=sars_src)
+    jet_out = s.line("Exports, jet", ML, "Source observation",
+                     "Complete years reported in litres. Whether fuel loaded onto international flights is recorded as an "
+                     "export is not established.",
+                     {y: d["sars"].get(("export", "jet", y)) for y in YEARS}, status="From 2014", source=sars_src)
+    jet_net = s.line("Net imports, jet", ML, "Reporting formula", "Imports less exports.",
+                     formula=both(jet_in, jet_out, "{c}{a}-{c}{b}"), kind="formula")
+    jet_made = s.line("Production reported, jet", ML, "Source observation", "National production line of the energy balance.",
+                      {y: d["balance"].get(("production", "jet", y)) for y in YEARS}, status="2012-2021",
+                      source="Department energy balances")
+    jet_gap = s.line("Sales less net imports, jet", ML, "Reporting formula",
+                     "What production and stock changes must supply. Not a measurement of production.",
+                     formula=both(jet_sales, jet_net, "{c}{a}-{c}{b}"), kind="formula")
+    s.line("Unexplained after reported production, jet", ML, "Reporting formula",
+           "Sales less net imports less reported production.", formula=both(jet_gap, jet_made, "{c}{a}-{c}{b}"), kind="formula")
+    moves = s.line("Aircraft movements at ACSA airports", "movements/year", "Source observation",
+                   "Arrivals and departures, all flight types, nine ACSA airports. Non-ACSA airports (Lanseria and others) "
+                   "are not covered.", {y: d["movements"].get(y) for y in YEARS}, status="2013-2025",
+                   source="Airports Company South Africa, traffic statistics", fmt="#,##0")
+    s.line("Jet sold per aircraft movement", "litres/movement", "Reporting formula",
+           "Sales used divided by movements. "
+           f"{d['dept'][('jet', 2023)] * 1e6 / d['movements'][2023]:,.0f} litres in 2023 against "
+           f"{d['dept'][('jet', 2019)] * 1e6 / d['movements'][2019]:,.0f} in 2019; the reason for the fall is not "
+           "established. Driver proposed for jet: movements times this intensity.",
+           formula=both(jet_sales, moves, "{c}{a}*1000000/{c}{b}"), kind="formula", fmt="#,##0",
+           action="Cargo, aircraft mix and route length are not separated; no source held gives jet by airport")
 
     # Bring the estimates into the province rows of section 1, marked as estimates.
     for product in ("petrol", "diesel"):
@@ -640,6 +683,103 @@ def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> N
            "heaviest.", kind="comparison")
 
 
+def _table(wb, title: str, heading: str, sub_heading: str, header: list[str], widths: list[float], body: list[list]):
+    ws = wb.create_sheet(title)
+    ws["A1"] = heading
+    ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
+    ws["A2"] = sub_heading
+    ws["A2"].font = Font(name="Arial", size=10, color=INK)
+    for i, label in enumerate(header, start=1):
+        cell = ws.cell(row=4, column=i, value=label)
+        cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
+        cell.fill = PatternFill("solid", fgColor=FILL["header"])
+        cell.alignment = Alignment(wrap_text=True, vertical="top")
+        ws.column_dimensions[get_column_letter(i)].width = widths[i - 1]
+    for n, values in enumerate(body, start=5):
+        for i, value in enumerate(values, start=1):
+            cell = ws.cell(row=n, column=i, value=value)
+            cell.font = Font(name="Arial", size=10, color=INK)
+            cell.alignment = Alignment(wrap_text=True, vertical="top")
+    ws.freeze_panes = "B5"
+    return ws
+
+
+GAP_STATUS = [
+    ("G01", "National fuel balance", "Narrowed",
+     "Balance rebuilt on customs trade for 2014-2025; Road Accident Fund levy found as an independent count.",
+     "2024 sales source; no 2025 sales figure; production by product after 2021; stocks.", "History, sections 2-5"),
+    ("G02", "Fleet and new sales", "Narrowed",
+     "Registered vehicles by class 2021-2025, new sales 2017-2025 and apparent retirements lined up against the model.",
+     "Stock by age and by fuel within each class is in no source held.", "Vehicle history"),
+    ("G03", "Passenger electrification", "Narrowed",
+     "Battery electric, plug-in and conventional hybrid sales and shares, 2019-2025.",
+     "Passenger-only denominators; electric vehicles in the fleet after 2023; fuel saved by hybrids.", "Vehicle history, section 4"),
+    ("G04", "Road freight activity", "Open",
+     "Tonnes only. One tonne-kilometre figure (221 bn, 2013). Stats SA fuel purchases by road freight firms give a "
+     "floor of about 2.9 bn litres (2019) and 3.2 bn (2023).",
+     "An annual tonne-kilometre series; distance and payload; light commercial freight scope.", "Diesel by use, section 4"),
+    ("G05", "Freight electrification", "Open", "No truck electric or hybrid sales or stock data found.",
+     "Everything listed.", ""),
+    ("G06", "Manufacturing", "Narrowed",
+     "Manufacturing and other industry diesel by difference, 2016-2021 (0.16-0.23 bn litres), with litres per index point.",
+     "Sub-sector detail; the balance has no manufacturing lines before 2016.", "Sector history"),
+    ("G07", "Mining and construction", "Narrowed",
+     "Mining diesel 2012-2021 with litres per index point (11-17 million); indicative 2022-2025.",
+     "Observed fuel after 2021; site and commodity split; on-road boundary.", "Sector history"),
+    ("G08", "Agriculture", "Narrowed",
+     "Agriculture diesel 2012-2021 with litres per rand of value added; indicative 2022-2025. Rebated diesel across all "
+     "rebate sectors is 1.46 bn litres (year to March 2025).",
+     "A fuel baseline after 2021; crop and irrigation activity.", "Sector history"),
+    ("G09", "Generation", "Narrowed",
+     "Generation to the year ending March 2026; 0.31 litres per kWh in three reported years. The model's 2024 figure "
+     "(3.58 bn litres) is at least 2 bn above reported burn.",
+     "Matched fuel burn by calendar year; private backup generation has no measured volume.", "Diesel by use, section 1"),
+    ("G10", "Aviation", "Narrowed",
+     "Jet sales, trade, production and aircraft movements lined up; jet sold per movement computed.",
+     "Cargo, aircraft and route mix; airports outside ACSA; jet by airport.", "History, section 7"),
+    ("G11", "Provincial demand", "Narrowed",
+     "2013-2022 observed; 2023 and 2024 estimated with the best of six methods back-tested.",
+     "District data after 2023 quarter 1, which the department has not published; 2025 national total.", "History, sections 1 and 6"),
+    ("G12", "Marine and other coverage", "Open", "Nothing new. The model's marine placeholder equals the 2007 balance figure.",
+     "Everything listed.", ""),
+    ("G13", "Ranges and annual forecast paths", "Proposed",
+     "Baseline, rationale and source for all 20 levers; 39 of 120 values with a proposed replacement; seven levers added.",
+     "Agreement on the reference case and annual paths.", "HML response"),
+]
+
+
+def gap_status_sheet(wb) -> None:
+    _table(wb, "Gap status", "Status against the 13 data gaps on the Data gaps sheet, 8 October 2026",
+           "The Data gaps sheet is unchanged. Statuses are the analyst's reading; closure is for the owner named there.",
+           ["ID", "Demand component", "Status", "What has been added", "What is still missing", "Where to look"],
+           [7, 28, 12, 70, 60, 28], [list(row) for row in GAP_STATUS])
+
+
+def lever_response_sheet(wb) -> None:
+    rows = _read(LEVERS)
+    levers = list(dict.fromkeys((r["fuel"], r["lever"]) for r in rows))
+    body = []
+    for fuel, lever in levers:
+        mine = {(r["period"], r["case"]): r for r in rows if (r["fuel"], r["lever"]) == (fuel, lever)}
+        first = next(iter(mine.values()))
+
+        def trio(year, column):
+            return " / ".join(mine[(year, case)][column] or "-" for case in ("low", "medium", "high"))
+
+        state = {"added"} if first["changed"] == "added" else {r["changed"] for r in mine.values()}
+        body.append([fuel, lever, first["unit"], first["baseline"], first["baseline_basis"],
+                     trio("2030", "proposed_by_nigel"), trio("2030", "analyst_value"),
+                     trio("2035", "proposed_by_nigel"), trio("2035", "analyst_value"),
+                     "added lever" if state == {"added"} else "replacement proposed" if "yes" in state else "no change",
+                     first["evidence"]])
+    _table(wb, "HML response", "Analyst response to the proposed low / medium / high inputs",
+           "The HML sheet is unchanged. Values are low / medium / high. Replacements and added levers are proposals for "
+           "review; source: fuel_lever_response_2026-10-07.csv.",
+           ["Fuel", "Lever", "Unit", "Baseline", "Baseline basis", "2030 proposed (Nigel)", "2030 analyst",
+            "2035 proposed (Nigel)", "2035 analyst", "Result", "Evidence and rationale"],
+           [11, 30, 22, 13, 44, 22, 22, 22, 22, 20, 110], body)
+
+
 def checks_sheet(wb, d: dict, changes: list[str]) -> int:
     ws = wb.create_sheet("Checks")
     ws["A1"] = "Checks on the workshop workbook, 7 October 2026"
@@ -718,10 +858,38 @@ def sources_sheet(wb) -> None:
         "fuel_levy_revenue_raf": "History section 5: litres levied",
         "activity_statssa_monthly": "Sector history: mining and manufacturing volume indices",
         "macro_statssa": "Sector history: agriculture real value added",
+        "air_traffic_acsa_annual": "History section 7: aircraft movements",
+        "fuel_sales_department_by_province_quarterly": "History section 6: quarter 1 2023 provincial shares",
+        "gdp_by_province_statssa": "History section 6: provincial GDP used to move the 2024 shares",
+        "ocgt_generation_eskom": "Diesel by use: power generation",
+        "ocgt_diesel_burn_reported": "Diesel by use: the 0.31 litres per kWh factor",
+        "fuel_prices_department": "Diesel by use: price used to convert road freight fuel spending to litres",
+        "vehicle_parameters_stone2018": "Diesel by use and Vehicle history: vehicle classes, distance and fuel use",
+        "vehicle_population_natis": "Vehicle history: registered vehicles by class",
+        "new_vehicle_market_naamsa": "Vehicle history: new sales by segment",
+        "nev_sales_naamsa": "Vehicle history: electrified new sales",
+        "vehicle_population_by_fuel_dot2023": "Vehicle history: fuel split of the registered fleet",
     }
+    documents = [
+        ["Diesel by use: fuel bought by road freight businesses", "Statistics South Africa",
+         "https://www.statssa.gov.za/?page_id=1854&PPN=Report-71-02-01", "Report-71-02-012023.pdf, Table 20 (p.33)",
+         "on manish-branch (external/data/raw/statssa/statssa-transport-and-storage-industry-2023.pdf)",
+         "typed into build_demand_baseline_workbook.py (ROAD_FREIGHT_FUEL_RAND)", "none", "2019, 2023",
+         "Hire-and-reward operators only; 2023 preliminary"],
+        ["Diesel by use: land freight share of diesel", "Merven, Hartley and Ahjum (2019), SA-TIED Working Paper 60",
+         "https://sa-tied.wider.unu.edu/sites/default/files/pdf/SATIED_WP60_Merven_Hartley_Ahjum_April_2019.pdf",
+         "p.10", "on manish-branch (external/data/raw/literature/)", "quoted on the sheet", "none", "2012",
+         "Modelled; same research group as the vehicle study"],
+        ["Vehicle history and Diesel by use: the model's settings", "AIA (Reatile workbook, March 2025)", "",
+         "assumptions/2026/vehicles.yaml", "in the repository", "assumptions/2026/vehicles.yaml", "none", "",
+         "Placeholders without a published source"],
+        ["HML response", "AIA (analyst), from the sources named in each row", "",
+         "workstreams/WS2_model_development/fuel_lever_response_2026-10-07.csv", "in the repository",
+         "same file", "python -m lfm.scripts.build_fuel_lever_response --vintage 2026", "2030, 2035", "Proposals"],
+    ]
     trace = {r["dataset"]: r for r in _read(TRACE)}
     ws = wb.create_sheet("History sources")
-    ws["A1"] = "Sources for the History and Sector history sheets"
+    ws["A1"] = "Sources for the sheets added to the workshop workbook"
     ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
     header = ["Used for", "Publisher", "Link", "Original file", "Where the original is kept", "Extract in the repository",
               "Refresh command", "Periods", "Limits"]
@@ -735,6 +903,11 @@ def sources_sheet(wb) -> None:
         r = trace[dataset]
         values = [use, r["publisher"], r["source_url"], r["original_file"], r["original_location"], r["extract_path"],
                   r["refresh_command"], f'{r["first_period"]}-{r["last_period"]}', r["issue"]]
+        for i, value in enumerate(values, start=1):
+            c = ws.cell(row=n, column=i, value=value)
+            c.font = Font(name="Arial", size=10, color=INK)
+            c.alignment = Alignment(wrap_text=True, vertical="top")
+    for n, values in enumerate(documents, start=5 + len(wanted)):
         for i, value in enumerate(values, start=1):
             c = ws.cell(row=n, column=i, value=value)
             c.font = Font(name="Arial", size=10, color=INK)
@@ -758,13 +931,15 @@ def main() -> int:
             changes.append(f"Source selection!{cells[4].coordinate}: {cells[0].value} {cells[1].value} FIASA -> Department "
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 left on FIASA, which is unverified; the department has published no 2024 figure.")
-    changes.append("Sheets added: History, Sector history, Diesel by use, Vehicle history, Checks, History sources. "
-                   "No other cell changed.")
+    changes.append("Sheets added: History, Sector history, Diesel by use, Vehicle history, HML response, Gap status, "
+                   "Checks, History sources. No other cell changed.")
 
     history_rows = history_sheet(wb, d)
     sector_rows = sector_sheet(wb, d)
     diesel_by_use_sheet(wb, d, history_rows, sector_rows)
     vehicle_sheet(wb, d, history_rows)
+    lever_response_sheet(wb)
+    gap_status_sheet(wb)
     differs = checks_sheet(wb, d, changes)
     sources_sheet(wb)
     wb.save(args.out)

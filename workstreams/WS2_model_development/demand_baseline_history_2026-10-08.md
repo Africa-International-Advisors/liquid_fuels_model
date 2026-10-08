@@ -218,3 +218,36 @@ Points to carry with it:
 - Heavy vehicles sit above Stats SA's figure for hire-and-reward road freight
   (2,855 in 2019 and 3,154 in 2023) by 3,234 and 2,108, as they should.
 - 2024 uses FIASA's unverified sales; 2025 has no sales figure.
+
+## Added on 8 October: jet, lever response, gap status and full sources
+
+**Jet (History, section 7).** Low effort, so brought in. Million litres:
+
+| | 2014 | 2019 | 2021 | 2022 | 2023 | 2024 |
+|---|---|---|---|---|---|---|
+| Sales used | 2,293 | 2,439 | 1,048 | 1,478 | 1,844 | 1,955 (FIASA) |
+| Net imports | — | — | 348 | 426 | 222 | 240 |
+| Production reported | 1,715 | 1,090 | 861 | — | — | — |
+| Sales less net imports | — | — | 700 | 1,053 | 1,622 | 1,715 |
+| Aircraft movements, thousand | 541 | 512 | 316 | 416 | 451 | 456 |
+| Jet sold per movement, litres | 4,238 | 4,759 | 3,312 | 3,553 | 4,086 | 4,285 |
+
+Jet sales in 2023 were 76% of their 2019 level while movements were 88%, so
+jet sold per movement is 14% below 2019. Customs has a month missing for jet
+imports in 2019, so net imports start in 2020. Whether fuel loaded onto
+international flights is recorded as an export is not established. Cargo,
+aircraft mix, route length and airports outside ACSA are not separated; this
+is a starting point, not a jet model.
+
+**HML response sheet.** The 27 levers (Nigel's 20 and seven added) with
+baseline, his low / medium / high values and the analyst's, for 2030 and 2035,
+and the evidence. The HML sheet itself is unchanged.
+
+**Gap status sheet.** A status against each of the 13 gaps on the Data gaps
+sheet: nine narrowed, three open (road freight activity, freight
+electrification, marine), one proposed (ranges). None is marked closed; that
+is for the owner.
+
+**History sources sheet.** Now 25 rows, covering every added sheet, including
+the two documents that are not registered datasets (the Stats SA transport
+survey and the freight energy study).

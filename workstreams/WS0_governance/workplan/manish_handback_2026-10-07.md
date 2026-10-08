@@ -41,7 +41,16 @@ defined separately. The 6 October deck was corrected to match and moved to
 | FIASA as a data point only | Done: department selected for 2022-2023; FIASA shown as comparison rows |
 | Python builds it, Excel shows it with formulas | Done: one command; your sheets are unchanged apart from eight source-selection cells |
 | Vehicle block with sources | Done on the Vehicle history sheet; stock by age and by fuel within class is not available |
-| Jet | Parked, as agreed |
+| Jet | Sales, trade, production and aircraft movements lined up on the History sheet (section 7); not a jet model |
+
+## Added on 8 October, before the review
+
+- Diesel by use sheet: the six branches of the check-in diagram, summing to sales; road diesel split into
+  heavy, light and passenger vehicles with the 2018 study's shares (60.5 / 27.0 / 12.5%).
+- Stats SA's transport industry survey gives a measured floor for truck diesel: about 2.9 bn litres (2019)
+  and 3.2 bn (2023) bought by hire-and-reward road freight firms.
+- Provincial estimates for 2023 and 2024 shown in the province rows, marked as estimates; 2025 explained.
+- Jet section, HML response sheet, Gap status sheet and a 25-row sources sheet.
 
 ## New evidence found today
 
@@ -77,7 +86,7 @@ Nothing else on the branch changes model results.
 
 ## Checks
 
-- `python -m pytest -q`: 175 passed, 1 skipped.
+- `python -m pytest -q`: 177 passed, 1 skipped.
 - `python -m lfm check --vintage 2026`: coverage passed, 54 open exceptions,
   so output remains draft.
 - Both decks exported through PowerPoint and inspected; the workbook was
