@@ -1,11 +1,11 @@
 # South Africa review milestone 8 October 2026
 
-The current review is the 43-page v26 South Africa story, refreshed from Manish's workbook. It preserves the v25 investment illustration and Nigel's existing taglines, adds four exhibits, and updates supporting evidence and outstanding requests. Publishing a review pack does not approve the forecast, investment assumptions or expenditure.
+The current review is the 43-page v27 South Africa story, refreshed from Manish's workbook. It preserves the v25 investment illustration and Nigel's existing taglines, adds four exhibits, and updates supporting evidence and outstanding requests. Publishing a review pack does not approve the forecast, investment assumptions or expenditure.
 
 ## Start here
 
-- [Current PDF](../../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v26.pdf) and [editable PowerPoint](../../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v26.pptx).
-- [Canonical story](../../../pptx/story/sa_market_story_v26_2026_10_08.json). Preserve Nigel's taglines unless a reviewed change is recorded.
+- [Current PDF](../../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pdf) and [editable PowerPoint](../../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pptx).
+- [Canonical story](../../../pptx/story/sa_market_story_v27_2026_10_08.json). Preserve Nigel's taglines unless a reviewed change is recorded.
 - [Workbook page audit](../../WS3_reporting_delivery/sa_pack_workbook_audit_2026_10_08.csv) and [63-cell evidence trace](../../../pptx/story/sa_workbook_evidence_v26_2026_10_08.json); source branch commit `8a3c884`.
 - [Data request DR01–DR09](../../../output/delivered/investment_bridge_2026_10_08/data_request.csv). Prepared, not sent. Nigel coordinates commercial requests; do not represent a request as received evidence.
 - [Worked case](../../../output/delivered/vopak_illustration_2026_10_08/index.html), [registered assumptions](../../../assumptions/2026/vopak_investment_illustration.yaml) and [implementation log](sa_illustrative_investment_2026_10_08.csv).
@@ -16,7 +16,7 @@ Owners below follow existing workstream responsibilities; dates are not new comm
 
 | Milestone | Owner and review | Required handback | Acceptance condition |
 |---|---|---|---|
-| M0 Review baseline | Nigel | v26 and this handover | Story and illustrative calculations preserved; current links resolve. Completed for review, not business approval. |
+| M0 Review baseline | Nigel | v27 and this handover | Story and illustrative calculations preserved; current links resolve. Completed for review, not business approval. |
 | M1 Reconciled baseline | Manish; Nigel reviews | DR01, product/year balance CSV, source definitions and reconciliation note | Production, imports, exports and stock changes use compatible definitions; statistical differences remain explicit. Never infer production from an unexplained residual. |
 | M2 Actual terminal position | Nigel coordinates Vopak; Manish reconciles | DR02/03/05: 36 months of movements, eligible working tanks, receipt/dispatch limits and customer commitments | Separate Durban and Lesedi; deduplicate inter-terminal deliveries; reconcile actual throughput, turns and stock occupancy. Replace page 11 evidence gaps only when supported. |
 | M3 Accessible corridor volumes | Manish; Nigel reviews | DR04, matched cost and access table for Durban, Maputo/Matola, Walvis Bay and domestic origins | Same product, destination, date and tax basis; verified terminal gates, customer points, service rights, capacity and border constraints. A mapped route is not tanker access or commercial competitiveness. |
@@ -69,7 +69,7 @@ Large downloaded map extracts, detailed map layers, the routing SQLite database 
 - Metadata and compact map products are tracked. Retain OSM/Geofabrik attribution and licences. The graph is a connectivity diagnostic, not a validated truck-routing engine.
 - If an original URL no longer returns the recorded hash, obtain the preserved original from Nigel or register the download as a new source vintage. Do not silently substitute it.
 
-The delivered archive preserves story progression and Nigel's edited v18 source. Use the dated v26 pair as the current review pack. v25 remains alongside it to preserve the source for revision and standalone issue-tree builds; earlier versions are in `archive/story_versions/`.
+The delivered archive preserves story progression and Nigel's edited v18 source. Use the dated v27 pair as the current review pack. v25 remains alongside it to preserve the source for revision and standalone issue-tree builds; earlier versions are in `archive/story_versions/`.
 
 ## Verification at this milestone
 
@@ -78,3 +78,5 @@ The delivered archive preserves story progression and Nigel's edited v18 source.
 v26 adds industry demand on page 8, the issue tree on page 16, vehicle calibration on page 26 and the power fleet/cases on page 33. Outstanding requests are on page 18. Estimates retain their method and period labels; 2024 FIASA sales remain unverified. Sector and vehicle diagnostics do not adopt new model assumptions. Proposed power cases remain Nigel/Henry review items. Existing investment economics remain illustrative.
 
 For a new build, obtain the exact workbook at `8a3c884:output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`, retain its original hash, and recalculate a review copy in Excel under `runs/review/manish_workbook_2026_10_08_latest/`. The evidence JSON records both the source and cited cells. `pptx/scripts/prepare_sa_workbook_v26.py` reads that review copy; `pptx/scripts/build_sa_workbook_v26.ps1 -Attempt <new-name>` creates a private build using v25's master and named layouts. Preserve the delivered v26; use a new revision for later deliveries. `pptx/scripts/render_pdf_windows.ps1` renders the PDF independently under Windows PowerShell 5.1.
+
+Latest visual revision, v27: page 8 replaces the sector table with three stacked horizontal-bar chart rows. All rows use a common zero-based 0-2bn litre scale; outlined bars distinguish 2024 estimates. Nine chart values were verified, the PowerPoint/PDF slide was visually inspected, and all other 42 pages retain their shape geometry and text. Rebuild with `pptx/scripts/build_sa_sector_charts_v27.ps1` from the preserved v26.

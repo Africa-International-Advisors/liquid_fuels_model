@@ -1,29 +1,29 @@
 {
-  "current_version": 26,
+  "current_version": 27,
   "slides": 43,
   "files": [
     {
-      "path": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v26.pptx",
-      "bytes": 3082736,
-      "sha256": "a3d09a2e5d057d67e83e0fc31f948df0df63551a15ce697b50c9d0d199105d4f"
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pptx",
+      "bytes": 3084608,
+      "sha256": "80a06e654b799c4a4b0b106e49cf68e4c3060a78e9e03bcc498243e6651e0917"
     },
     {
-      "path": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v26.pdf",
-      "bytes": 2312964,
-      "sha256": "170f34076e606606e64ae112031c0f263dfbd7ba4e2ff7c3cd1c6f7349c067c2"
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pdf",
+      "bytes": 2313065,
+      "sha256": "ef81c9d538029eb0d36c556c5cf8ede137b4ba9d53cc906b4c8c98362908bfa1"
     }
   ],
-  "story": "pptx/story/sa_market_story_v26_2026_10_08.json",
-  "qa": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/checks.json",
+  "story": "pptx/story/sa_market_story_v27_2026_10_08.json",
+  "qa": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v27/checks.json",
   "archive": "pptx/output/delivered/supporting/archive/records/cleanup_manifest.json",
   "layout_revision": 3,
   "canonical_author": "Nigel",
   "canonical_source": "pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_v18_nigel.pptx",
-  "latest_change": "Workbook evidence refresh across the pack; four new exhibits: industry demand, market-sizing issue tree, vehicles and power fleet; outstanding requests updated.",
+  "latest_change": "Page 8 sector table replaced by three stacked chart rows with common zero-based scale and outlined 2024 estimates; figures and other pages preserved.",
   "delivery_date": "2026-10-08",
   "cleanup_record": "pptx/output/delivered/supporting/archive/records/cleanup_2026-10-08_v24.json",
   "source_workbook_commit": "8a3c884b0d26a3c5819a9a0b702024ab60485d1e",
   "workbook_evidence": "pptx/story/sa_workbook_evidence_v26_2026_10_08.json",
   "page_audit": "workstreams/WS3_reporting_delivery/sa_pack_workbook_audit_2026_10_08.csv",
-  "previous_delivery": "pptx/output/delivered/supporting/archive/records/current_story_before_v26.json"
+  "previous_delivery": "pptx/output/delivered/supporting/archive/records/current_story_before_v27.json"
 }
