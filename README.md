@@ -2,8 +2,8 @@
 
 **Current milestone:** [8 October 2026 review baseline and next handbacks](workstreams/WS0_governance/workplan/sa_review_milestone_2026_10_08.md).
 
-**Latest files:** [v25 PDF](pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pdf) and
-[v25 PowerPoint](pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pptx), 39 pages.
+**Latest files:** [v26 PDF](pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v26.pdf) and
+[v26 PowerPoint](pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v26.pptx), 43 pages. Updated from Manish's workbook, with industry demand, vehicle calibration, power fleet and the Durban–Lesedi issue tree.
 The story is a review baseline; scenarios and investment economics remain illustrative.
 [Delivery index](pptx/output/delivered/supporting/README.md) and [data request](output/delivered/investment_bridge_2026_10_08/data_request.csv).
 

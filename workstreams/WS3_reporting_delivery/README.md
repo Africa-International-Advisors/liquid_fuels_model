@@ -4,7 +4,9 @@ Proposed delivery owner: analyst with builder support. Accountable lead: Nigel.
 
 Deliver annual Excel reporting, scenario/sensitivity views, briefing material and a refresh
 runbook. Make country coverage, provisional status, source vintage and run identity visible.
-The supplied PowerPoint template and slide mockup are still pending.
+The South Africa story uses the supplied Vopak master and named layouts. The current
+43-page v26 review pack and workbook evidence audit are linked from the
+[delivery index](../../pptx/output/delivered/supporting/README.md).
 
 Shared model reporting code: `src/lfm/reporting/`. Presentation content/builders: `pptx/`.
 Built reports: `output/` or `pptx/output/`; only delivered copies go in each `delivered/`.

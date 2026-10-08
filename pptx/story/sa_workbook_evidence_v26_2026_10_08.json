@@ -1,0 +1,392 @@
+{
+  "source": {
+    "commit": "8a3c884b0d26a3c5819a9a0b702024ab60485d1e",
+    "path": "output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx",
+    "sha256": "c250b41dbc6e6921a66290f6c22e1c51f6833dcef8fa49b816f16b5adbd771b2"
+  },
+  "cells": [
+    {
+      "sheet": "History",
+      "cell": "Q71",
+      "value": 21944.4500793,
+      "formula": "=IF(COUNT(Q59,Q64)<2,\"\",Q59+Q64)"
+    },
+    {
+      "sheet": "History",
+      "cell": "R71",
+      "value": 20763,
+      "formula": "=IF(COUNT(R59,R64)<2,\"\",R59+R64)"
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S31",
+      "value": 1088,
+      "formula": null
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S33",
+      "value": 2810,
+      "formula": null
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S35",
+      "value": 12818,
+      "formula": null
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S32",
+      "value": 0.18214143416290274,
+      "formula": "=IF(COUNT(S31,S17)<2,\"\",S31/S17*100)"
+    },
+    {
+      "sheet": "History",
+      "cell": "Q84",
+      "value": 3460.323031725302,
+      "formula": "=IF(COUNT(Q75,Q59)<2,\"\",Q75/100*Q59)"
+    },
+    {
+      "sheet": "History",
+      "cell": "Q104",
+      "value": 3350.2336053122744,
+      "formula": "=IF(COUNT(Q95,Q64)<2,\"\",Q95/100*Q64)"
+    },
+    {
+      "sheet": "History",
+      "cell": "R84",
+      "value": 3465.0830474924105,
+      "formula": "=IF(COUNT(R75,R59)<2,\"\",R75/100*R59)"
+    },
+    {
+      "sheet": "History",
+      "cell": "R104",
+      "value": 3053.5988894347006,
+      "formula": "=IF(COUNT(R95,R64)<2,\"\",R95/100*R64)"
+    },
+    {
+      "sheet": "History",
+      "cell": "S36",
+      "value": 12248.72026207,
+      "formula": null
+    },
+    {
+      "sheet": "History",
+      "cell": "S37",
+      "value": 4453.47117815,
+      "formula": null
+    },
+    {
+      "sheet": "History",
+      "cell": "S44",
+      "value": 15153.728764150002,
+      "formula": "=IF(COUNT(S38,S41)<2,\"\",S38-S41)"
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "R7",
+      "value": 93.53333333333335,
+      "formula": null
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "R9",
+      "value": 1403.7204366913902,
+      "formula": "=IF(ISNUMBER(R7),$D$9*R7,\"\")"
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "R17",
+      "value": 93.33333333333333,
+      "formula": null
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "R19",
+      "value": 167.21110753544266,
+      "formula": "=IF(ISNUMBER(R17),$D$19*R17,\"\")"
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "S23",
+      "value": 134.7967469817132,
+      "formula": null
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "S25",
+      "value": 1131.2246982365152,
+      "formula": "=IF(ISNUMBER(S23),$D$25*S23,\"\")"
+    },
+    {
+      "sheet": "History",
+      "cell": "R117",
+      "value": 1955,
+      "formula": "=IF(ISNUMBER(R115),R115,IF(ISNUMBER(R116),R116,\"\"))"
+    },
+    {
+      "sheet": "History",
+      "cell": "R124",
+      "value": 456214,
+      "formula": null
+    },
+    {
+      "sheet": "History",
+      "cell": "R125",
+      "value": 4285.269632233995,
+      "formula": "=IF(COUNT(R117,R124)<2,\"\",R117*1000000/R124)"
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S6",
+      "value": 8184111,
+      "formula": null
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S7",
+      "value": 2776258,
+      "formula": null
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S8",
+      "value": 404752,
+      "formula": null
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S24",
+      "value": 2.3603032980995122,
+      "formula": "=IF(ISNUMBER(S23),S23/R6*100,\"\")"
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S26",
+      "value": 3.423532234666346,
+      "formula": "=IF(ISNUMBER(S25),S25/R7*100,\"\")"
+    },
+    {
+      "sheet": "Diesel by use",
+      "cell": "Q28",
+      "value": 3154.341754930314,
+      "formula": null
+    },
+    {
+      "sheet": "History",
+      "cell": "R53",
+      "value": 29.1,
+      "formula": null
+    },
+    {
+      "sheet": "History",
+      "cell": "S53",
+      "value": 27.6,
+      "formula": null
+    },
+    {
+      "sheet": "History",
+      "cell": "Q59",
+      "value": 9036.950113492001,
+      "formula": "=IF(ISNUMBER(Q16),Q16,IF(ISNUMBER(Q58),Q58,\"\"))"
+    },
+    {
+      "sheet": "History",
+      "cell": "Q64",
+      "value": 12907.499965808,
+      "formula": "=IF(ISNUMBER(Q31),Q31,IF(ISNUMBER(Q63),Q63,\"\"))"
+    },
+    {
+      "sheet": "History",
+      "cell": "R59",
+      "value": 9029,
+      "formula": "=IF(ISNUMBER(R16),R16,IF(ISNUMBER(R58),R58,\"\"))"
+    },
+    {
+      "sheet": "History",
+      "cell": "R64",
+      "value": 11734,
+      "formula": "=IF(ISNUMBER(R31),R31,IF(ISNUMBER(R63),R63,\"\"))"
+    },
+    {
+      "sheet": "History",
+      "cell": "S40",
+      "value": 801.762466,
+      "formula": null
+    },
+    {
+      "sheet": "History",
+      "cell": "S39",
+      "value": 746.70021007,
+      "formula": null
+    },
+    {
+      "sheet": "History",
+      "cell": "R70",
+      "value": 24424.24541284404,
+      "formula": null
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "M6",
+      "value": 1667.24925,
+      "formula": null
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "O6",
+      "value": 1293.81342,
+      "formula": null
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "M16",
+      "value": 230.74159838867195,
+      "formula": "=IF(COUNT(M12,M6)<2,\"\",M12-M6-IF(ISNUMBER(M13),M13,0))"
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "O16",
+      "value": 156.63340999999997,
+      "formula": "=IF(COUNT(O12,O6)<2,\"\",O12-O6-IF(ISNUMBER(O13),O13,0))"
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "M22",
+      "value": 921.8486875,
+      "formula": null
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "O22",
+      "value": 1058.39895,
+      "formula": null
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "R25",
+      "value": 963.340315350474,
+      "formula": "=IF(ISNUMBER(R23),$D$25*R23,\"\")"
+    },
+    {
+      "sheet": "Sector history",
+      "cell": "R23",
+      "value": 114.7916421450265,
+      "formula": null
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S18",
+      "value": 70.72428005584777,
+      "formula": "=IF(COUNT(S14,S17)<2,\"\",S14/S17*100)"
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S19",
+      "value": 24.100927782930267,
+      "formula": "=IF(COUNT(S15,S17)<2,\"\",S15/S17*100)"
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "S20",
+      "value": 5.174792161221955,
+      "formula": "=IF(COUNT(S16,S17)<2,\"\",S16/S17*100)"
+    },
+    {
+      "sheet": "Vehicle history",
+      "cell": "Q52",
+      "value": 1056.240174877498,
+      "formula": "=IF(COUNT(History!Q59,Q39)<2,\"\",History!Q59*1000000/Q39)"
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "A11",
+      "value": "Ankerlig (Eskom)",
+      "formula": null
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "F11",
+      "value": 1338,
+      "formula": null
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "A12",
+      "value": "Gourikwa (Eskom)",
+      "formula": null
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "F12",
+      "value": 746,
+      "formula": null
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "A13",
+      "value": "Avon (Independent producer)",
+      "formula": null
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "F13",
+      "value": 670,
+      "formula": null
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "A14",
+      "value": "Dedisa (Independent producer)",
+      "formula": null
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "F14",
+      "value": 335,
+      "formula": null
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "N63",
+      "value": 85.63567939376277,
+      "formula": "=N44"
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "S63",
+      "value": 20.3170259399592,
+      "formula": "=S44"
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "N64",
+      "value": 637.0130819003206,
+      "formula": "=N52"
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "S64",
+      "value": 637.0130819003206,
+      "formula": "=S52"
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "N65",
+      "value": 4223.510746138151,
+      "formula": "=N60"
+    },
+    {
+      "sheet": "Power fleet",
+      "cell": "S65",
+      "value": 4223.510746138151,
+      "formula": "=S60"
+    }
+  ],
+  "disagreements": [
+    "HML response jet baseline says 4,090 L/movement; History R125 recalculates to about 4,285. Use History for historical evidence, leave proposal unadopted.",
+    "Reported own Eskom fuel and Eskom/IPP generation-derived litres have different scope and periods.",
+    "Industry model replacement proposal and the manufacturing energy-balance residual have different sector boundaries."
+  ]
+}
