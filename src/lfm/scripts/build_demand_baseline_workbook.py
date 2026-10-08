@@ -811,7 +811,8 @@ def lever_response_sheet(wb) -> None:
 def power_fleet_sheet(wb, d: dict) -> None:
     s = Sheet(wb, "Power fleet", "Diesel for power: the fleet, the coal retirements and what each could burn",
               "A block by station and year, as asked on 7 October. Capacities are from Eskom's fact sheet; retirement "
-              "dates from press reports; everything about repowering with gas is a scenario. Yellow rows are assumptions.",
+              "dates from Eskom and from reports of the environment minister's decisions; everything about repowering "
+              "with gas is a scenario. Yellow rows are assumptions.",
               years=FUTURE)
     c = s.col
     fleet = d["power_fleet"]
@@ -894,7 +895,7 @@ def power_fleet_sheet(wb, d: dict) -> None:
         if r["group"] == "coal_retiring":
             last_year = int(r["last_full_year"])
             coal.append(s.line(
-                r["station"], "MW", "Evidence" if r["basis"] == "evidence" else "To confirm", f'{r["event"]}.',
+                r["station"], "MW", "Source observation" if r["basis"] == "evidence" else "To confirm", f'{r["event"]}.',
                 {y: float(r["capacity_mw"]) if y <= last_year else 0 for y in FUTURE},
                 kind="observation" if r["basis"] == "evidence" else "estimate",
                 status="Capacity shown to the last full year of operation", source=r["source"], fmt="#,##0"))
@@ -939,7 +940,8 @@ def power_fleet_sheet(wb, d: dict) -> None:
             ("Whether Ankerlig and Gourikwa switch to gas on time", "Eskom's stated target was December 2027."),
             ("Share of output on diesel when gas is the main fuel", "No source; 10% is a placeholder."),
             ("Private generators at firms and homes", "Not in this block; no measured volume exists."),
-            ("Komati's shutdown date, and the 2034 date for Duvha and Matla", "Marked 'to confirm' in the input file.")):
+            ("Avon and Dedisa after their power purchase agreements end", "The 15-year agreements run to about 2031 "
+             "and 2030. The sheet keeps both stations to 2035; whether they are extended, sold or closed is not known.")):
         s.line(label, "", "Gap", why, kind="estimate", status="Open")
 
 

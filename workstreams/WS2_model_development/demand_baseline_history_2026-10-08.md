@@ -266,8 +266,8 @@ are in `assumptions/2026/infrastructure/power_fleet_diesel.csv`.
 |---|---|---|---|
 | Ankerlig | Eskom | 1,338 | Eskom sought a gas supply in 2023, aiming to switch by December 2027 with diesel as a supplement |
 | Gourikwa | Eskom | 746 | Same tender |
-| Avon | Independent producer | 670 | |
-| Dedisa | Independent producer | 335 | |
+| Avon | Independent producer | 670 | 15-year power purchase agreement with Eskom from July 2016, so to about 2031 |
+| Dedisa | Independent producer | 335 | Same, from October 2015, so to about 2030 |
 
 Acacia and Port Rex (171 MW each) burn kerosene, not diesel, and are left out.
 The model carries the same four stations plus two placeholders, "New 1" and
@@ -305,6 +305,21 @@ Three assumptions drive the result and have no source; each is a single cell
 on the sheet: 10% of output on diesel once gas is the main fuel; a 40% load
 factor for gas plants at repowered sites; and 0.31 litres per kWh.
 
-Not included: private generators at firms and homes. To confirm: Komati's
-shutdown date (from memory) and the 2034 date for Duvha and Matla (from a
-press summary).
+Not included: private generators at firms and homes.
+
+**Where the fuel and dates come from (checked 8 October).**
+
+| Fact | Source, read directly |
+|---|---|
+| Ankerlig and Gourikwa burn diesel | Eskom's peaking power stations page: fuel "Fuel oil (Diesel)". Eskom's fact sheet GX 0001: "the two new gas power stations run on diesel" |
+| Acacia and Port Rex burn kerosene | Same two Eskom sources |
+| Avon and Dedisa: capacity, owners, 15-year agreement | African Energy, 9 October 2015 |
+| Avon and Dedisa burn diesel | Global Energy Monitor, citing an ENGIE brochure: diesel, able to run on gas. A secondary source; the operator's own site could not be reached |
+| Komati shut on 31 October 2022 | Eskom statement of that date: "has been shut down from midday" |
+| Duvha and Matla planned shutdown 21 February and 20 July 2034 | Mail & Guardian, 31 March 2025, reporting the environment minister's exemption decision |
+
+Two corrections from this check. Avon and Dedisa are not on Eskom's peaking
+stations page, as the first version of the input file said; their sources are
+now the ones above. And Eskom's page gives Ankerlig 1,327 MW and Gourikwa 740
+MW where its fact sheet gives 1,338 and 746; the fact sheet figures are used
+and the difference is noted in the file.
