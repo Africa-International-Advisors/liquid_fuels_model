@@ -280,22 +280,30 @@ litres at 0.31 litres per kWh. The model has 3.58 bn litres for 2024 and 4.59
 
 **What it could burn.** Million litres a year:
 
-| | 2022-2027 | 2028-2029 | 2030-2035 |
-|---|---|---|---|
-| Low (3.6% load factor) | 301 | 118 | 118 |
-| Medium (9.4%) | 792 | 311 | 637 |
-| High (17.1%) | 1,435 | 564 | 1,216 |
-| Ceiling: everything on diesel all year | 8,389 | 8,389 | 14,906 |
+| | 2022-2027 | 2028-2029 | 2030 | 2031-2035 |
+|---|---|---|---|---|
+| Low (3.6% load factor) | 301 | 118 | 86 | 20 |
+| Medium (9.4%) | 792 | 311 | 551 | 379 |
+| High (17.1%) | 1,435 | 564 | 1,060 | 749 |
+| Ceiling: everything on diesel all year | 8,389 | 8,389 | 13,996 | 12,177 |
 
-The drop in 2028 is Ankerlig and Gourikwa moving to gas with 10% of output
-still on diesel. The rise in 2030 in the medium and high cases is gas plants
-at retired coal sites using diesel as backup.
+Three things move the figures. In 2028 Ankerlig and Gourikwa move to gas
+with 10% of output still on diesel. Dedisa's agreement with Eskom ends in
+October 2030 and Avon's in July 2031, so each is shown to its last full year
+(2029 and 2030) and zero after. From 2030 the medium and high cases add gas
+plants at retired coal sites using diesel as backup.
 
 **Coal retirements.** Komati (990 MW) is shown as shut from 2023. Camden,
 Grootvlei, Hendrina, Arnot and Kriel (9,474 MW together) hold exemptions to 31
 March 2030. Duvha and Matla (6,600 MW) are shown to 2033. Eskom was to decide
-by end September 2026 whether the five shut, are repowered or run on; I could
-not find the outcome.
+by end September 2026 whether the five shut, are repowered or run on. No
+decision had been announced by 8 October 2026: Eskom's media statements page
+carries none up to 7 October, and on 3 September its chief executive said only
+that shutdown, repowering and repurposing "must be informed by evidence,
+system adequacy, new generation delivery" (Sunday Times). Eskom has also said
+it will keep the five running until replacement capacity is "contractually
+secured and demonstrably available" (TechCentral, 22 April 2026), so a delay
+past 2030 is possible. The sheet keeps the 31 March 2030 date.
 
 **Repowering is a scenario, not a plan.** No source says which sites get gas
 plants. The sheet uses the national gas requirement in IRP 2025 (about 6 GW by

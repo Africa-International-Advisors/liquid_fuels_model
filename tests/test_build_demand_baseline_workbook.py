@@ -141,6 +141,9 @@ def test_power_fleet_lists_the_diesel_stations_and_keeps_scenarios_as_formulas()
     assert [rows[name][first].value for name in ("Ankerlig (Eskom)", "Gourikwa (Eskom)", "Avon (Independent producer)",
                                                  "Dedisa (Independent producer)")] == [1338, 746, 670, 335]
     assert rows["Acacia (Eskom)"][2].value == "Not counted"                  # kerosene, not diesel
+    dedisa, avon = rows["Dedisa (Independent producer)"], rows["Avon (Independent producer)"]
+    assert (dedisa[first + 7].value, dedisa[first + 8].value) == (335, 0)    # agreement ends October 2030
+    assert (avon[first + 8].value, avon[first + 9].value) == (670, 0)        # agreement ends July 2031
     assert rows["Camden"][first + 7].value == 1561 and rows["Camden"][first + 8].value == 0     # 2029, then 2030
     assert rows["Gas capacity at repowered sites, high"][first + 8].value == build.IRP_GAS_MW_2030
     for label in ("Diesel stations, total", "Diesel at a high load factor", "Ceiling, all sites", "Total, medium"):

@@ -836,7 +836,9 @@ def power_fleet_sheet(wb, d: dict) -> None:
         if r["group"] == "diesel_station":
             diesel_rows[r["station"]] = s.line(
                 f'{r["station"]} ({r["owner"]})', "MW", "Source observation", f'{r["note"]}. {r["event"]}.',
-                {y: float(r["capacity_mw"]) for y in FUTURE}, status="Installed capacity, held flat", source=r["source"], fmt="#,##0")
+                {y: float(r["capacity_mw"]) if not r["last_full_year"] or y <= int(r["last_full_year"]) else 0 for y in FUTURE},
+                status="Installed capacity; zero after the last full year of a contract that ends", source=r["source"],
+                fmt="#,##0")
     first, last = min(diesel_rows.values()), max(diesel_rows.values())
     total_mw = s.line("Diesel stations, total", "MW", "Reporting formula", "Sum of the four stations.",
                       formula=lambda y: f"=SUM({c(y)}{first}:{c(y)}{last})", kind="formula", fmt="#,##0")
@@ -935,13 +937,16 @@ def power_fleet_sheet(wb, d: dict) -> None:
 
     s.section("7. Not established")
     for label, why in (
-            ("Outcome of Eskom's September 2026 decision", "Whether Camden, Grootvlei, Hendrina, Arnot and Kriel shut, are repowered or run on."),
+            ("Eskom's decision on Camden, Grootvlei, Hendrina, Arnot and Kriel",
+             "Due by end September 2026. None had been announced by 8 October: Eskom's media statements to 7 October "
+             "carry none. The sheet keeps the 31 March 2030 exemption date."),
             ("Which sites get gas plants, and how large", "Section 5 uses the national gas requirement as a stand-in."),
             ("Whether Ankerlig and Gourikwa switch to gas on time", "Eskom's stated target was December 2027."),
             ("Share of output on diesel when gas is the main fuel", "No source; 10% is a placeholder."),
             ("Private generators at firms and homes", "Not in this block; no measured volume exists."),
-            ("Avon and Dedisa after their power purchase agreements end", "The 15-year agreements run to about 2031 "
-             "and 2030. The sheet keeps both stations to 2035; whether they are extended, sold or closed is not known.")):
+            ("Avon and Dedisa after their power purchase agreements end", "The 15-year agreements end in July 2031 and "
+             "October 2030. The sheet shows Avon to 2030 and Dedisa to 2029, their last full years, and zero after. "
+             "Whether they are extended, sold or closed is not known; an extension would add back up to 1,005 MW.")):
         s.line(label, "", "Gap", why, kind="estimate", status="Open")
 
 
