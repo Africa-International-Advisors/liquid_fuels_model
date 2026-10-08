@@ -34,7 +34,7 @@ def test_history_carries_the_registered_inputs_and_uses_formulas_for_the_balance
 def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
-        "History", "Sector history", "Checks", "History sources"]
+        "History", "Sector history", "Vehicle history", "Checks", "History sources"]
     changed = []
     for ws in before.worksheets:
         for row in ws.iter_rows():
@@ -76,3 +76,17 @@ def test_quarter_one_shares_beat_holding_last_year_in_the_back_test():
               for r in shares.backtest(shares.load(VINTAGE / "timeseries"))}
     for product in ("petrol", "diesel"):
         assert scores[(product, "quarter1", 0)] < scores[(product, "hold", 1)] < scores[(product, "trend3", 3)]
+
+
+def test_vehicle_sheet_carries_observed_stock_and_the_models_settings():
+    d = build.load(VINTAGE / "timeseries", VINTAGE / "reference")
+    vehicles = _rows(load_workbook(ROOT / build.OUT)["Vehicle history"])
+    at = {year: build.FIRST - 1 + build.YEARS.index(year) for year in build.YEARS}
+    assert vehicles["Cars"][at[2025]].value == d["stock"][("cars", 2025)]
+    assert vehicles["Cars, new sales"][at[2024]].value == d["new_sales"][("cars", 2024)]
+    assert vehicles["Diesel vehicles registered"][at[2023]].value == d["by_fuel_2023"]["diesel"]
+    assert vehicles["Cars retirement rate"][3].value == pytest.approx(d["model_vehicles"]["scrappage_rate"]["passenger"] * 100)
+    assert vehicles["Cars share of new sales"][3].value == pytest.approx(78)
+    for label in ("Cars retired", "Cars retirement rate", "Implied less registered diesel vehicles",
+                  "Distance implied by petrol sales"):
+        assert str(vehicles[label][at[2023]].value).startswith("="), label
