@@ -1,0 +1,50 @@
+{
+  "retrieved": "2026-10-08",
+  "purpose": "DR04 routes and access: public evidence on pipeline and port limits and access",
+  "files": [
+    {
+      "file": "nersa-transnet-pipelines-tariff-2025-27-media-statement.pdf",
+      "publisher": "National Energy Regulator of South Africa",
+      "published": "2025-04-15",
+      "url": "https://www.nersa.org.za/files/files/2025/04/Updated-Media-Statement-NERSA-Decision-on-the-Transnet-Petroleum-Pipelines-System-2025-27-Tariff.pdf",
+      "bytes": 166523,
+      "sha256": "95b98009ecede3922368b207b0cbe35d5cd2ac34d0512c975a054d60a17fc504"
+    },
+    {
+      "file": "transnet-integrated-report-2025.pdf",
+      "publisher": "Transnet SOC Ltd",
+      "published": "2025",
+      "url": "https://static.pmg.org.za/Transnet_Integrated_Report_2025.pdf",
+      "bytes": 6574714,
+      "sha256": "0ec6571066fdbcb84d27f06fc1ce2a60b000676b009a47793843b0097247327f"
+    },
+    {
+      "file": "transnet-pipelines-2020.pdf",
+      "publisher": "Transnet SOC Ltd",
+      "published": "2020",
+      "url": "https://www.transnet.net/getFile.ashx?id=806",
+      "bytes": 4522040,
+      "sha256": "c73435093c30796610f120ccdfc180f814ea195b37e91af505201ebd2fda870e"
+    },
+    {
+      "file": "transnet-pipelines-page.html",
+      "publisher": "Transnet SOC Ltd",
+      "published": "read 2026-10-08",
+      "url": "https://www.transnet.net/SubsiteRender.aspx?id=6794475",
+      "bytes": 60416,
+      "sha256": "1af41091652035ab248b3200e57733aa692d8623e80c0333da97c04feccb90f4"
+    }
+  ],
+  "not_obtained": [
+    {
+      "what": "Transnet National Ports Authority: Port of Durban brochure; Port Development Framework Plans 2022; port statistics",
+      "url": "https://www.transnetnationalportsauthority.net/",
+      "why": "site refuses scripted connections; needs a browser download"
+    },
+    {
+      "what": "NERSA reasons for decision on the 2025-27 pipeline tariffs, with the tariff by route",
+      "url": "https://www.nersa.org.za/",
+      "why": "not yet located; the media statement gives revenue and the price effect only"
+    }
+  ]
+}
