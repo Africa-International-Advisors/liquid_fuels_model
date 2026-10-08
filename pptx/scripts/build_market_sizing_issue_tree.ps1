@@ -1,7 +1,7 @@
 param([int]$Version = 1, [switch]$IncludeRequests)
 $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
-$referencePath = Join-Path $repoRoot 'pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pptx'
+$referencePath = Join-Path $repoRoot 'pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_2026-10-08_v25.pptx'
 $outputStem = "Vopak_Market_Sizing_Issue_Tree_2026_10_08_v$Version"
 $outputDirectory = Join-Path $repoRoot 'pptx/output/delivered/supporting'
 $targetPptx = Join-Path $outputDirectory ($outputStem + '.pptx')

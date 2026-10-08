@@ -21,7 +21,7 @@
   "canonical_source": "pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_v18_nigel.pptx",
   "latest_change": "Page 8 sector table replaced by three stacked chart rows with common zero-based scale and outlined 2024 estimates; figures and other pages preserved.",
   "delivery_date": "2026-10-08",
-  "cleanup_record": "pptx/output/delivered/supporting/archive/records/cleanup_2026-10-08_v24.json",
+  "cleanup_record": "pptx/output/delivered/supporting/archive/records/cleanup_2026-10-08_v27.json",
   "source_workbook_commit": "8a3c884b0d26a3c5819a9a0b702024ab60485d1e",
   "workbook_evidence": "pptx/story/sa_workbook_evidence_v26_2026_10_08.json",
   "page_audit": "workstreams/WS3_reporting_delivery/sa_pack_workbook_audit_2026_10_08.csv",

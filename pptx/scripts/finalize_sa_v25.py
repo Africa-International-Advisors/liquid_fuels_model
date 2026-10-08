@@ -3,6 +3,8 @@ import json,hashlib
 from pptx import Presentation
 from pypdf import PdfReader
 root=Path(__file__).resolve().parents[2];base=root/'pptx/output/delivered/supporting';storypath=root/'pptx/story/sa_market_story_v25_2026_10_08.json'
+if (base/'archive/story_versions/SA_Market_Story_2026-10-08_v25.pptx').exists():
+ raise RuntimeError('v25 is archived; preserve the current review and choose a new revision.')
 s=json.loads(storypath.read_text(encoding='utf-8'));ppt=base/'SA_Market_Story_2026-10-08_v25.pptx';pdf=ppt.with_suffix('.pdf')
 d=Presentation(ppt);r=PdfReader(pdf);assert len(d.slides)==len(r.pages)==39
 for i,x in enumerate(s['slides'],1):assert ''.join(x['title'].split()) in ''.join(r.pages[i].extract_text().split()),i

@@ -2,7 +2,7 @@
 $root=Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $base=Join-Path $root 'pptx/output/delivered/supporting'
 $target=Join-Path $base 'SA_Market_Story_2026-10-08_v25.pptx'
-if(Test-Path -LiteralPath $target){throw 'Output exists'}
+if((Test-Path -LiteralPath $target) -or (Test-Path -LiteralPath (Join-Path $base 'archive/story_versions/SA_Market_Story_2026-10-08_v25.pptx'))){throw 'Delivered vintage exists; choose a new revision.'}
 $story=Get-Content (Join-Path $root 'pptx/story/sa_market_story_v25_2026_10_08.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 $code=Get-Content (Join-Path $PSScriptRoot 'build_sa_decisions_v23.ps1') -Raw
 $start=$code.IndexOf('function Populate(');$end=$code.IndexOf('$app=New-Object')

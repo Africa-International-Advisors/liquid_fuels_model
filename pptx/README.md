@@ -1,46 +1,46 @@
 # Liquid fuels presentations
 
-Current review story: **Convergence, 30 pages**, updated 7 October 2026.
+Current South Africa review: **v27, 43 pages**, updated 8 October 2026.
 
-- [Current PDF](output/delivered/Vopak_Convergence_current.pdf)
-- [Current editable PowerPoint](output/delivered/Vopak_Convergence_current.pptx)
+- [Current PDF](output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pdf)
+- [Current editable PowerPoint](output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pptx)
 - [Delivery index and evidence status](output/delivered/README.md)
-- [Manish review tasks](../workstreams/WS0_governance/workplan/fuel_lever_review_2026-10-07.md)
+- [Page guide and outstanding inputs](output/delivered/supporting/README.md)
+- [Manish's next handback](../workstreams/WS0_governance/workplan/sa_review_milestone_2026_10_08.md)
 
-The main section ends on page 13; appendix starts on page 14. Page 4 covers national sales/trade, page 5 combines provincial geography/history, page 6 shows site-level refinery capacity, and page 7 distinguishes competitive and margin breakpoints.
+The appendix starts at page 19. Sector charts are on page 8, the Durban–Lesedi issue tree
+on page 16, outstanding requests on page 18, vehicle calibration on page 26 and power
+fleet/cases on page 33. Scenario and commercial calibration remain open.
 
 ## File locations
 
 | Location | Contents |
 |---|---|
-| `output/delivered/` | Current Convergence PDF/PPTX and index |
-| [supporting/](output/delivered/supporting/README.md) | Kickoff, assumption inventory, earlier handover and illustration files |
-| [archive/](output/delivered/archive/README.md) | Superseded and alternative deliveries, with preserved history |
-| `qa/week1_maps/drafts/` | Unshipped local candidates and review exports |
-| `story/` | Editorial copy, evidence inventories and illustration definitions |
+| `output/delivered/supporting/` | Current v27 pair and two-page market-sizing handback |
+| `output/delivered/supporting/archive/` | Previous story versions, background, illustrations and history records |
+| `output/delivered/archive/` | Earlier Convergence and workplan deliveries |
+| `qa/` | Local renders, checks and unique unshipped review drafts |
+| `story/` | Canonical copy, source evidence and illustration definitions |
 | `scripts/` | Presentation-only builders; model calculations remain in `src/lfm/model/` |
 | `templates/` | Original supplied presentation templates |
 
 Model source-review reports have their own [delivery index](../output/delivered/README.md).
-That index links back to these same presentation files; it does not hold duplicate decks.
+It links to the same presentation files and does not hold duplicate decks.
 
-## Rebuild the latest layout correction
+## Revisions and checking
 
-The archived annotated-layout deck is the input to the current correction stage:
+v27 uses the supplied Vopak master and named layouts. Its sector-chart builder is
+`scripts/build_sa_sector_charts_v27.ps1`, reading the archived v26. The preceding
+workbook revision uses `scripts/prepare_sa_workbook_v26.py` and
+`scripts/build_sa_workbook_v26.ps1`, reading archived v25. These are preserved
+revision steps; choose a new version for further deliveries.
 
-```powershell
-.\.venv\Scripts\python.exe pptx/scripts/final_review_polish.py pptx/qa/week1_maps/drafts/2026-10-07_review_iterations/Vopak_Week1_Convergence_annotated_layout_2026_10_07.pptx pptx/qa/week1_maps/drafts/Convergence_candidate.pptx
-```
+Build into QA, run package checks, export through PowerPoint and visually inspect.
+Preserve delivered vintages and update the current manifest, hashes and delivery
+index. Use `scripts/check_sa_revision.py` with the current rendered slide PNGs.
+The [8 October cleanup record](output/delivered/supporting/archive/records/cleanup_2026-10-08_v27.json)
+maps archived files and duplicate removals. Historical snapshots retain their original paths.
 
-The source stages are `annotated_review.py`, `message_titles.py`, `appendix_structure.py`, `analytical_revision.py`, `annotated_layout.py` and `final_review_polish.py`. Each accepts source and destination paths. The annotated-layout stage reads the matching analytical `.revision.json` beside its source deck. Earlier inputs and intermediate evidence are preserved in the dated draft archive.
-
-Build into QA, run package checks, export through PowerPoint and visually inspect. Before replacing the stable delivered filenames, archive the current pair together. Keep only one current pair in `output/delivered/`; update its index and preserve source notes. Original templates remain unchanged.
-
-## Evidence and input status
-
-Observed data, estimates, conditional cases and authored illustrations are
-labelled separately. Current L/M/H inputs are proposed sensitivities, not
-calibrated forecasts. File consolidation does not imply input or business approval.
-
-The [former presentation README](output/delivered/archive/2026-10-07_delivery-cleanup/presentation_README_before_cleanup.md)
-preserves historical build notes. Use this index for current paths and page counts.
+Observed data, estimates, proposed cases and investment illustrations remain separately
+labelled. Sources, original templates, unique model outputs and prior deliveries are retained.
+File consolidation does not imply input or business approval.

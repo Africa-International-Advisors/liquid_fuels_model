@@ -70,7 +70,7 @@ function Navigation($slide,$active,$appendix=$false) {
     }
 }
 $app=New-Object -ComObject PowerPoint.Application
-$deck=$app.Presentations.Open((Join-Path $root 'pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pptx'),0,-1,0)
+$deck=$app.Presentations.Open((Join-Path $root 'pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_2026-10-08_v25.pptx'),0,-1,0)
 try {
     $original=@{};for($i=1;$i -le $deck.Slides.Count;$i++){$original[$i]=$deck.Slides.Item($i)}
     $added=@{}

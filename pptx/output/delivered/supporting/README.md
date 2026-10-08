@@ -19,9 +19,9 @@ Investment conditions: p4; nine-world investment priorities: p5; options: p17; o
 
 Illustrative investment case, annual-report context, assumptions and downside tests: pages 39–42. Reported, inferred and illustrative inputs are distinguished; actual commercial calibration remains open.
 
-The previous [v25 PDF](SA_Market_Story_2026-10-08_v25.pdf) and [PowerPoint](SA_Market_Story_2026-10-08_v25.pptx) are preserved alongside v26 and v27 for source and handback compatibility. Earlier versions and Nigel's edited v18 are in `archive/story_versions/`.
+Previous story versions, including v25, v26 and Nigel's edited v18, are preserved in `archive/story_versions/`. The first one-page issue-tree handback is in `archive/background/`. Builders use the archived sources; the active folder contains v27 and the current two-page handback.
 
 
 Page 11: current asset position and operating data gaps. Page 43: illustrative turnover sensitivity. Actual site share and investment capacity remain dependent on the client inputs listed on page 18.
 
-Previous workbook revision: [v26 PDF](SA_Market_Story_2026-10-08_v26.pdf) · [PowerPoint](SA_Market_Story_2026-10-08_v26.pptx).
+Previous workbook revision: [v26 PDF](archive/story_versions/SA_Market_Story_2026-10-08_v26.pdf) · [PowerPoint](archive/story_versions/SA_Market_Story_2026-10-08_v26.pptx). [Cleanup record](archive/records/cleanup_2026-10-08_v27.json) maps former paths and verified duplicate removals.

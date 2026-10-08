@@ -1,0 +1,631 @@
+{
+  "date": "2026-10-08",
+  "status": "completed",
+  "current_version": 27,
+  "archived": [
+    {
+      "source": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pptx",
+      "destination": "pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_2026-10-08_v25.pptx",
+      "sha256": "d4ca8707db454f4e209f0ce7d8de1fd331d53d385c7f7cfa8efb7b8c665bf229",
+      "bytes": 3057066
+    },
+    {
+      "source": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pdf",
+      "destination": "pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_2026-10-08_v25.pdf",
+      "sha256": "2e37fa8dfa554d2c8886650f515495d9971414474662ef84d82262a7d49db372",
+      "bytes": 2277862
+    },
+    {
+      "source": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v26.pptx",
+      "destination": "pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_2026-10-08_v26.pptx",
+      "sha256": "a3d09a2e5d057d67e83e0fc31f948df0df63551a15ce697b50c9d0d199105d4f",
+      "bytes": 3082736
+    },
+    {
+      "source": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v26.pdf",
+      "destination": "pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_2026-10-08_v26.pdf",
+      "sha256": "170f34076e606606e64ae112031c0f263dfbd7ba4e2ff7c3cd1c6f7349c067c2",
+      "bytes": 2312964
+    },
+    {
+      "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v1.pptx",
+      "destination": "pptx/output/delivered/supporting/archive/background/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v1.pptx",
+      "sha256": "56d6f15699d88a1efc6e3fe2f6fa8586a6a963412dbf7d2b5877bc5aef3828f1",
+      "bytes": 971070
+    },
+    {
+      "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v1.pdf",
+      "destination": "pptx/output/delivered/supporting/archive/background/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v1.pdf",
+      "sha256": "20e7c58361ad754ee026cce8a38806cd2610a4db91daa4fb167f99e3d4a968bd",
+      "bytes": 288461
+    },
+    {
+      "source": "output/market_sizing_issue_tree_2026_10_08.html",
+      "destination": "pptx/qa/archive/2026-10-08_market_sizing_html/market_sizing_issue_tree_2026_10_08.html",
+      "sha256": "d2ced481b6c657d246aefdf6eaf4be5c222a61962d377e13f0f7ccfb4f9be7b6",
+      "bytes": 11461
+    },
+    {
+      "source": "output/market_sizing_issue_tree_2026_10_08_qa.png",
+      "destination": "pptx/qa/archive/2026-10-08_market_sizing_html/market_sizing_issue_tree_2026_10_08_qa.png",
+      "sha256": "280d254fa767351c0a2710dc96227aec7859af82c3711bece02fa2f7ba5eaa32",
+      "bytes": 168465
+    }
+  ],
+  "duplicates_removed": [
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/contact1.png",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/contact1.png",
+      "sha256": "abb8809ef5ebb269b5f8ce66e78d9fd25c56e48247f62cc7f1f5bc5a6a0817b7",
+      "bytes": 824522
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/contact2.png",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/contact2.png",
+      "sha256": "a11e6632908e1c95712efd2c68ce41d191903910401e91128211c4c71e52424f",
+      "bytes": 614613
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/contact3.png",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/contact3.png",
+      "sha256": "34c4c8b3ecb7f6f57c74ce870276c2031918149f6ffa1b867e82e0021ee413da",
+      "bytes": 694137
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/contact4.png",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/contact4.png",
+      "sha256": "1e4220b08c59986853b991ac10b01ef3be88044abb856ac9522d2010f4e4eb1f",
+      "bytes": 501648
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/contact5.png",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/contact5.png",
+      "sha256": "c85d1dfed022f2ec541667f2fb38ef155842ae8b35b00f93f8a1663421733b29",
+      "bytes": 560513
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/contact6.png",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/contact6.png",
+      "sha256": "e45b55f8868fc7d1588c367ae1bb76ff1f88d7db09c2e002d053ff5c8f13052e",
+      "bytes": 215536
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/SA_Market_Story_2026-10-08_v26.pdf",
+      "retained": "pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_2026-10-08_v26.pdf",
+      "sha256": "170f34076e606606e64ae112031c0f263dfbd7ba4e2ff7c3cd1c6f7349c067c2",
+      "bytes": 2312964
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/SA_Market_Story_2026-10-08_v26.pptx",
+      "retained": "pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_2026-10-08_v26.pptx",
+      "sha256": "a3d09a2e5d057d67e83e0fc31f948df0df63551a15ce697b50c9d0d199105d4f",
+      "bytes": 3082736
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide1.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide1.PNG",
+      "sha256": "aeeb620195c7b52bc19b60e96f8d3c7ccad96168d8ea0efef22699b2d4c30601",
+      "bytes": 1109331
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide10.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide10.PNG",
+      "sha256": "e65ffaf4e9a8975c4545d8fb0e64930a2c483eb0662ea97cd61d8a662f70eda6",
+      "bytes": 187006
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide11.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide11.PNG",
+      "sha256": "fcf6dc19f395a89bd09e37852ce31856e2111090ba36a38262fbc8b3d7433fe3",
+      "bytes": 49091
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide12.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide12.PNG",
+      "sha256": "b5255f60dad35f7beee54de8d1bf6015ad0bcb9f0649b38beec7707e92f12a25",
+      "bytes": 145703
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide13.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide13.PNG",
+      "sha256": "ac44501af303ef4ccb25ad0c576c24f0be05c7b02ebd83f136db0605b0e27ab1",
+      "bytes": 119789
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide14.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide14.PNG",
+      "sha256": "1d821ba1833452b1d8dcc72b7bb7664bddbf2c9abe57fb4c02c042c0566948fd",
+      "bytes": 90415
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide15.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide15.PNG",
+      "sha256": "b5eda9720179d22fd3a5c89d6de39be3705fdfe06ad20cef9ab99468e2ee1545",
+      "bytes": 43338
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide16.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide16.PNG",
+      "sha256": "a323c9737fd1fd63a585b7df1ab5b8941cf5fd272fedd3e9c7cac58c15bbdfb0",
+      "bytes": 65644
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide17.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide17.PNG",
+      "sha256": "e0f412537612bc683d19828c25c7a8cbeadf530ea521948b5ba95e9a1e387867",
+      "bytes": 56921
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide18.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide18.PNG",
+      "sha256": "d9b55f0958245160931ab32056515fb493fa3ae8fa1c2bc2eba896818c5fade6",
+      "bytes": 54367
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide19.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide19.PNG",
+      "sha256": "7b0e08776bca325af5621358b83f942c461c9def12eb9eddad208991108d3f3e",
+      "bytes": 1102042
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide2.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide2.PNG",
+      "sha256": "79119236f03fd5a2a090b1578350a2bab93232a99793d15da584684642bc077b",
+      "bytes": 61850
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide20.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide20.PNG",
+      "sha256": "b8bd3c93f76673ff066ee8bc4a703576a268cfc9eca7d1ff0a0dcd6cf469df77",
+      "bytes": 41542
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide21.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide21.PNG",
+      "sha256": "868aea4cb9a490e1c58fbb24b2aa824575ac64a8d6bd7cf15c739b6b978842c0",
+      "bytes": 76673
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide22.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide22.PNG",
+      "sha256": "e56b78c5f1abb4f0b6857b393637fcbdf1cab601f2c1176e3b01e153ee73dd13",
+      "bytes": 77644
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide23.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide23.PNG",
+      "sha256": "c1e2e5887173939bacd34acaf335ba1cc9238eeaec0238df0e8c28dfe205aa3a",
+      "bytes": 43612
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide24.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide24.PNG",
+      "sha256": "b232893e8278dc3bd43ef2f70086637265973548c76bb1b5f51b45db1b4e7450",
+      "bytes": 81304
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide25.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide25.PNG",
+      "sha256": "1ac06b34e0001d34d1e8f26ce0cb3c6e662687fbec46d9d26c8d972ba897e4a9",
+      "bytes": 42341
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide26.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide26.PNG",
+      "sha256": "45f69c6f8f635e3f8067dffd94e2070dd0208266b9bbbeed03d74162c6608952",
+      "bytes": 48987
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide27.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide27.PNG",
+      "sha256": "9d817ff3537a7eda0ce7977568a0d97cc645cdc8f74caedff6137208df67f75b",
+      "bytes": 68341
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide28.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide28.PNG",
+      "sha256": "650699101c5cb47efa9c409006d07d88ca02b0125f436a8b9f65a490501c7d96",
+      "bytes": 70586
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide29.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide29.PNG",
+      "sha256": "d3825024c0e3c8c016e4cf09e3382caaa2abf99be4bdeb7c7923748821af0507",
+      "bytes": 47979
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide3.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide3.PNG",
+      "sha256": "935f5455a72df5c87e34042bc05ff4674c7c79536dcf063d5d398738c3051636",
+      "bytes": 55216
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide30.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide30.PNG",
+      "sha256": "4d159dabcc2f19c54a02d7604bfe6744428e63c4efdd9952c6d1f7dcc2f7ef5a",
+      "bytes": 72210
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide31.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide31.PNG",
+      "sha256": "127fd4cec089b4ad5c8906716716da15e7813b4c0e138eca8369987a77ac7c85",
+      "bytes": 58036
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide32.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide32.PNG",
+      "sha256": "7eeef90b0be8f2189fa82af52c308ac9cfaf13509be98617521497b50fad3571",
+      "bytes": 50937
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide33.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide33.PNG",
+      "sha256": "84baad608a772915880b27a99e004954d2cc73f27f14be72282e8ea490dd998c",
+      "bytes": 45510
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide34.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide34.PNG",
+      "sha256": "864a790eed2c699acb0cad9ead40ac8bca31c5732dc64f03c117710211b8287e",
+      "bytes": 49391
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide35.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide35.PNG",
+      "sha256": "0f1821fc7244544ddfe214f99b38064edb27ad3200d27438c0ed7b7085910b6b",
+      "bytes": 45084
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide36.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide36.PNG",
+      "sha256": "e6d6de4fd2bab6dcc56291cc26f9b048c59e56cdac3d547738e1a8eb46ddef6c",
+      "bytes": 37638
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide37.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide37.PNG",
+      "sha256": "93bccfb70d1dd82f433f5eed44547596e47252392c07de79184021b764e96daa",
+      "bytes": 49238
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide38.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide38.PNG",
+      "sha256": "ca637375246c5c100265811c7bcff7741e7cc7b08823a5917dc8e6533456b7f8",
+      "bytes": 72527
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide39.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide39.PNG",
+      "sha256": "a7be6fe01506fc59ea42c863be9eacfbfa66fd5134ba2828c2b8738c7cd7c35c",
+      "bytes": 37504
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide4.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide4.PNG",
+      "sha256": "568df03a6dc1b44cf07c111d41e6a7861e6b577cad13c88e54a53578ce66d21e",
+      "bytes": 56442
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide40.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide40.PNG",
+      "sha256": "329b6f3aaa0bb75caebd4a14845c08f9a3acde7ba13dde85a69ef03e287d3f43",
+      "bytes": 46792
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide41.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide41.PNG",
+      "sha256": "b3885285a154d7e496ff3440453458bde9b2d98aa46a1db7b3d481554795997d",
+      "bytes": 54252
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide42.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide42.PNG",
+      "sha256": "2c6238fef6275e754e0a59ef990c49addff33e3f3d77cac81df725691c17528c",
+      "bytes": 70788
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide43.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide43.PNG",
+      "sha256": "16b9bc71a01dba372207e4acd9826fc6785ec7b370ac089c596a47ac41b80e9c",
+      "bytes": 118548
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide5.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide5.PNG",
+      "sha256": "8c995d429fdfdfff7064afd287df9157a2e138e98ad24c2639e34f40792e5f44",
+      "bytes": 60168
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide6.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide6.PNG",
+      "sha256": "9dff42484cd9385786a61a63e08772b918ff84409409543d55143a9fd5f8ea5f",
+      "bytes": 95861
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide7.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide7.PNG",
+      "sha256": "98e174f80b9f368800beb793b6b2d29efff287c287e55c6587637c95f870f860",
+      "bytes": 88526
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide8.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide8.PNG",
+      "sha256": "60948648e777da2ee43ebdd99ee335f8b4425df8ef8904875ed7fb4d8bf35f3d",
+      "bytes": 40903
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/Slide9.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide9.PNG",
+      "sha256": "40e9b64d5670a4e39a5160a160ad0736adc06505dbc5a357ab93da377f24fca7",
+      "bytes": 98186
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/table_fit.json",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/table_fit.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "bytes": 4
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/checks.json",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt2/checks.json",
+      "sha256": "4d08e9c134ef36fb6c81180f72585493f619d79af582ec818717608f3481a67c",
+      "bytes": 109
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/contact6.png",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/contact6.png",
+      "sha256": "e45b55f8868fc7d1588c367ae1bb76ff1f88d7db09c2e002d053ff5c8f13052e",
+      "bytes": 215536
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide1.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide1.PNG",
+      "sha256": "aeeb620195c7b52bc19b60e96f8d3c7ccad96168d8ea0efef22699b2d4c30601",
+      "bytes": 1109331
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide10.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide10.PNG",
+      "sha256": "e65ffaf4e9a8975c4545d8fb0e64930a2c483eb0662ea97cd61d8a662f70eda6",
+      "bytes": 187006
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide12.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide12.PNG",
+      "sha256": "b5255f60dad35f7beee54de8d1bf6015ad0bcb9f0649b38beec7707e92f12a25",
+      "bytes": 145703
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide13.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide13.PNG",
+      "sha256": "ac44501af303ef4ccb25ad0c576c24f0be05c7b02ebd83f136db0605b0e27ab1",
+      "bytes": 119789
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide14.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide14.PNG",
+      "sha256": "1d821ba1833452b1d8dcc72b7bb7664bddbf2c9abe57fb4c02c042c0566948fd",
+      "bytes": 90415
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide15.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide15.PNG",
+      "sha256": "b5eda9720179d22fd3a5c89d6de39be3705fdfe06ad20cef9ab99468e2ee1545",
+      "bytes": 43338
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide16.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide16.PNG",
+      "sha256": "a323c9737fd1fd63a585b7df1ab5b8941cf5fd272fedd3e9c7cac58c15bbdfb0",
+      "bytes": 65644
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide18.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide18.PNG",
+      "sha256": "d9b55f0958245160931ab32056515fb493fa3ae8fa1c2bc2eba896818c5fade6",
+      "bytes": 54367
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide19.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide19.PNG",
+      "sha256": "7b0e08776bca325af5621358b83f942c461c9def12eb9eddad208991108d3f3e",
+      "bytes": 1102042
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide2.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide2.PNG",
+      "sha256": "79119236f03fd5a2a090b1578350a2bab93232a99793d15da584684642bc077b",
+      "bytes": 61850
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide20.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide20.PNG",
+      "sha256": "b8bd3c93f76673ff066ee8bc4a703576a268cfc9eca7d1ff0a0dcd6cf469df77",
+      "bytes": 41542
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide21.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide21.PNG",
+      "sha256": "868aea4cb9a490e1c58fbb24b2aa824575ac64a8d6bd7cf15c739b6b978842c0",
+      "bytes": 76673
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide22.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide22.PNG",
+      "sha256": "e56b78c5f1abb4f0b6857b393637fcbdf1cab601f2c1176e3b01e153ee73dd13",
+      "bytes": 77644
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide23.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide23.PNG",
+      "sha256": "c1e2e5887173939bacd34acaf335ba1cc9238eeaec0238df0e8c28dfe205aa3a",
+      "bytes": 43612
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide24.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide24.PNG",
+      "sha256": "b232893e8278dc3bd43ef2f70086637265973548c76bb1b5f51b45db1b4e7450",
+      "bytes": 81304
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide25.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide25.PNG",
+      "sha256": "1ac06b34e0001d34d1e8f26ce0cb3c6e662687fbec46d9d26c8d972ba897e4a9",
+      "bytes": 42341
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide26.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide26.PNG",
+      "sha256": "45f69c6f8f635e3f8067dffd94e2070dd0208266b9bbbeed03d74162c6608952",
+      "bytes": 48987
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide27.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide27.PNG",
+      "sha256": "9d817ff3537a7eda0ce7977568a0d97cc645cdc8f74caedff6137208df67f75b",
+      "bytes": 68341
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide28.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide28.PNG",
+      "sha256": "650699101c5cb47efa9c409006d07d88ca02b0125f436a8b9f65a490501c7d96",
+      "bytes": 70586
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide29.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide29.PNG",
+      "sha256": "d3825024c0e3c8c016e4cf09e3382caaa2abf99be4bdeb7c7923748821af0507",
+      "bytes": 47979
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide3.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide3.PNG",
+      "sha256": "935f5455a72df5c87e34042bc05ff4674c7c79536dcf063d5d398738c3051636",
+      "bytes": 55216
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide31.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide31.PNG",
+      "sha256": "127fd4cec089b4ad5c8906716716da15e7813b4c0e138eca8369987a77ac7c85",
+      "bytes": 58036
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide32.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide32.PNG",
+      "sha256": "7eeef90b0be8f2189fa82af52c308ac9cfaf13509be98617521497b50fad3571",
+      "bytes": 50937
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide33.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide33.PNG",
+      "sha256": "84baad608a772915880b27a99e004954d2cc73f27f14be72282e8ea490dd998c",
+      "bytes": 45510
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide34.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide34.PNG",
+      "sha256": "864a790eed2c699acb0cad9ead40ac8bca31c5732dc64f03c117710211b8287e",
+      "bytes": 49391
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide36.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide36.PNG",
+      "sha256": "e6d6de4fd2bab6dcc56291cc26f9b048c59e56cdac3d547738e1a8eb46ddef6c",
+      "bytes": 37638
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide37.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide37.PNG",
+      "sha256": "93bccfb70d1dd82f433f5eed44547596e47252392c07de79184021b764e96daa",
+      "bytes": 49238
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide38.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide38.PNG",
+      "sha256": "ca637375246c5c100265811c7bcff7741e7cc7b08823a5917dc8e6533456b7f8",
+      "bytes": 72527
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide39.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide39.PNG",
+      "sha256": "a7be6fe01506fc59ea42c863be9eacfbfa66fd5134ba2828c2b8738c7cd7c35c",
+      "bytes": 37504
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide40.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide40.PNG",
+      "sha256": "329b6f3aaa0bb75caebd4a14845c08f9a3acde7ba13dde85a69ef03e287d3f43",
+      "bytes": 46792
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide41.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide41.PNG",
+      "sha256": "b3885285a154d7e496ff3440453458bde9b2d98aa46a1db7b3d481554795997d",
+      "bytes": 54252
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide42.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide42.PNG",
+      "sha256": "2c6238fef6275e754e0a59ef990c49addff33e3f3d77cac81df725691c17528c",
+      "bytes": 70788
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide43.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide43.PNG",
+      "sha256": "16b9bc71a01dba372207e4acd9826fc6785ec7b370ac089c596a47ac41b80e9c",
+      "bytes": 118548
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide6.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide6.PNG",
+      "sha256": "9dff42484cd9385786a61a63e08772b918ff84409409543d55143a9fd5f8ea5f",
+      "bytes": 95861
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide7.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide7.PNG",
+      "sha256": "98e174f80b9f368800beb793b6b2d29efff287c287e55c6587637c95f870f860",
+      "bytes": 88526
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide8.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide8.PNG",
+      "sha256": "60948648e777da2ee43ebdd99ee335f8b4425df8ef8904875ed7fb4d8bf35f3d",
+      "bytes": 40903
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/Slide9.PNG",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/Slide9.PNG",
+      "sha256": "40e9b64d5670a4e39a5160a160ad0736adc06505dbc5a357ab93da377f24fca7",
+      "bytes": 98186
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/attempt1/table_fit.json",
+      "retained": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v26/table_fit.json",
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "bytes": 4
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v27/SA_Market_Story_2026-10-08_v27.pptx",
+      "retained": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pptx",
+      "sha256": "80a06e654b799c4a4b0b106e49cf68e4c3060a78e9e03bcc498243e6651e0917",
+      "bytes": 3084608
+    },
+    {
+      "source": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v27/SA_Market_Story_2026-10-08_v27.pdf",
+      "retained": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pdf",
+      "sha256": "ef81c9d538029eb0d36c556c5cf8ede137b4ba9d53cc906b4c8c98362908bfa1",
+      "bytes": 2313065
+    }
+  ],
+  "caches_removed": [
+    ".pytest_cache",
+    ".ruff_cache"
+  ],
+  "local_source_exclusions": [
+    "/external/sources/market_sizing_2026_10_08/",
+    "/workstreams/WS0_governance/meetings/2026-10-08_ps_session_manish_ramjeawon.docx"
+  ],
+  "duplicate_bytes_removed": 24056605,
+  "preservation": "Sources, templates, model outputs, delivered vintages and unique QA drafts retained. Historical records retain original paths; archive mappings are recorded here."
+}

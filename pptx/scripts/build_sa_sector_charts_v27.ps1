@@ -17,7 +17,7 @@ function Rule($slide,$name,$x,$y,$x2,$y2){
     $s.Line.ForeColor.ObjectThemeColor=1;$s.Line.ForeColor.TintAndShade=0.85;$s.Line.Weight=0.4
 }
 $app=New-Object -ComObject PowerPoint.Application
-$deck=$app.Presentations.Open((Join-Path $root 'pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v26.pptx'),0,-1,0)
+$deck=$app.Presentations.Open((Join-Path $root 'pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_2026-10-08_v26.pptx'),0,-1,0)
 try{
     $slide=$deck.Slides.Item(8);$slide.Shapes.Item('Native evidence table').Delete();$slide.Shapes.Item('Interpretation').Delete()
     [void](Label $slide 'Sector heading' 'Sector' 36 126 155 18 12 $true)

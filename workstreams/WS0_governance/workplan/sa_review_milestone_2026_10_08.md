@@ -69,7 +69,7 @@ Large downloaded map extracts, detailed map layers, the routing SQLite database 
 - Metadata and compact map products are tracked. Retain OSM/Geofabrik attribution and licences. The graph is a connectivity diagnostic, not a validated truck-routing engine.
 - If an original URL no longer returns the recorded hash, obtain the preserved original from Nigel or register the download as a new source vintage. Do not silently substitute it.
 
-The delivered archive preserves story progression and Nigel's edited v18 source. Use the dated v27 pair as the current review pack. v25 remains alongside it to preserve the source for revision and standalone issue-tree builds; earlier versions are in `archive/story_versions/`.
+The delivered archive preserves story progression and Nigel's edited v18 source. Use the dated v27 pair as the current review pack. v25 and v26 are in `archive/story_versions/`; revision and standalone issue-tree builders use those archived sources. The active folder contains only v27 and the two-page issue-tree handback. The [cleanup record](../../../pptx/output/delivered/supporting/archive/records/cleanup_2026-10-08_v27.json) maps former paths; historical snapshots retain their original paths.
 
 ## Verification at this milestone
 

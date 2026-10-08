@@ -37,7 +37,7 @@ files = []
 for suffix in ('.pptx', '.pdf'):
     source = build / ('SA_Market_Story_2026-10-08_v26' + suffix)
     target = delivered / source.name
-    if target.exists():
+    if target.exists() or (delivered / 'archive/story_versions' / source.name).exists():
         raise FileExistsError(f'Preserve previous delivery: {target}')
     files.append((source, target))
 record = delivered / 'archive/records/current_story.json'

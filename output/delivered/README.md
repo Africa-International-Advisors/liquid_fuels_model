@@ -1,15 +1,15 @@
 # Current South Africa delivery
 
-Updated 8 October 2026. Use the **39-page v25** pair:
+Updated 8 October 2026. Use the **43-page v27** pair:
 
-- [PDF](../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pdf)
-- [PowerPoint](../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pptx)
+- [PDF](../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pdf)
+- [PowerPoint](../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pptx)
 - [Milestone instructions](../../workstreams/WS0_governance/workplan/sa_review_milestone_2026_10_08.md)
 - [Data request](investment_bridge_2026_10_08/data_request.csv)
 - [Illustrative financial case](vopak_illustration_2026_10_08/index.html)
 
-Page 10 establishes the asset position and operating evidence gaps; page 16 contains the data request.
-The appendix starts on page 17; pages 35–38 explain the illustrative economics and page 39 tests tank turns.
+Page 11 establishes the asset position and operating evidence gaps; page 18 contains the data request.
+The appendix starts on page 19; pages 39–42 explain the illustrative economics and page 43 tests tank turns.
 
 [Demand baseline workshop](Demand_baseline_workshop_2026_10_07_compact.xlsx) is the compact, formula-linked review workbook. Full descriptions are retained on Notes; HML is the last tab. Current model results are a frozen run, and sales/model scope reconciliation remains open.
 
