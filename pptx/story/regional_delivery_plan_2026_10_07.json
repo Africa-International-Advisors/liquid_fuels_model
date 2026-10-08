@@ -1,0 +1,20 @@
+{
+  "as_at": "2026-10-07",
+  "status": "Nigel corrected current activity to Week 1. Geographic sequencing, effort and checkpoints remain proposed, not client commitments.",
+  "sources": ["workstreams/WS0_governance/workplan/scope_and_roles.md", "workstreams/WS0_governance/workplan/six_week_plan.md", "Nigel's Week 1 and geographic-workstream clarification in chat"],
+  "weeks": ["W1\n5-9 Oct", "W2\n12-16 Oct", "W3\n19-23 Oct", "W4\n26-30 Oct", "W5\n2-6 Nov", "W6\n9-12 Nov"],
+  "rows": [
+    {"label": "South Africa | baseline and assumptions", "output": "Reconciled starting point and reviewed driver inputs", "owner": "Manish / Nigel", "current": true, "cells": ["ACTIVE", "Review", "", "", "", ""]},
+    {"label": "South Africa | demand and supply outlook", "output": "Product scenarios and national import requirements", "owner": "Manish / Henry", "current": false, "cells": ["", "Build", "Test", "Draft", "Review", ""]},
+    {"label": "South Africa | access and asset implications", "output": "Route economics, reachable volumes and usable capacity", "owner": "Nigel / Manish", "current": false, "cells": ["", "Inputs", "Routes", "Test", "Review", "Final"]},
+    {"label": "Namibia / Walvis Bay | focused assessment", "output": "Local demand, transit flows and gateway opportunity", "owner": "Manish / Nigel", "current": false, "cells": ["", "Source", "Assess", "Review", "", ""]},
+    {"label": "Wider Africa | regional screening", "output": "Comparable screen and priority-market shortlist", "owner": "Nigel / Manish", "current": false, "cells": ["", "Screen", "Screen", "Shortlist", "", ""]},
+    {"label": "Integration, storyline and handover", "output": "One evidence-led pack across all three geographic tracks", "owner": "Nigel / Henry", "current": true, "cells": ["ACTIVE", "Update", "Update", "Draft", "Review", "Handover"]}
+  ],
+  "africa_scope": "East, West and North Africa, plus SADC excluding SACU. Regional screening only; detailed country modelling follows prioritisation and evidence.",
+  "dependencies": "SA forecasts follow reviewed baselines and assumptions. Namibia and Africa starts depend on shared analyst capacity and source access. Logistics conclusions require customer economics and route evidence.",
+  "resource_note": "Manish is one shared analyst, not separate full-time resources for every row. Nigel prioritises effort; Henry reviews technical findings. Wider-Africa and Namibia progress has not been asserted.",
+  "target": "12 November remains a proposed handover target; W6 is the partial week ending at that target.",
+  "owner": "Nigel",
+  "expiry_trigger": "Update at the next weekly review or when capacity, scope, evidence availability or client dates change. Record actual completion separately from planned timing."
+}

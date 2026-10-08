@@ -1,0 +1,270 @@
+{
+  "review_reference": "Vopak_Week1_Convergence_message_titles_2026_10_07.pdf",
+  "page_number_basis": "Current 31-page PDF; cover is page 1. Pages 12-14 also match the preceding review PDF.",
+  "status": "Second-round visual changes applied; numerical logistics breakpoints await evidence",
+  "feedback": [
+    {
+      "id": "structure-004",
+      "pages": [
+        11
+      ],
+      "content": "Scenario framework introducing the fuel-specific assumption tables",
+      "decision": "Move page 11 to the appendix immediately before current pages 12-14, retaining it as their introduction.",
+      "requested_by": "Nigel",
+      "status": "Applied",
+      "implementation_note": "Current page 11 is a precursor to the diesel, jet and petrol assumption tables, rather than a separate main-story finding. Keep current PDF numbering during feedback collection.",
+      "revised_pages": [
+        19
+      ]
+    },
+    {
+      "id": "structure-003",
+      "pages": [
+        8,
+        9
+      ],
+      "content": "Historical demand-driver charts",
+      "decision": "Move both pages from the main story into the appendix.",
+      "requested_by": "Nigel",
+      "status": "Applied",
+      "implementation_note": "Use current PDF numbering during feedback collection; apply with the previously logged move of pages 12-14.",
+      "revised_pages": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "structure-001",
+      "pages": [
+        12,
+        13,
+        14
+      ],
+      "content": "Diesel, jet and petrol assumption/lever tables",
+      "decision": "Move all three pages from the main story into the appendix.",
+      "requested_by": "Nigel",
+      "status": "Applied",
+      "implementation_note": "Retain current numbering during feedback collection. Set appendix position and update slide numbers and internal references when the consolidated revision is applied.",
+      "revised_pages": [
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "id": "structure-002",
+      "content": "Review process",
+      "feedback": "The proposed changes are not sufficiently visible; the story needs structural work beyond title changes.",
+      "next_step": "Collect further page-specific feedback before making another deck revision."
+    }
+  ],
+  "output": "Vopak_Week1_Convergence_restructured_2026_10_07.pdf",
+  "original_to_revised_page": {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "10": 8,
+    "15": 9,
+    "16": 10,
+    "17": 11,
+    "18": 12,
+    "19": 13,
+    "20": 14,
+    "21": 15,
+    "22": 16,
+    "8": 17,
+    "9": 18,
+    "11": 19,
+    "12": 20,
+    "13": 21,
+    "14": 22,
+    "23": 23,
+    "24": 24,
+    "25": 25,
+    "26": 26,
+    "27": 27,
+    "28": 28,
+    "29": 29,
+    "30": 30,
+    "31": 31
+  },
+  "feedback_round_2": {
+    "review_reference": "Vopak_Week1_Convergence_restructured_2026_10_07.pdf",
+    "page_number_basis": "Current restructured 31-page PDF; cover is page 1. Do not use earlier title-review numbering.",
+    "feedback": [
+      {
+        "id": "structure-005",
+        "pages": [
+          4
+        ],
+        "decision": "Replace the 2024 national snapshot with a national time-series graph.",
+        "status": "Applied",
+        "implementation_note": "Retain separate products and clear distinctions between reported sales, trade and modelled demand. Establish comparable coverage before choosing the time span.",
+        "revised_pages": [
+          4
+        ]
+      },
+      {
+        "id": "structure-006",
+        "pages": [
+          5,
+          6
+        ],
+        "decision": "Combine the provincial map and provincial time series into one page, side by side.",
+        "status": "Applied",
+        "implementation_note": "Use consistent provincial colours/labels and clearly state the map reference year and historical coverage. The page should explain both geographic concentration and change over time.",
+        "revised_pages": [
+          5
+        ]
+      },
+      {
+        "id": "structure-007",
+        "pages": [
+          8
+        ],
+        "decision": "Stack refinery capacity by named refinery so site closures, restarts and additions are visible over time.",
+        "status": "Applied",
+        "implementation_note": "Separate observed capacity from conditional site-level scenarios. Use registered dates and capacities; the user mentioned 2032 only as an example, not an adopted commissioning date. Do not invent a site allocation of aggregate capacity.",
+        "revised_pages": [
+          7
+        ]
+      },
+      {
+        "id": "structure-008",
+        "pages": [
+          9
+        ],
+        "feedback": "The map is useful visually, but distance-based cost alone does not identify the economic breakpoint for serving customers.",
+        "direction": "Develop storage-to-customer delivered-cost and margin analysis to identify an affordable logistics threshold and competitive route crossover.",
+        "status": "Both tests specified on page; numerical thresholds unresolved",
+        "implementation_note": "Distinguish customer/supplier delivered economics from Vopak terminal margin. Compare the same product, destination, period and service terms; require acquisition price, handling/storage, route costs, inventory/loss costs, acceptable delivered price or competing offer, and required margin. Do not represent illustrative distance costs as a validated catchment or adopt a new threshold without evidence.",
+        "revised_pages": [
+          8
+        ]
+      }
+    ],
+    "output": "Vopak_Week1_Convergence_analytics_2026_10_07_v3.pdf",
+    "old_to_new": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 5,
+      "7": 6,
+      "8": 7,
+      "9": 8,
+      "10": 9,
+      "11": 10,
+      "12": 11,
+      "13": 12,
+      "14": 13,
+      "15": 14,
+      "16": 15,
+      "17": 16,
+      "18": 17,
+      "19": 18,
+      "20": 19,
+      "21": 20,
+      "22": 21,
+      "23": 22,
+      "24": 23,
+      "25": 24,
+      "26": 25,
+      "27": 26,
+      "28": 27,
+      "29": 28,
+      "30": 29,
+      "31": 30
+    }
+  },
+  "feedback_round_3": {
+    "review_reference": "Vopak_Week1_Convergence_analytics_2026_10_07_v3.pdf",
+    "output": "Vopak_Week1_Convergence_analytics_2026_10_07_v4.pdf",
+    "changes": [
+      {
+        "page": 4,
+        "request": "Show exports, put legends above charts, add individual subtitles and remove gridlines.",
+        "implementation": "Sales, gross imports and exports are charted; net imports retained as a calculated callout. Department/FIASA sales distinction preserved."
+      },
+      {
+        "page": 5,
+        "request": "Explain the 2018 gap and use the empty space below the map.",
+        "implementation": "2014 source conflict and incomplete 2018 coverage labelled above the trend; map enlarged at a uniform scale and positioned lower. Missing observations not interpolated."
+      }
+    ],
+    "status": "Applied; rendered pages 4-5 visually checked; 30-page PDF exported"
+  },
+  "feedback_round_4": {
+    "source": "Seven annotated screenshots supplied by Nigel; applied to latest v4 deck",
+    "output": "Vopak_Week1_Convergence_annotated_layout_2026_10_07.pdf",
+    "pages": [
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "changes": [
+      "Product units and divider lines; insight sections under national charts; retain exports/top legends/no grids",
+      "Provincial legend on right; extend map panel and retain source-gap explanation",
+      "Refinery Insights panel and dividers with existing arrow motif",
+      "Logistics right-panel divider and marker",
+      "Match gateway panel-heading font sizes and rules",
+      "Storage and handling legends above left subtitle rules"
+    ],
+    "status": "Applied; all seven changed pages rendered and visually checked; chart XML unchanged"
+  },
+  "current_output": "pptx/output/delivered/Vopak_Convergence_current.pdf",
+  "feedback_round_5": {
+    "pages": [
+      4,
+      5,
+      10,
+      11
+    ],
+    "changes": [
+      "Net imports plotted as a dashed fourth series",
+      "Production sources checked: all-product, fiscal-year and ownership-share mismatch prevents national product-level series",
+      "Matched panel heading positions, rules and dividers",
+      "Single current delivery pair; earlier files archived with SHA256 manifest"
+    ],
+    "status": "Applied and visually checked",
+    "production_gap_owner": "Manish / Nigel",
+    "production_gap_trigger": "Resolve before adding a domestic petrol/diesel production series or closing the national balance"
+  },
+  "feedback_round_6": {
+    "review_reference": "pptx/output/delivered/Vopak_Convergence_current.pdf",
+    "page_number_basis": "Current 30-page PDF; cover is page 1",
+    "feedback": [
+      {
+        "page": 6,
+        "content": "Illustrative provincial domestic/import allocation",
+        "user_feedback": "Page 6 seems no longer important",
+        "proposed_treatment": "Remove from main story; retain the illustrative allocation method in the appendix",
+        "reason": "National sales/trade history and combined provincial map/trend already establish market scale and location; this allocation is not observed provincial supply-origin evidence.",
+        "status": "Applied to the same current PPTX/PDF; former page 6 now appendix page 15"
+      }
+    ],
+    "appendix_divider": 14
+  },
+  "feedback_round_7": {
+    "page": 12,
+    "page_number_basis": "Current 30-page PDF; cover is page 1",
+    "changes": [
+      "Current week corrected to Week 1, 5?9 October 2026",
+      "South Africa baseline, outlook and asset implications shown across the six-week plan",
+      "Namibia/Walvis Bay assessment and wider Africa screening explicitly shown as proposed Week 2?4 tracks",
+      "Active work distinguished from proposed timing; shared resources and dependencies explicit",
+      "Editable regional plan JSON and written workplan updated"
+    ],
+    "plan_source": "pptx/story/regional_delivery_plan_2026_10_07.json",
+    "status": "Applied to the same current PPTX/PDF; page 12 rendered and visually checked; other 29 slides unchanged"
+  }
+}

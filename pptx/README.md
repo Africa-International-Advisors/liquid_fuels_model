@@ -1,16 +1,13 @@
 # Liquid fuels presentations
 
-The current review story is **Convergence, 31 pages**, updated 7 October 2026.
+Current review story: **Convergence, 30 pages**, updated 7 October 2026.
 
-- [Current PDF](output/delivered/Vopak_Week1_Convergence_2026_10_06.pdf)
-- [Matching editable PowerPoint](output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx)
+- [Current PDF](output/delivered/Vopak_Convergence_current.pdf)
+- [Current editable PowerPoint](output/delivered/Vopak_Convergence_current.pptx)
+- [Delivery index and evidence status](output/delivered/README.md)
 - [Manish review tasks](../workstreams/WS0_governance/workplan/fuel_lever_review_2026-10-07.md)
-- [Delivery index](output/delivered/README.md)
 
-The stable filenames retain the Week 1 date, 6 October. Latest changes include
-2030/2035 fuel lever proposals on pages 12-14 and legends above the driver
-plots on pages 8-9. Page 24 sets out Manish’s five priorities, expected outputs
-and Nigel’s review decisions. The main story ends there; appendix starts on page 25.
+The main section ends on page 13; appendix starts on page 14. Page 4 covers national sales/trade, page 5 combines provincial geography/history, page 6 shows site-level refinery capacity, and page 7 distinguishes competitive and margin breakpoints.
 
 ## File locations
 
@@ -27,23 +24,17 @@ and Nigel’s review decisions. The main story ends there; appendix starts on pa
 Model source-review reports have their own [delivery index](../output/delivered/README.md).
 That index links back to these same presentation files; it does not hold duplicate decks.
 
-## Rebuild the current story
+## Rebuild the latest layout correction
 
-Use the shared virtual environment and build a candidate outside delivered:
+The archived annotated-layout deck is the input to the current correction stage:
 
 ```powershell
-.\.venv\Scripts\python.exe pptx/scripts/build_week1_maps.py --reuse-deck pptx/output/delivered/Vopak_Week1_Convergence_2026_10_06.pptx --output pptx/output/Vopak_Week1_Convergence_candidate.pptx
+.\.venv\Scripts\python.exe pptx/scripts/final_review_polish.py pptx/qa/week1_maps/drafts/2026-10-07_review_iterations/Vopak_Week1_Convergence_annotated_layout_2026_10_07.pptx pptx/qa/week1_maps/drafts/Convergence_candidate.pptx
 ```
 
-Run package checks, export through PowerPoint and visually inspect the PDF.
-Preserve the previous delivered pair together in a dated archive before replacing
-the stable filenames. Update the delivery index when page count or scope changes.
-Move completed local candidates into QA drafts; keep the delivered top level clear.
+The source stages are `annotated_review.py`, `message_titles.py`, `appendix_structure.py`, `analytical_revision.py`, `annotated_layout.py` and `final_review_polish.py`. Each accepts source and destination paths. The annotated-layout stage reads the matching analytical `.revision.json` beside its source deck. Earlier inputs and intermediate evidence are preserved in the dated draft archive.
 
-The builder uses the supplied Vopak master and named layouts. The preserved
-53-slide kickoff reference is now under `output/delivered/supporting/`; its
-builder and `deck.yaml` write there too. `deck.yaml` is the kickoff project,
-while `build_week1_maps.py` builds the current Convergence story.
+Build into QA, run package checks, export through PowerPoint and visually inspect. Before replacing the stable delivered filenames, archive the current pair together. Keep only one current pair in `output/delivered/`; update its index and preserve source notes. Original templates remain unchanged.
 
 ## Evidence and input status
 
