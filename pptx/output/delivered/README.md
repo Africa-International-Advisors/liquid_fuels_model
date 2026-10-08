@@ -5,6 +5,7 @@ Updated 8 October 2026. The current market story is the matching **39-page v25**
 - [Current PDF](supporting/SA_Market_Story_2026-10-08_v25.pdf)
 - [Current editable PowerPoint](supporting/SA_Market_Story_2026-10-08_v25.pptx)
 - [Supporting material and page guide](supporting/README.md)
+- [8 October PS market-sizing issue tree and outstanding data, two pages](supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v2.pdf) / [editable PowerPoint](supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v2.pptx).
 - [Older material — archive](supporting/archive/)
 
 The Appendix cover is page 17. Scenario calibration, commercial inputs and operational
