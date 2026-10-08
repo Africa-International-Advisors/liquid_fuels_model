@@ -56,6 +56,7 @@ def load(vintage: Path) -> dict:
     d["stone"] = {r["vehicle_type"]: r for r in _read(ref / "vehicle_parameters_stone2018.csv")}
     d["freight"] = {(r["mode"], int(r["period"])): float(r["value"]) for r in _read(ts / "freight_payload_statssa_review.csv")}
     d["points"] = _read(ref / "demand_evidence_points.csv")
+    d["fuel_by_province"] = {(r["province"], r["fuel_type"]): float(r["vehicles"]) for r in _read(ref / "vehicle_population_by_fuel_province_dot2023.csv")}
     d["efficiency"] = {(name, r["scenario"]): float(r["value"]) for name in ("diesel", "gasoline")
                        for r in _read(ts / f"efficiency_improvement_{name}.csv") if r["period"] == "2030"}
     return d
@@ -110,7 +111,15 @@ def build(d: dict) -> list[dict]:
         "years to March " + "; ".join(str(y) for y in ipp_years), "inferred", f"Generation x {LITRES_PER_KWH} litres per kWh", "", "",
         "The producers do not report litres. Uses Eskom's implied rate.")
     add("Power generation", "Diesel burned in private backup generators", "Businesses and households", "", "million litres", "", "not available",
-        "None found", "", "", "No source measures it. It is inside recorded diesel sales and cannot be separated.")
+        "None found", "", "", "No source measures it: checked the Reserve Bank, the CSIR, Eskom and the system operator. It is inside recorded diesel "
+        "sales and cannot be separated.")
+    shed = sorted(points["load_shedding_energy"], key=lambda p: p["period"])
+    add("Power generation", "Electricity not supplied through load-shedding", shed[0]["subject"], "; ".join(p["value"] for p in shed), shed[0]["unit"],
+        "; ".join(p["period"] for p in shed), "observed", shed[0]["source"], shed[0]["original_file"], shed[0]["page"], shed[0]["note"])
+    add("Power generation", "Ceiling on backup generator diesel", "Businesses and households",
+        "; ".join(f"{float(p['value']) * LITRES_PER_KWH:.1f}" for p in shed), "billion litres", "; ".join(p["period"] for p in shed), "inferred",
+        f"Load-shedding energy x {LITRES_PER_KWH} litres per kWh", "", "",
+        "The most diesel that replacing every unit shed could have burned. Not an estimate: much of the gap was met by solar, batteries or going without.")
     stations = [r for r in d["fleet"] if r["group"] == "diesel_station"]
     add("Power generation", "Diesel stations and capacity", "; ".join(r["station"] for r in stations),
         "; ".join(f"{float(r['capacity_mw']):,.0f}" for r in stations), "MW", "current", "observed", "Eskom fact sheet GX 0001 (July 2024); African Energy (2015)",
@@ -128,8 +137,10 @@ def build(d: dict) -> list[dict]:
     add("Power generation", "Coal capacity shutting down", "Eskom coal fleet", "; ".join(p["value"] for p in coal_out), "GW",
         "; ".join(p["period"] for p in coal_out), "observed", coal_out[0]["source"], coal_out[0]["original_file"], coal_out[0]["page"],
         " ".join(p["note"] for p in coal_out))
-    add("Power generation", "New gas plant: dates by project", "Independent producers and Eskom", "", "MW by year", "", "not available",
-        "None found", "", "", "The outlook gives one assumed year for all 6 GW. No project has reached construction.")
+    for p in points["gas_plant_project"]:
+        add("Power generation", "New gas plant, by project", p["subject"], p["value"], "", p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
+    add("Power generation", "New gas plant: firm commissioning date for any project", "Independent producers and Eskom", "", "", "", "not available",
+        "None exists", "", "", "No gas project has a bidder appointed or is in construction, so no firm date exists to find.")
 
     # --- vehicle fleet --------------------------------------------------------
     month = d["natis_month"]
@@ -146,10 +157,23 @@ def build(d: dict) -> list[dict]:
     add("Vehicle fleet", "Registered vehicles by fuel", "South Africa", f"petrol {d['by_fuel']['petrol']:,.0f}; diesel {d['by_fuel']['diesel']:,.0f}",
         "vehicles", "December 2023", "observed", "Department of Transport, Transport Statistics Bulletin 2023",
         "assumptions/2026/reference/vehicle_population_by_fuel_dot2023.csv", "", "National only, and not split by class. No later edition found.")
-    add("Vehicle fleet", "Vehicles by fuel within each class, and by province", "South Africa", "", "vehicles", "", "not available", "None found", "", "",
-        "Needed to say how many diesel bakkies or petrol cars each province has. eNaTIS publishes class and province, not fuel.")
-    add("Vehicle fleet", "Vehicles by age", "South Africa", "", "vehicles", "", "not available", "None found", "", "",
-        "Needed for fleet replacement. Only apparent retirements can be calculated (Vehicle history sheet).")
+    big = sorted(PROVINCES, key=lambda p: -d["fuel_by_province"][(p, "diesel")])[:3]
+    add("Vehicle fleet", "Diesel vehicles by province", "; ".join(PROVINCES[p] for p in big),
+        "; ".join(f"{d['fuel_by_province'][(p, 'diesel')]:,.0f}" for p in big), "vehicles", "December 2023", "observed",
+        "Department of Transport, Transport Statistics Bulletin 2023, Table 2.8", "assumptions/2026/reference/vehicle_population_by_fuel_province_dot2023.csv",
+        "PDF p.40", "All nine provinces, petrol and diesel, are on the DR07 fleet by province sheet.")
+    add("Vehicle fleet", "Diesel share of petrol and diesel vehicles, by province", "Highest; lowest",
+        "; ".join(f"{PROVINCES[p]} {d['fuel_by_province'][(p, 'diesel')] / (d['fuel_by_province'][(p, 'diesel')] + d['fuel_by_province'][(p, 'petrol')]) * 100:.1f}"
+                  for p in (max(PROVINCES, key=lambda q: d["fuel_by_province"][(q, "diesel")] / d["fuel_by_province"][(q, "petrol")]),
+                            min(PROVINCES, key=lambda q: d["fuel_by_province"][(q, "diesel")] / d["fuel_by_province"][(q, "petrol")]))),
+        "%", "December 2023", "inferred", "Calculated from the bulletin", "", "")
+    add("Vehicle fleet", "Vehicles by fuel within each class", "South Africa", "", "vehicles", "", "not available", "None found", "", "",
+        "The bulletin splits fuel by province and the register splits class by province; nothing published crosses fuel with class.")
+    age = one("vehicle_average_age")
+    add("Vehicle fleet", "Average age of vehicles", age["subject"], age["value"], age["unit"], age["period"], "observed", age["source"], age["original_file"],
+        age["page"], age["note"])
+    add("Vehicle fleet", "Vehicles by year of age", "South Africa", "", "vehicles", "", "not available", "None published",
+        "", "", "Lightstone holds the age profile and sells it; the register does not publish it. Only apparent retirements can be calculated.")
 
     # --- new vehicles and electric share --------------------------------------
     year = max(y for (s, y) in d["new_sales"] if s == "total")
@@ -169,7 +193,8 @@ def build(d: dict) -> list[dict]:
     add("New vehicles and electric share", "Diesel share of new light vehicles sold", share["subject"], share["value"], share["unit"], share["period"],
         "observed", share["source"], share["original_file"], share["page"], "No later figure found.")
     add("New vehicles and electric share", "Electric trucks and electric light commercial vehicles sold", "South Africa", "", "vehicles", "", "not available",
-        "None found", "", "", "naamsa does not report electric sales by segment. Benchmarks from other countries are on the HML response sheet.")
+        "None published", "", "", "naamsa reports electric sales by drivetrain, not by segment (checked its fourth-quarter 2025 review). "
+        "Benchmarks from other countries are on the HML response sheet.")
 
     # --- efficiency and distance ----------------------------------------------
     for key, label in (("CarGasoline", "Petrol cars"), ("CarDiesel", "Diesel cars")):
@@ -191,8 +216,14 @@ def build(d: dict) -> list[dict]:
     car = one("new_passenger_car_fuel_consumption")
     add("Vehicle efficiency and distance", "Fuel use of new passenger cars", car["subject"], car["value"], car["unit"], car["period"], "observed",
         car["source"], car["original_file"], car["page"], car["note"])
-    add("Vehicle efficiency and distance", "Fuel use of new vehicles after 2019, and of trucks in any year", "South Africa", "", "litres per 100 km", "",
-        "not available", "None found", "", "", "The IEA series stops at 2019 and covers light vehicles only.")
+    trucks = [d["stone"][k] for k in ("HCV1Diesel", "HCV3Diesel", "HCV6Diesel", "HCV9Diesel")]
+    add("Vehicle efficiency and distance", "Fuel use of trucks, lightest to heaviest class", "Diesel trucks (classes 1, 3, 6 and 9 of nine)",
+        "; ".join(t["l_per_100km_fleet_average"] for t in trucks), "litres per 100 km, fleet average", "2010 fleet", "observed",
+        "Stone et al. (2018), vehicle parc model", "assumptions/2026/reference/vehicle_parameters_stone2018.csv", "",
+        "One year only. Light commercial diesel vehicles use " + d["stone"]["LCVDiesel"]["l_per_100km_fleet_average"] + " and buses "
+        + d["stone"]["BusDiesel"]["l_per_100km_fleet_average"] + ".")
+    add("Vehicle efficiency and distance", "Fuel use of new vehicles after 2019; of trucks by year", "South Africa", "", "litres per 100 km", "",
+        "not available", "None found", "", "", "The IEA series stops at 2019 (its 2021 edition is the latest with South Africa). No truck series by year exists.")
     add("Vehicle efficiency and distance", "Efficiency gain assumed in the model", "New diesel and petrol vehicles",
         "; ".join(f"{'petrol' if name == 'gasoline' else name} {d['efficiency'][(name, case)] * 100:.1f} ({case.replace('_', ' ')})"
                   for name in ("diesel", "gasoline") for case in ("high_demand", "low_demand") if (name, case) in d["efficiency"]),
@@ -220,10 +251,24 @@ def build(d: dict) -> list[dict]:
         "Calculated from the two rows above", "", "",
         f"About {(float(target['value']) - float(rail[-1]['value'])) / (d['freight'][('road', max(y for (m, y) in d['freight'] if m == 'road'))] / 1000) * 100:.0f}% "
         "of road freight tonnes. Not all of it would come from road.")
+    total, friendly, on_rail, potential = (one(s) for s in ("freight_tonne_km_total", "freight_tonne_km_rail_friendly", "freight_tonne_km_on_rail",
+                                                            "freight_tonne_km_general_freight_rail_potential"))
+    add("Freight and rail", "Freight in tonne-kilometres", "All freight; rail-friendly freight; carried by rail",
+        f"{total['value']}; {friendly['value']}; {on_rail['value']}", total["unit"], "2019", "observed", total["source"], total["original_file"],
+        "PDF pp.17, 25", total["note"])
+    add("Freight and rail", "General freight that rail should carry but does not", "Rail-friendly general freight on road",
+        "30", potential["unit"], "2019", "observed", potential["source"], potential["original_file"], potential["page"],
+        "As the source states it: rail should have carried 47 and carried 18. This is the freight that a road-to-rail shift would move.")
     add("Freight and rail", "Road freight in tonne-kilometres, by year", "South Africa", "", "billion tonne-km", "", "not available",
-        "None found as an annual series", "", "", "Needed to size freight that could move to rail. Only single-year figures exist in published studies.")
-    add("Freight and rail", "Diesel used by rail locomotives", "Transnet Freight Rail", "", "million litres", "", "not available", "None found", "", "",
-        "Needed so that freight moving to rail is not counted as diesel saved in full.")
+        "None published as numbers", "", "", "The research group that models it (GAIN, Stellenbosch) shows yearly charts but publishes figures for single years only.")
+    fuel = sorted(points["transnet_fuel_consumed"], key=lambda p: p["period"])
+    share = one("rail_traction_share_of_transnet_fuel")
+    add("Freight and rail", "Fuel used by Transnet, all divisions", fuel[0]["subject"], "; ".join(p["value"] for p in fuel), fuel[0]["unit"],
+        "years to March " + "; ".join(p["period"][-4:] for p in fuel), "observed", fuel[0]["source"], fuel[0]["original_file"], fuel[0]["page"], fuel[-1]["note"])
+    add("Freight and rail", "Diesel used by rail locomotives", "Transnet Freight Rail",
+        f"{float(fuel[-1]['value']) * float(share['value']) / 100:.0f}", "million litres", "year to March " + fuel[-1]["period"][-4:], "inferred",
+        f"{fuel[-1]['value']} million litres x {share['value']}% used for diesel traction (both from the Transnet report)", share["original_file"], share["page"],
+        "About 1% of diesel sales. So freight moving to rail saves nearly all the road diesel it displaces. " + share["note"])
 
     # --- sector activity ------------------------------------------------------
     add("Sector activity", "Mining, manufacturing and agriculture: activity and diesel per unit", "South Africa", "On the Sector history sheet", "", "2012-2025",

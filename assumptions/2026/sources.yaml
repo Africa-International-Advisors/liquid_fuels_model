@@ -390,6 +390,18 @@ demand_evidence_points:
     and page. Originals in external/data/raw/demand_evidence_20261008/
   last_updated: '2026-10-08'
   shared: true
+vehicle_population_by_fuel_province_dot2023:
+  register_id: REG-SOURCE-VEHICLE_POPULATION_BY_FUEL_PROVINCE_DOT2023
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/vehicle_population_by_fuel_province_dot2023.csv
+  units: vehicles
+  source: Department of Transport, Transport Statistics Bulletin 2023, Table 2.8 (vehicle population by fuel type per
+    province at 31 December 2023; source given there as the Road Traffic Management Corporation). Petrol, diesel and
+    the all-fuel total, typed from PDF page 40. Original in external/data/raw/literature/
+  last_updated: '2026-10-08'
+  shared: true
 refinery_output_operators:
   register_id: REG-SOURCE-REFINERY_OUTPUT_OPERATORS
   exception_id: EXC-SOURCE-DATA-2026-10-05

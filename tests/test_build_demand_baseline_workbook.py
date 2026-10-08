@@ -282,7 +282,7 @@ def test_dr07_sheets_show_reported_eskom_litres_the_implied_rate_and_the_fleet_b
     facts = [r for r in evidence.iter_rows(min_row=5) if r[5].value]
     assert len(facts) >= 25 and all(r[2].value and r[6].value for r in facts)
     missing = [r[0].value for r in facts if r[5].value == "not available"]
-    assert "Diesel burned in private backup generators" in missing and "Vehicles by age" in missing
+    assert "Diesel burned in private backup generators" in missing and "Vehicles by year of age" in missing
     assert "Fuel use of new light vehicles, by year" in {r[0].value for r in facts if r[5].value == "observed"}
     assert not any("FIASA" in str(r[6].value) or "JODI" in str(r[6].value) for r in facts)
 
@@ -297,11 +297,17 @@ def test_dr07_sheets_show_reported_eskom_litres_the_implied_rate_and_the_fleet_b
     assert all(r[12].value for r in power.values() if r[1].value is not None or r[at].value is not None)
 
     fleet = {r[0].value: r for r in wb["DR07 fleet by province"].iter_rows(min_row=5) if r[0].value}
-    assert list(fleet)[:3] == ["Gauteng", "KwaZulu-Natal", "Western Cape"] and "South Africa" in fleet
+    assert "South Africa" in fleet
     d = build.load(VINTAGE / "timeseries", VINTAGE / "reference")
-    assert fleet["Gauteng"][1].value == d["natis_by_province"][("GP", "cars")]
-    national = sum(fleet[name][1].value for _, name in build.FLEET_PROVINCES)
+    rows = list(wb["DR07 fleet by province"].iter_rows(min_row=5))
+    by_class = {r[0].value: r for r in rows[:10]}
+    national = sum(by_class[name][1].value for _, name in build.FLEET_PROVINCES)
     assert national == pytest.approx(d["natis_by_province"][("ZAF", "cars")], rel=1e-9)        # provinces add to the national register
+    start = next(i for i, r in enumerate(rows) if r[0].value == "Petrol and diesel vehicles by province, December 2023")
+    by_fuel = {r[0].value: r for r in rows[start + 2:start + 12]}
+    assert (by_fuel["Gauteng"][1].value, by_fuel["Gauteng"][2].value) == (3466725, 1142275)
+    assert sum(by_fuel[name][2].value for _, name in build.FLEET_PROVINCES) == 3335546          # diesel adds to the bulletin's national total
+    assert sum(by_fuel[name][1].value for _, name in build.FLEET_PROVINCES) == 8555772
 
 
 def test_dr07_efficiency_and_rail_sheet_carries_both_histories_with_sources():

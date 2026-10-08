@@ -29,6 +29,21 @@ def test_efficiency_history_and_plant_dates_come_from_the_evidence_points():
     assert rows["Extra rail freight if the target is met"]["value"] == "90"
 
 
+def test_the_eight_gaps_searched_on_8_october_are_filled_where_a_source_exists():
+    rows = {r["item"]: r for r in dr07.build(dr07.load(VINTAGE))}
+    assert rows["Diesel used by rail locomotives"]["value"] == "138"                       # 199 million litres x 69.2%
+    assert rows["Freight in tonne-kilometres"]["value"] == "446; 181; 141"
+    assert rows["Average age of vehicles"]["value"] == "10.5"
+    assert rows["Diesel vehicles by province"]["value"].startswith("1,142,275")              # Gauteng
+    assert rows["Fuel use of trucks, lightest to heaviest class"]["value"] == "17.3; 24.6; 44.9; 51.6"
+    assert rows["Ceiling on backup generator diesel"]["status"] == "inferred"
+    still_missing = {r["item"] for r in rows.values() if r["status"] == "not available"}
+    assert still_missing == {
+        "Diesel burned in private backup generators", "New gas plant: firm commissioning date for any project",
+        "Vehicles by fuel within each class", "Vehicles by year of age", "Electric trucks and electric light commercial vehicles sold",
+        "Fuel use of new vehicles after 2019; of trucks by year", "Road freight in tonne-kilometres, by year"}
+
+
 def test_eskom_reported_fuel_gives_the_litres_per_kwh_used_on_the_power_fleet_sheet():
     implied = dr07.implied_litres_per_kwh(dr07.load(VINTAGE))
     assert set(implied) >= {2023, 2024, 2025}

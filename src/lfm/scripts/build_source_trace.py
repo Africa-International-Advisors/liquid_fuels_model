@@ -204,6 +204,11 @@ TRACE: dict[str, tuple[str, ...]] = {
         "none", "typed by hand", "workshop workbook, DR07 sheets", "",
         "Vehicle fuel consumption 2005-2019, rail volumes 2018-2025, plant shutdown and commissioning dates. Each row carries its page.",
         "Nigel: review"),
+    "reference/vehicle_population_by_fuel_province_dot2023.csv": (
+        "Department of Transport (data from the Road Traffic Management Corporation)", "https://www.transport.gov.za/",
+        "dot-transport-statistics-bulletin-2023.pdf, Table 2.8", "on manish-branch (external/data/raw/literature/)", "manual transcription",
+        "none", "typed by hand", "workshop workbook, DR07 fleet by province sheet", "",
+        "Petrol and diesel vehicles by province at December 2023. Not split by vehicle class. No later edition found.", "Nigel: review"),
     "reference/refinery_output_operators.csv": (
         "Sasol (production and sales metrics); Glencore (annual reports)", "https://www.sasol.com/",
         "sasol-metrics-fy2022/2025/2026.pdf, p.4; GLEN-2023/2024/2025-Annual-Report.pdf",

@@ -101,16 +101,18 @@ efficiency and rail; note `dr07_demand_evidence_2026-10-08.md`.
   match: the low power case for 2030 falls from 86 to 20 million litres.
 - Transnet carried 160 million tonnes in the year to March 2025 and aims for 250.
 
+- Found on a second search: diesel used by rail locomotives (about 138 million litres a year), petrol and diesel
+  vehicles by province, freight tonne-kilometres for 2019, truck fuel use, and the average age of vehicles.
+
 Not available from any source:
 
 - Diesel burned in private backup generators
-- New gas plant: dates by project
-- Vehicles by fuel within each class, and by province
-- Vehicles by age
+- New gas plant: firm commissioning date for any project
+- Vehicles by fuel within each class
+- Vehicles by year of age
 - Electric trucks and electric light commercial vehicles sold
-- Fuel use of new vehicles after 2019, and of trucks in any year
+- Fuel use of new vehicles after 2019; of trucks by year
 - Road freight in tonne-kilometres, by year
-- Diesel used by rail locomotives
 
 ## Power generation fleet (your message of 7 October)
 

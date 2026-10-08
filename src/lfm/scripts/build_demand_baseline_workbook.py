@@ -107,6 +107,8 @@ def load(ts: Path, ref: Path) -> dict:
                         for r in _read(ts / "oil_balance_jodi.csv")
                         if r["flow"] == "demand" and int(r["months_reported"]) == 12}
     d["evidence_points"] = _read(ref / "demand_evidence_points.csv")
+    d["fuel_by_province"] = {(r["province"], r["fuel_type"]): float(r["vehicles"])
+                             for r in _read(ref / "vehicle_population_by_fuel_province_dot2023.csv")}
     eskom = _read(ts / "eskom_fuel_eaf_review_2026_10_07.csv")
     d["eskom_fuel"] = {int(r["period"]): float(r["value"]) for r in eskom if r["series"] == "eskom_ocgt_diesel_and_kerosene"}
     turbines = _read(ts / "ocgt_generation_eskom.csv")
@@ -1135,8 +1137,8 @@ def dr07_fleet_sheet(wb, d: dict) -> None:
     month = d["natis_latest"]
     header = ["Province"] + [label for _, label in FLEET_CLASSES] + ["Share of all vehicles", "Source"]
     _sheet_head(ws, f"DR07 Registered vehicles by province and class, {month}",
-                "Vehicles on the register at month end. The register gives class and province, not fuel: petrol and diesel are not split "
-                "by class or province in any source held (nationally, December 2023: 8.56 million petrol and 3.34 million diesel).",
+                "Vehicles on the register at month end, by class; then petrol and diesel vehicles by province at December 2023. "
+                "Nothing published crosses fuel with class.",
                 header, [22] + [16] * len(FLEET_CLASSES) + [14, 62])
     last, total_col = len(header), 1 + len(FLEET_CLASSES)
     source = "eNaTIS live vehicle population by class and province (vehicle_population_natis.csv)"
@@ -1161,6 +1163,42 @@ def dr07_fleet_sheet(wb, d: dict) -> None:
             cell = ws.cell(row=r, column=i)
             cell.font = Font(name="Arial", size=10, color=INK, bold=r == row and i == 1)
             cell.fill = PatternFill("solid", fgColor=FILL["formula" if r == row or i == last - 1 else "observation"])
+            cell.alignment = Alignment(wrap_text=i == last, vertical="top", horizontal="right" if 1 < i < last else "left")
+
+    # petrol and diesel vehicles by province, from the Department of Transport's bulletin
+    row += 2
+    for i in range(1, last + 1):
+        cell = ws.cell(row=row, column=i, value="Petrol and diesel vehicles by province, December 2023" if i == 1 else None)
+        cell.font = Font(name="Arial", size=10, bold=True, color=INK)
+        cell.fill = PatternFill("solid", fgColor=FILL["section"])
+    row += 1
+    for i, label in enumerate(["Province", "Petrol", "Diesel", "Petrol and diesel", "Diesel share"], start=1):
+        cell = ws.cell(row=row, column=i, value=label)
+        cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
+        cell.fill = PatternFill("solid", fgColor=FILL["header"])
+    ws.cell(row=row, column=last, value="Source").font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
+    ws.cell(row=row, column=last).fill = PatternFill("solid", fgColor=FILL["header"])
+    fuel_source = "Department of Transport, Transport Statistics Bulletin 2023, Table 2.8 (PDF p.40)"
+    first_fuel = row + 1
+    for code, name in FLEET_PROVINCES:
+        row += 1
+        ws.cell(row=row, column=1, value=name)
+        ws.cell(row=row, column=2, value=d["fuel_by_province"][(code, "petrol")]).number_format = "#,##0"
+        ws.cell(row=row, column=3, value=d["fuel_by_province"][(code, "diesel")]).number_format = "#,##0"
+        ws.cell(row=row, column=last, value=fuel_source)
+    row += 1
+    ws.cell(row=row, column=1, value="South Africa")
+    for i in (2, 3):
+        c = get_column_letter(i)
+        ws.cell(row=row, column=i, value=f"=SUM({c}{first_fuel}:{c}{row - 1})").number_format = "#,##0"
+    ws.cell(row=row, column=last, value="Sum of the nine provinces; equals the bulletin's national totals")
+    for r in range(first_fuel, row + 1):
+        ws.cell(row=r, column=4, value=f"=B{r}+C{r}").number_format = "#,##0"
+        ws.cell(row=r, column=5, value=f"=C{r}/D{r}").number_format = "0.0%"
+        for i in list(range(1, 6)) + [last]:
+            cell = ws.cell(row=r, column=i)
+            cell.font = Font(name="Arial", size=10, color=INK, bold=r == row and i == 1)
+            cell.fill = PatternFill("solid", fgColor=FILL["formula" if r == row or i in (4, 5) else "observation"])
             cell.alignment = Alignment(wrap_text=i == last, vertical="top", horizontal="right" if 1 < i < last else "left")
     ws.freeze_panes = "B5"
 

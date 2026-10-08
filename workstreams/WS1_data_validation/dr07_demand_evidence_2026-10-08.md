@@ -3,13 +3,14 @@
 For Nigel's review. Answers request DR07: the evidence that calibrates the
 demand levers. Petrol and diesel only.
 
-Status: **26 facts read from sources, 6 calculated, 8 not available.**
+Status: **35 facts read from sources, 9 calculated, 7 not available.**
 
 **Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
 
 - Sheet **DR07 evidence**: every fact with its source and open gap.
 - Sheet **DR07 power diesel**: Eskom's reported litres beside its generation.
-- Sheet **DR07 fleet by province**: registered vehicles by province and class.
+- Sheet **DR07 fleet by province**: registered vehicles by province and class,
+  and petrol and diesel vehicles by province.
 - Sheet **DR07 efficiency and rail**: new-vehicle fuel use 2005 to 2019, and
   Transnet's rail volumes 2018 to 2025.
 
@@ -90,18 +91,36 @@ would come from road. Nigel pointed to this source in the 6 October check-in.
 (naamsa). The low, medium and high cases are benchmarked on other countries on
 the HML response sheet. No South African forecast was found.
 
-## Not available
+## Eight gaps searched on 8 October
 
-| What | Why it matters |
+| Gap | Result | Source |
+|---|---|---|
+| Diesel used by rail locomotives | **Found.** Transnet used 199 million litres of fuel in the year to March 2025, 69.2% of it for diesel traction: about 138 million litres, roughly 1% of diesel sales | Transnet Integrated Report 2025, PDF p.73 |
+| Vehicles by fuel, by province | **Found.** Petrol and diesel vehicles for all nine provinces at December 2023; on the fleet sheet | Department of Transport, Transport Statistics Bulletin 2023, Table 2.8 |
+| Vehicles by fuel within each class | Not published | The bulletin splits fuel by province; the register splits class by province |
+| Fuel use of trucks | **Found for one year.** 17.3 to 51.6 litres per 100 km from the lightest to the heaviest class, 2010 fleet | Stone et al. (2018), already held |
+| Fuel use of new vehicles after 2019 | Not found | The IEA's 2021 edition is the latest with South Africa |
+| Road freight in tonne-kilometres | **Found for 2019 only.** All freight 446 bn tonne-km; rail-friendly 181; carried by rail 141; general freight rail should carry but does not, 30 | Havenga et al., SA-TIED road-to-rail strategy report |
+| Road freight in tonne-kilometres, by year | Not published as numbers | The research group shows yearly charts only |
+| Vehicles by age | **Average only.** 10.5 years in 2022, up from 9 years 4 months in 2014-2015 | Lightstone, April 2022. It sells the age profile; the register does not publish it |
+| Gas plant dates by project | **Found, but no firm date exists.** Eskom's 3,000 MW Richards Bay plant was determined for connection "not beyond 2028"; the independent 2,000 MW round was issued in December 2023 with no bidder appointed. The system operator now assumes 2030 | NERSA reasons for decision, November 2024; gas programme site |
+| Electric trucks and light commercial vehicles sold | Not published | naamsa reports by drivetrain, not segment (fourth-quarter 2025 review checked) |
+| Private backup generator diesel | Not measured by anyone. A ceiling only: load-shedding was 10.6 TWh in 2023 and 2.5 in 2024, which at 0.31 litres per kWh is at most 3.3 and 0.8 bn litres | CSIR power statistics 2024. Reserve Bank, Eskom and the system operator checked; none gives litres |
+
+The ceiling is not an estimate. Much of the electricity shed was replaced by
+solar and batteries or not replaced at all.
+
+## Still not available
+
+| What | Why |
 |---|---|
-| Diesel burned in private backup generators | No source measures it. It is inside recorded diesel sales and cannot be separated. |
-| New gas plant: dates by project | The outlook gives one assumed year for all 6 GW. No project has reached construction. |
-| Vehicles by fuel within each class, and by province | Needed to say how many diesel bakkies or petrol cars each province has. eNaTIS publishes class and province, not fuel. |
-| Vehicles by age | Needed for fleet replacement. Only apparent retirements can be calculated (Vehicle history sheet). |
-| Electric trucks and electric light commercial vehicles sold | naamsa does not report electric sales by segment. Benchmarks from other countries are on the HML response sheet. |
-| Fuel use of new vehicles after 2019, and of trucks in any year | The IEA series stops at 2019 and covers light vehicles only. |
-| Road freight in tonne-kilometres, by year | Needed to size freight that could move to rail. Only single-year figures exist in published studies. |
-| Diesel used by rail locomotives | Needed so that freight moving to rail is not counted as diesel saved in full. |
+| Diesel burned in private backup generators | No source measures it: checked the Reserve Bank, the CSIR, Eskom and the system operator. It is inside recorded diesel sales and cannot be separated. |
+| New gas plant: firm commissioning date for any project | No gas project has a bidder appointed or is in construction, so no firm date exists to find. |
+| Vehicles by fuel within each class | The bulletin splits fuel by province and the register splits class by province; nothing published crosses fuel with class. |
+| Vehicles by year of age | Lightstone holds the age profile and sells it; the register does not publish it. Only apparent retirements can be calculated. |
+| Electric trucks and electric light commercial vehicles sold | naamsa reports electric sales by drivetrain, not by segment (checked its fourth-quarter 2025 review). Benchmarks from other countries are on the HML response sheet. |
+| Fuel use of new vehicles after 2019; of trucks by year | The IEA series stops at 2019 (its 2021 edition is the latest with South Africa). No truck series by year exists. |
+| Road freight in tonne-kilometres, by year | The research group that models it (GAIN, Stellenbosch) shows yearly charts but publishes figures for single years only. |
 
 ## Checks
 
