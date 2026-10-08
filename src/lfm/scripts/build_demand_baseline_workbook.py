@@ -52,6 +52,9 @@ INK = "FF243B53"
 FILL = {"header": "FF243B53", "section": "FFEAF0F5", "observation": "FFEDF3FA", "formula": "FFFFFFFF",
         "comparison": "FFF4F4F4", "estimate": "FFFFF2CC"}
 ML = "million L/year"
+FUTURE = list(range(2022, 2036))           # the power fleet block looks forward, like Nigel's sheets
+IRP_GAS_MW_2030 = 6000                     # IRP 2025: about 6 GW of gas by 2030 (TechCentral, 22 April 2026)
+GAS_SWITCH_YEAR = 2028                     # first full year after Eskom's stated December 2027 target
 LITRES_PER_KWH = 0.31          # reported Eskom burn over generation in three years; see driver_evidence note
 # Stats SA, Transport and storage industry 2023 (Report 71-02-01), Table 20: fuel bought by road freight
 # transport enterprises, R million, with the twelve months each survey's reference year mostly covers.
@@ -142,6 +145,11 @@ def load(ts: Path, ref: Path) -> dict:
         d["freight_floor"][year] = (rand_million / (sum(months) / len(months)), sum(months) / len(months))
     d["movements"] = {int(r["period"]): float(r["value"]) for r in _read(ts / "air_traffic_acsa_annual.csv")
                       if (r["measure"], r["flight_type"], r["direction"]) == ("aircraft_movements", "total", "total")}
+    d["power_fleet"] = _read(ts.parent / "infrastructure" / "power_fleet_diesel.csv")
+    d["model_power"] = {}
+    for r in _read(Path("workstreams/WS1_data_validation/sector_baselines_2026-10-07.csv")):
+        if r["segment"] == "generation":
+            d["model_power"][(r["scenario"], int(r["period"]))] = float(r["with_sourced_baselines"]) / 1e6
     d["macro"] = {(r["series"], int(r["period"])): float(r["value"]) / 1e9
                   for r in _read(ts / "macro_statssa.csv") if r["basis"] == "actual" and r["unit"].startswith("rand")}
     return d
@@ -149,26 +157,27 @@ def load(ts: Path, ref: Path) -> dict:
 
 # --- sheet writer -------------------------------------------------------------
 class Sheet:
-    def __init__(self, wb, title: str, heading: str, sub: str):
+    def __init__(self, wb, title: str, heading: str, sub: str, years: list[int] | None = None):
         self.ws = wb.create_sheet(title)
+        self.years = years or YEARS
         self.row = 4
         self.ws["A1"] = heading
         self.ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
         self.ws["A2"] = sub
         self.ws["A2"].font = Font(name="Arial", size=10, color=INK)
-        for i, label in enumerate(HEAD + YEARS + TAIL, start=1):
+        for i, label in enumerate(HEAD + self.years + TAIL, start=1):
             cell = self.ws.cell(row=4, column=i, value=label)
             cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
             cell.fill = PatternFill("solid", fgColor=FILL["header"])
             cell.alignment = Alignment(wrap_text=True, vertical="top")
-        widths = [34, 14, 17, 15, 44] + [11.5] * len(YEARS) + [26, 44, 44]
+        widths = [34, 14, 17, 15, 44] + [11.5] * len(self.years) + [26, 44, 44]
         for i, width in enumerate(widths, start=1):
             self.ws.column_dimensions[get_column_letter(i)].width = width
         self.ws.freeze_panes = "B5"
 
     def section(self, title: str) -> None:
         self.row += 2 if self.row > 4 else 1
-        for i in range(1, len(HEAD) + len(YEARS) + len(TAIL) + 1):
+        for i in range(1, len(HEAD) + len(self.years) + len(TAIL) + 1):
             cell = self.ws.cell(row=self.row, column=i, value=title if i == 1 else None)
             cell.font = Font(name="Arial", size=10, bold=True, color=INK)
             cell.fill = PatternFill("solid", fgColor=FILL["section"])
@@ -178,7 +187,7 @@ class Sheet:
         """Write one row. ``values`` is ``{year: number}``; ``formula`` is ``f(year) -> str | None``."""
         self.row += 1
         cells = [label, unit, role, scalar, definition]
-        for year in YEARS:
+        for year in self.years:
             if formula is not None:
                 cells.append(formula(year))
             else:
@@ -189,9 +198,12 @@ class Sheet:
             cell.font = Font(name="Arial", size=10, color=INK)
             cell.fill = PatternFill("solid", fgColor=FILL[kind])
             cell.alignment = Alignment(wrap_text=i in (1, 5, 20, 21, 22), vertical="top")
-            if i == 4 or FIRST <= i < FIRST + len(YEARS):
+            if i == 4 or FIRST <= i < FIRST + len(self.years):
                 cell.number_format = fmt
         return self.row
+
+    def col(self, year: int) -> str:
+        return get_column_letter(FIRST + self.years.index(year))
 
 
 def both(a: int, b: int, expression: str):
@@ -796,6 +808,141 @@ def lever_response_sheet(wb) -> None:
            [11, 30, 22, 13, 44, 22, 22, 22, 22, 20, 110], body)
 
 
+def power_fleet_sheet(wb, d: dict) -> None:
+    s = Sheet(wb, "Power fleet", "Diesel for power: the fleet, the coal retirements and what each could burn",
+              "A block by station and year, as asked on 7 October. Capacities are from Eskom's fact sheet; retirement "
+              "dates from press reports; everything about repowering with gas is a scenario. Yellow rows are assumptions.",
+              years=FUTURE)
+    c = s.col
+    fleet = d["power_fleet"]
+    litres = s.row + 2                       # the two assumption rows sit first so that every formula can point at them
+
+    s.section("Assumptions used below")
+    s.line("Diesel burned per kWh generated", "litres/kWh", "Assumption", "Reported Eskom burn over generation in three "
+           "years. A proposal awaiting review.", scalar=LITRES_PER_KWH, kind="estimate", fmt="0.00",
+           source="Parliamentary replies on Eskom diesel burn; Eskom generation")
+    backup = s.line("Share of output on diesel once gas is the main fuel", "%", "Assumption",
+                    "Applies to Ankerlig and Gourikwa after the gas switch and to any repowered site. NO SOURCE: Eskom's "
+                    "tender says only that gas will be 'supplemented by diesel as and when it's required'.",
+                    scalar=10, kind="estimate", fmt="0", action="Agree a value (Nigel, Henry)")
+    gas_lf = s.line("Load factor of gas plants at repowered sites", "%", "Assumption",
+                    "NO SOURCE. Eskom describes the gas it needs as dispatchable baseload, so well above a peaker.",
+                    scalar=40, kind="estimate", fmt="0", action="Agree a value (Nigel, Henry)")
+
+    s.section("1. Stations that burn diesel today")
+    diesel_rows = {}
+    for r in fleet:
+        if r["group"] == "diesel_station":
+            diesel_rows[r["station"]] = s.line(
+                f'{r["station"]} ({r["owner"]})', "MW", "Source observation", f'{r["note"]}. {r["event"]}.',
+                {y: float(r["capacity_mw"]) for y in FUTURE}, status="Installed capacity, held flat", source=r["source"], fmt="#,##0")
+    first, last = min(diesel_rows.values()), max(diesel_rows.values())
+    total_mw = s.line("Diesel stations, total", "MW", "Reporting formula", "Sum of the four stations.",
+                      formula=lambda y: f"=SUM({c(y)}{first}:{c(y)}{last})", kind="formula", fmt="#,##0")
+    kerosene = []
+    for r in fleet:
+        if r["group"] == "kerosene_station":
+            kerosene.append(s.line(f'{r["station"]} ({r["owner"]})', "MW", "Not counted", f'{r["note"]}.',
+                                   {y: float(r["capacity_mw"]) for y in FUTURE}, kind="comparison", source=r["source"], fmt="#,##0"))
+
+    s.section("2. What the peaking stations have generated and burned")
+    gwh = s.line("Generation, Eskom and independent peaking stations", "GWh", "Source observation",
+                 "Year to 31 March of the following year, shown under the calendar year it mostly covers. Includes the "
+                 "two kerosene stations.", {y - 1: v for y, v in d["ocgt_gwh"].items() if y - 1 in FUTURE},
+                 status="2022-2025", source="Eskom", fmt="#,##0")
+    s.line("Observed load factor", "%", "Reporting formula",
+           "Generation divided by what all six stations would produce running all year.",
+           formula=lambda y: (f'=IF(ISNUMBER({c(y)}{gwh}),{c(y)}{gwh}/(({c(y)}{total_mw}+{c(y)}{kerosene[0]}+{c(y)}{kerosene[1]})'
+                              f'*8.76)*100,"")'), kind="formula", fmt="0.0")
+    burned = s.line("Diesel burned, estimated", ML, "Reporting formula", "Generation times litres per kWh.",
+                    formula=lambda y: f'=IF(ISNUMBER({c(y)}{gwh}),{c(y)}{gwh}*$D${litres},"")', kind="formula",
+                    status="Estimate; slightly high because some output is kerosene")
+    for scenario, label in (("high_demand", "high demand"), ("low_demand", "low demand")):
+        s.line(f"Model today, {label} scenario", ML, "Comparison only",
+               "The engine's power generation diesel on manish-branch. It runs six stations, two of them placeholders "
+               "of 1,000 and 2,000 MW, at 55-70% load factor.",
+               {y: v for (sc, y), v in d["model_power"].items() if sc == scenario}, kind="comparison",
+               status="2024, 2030 and 2035 shown", source="sector_baselines_2026-10-07.csv")
+
+    s.section("3. What today's diesel stations could burn")
+    share = s.line("Share of Ankerlig and Gourikwa output on diesel", "%", "Assumption",
+                   "100% until Eskom's stated gas switch (December 2027), then the backup share above. Set every year to "
+                   "100 to see the case where the switch does not happen.",
+                   formula=lambda y: "=100" if y < GAS_SWITCH_YEAR else f"=$D${backup}", kind="estimate", fmt="0",
+                   status="Whether the switch is on schedule is not established",
+                   source="Eskom gas supply tender, as reported by News24, 12 June 2023")
+    observed_lf = {y: d["ocgt_gwh"][y] / (3431 * 8.76) * 100 for y in (2024, 2025, 2026)}
+    cases = (("low", observed_lf[2026], "year to March 2026"), ("medium", observed_lf[2025], "year to March 2025"),
+             ("high", observed_lf[2024], "year to March 2024, the peak of load-shedding"))
+    today = {}
+    for name, factor, basis in cases:
+        today[name] = s.line(
+            f"Diesel at a {name} load factor", ML, "Proposed estimate",
+            f"Load factor in column D (%): the fleet's observed figure for the {basis}. Avon and Dedisa wholly on diesel; "
+            "Ankerlig and Gourikwa at the share above.",
+            formula=lambda y, me=s.row + 1: (
+                f'=({c(y)}{diesel_rows["Avon"]}+{c(y)}{diesel_rows["Dedisa"]}+({c(y)}{diesel_rows["Ankerlig"]}'
+                f'+{c(y)}{diesel_rows["Gourikwa"]})*{c(y)}{share}/100)*8.76*$D${me}/100*$D${litres}'),
+            kind="estimate", scalar=factor, status="Estimate", source="Eskom generation; Eskom fact sheet GX 0001")
+    ceiling_today = s.line("Ceiling: all four stations on diesel all year", ML, "Reporting formula",
+                           "Total capacity times 8,760 hours times litres per kWh. A physical limit, not a forecast.",
+                           formula=lambda y: f"={c(y)}{total_mw}*8.76*$D${litres}", kind="formula")
+
+    s.section("4. Coal stations being retired: capacity still operating")
+    coal = []
+    for r in fleet:
+        if r["group"] == "coal_retiring":
+            last_year = int(r["last_full_year"])
+            coal.append(s.line(
+                r["station"], "MW", "Evidence" if r["basis"] == "evidence" else "To confirm", f'{r["event"]}.',
+                {y: float(r["capacity_mw"]) if y <= last_year else 0 for y in FUTURE},
+                kind="observation" if r["basis"] == "evidence" else "estimate",
+                status="Capacity shown to the last full year of operation", source=r["source"], fmt="#,##0"))
+    operating = s.line("Coal capacity operating, these eight stations", "MW", "Reporting formula", "Sum of the rows above.",
+                       formula=lambda y: f"=SUM({c(y)}{coal[0]}:{c(y)}{coal[-1]})", kind="formula", fmt="#,##0")
+    s.line("Coal capacity retired since 2022", "MW", "Reporting formula", "2022 total less this year's.",
+           formula=lambda y: f"={c(2022)}{operating}-{c(y)}{operating}", kind="formula", fmt="#,##0",
+           action="Eskom was to decide by end September 2026 between shutdown, repowering and repurposing; outcome not found")
+
+    s.section("5. If retired sites are repowered with gas turbines that can burn diesel (scenario)")
+    gas = {}
+    for name, megawatts, basis in (("low", 0, "none of the retired sites gets a gas plant"),
+                                   ("medium", IRP_GAS_MW_2030 / 2, "half of the IRP 2025 gas requirement is built at these sites"),
+                                   ("high", IRP_GAS_MW_2030, "all 6 GW of the IRP 2025 gas requirement is built at these sites")):
+        gas[name] = s.line(f"Gas capacity at repowered sites, {name}", "MW", "Scenario",
+                           f"From 2030: {basis}. Which sites, if any, is not decided.",
+                           {y: megawatts if y >= 2030 else 0 for y in FUTURE}, kind="estimate", fmt="#,##0",
+                           status="Scenario, not a plan", source="IRP 2025 gas requirement, as reported by TechCentral, 22 April 2026")
+    repower = {}
+    for name in ("low", "medium", "high"):
+        repower[name] = s.line(f"Diesel as backup fuel at repowered sites, {name}", ML, "Scenario",
+                               "Gas capacity times load factor times the share of output on diesel times litres per kWh.",
+                               formula=lambda y, r=gas[name]: f"={c(y)}{r}*8.76*$D${gas_lf}/100*$D${backup}/100*$D${litres}",
+                               kind="estimate", status="Scenario")
+    ceiling_gas = s.line("Ceiling: high case with no gas all year", ML, "Reporting formula",
+                         "High-case gas capacity at its load factor, wholly on diesel. What the sites could draw if gas "
+                         "supply failed.", formula=lambda y: f"={c(y)}{gas['high']}*8.76*$D${gas_lf}/100*$D${litres}", kind="formula")
+
+    s.section("6. Diesel for power, all sites")
+    for name in ("low", "medium", "high"):
+        s.line(f"Total, {name}", ML, "Proposed estimate", "Today's stations plus repowered sites, same case.",
+               formula=lambda y, a=today[name], b=repower[name]: f"={c(y)}{a}+{c(y)}{b}", kind="estimate")
+    s.line("Ceiling, all sites", ML, "Reporting formula", "The two ceilings added: how much the fleet could consume.",
+           formula=lambda y: f"={c(y)}{ceiling_today}+{c(y)}{ceiling_gas}", kind="formula")
+    s.line("For reference: diesel burned, estimated", ML, "Reporting formula", "From section 2.",
+           formula=lambda y: f'=IF(ISNUMBER({c(y)}{burned}),{c(y)}{burned},"")', kind="formula")
+
+    s.section("7. Not established")
+    for label, why in (
+            ("Outcome of Eskom's September 2026 decision", "Whether Camden, Grootvlei, Hendrina, Arnot and Kriel shut, are repowered or run on."),
+            ("Which sites get gas plants, and how large", "Section 5 uses the national gas requirement as a stand-in."),
+            ("Whether Ankerlig and Gourikwa switch to gas on time", "Eskom's stated target was December 2027."),
+            ("Share of output on diesel when gas is the main fuel", "No source; 10% is a placeholder."),
+            ("Private generators at firms and homes", "Not in this block; no measured volume exists."),
+            ("Komati's shutdown date, and the 2034 date for Duvha and Matla", "Marked 'to confirm' in the input file.")):
+        s.line(label, "", "Gap", why, kind="estimate", status="Open")
+
+
 def checks_sheet(wb, d: dict, changes: list[str]) -> int:
     ws = wb.create_sheet("Checks")
     ws["A1"] = "Checks on the workshop workbook, 7 October 2026"
@@ -877,7 +1024,8 @@ def sources_sheet(wb) -> None:
         "air_traffic_acsa_annual": "History section 7: aircraft movements",
         "fuel_sales_department_by_province_quarterly": "History section 6: quarter 1 2023 provincial shares",
         "gdp_by_province_statssa": "History section 6: provincial GDP used to move the 2024 shares",
-        "ocgt_generation_eskom": "Diesel by use: power generation",
+        "ocgt_generation_eskom": "Diesel by use and Power fleet: power generation",
+        "power_fleet_diesel": "Power fleet: stations, capacities and retirement dates",
         "ocgt_diesel_burn_reported": "Diesel by use: the 0.31 litres per kWh factor",
         "fuel_prices_department": "Diesel by use: price used to convert road freight fuel spending to litres",
         "vehicle_parameters_stone2018": "Diesel by use and Vehicle history: vehicle classes, distance and fuel use",
@@ -947,12 +1095,13 @@ def main() -> int:
             changes.append(f"Source selection!{cells[4].coordinate}: {cells[0].value} {cells[1].value} FIASA -> Department "
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 left on FIASA, which is unverified; the department has published no 2024 figure.")
-    changes.append("Sheets added: History, Sector history, Diesel by use, Vehicle history, HML response, Gap status, "
+    changes.append("Sheets added: History, Sector history, Diesel by use, Power fleet, Vehicle history, HML response, Gap status, "
                    "Checks, History sources. No other cell changed.")
 
     history_rows = history_sheet(wb, d)
     sector_rows = sector_sheet(wb, d)
     diesel_by_use_sheet(wb, d, history_rows, sector_rows)
+    power_fleet_sheet(wb, d)
     vehicle_sheet(wb, d, history_rows)
     lever_response_sheet(wb)
     gap_status_sheet(wb)

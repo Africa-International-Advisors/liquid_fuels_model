@@ -251,3 +251,60 @@ is for the owner.
 **History sources sheet.** Now 25 rows, covering every added sheet, including
 the two documents that are not registered datasets (the Stats SA transport
 survey and the freight energy study).
+
+## Power fleet: station by station, in answer to Nigel's message of 7 October
+
+Nigel asked for the power generation fleet to be defined, the coal
+decommissioning timeline set beside it, and a block by year showing how much
+diesel the fleet could consume, with repowered coal sites able to use diesel
+as backup. The Power fleet sheet does this for 2022-2035. Stations and dates
+are in `assumptions/2026/infrastructure/power_fleet_diesel.csv`.
+
+**The diesel fleet today is four stations, 3,089 MW.**
+
+| Station | Owner | MW | Note |
+|---|---|---|---|
+| Ankerlig | Eskom | 1,338 | Eskom sought a gas supply in 2023, aiming to switch by December 2027 with diesel as a supplement |
+| Gourikwa | Eskom | 746 | Same tender |
+| Avon | Independent producer | 670 | |
+| Dedisa | Independent producer | 335 | |
+
+Acacia and Port Rex (171 MW each) burn kerosene, not diesel, and are left out.
+The model carries the same four stations plus two placeholders, "New 1" and
+"New 2", of 1,000 and 2,000 MW with no source.
+
+**What the fleet has done.** Load factor was 13.7%, 17.1%, 9.4% and 3.6% in
+the years to March 2023-2026, which is about 1.28, 1.59, 0.88 and 0.33 bn
+litres at 0.31 litres per kWh. The model has 3.58 bn litres for 2024 and 4.59
+(high) or 1.05 (low) for 2030 and 2035.
+
+**What it could burn.** Million litres a year:
+
+| | 2022-2027 | 2028-2029 | 2030-2035 |
+|---|---|---|---|
+| Low (3.6% load factor) | 301 | 118 | 118 |
+| Medium (9.4%) | 792 | 311 | 637 |
+| High (17.1%) | 1,435 | 564 | 1,216 |
+| Ceiling: everything on diesel all year | 8,389 | 8,389 | 14,906 |
+
+The drop in 2028 is Ankerlig and Gourikwa moving to gas with 10% of output
+still on diesel. The rise in 2030 in the medium and high cases is gas plants
+at retired coal sites using diesel as backup.
+
+**Coal retirements.** Komati (990 MW) is shown as shut from 2023. Camden,
+Grootvlei, Hendrina, Arnot and Kriel (9,474 MW together) hold exemptions to 31
+March 2030. Duvha and Matla (6,600 MW) are shown to 2033. Eskom was to decide
+by end September 2026 whether the five shut, are repowered or run on; I could
+not find the outcome.
+
+**Repowering is a scenario, not a plan.** No source says which sites get gas
+plants. The sheet uses the national gas requirement in IRP 2025 (about 6 GW by
+2030) as a stand-in: none, half or all of it at these sites.
+
+Three assumptions drive the result and have no source; each is a single cell
+on the sheet: 10% of output on diesel once gas is the main fuel; a 40% load
+factor for gas plants at repowered sites; and 0.31 litres per kWh.
+
+Not included: private generators at firms and homes. To confirm: Komati's
+shutdown date (from memory) and the 2034 date for Duvha and Matla (from a
+press summary).

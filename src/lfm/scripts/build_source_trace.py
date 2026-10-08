@@ -299,6 +299,12 @@ TRACE: dict[str, tuple[str, ...]] = {
         "manual transcription", "none", "typed by hand", "hand-back deck section 1", "",
         "Gross levies and diesel rebate in rand; litres derived in the balance note. Fiscal years; "
         "petrol and diesel together.", "Nigel: weigh against the 2024 sales figures"),
+    "infrastructure/power_fleet_diesel.csv": (
+        "Eskom; press reports", "https://www.eskom.co.za/eskom-divisions/gx/peaking-power-stations/",
+        "eskom-gx0001-generation-plant-mix-rev29.pdf", "on manish-branch (external/data/raw/eskom/)",
+        "manual transcription", "none", "typed by hand", "workshop workbook, Power fleet sheet", "",
+        "Diesel peaking stations and coal stations being retired, with capacities and dates. Three rows are "
+        "marked to confirm.", "Nigel, Henry: agree the fleet and the repowering scenario"),
     "infrastructure/terminal_site_assumptions.csv": (
         "NERSA; Vopak; Transnet Pipelines", "https://www.nersa.org.za/regulator-decisions",
         "external/data/raw/vopak_storage_20261006/nersa-vopak-*.pdf, durban.html, lesedi.html",

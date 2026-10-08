@@ -34,7 +34,8 @@ def test_history_carries_the_registered_inputs_and_uses_formulas_for_the_balance
 def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
-        "History", "Sector history", "Diesel by use", "Vehicle history", "HML response", "Gap status", "Checks",
+        "History", "Sector history", "Diesel by use", "Power fleet", "Vehicle history", "HML response", "Gap status",
+        "Checks",
         "History sources"]
     changed = []
     for ws in before.worksheets:
@@ -131,3 +132,17 @@ def test_lever_response_gap_status_jet_and_sources_are_in_the_workbook():
     used_for = " ".join(str(row[0]) for row in wb["History sources"].iter_rows(min_row=5, values_only=True))
     for sheet in ("History section 7", "Diesel by use", "Vehicle history", "HML response"):
         assert sheet in used_for, sheet
+
+
+def test_power_fleet_lists_the_diesel_stations_and_keeps_scenarios_as_formulas():
+    sheet = load_workbook(ROOT / build.OUT)["Power fleet"]
+    rows = _rows(sheet)
+    first = build.FIRST - 1                                                  # 2022
+    assert [rows[name][first].value for name in ("Ankerlig (Eskom)", "Gourikwa (Eskom)", "Avon (Independent producer)",
+                                                 "Dedisa (Independent producer)")] == [1338, 746, 670, 335]
+    assert rows["Acacia (Eskom)"][2].value == "Not counted"                  # kerosene, not diesel
+    assert rows["Camden"][first + 7].value == 1561 and rows["Camden"][first + 8].value == 0     # 2029, then 2030
+    assert rows["Gas capacity at repowered sites, high"][first + 8].value == build.IRP_GAS_MW_2030
+    for label in ("Diesel stations, total", "Diesel at a high load factor", "Ceiling, all sites", "Total, medium"):
+        assert str(rows[label][first + 8].value).startswith("="), label
+    assert rows["Share of output on diesel once gas is the main fuel"][2].value == "Assumption"

@@ -405,3 +405,16 @@ fuel_levy_revenue_raf:
   source: Road Accident Fund Annual Report 2024/25, note 16; provenance and limits in the companion .sources.yaml
   last_updated: '2026-10-07'
   shared: true
+power_fleet_diesel:
+  register_id: REG-SOURCE-POWER_FLEET_DIESEL
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: infrastructure/power_fleet_diesel.csv
+  units: MW; years
+  source: Eskom fact sheet GX 0001 Rev 29 (July 2024) for capacities; Eskom peaking stations page; press
+    reports for retirement dates. Each row is marked evidence or to confirm. Proposed inputs, not accepted
+  last_updated: '2026-10-08'
+  provisional: true
+  needs_verification: true
+  shared: true
