@@ -176,3 +176,45 @@ The two modelled figures agree with each other (they come from the same
 research group) and sit above the Stats SA floor, as they should: about 4.8 bn
 litres for all trucks in 2010 against about 2.9 bn for hire-and-reward
 operators in 2019.
+
+## Diesel by use: the six branches, approach A
+
+The Diesel by use sheet lays out the diagram from the check-in. Mining,
+manufacturing, agriculture and power come from sources (observed to 2021,
+estimated after). Road diesel is what remains of recorded sales, and is split
+into three vehicle groups with the shares of the 2018 vehicle study, held at
+their 2010 values. Every figure below the source rows is a formula.
+
+| Branch, million litres | 2019 | 2021 | 2022 | 2023 | 2024 |
+|---|---|---|---|---|---|
+| Diesel sales used | 12,909 | 12,946 | 12,717 | 12,908 | 11,734 |
+| Mining | 1,667 | 1,294 | 1,396 | 1,396 | 1,404 |
+| Manufacturing and other industry | 231 | 157 | 167 | 168 | 167 |
+| Agriculture | 922 | 1,058 | 1,106 | 1,055 | 963 |
+| Power | 29 | 0 | 1,276 | 1,594 | 880 |
+| Road vehicles and uses not listed | 10,060 | 10,437 | 8,773 | 8,694 | 8,320 |
+| of which heavy vehicles (60.5%) | 6,089 | 6,317 | 5,310 | 5,263 | 5,036 |
+| of which light vehicles (27.0%) | 2,715 | 2,817 | 2,368 | 2,347 | 2,246 |
+| of which passenger vehicles (12.5%) | 1,255 | 1,302 | 1,095 | 1,085 | 1,038 |
+
+Which classes of the study fall in each group (also on the sheet):
+
+| Group | Diesel classes counted | Diesel in the study, 2010 fleet |
+|---|---|---|
+| Heavy vehicles | HCV1Diesel to HCV9Diesel: trucks in nine weight classes | 4,836 million litres |
+| Light vehicles | LCVDiesel: light commercial vehicles (bakkies and vans) | 2,157 |
+| Passenger vehicles | CarDiesel, CarHybridDiesel, SUVDiesel, BusDiesel, MBTDiesel: cars, SUVs, buses and minibus taxis | 997 |
+
+Points to carry with it:
+
+- The road figure is a remainder. It includes rail, construction plant,
+  private generators and ships' diesel, which no source separates, and it
+  moves with every error in the rows above it.
+- Power is the energy balance to 2021 and generation times 0.31 litres per
+  kWh from 2022, shown under the calendar year the financial year mostly
+  covers. The balance shows almost nothing for power in 2017-2021.
+- The shares are for the 2010 fleet. Diesel vehicles have doubled since and
+  trucks grew by about a quarter, so today's heavy share is probably lower.
+- Heavy vehicles sit above Stats SA's figure for hire-and-reward road freight
+  (2,855 in 2019 and 3,154 in 2023) by 3,234 and 2,108, as they should.
+- 2024 uses FIASA's unverified sales; 2025 has no sales figure.

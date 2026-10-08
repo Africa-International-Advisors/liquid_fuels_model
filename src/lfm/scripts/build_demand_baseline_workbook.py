@@ -51,6 +51,16 @@ INK = "FF243B53"
 FILL = {"header": "FF243B53", "section": "FFEAF0F5", "observation": "FFEDF3FA", "formula": "FFFFFFFF",
         "comparison": "FFF4F4F4", "estimate": "FFFFF2CC"}
 ML = "million L/year"
+LITRES_PER_KWH = 0.31          # reported Eskom burn over generation in three years; see driver_evidence note
+# Stats SA, Transport and storage industry 2023 (Report 71-02-01), Table 20: fuel bought by road freight
+# transport enterprises, R million, with the twelve months each survey's reference year mostly covers.
+ROAD_FREIGHT_FUEL_RAND = {2019: (41640, "2018-07", "2019-06"), 2023: (71468, "2022-07", "2023-06")}
+# Vehicle classes of Stone et al. (2018) grouped for the diesel split.
+VEHICLE_GROUPS = {
+    "Heavy vehicles": ("HCV1", "HCV2", "HCV3", "HCV4", "HCV5", "HCV6", "HCV7", "HCV8", "HCV9"),
+    "Light vehicles": ("LCV",),
+    "Passenger vehicles": ("Car", "SUV", "Bus", "MBT", "Moto"),
+}
 
 
 def _read(path: Path) -> list[dict]:
@@ -113,6 +123,22 @@ def load(ts: Path, ref: Path) -> dict:
     model = yaml.safe_load((ts.parent / "vehicles.yaml").read_text(encoding="utf-8"))
     d["model_vehicles"] = {key: model[key]["by_country"]["ZAF"] for key in (
         "annual_km_per_vehicle", "fuel_consumption", "petrol_diesel_split", "scrappage_rate", "new_vehicle_segment_split")}
+    # Diesel by use: the study's split of road diesel, power generation and the road freight survey.
+    d["study_diesel"], d["study_classes"] = {}, {}
+    for group, prefixes in VEHICLE_GROUPS.items():
+        members = [r for r in d["stone"].values()
+                   if r["fuel"].startswith("diesel") and r["vehicle_type"].startswith(prefixes)]
+        d["study_classes"][group] = [r["vehicle_type"] for r in members]
+        d["study_diesel"][group] = sum(float(r["vehicles_2010"]) * float(r["km_per_year_fleet_average"])
+                                       * float(r["l_per_100km_fleet_average"]) / 100 for r in members) / 1e6
+    d["ocgt_gwh"] = {int(r["period"]): float(r["value"]) for r in _read(ts / "ocgt_generation_eskom.csv")
+                     if r["series"] == "eskom_and_ipp_ocgt"}
+    price = {r["period"]: float(r["value"]) / 100 for r in _read(ts / "fuel_prices_department.csv")
+             if r["series"] == "diesel_005_inland_wholesale" and r["value"]}
+    d["freight_floor"] = {}
+    for year, (rand_million, first, last) in ROAD_FREIGHT_FUEL_RAND.items():
+        months = [v for k, v in price.items() if first <= k <= last]
+        d["freight_floor"][year] = (rand_million / (sum(months) / len(months)), sum(months) / len(months))
     d["macro"] = {(r["series"], int(r["period"])): float(r["value"]) / 1e9
                   for r in _read(ts / "macro_statssa.csv") if r["basis"] == "actual" and r["unit"].startswith("rand")}
     return d
@@ -302,7 +328,7 @@ def history_sheet(wb, d: dict) -> dict:
     return rows
 
 
-def sector_sheet(wb, d: dict) -> None:
+def sector_sheet(wb, d: dict) -> dict:
     s = Sheet(wb, "Sector history", "Mining, manufacturing and agriculture: diesel beside activity, 2012-2025",
               "Diesel is from the department's energy balances (to 2021). The balance attributes fuel to the sector "
               "that bought it. Intensities and the indicative rows are formulas.")
@@ -327,18 +353,20 @@ def sector_sheet(wb, d: dict) -> None:
                            formula=both(fuel, act, "{c}{a}/{c}{b}"), kind="formula", fmt="#,##0.00")
         a, b = col(2018), col(2021)
         average = f"=AVERAGE({a}{intensity}:{b}{intensity})"
-        s.line(f"Indicative diesel at observed activity ({diesel_label.split(',')[0].lower()})", ML, "Proposed estimate",
+        indicative = s.line(f"Indicative diesel at observed activity ({diesel_label.split(',')[0].lower()})", ML, "Proposed estimate",
                "Average 2018-2021 intensity (column D) times the activity measure. An indication for years without a "
                "balance; not an observation and not an accepted input.",
                formula=lambda y, r=act, me=s.row + 1: f'=IF(ISNUMBER({col(y)}{r}),$D${me}*{col(y)}{r},"")',
                kind="estimate", scalar=average, status="Estimate for discussion",
                action="Agree base year, driver and whether intensity is held constant (Nigel)")
-        return fuel
+        return fuel, indicative
 
-    mining = block("Mining", "Mining and quarrying diesel, energy balance", eb("mining"), None,
+    out = {}
+    out["mining"] = block("Mining", "Mining and quarrying diesel, energy balance", eb("mining"), None,
                    "Mining production volume", "index 2019=100", {y: d["index"].get(("mining_volume_total", y)) for y in YEARS},
                    "Statistics South Africa P2041", "million L per index point",
                    "Includes unregistered haul trucks and mines' road vehicles; the balance does not separate them.")
+    mining = out["mining"][0]
     s.section("Industry other than mining")
     industry = s.line("Industry diesel, energy balance (parent line)", ML, "Source observation",
                       "Parent 'industry' line: mining, construction, manufacturing sub-sectors and non-specified.",
@@ -351,17 +379,19 @@ def sector_sheet(wb, d: dict) -> None:
         return (f'=IF(COUNT({col(y)}{industry},{col(y)}{mining})<2,"",{col(y)}{industry}-{col(y)}{mining}'
                 f'-IF(ISNUMBER({col(y)}{construction}),{col(y)}{construction},0))')
 
-    block("Manufacturing and non-specified industry", "Manufacturing and other industry diesel, by difference", None, rest,
+    out["manufacturing"] = block("Manufacturing and non-specified industry",
+                                 "Manufacturing and other industry diesel, by difference", None, rest,
           "Manufacturing production volume", "index 2019=100",
           {y: d["index"].get(("manufacturing_volume_total", y)) for y in YEARS},
           "Statistics South Africa P3041.2", "million L per index point",
           "Industry less mining less construction. Small (0.1-0.3 bn litres), so it moves with reclassification in "
           "the balance more than with output.")
-    block("Agriculture", "Agriculture and forestry diesel, energy balance", eb("agriculture"), None,
+    out["agriculture"] = block("Agriculture", "Agriculture and forestry diesel, energy balance", eb("agriculture"), None,
           "Agriculture, forestry and fishing real value added", "bn 2015 rand",
           {y: d["macro"].get(("agriculture_forestry_and_fishing", y)) for y in YEARS},
           "Statistics South Africa P0441", "million L per bn rand",
           "2016 and 2017 are about double the other years in the balance and look like reclassification.")
+    return out
 
 
 def vehicle_sheet(wb, d: dict, history_rows: dict) -> None:
@@ -479,6 +509,111 @@ def vehicle_sheet(wb, d: dict, history_rows: dict) -> None:
             ("Distance driven after 2014", "The study's figures are a 2014 base; no later survey is held."),
             ("Petrol and diesel split of new sales by segment", "naamsa reports drivetrain for the total market only.")):
         s.line(label, "", "Missing input", why, kind="estimate", status="Gap", action="Source to be found or assumption agreed")
+
+
+def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> None:
+    s = Sheet(wb, "Diesel by use", "Diesel by use: the six branches drawn at the 7 October check-in",
+              "Mining, manufacturing, agriculture and power are taken from sources; road diesel is what remains of "
+              "recorded sales and is split with the shares of a published vehicle study (approach A). Million litres a year.")
+    quote = "'Sector history'!"
+
+    def sector(key):
+        fuel, indicative = sector_rows[key]
+        return lambda y: (f'=IF(ISNUMBER({quote}{col(y)}{fuel}),{quote}{col(y)}{fuel},'
+                          f'IF(ISNUMBER({quote}{col(y)}{indicative}),{quote}{col(y)}{indicative},""))')
+
+    s.section("1. Sales and the uses taken from sources")
+    sales = s.line("Diesel sales used", ML, "Reporting formula",
+                   "From History: department national file to 2023, FIASA (unverified) for 2024.",
+                   formula=lambda y: f'=IF(ISNUMBER(History!{col(y)}{history_rows["sales_diesel"]}),History!{col(y)}{history_rows["sales_diesel"]},"")',
+                   kind="formula", status="2012-2024")
+    mining = s.line("Mining", ML, "Observation, then estimate",
+                    "Energy balance to 2021; from 2022 the indicative figure on Sector history. Driver: mining production index.",
+                    formula=sector("mining"), kind="formula", status="Observed to 2021; estimated after",
+                    source="Department energy balances; Stats SA P2041")
+    manufacturing = s.line("Manufacturing and other industry", ML, "Observation, then estimate",
+                           "Energy balance industry less mining and construction to 2021; indicative after. "
+                           "Driver: manufacturing production index.",
+                           formula=sector("manufacturing"), kind="formula", status="Zero before 2016 in the balance",
+                           source="Department energy balances; Stats SA P3041.2")
+    agriculture = s.line("Agriculture", ML, "Observation, then estimate",
+                         "Energy balance to 2021; indicative after. Driver: agricultural real value added.",
+                         formula=sector("agriculture"), kind="formula", status="Observed to 2021; estimated after",
+                         source="Department energy balances; Stats SA P0441")
+    gwh = s.line("Diesel power generation, Eskom and independent plants", "GWh", "Source observation",
+                 "Year to 31 March of the following year, shown under the calendar year it mostly covers.",
+                 {y - 1: v for y, v in d["ocgt_gwh"].items() if y - 1 in YEARS}, status="2022-2025", source="Eskom",
+                 fmt="#,##0")
+    balance_power = s.line("Power generation diesel, energy balance", ML, "Source observation",
+                           "Electricity plants line of the energy balance.",
+                           {y: d["balance"].get(("electricity_plants", "diesel", y)) for y in YEARS},
+                           status="2012-2021; near zero from 2017", source="Department energy balances")
+    power = s.line("Power", ML, "Observation, then estimate",
+                   "Energy balance to 2021; from 2022 generation times litres per kWh (column D). Driver: turbine output.",
+                   formula=lambda y, me=s.row + 1: (f'=IF(ISNUMBER({col(y)}{gwh}),{col(y)}{gwh}*$D${me},'
+                                                    f'IF(ISNUMBER({col(y)}{balance_power}),{col(y)}{balance_power},""))'),
+                   kind="formula", scalar=LITRES_PER_KWH, fmt="#,##0.00",
+                   status="Estimated from 2022 at 0.31 litres per kWh",
+                   source="Eskom; parliamentary replies on diesel burn",
+                   action="The 0.31 factor is a proposal awaiting review")
+
+    s.section("2. Road diesel, by difference")
+    road = s.line("Road vehicles and uses not listed above", ML, "Reporting formula",
+                  "Sales less mining, manufacturing, agriculture and power. Includes rail, construction plant, private "
+                  "generators and ships' diesel, which no source separates.",
+                  formula=lambda y: (f'=IF(COUNT({col(y)}{sales},{col(y)}{mining},{col(y)}{agriculture})<3,"",{col(y)}{sales}'
+                                     f'-{col(y)}{mining}-N({col(y)}{manufacturing})-{col(y)}{agriculture}-N({col(y)}{power}))'),
+                  kind="formula", action="The balance counts mining and farm diesel by buyer, so some of it is burned on public roads")
+
+    s.section("3. Road diesel split by vehicle group (approach A: the study's shares held)")
+    total = sum(d["study_diesel"].values())
+    split = {}
+    drivers = {"Heavy vehicles": "Driver: freight activity, road-to-rail shift, electric share of new trucks.",
+               "Light vehicles": "Driver: fleet and distance, electric share of new sales.",
+               "Passenger vehicles": "Driver: fleet and distance, electric share of new sales."}
+    for group in VEHICLE_GROUPS:
+        split[group] = s.line(group, ML, "Proposed estimate",
+                              f"Road diesel times the group's share in the study (column D, %). {drivers[group]}",
+                              formula=lambda y, me=s.row + 1: f'=IF(ISNUMBER({col(y)}{road}),{col(y)}{road}*$D${me}/100,"")',
+                              kind="estimate", scalar=d["study_diesel"][group] / total * 100,
+                              status="Estimate; shares are for the 2010 fleet",
+                              source="Stone et al. (2018), vehicles x distance x fuel use by class",
+                              action="Diesel vehicles have doubled since 2010 while trucks grew about a quarter, so "
+                                     "today's heavy share is probably lower")
+
+    s.section("4. Checks")
+    s.line("Sum of the six branches", ML, "Reporting formula", "Should equal diesel sales used.",
+           formula=lambda y: (f'=IF(ISNUMBER({col(y)}{road}),{col(y)}{mining}+N({col(y)}{manufacturing})+{col(y)}{agriculture}'
+                              f'+N({col(y)}{power})+' + "+".join(f"{col(y)}{r}" for r in split.values()) + ',"")'),
+           kind="formula")
+    floor = s.line("Fuel bought by road freight businesses", ML, "Source observation, converted",
+                   "Stats SA rand figure divided by the average inland wholesale diesel price over the survey year "
+                   f"(R{d['freight_floor'][2019][1]:.2f} and R{d['freight_floor'][2023][1]:.2f} a litre). Hire-and-reward "
+                   "operators only; may include some petrol and lubricants.",
+                   {y: v[0] for y, v in d["freight_floor"].items()}, kind="comparison", status="2019 and 2023 only",
+                   source="Stats SA, Transport and storage industry 2023 (Report 71-02-01), Table 20")
+    s.line("Heavy vehicles less the road freight figure", ML, "Reporting formula",
+           "Should be positive: the survey leaves out trucks run by firms for their own goods.",
+           formula=both(split["Heavy vehicles"], floor, "{c}{a}-{c}{b}"), kind="formula")
+    s.line("Land freight share of diesel in a second study", "% of diesel demand", "Comparison only",
+           "Merven, Hartley and Ahjum (2019): land freight took 60.5% of domestic diesel demand in 2012. Same research "
+           "group as the vehicle study.", scalar=60.5, kind="comparison", fmt="0.0",
+           source="SA-TIED Working Paper 60, p.10")
+
+    s.section("5. Which classes of the study fall in each group")
+    for group, prefixes in VEHICLE_GROUPS.items():
+        every = sorted(r["vehicle_type"] for r in d["stone"].values() if r["vehicle_type"].startswith(prefixes))
+        petrol_only = [c for c in every if c not in d["study_classes"][group]]
+        s.line(f"{group}: classes", "", "Note",
+               "Diesel classes counted: " + ", ".join(d["study_classes"][group]) + ". "
+               + ("Other classes in the group, not diesel: " + ", ".join(petrol_only) + "." if petrol_only else ""),
+               scalar=d["study_diesel"][group], kind="comparison", fmt="#,##0",
+               status="Column D is the group's diesel in the study, million litres, 2010 fleet",
+               source="assumptions/2026/reference/vehicle_parameters_stone2018.csv")
+    s.line("Reading the class names", "", "Note",
+           "Car and SUV are private passenger vehicles; Bus is buses; MBT is minibus taxis; Moto is motorcycles; LCV is "
+           "light commercial vehicles (bakkies and vans); HCV1 to HCV9 are trucks in nine weight classes, lightest to "
+           "heaviest.", kind="comparison")
 
 
 def checks_sheet(wb, d: dict, changes: list[str]) -> int:
@@ -599,10 +734,12 @@ def main() -> int:
             changes.append(f"Source selection!{cells[4].coordinate}: {cells[0].value} {cells[1].value} FIASA -> Department "
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 left on FIASA, which is unverified; the department has published no 2024 figure.")
-    changes.append("Sheets added: History, Sector history, Vehicle history, Checks, History sources. No other cell changed.")
+    changes.append("Sheets added: History, Sector history, Diesel by use, Vehicle history, Checks, History sources. "
+                   "No other cell changed.")
 
     history_rows = history_sheet(wb, d)
-    sector_sheet(wb, d)
+    sector_rows = sector_sheet(wb, d)
+    diesel_by_use_sheet(wb, d, history_rows, sector_rows)
     vehicle_sheet(wb, d, history_rows)
     differs = checks_sheet(wb, d, changes)
     sources_sheet(wb)

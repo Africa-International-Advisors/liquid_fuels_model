@@ -34,7 +34,7 @@ def test_history_carries_the_registered_inputs_and_uses_formulas_for_the_balance
 def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
-        "History", "Sector history", "Vehicle history", "Checks", "History sources"]
+        "History", "Sector history", "Diesel by use", "Vehicle history", "Checks", "History sources"]
     changed = []
     for ws in before.worksheets:
         for row in ws.iter_rows():
@@ -90,3 +90,19 @@ def test_vehicle_sheet_carries_observed_stock_and_the_models_settings():
     for label in ("Cars retired", "Cars retirement rate", "Implied less registered diesel vehicles",
                   "Distance implied by petrol sales"):
         assert str(vehicles[label][at[2023]].value).startswith("="), label
+
+
+def test_diesel_by_use_splits_road_diesel_with_the_studys_shares():
+    d = build.load(VINTAGE / "timeseries", VINTAGE / "reference")
+    sheet = _rows(load_workbook(ROOT / build.OUT)["Diesel by use"])
+    at = {year: build.FIRST - 1 + build.YEARS.index(year) for year in build.YEARS}
+    shares = [sheet[group][3].value for group in build.VEHICLE_GROUPS]
+    assert sum(shares) == pytest.approx(100)
+    assert sheet["Heavy vehicles"][3].value == pytest.approx(60.5, abs=0.1)
+    assert set(d["study_classes"]["Heavy vehicles"]) == {f"HCV{n}Diesel" for n in range(1, 10)}
+    assert d["study_classes"]["Light vehicles"] == ["LCVDiesel"]
+    assert "MBTDiesel" in d["study_classes"]["Passenger vehicles"] and "BusDiesel" in d["study_classes"]["Passenger vehicles"]
+    assert "HCV1Diesel" in sheet["Heavy vehicles: classes"][4].value
+    assert sheet["Fuel bought by road freight businesses"][at[2023]].value == pytest.approx(d["freight_floor"][2023][0])
+    for label in ("Road vehicles and uses not listed above", "Heavy vehicles", "Sum of the six branches"):
+        assert str(sheet[label][at[2023]].value).startswith("="), label
