@@ -1,0 +1,386 @@
+country,zone,magisterial_district,province,list_date,source_file
+ZAF,01A,Bellville,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Cape Town,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Chatsworth,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Durban,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,East London,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Goodwood,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Inanda,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Kuilsrivier,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Malmesbury (south of 33o30' latitude),Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Mdantsane,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Mitchells Plain,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Mossel Bay,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Pinetown,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Port Elizabeth,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Simonstown,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Umlazi,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,01A,Wynberg,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,02A,Camperdown,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,02A,Ndwedwe,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,02A,Paarl,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,02A,Somerset West,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,02A,Stellenbosch,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,02A,Strand,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,02A,Uitenhage,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,02A,Umbumbulu,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,02A,Wellington,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,George,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,Hankey,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,King Williams Town,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,Kirkwood,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,Komga,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,Lower Tugela,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,Malmesbury (north of 33o30' latitude),Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,Mapumulo,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,Richmond (KZN),KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,Umzinto,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03A,Zwelitsha,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Albany,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Alexandria,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Calitzdorp,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Eshowe,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Heidelberg (W.Cape),Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Ixopo,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Keiskammahoek,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Knysna,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Middledrift,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Moorreesburg,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Mtunzini,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Oudtshoorn,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Peddie (Ciskei),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Port Shepstone,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Riversdale,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Stutterheim,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Tulbagh,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,04A,Victoria East,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Adelaide,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Alfred,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Bathurst (Port Alfred),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Bedford,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Caledon,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Cathcart,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Centane,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Ceres,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Cofimvaba (St Marks),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Fort Beaufort,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Gatyana (Willowvale),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Gcuwa (Butterworth),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Hermanus,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Hewu (Whittle Sea),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Hlabisa,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Hopefield,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Idutywa,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Kranskop,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Lower Umfolozi,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Montagu,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Mpofu (Stockenstroom)(Seymore),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Mtonjaneni,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Nkandla,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Nqamakwe,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Queenstown,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Robertson,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Sterkstroom,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Swellendam,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Tarka,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Tsomo,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Umzimkulu,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Vredenburg,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05A,Worcester,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06A,Babanango,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06A,Bredasdorp,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06A,Glen Grey/Cacadu/Lady Frere,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06A,Mahlabatini,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06A,Molteno,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06A,Nongoma,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06A,Umtata,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07A,Albert,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07A,Aliwal North,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07A,Noupoort,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07A,Steynsburg,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07A,Wodehouse,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07A,Xalanga,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Barkly East,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Bethulie,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Colesberg,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,De Aar,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Edenburg,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Elliot,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Hanover,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Herschel (Sterkspruit),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Jagersfontein,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Lady Grey,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Maclear,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Phillippolis,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Reddersburg,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Richmond (N.Cape),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Rouxville,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Smithfield,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Trompsburg,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Venterstad,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Wepener,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08A,Zastron,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09A,Britstown,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09A,Fauresmith,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09A,Hopetown,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09A,Koffiefontein,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09A,Philipstown,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09A,Prieska,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11A,Hay,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13A,Gordonia (south of 28o latitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,15A,Kenhardt (east of 20o longitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,17A,Gordonia Central (between 27o30' and 28o latituded),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,19A,Gordonia (north of 27o30' latitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Engcobo,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Hofmeyer,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Indwe,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Ingwavuma,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Libode,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Maluki (Matatiele),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Middelburg (E.Cape),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Mount Currie,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Mqanduli,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Ngotshe,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Nqueleni,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Qumbu,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Tsolo,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Ubombo,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57A,Xhora ( Elliotdale),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,69A,Kenhardt (west of 20o longitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03B,Humansdorp,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07B,Prince Albert,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06B,Ladismith (Cape),Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06B,Piketberg,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06B,Uniondale,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08B,Beaufort West,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07B,Clanwilliam,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07B,Jansenville,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07B,Joubertina,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07B,Somerset East,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07B,Steytlerville,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07B,Willowmore,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08B,Cradock,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08B,Fraserburg,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07B,Laingsburg,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09B,Murraysburg,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08B,Pearston,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09B,Aberdeen,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09B,Bizana,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09B,Graaffreinett,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09B,Sipangeni (Flagstaff),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09B,Van Rhynsdorp,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12B,Victoria West,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09B,Vredendal,Western Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10B,Carnavon,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10B,Kwabhaca (Mount Frere),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10B,Lusikisiki (PortStJohns),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10B,Maxesibeni (Mount Ayliff),Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10B,Tabankulu,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10B,Williston,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12B,Calvinia (west of 20o longitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12B,Mount Fletcher,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12B,Sutherland,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12B,Umzimvubu,Eastern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,14B,Calvinia (east of 20o longitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03B,Pietermaritzburg,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03B,Lions River,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05B,Estcourt,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05B,Impendle,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05C,Kliprivier,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05B,Mooirivier,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05B,Msinga,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,03B,New Hanover,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05B,Polela,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05B,Umvoti,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05B,Underberg,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,05B,Weenen,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06C,Bergville,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06C,Dannhauser,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06C,Dundee,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06C,Glencoe,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06C,Harrismith,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06C,Newcastle,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06C,Nqutu,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,06C,Vryheid,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07C,Bethlehem,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07C,Fouriesburg,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,07C,Witsieshoek,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Amersfoort,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Balfour,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Bethal,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Clocolan,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Ermelo,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Ficksburg,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Frankfort,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Heilbron,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Hennenman,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Highveld Ridge,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Koppies,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Kriel,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Kroonstad,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Ladybrand,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Lindley,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Marquard,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Reitz,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Senekal,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Standerton,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Ventersburg,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,08C,Vrede,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Alberton,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Belfast,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Benoni,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Boksburg,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Bothaville,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Brakpan,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Bronkhorstspruit,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Carolina,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Cullinan,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Delmas,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Eerstehoek,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Excelsior,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Germiston,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Heidelberg (Gauteng),Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Johannesburg,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Kempton Park,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Klerksdorp,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Krugersdorp,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Moretele 1,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Moretele 2,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Nigel,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Oberholzer,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Odendaalsrus,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Odi,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Parys,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Potchefstroom,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Pretoria,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Randburg,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Randfontein,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Roodepoort,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Sasolburg,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Soshanguve,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Springs,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Theunissen,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Vanderbijlpark,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Vereeniging,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Viljoenskroon,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Virginia,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Vredefort,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Waterval-Boven,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Welkom,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Wesselsbron,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Westonaria,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Winburg,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Witbank,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Wonderboom,Gauteng,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Bafokeng,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Bela-Bela (Warmbad),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Bloemfontein,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Bloemhof,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Boshof,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Botshabelo,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Brandfort,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Brits,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Bultfontein,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Christiana,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Coligny,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Dewetsdorp,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Groblersdal,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Herbert,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Hoopstad,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Jacobsdal,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Koster,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Kwamhlanga,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Lydenburg,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Mankwe,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Mbibana,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Mdutjana (Siyabuswa),Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Middelburg (MP),Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Mkobola,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Moutse,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Petrusburg,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Rustenburg,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,09C,Swartruggens,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Thaba'nchu,Free State,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Ventersdorp,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Wolmaranstad,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Barkly West,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Delareyville,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Hartswater,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Kimberley,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Lehurutshe,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Lichtenburg,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Madikwe,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,10C,Marico,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Mokerong 2 (North of Mokopane),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Mokerong 3 (Zebediela area),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Mokopane (Potgietersrus) (south of tropic of capricorn),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Molopo,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Nebo,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Schweizer-Reneke,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Sekhukhuneland,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Taung,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Warrenton,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,11C,Waterberg,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12C,Ditsobotla,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12C,Polokwane (Pietersburg) (south of tropic of capricorn),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12C,Seshego,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12C,Thabamoopo,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12C,Thabazimbi (east of 27o longitude),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,12C,Vryburg (south of 26o30' latitude),North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Bochum,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Dzanani Central (North of Makhado),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Dzanani South (West of Makhado),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Hlanganani,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Kuruman (south of 27olatitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Lephalale (Ellisras),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Polokwane (Pietersburg) (north of tropic of capricorn),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Postmasburg,Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Sekgosese,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Soutpansberg (central of 29o 30'and 30o 30' longitude),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Thabazimbi (west of 27o longitude),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Thohoyandou (west 31o longitude),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Vuwani,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,13C,Vryburg (east of 24o longitude and north of 26o30' latitude),North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,14C,Dzanani North (East of Musina),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,14C,Musina (Messina) (East of 30o longitude),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,14C,Mutale,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,15C,Ganyesa,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,15C,Kudumane,North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,16C,Mokerong 1 (East of Lephalale),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,16C,Mokopane (Potgietersrus) (north of tropic of capricorn),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,16C,Musina (Messina) (West of 30o longitude),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,16C,Soutpansberg (west of 29o 30' longitude),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,17C,Kuruman (north of 27o latitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,17C,Vryburg (west of 24o longitude),North West,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57C,Paulpietersburg,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57C,Utrecht,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,57C,Volksrust,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,58C,Piet Retief,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,58C,Simdlangentsha,KwaZulu Natal,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,58C,Wakkerstroom,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,61C,Barberton,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,61C,Nelspruit,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,61C,Nkomazi (Kamhulshwa),Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,61C,Nsikazi (Kangwane),Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,61C,White River,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,61C,Mapulaneng,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,61C,Mhala,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,61C,Pilgrims Rest,Mpumalanga,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,62C,Lulekani,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,63C,Namakgale,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,63C,Naphuno,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,63C,Phalaborwa,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,63C,Bolobedu,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,63C,Letaba,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,63C,Ritavi,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,63C,Soutpansberg (east of 30o 30' longitude),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,64C,Giyani,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,64C,Malamulele,Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,67C,Thohoyandou (east of 31o longitude),Limpopo,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,31J,Namakwaland South (south of 30o latitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,32J,Namakwaland Central (between 29o and 30o latitude and between 17o30' and 18o30' longitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,33J,Namakwaland Aggeneys(east of 18o30' longitude and north of 30o latitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,34J,Namakwaland Vioolsdrif (north of 29o latitude and east of 17o longitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,35J,Namakwaland Port Nolloth (south of 29o latitude and west of 17o longitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,36J,Namakwaland Kleinsee (between 29o and 30o latitude and between 17o and 17o30' longitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls
+ZAF,37J,Namakwaland Alexander Bay (north of 29o latitude and west of 17o longitude),Northern Cape,2014-04-02,department-transport-cost-by-zone-2014-04-02.xls

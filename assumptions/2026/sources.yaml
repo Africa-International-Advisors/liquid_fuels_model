@@ -354,6 +354,29 @@ port_liquid_bulk_tnpa:
     Provenance and limits in timeseries/port_liquid_bulk_tnpa.sources.yaml
   last_updated: '2026-10-08'
   shared: true
+zone_differentials_department:
+  register_id: REG-SOURCE-ZONE_DIFFERENTIALS_DEPARTMENT
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/zone_differentials_department.csv
+  units: cents per litre
+  source: Department of Mineral and Petroleum Resources; regulated transport differential by fuel pricing zone, diesel
+    effective 3 April 2024 and petrol and diesel effective 2 April 2014. A regulated allowance in the price, not a
+    commercial rate. Provenance in reference/zone_differentials_department.sources.yaml
+  last_updated: '2026-10-08'
+  shared: true
+zone_districts_department:
+  register_id: REG-SOURCE-ZONE_DISTRICTS_DEPARTMENT
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/zone_districts_department.csv
+  units: none (magisterial district, zone and province)
+  source: Department of Mineral and Petroleum Resources; magisterial districts in each fuel pricing zone, list
+    effective 2 April 2014. Provenance in reference/zone_differentials_department.sources.yaml
+  last_updated: '2026-10-08'
+  shared: true
 refinery_output_operators:
   register_id: REG-SOURCE-REFINERY_OUTPUT_OPERATORS
   exception_id: EXC-SOURCE-DATA-2026-10-05

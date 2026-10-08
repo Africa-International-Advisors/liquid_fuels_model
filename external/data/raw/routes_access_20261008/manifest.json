@@ -97,6 +97,70 @@
       "url": "https://www.miningweekly.com/article/puma-energy-opens-new-bitumen-fuel-storage-capacity-in-mozambique-2015-11-19",
       "bytes": 266371,
       "sha256": "ce6293352cc146fa6126641ee895127aa4cc9c00a5474003562a3f421f0d3f2f"
+    },
+    {
+      "file": "department-diesel-wholesale-by-zone-2024-04.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "published": "effective 2024-04-03",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/April2024/Diesel.pdf",
+      "bytes": 155237,
+      "sha256": "90dae4796ab06cbb3aed5ed39a2481cd6661bbc364a665cc7a8346f2ddea624b"
+    },
+    {
+      "file": "department-transport-cost-by-zone-2014-04-02.xls",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "published": "effective 2014-04-02",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/April-2014/Transport-Cost-effective-from-02April2014.xls",
+      "bytes": 93696,
+      "sha256": "e8d1c1e47502fad6beaef6cf0ed9eb27e06e8eeda550396af2d213d4eaadd80c"
+    },
+    {
+      "file": "department-petrol-prices-by-zone-2024-04.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "published": "effective 2024-04-03",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/April2024/Petrol-Regulations.pdf",
+      "bytes": 129846,
+      "sha256": "f75b16e0731718a3114efa7565e7e63db080e4b27ce1c4fd5a2a5ba11c885d14"
+    },
+    {
+      "file": "department-petrol-margins-2024-04.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "published": "2024",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/April2024/Petrol-margins.pdf",
+      "bytes": 89510,
+      "sha256": "f0b270f8bffea18b1719f00805e0f47ab102c349fb5bfb72bb48ed4243e7a26f"
+    },
+    {
+      "file": "department-diesel-margins-2024-04.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "published": "2024",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/April2024/Diesel-margins.pdf",
+      "bytes": 85602,
+      "sha256": "4e575631c48678e3a2e0c7642835a3ca2259784682e58d9d09e6d09dd07c9baa"
+    },
+    {
+      "file": "cef-press-release-2026-03-27-prices-from-2026-04-01.pdf",
+      "publisher": "Central Energy Fund",
+      "published": "2026-03-27",
+      "url": "https://cefgroup.co.za/wp-content/uploads/2026/03/Press-Release-27-March-26-Change-01-April-2026.pdf",
+      "bytes": 327833,
+      "sha256": "58c733c0829044c7be3c972d4a1093dfc99d1c127f5cd487b59bb78202446c19"
+    },
+    {
+      "file": "department-media-statement-fuel-prices-april-2026.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources (copy hosted by Viva Oil)",
+      "published": "2026-03-31",
+      "url": "https://vivaoil.com/wp-content/uploads/2026/04/Media-Statement-Fuel-Prices-for-April-2026.pdf",
+      "bytes": 277180,
+      "sha256": "205b2d98b61863ead07ebb450e9b7b4cea35e5dcd5135465f9721230dfcb558d"
+    },
+    {
+      "file": "moneyweb-bloomberg-truck-fuel-2025-05-12.html",
+      "publisher": "Bloomberg, published by Moneyweb",
+      "published": "2025-05-12",
+      "url": "https://www.moneyweb.co.za/news/south-africa/south-african-suppliers-truck-fuel-as-pipeline-fees-spike/",
+      "bytes": 372838,
+      "sha256": "157be0220b6dad3f4b3d6393c1df59c475db911c6da92ffc944be02249540b82"
     }
   ],
   "not_obtained": [
@@ -109,6 +173,11 @@
       "what": "NERSA's own statement of 15 March 2024 and its reasons for decision for 2024/25 and 2025-27, with tariffs for routes other than Durban to Alrode",
       "url": "https://www.nersa.org.za/",
       "why": "not located; the Durban to Alrode tariff is taken from Engineering News quoting the statement"
+    },
+    {
+      "what": "Commercial road tanker rates and Transnet Freight Rail rates for petrol and diesel; the department's current zone schedule",
+      "url": "https://www.dmre.gov.za/energy-resources/energy-sources/pretoleum/fuel-prices",
+      "why": "hauliers' and rail rates are not published; dmre.gov.za did not respond on 8 October, so the latest zone list held is April 2024"
     }
   ],
   "see_also": "Port statistics (cargo summaries, monthly and calendar year) are in external/data/raw/tnpa/ with their own manifest."

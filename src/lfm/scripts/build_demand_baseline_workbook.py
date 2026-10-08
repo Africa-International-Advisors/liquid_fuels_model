@@ -106,6 +106,9 @@ def load(ts: Path, ref: Path) -> dict:
     d["jodi_demand"] = {(r["product"], int(r["period"])): float(r["value"]) / 1e6
                         for r in _read(ts / "oil_balance_jodi.csv")
                         if r["flow"] == "demand" and int(r["months_reported"]) == 12}
+    d["zone_differentials"] = {(r["zone"], r["product"], r["effective"][:4]): float(r["value"])
+                               for r in _read(ref / "zone_differentials_department.csv")}
+    d["zone_districts"] = [(r["zone"], r["magisterial_district"], r["province"]) for r in _read(ref / "zone_districts_department.csv")]
     d["imports_by_office"] = {}
     for r in _read(ts / "fuel_trade_sars_by_office.csv"):
         # months_reported counts the months an office cleared fuel, so it is not a test of a complete year here
@@ -939,6 +942,7 @@ DR04_STATUS_FILL = {"observed": "observation", "inferred": "formula"}  # anythin
 
 
 def _sheet_head(ws, heading: str, sub_heading: str, header: list, widths: list[float], row: int = 4) -> None:
+    """Title, one-line description and the header row (at ``row``) of a plain table sheet."""
     ws["A1"] = heading
     ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
     ws["A2"] = sub_heading
@@ -1056,6 +1060,92 @@ def dr04_entry_sheet(wb, d: dict) -> None:
         ws.cell(row=row, column=last - 1, value="Calculated: Durban over all offices")
         fill(row, "formula")
     ws.freeze_panes = "C5"
+
+
+ZONE_SOURCE = "Department of Mineral and Petroleum Resources, zone lists effective 2 April 2014 and 3 April 2024"
+PROVINCE_ORDER = ["Gauteng", "Mpumalanga", "Free State", "North West", "Limpopo", "KwaZulu Natal", "Eastern Cape", "Western Cape",
+                  "Northern Cape"]
+GAUTENG_COSTS = [
+    # label, {period: cents a litre}, basis, source
+    ("Pipeline tariff, Durban to Alrode", {"2024/25": 67.99, "2025/26": 73.22, "2026/27": 77.02},
+     "2024/25 as reported; later years calculated by adding NERSA's stated increases",
+     "NERSA statements of 15 March 2024 (as quoted by Engineering News) and 15 April 2025"),
+    ("Regulated transport differential, Gauteng (zone 9C)", {"2024/25": 82.8, "2026/27": 91.1},
+     "Regulated allowance in the petrol and diesel price for transport from the coast",
+     "Department zone list, April 2024; Central Energy Fund price composition, 1 April 2026"),
+    ("Regulated secondary storage", {"2024/25": 36.6, "2026/27": 39.0}, "Regulated allowance for depot storage; one national figure",
+     "Department diesel margins, 2024; Central Energy Fund price composition, 1 April 2026"),
+    ("Regulated secondary distribution", {"2024/25": 17.2, "2026/27": 19.1},
+     "Regulated allowance for road delivery from depot to service station; one national figure",
+     "Department diesel margins, 2024; Central Energy Fund price composition, 1 April 2026"),
+    ("Commercial road tanker rate, Durban to Gauteng", {}, "Not published", "None found; needs Vopak or a haulier"),
+    ("Rail rate, Durban to Gauteng", {}, "Not published", "None found; needs Transnet or Vopak"),
+]
+GAUTENG_PERIODS = ["2024/25", "2025/26", "2026/27"]
+
+
+def dr04_transport_sheet(wb, d: dict) -> None:
+    """Regulated cost of moving petrol and diesel: the Gauteng route by element, then the differential for every zone."""
+    ws = wb.create_sheet("DR04 transport cost")
+    header = ["Zone", "Provinces", "Districts", "Examples", "2014", "2024", "Change", "Source"]
+    _sheet_head(ws, "DR04 Regulated cost of moving petrol and diesel",
+                "Cents a litre. These are regulated allowances in the fuel price, set by the department and the energy regulator. "
+                "They are not what a haulier or Transnet charges a shipper: commercial road and rail rates are not published.",
+                header, [44, 34, 10, 58, 9, 9, 9, 62], row=14)
+    rates, places = d["zone_differentials"], d["zone_districts"]
+
+    def band(row, text, width):
+        for i in range(1, width + 1):
+            cell = ws.cell(row=row, column=i, value=text if i == 1 else None)
+            cell.font = Font(name="Arial", size=10, bold=True, color=INK)
+            cell.fill = PatternFill("solid", fgColor=FILL["section"])
+
+    # block 1: the Durban to Gauteng route, element by element
+    band(4, "Durban to Gauteng, by element", len(header))
+    labels = ["Element"] + GAUTENG_PERIODS + ["Basis", "", "", "Source"]
+    for i, label in enumerate(labels, start=1):
+        cell = ws.cell(row=5, column=i, value=label)
+        cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
+        cell.fill = PatternFill("solid", fgColor=FILL["header"])
+    row = 5
+    for label, values, basis, source in GAUTENG_COSTS:
+        row += 1
+        cells = [label] + [values.get(period) for period in GAUTENG_PERIODS] + [basis, None, None, source]
+        kind = "observation" if values else "estimate"
+        for i, value in enumerate(cells, start=1):
+            cell = ws.cell(row=row, column=i, value=value)
+            cell.font = Font(name="Arial", size=10, color=INK, italic=label.startswith("Pipeline") and i in (3, 4))
+            cell.fill = PatternFill("solid", fgColor=FILL[kind])
+            cell.alignment = Alignment(wrap_text=i in (5, 8), vertical="top", horizontal="right" if 2 <= i <= 4 else "left")
+            if 2 <= i <= 4:
+                cell.number_format = "0.00"
+        ws.merge_cells(start_row=row, start_column=5, end_row=row, end_column=7)
+    ws.merge_cells(start_row=5, start_column=5, end_row=5, end_column=7)
+
+    # block 2: every pricing zone
+    band(13, "Regulated transport differential by pricing zone (the same for petrol and diesel in 2014; diesel list for 2024)", len(header))
+    row = 14
+
+    def order(zone):
+        provinces = sorted({p for z, _, p in places if z == zone}, key=PROVINCE_ORDER.index)
+        return (PROVINCE_ORDER.index(provinces[0]) if provinces else len(PROVINCE_ORDER), rates.get((zone, "diesel", "2024"), 0))
+
+    for zone in sorted({z for (z, _, _) in rates}, key=order):
+        row += 1
+        districts = sorted(dist for z, dist, _ in places if z == zone)
+        provinces = sorted({p for z, _, p in places if z == zone}, key=PROVINCE_ORDER.index)
+        old, new = rates.get((zone, "diesel", "2014")), rates.get((zone, "diesel", "2024"))
+        label = zone.lstrip("0") + (" (Gauteng)" if zone == "09C" else " (coast)" if zone == "01A" else "")
+        cells = [label, ", ".join(provinces) or "Not in the 2014 district list", len(districts) or None, ", ".join(districts[:6]),
+                 old, new, f'=IF(COUNT(E{row},F{row})<2,"",F{row}-E{row})', ZONE_SOURCE]
+        for i, value in enumerate(cells, start=1):
+            cell = ws.cell(row=row, column=i, value=value)
+            cell.font = Font(name="Arial", size=10, color=INK, bold=zone in ("09C", "01A") and i == 1)
+            cell.fill = PatternFill("solid", fgColor=FILL["formula" if i == 7 else "observation"])
+            cell.alignment = Alignment(wrap_text=i in (2, 4, 8), vertical="top", horizontal="right" if i in (3, 5, 6, 7) else "left")
+            if i in (5, 6, 7):
+                cell.number_format = "0.0"
+    ws.freeze_panes = "B15"
 
 
 def _table(wb, title: str, heading: str, sub_heading: str, header: list[str], widths: list[float], body: list[list]):
@@ -1507,7 +1597,7 @@ def main() -> int:
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 is still set to FIASA on Nigel's sheet, because the department has no 2024 "
                    "figure to switch to. The added sheets do not use FIASA for any year. For Nigel to decide.")
-    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 entry points, Power fleet, Vehicle history, HML response, Gap status, "
+    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 entry points, DR04 transport cost, Power fleet, Vehicle history, HML response, Gap status, "
                    "Checks, History sources. No other cell changed.")
 
     history_rows = history_sheet(wb, d)
@@ -1517,6 +1607,7 @@ def main() -> int:
     demand_by_use_sheet(wb, history_rows, use_rows)
     dr04_routes_sheet(wb)
     dr04_entry_sheet(wb, d)
+    dr04_transport_sheet(wb, d)
     power_fleet_sheet(wb, d)
     vehicle_sheet(wb, d, history_rows)
     lever_response_sheet(wb)

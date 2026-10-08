@@ -6,9 +6,10 @@ M3: port and pipeline limits, route access, and matched delivered costs to the
 same destinations. **Petrol and diesel only.**
 
 Status: **the Durban to Gauteng pipeline route and the entry points are
-documented; a matched delivered-cost table cannot be built yet.** 27 facts are
-read from original documents or registered inputs, 2 are calculated, and
-6 lines are open.
+documented, and the regulated cost of transport is known for every pricing
+zone. Commercial road and rail rates are not published.** 32 facts are read
+from original documents or registered inputs, 3 are calculated, and 6 lines
+are open.
 
 **Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
 
@@ -16,6 +17,8 @@ read from original documents or registered inputs, 2 are calculated, and
   open gap. Open lines are yellow.
 - Sheet **DR04 entry points**: petrol and diesel imports by customs office,
   2014 to 2025, in billion litres.
+- Sheet **DR04 transport cost**: the Durban to Gauteng route element by
+  element, then the regulated transport differential for all 54 pricing zones.
 
 Evidence table behind the first sheet: `dr04_routes_access_evidence_2026-10-08.csv`.
 Originals: `external/data/raw/routes_access_20261008/` (with a manifest of
@@ -59,6 +62,44 @@ For comparison, the regulated diesel price is 79.0 cents a litre higher in
 Gauteng than at the coast in July 2024 and 83.3 in July 2025 (department
 prices). That is about 10 to 11 cents above the pipeline tariff in each year;
 what the rest covers has not been established.
+
+## Road and rail: what is and is not public
+
+**Not public.** No haulier publishes a tanker rate, and Transnet Freight Rail
+does not publish rates by commodity. No commercial road or rail rate for
+petrol or diesel was found.
+
+**Public: the regulated allowance for transport to every destination.** The
+regulated price in each of the 54 pricing zones is the coastal price plus a
+zone differential, which the department describes as the transport tariffs
+for moving petrol and diesel "by means of the pipeline network and road
+network". It is the nearest public figure to a delivered cost by destination.
+
+| Regulated element, cents a litre | April 2014 | April 2024 | April 2026 | Source |
+|---|---|---|---|---|
+| Transport differential, Gauteng (zone 9C) | 33.1 | 82.8 | 91.1 | Department zone lists; Central Energy Fund price composition |
+| Transport differential, coast (zone 1A) | 2.5 | 3.8 | — | Department zone lists |
+| Transport differential, highest zone | 106.6 | 179.6 | — | Department zone lists |
+| Secondary distribution (depot to service station by road) | — | 17.2 | 19.1 | Department diesel margins; Central Energy Fund |
+| Secondary storage (depot) | — | 36.6 | 39.0 | Same |
+
+The sheet lists all 54 zones with the districts in each. Three points:
+
+- The Gauteng differential (82.8 in April 2024) is 14.8 cents above the pipeline
+  tariff for the same year (67.99). What the rest covers is not established.
+- Secondary storage, 39 cents a litre, is the regulated allowance for depot
+  storage, which is the service an inland terminal sells.
+- These are allowances in the price. They are not what a shipper pays, and
+  the files do not say which mode serves each zone.
+
+**One industry statement.** The managing director of a fuel haulier told
+Bloomberg in May 2025 that fuel sent by pipeline and then trucked the last
+stretch costs "about a third higher than transporting it exclusively by road".
+No rate was given. It suggests road competes with the pipeline; it is not a
+measurement.
+
+Staged as `assumptions/2026/reference/zone_differentials_department.csv` and
+`zone_districts_department.csv` by `python -m lfm.scripts.stage_zone_differentials --vintage 2026`.
 
 ## Where petrol and diesel imports enter
 
@@ -126,7 +167,8 @@ so this is a lead to check, not a conclusion.
 | What makes up the 10 to 11 cents between the tariff and the regulated price difference | Manish | The department's price structure by zone |
 | Petrol and diesel through each port, by terminal | Nigel to coordinate | The port authority's statistics are all liquids in tons; a product split needs the authority or terminal operators |
 | Island View capacity and tankage for petrol and diesel | Nigel to coordinate | Port authority or Vopak; the brochure is not on the authority's site |
-| Road and rail rates, Durban to Gauteng and Matola to Gauteng | Nigel to coordinate | Vopak or a haulier; none is public |
+| Commercial road tanker and rail rates, Durban to Gauteng and Matola to Gauteng | Nigel to coordinate | Vopak, a haulier or Transnet Freight Rail; none is published. The regulated differentials are the stand-in until then |
+| Zone differentials after April 2024, and which mode serves each zone | Manish | The department's current zone schedule; its site did not respond on 8 October |
 | Whether Vopak Durban can inject into the trunk line directly | Nigel to coordinate | Vopak operations |
 | Petrol and diesel storage at Matola; fuel that Maputo and Walvis Bay supply to neighbours | Manish | Not found for petrol and diesel alone |
 | Inland supply from Natref and Secunda | Manish | DR08 |

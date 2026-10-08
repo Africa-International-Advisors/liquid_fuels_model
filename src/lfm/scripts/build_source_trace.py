@@ -185,6 +185,19 @@ TRACE: dict[str, tuple[str, ...]] = {
         "January 2025 missing (publisher's link is wrong)",
         "Tons of all liquids, not fuel by product. Two months carry a note on the publisher's heading.",
         "Nigel: review"),
+    "reference/zone_differentials_department.csv": (
+        DEPT, "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/petroleum_fuelprices.html",
+        "department-diesel-wholesale-by-zone-2024-04.pdf; department-transport-cost-by-zone-2014-04-02.xls",
+        "on manish-branch (external/data/raw/routes_access_20261008/)", "download and scripted extract",
+        "python -m lfm.scripts.stage_zone_differentials --vintage 2026", "stage_zone_differentials.parse_diesel_2024",
+        "workshop workbook, DR04 transport cost sheet", "",
+        "Regulated transport allowance by pricing zone, not a commercial rate. Latest full list held is April 2024.",
+        "Nigel: review"),
+    "reference/zone_districts_department.csv": (
+        DEPT, "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/petroleum_fuelprices.html", "department-transport-cost-by-zone-2014-04-02.xls",
+        "on manish-branch (external/data/raw/routes_access_20261008/)", "download and scripted extract",
+        "python -m lfm.scripts.stage_zone_differentials --vintage 2026", "stage_zone_differentials.parse_zones_2014",
+        "workshop workbook, DR04 transport cost sheet", "", "District list is from 2014.", "Nigel: review"),
     "reference/refinery_output_operators.csv": (
         "Sasol (production and sales metrics); Glencore (annual reports)", "https://www.sasol.com/",
         "sasol-metrics-fy2022/2025/2026.pdf, p.4; GLEN-2023/2024/2025-Annual-Report.pdf",

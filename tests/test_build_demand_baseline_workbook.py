@@ -35,7 +35,7 @@ def test_history_carries_the_registered_inputs_and_uses_formulas_for_the_balance
 def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
-        "History", "DR01 balance", "Sector history", "Diesel by use", "Demand by use", "DR04 routes", "DR04 entry points", "Power fleet", "Vehicle history", "HML response", "Gap status",
+        "History", "DR01 balance", "Sector history", "Diesel by use", "Demand by use", "DR04 routes", "DR04 entry points", "DR04 transport cost", "Power fleet", "Vehicle history", "HML response", "Gap status",
         "Checks",
         "History sources"]
     changed = []
@@ -256,3 +256,20 @@ def test_dr04_entry_points_sheet_is_petrol_and_diesel_only_and_adds_to_national_
         assert blocks[(name, "All offices")][at].value.startswith("=SUM(")
         assert all(blocks[(name, o)][14].value for o in offices)                                # a source on every row
     assert blocks[("Diesel", "Komatipoort")][1].value == "Road, from Mozambique"
+
+
+def test_dr04_transport_cost_sheet_lists_every_zone_with_a_source_and_marks_unpublished_rates():
+    ws = load_workbook(ROOT / build.OUT)["DR04 transport cost"]
+    elements = {r[0].value: r for r in ws.iter_rows(min_row=6, max_row=11)}
+    assert elements["Pipeline tariff, Durban to Alrode"][1].value == 67.99
+    assert elements["Regulated transport differential, Gauteng (zone 9C)"][3].value == 91.1
+    assert elements["Commercial road tanker rate, Durban to Gauteng"][1].value is None
+    assert elements["Rail rate, Durban to Gauteng"][4].value == "Not published"
+    assert elements["Rail rate, Durban to Gauteng"][0].fill.fgColor.rgb == build.FILL["estimate"]       # open lines are yellow
+    assert all(r[7].value for r in elements.values())
+    assert [c.value for c in ws[14]] == ["Zone", "Provinces", "Districts", "Examples", "2014", "2024", "Change", "Source"]
+    zones = {r[0].value: r for r in ws.iter_rows(min_row=15) if r[0].value}
+    assert len(zones) == 54
+    assert (zones["9C (Gauteng)"][4].value, zones["9C (Gauteng)"][5].value) == (33.1, 82.8)
+    assert zones["1A (coast)"][5].value == 3.8 and "Durban" in zones["1A (coast)"][3].value
+    assert zones["9C (Gauteng)"][6].value.startswith("=IF(COUNT(") and all(r[7].value for r in zones.values())
