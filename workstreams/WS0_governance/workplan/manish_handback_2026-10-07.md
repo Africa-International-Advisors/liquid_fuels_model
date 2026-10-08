@@ -119,16 +119,20 @@ Not available from any source:
 
 - Three plants operate (Secunda, Natref, Astron): 358,000 barrels a day, half of the 718,000 published in 2021.
   Sapref, Enref and PetroSA are not refining.
-- Output by plant is all products together (Sasol, Glencore). Petrol and diesel by product exist only nationally
-  and only to 2021.
+- Output by plant is all products together (Sasol, Glencore). Petrol and diesel are estimated for Natref only
+  (Sasol's stated split: about 1.3 billion litres of petrol and 1.4 to 1.7 of diesel in the year to June 2024).
+- Nationally, petrol and diesel by product are reported only to 2021. The United Nations series runs to 2023 but
+  does not match the department, so it is shown and not used.
+- Dates: Enref shut after the fire of 4 December 2020 (closure announced 23 April 2021); Sapref paused at the end
+  of March 2022 (announced 10 February 2022).
 - The capacity figures are from the department's Energy Sector Reports, whose table cites the industry
   association (SAPIA, now FIASA). Flagged.
 
 Not available:
 
-- Petrol and diesel output by plant (Every plant)
-- Petrol and diesel produced after 2021 (South Africa)
-- Yield by plant after 2021 (Secunda, Natref, Astron Energy)
+- Petrol and diesel output for Secunda and Astron Energy
+- Petrol and diesel produced after 2021 on the department's basis
+- Yield for Astron Energy
 - Output as a share of capacity (Astron Energy)
 
 ## Power generation fleet (your message of 7 October)

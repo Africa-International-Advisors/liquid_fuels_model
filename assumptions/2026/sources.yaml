@@ -411,7 +411,9 @@ refinery_evidence_points:
   units: mixed; see unit column
   source: Figures read by hand from published documents for request DR08 - the department's Energy Sector Reports
     2021 and 2023 (refinery capacity and status), Glencore annual reports (Astron), Sasol business performance
-    metrics (Secunda, Natref), and Central Energy Fund and PetroSA documents. Each row names its document and page.
+    metrics and Business Overview 2021 (Secunda, Natref), Central Energy Fund and PetroSA documents, Shell and
+    Parliament's record (closure dates) and the United Nations energy statistics (comparison only). Each row names
+    its document and page.
     The department's capacity table itself cites the industry association (SAPIA, now FIASA)
   last_updated: '2026-10-08'
   shared: true

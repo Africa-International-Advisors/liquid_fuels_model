@@ -210,10 +210,10 @@ TRACE: dict[str, tuple[str, ...]] = {
         "none", "typed by hand", "workshop workbook, DR07 fleet by province sheet", "",
         "Petrol and diesel vehicles by province at December 2023. Not split by vehicle class. No later edition found.", "Nigel: review"),
     "reference/refinery_evidence_points.csv": (
-        "Department of Mineral Resources and Energy; Glencore; Sasol; Central Energy Fund; PetroSA", DEPT_URL,
+        "Department of Mineral Resources and Energy; Glencore; Sasol; Central Energy Fund; PetroSA; Shell; Parliament; United Nations", DEPT_URL,
         "documents named row by row", "on manish-branch (external/data/raw/refinery_supply_20261008/ and folders named there)", "manual transcription",
         "none", "typed by hand", "workshop workbook, DR08 sheets", "",
-        "Refinery capacity, status, Secunda fuels output and outlook. The department's capacity table cites the industry association as its source.",
+        "Refinery capacity, status and closure dates, Natref yield, stated product splits, Secunda fuels output, outlook, and the United Nations output series (comparison only). The department's capacity table cites the industry association as its source.",
         "Nigel: review"),
     "reference/refinery_output_operators.csv": (
         "Sasol (production and sales metrics); Glencore (annual reports)", "https://www.sasol.com/",

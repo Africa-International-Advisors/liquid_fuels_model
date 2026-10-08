@@ -29,4 +29,10 @@ def test_capacity_output_and_utilisation_follow_the_sources():
     assert ("Natref", 2026) not in use                                    # that year's figure includes output above Sasol's share
     rows = {(r["item"], r["asset_or_route"]): r for r in dr08.build(d)}
     assert rows[("Diesel produced, all plants", "South Africa")]["value"].endswith("6.45; 5.31")
-    assert rows[("Petrol and diesel output by plant", "Every plant")]["status"] == "not available"
+    assert rows[("Petrol and diesel output by plant", "Secunda and Astron Energy")]["status"] == "not available"
+    low, high = dr08.natref_by_product(d)[("diesel", 2024)]               # Sasol's share scaled up, times its stated 31 to 37%
+    assert (low, high) == pytest.approx((17.8 / 0.6364 * 158.987 / 1e3 * 0.31, 17.8 / 0.6364 * 158.987 / 1e3 * 0.37))
+    assert rows[("Diesel output, estimated", "Natref, whole refinery")]["status"] == "inferred"
+    assert "not used" in rows[("Petrol produced, United Nations series (not used)", "South Africa")]["item"]
+    dated = {(r["asset_or_route"], r["period"]) for r in dr08.build(d) if r["part"] == "Status and dates"}
+    assert {("Sapref", "10 February 2022"), ("Enref (Engen)", "4 December 2020"), ("Enref (Engen)", "23 April 2021")} <= dated

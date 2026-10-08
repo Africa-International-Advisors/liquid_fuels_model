@@ -1,0 +1,585 @@
+<!DOCTYPE html><!DOCTYPE html>
+  <html itemscope="" itemtype="https://schema.org/WebPage" lang="en-ZA" dir="ltr" data-mode="publish" data-page-lang="en-ZA">
+    <head><style id="tw-config">:root {
+  /* Misc */
+  --amidala: 1;
+  --page-width: 1300px;
+  --nav-width: 1400px;
+  --anim-time: 250ms;
+
+  /* Fonts */
+  --font-default: Arial, Roboto, Helvetica, sans-serif;
+  --font-custom: custom-font;
+  --font-scale: 1;
+
+  /* Logo */
+  --logo: url("data:image/svg+xml;utf-8,%3Csvg%20id%3D%22Shell_x5F_2012_x5F_PECTEN_x5F_RGB%22%20version%3D%221.1%22%20viewBox%3D%220%200%2024%2024%22%20xml%3Aspace%3D%22preserve%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%3Crect%20x%3D%22-12.1%22%20y%3D%22-103.7%22%20width%3D%22141.7%22%20height%3D%22141.7%22%20fill%3D%22none%22%2F%3E%0A%20%20%20%20%3Cg%20transform%3D%22matrix(.22054%200%200%20.22054%20-.94555%20-.53756)%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22m54.6%2087.8h-18l-1.6-13.3-11-7.9c-0.5-2.3-0.7-4.7-0.7-7.1%200-19.6%2015.9-35.4%2035.4-35.4%2019.6%200%2035.4%2015.9%2035.4%2035.4%200%202.4-0.2%204.8-0.7%207.1l-10.9%207.9-1.7%2013.3h-18l-1%200.8c-0.9%200.7-2%201-3.1%201s-2.2-0.4-3.1-1z%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-miterlimit%3D%2240%22%20stroke-width%3D%227%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22m54.6%2087.8h-18l-1.6-13.3-11-7.9c-0.5-2.3-0.7-4.7-0.7-7.1%200-19.6%2015.9-35.4%2035.4-35.4%2019.6%200%2035.4%2015.9%2035.4%2035.4%200%202.4-0.2%204.8-0.7%207.1l-10.9%207.9-1.7%2013.3h-18l-1%200.8c-0.9%200.7-2%201-3.1%201s-2.2-0.4-3.1-1z%22%20fill%3D%22%23fbce07%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22m54.6%2087.8h-18l-1.6-13.3-11-7.9c-0.5-2.3-0.7-4.7-0.7-7.1%200-19.6%2015.9-35.4%2035.4-35.4s35.4%2015.9%2035.4%2035.4c0%202.4-0.2%204.8-0.7%207.1l-10.9%207.9-1.7%2013.3h-18l-1%200.8c-0.9%200.7-2%201-3.1%201s-2.2-0.4-3.1-1zm0.6-6.2h-13.1l-1.3-10.6-10.8-7.8c-0.3-1.2-0.5-2.5-0.5-3.8%200-2.1%200.4-4.2%201.3-6.1l19.1%2019.3-18.5-22.9c0.7-3%202.3-5.6%204.6-7.7l16.6%2028.7-14.7-31.3c1.9-2.5%204.6-4.4%207.6-5.3l10.2%2035.6-7.4-37.1c2.3-1.3%204.8-1.9%207.4-1.9%200.5%200%201.1%200%201.6%200.1l1.5%2038.5%201.5-38.5c0.5-0.1%201.1-0.1%201.6-0.1%202.6%200%205.1%200.7%207.4%201.9l-7.4%2037.1%2010.2-35.7c3%200.9%205.7%202.8%207.6%205.3l-14.8%2031.4%2016.6-28.7c2.3%202%203.9%204.7%204.6%207.7l-18.5%2022.9%2019.1-19.3c0.9%201.9%201.3%204%201.3%206.1%200%201.3-0.2%202.5-0.5%203.8l-10.8%207.8-1.3%2010.6h-13l-2%201.4c-0.5%200.4-1.1%200.5-1.7%200.5s-1.2-0.2-1.7-0.5z%22%20fill%3D%22%23dd1d21%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  --logo-ratio: 1;
+
+  /* Borders */
+  --radius-tl-scale: 1;
+  --radius-tr-scale: 1;
+  --radius-br-scale: 1;
+  --radius-bl-scale: 1;
+
+  /* Transparency */
+  --bg-alpha: 1;
+  --text-alpha: 1;
+  --border-alpha: 1;
+  --decoration-alpha: 1;
+  --outline-alpha: 1;
+
+  /* Reference colours (paper & ink == background & text) */
+  --color-paper1: 0, 0%, 100%;
+  --color-paper2: 0, 0%, 96%;
+  --color-ink1: 0, 0%, 29%;
+  --color-ink2: var(--color-ink1);
+
+  /* Theme colours */
+  --color-brand1-bg: 47, 100%, 50%;
+  --color-brand1-text: var(--color-ink1);
+  --color-brand2-bg: 359, 77%, 49%;
+  --color-brand2-text: var(--color-paper1);
+  --color-brand3-bg: 212, 49%, 39%;
+  --color-brand3-text: var(--color-paper1);
+  --color-brand4-bg: 159, 100%, 26%;
+  --color-brand4-text: var(--color-paper1);
+  --color-brand5-bg: 306, 61%, 33%;
+  --color-brand5-text: var(--color-paper1);
+  --color-system-bg: 210, 78%, 16%;
+  --color-system-text: 0, 0%, 100%;
+  --color-black-bg: 0, 0%, 0%;
+  --color-black-text: var(--color-paper1);
+
+  /* Set default colour to brand1 */
+  --color-bga: var(--color-paper1);
+  --color-txa: var(--color-ink1);
+  --color-bgb: var(--color-brand1-bg);
+  --color-txb: var(--color-brand1-text);
+  --color-txc: var(--color-ink2);
+
+  /* Apply default colours */
+  color: hsl(var(--color-ink1));
+  background: hsl(var(--color-paper1));
+}</style>
+  <!-- Prerender.io: Set prerenderReady before any JS loads -->
+  <meta name="content-page-ref" content="iy9dlgfr2HroqEQ0lwNUbUv3SBjA9syhw127CfHJhhUfsLbxu2ABFmGZrf5VoNDd_BvicKIyES_LywimDRJX2CZJROpRI-xFOhwsAvKLcYJDLJCjkRGMAM_X5e9W_Qd8_LQp8ERguPebi8RzYFrQOre08GE7PJw0A6Spez6Tdq4">
+
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+
+
+  
+  
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+  
+  <meta charset="UTF-8">
+  
+  <meta name="mode" content="publish">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=yes">
+  <meta name="theme-color" content="#fff">
+  
+  
+  <link rel="apple-touch-icon" href="/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/manifest.json">
+
+  <!-- Preload some files to improve performance. -->
+  <link rel="preload" as="fetch" type="application/json" href="https://www.shell.co.za/.shelli18n.json" crossorigin="anonymous">
+  <!-- AsyncClientLibsTransformerFactory adds modulepreload for js clientlibs. -->
+  
+    <link rel="modulepreload" as="script" href="/etc.clientlibs/amidala/clientlibs/app.min.ACSHASH2f4e70470b2d8f65a9d559626860c52d.js">
+  
+  
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/etc.clientlibs/amidala/clientlibs/theme-base/resources/fonts/shell-typeface-la-heavy-221208.woff2">
+  
+  <link rel="preload" as="fetch" type="application/json" href="https://www.shell.co.za/media/2022-media-releases/sapref-to-pause-refinery-operations.model.json" crossorigin="anonymous">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="og:type" content="website">
+  
+  
+  
+    
+      <link rel="canonical" href="https://www.shell.co.za/media/2022-media-releases/sapref-to-pause-refinery-operations.html">
+      <meta property="og:url" content="https://www.shell.co.za/media/2022-media-releases/sapref-to-pause-refinery-operations.html">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    <meta name="error-url" content="https://www.shell.co.za/error.html">
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      <meta name="apple-mobile-web-app-title" content="Shell South Africa">
+      <meta name="application-name" content="Shell South Africa">
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    <meta name="home-url" content="https://www.shell.co.za/">
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    <meta property="og:locale" content="en_ZA">
+    
+    
+    
+    
+  
+    
+    
+    
+      <meta itemprop="name" content="SAPREF to pause refinery operations | Shell South Africa">
+      <title>SAPREF to pause refinery operations | Shell South Africa</title>
+      <meta property="og:title" content="SAPREF to pause refinery operations | Shell South Africa">
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" as="style" data-id="theme" href="/etc.clientlibs/amidala/clientlibs/theme-base.ACSHASHb291465fc8d3c7bcefde74d34044b698.css" onload="this.onload=null;this.rel='stylesheet'">
+  
+
+  
+  <meta name="description" content="Following consultation with government, unions, and employees, SAPREF shareholders (bp Southern Africa and Shell Downstream South Africa) have today (10 February 2022) announced that they will commence with a spend freeze and pause refinery operations at SAPREF no later than the end of March 2022.">
+  <meta itemprop="description" content="Following consultation with government, unions, and employees, SAPREF shareholders (bp Southern Africa and Shell Downstream South Africa) have today (10 February 2022) announced that they will commence with a spend freeze and pause refinery operations at SAPREF no later than the end of March 2022.">
+  <meta property="og:description" content="Following consultation with government, unions, and employees, SAPREF shareholders (bp Southern Africa and Shell Downstream South Africa) have today (10 February 2022) announced that they will commence with a spend freeze and pause refinery operations at SAPREF no later than the end of March 2022.">
+  
+
+  
+  
+
+
+  
+  
+
+<meta name="external-disclaimer-text" content="Shell plc Legal Disclaimer
+
+You are now leaving the Shell South Africa website.
+
+The link you have selected will direct you to a website that is not controlled by Shell plc or any member of the Shell Group. Accordingly, neither Shell plc nor any member of the Shell Group endorses, adopts, certifies or otherwise validates the information and material contained on the linked website. This includes its sponsor and any policies, activities or services offered on the site, by any advertiser on the site or linked to the site.
+
+Thank you for visiting the Shell South Africa website."><link rel="icon" data-format="ico" href="/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.ico"><link rel="icon" data-format="svg" href="/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.svg"><meta rel="x-prerender-render-id" content="3d7edc2c-4fe0-49c1-bc0b-d1e1d5d42b13" />
+			<meta rel="x-prerender-render-at" content="2026-10-08T13:01:58.106Z" /><meta rel="x-prerender-request-id" content="0b488dfc-0718-4678-adab-74a014f1f44b" />
+      		<meta rel="x-prerender-request-at" content="2026-10-08T20:32:17.115Z" /></head>
+
+  <body class="body">
+    <div class="root backbone container image"><div data-key="0" data-name="Page" class="font-sans text-base bg-bga min-h-dvh text-txa relative"><a href="#main" data-name="SkipToMain" class="p-4 font-bold transition-all rounded-lg fixed start-6 bg-bgb text-txb -top-14 opacity-0 focus:top-6 focus:opacity-100 z-20 print:hidden">Skip to main content</a><div data-key="0/0" data-name="Container" class="grid lg:grid-cols-12 md:grid-cols-2 sm:grid-cols-1 "><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="0/0/2" data-name="Container" class="text-txa bg-bga"><header data-key="0/0/2" data-name="Container" class="grid lg:grid-cols-12 md:grid-cols-2 sm:grid-cols-1 "><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="0/0/2/0" data-name="Container" class="grid lg:grid-cols-12 md:grid-cols-2 sm:grid-cols-1 "><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/jcr_content/root/header/inherited/topbar" data-name="Topbar" class="pal-inherited w-full bg-bga text-txa"><div class="m-auto max-w-page flex" role="list"><div class="grow"></div><div class="flex"><div class="grow-0 text-sm" role="listitem"><div class="h-full transition border-bgb/0 border-t-4 px-1 pb-2 pt-1"><a class="clickable cursor-pointer h-full" href="https://www.shell.co.za/careers/franchising.html"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden w-full min-h-8  ps-2 "><div class="grow"><span>Franchising</span></div></div></a></div></div><div class="grow-0 text-sm" role="listitem"><div class="h-full transition border-bgb/0 border-t-4 px-1 pb-2 pt-1"><a class="clickable cursor-pointer h-full" href="https://www.shell.co.za/careers.html"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden w-full min-h-8  ps-2 "><div class="grow"><span>Careers</span></div></div></a></div></div><div class="grow-0 text-sm" role="listitem"><div class="h-full transition border-bgb/100 border-t-4 px-1 pb-2 pt-1"><a class="clickable cursor-pointer h-full" href="https://www.shell.co.za/media.html"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden w-full min-h-8  ps-2 "><div class="grow"><span>Media</span></div></div></a></div></div><div class="grow-0 text-sm" role="listitem"><div class="h-full transition border-bgb/0 border-t-4 px-1 pb-2 pt-1"><a class="clickable cursor-pointer h-full" href="https://www.shell.co.za/change-market.html"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden w-full min-h-8  ps-2 "><div class="flex items-center"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_71 path, #_71 polygon { fill: currentColor; }
+        #_71 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_71"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="block h-full w-full"><path fill-rule="evenodd" d="M15.372 3.483c.384.713.724 1.53 1.005 2.433-1.032.377-2.267.632-3.627.701v-4.59c.66.05 1.303.163 1.921.334q.354.48.701 1.122M9.329 2.36q-.354.48-.701 1.122c-.384.713-.724 1.53-1.005 2.433 1.032.377 2.267.632 3.627.701v-4.59a10 10 0 0 0-1.921.334M6.693 3.523q-.356.767-.644 1.629a5 5 0 0 1-.746-.578q.647-.586 1.39-1.05m10.614 0q.356.766.644 1.629.44-.285.746-.578-.648-.586-1.39-1.05M4.314 5.603a9.96 9.96 0 0 0-2.286 5.647H5.01c.052-1.674.274-3.264.634-4.71a7 7 0 0 1-1.331-.937M2.028 12.75a9.95 9.95 0 0 0 2.048 5.352 6.8 6.8 0 0 1 1.505-.906 22.5 22.5 0 0 1-.57-4.446zm4.665 7.727c-.58-.364-1.121-.786-1.613-1.258.23-.182.53-.371.908-.556.207.642.443 1.25.705 1.814m4.557 1.495a10 10 0 0 1-1.921-.333 10 10 0 0 1-.701-1.122 14 14 0 0 1-1.013-2.46c1.043-.291 2.28-.488 3.635-.542zm3.421-.333a10 10 0 0 1-1.921.333v-4.457c1.355.054 2.592.25 3.635.542-.283.914-.625 1.74-1.013 2.46-.23.429-.466.8-.701 1.122m4.249-2.42c-.492.472-1.033.894-1.613 1.258q.394-.85.705-1.814c.377.185.678.374.908.556m1.003-1.117a9.95 9.95 0 0 0 2.05-5.352h-2.985a22.5 22.5 0 0 1-.57 4.446c.593.268 1.1.572 1.505.906m2.05-6.852a9.96 9.96 0 0 0-2.287-5.647 7 7 0 0 1-1.331.938c.36 1.445.582 3.035.633 4.71zM7.263 7.253a21 21 0 0 0-.502 3.997h4.488V7.983c-1.454-.067-2.81-.325-3.986-.73m-.031 9.354a21.3 21.3 0 0 1-.471-3.857h4.488v3.264c-1.467.054-2.834.264-4.017.593m10.005-3.857a21.3 21.3 0 0 1-.471 3.857c-1.183-.33-2.55-.54-4.017-.593V12.75zm-.503-5.497c.28 1.227.457 2.572.503 3.997H12.75V7.983c1.454-.067 2.81-.325 3.985-.73" clip-rule="evenodd"></path></svg></div></div></div><div class="grow"><span>South Africa</span></div></div></a></div></div></div></div></div></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/jcr_content/root/header/inherited/navigation_copy" data-name="Navigation" class="pal-inherited w-full relative border-txa/20 border-b text-txa bg-bga"><nav class="max-w-page m-auto"><div class="flex items-center"><a aria-label="shell.co.za" class="clickable cursor-pointer" href="https://www.shell.co.za/"><div class="min-h-16 border-txa flex"><div class="flex shrink-0 grow-0"><div class="bg-no-repeat bg-center bg-contain h-16" style="background-image: var(--logo); width: calc(var(--logo-ratio) * 64px);"></div></div></div></a><div class="flex" role="list"><div class="shrink sm:hidden md:hidden tracking-tight relative" role="listitem"><div class="h-full transition border-bgb/100 border-b-4 px-1 pb-1 pt-2"><a aria-current="page" class="clickable cursor-pointer h-full" href="https://www.shell.co.za/"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden w-full min-h-12  ps-2 "><div class="grow"><span>Home</span></div></div></a></div></div><div class="shrink sm:hidden md:hidden tracking-tight relative" role="listitem"><div class="h-full transition border-bgb/0 border-b-4 px-1 pb-1 pt-2"><a role="button" aria-expanded="false" aria-controls="_3" class="clickable cursor-pointer h-full" href="https://www.shell.co.za/motorists.html"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden w-full min-h-12  ps-2 "><div class="grow"><span>Motorists</span></div><div class="flex items-center"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_56 path, #_56 polygon { fill: currentColor; }
+        #_56 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_56"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="3.579 8.35 12.207 16.194 20.028 8.382 21.441 9.797 12.271 18.956 2.233 9.83"></polygon></svg></div></div></div></div></a></div><div id="_3" class="hidden"></div></div><div class="shrink sm:hidden md:hidden tracking-tight relative" role="listitem"><div class="h-full transition border-bgb/0 border-b-4 px-1 pb-1 pt-2"><a role="button" aria-expanded="false" aria-controls="_4" class="clickable cursor-pointer h-full" href="https://www.shell.co.za/business-customers.html"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden w-full min-h-12  ps-2 "><div class="grow"><span>Business Customers</span></div><div class="flex items-center"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_57 path, #_57 polygon { fill: currentColor; }
+        #_57 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_57"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="3.579 8.35 12.207 16.194 20.028 8.382 21.441 9.797 12.271 18.956 2.233 9.83"></polygon></svg></div></div></div></div></a></div><div id="_4" class="hidden"></div></div><div class="shrink sm:hidden md:hidden tracking-tight relative" role="listitem"><div class="h-full transition border-bgb/0 border-b-4 px-1 pb-1 pt-2"><a role="button" aria-expanded="false" aria-controls="_5" class="clickable cursor-pointer h-full" href="https://www.shell.co.za/sustainability.html"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden w-full min-h-12  ps-2 "><div class="grow"><span>Sustainability</span></div><div class="flex items-center"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_58 path, #_58 polygon { fill: currentColor; }
+        #_58 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_58"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="3.579 8.35 12.207 16.194 20.028 8.382 21.441 9.797 12.271 18.956 2.233 9.83"></polygon></svg></div></div></div></div></a></div><div id="_5" class="hidden"></div></div><div class="shrink sm:hidden md:hidden tracking-tight relative" role="listitem"><div class="h-full transition border-bgb/0 border-b-4 px-1 pb-1 pt-2"><a role="button" aria-expanded="false" aria-controls="_6" class="clickable cursor-pointer h-full" href="https://www.shell.co.za/about-us.html"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden w-full min-h-12  ps-2 "><div class="grow"><span>About Us</span></div><div class="flex items-center"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_59 path, #_59 polygon { fill: currentColor; }
+        #_59 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_59"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="3.579 8.35 12.207 16.194 20.028 8.382 21.441 9.797 12.271 18.956 2.233 9.83"></polygon></svg></div></div></div></div></a></div><div id="_6" class="hidden"></div></div></div><div class="grow"></div><div role="list" class="flex shrink"><div role="listitem"><div class="h-full transition border-bgb/0 p-2"><a title="Station Locator" class="clickable cursor-pointer h-full" href="https://www.shell.co.za/motorists/shell-station-locator.html"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden min-h-12 min-w-12  ps-2 "><div class="flex items-center"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_70 path, #_70 polygon { fill: currentColor; }
+        #_70 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_70"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="block h-full w-full">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.7 5H6.3C5.62416 5 5 5.573 5 6.375V19H12V6.375C12 5.573 11.3758 5 10.7 5ZM6.3 3C4.47746 3 3 4.51104 3 6.375V20.4375C3 20.7482 3.24624 21 3.55 21H13.45C13.7538 21 14 20.7482 14 20.4375V13.5H15.5V18.5C15.5 19.88 16.62 21 18 21C19.38 21 20.5 19.88 20.5 18.5V9C20.5 8.31 20.22 7.68 19.77 7.23L19.78 7.22L16.06 3.5L15 4.56L17.11 6.67C16.17 7.03 15.5 7.93 15.5 9C15.5 10.38 16.62 11.5 18 11.5C18.36 11.5 18.69 11.42 19 11.29V18.5C19 19.05 18.55 19.5 18 19.5C17.45 19.5 17 19.05 17 18.5V14C17 12.9 16.1 12 15 12H14V6.375C14 4.51104 12.5225 3 10.7 3H6.3ZM18 10C17.45 10 17 9.55 17 9C17 8.45 17.45 8 18 8C18.55 8 19 8.45 19 9C19 9.55 18.55 10 18 10ZM8.49219 16C9.59676 16 10.4922 15.0405 10.4922 13.8569C10.4922 12.3545 9.0769 9.84105 8.62745 9.08074C8.5638 8.97309 8.42057 8.97308 8.35693 9.08074C7.90748 9.84105 6.49219 12.3545 6.49219 13.8569C6.49219 15.0405 7.38762 16 8.49219 16Z" fill="#343434"></path>
+</svg></div></div></div></div></a></div></div><div role="listitem"><div class="h-full transition border-bgb/0 p-2"><a title="Help and Support" class="clickable cursor-pointer h-full" href="https://support.shell.co.za/hc/en-za"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden min-h-12 min-w-12  ps-2 "><div class="flex items-center"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_73 path, #_73 polygon { fill: currentColor; }
+        #_73 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_73"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="block h-full w-full">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12ZM22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12 6C9.959 6 8.27622 7.52671 8.03079 9.50099C7.99673 9.77502 8.22386 10 8.5 10H9.5C9.77614 10 9.99363 9.77262 10.0624 9.50517C10.284 8.64245 11.0706 8 12 8C13.1 8 14 8.9 14 10C14 10.8792 13.4202 11.3236 12.7704 11.8217C12.0226 12.3949 11.1821 13.0392 11.0257 14.4992C10.9963 14.7737 11.2239 15 11.5 15H12.5C12.7761 15 12.9931 14.7724 13.053 14.5029C13.2309 13.7029 13.8292 13.18 14.4408 12.6455C15.21 11.9733 16 11.2829 16 10C16 7.79 14.21 6 12 6ZM11 17.5C11 17.7761 11.2239 18 11.5 18H12.5C12.7761 18 13 17.7761 13 17.5V16.5C13 16.2239 12.7761 16 12.5 16H11.5C11.2239 16 11 16.2239 11 16.5V17.5Z" fill="#404040"></path>
+</svg></div></div></div></div></a></div></div><div role="listitem"><div class="h-full transition border-bgb/0 p-2"><a title="Search" class="clickable cursor-pointer h-full" href="https://www.shell.co.za/search.html"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden min-h-12 min-w-12  ps-2 "><div class="flex items-center"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_72 path, #_72 polygon { fill: currentColor; }
+        #_72 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_72"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="block h-full w-full"><path fill-rule="evenodd" d="M10.5 6a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9m0-2a6.5 6.5 0 0 1 5.249 10.335l3.969 3.968a.5.5 0 0 1 0 .707l-.708.707a.5.5 0 0 1-.707 0l-3.968-3.968A6.5 6.5 0 1 1 10.5 4" clip-rule="evenodd"></path></svg></div></div></div></div></a></div></div></div><div class="lg:hidden"><div class="h-full transition border-bgb/0 p-2"><a id="_1" aria-controls="_2" aria-expanded="false" aria-haspopup="true" title="Menu" class="clickable cursor-pointer h-full" href="#"><div class="h-full transition hover:bg-txa/10 pe-2 py-1 flex space-x-2 items-center justify-center rounded overflow-hidden min-h-12 min-w-12  ps-2 "><div class="flex items-center"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_63 path, #_63 polygon { fill: currentColor; }
+        #_63 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_63"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><path fill="#595959" d="M22,16 L22,18 L2,18 L2,16 L22,16 Z M22,7 L22,9 L2,9 L2,7 L22,7 Z"></path></svg></div></div></div></div></a></div></div></div></nav></div></div></div></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/header/breadcrumb" data-name="Breadcrumb" class="text-sm w-full px-6 py-2 min-h-9 m-auto max-w-page"><nav><ol class="flex items-center p-0 gap-2" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="sm:hidden md:hidden" itemscope="" itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li class="sm:hidden md:hidden" aria-hidden="true"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_46 path, #_46 polygon { fill: currentColor; }
+        #_46 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_46"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="7.374 4.324 15.219 12.952 7.407 20.773 8.822 22.187 17.981 13.017 8.854 2.979"></polygon></svg></div></div></li><li class="sm:hidden md:hidden" itemscope="" itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/media.html"><span itemprop="name">Media</span></a><meta itemprop="position" content="2"></li><li class="sm:hidden md:hidden" aria-hidden="true"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_47 path, #_47 polygon { fill: currentColor; }
+        #_47 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_47"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="7.374 4.324 15.219 12.952 7.407 20.773 8.822 22.187 17.981 13.017 8.854 2.979"></polygon></svg></div></div></li><li class="lg:hidden" aria-hidden="true"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_48 path, #_48 polygon { fill: currentColor; }
+        #_48 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_48"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="15.543 4.294 7.699 12.922 15.51 20.743 14.095 22.156 4.937 12.987 14.063 2.949"></polygon></svg></div></div></li><li itemscope="" itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/media/2022-media-releases.html"><span itemprop="name">2022 Media Releases</span></a><meta itemprop="position" content="3"></li><li class="sm:hidden md:hidden" aria-hidden="true"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_49 path, #_49 polygon { fill: currentColor; }
+        #_49 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_49"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="7.374 4.324 15.219 12.952 7.407 20.773 8.822 22.187 17.981 13.017 8.854 2.979"></polygon></svg></div></div></li><li class="sm:hidden md:hidden" itemscope="" itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a aria-current="page" itemprop="item" class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/media/2022-media-releases/sapref-to-pause-refinery-operations.html"><span itemprop="name">SAPREF to pause refinery operations</span></a><meta itemprop="position" content="4"></li></ol></nav></div></div></header></div></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><main data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main" data-name="Container" id="main" class="grid lg:grid-cols-12 md:grid-cols-2 sm:grid-cols-1 "><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><style>
+      :first-child > #_19 > div {
+        padding-top: 0;
+      }
+    </style><div data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main/section" data-name="Container" class="text-txa bg-bga grid grid-cols-1" id="_19"><div class="relative max-w-page m-auto w-full row-start-1 col-start-1 px-3 py-12 space-y-5"><section data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main/section" data-name="Container" class="grid lg:grid-cols-12 md:grid-cols-2 sm:grid-cols-1 gap-5"><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main/section/page-header" data-name="PageHeader" class="pal-inherited relative lg:grid lg:grid-cols-12 lg:gap-x-5 w-full md:rounded-2xl sm:rounded-2xl overflow-hidden"><div class="p-6 space-y-5 bg-bga text-txa z-0 lg:rounded-tr-2xl lg:rounded-bl-2xl lg:rounded-br-2xl lg:col-start-1 lg:col-span-8 lg:rounded-tl-2xl"><h1 class="font-custom font-bold text-txc text-4xl " id="sapref-to-pause-refinery-operations">SAPREF to pause refinery operations</h1><time class="block text-txa/80" datetime="2022-03-03T08:58:00.000Z">03 Mar 2022</time><div class="text-2xl"><style>
+        #_20 :is(h1, h2, h3, h4, h5, h6):not(:first-child) { margin-top: 24px }
+        #_20 pre { background-color: hsla(var(--color-txa), 0.05) }
+        #_20 pre code { background: none; margin: 0; padding: 0; }
+        #_20 code { background-color: hsla(var(--color-txa), 0.05) }
+        #_20 details[open] > summary::after { rotate: 270deg }
+        #_20 details[open] > *:not(:last-child) { margin-bottom: 8px }
+        #_20 details > summary::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          content: '❯';
+          transition: var(--anim-time);
+          rotate: 90deg;
+          width: 12px;
+          font-weight: normal;
+          margin-right: 8px;
+        }
+      </style><div class="space-y-4" id="_20"><p>Following consultation with government, unions, and employees, SAPREF shareholders (bp Southern Africa and Shell Downstream South Africa) have today (10 February 2022) announced that they will commence with a spend freeze and pause refinery operations at SAPREF no later than the end of March 2022. This will be for an indefinite period but with a re-start possible in the future, including in the event of any future sale.</p>
+
+
+</div></div></div></div></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main/section/text" data-name="PromoSimple" class="bg-bga text-txa h-full rounded-2xl overflow-hidden"><style>#_21 table { overflow-wrap: normal; word-break: normal }</style><div class="p-6 space-y-5 break-words" id="_21"><style>
+        #_22 :is(h1, h2, h3, h4, h5, h6):not(:first-child) { margin-top: 24px }
+        #_22 pre { background-color: hsla(var(--color-txa), 0.05) }
+        #_22 pre code { background: none; margin: 0; padding: 0; }
+        #_22 code { background-color: hsla(var(--color-txa), 0.05) }
+        #_22 details[open] > summary::after { rotate: 270deg }
+        #_22 details[open] > *:not(:last-child) { margin-bottom: 8px }
+        #_22 details > summary::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          content: '❯';
+          transition: var(--anim-time);
+          rotate: 90deg;
+          width: 12px;
+          font-weight: normal;
+          margin-right: 8px;
+        }
+      </style><div class="space-y-4" id="_22"><p>The decision has been taken to allow an informed finalization on the various options available to the shareholders, a sale option being the most preferred. Until decisions about the future of the plant have been made – including a possible change of ownership – the SAPREF shareholders are unable to commit to further investment in the refinery.</p>
+<p>The decision to pause refinery operations currently has no impact on full time employees, and safety remains a primary consideration.<br>
+</p>
+<p>Moving forward, the shareholders will use other existing assets and trading arrangements to ensure ongoing security of fuel supply to the country and their consumers.</p>
+<p>bpSA CEO Taelo Mojapelo said: “Over the many decades since its establishment, SAPREF has made immense economic contributions at both a local and national scale. For this reason, we continue to pursue the sale of our share in the refinery so that it can continue to advance its legacy as a reliable, safe and productive asset.</p>
+<p>“Leading up to the refining pause, we have put contingencies in place to ensure that this decision does not impact our customer facing businesses in South Africa or our fuel supply obligations. We remain committed to South Africa through our demonstrated transformation initiatives in the value chain and continue to work with our strategic partners to strengthen our differentiated convenience offers.”</p>
+<p>According to Hloniphizwe Mtolo, Country Chair, Shell Downstream South Africa, “The decision to pause the refinery was a difficult one for both shareholders. Shell remains committed to security of supply to our customers over this production pause. South Africa continues to be a key location for Shell as we progress our growth agenda as an energy provider of choice and a Nation Builder.”</p>
+<p><strong>Notes to Editors</strong></p>
+<p>Established in 1963, SAPREF is the largest crude oil refinery in South Africa with 35% of the country’s refining capacity. It is co-owned as a joint venture by bp Southern Africa and Shell Downstream South Africa (“<strong>SAPREF Shareholders</strong>”)</p>
+</div></div></div></div></section></div></div></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><style>
+      :first-child > #_23 > div {
+        padding-top: 0;
+      }
+    </style><div data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main/section_1976040869_c" data-name="Container" class="pal-brand2-subtle text-txa bg-bga grid grid-cols-1" id="_23"><div class="relative max-w-page m-auto w-full row-start-1 col-start-1 px-3 py-12 space-y-5"><style>#_24 table { overflow-wrap: normal; word-break: normal }</style><div class="p-6 space-y-5 break-words" id="_24"><h2 class="font-custom font-bold text-txc text-3xl text-center" id="more-in-media">More in Media</h2></div><section data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main/section_1976040869_c" data-name="Container" class="pal-brand2-subtle grid lg:grid-cols-12 md:grid-cols-2 sm:grid-cols-1 gap-5"><div class="lg:col-span-4 md:col-span-1 sm:col-span-1 "><style>#_40:hover { transform: translateY(-8px); box-shadow: 0 8px 12px 2px hsla(var(--color-black-bg), 0.2) }</style><a data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main/section_1976040869_c/promo" data-name="PromoCard" class="pal-brand1 clickable cursor-pointer block bg-bga text-txa rounded-2xl overflow-hidden h-full transition" href="https://www.shell.co.za/media/contact-south-africa-media-relations.html" id="_40"><div class="bg-bga text-txa h-full rounded-2xl overflow-hidden flex flex-col"><div class="grow"><div class="flex flex-col h-full"><img class="cq-dd-image block object-cover w-full h-auto" src="https://www.shell.co.za/media/2022-media-releases/sapref-to-pause-refinery-operations/_jcr_content/root/main/section_1976040869_c/promo.shellimg.jpeg/1698046879747/use-the-contact-form-to-talk-to-us.jpeg?imdensity=1&amp;imwidth=392&amp;impolicy=amidala-image" loading="lazy" alt=" Rear view of four business executives using computers in an office" width="1923" height="1082"><div class="p-6 space-y-5 "><h3 class="font-custom font-bold text-txc text-2xl " id="contact-south-africa-media-relations"><span>Contact South Africa media relations</span></h3><style>
+        #_26 :is(h1, h2, h3, h4, h5, h6):not(:first-child) { margin-top: 24px }
+        #_26 pre { background-color: hsla(var(--color-txa), 0.05) }
+        #_26 pre code { background: none; margin: 0; padding: 0; }
+        #_26 code { background-color: hsla(var(--color-txa), 0.05) }
+        #_26 details[open] > summary::after { rotate: 270deg }
+        #_26 details[open] > *:not(:last-child) { margin-bottom: 8px }
+        #_26 details > summary::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          content: '❯';
+          transition: var(--anim-time);
+          rotate: 90deg;
+          width: 12px;
+          font-weight: normal;
+          margin-right: 8px;
+        }
+      </style><div class="space-y-4" id="_26"><p>Details for contacting the South Africa media relations team, including contact names and telephone numbers.</p>
+</div></div></div></div><div class="flex items-center justify-end pl-6 pr-6 pb-6" aria-hidden="true"><span class="mr-1 shrink-0">Read more</span><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_64 path, #_64 polygon { fill: currentColor; }
+        #_64 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_64"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="13.858 5.372 19.884 12 13.826 18.065 12.411 16.652 16.057 12.999 4 13 4 11 16.271 10.999 12.378 6.718"></polygon></svg></div></div></div></div></a></div><div class="lg:col-span-4 md:col-span-1 sm:col-span-1 "><style>#_41:hover { transform: translateY(-8px); box-shadow: 0 8px 12px 2px hsla(var(--color-black-bg), 0.2) }</style><a data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main/section_1976040869_c/promo_copy" data-name="PromoCard" class="pal-brand1 clickable cursor-pointer block bg-bga text-txa rounded-2xl overflow-hidden h-full transition" href="https://www.shell.com/" id="_41"><div class="bg-bga text-txa h-full rounded-2xl overflow-hidden flex flex-col"><div class="grow"><div class="flex flex-col h-full"><img class="cq-dd-image block object-cover w-full h-auto" src="https://www.shell.co.za/media/2022-media-releases/sapref-to-pause-refinery-operations/_jcr_content/root/main/section_1976040869_c/promo_copy.shellimg.jpeg/1698047103078/shell-oil-plant-in-sea.jpeg?imdensity=1&amp;imwidth=392&amp;impolicy=amidala-image" loading="lazy" alt="Image and video library" width="3940" height="2216"><div class="p-6 space-y-5 "><h3 class="font-custom font-bold text-txc text-2xl " id="image-and-video-library"><span>Image and video library</span></h3><style>
+        #_29 :is(h1, h2, h3, h4, h5, h6):not(:first-child) { margin-top: 24px }
+        #_29 pre { background-color: hsla(var(--color-txa), 0.05) }
+        #_29 pre code { background: none; margin: 0; padding: 0; }
+        #_29 code { background-color: hsla(var(--color-txa), 0.05) }
+        #_29 details[open] > summary::after { rotate: 270deg }
+        #_29 details[open] > *:not(:last-child) { margin-bottom: 8px }
+        #_29 details > summary::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          content: '❯';
+          transition: var(--anim-time);
+          rotate: 90deg;
+          width: 12px;
+          font-weight: normal;
+          margin-right: 8px;
+        }
+      </style><div class="space-y-4" id="_29"><p>View or download images from Flickr and watch videos on YouTube.</p>
+
+
+</div></div></div></div><div class="flex items-center justify-end pl-6 pr-6 pb-6" aria-hidden="true"><span class="mr-1 shrink-0">Read more</span><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_65 path, #_65 polygon { fill: currentColor; }
+        #_65 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_65"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="13.858 5.372 19.884 12 13.826 18.065 12.411 16.652 16.057 12.999 4 13 4 11 16.271 10.999 12.378 6.718"></polygon></svg></div></div></div></div></a></div><div class="lg:col-span-4 md:col-span-1 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main/section_1976040869_c/link_list" data-name="PromoSimple" class="pal-brand1 bg-bga text-txa h-full rounded-2xl overflow-hidden"><style>#_31 table { overflow-wrap: normal; word-break: normal }</style><div class="p-6 space-y-5 break-words" id="_31"><div role="list" class="space-y-2"><div role="listitem"><a class="clickable cursor-pointer font-bold underline" href="https://www.shell.co.za/media/2016-media-releases.html"><span>2016 Media Releases</span></a></div><div role="listitem"><a class="clickable cursor-pointer font-bold underline" href="https://www.shell.co.za/media/2015-media-releases.html"><span>2015 Media Releases</span></a></div><div role="listitem"><a class="clickable cursor-pointer font-bold underline" href="https://www.shell.co.za/media/2014-media-releases.html"><span>2014 Media Releases</span></a></div><div role="listitem"><a class="clickable cursor-pointer font-bold underline" href="https://www.shell.co.za/media/2013-media-releases.html"><span>2013 Media Releases</span></a></div><div role="listitem"><a class="clickable cursor-pointer font-bold underline" href="https://www.shell.co.za/media/2012-media-releases.html"><span>2012 Media Releases</span></a></div><div role="listitem"><a class="clickable cursor-pointer font-bold underline" href="https://www.shell.co.za/media/2011-media-releases.html"><span>2011 Media Releases</span></a></div></div></div></div></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/main/section_1976040869_c/experience_fragment_" data-name="Container" class="grid lg:grid-cols-12 md:grid-cols-2 sm:grid-cols-1 gap-5"></div></div></section></div></div></div></main></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="0/0/4" data-name="Container" class="text-txa bg-bga border-txa/20 border-t pt-12 pb-12"><div class="max-w-page m-auto px-3"><footer data-key="0/0/4" data-name="Container" class="grid lg:grid-cols-12 md:grid-cols-2 sm:grid-cols-1 "><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/media/2022-media-releases/sapref-to-pause-refinery-operations/jcr_content/root/footer/breadcrumb" data-name="Breadcrumb" class="text-sm w-full px-6 py-2 min-h-9 m-auto max-w-page"><nav><ol class="flex items-center p-0 gap-2" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="sm:hidden md:hidden" itemscope="" itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li class="sm:hidden md:hidden" aria-hidden="true"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_50 path, #_50 polygon { fill: currentColor; }
+        #_50 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_50"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="7.374 4.324 15.219 12.952 7.407 20.773 8.822 22.187 17.981 13.017 8.854 2.979"></polygon></svg></div></div></li><li class="sm:hidden md:hidden" itemscope="" itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/media.html"><span itemprop="name">Media</span></a><meta itemprop="position" content="2"></li><li class="sm:hidden md:hidden" aria-hidden="true"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_51 path, #_51 polygon { fill: currentColor; }
+        #_51 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_51"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="7.374 4.324 15.219 12.952 7.407 20.773 8.822 22.187 17.981 13.017 8.854 2.979"></polygon></svg></div></div></li><li class="lg:hidden" aria-hidden="true"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_52 path, #_52 polygon { fill: currentColor; }
+        #_52 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_52"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="15.543 4.294 7.699 12.922 15.51 20.743 14.095 22.156 4.937 12.987 14.063 2.949"></polygon></svg></div></div></li><li itemscope="" itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/media/2022-media-releases.html"><span itemprop="name">2022 Media Releases</span></a><meta itemprop="position" content="3"></li><li class="sm:hidden md:hidden" aria-hidden="true"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 12px); height: calc(var(--font-scale) * 12px);"><style>
+        #_53 path, #_53 polygon { fill: currentColor; }
+        #_53 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_53"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="7.374 4.324 15.219 12.952 7.407 20.773 8.822 22.187 17.981 13.017 8.854 2.979"></polygon></svg></div></div></li><li class="sm:hidden md:hidden" itemscope="" itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a aria-current="page" itemprop="item" class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/media/2022-media-releases/sapref-to-pause-refinery-operations.html"><span itemprop="name">SAPREF to pause refinery operations</span></a><meta itemprop="position" content="4"></li></ol></nav></div></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="0/0/4/1" data-name="Container" class="grid lg:grid-cols-12 md:grid-cols-2 sm:grid-cols-1 "><div class="lg:col-span-3 md:col-span-1 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/jcr_content/root/footer/inherited/footeritem1" data-name="FooterItem" class="pal-brand1 p-6 space-y-5 text-sm"><h2 class="font-custom font-bold text-txc text-2xl " id="more-in-home">More in Home</h2><div role="list" class="space-y-2"><div role="listitem"><a class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/motorists.html"><span>Motorists</span></a></div><div role="listitem"><a class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/business-customers.html"><span>Business Customers</span></a></div><div role="listitem"><a class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/sustainability.html"><span>Sustainability</span></a></div><div role="listitem"><a class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/about-us.html"><span>About us</span></a></div></div></div></div><div class="lg:col-span-3 md:col-span-1 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/jcr_content/root/footer/inherited/footeritem2" data-name="FooterItem" class="pal-brand1 p-6 space-y-5 text-sm"><h2 class="font-custom font-bold text-txc text-2xl " id="more-about-shell">More about Shell</h2><div role="list" class="space-y-2"><div role="listitem"><a class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/careers.html"><span>Careers</span></a></div><div role="listitem"><a class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/media.html"><span>Media</span></a></div></div></div></div><div class="lg:col-span-3 md:col-span-1 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/jcr_content/root/footer/inherited/footeritem3" data-name="FooterItem" class="pal-brand1 p-6 space-y-5 text-sm"><h2 class="font-custom font-bold text-txc text-2xl " id="can-we-help-">Can we help?</h2><div role="list" class="space-y-2"><div role="listitem"><a class="clickable cursor-pointer hover:underline" href="https://www.shell.co.za/about-us/contact-us.html"><span>Contact us</span></a></div><div role="listitem"><a class="clickable cursor-pointer hover:underline" href="https://support.shell.co.za/hc/en-za"><span>Help and Support</span></a></div></div></div></div><div class="lg:col-span-3 md:col-span-1 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/jcr_content/root/footer/inherited/footeritem4" data-name="FooterItem" class="pal-brand1 p-6 space-y-5 text-sm"><h2 class="font-custom font-bold text-txc text-2xl " id="connect-with-us">Connect with us</h2><div role="list" class="space-y-2"><div role="listitem"><a class="clickable cursor-pointer hover:underline space-x-2 inline-flex items-center" href="https://www.instagram.com/shell_southafrica/"><span class="grow-0"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_66 path, #_66 polygon { fill: currentColor; }
+        #_66 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_66"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="block h-full w-full"><path fill-rule="evenodd" d="M5.45 2.525c.636-.247 1.363-.416 2.427-.464C8.945 2.01 9.285 2 12.001 2s3.057.012 4.123.06c1.064.048 1.791.218 2.428.465a4.9 4.9 0 0 1 1.77 1.154 4.9 4.9 0 0 1 1.154 1.77c.247.637.416 1.364.464 2.428C21.99 8.943 22 9.284 22 12s-.011 3.056-.06 4.123c-.047 1.064-.217 1.791-.464 2.427a4.9 4.9 0 0 1-1.154 1.771 4.9 4.9 0 0 1-1.771 1.154c-.636.247-1.363.416-2.428.464-1.066.05-1.406.061-4.123.061-2.715 0-3.055-.012-4.123-.06-1.064-.049-1.79-.218-2.427-.465a4.9 4.9 0 0 1-1.771-1.154 4.9 4.9 0 0 1-1.154-1.77c-.247-.637-.416-1.364-.464-2.428C2.01 15.056 2 14.716 2 12s.011-3.057.06-4.123c.049-1.064.218-1.791.465-2.427A4.9 4.9 0 0 1 3.68 3.679 4.9 4.9 0 0 1 5.45 2.525M7.96 20.14c-.975-.045-1.505-.207-1.857-.344a3.1 3.1 0 0 1-1.15-.748 3.1 3.1 0 0 1-.749-1.15c-.137-.352-.3-.882-.344-1.857-.048-1.054-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.041.045-.975.208-1.504.344-1.857.182-.467.399-.8.748-1.15.35-.35.683-.568 1.15-.748.353-.138.883-.3 1.858-.345 1.054-.048 1.37-.058 4.04-.058s2.987.01 4.042.058c.975.045 1.504.208 1.857.345.467.18.8.398 1.15.748s.566.683.748 1.15c.137.352.3.882.344 1.857.049 1.055.058 1.37.058 4.041 0 2.67-.01 2.986-.058 4.041-.044.975-.207 1.505-.344 1.857-.182.467-.398.8-.748 1.15s-.683.566-1.15.748c-.352.137-.882.3-1.857.344-1.054.048-1.371.058-4.042.058s-2.986-.01-4.04-.058m9.38-12.278a1.2 1.2 0 1 1 0-2.401 1.2 1.2 0 0 1 0 2.4M6.864 12a5.135 5.135 0 1 0 10.27 0 5.135 5.135 0 0 0-10.27 0m1.802 0a3.333 3.333 0 1 1 6.667 0 3.333 3.333 0 0 1-6.667 0" clip-rule="evenodd"></path></svg></div></div></span><span>Instagram</span></a></div><div role="listitem"><a class="clickable cursor-pointer hover:underline space-x-2 inline-flex items-center" href="https://www.youtube.com/user/Shell"><span class="grow-0"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_67 path, #_67 polygon { fill: currentColor; }
+        #_67 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_67"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="block h-full w-full"><path fill-rule="evenodd" d="m8.34 18.742 4.103.075c.007 0 .02 0 .02.01 2.285.042 4.51-.092 6.79-.258 1.818-.127 2.249-1.447 2.474-3.02.28-1.9.343-3.822.196-5.735l-.02-.274c-.138-1.83-.292-3.887-2.455-4.267a9.6 9.6 0 0 0-1.397-.166c-4.42-.143-8.879-.18-13.308.127-1.313.085-2.161.862-2.377 2.164a28.4 28.4 0 0 0-.258 7.045l.008.086c.145 1.646.314 3.57 2.261 3.968 1.048.218 2.116.227 3.185.235q.39.003.778.01m3.82-5.132q-1.058.61-2.13 1.224V8.965l2.353 1.351 2.756 1.584z" clip-rule="evenodd"></path></svg></div></div></span><span>YouTube</span></a></div><div role="listitem"><a class="clickable cursor-pointer hover:underline space-x-2 inline-flex items-center" href="https://www.facebook.com/ShellSouthAfrica/"><span class="grow-0"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_69 path, #_69 polygon { fill: currentColor; }
+        #_69 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_69"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="block h-full w-full"><path d="M16.294 8.476H13.13V6.401c0-.78.518-.962.883-.962h2.23V2.012L13.164 2C9.753 2 8.976 4.556 8.976 6.192v2.284H7v3.531h1.976V22h4.153v-9.993h2.8z"></path></svg></div></div></span><span>Facebook</span></a></div><div role="listitem"><a class="clickable cursor-pointer hover:underline space-x-2 inline-flex items-center" href="https://www.linkedin.com/company/shell"><span class="grow-0"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_68 path, #_68 polygon { fill: currentColor; }
+        #_68 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_68"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="block h-full w-full"><path fill-rule="evenodd" d="M4.43 2C2.958 2 2 2.962 2 4.227c0 1.238.93 2.23 2.37 2.23h.03c1.494 0 2.424-.992 2.424-2.23C6.794 2.962 5.894 2 4.429 2M2.252 21.111H6.54V8.216H2.253zm19.747 0v-7.394c0-3.961-2.112-5.804-4.935-5.804-2.277 0-3.294 1.253-3.865 2.13V8.217H8.912c.059 1.21 0 12.895 0 12.895H13.2V13.91c0-.386.03-.769.141-1.044.312-.771 1.018-1.569 2.2-1.569 1.553 0 2.17 1.183 2.17 2.916v6.9zm-8.8-11.067v.041h-.03a.2.2 0 0 0 .03-.042" clip-rule="evenodd"></path></svg></div></div></span><span>LinkedIn</span></a></div></div></div></div><div class="lg:col-span-9 md:col-span-1 sm:col-span-1 "><div data-key="/content/shell/countries/south-africa/en_za/jcr_content/root/footer/inherited/legalfooter" data-name="LegalFooter" class="pal-brand1 p-6 text-sm flex flex-wrap gap-5" role="list"><div role="listitem" class="flex items-center"><a class="clickable cursor-pointer hover:underline text-sm" href="https://www.shell.co.za/accessibility.html"><span>Accessibility</span></a></div><div role="listitem" class="flex items-center"><a class="clickable cursor-pointer hover:underline text-sm" href="https://www.shell.co.za/terms-of-use.html"><span>Terms and conditions</span></a></div><div role="listitem" class="flex items-center"><a class="clickable cursor-pointer hover:underline text-sm" href="https://www.shell.co.za/privacy.html"><span>Privacy notices</span></a></div><div role="listitem" class="flex items-center"><a class="clickable cursor-pointer hover:underline text-sm" href="https://www.shell.co.za/cookie-policy.html"><span>Cookie policy</span></a></div></div></div><div class="lg:col-span-3 md:col-span-1 sm:col-span-1 "><div data-key="3338086990" data-name="WebComponent" class="pal-brand1 w-full h-full"><consent-banner link-text="Modify cookie preferences" src="https://cdn-ukwest.onetrust.com/consent/0197a67b-9991-7223-9120-a04c7435e45f/0197a67b-9991-7223-9120-a04c7435e45f.json" privacy-url="https://www.shell.co.za/cookie-policy.html" disable-list="true" class="w-full h-full"><template shadowrootmode="open"><div class="p-6 space-y-5 "><a class="clickable cursor-pointer hover:underline text-sm" href="#"><span class="flex items-center gap-1"><span>Modify cookie preferences</span></span></a></div><style>#_74::backdrop { background: hsla(0, 0%, 0%, 0.5); backdrop-filter: blur(4px) }</style><dialog class="z-30 overscroll-none scrollbar-stable animate-toast shadow-lg bg-bga text-txa focus-visible:outline-none ml-0 mr-0 mb-0 mt-auto max-h-4/5 w-full overflow-y-scroll" id="_74" open=""><div class="max-w-page m-auto space-y-5 w-full h-fit p-9"><div class="bg-no-repeat bg-center bg-contain h-16" style="background-image: var(--logo); width: calc(var(--logo-ratio) * 64px);"></div><h3 class="font-custom font-bold text-txc text-2xl " id="about-cookies-on-this-site">About Cookies On This Site</h3><style>
+        #_75 :is(h1, h2, h3, h4, h5, h6):not(:first-child) { margin-top: 24px }
+        #_75 pre { background-color: hsla(var(--color-txa), 0.05) }
+        #_75 pre code { background: none; margin: 0; padding: 0; }
+        #_75 code { background-color: hsla(var(--color-txa), 0.05) }
+        #_75 details[open] > summary::after { rotate: 270deg }
+        #_75 details[open] > *:not(:last-child) { margin-bottom: 8px }
+        #_75 details > summary::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          content: '❯';
+          transition: var(--anim-time);
+          rotate: 90deg;
+          width: 12px;
+          font-weight: normal;
+          margin-right: 8px;
+        }
+      </style><div class="space-y-4" id="_75">We use cookies to personalise and enhance your experience on our site and improve the delivery of ads to you. Visit our <a href="/cookie-policy.html" aria-label="" rel="noopener" target="_blank" class="clickable cursor-pointer underline"><span class="space-x-1"><span>Cookie Policy</span><span class="inline-block align-top"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 16px); height: calc(var(--font-scale) * 16px);"><style>
+        #_84 path, #_84 polygon { fill: currentColor; }
+        #_84 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_84"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><path fill="#595959" d="M19,6 L19,21 L2,21 L2,6 L19,6 Z M17,8 L4,8 L4,19 L17,19 L17,8 Z M22,3 L22,19 L20,19 L20,4.999 L4,5 L4,3 L22,3 Z"></path></svg></div></div></span></span></a> to learn more. By clicking “Accept optional cookies”, you agree to our use of cookies.</div><div class="flex justify-end lg:space-x-5 md:space-x-5 sm:flex-col sm:space-y-5"><div class="flex justify-center items-center"><a class="clickable cursor-pointer underline" href="#"><span>Manage cookies</span></a></div><div class="flex gap-5 justify-end lg:flex-row-reverse md:flex-row-reverse sm:flex-col "><button class="clickable cursor-pointer transition inline-flex overflow-hidden border bg-bgb/100 text-txb border-bgb hover:bg-txb hover:text-bgb font-bold rounded-lg pl-3 pr-3 space-x-2 min-h-12  " autofocus=""><div class="grow flex items-center justify-center"><span>Accept optional cookies</span></div></button><button class="clickable cursor-pointer transition inline-flex overflow-hidden border bg-bgb/100 text-txb border-bgb hover:bg-txb hover:text-bgb font-bold rounded-lg pl-3 pr-3 space-x-2 min-h-12  "><div class="grow flex items-center justify-center"><span>Reject optional cookies</span></div></button></div></div></div></dialog><style>#_77::backdrop { background: hsla(0, 0%, 0%, 0.5); backdrop-filter: blur(4px) }</style><dialog class="z-30 overscroll-none scrollbar-stable animate-toast shadow-lg bg-bga text-txa focus-visible:outline-none ml-0 mr-0 mb-0 mt-auto max-h-4/5 w-full overflow-y-scroll" id="_77"><div class="max-w-page m-auto space-y-5 w-full h-fit p-9"><div class="flex gap-2"><div class="grow"><div class="bg-no-repeat bg-center bg-contain h-16" style="background-image: var(--logo); width: calc(var(--logo-ratio) * 64px);"></div></div><div class="shrink"><button class="clickable cursor-pointer transition inline-flex text-txa bg-bga hover:text-bga hover:bg-txa rounded-lg justify-center items-center w-10 h-10  " aria-label="Close" title="Close"><div class="flex items-center justify-center"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 24px); height: calc(var(--font-scale) * 24px);"><style>
+        #_88 path, #_88 polygon { fill: currentColor; }
+        #_88 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_88"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><polygon fill="#595959" points="19.293 3.293 20.707 4.707 13.414 12 20.707 19.293 19.293 20.707 12 13.414 4.707 20.707 3.293 19.293 10.586 12 3.293 4.707 4.707 3.293 12 10.586"></polygon></svg></div></div></div></button></div></div><style>
+        #_79 :is(h1, h2, h3, h4, h5, h6):not(:first-child) { margin-top: 24px }
+        #_79 pre { background-color: hsla(var(--color-txa), 0.05) }
+        #_79 pre code { background: none; margin: 0; padding: 0; }
+        #_79 code { background-color: hsla(var(--color-txa), 0.05) }
+        #_79 details[open] > summary::after { rotate: 270deg }
+        #_79 details[open] > *:not(:last-child) { margin-bottom: 8px }
+        #_79 details > summary::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          content: '❯';
+          transition: var(--anim-time);
+          rotate: 90deg;
+          width: 12px;
+          font-weight: normal;
+          margin-right: 8px;
+        }
+      </style><div class="space-y-4" id="_79"><h2 class="font-custom font-bold text-txc text-3xl " id="information-we-collect-about-you">Information We Collect About You</h2> <p>We want to be transparent about the data we and our partners collect and how we use it, so you can best exercise control over your personal data. For more information, please see our <a href="/cookie-policy.html" aria-label="" rel="noopener" target="_blank" class="clickable cursor-pointer underline"><span class="space-x-1"><span>Cookie Policy</span><span class="inline-block align-top"><div class="" aria-hidden="true" style="width: calc(var(--font-scale) * 16px); height: calc(var(--font-scale) * 16px);"><style>
+        #_87 path, #_87 polygon { fill: currentColor; }
+        #_87 {  }
+      </style><div class="h-full w-full" data-svg-status="ready" id="_87"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="block h-full w-full"><path fill="#595959" d="M19,6 L19,21 L2,21 L2,6 L19,6 Z M17,8 L4,8 L4,19 L17,19 L17,8 Z M22,3 L22,19 L20,19 L20,4.999 L4,5 L4,3 L22,3 Z"></path></svg></div></div></span></span></a>.</p> <h2 class="font-custom font-bold text-txc text-3xl " id="information-our-partners-collect-">Information Our Partners Collect
+</h2> <p>We use a number partners to better improve your overall web browsing experience. They use cookies and other mechanisms to connect you with your social networks and tailor advertising to better match your interests. We have grouped these vendors into 3 categories based on their functional area.</p></div><h3 class="font-custom font-bold text-txc text-2xl " id="categories">Categories</h3><div class="space-y-4" data-form=""><div><label class="space-x-2 inline-flex items-center font-bold cursor-pointer"><input name="C0001" type="checkbox" disabled="" class="appearance-auto" value="true"><span>Strictly Necessary Cookies</span></label><p>These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information.</p></div><div><label class="space-x-2 inline-flex items-center font-bold cursor-pointer"><input name="C0002" type="checkbox" class="appearance-auto" value="true"><span>Performance Cookies</span></label><p>These cookies allow us to count visits and traffic sources, so we can measure and improve the performance of our site. They help us know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies, we will not know when you have visited our site.</p></div><div><label class="space-x-2 inline-flex items-center font-bold cursor-pointer"><input name="C0003" type="checkbox" class="appearance-auto" value="true"><span>Functional Cookies</span></label><p>These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly.</p></div><div><label class="space-x-2 inline-flex items-center font-bold cursor-pointer"><input name="C0004" type="checkbox" class="appearance-auto" value="true"><span>Targeting Cookies</span></label><p>These cookies may be set through our site by our advertising partners. They may be used by those companies to build a profile of your interests and show you relevant adverts on other sites. They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience less targeted advertising.</p></div><div><label class="space-x-2 inline-flex items-center font-bold cursor-pointer"><input name="C0005" type="checkbox" class="appearance-auto" value="true"><span>Social Media Cookies</span></label><p>These cookies are set by a range of social media services that we have added to the site to enable you to share our content with your friends and networks. They are capable of tracking your browser across other sites and building up a profile of your interests. This may impact the content and messages you see on other websites you visit. If you do not allow these cookies you may not be able to use or see these sharing tools.</p></div><div class="flex justify-end lg:space-x-5 md:space-x-5 sm:flex-col sm:space-y-5"><button class="clickable cursor-pointer transition inline-flex overflow-hidden border bg-bgb/100 text-txb border-bgb hover:bg-txb hover:text-bgb font-bold rounded-lg pl-3 pr-3 space-x-2 min-h-12  "><div class="grow flex items-center justify-center"><span>Save Preferences</span></div></button><button class="clickable cursor-pointer transition inline-flex overflow-hidden border bg-bgb/100 text-txb border-bgb hover:bg-txb hover:text-bgb font-bold rounded-lg pl-3 pr-3 space-x-2 min-h-12  "><div class="grow flex items-center justify-center"><span>Reject optional cookies</span></div></button></div></div></div></dialog><style>#_81::backdrop { background: hsla(0, 0%, 0%, 0.5); backdrop-filter: blur(4px) }</style><dialog class="z-30 overscroll-none scrollbar-stable animate-toast shadow-lg bg-bga text-txa focus-visible:outline-none ml-0 mr-0 mb-0 mt-auto max-h-4/5 w-full overflow-y-scroll" id="_81"><div class="max-w-page m-auto space-y-5 w-full h-fit p-9"></div></dialog></template></consent-banner></div></div><div class="lg:col-span-12 md:col-span-2 sm:col-span-1 "><div data-key="340785818" data-name="WebComponent" class="w-full h-full"><launch-container src="https://assets.adobedtm.com/fdd3d8394b31/a685f82775b8/launch-cf15a75da6c2.min.js" class="w-full h-full"><template shadowrootmode="open"></template></launch-container></div></div></div></div></footer></div></div></div></div></div></div>
+
+
+    
+  
+
+  
+
+</body>
+  </html>

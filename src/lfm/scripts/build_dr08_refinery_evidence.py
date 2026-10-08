@@ -7,7 +7,7 @@ fact, each with its value, period, status, source and open gap:
     workstreams/WS1_data_validation/dr08_refinery_evidence_2026-10-08.csv
 
 Values are read from ``reference/refinery_evidence_points.csv`` (figures typed
-from the department, the operators and the Central Energy Fund), the
+from the department, the operators, the Central Energy Fund and others named row by row), the
 department's energy balances and ``reference/refinery_output_operators.csv``.
 Status is ``observed``, ``inferred`` (calculated here) or ``not available``.
 FIASA and JODI are not used.
@@ -30,6 +30,7 @@ FIELDS = ["request", "part", "item", "asset_or_route", "value", "unit", "period"
 PARTS = ["Capacity", "Status and dates", "Output by plant", "National output by product", "Yields", "Utilisation", "Outlook"]
 PLANTS = ["Secunda", "Natref", "Astron Energy", "Sapref", "Enref", "PetroSA"]
 NATREF_SASOL_SHARE = 0.6364
+LITRES_PER_BARREL = 158.987
 BALANCE_YEARS = range(2014, 2022)
 
 
@@ -68,6 +69,22 @@ def utilisation(d: dict) -> dict[tuple[str, int], float]:
             out[(plant, year)] = float(row["value"]) * 1e6 / (cap["Secunda"] * days)
         elif plant == "Natref" and year != 2026:
             out[(plant, year)] = float(row["value"]) * 1e6 / NATREF_SASOL_SHARE / (cap["Natref"] * days)
+    return out
+
+
+def natref_by_product(d: dict) -> dict[tuple[str, int], tuple[float, float]]:
+    """Natref's petrol and diesel, billion litres, as a low and high figure for each year to June.
+
+    Sasol's reported share is scaled to the whole refinery and multiplied by the range Sasol states for each
+    product's share of production. The year to June 2026 is left out, as in ``utilisation``.
+    """
+    split = {p["subject"]: tuple(float(x) / 100 for x in p["value"].split("-")) for p in d["points"] if p["series"] == "split_natref"}
+    out = {}
+    for (plant, year), row in d["operators"].items():
+        if plant == "Natref" and year != 2026:
+            whole = float(row["value"]) / NATREF_SASOL_SHARE * LITRES_PER_BARREL / 1e3
+            for product, (low, high) in split.items():
+                out[(product, year)] = (whole * low, whole * high)
     return out
 
 
@@ -115,10 +132,19 @@ def build(d: dict) -> list[dict]:
             + (" Reported as energy content, not volume." if plant.startswith("Astron") else ""))
     for p in points["secunda_fuels"]:
         from_point("Output by plant", "Secunda fuels output", p)
-    add("Output by plant", "Petrol and diesel output by plant", "Every plant", "", "litres", "", "not available", "None published", "", "",
-        "No operator publishes petrol and diesel volumes by plant. Needs the operators, through Nigel.")
+    by_product = natref_by_product(d)
+    natref_years = sorted({y for _, y in by_product})
+    for product in ("petrol", "diesel"):
+        add("Output by plant", f"{product.capitalize()} output, estimated", "Natref, whole refinery",
+            "; ".join("{:.2f} to {:.2f}".format(*by_product[(product, y)]) for y in natref_years), "billion litres",
+            "years to June " + "; ".join(str(y) for y in natref_years), "inferred",
+            "Sasol's reported Natref production, scaled to the whole refinery, times Sasol's stated product split",
+            "assumptions/2026/reference/refinery_output_operators.csv; assumptions/2026/reference/refinery_evidence_points.csv", "",
+            "An estimate: the split is a range Sasol stated in April 2021, applied to every year. The year to June 2026 is left out.")
+    add("Output by plant", "Petrol and diesel output by plant", "Secunda and Astron Energy", "", "litres", "", "not available", "None published", "", "",
+        "Sasol states Secunda's split (65% petrol, 35% diesel) but not the total it applies to. Glencore publishes no split for Astron. Needs the operators.")
     add("Output by plant", "Output of Sapref, Enref and PetroSA", "Plants not operating", "0", "", "while not operating", "inferred",
-        "From the status rows", "", "", "PetroSA since December 2020; the stop dates for Sapref and Enref are not in a source held.")
+        "From the status rows", "", "", "Enref since the fire of 4 December 2020; PetroSA since December 2020; Sapref since the pause at the end of March 2022.")
 
     # --- national output by product -------------------------------------------
     years = [y for y in BALANCE_YEARS if ("petrol", y) in d["production"]]
@@ -127,8 +153,12 @@ def build(d: dict) -> list[dict]:
             "; ".join(f"{d['production'][(product, y)]:.2f}" for y in years), "billion litres", "; ".join(str(y) for y in years), "observed",
             "Department of Mineral and Petroleum Resources, energy balances", "assumptions/2026/timeseries/energy_balance_department.csv", "",
             "The only output by product. Ends at 2021, the last balance published.")
-    add("National output by product", "Petrol and diesel produced after 2021", "South Africa", "", "billion litres", "2022 onward", "not available",
-        "None published", "", "", "The department has published no balance after 2021.")
+    for p in points.get("national_output_un", []):
+        add("National output by product", f"{p['subject'].capitalize()} produced, United Nations series (not used)", "South Africa", p["value"], p["unit"],
+            p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
+    add("National output by product", "Petrol and diesel produced after 2021, on the department's basis", "South Africa", "", "billion litres",
+        "2022 onward", "not available", "None published", "", "",
+        "The department has published no balance after 2021. The United Nations series runs to 2023 but does not match the department in the years they share.")
 
     # --- yields -----------------------------------------------------------------
     def share(product, year):
@@ -142,8 +172,12 @@ def build(d: dict) -> list[dict]:
             "A national mix, not a plant yield. It will have shifted since the Durban refineries closed.")
     for p in points.get("natref_yield", []):
         from_point("Yields", "Natref white product yield", p)
-    add("Yields", "Yield by plant after 2021", "Secunda, Natref, Astron Energy", "", "%", "", "not available", "None published", "", "",
-        "Needed to turn plant output into petrol and diesel. Needs the operators.")
+    for series, plant in (("split_natref", "Natref"), ("split_secunda", "Secunda")):
+        for p in points.get(series, []):
+            add("Yields", f"{p['subject'].capitalize()} share of output", plant, p["value"].replace("-", " to "), p["unit"], p["period"], "observed",
+                p["source"], p["original_file"], p["page"], p["note"])
+    add("Yields", "Yield by plant", "Astron Energy", "", "%", "", "not available", "None published", "", "",
+        "Nothing found for Astron. Natref and Secunda are as Sasol stated them in 2021; no plant publishes a split by year.")
 
     # --- utilisation --------------------------------------------------------------
     use = utilisation(d)
@@ -156,7 +190,7 @@ def build(d: dict) -> list[dict]:
             "Capacity is crude equivalent and output is refined product, so this understates how hard the plant runs."
             + (" The year to June 2026 is left out because Sasol's figure includes output above its share." if plant == "Natref" else ""))
     add("Utilisation", "Output as a share of capacity", "Astron Energy", "", "%", "", "not available", "Not calculable",
-        "", "", "Glencore reports energy content, not barrels. Converting it needs an assumed energy content per barrel.")
+        "", "", "Glencore reports energy content, not barrels, and no throughput in barrels was found. Converting needs an assumed energy content per barrel.")
 
     # --- outlook --------------------------------------------------------------------
     for p in points["outlook"]:
