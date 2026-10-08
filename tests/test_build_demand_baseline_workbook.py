@@ -1,4 +1,5 @@
 """The extended demand baseline workbook: sheets present, inputs carried faithfully, Nigel's cells untouched."""
+import csv
 from pathlib import Path
 
 import pytest
@@ -34,7 +35,7 @@ def test_history_carries_the_registered_inputs_and_uses_formulas_for_the_balance
 def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
-        "History", "DR01 balance", "Sector history", "Diesel by use", "Demand by use", "DR04 routes", "DR04 ports", "Power fleet", "Vehicle history", "HML response", "Gap status",
+        "History", "DR01 balance", "Sector history", "Diesel by use", "Demand by use", "DR04 routes", "DR04 entry points", "Power fleet", "Vehicle history", "HML response", "Gap status",
         "Checks",
         "History sources"]
     changed = []
@@ -220,21 +221,38 @@ def test_dr04_routes_sheet_groups_every_fact_with_status_source_and_gap():
     assert [c.value for c in ws[4]] == ["Item", "Asset or route", "Value", "Unit", "Period", "Status", "Source", "Page", "Open gap"]
     facts = [r for r in ws.iter_rows(min_row=5) if r[5].value]
     with (ROOT / build.DR04_EVIDENCE).open(encoding="utf-8", newline="") as fh:
-        assert len(facts) == sum(1 for _ in fh) - 1                                   # one row per row of the evidence table
+        evidence = list(csv.DictReader(fh))
+    kept = [r for r in evidence if r["scope"] != "other products included"]
+    assert len(facts) == len(kept) < len(evidence)                                     # mixed-product facts are left out
+    shown = {r[0].value for r in facts}
+    assert not shown & {"Liquid bulk landed (imports)", "Liquid bulk landed, by month", "Petroleum volumes transported"}
+    assert "Pipeline tariff, Durban to Alrode" in shown and "Diesel imported by road from Mozambique" in shown
     assert all(r[2].value and r[6].value for r in facts)                               # a value (or "Not available") and a source
     sections = [r[0].value for r in ws.iter_rows(min_row=5) if r[0].value and not r[5].value]
-    assert sections[:3] == ["Pipeline limit", "Pipeline use", "Pipeline cost"] and "Access" in sections
+    assert sections[:2] == ["Pipeline limit", "Pipeline cost"] and {"Access", "Competing routes"} <= set(sections)
+    assert "Pipeline use" not in sections                       # those volumes include crude and jet, so the section is empty
     open_rows = [r for r in facts if r[5].value not in ("observed", "inferred")]
     assert open_rows and all(r[0].fill.fgColor.rgb == build.FILL["estimate"] for r in open_rows)
 
 
-def test_dr04_ports_sheet_shows_years_then_months_and_marks_the_month_not_published():
-    ws = load_workbook(ROOT / build.OUT)["DR04 ports"]
+def test_dr04_entry_points_sheet_is_petrol_and_diesel_only_and_adds_to_national_imports():
+    wb = load_workbook(ROOT / build.OUT)
+    assert "DR04 ports" not in wb.sheetnames                                           # all-liquids tonnage is not shown
+    ws = wb["DR04 entry points"]
     header = [c.value for c in ws[4]]
-    assert header[:3] == ["Period", "Durban", "Richards Bay"] and header[9] == "All ports" and header[-1] == "Source file"
-    rows = {r[0].value: r for r in ws.iter_rows(min_row=5) if r[0].value}
-    assert rows["2025"][1].value == pytest.approx(20.700632) and rows["2025"][9].value == pytest.approx(31.272124)
-    assert rows["2025"][10].value.startswith("=IF(COUNT(")                              # Durban share is a formula
-    assert rows["2026-08"][13].value == "tnpa-cargo-summary-2026-08.pdf"
-    assert rows["2025-01"][1].value is None and rows["2025-01"][12].value.startswith("Not published")
-    assert "invoiced" in rows["2026-04"][12].value
+    assert header[:2] == ["Entry point", "Route"] and header[2:14] == list(range(2014, 2026)) and header[14:] == ["Source", "Note"]
+    blocks, block = {}, None
+    for r in ws.iter_rows(min_row=5):
+        if r[0].value in ("Diesel", "Petrol", "Diesel and petrol"):
+            block = r[0].value
+        elif r[0].value:
+            blocks[(block, r[0].value)] = r
+    at = 2 + build.ENTRY_YEARS.index(2025)
+    d = build.load(VINTAGE / "timeseries", VINTAGE / "reference")
+    for product, name in (("diesel", "Diesel"), ("petrol", "Petrol")):
+        offices = [k[1] for k in blocks if k[0] == name and k[1] not in ("All offices", "Durban share")]
+        total = sum(blocks[(name, o)][at].value for o in offices)
+        assert total == pytest.approx(d["sars"][("import", product, 2025)] / 1000, rel=1e-6)   # adds to national customs imports
+        assert blocks[(name, "All offices")][at].value.startswith("=SUM(")
+        assert all(blocks[(name, o)][14].value for o in offices)                                # a source on every row
+    assert blocks[("Diesel", "Komatipoort")][1].value == "Road, from Mozambique"

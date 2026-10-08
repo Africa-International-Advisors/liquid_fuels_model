@@ -106,8 +106,12 @@ def load(ts: Path, ref: Path) -> dict:
     d["jodi_demand"] = {(r["product"], int(r["period"])): float(r["value"]) / 1e6
                         for r in _read(ts / "oil_balance_jodi.csv")
                         if r["flow"] == "demand" and int(r["months_reported"]) == 12}
-    d["port_liquid_bulk"] = {(r["period"], r["period_basis"], r["port"], r["movement"]): (float(r["value"]), r["note"], r["source_file"])
-                             for r in _read(ts / "port_liquid_bulk_tnpa.csv")}
+    d["imports_by_office"] = {}
+    for r in _read(ts / "fuel_trade_sars_by_office.csv"):
+        # months_reported counts the months an office cleared fuel, so it is not a test of a complete year here
+        if r["flow"] == "import" and r["product"] in ("petrol", "diesel") and r["unit"] == "litres" and int(r["period"]) in ENTRY_YEARS:
+            key = (int(r["period"]), r["district_office"], r["product"])
+            d["imports_by_office"][key] = d["imports_by_office"].get(key, 0.0) + float(r["value"]) / 1e9
     d["operators"] = {(r["plant"], int(r["period"])): (float(r["value"]), r["unit"], r["period_basis"])
                       for r in _read(ref / "refinery_output_operators.csv")}
     raf = {(r["measure"], int(r["period"])): float(r["value"]) for r in _read(ref / "fuel_levy_revenue_raf.csv")}
@@ -932,7 +936,6 @@ DR04_EVIDENCE = Path("workstreams/WS1_data_validation/dr04_routes_access_evidenc
 DR04_PARTS = ["Pipeline limit", "Pipeline use", "Pipeline cost", "Delivered cost", "Port use", "Port limit", "Port cost", "Access",
               "Competing routes"]
 DR04_STATUS_FILL = {"observed": "observation", "inferred": "formula"}  # anything else is open and shown in the estimate colour
-PORT_ORDER = ["Durban", "Richards Bay", "Cape Town", "Saldanha", "East London", "Mossel Bay", "Port Elizabeth", "Ngqura", "All ports"]
 
 
 def _sheet_head(ws, heading: str, sub_heading: str, header: list, widths: list[float], row: int = 4) -> None:
@@ -951,14 +954,16 @@ def _sheet_head(ws, heading: str, sub_heading: str, header: list, widths: list[f
 def dr04_routes_sheet(wb) -> None:
     """The DR04 evidence table, grouped by part: one row per fact with its source, page and open gap."""
     ws = wb.create_sheet("DR04 routes")
-    rows = _read(DR04_EVIDENCE)
+    every = _read(DR04_EVIDENCE)
+    rows = [r for r in every if r["scope"] != "other products included"]   # petrol and diesel only, plus the route itself
+    left_out = len(every) - len(rows)
     counted = {status: sum(r["status"] == status for r in rows) for status in {r["status"] for r in rows}}
     done = counted.get("observed", 0) + counted.get("observed, unit unclear", 0)
     header = ["Item", "Asset or route", "Value", "Unit", "Period", "Status", "Source", "Page", "Open gap"]
     _sheet_head(ws, "DR04 Routes and access: what the documents establish",
                 f"{done} facts read from original documents, {counted.get('inferred', 0)} calculated, "
-                f"{len(rows) - done - counted.get('inferred', 0)} still open (yellow). Each row gives its source and page. "
-                "Built from dr04_routes_access_evidence_2026-10-08.csv.",
+                f"{len(rows) - done - counted.get('inferred', 0)} still open (yellow). Petrol and diesel only: {left_out} facts that mix "
+                "in crude, jet or other liquids are left out and stay in dr04_routes_access_evidence_2026-10-08.csv.",
                 header, [34, 30, 36, 20, 24, 14, 44, 12, 60])
     row = 4
     for part in DR04_PARTS:
@@ -984,58 +989,73 @@ def dr04_routes_sheet(wb) -> None:
     ws.freeze_panes = "B5"
 
 
-def dr04_ports_sheet(wb, d: dict) -> None:
-    """Liquid bulk landed at each port, by calendar year and by month, in million tons."""
-    ws = wb.create_sheet("DR04 ports")
-    series = d["port_liquid_bulk"]
-    header = ["Period"] + [f"{port}" for port in PORT_ORDER] + ["Durban share", "Durban, all movements", "Note", "Source file"]
-    _sheet_head(ws, "DR04 Liquid bulk landed at each port",
-                "Million tons of all liquids together (crude oil, fuels, gas and chemicals); not litres and not fuel by product. "
-                "Transnet National Ports Authority, port statistics, transnet.net/TNPA. Blank month: not published.",
-                header, [16] + [11] * len(PORT_ORDER) + [12, 14, 46, 44])
-    share_col, durban_col, total_col = len(PORT_ORDER) + 2, 2, len(PORT_ORDER) + 1
-    periods = sorted({(basis, period) for (period, basis, _, _) in series})
-    years = [p for b, p in periods if b == "calendar year"]
-    months = [p for b, p in periods if b == "month"]
-    listed = [m for m in (f"{y}-{mo:02d}" for y in range(int(months[0][:4]), int(months[-1][:4]) + 1) for mo in range(1, 13))
-              if months[0] <= m <= months[-1]]
+ENTRY_YEARS = list(range(2014, 2026))
+ENTRY_POINTS = [("Durban", "Durban", "Sea"), ("Cape Town", "Cape Town", "Sea"), ("Mosselbay", "Mossel Bay", "Sea"),
+                ("East London", "East London", "Sea"), ("Port Elizabeth", "Port Elizabeth", "Sea"),
+                ("Richards Bay", "Richards Bay", "Sea"), ("Komatipoort", "Komatipoort", "Road, from Mozambique")]
+ENTRY_SOURCE = "SARS customs, imports by office of clearance (fuel_trade_sars_by_office.csv)"
 
-    def write(row, label, period, basis, bold=False):
-        ws.cell(row=row, column=1, value=label)
-        known = (period, basis, "Durban", "landed") in series
-        for i, port in enumerate(PORT_ORDER, start=2):
-            entry = series.get((period, basis, port, "landed"))
-            ws.cell(row=row, column=i, value=entry[0] / 1e6 if entry else None).number_format = "0.00"
-        c, t = get_column_letter(durban_col), get_column_letter(total_col)
-        ws.cell(row=row, column=share_col, value=f'=IF(COUNT({c}{row},{t}{row})<2,"",{c}{row}/{t}{row})').number_format = "0%"
-        handled = series.get((period, basis, "Durban", "handled"))
-        ws.cell(row=row, column=share_col + 1, value=handled[0] / 1e6 if handled else None).number_format = "0.00"
-        first = series.get((period, basis, "Durban", "landed"))
-        ws.cell(row=row, column=share_col + 2, value=(first[1] if known else "Not published: the port authority's link for this month leads to another report"))
-        ws.cell(row=row, column=share_col + 3, value=first[2] if known else "None")
-        for i in range(1, len(header) + 1):
+
+def dr04_entry_sheet(wb, d: dict) -> None:
+    """Petrol and diesel imports by customs office of entry, in billion litres."""
+    ws = wb.create_sheet("DR04 entry points")
+    header = ["Entry point", "Route"] + ENTRY_YEARS + ["Source", "Note"]
+    _sheet_head(ws, "DR04 Where petrol and diesel imports enter",
+                "Billion litres, calendar years. Petrol and diesel only. The office is where the fuel was cleared through customs: the "
+                "nearest public record of the entry point, not a berth or terminal record.",
+                header, [30, 22] + [8.5] * len(ENTRY_YEARS) + [50, 52])
+    first_year, last = 3, len(header)
+    named = {office for office, _, _ in ENTRY_POINTS}
+
+    def here(year: int) -> str:
+        return get_column_letter(first_year + ENTRY_YEARS.index(year))
+
+    def fill(row, kind, bold=False):
+        for i in range(1, last + 1):
             cell = ws.cell(row=row, column=i)
             cell.font = Font(name="Arial", size=10, color=INK, bold=bold and i == 1)
-            cell.fill = PatternFill("solid", fgColor=FILL["formula" if i == share_col else "observation" if known else "estimate"])
-            cell.alignment = Alignment(wrap_text=i >= share_col + 2, vertical="top", horizontal="right" if 1 < i <= share_col + 1 else "left")
+            cell.fill = PatternFill("solid", fgColor=FILL[kind])
+            cell.alignment = Alignment(wrap_text=i >= last - 1, vertical="top", horizontal="right" if first_year <= i < last - 1 else "left")
 
-    def title(row, text):
-        for i in range(1, len(header) + 1):
-            cell = ws.cell(row=row, column=i, value=text if i == 1 else None)
+    row = 4
+    for product, title in (("diesel", "Diesel"), ("petrol", "Petrol"), (None, "Diesel and petrol")):
+        row += 2 if row > 4 else 1
+        for i in range(1, last + 1):
+            cell = ws.cell(row=row, column=i, value=title if i == 1 else None)
             cell.font = Font(name="Arial", size=10, bold=True, color=INK)
             cell.fill = PatternFill("solid", fgColor=FILL["section"])
-
-    row = 5
-    title(row, "Calendar years")
-    for year in years:
+        products = (product,) if product else ("diesel", "petrol")
+        top = row + 1
+        lines = ENTRY_POINTS + [(None, "Other offices", "Land borders and inland offices")]
+        for office, label, route in lines:
+            row += 1
+            ws.cell(row=row, column=1, value=label)
+            ws.cell(row=row, column=2, value=route)
+            for year in ENTRY_YEARS:
+                if office:
+                    value = sum(d["imports_by_office"].get((year, office, pr), 0.0) for pr in products)
+                else:
+                    value = sum(v for (y, off, pr), v in d["imports_by_office"].items() if y == year and pr in products and off not in named)
+                ws.cell(row=row, column=first_year + ENTRY_YEARS.index(year), value=value).number_format = BN_FORMAT
+            ws.cell(row=row, column=last - 1, value=ENTRY_SOURCE)
+            ws.cell(row=row, column=last, value={"Komatipoort": "The only recorded entry from the Maputo and Matola side.",
+                                                 "Durban": "Includes fuel for the inland pipeline and for the coast."}.get(office or "", ""))
+            fill(row, "observation")
         row += 1
-        write(row, year, year, "calendar year", bold=True)
-    row += 2
-    title(row, "Months")
-    for month in listed:
+        ws.cell(row=row, column=1, value="All offices")
+        for year in ENTRY_YEARS:
+            c = here(year)
+            ws.cell(row=row, column=first_year + ENTRY_YEARS.index(year), value=f"=SUM({c}{top}:{c}{row - 1})").number_format = BN_FORMAT
+        ws.cell(row=row, column=last - 1, value="Sum of the rows above; equals SARS national imports on the History sheet")
+        fill(row, "formula", bold=True)
         row += 1
-        write(row, month, month, "month")
-    ws.freeze_panes = "B5"
+        ws.cell(row=row, column=1, value="Durban share")
+        for year in ENTRY_YEARS:
+            c = here(year)
+            ws.cell(row=row, column=first_year + ENTRY_YEARS.index(year), value=f'=IF({c}{row - 1}=0,"",{c}{top}/{c}{row - 1})').number_format = "0%"
+        ws.cell(row=row, column=last - 1, value="Calculated: Durban over all offices")
+        fill(row, "formula")
+    ws.freeze_panes = "C5"
 
 
 def _table(wb, title: str, heading: str, sub_heading: str, header: list[str], widths: list[float], body: list[list]):
@@ -1407,7 +1427,7 @@ def sources_sheet(wb) -> None:
         "fuel_sales_fiasa": "History section 4: FIASA comparison row",
         "energy_balance_department": "History section 3 and Sector history: production and diesel by sector",
         "oil_balance_jodi": "History section 3: refinery output reported to JODI (comparison only, not used)",
-        "port_liquid_bulk_tnpa": "DR04 ports: liquid bulk landed at each port, by month and calendar year",
+        "fuel_trade_sars_by_office": "DR04 entry points: petrol and diesel imports by customs office",
         "refinery_output_operators": "History section 3: operators' reported output",
         "fuel_levy_revenue_raf": "History section 5: litres levied",
         "activity_statssa_monthly": "Sector history: mining and manufacturing volume indices",
@@ -1487,7 +1507,7 @@ def main() -> int:
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 is still set to FIASA on Nigel's sheet, because the department has no 2024 "
                    "figure to switch to. The added sheets do not use FIASA for any year. For Nigel to decide.")
-    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 ports, Power fleet, Vehicle history, HML response, Gap status, "
+    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 entry points, Power fleet, Vehicle history, HML response, Gap status, "
                    "Checks, History sources. No other cell changed.")
 
     history_rows = history_sheet(wb, d)
@@ -1496,7 +1516,7 @@ def main() -> int:
     use_rows = diesel_by_use_sheet(wb, d, history_rows, sector_rows)
     demand_by_use_sheet(wb, history_rows, use_rows)
     dr04_routes_sheet(wb)
-    dr04_ports_sheet(wb, d)
+    dr04_entry_sheet(wb, d)
     power_fleet_sheet(wb, d)
     vehicle_sheet(wb, d, history_rows)
     lever_response_sheet(wb)

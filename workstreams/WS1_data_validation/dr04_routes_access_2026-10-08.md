@@ -1,111 +1,103 @@
-# DR04 Routes and access: evidence so far, 8 October 2026
+# DR04 Routes and access: evidence, 8 October 2026
 
 For Nigel's review. Answers request DR04 in
 `output/delivered/investment_bridge_2026_10_08/data_request.csv` and milestone
 M3: port and pipeline limits, route access, and matched delivered costs to the
-same destinations.
+same destinations. **Petrol and diesel only.**
 
-Status: **started; the Durban to Gauteng pipeline route is documented, the
-rest is not.** 45 facts are taken from original documents, 2 are calculated,
-and 8 lines are open. No matched delivered-cost comparison is possible yet.
+Status: **the Durban to Gauteng pipeline route and the entry points are
+documented; a matched delivered-cost table cannot be built yet.** 27 facts are
+read from original documents or registered inputs, 2 are calculated, and
+6 lines are open.
 
-**Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`,
-sheet **DR04 routes** (every fact, grouped, with source, page and open gap; open
-lines in yellow) and sheet **DR04 ports** (liquid bulk landed at each port by
-calendar year and by month).
+**Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
 
-Evidence table: `dr04_routes_access_evidence_2026-10-08.csv`, one row per
-fact, with its source, the original file, the page and the open gap.
+- Sheet **DR04 routes**: every fact, grouped, with status, source, page and
+  open gap. Open lines are yellow.
+- Sheet **DR04 entry points**: petrol and diesel imports by customs office,
+  2014 to 2025, in billion litres.
+
+Evidence table behind the first sheet: `dr04_routes_access_evidence_2026-10-08.csv`.
 Originals: `external/data/raw/routes_access_20261008/` (with a manifest of
 addresses and checksums) and `external/data/raw/vopak_storage_20261006/`.
 
-## What the documents establish
+## Petrol and diesel only
 
-**The pipeline from Durban to Gauteng**
+The tables show only facts about petrol and diesel, or about the route itself
+(a pipeline's capacity, a tariff, a site's connections). 26 facts that mix
+in other products are kept in the evidence file, marked "other products
+included", and are not shown: the port authority's liquid bulk tonnage (all
+liquids, crude and chemicals included), Transnet's pipeline volumes (crude and
+jet included) and its regulated revenue for the whole system.
+
+## The pipeline from Durban to Gauteng
 
 | Fact | Value | Source |
 |---|---|---|
 | Trunk line capacity | 148 million litres a week, as stated in 2020 | Transnet Pipelines 2020 report, PDF p.3 |
 | The same, over a year | 7.7 bn litres (calculated; every week at full rate) | — |
 | Inland accumulation at Jameson Park | 180 million litres, since December 2017 | Same |
-| Products | Two diesel grades, two petrol grades, jet fuel | Same |
+| Products on the trunk line | Two diesel grades, two petrol grades, jet fuel | Same |
 | Old Durban to Johannesburg line | Being decommissioned in 2020 | Same |
-| Volumes on all Transnet petroleum lines | 17.8 bn litres (year to March 2020); 15.2 (2024); 13.4 (2025) | 2020 report; Transnet Integrated Report 2025, PDF p.26 |
-| Share of inland refined product by pipeline | More than 70%, as stated in 2020 | 2020 report |
 
-**What the pipeline costs**
+## What the pipeline costs
 
-| Fact | Value | Source |
+| Year | Tariff, Durban to Alrode, cents a litre | Basis |
 |---|---|---|
-| Revenue the regulator allows | R7.2 bn (2024/25), R7.8 bn (2025/26), R8.3 bn (2026/27) | NERSA media statement, 15 April 2025 |
-| Effect on the fuel price | +5.23 cents a litre in 2025/26, +3.80 in 2026/27 | Same |
-| Regulated price difference, Gauteng less coast, diesel | 79.0 cents a litre (July 2024), 83.3 (July 2025) | Department's regulated prices, already held |
+| 2023/24 | 61.74 | NERSA statement of 15 March 2024, as quoted by Engineering News |
+| 2024/25 | 67.99 | Same; a 10.13% increase |
+| 2025/26 | 73.22 | Calculated: 67.99 plus the 5.23 increase in NERSA's statement of 15 April 2025 |
+| 2026/27 | 77.02 | Calculated: plus a further 3.80 |
 
-The regulator says it uses the pipeline tariff "as a proxy for the cost of
-transporting fuel from Durban to Johannesburg". The price difference between
-the coast and Gauteng is therefore the nearest public figure for the regulated
-cost of the route, about 83 cents a litre for diesel. It is an allowance in
-the price, not what a shipper pays a haulier or Transnet.
+The two calculated years assume the increase NERSA states for the fuel price
+is the change in this tariff, as it was in 2024/25. NERSA's own March 2024
+statement and its reasons for decision were not located, so the first two
+figures rest on a news report quoting the regulator word for word, and tariffs
+on other routes are not available.
 
-**Where imports enter**
+For comparison, the regulated diesel price is 79.0 cents a litre higher in
+Gauteng than at the coast in July 2024 and 83.3 in July 2025 (department
+prices). That is about 10 to 11 cents above the pipeline tariff in each year;
+what the rest covers has not been established.
 
-| Customs office | 2024, bn litres | 2025 | Share in 2025 |
-|---|---|---|---|
-| Durban | 11.84 | 13.16 | 78.8% |
-| Cape Town | 1.09 | 1.52 | 9.1% |
-| Richards Bay | 0.39 | 0.66 | 3.9% |
-| Komatipoort (road, from Mozambique) | 0.19 | 0.09 | 0.5% |
-| All offices | 14.79 | 16.70 | 100% |
+## Where petrol and diesel imports enter
 
-Petrol and diesel together, SARS customs. The office is where goods were
-cleared, not a berth or terminal record.
+Billion litres, petrol and diesel together, SARS customs by office of clearance:
 
-**Liquid bulk through the ports**
+| Entry point | 2023 | 2024 | 2025 | Share in 2025 |
+|---|---|---|---|---|
+| Durban | 13.29 | 11.84 | 13.16 | 78.8% |
+| Cape Town | 1.62 | 1.09 | 1.52 | 9.1% |
+| Richards Bay | 0.32 | 0.39 | 0.66 | 3.9% |
+| Mossel Bay | 1.16 | 0.62 | 0.52 | 3.1% |
+| East London | 0.36 | 0.53 | 0.43 | 2.6% |
+| Port Elizabeth | 0.34 | 0.14 | 0.32 | 1.9% |
+| Komatipoort (road, from Mozambique) | 0.25 | 0.19 | 0.09 | 0.5% |
+| All offices | 17.35 | 14.79 | 16.70 | 100% |
 
-| Fact | Value | Source |
+The sheet gives diesel and petrol separately from 2014. In 2025 Durban cleared
+73% of diesel imports and 95% of petrol imports.
+
+## Competing routes
+
+| Route | What the record shows | Source |
 |---|---|---|
-| Liquid bulk handled, all ports, years to March | 41.9 (2020), 41.8 (2021), 38.1 (2022), 35.5 (2023), 38.9 (2024) million kilolitres | Port authority reports 2023 and 2024, PDF p.9 |
-| Target for the year to March 2025 | 34.6 million kilolitres | 2024 report |
-| Planned at Island View, Durban | Berth 1 rebuilt and Berth 3 converted from dry bulk to liquid bulk, both dated 2026 | Port authority tariff application slides, September 2025, PDF p.14 |
-| Planned at Richards Bay | New liquid bulk berth 210 and the South Dunes liquid bulk development | Same, PDF pp.11-12 |
+| Maputo and Matola, by road through Komatipoort | Diesel: 0.27 bn litres in 2022, 0.19 in 2024, 0.08 in 2025. Petrol: 0.029 in 2022, almost nil since 2023. Together 0.5% of imports in 2025 | SARS customs |
+| Walvis Bay, by the Trans-Kalahari road | No petrol or diesel is recorded entering through the Namibian or Botswanan border posts in any year from 2019 to 2025 | SARS customs |
+| Walvis Bay storage | 45 million litres of diesel and 20 of petrol planned, built for Namibia's own supply | Namibian Ports Authority news item, undated |
+| Other South African ports | Cape Town 1.52, Richards Bay 0.66, Mossel Bay 0.52, East London 0.43, Port Elizabeth 0.32 bn litres in 2025 | SARS customs |
+| Inland supply from Natref and Secunda | Not started; no production by product after 2021 | DR08 |
 
-Those volumes are all eight ports and all liquids together.
+Reading: on the customs record, Durban is by far the largest entry point, and
+the two routes that bypass South African ports barely feature. The Mozambique
+road route is small and has shrunk by two thirds since 2022, and the Namibian
+route is not used at all. Richards Bay is
+the one entry point that is growing, from 0.32 to 0.66 bn litres between 2023
+and 2025. This says where fuel entered, not what each route would cost, and
+it does not cover fuel that Maputo or Walvis Bay supply to neighbouring
+countries which South African terminals might otherwise serve.
 
-**Liquid bulk by port (port statistics, calendar years, million tons)**
-
-| Port | Landed 2024 | Landed 2025 | All movements 2025 |
-|---|---|---|---|
-| Durban | 19.88 | 20.70 | 22.42 |
-| Saldanha | 5.31 | 5.12 | 5.12 |
-| Richards Bay | 1.76 | 2.16 | 3.51 |
-| Cape Town | 1.43 | 1.90 | 3.49 |
-| East London | 0.57 | 0.52 | 1.23 |
-| Mossel Bay | 0.69 | 0.49 | 0.51 |
-| Port Elizabeth | 0.16 | 0.32 | 0.85 |
-| Ngqura | 0.04 | 0.06 | 0.06 |
-| All eight ports | 29.84 | 31.27 | 37.19 |
-
-Durban landed 66% of all liquid bulk by weight in 2025 and has 8 liquid bulk berths; Richards Bay
-has 2. The statistics are in tons and cover every liquid (crude oil, fuels, gas
-and chemicals), so they do not give fuel litres. Source: the port authority's
-port statistics and Our Ports page at https://www.transnet.net/TNPA.
-
-**Monthly series.** The port authority publishes a summary for each month from
-July 2024. All 26 months to August 2026 were downloaded; 25 are usable.
-Durban landed between 1.23 and 2.46 million tons a month, 1.69 on average.
-Three of the publisher's files are wrong or odd, and none is filled in:
-
-| Month | Problem | Treatment |
-|---|---|---|
-| January 2025 | The link leads to a container report | No figures; shown as not published |
-| April 2026 | The heading says cargo invoiced, not handled | Kept, with a note |
-| May 2026 | The heading says May 2025, but the figures differ from May 2025 | Kept as May 2026, with a note |
-
-Staged as `assumptions/2026/timeseries/port_liquid_bulk_tnpa.csv` by
-`python -m lfm.scripts.stage_tnpa --vintage 2026 --fetch`; originals in
-`external/data/raw/tnpa/`.
-
-**Access at the two Vopak sites**
+## Access at the two Vopak sites
 
 | Site | Receives by | Dispatches by | Source |
 |---|---|---|---|
@@ -113,42 +105,40 @@ Staged as `assumptions/2026/timeseries/port_liquid_bulk_tnpa.csv` by
 | Durban, Island View | Ship (own lines at jetties 1, 2 and 4; industry lines at berths 6, 7 and 8) and pipeline transfer from neighbours | Mainly road; also ship, barge and pipeline transfer | Vopak's allocation mechanism filed with NERSA, pp.4-6 (an old, undated document) |
 
 The regulator records that Lesedi's contracted customers, with one exception,
-are shippers on the Transnet pipeline from Durban (2024/25).
+are shippers on the Transnet pipeline from Durban (2024/25). Durban has 8
+liquid bulk berths and Richards Bay 2 (port authority's Our Ports page).
 
 ## One comparison worth Nigel's attention, not a finding
 
-Durban cleared 13.2 bn litres of petrol and diesel imports in 2025. The
-trunk line's stated capacity works out at about 7.7 bn litres a year, and
-all Transnet petroleum lines together moved 13.4 bn litres in the year to
-March 2025, crude included. If those figures are right and current, a large
-part of what lands at Durban cannot go inland by pipeline and must be used on
-the coast or move by road or rail. The capacity figure is from 2020 and the
-volumes include crude, so this is a lead to check, not a conclusion.
+Durban cleared 13.2 bn litres of petrol and diesel imports in 2025. The trunk
+line's stated capacity works out at about 7.7 bn litres a year, and it also
+carries jet fuel. If the capacity figure is still right, close to half of the
+petrol and diesel landed at Durban cannot go inland by pipeline and must be
+used on the coast or move by road or rail. The capacity figure is from 2020,
+so this is a lead to check, not a conclusion.
 
 ## Open, by owner
 
 | Gap | Owner | What would close it |
 |---|---|---|
-| Pipeline tariff by route (Durban to Alrode and others), cents a litre | Manish | NERSA's reasons for decision on the 2025-27 tariffs |
-| Today's trunk line capacity, and refined product volumes on it | Manish | A later Transnet or NERSA document; the 2020 figure is the latest found |
-| Liquid-bulk capacity in kilolitres and tankage at Island View and Richards Bay | Manish | The port authority's Durban brochure and framework plan; not on its pages at transnet.net/TNPA. Ask the authority or Vopak |
-| Fuel by product through each port | Nigel to coordinate | The port statistics are tons of all liquids; a product split needs the port authority or terminal operators |
-| Road and rail rates, Durban to Gauteng | Nigel to coordinate | Vopak, a haulier or Transnet Freight Rail; none is public |
+| Today's trunk line capacity, and petrol and diesel volumes on it | Manish | A later Transnet or NERSA document; the 2020 figure is the latest found |
+| Pipeline tariff on routes other than Durban to Alrode; NERSA's own statements | Manish | NERSA's reasons for decision; not located |
+| What makes up the 10 to 11 cents between the tariff and the regulated price difference | Manish | The department's price structure by zone |
+| Petrol and diesel through each port, by terminal | Nigel to coordinate | The port authority's statistics are all liquids in tons; a product split needs the authority or terminal operators |
+| Island View capacity and tankage for petrol and diesel | Nigel to coordinate | Port authority or Vopak; the brochure is not on the authority's site |
+| Road and rail rates, Durban to Gauteng and Matola to Gauteng | Nigel to coordinate | Vopak or a haulier; none is public |
 | Whether Vopak Durban can inject into the trunk line directly | Nigel to coordinate | Vopak operations |
-| Maputo and Matola, Walvis Bay, and inland supply from Natref and Secunda | Manish | Not started |
+| Petrol and diesel storage at Matola; fuel that Maputo and Walvis Bay supply to neighbours | Manish | Not found for petrol and diesel alone |
+| Inland supply from Natref and Secunda | Manish | DR08 |
 | Matched delivered cost to the same destination | Manish, once the above are in | Same product, date, destination and tax basis for each route |
-
-## Not used
-
-Figures seen only in search summaries are recorded in the evidence table as
-"not verified" and are not used: Durban's liquid-bulk capacity of 19.5 million
-kilolitres a year with 10 berths and 962 tanks, and Richards Bay's two berths
-and 3 million kilolitres a year. The port authority's site did not respond, so
-the original documents could not be opened.
 
 ## Checks
 
 - Every "observed" row was read from the original document named, at the page
-  given.
-- Import and price figures are computed from registered inputs already held.
-- No model input changed; model results are unchanged.
+  given, or computed from a registered input.
+- The entry points sheet adds to national customs imports for each fuel in
+  every year (tested).
+- A first version of the two Mozambique road rows dropped years in which the
+  Komatipoort office cleared fuel in fewer than twelve months; corrected
+  before commit.
+- No model input read by the engine changed; model results are unchanged.

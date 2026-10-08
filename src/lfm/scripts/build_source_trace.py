@@ -181,7 +181,7 @@ TRACE: dict[str, tuple[str, ...]] = {
         "Transnet National Ports Authority", "https://www.transnet.net/SubsiteRender.aspx?id=24332214",
         "tnpa-cargo-summary-<period>.pdf, July 2024 to August 2026; calendar years 2024 and 2025",
         "on manish-branch (external/data/raw/tnpa/)", "scripted download and extract",
-        "python -m lfm.scripts.stage_tnpa --vintage 2026 --fetch", "tnpa.parse_liquid_bulk", "workshop workbook, DR04 ports sheet",
+        "python -m lfm.scripts.stage_tnpa --vintage 2026 --fetch", "tnpa.parse_liquid_bulk", "none: all liquids, so not shown in the petrol and diesel tables",
         "January 2025 missing (publisher's link is wrong)",
         "Tons of all liquids, not fuel by product. Two months carry a note on the publisher's heading.",
         "Nigel: review"),
