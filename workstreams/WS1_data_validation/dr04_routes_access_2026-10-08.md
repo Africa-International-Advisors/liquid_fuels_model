@@ -37,7 +37,7 @@ jet included) and its regulated revenue for the whole system.
 
 | Fact | Value | Source |
 |---|---|---|
-| Trunk line capacity | 148 million litres a week, as stated in 2020 | Transnet Pipelines 2020 report, PDF p.3 |
+| Trunk line capacity | 148 million litres a week, as stated in 2020. This is the figure used | Transnet Pipelines 2020 report, PDF p.3 |
 | The same, over a year | 7.7 bn litres (calculated; every week at full rate) | — |
 | Inland accumulation at Jameson Park | 180 million litres, since December 2017 | Same |
 | Products on the trunk line | Two diesel grades, two petrol grades, jet fuel | Same |
@@ -162,7 +162,7 @@ so this is a lead to check, not a conclusion.
 
 | Gap | Owner | What would close it |
 |---|---|---|
-| Today's trunk line capacity, and petrol and diesel volumes on it | Manish | A later Transnet or NERSA document; the 2020 figure is the latest found |
+| Petrol and diesel volumes on the trunk line | Manish | A Transnet or NERSA document that splits volumes by line and product |
 | Pipeline tariff on routes other than Durban to Alrode; NERSA's own statements | Manish | NERSA's reasons for decision; not located |
 | What makes up the 10 to 11 cents between the tariff and the regulated price difference | Manish | The department's price structure by zone |
 | Petrol and diesel through each port, by terminal | Nigel to coordinate | The port authority's statistics are all liquids in tons; a product split needs the authority or terminal operators |

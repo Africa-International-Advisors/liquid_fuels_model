@@ -66,6 +66,30 @@ defined separately. The 6 October deck was corrected to match and moved to
 - Every selected figure in the balance file, and every row on the added workbook sheets, names its source.
 - Detail: `workstreams/WS1_data_validation/dr01_national_balance_2026-10-08.md` and its evidence table.
 
+## DR01 and DR04: what is missing (8 October, evening)
+
+Workbook sheets: DR01 balance, Demand by use, DR04 routes, DR04 entry points, DR04 transport cost. Notes:
+`workstreams/WS1_data_validation/dr01_national_balance_2026-10-08.md` and `dr04_routes_access_2026-10-08.md`.
+
+**DR01 National balance: data not available.** The work is done as far as the sources go. Three things are
+not published by anyone, so they cannot be filled in:
+
+- Production after 2021 (the department's last energy balance is 2021)
+- Sales for 2024 and 2025 (the department's sales data stops at 2023)
+- Stocks, for any year
+
+**DR04 Routes and access: not done.**
+
+- Commercial road and rail rates: not published; needs Vopak, a haulier or Transnet
+- Island View capacity for petrol and diesel: needs the port authority or Vopak
+- Whether Vopak Durban can inject straight into the pipeline: needs Vopak
+- Pipeline tariffs on routes other than Durban to Johannesburg
+- Petrol and diesel storage at Matola
+- The delivered-cost comparison itself, which depends on the rates above
+
+Pipeline capacity uses Transnet's 2020 figure: 148 million litres a week on the Durban to Jameson Park trunk
+line, about 7.7 bn litres a year.
+
 ## Power generation fleet (your message of 7 October)
 
 Deck pages 11 and 12; workbook sheet Power fleet; input `assumptions/2026/infrastructure/power_fleet_diesel.csv`.
