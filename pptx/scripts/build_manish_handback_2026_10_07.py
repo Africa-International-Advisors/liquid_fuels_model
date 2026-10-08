@@ -561,7 +561,7 @@ HANDBACK_NOTE = ("Source: manish_handback_2026-10-07.md and manish_decision_log_
                  "Statuses are the analyst's; nothing is accepted until Nigel decides.")
 count = {status: sum(r["status"] == status for r in DECISION_ROWS) for status in ("Ready", "Proposed", "Unresolved")}
 
-s = page(4, "All five priorities have outputs to review; the vehicle block is still to do",
+s = page(4, "All five priorities have outputs to review",
          "Status against the five priorities of 7 October | ready, proposed or partial")
 table(s, [
     ["Priority", "Status", "Ready to review", "Not done or not available"],
@@ -579,8 +579,8 @@ table(s, [
      "No Vopak operating data; other operators' sites not done"],
     ["5 Hand-back", "Ready",
      "This deck, the hand-back note, a 21-item decision log, the workshop workbook with history from 2012, and "
-     "224 pack figures on pages 4-10 checked with none differing",
-     "Pack pages 12-31 not checked; vehicle block not done"],
+     "288 figures in the current pack checked with none differing",
+     "Vehicle stock by age and by fuel within class is in no source held"],
 ], [1.9, 1.75, 4.6, 3.4], height=3.9, size=10.5)
 text(s, "New evidence today: Road Accident Fund accounts give 24.4 bn litres of petrol and diesel levied in the year "
         "to March 2025, against 20.8 recorded as sold, and show volumes rising where FIASA shows a fall.",
@@ -611,9 +611,12 @@ table(s, [
      "per unit of activity",
      "Mining swings between 11 and 17 million litres per index point; indicative 2024: mining 1.40, agriculture "
      "0.96 bn litres"],
+    ["Vehicle history", "Registered vehicles, new sales, retirements, drivetrain and fuel split beside the model's "
+     "settings",
+     "Cars are 65-71% of new sales against 78% in the model; petrol per vehicle is 1,056 litres against 1,615 implied"],
     ["Checks", "66 values on the Evidence sheet recomputed from registered inputs", "All match"],
     ["History sources", "Publisher, link, original file, extract and refresh command for each dataset", ""],
-], [2.0, 5.1, 4.55], height=3.9, size=10)
+], [2.0, 5.1, 4.55], height=4.0, size=9.5)
 text(s, "One change to an existing sheet: source selection for 2022 and 2023 is set to the department instead of "
         "FIASA. 2024 stays on FIASA, unverified. 2025 has no national sales figure from any source.",
      LEFT, 6.3, WIDTH, 0.6, 11)

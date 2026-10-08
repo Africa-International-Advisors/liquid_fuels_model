@@ -2,7 +2,7 @@
 
 Answers the five priorities on page 24 of the Convergence pack (Manish's focus,
 7 October) and the 7 October check-in. All work is on `manish-branch`; nothing
-has gone to `main`. `main` was merged in four times today, last at `d6dcfce`.
+has gone to `main`. `main` was merged in five times, last at `37ffa0b`.
 
 Read first:
 
@@ -21,7 +21,7 @@ Read first:
 | 2 | Forecast levers | Three fuel tables with baseline and low / medium / high for 2030 and 2035 | Proposed | All 20 levers have a baseline, rationale and source; 39 of 120 values have a proposed replacement; seven levers added | Several baselines are placeholders; freight is in tonnes; replacements await your challenge |
 | 3 | Sector baselines | Agriculture and industry starting values; overlaps | Proposed | 1.06 and 1.50 bn litres with the forecast effect; overlap table by model segment | On-road overlap not sized; power generation is 2 bn litres above reported burn |
 | 4 | Tank handling | Site assumptions, evidence and estimates labelled | Proposed | Lesedi and Durban, every value marked; eight marked to confirm with the client | No Vopak operating data; other operators' sites not done |
-| 5 | Reviewable hand-back | Figures checked, hand-back refreshed, ready / proposed / unresolved listed | Ready | This note, the decision log, the deck, and 224 pack figures on pages 4-10 checked with none differing | Pack pages 12-31 not checked; vehicle block: see below |
+| 5 | Reviewable hand-back | Figures checked, hand-back refreshed, ready / proposed / unresolved listed | Ready | This note, the decision log, the deck, and 288 figures in the current 30-page pack checked with none differing | Vehicle block: observed against the model, see below |
 
 ## Three review corrections from 6 October
 
@@ -40,7 +40,7 @@ defined separately. The 6 October deck was corrected to match and moved to
 | Litres per unit of activity for mining, manufacturing, agriculture | Done on the Sector history sheet; mining swings 11-17 million litres per index point, so treat with care |
 | FIASA as a data point only | Done: department selected for 2022-2023; FIASA shown as comparison rows |
 | Python builds it, Excel shows it with formulas | Done: one command; your sheets are unchanged apart from eight source-selection cells |
-| Vehicle block with sources | Not done |
+| Vehicle block with sources | Done on the Vehicle history sheet; stock by age and by fuel within class is not available |
 | Jet | Parked, as agreed |
 
 ## New evidence found today
@@ -56,6 +56,16 @@ defined separately. The 6 October deck was corrected to match and moved to
 - **Power.** The model's 2024 diesel for generation is 3.58 bn litres against
   about 1.6 at the peak of load-shedding.
 
+## Vehicle block: where the model's settings differ from what is observed
+
+| Item | Observed | Model |
+|---|---|---|
+| Cars' share of new sales | 65-71% | 78% |
+| Light commercial share of new sales | 24-29% | 18% |
+| Cars retired each year, % of stock | 4.3 falling to 2.4 (2022-2025) | 4.0% |
+| Diesel vehicles registered, December 2023 | 3.34 million | 3.66 million implied by the split |
+| Petrol per registered petrol vehicle, 2023 | 1,056 litres | 1,615 litres |
+
 ## Input changes on the branch that need your decision
 
 | Change | Effect on results | Marked |
@@ -67,7 +77,7 @@ Nothing else on the branch changes model results.
 
 ## Checks
 
-- `python -m pytest -q`: 174 passed, 1 skipped.
+- `python -m pytest -q`: 175 passed, 1 skipped.
 - `python -m lfm check --vintage 2026`: coverage passed, 54 open exceptions,
   so output remains draft.
 - Both decks exported through PowerPoint and inspected; the workbook was
@@ -75,10 +85,10 @@ Nothing else on the branch changes model results.
 
 ## Not done
 
-- Pack pages 12 to 31 are not checked. Pages 4 to 10 are: 224 figures, all match
-  (`workstreams/WS3_reporting_delivery/pack_figure_check_2026-10-07.md`, with seven points on labels).
-- Vehicle block: opening stock, new sales, scrapping and electrification are
-  not yet lined up against sources.
+- Pack pages without charts of observations are not checked. The rest are: 288 figures, all match
+  (`workstreams/WS3_reporting_delivery/pack_figure_check_2026-10-08.md`, with seven points on labels).
+- Vehicle block: stock by age and by fuel within each class is not in any source held, so the
+  cohort starting point cannot be checked. The rest is on the Vehicle history sheet.
 - The Reatile workbook's own demand history is about 1 bn litres above the
   department's for diesel in 2022 and 2023, and for petrol in 2023. Not traced.
 - The model run inside the workshop workbook is from `main`.
