@@ -1,0 +1,73 @@
+[
+  {
+    "feedback": "Storytelling titles, icons and consistent opening rows",
+    "status": "Applied",
+    "evidence": "Main pages 2–14",
+    "owner": "Nigel / analyst; commercial team for tariffs and operating data",
+    "resolution_trigger": "Before related numerical scenario adoption or investment reliance"
+  },
+  {
+    "feedback": "Durban–Lesedi into Gauteng; imported and domestic fuel; turnover central",
+    "status": "Applied",
+    "evidence": "Opening, SCR, matrix, corridor and asset pages",
+    "owner": "Nigel / analyst; commercial team for tariffs and operating data",
+    "resolution_trigger": "Before related numerical scenario adoption or investment reliance"
+  },
+  {
+    "feedback": "All levers linked to nine worlds",
+    "status": "Framework applied",
+    "evidence": "D1–D5, S1–S4, T1–T5 and F1 register",
+    "remaining": "Numeric L/M/H calibration and nine-world terminal/financial outcomes",
+    "owner": "Nigel / analyst; commercial team for tariffs and operating data",
+    "resolution_trigger": "Before related numerical scenario adoption or investment reliance"
+  },
+  {
+    "feedback": "Demand and import absolute changes and CAGR",
+    "status": "Applied",
+    "evidence": "Comparable 2013–2023 sales and 2020–2025 import endpoints",
+    "owner": "Nigel / analyst; commercial team for tariffs and operating data",
+    "resolution_trigger": "Before related numerical scenario adoption or investment reliance"
+  },
+  {
+    "feedback": "Route competition map, delivered price and bearable logistics charge",
+    "status": "Map and equations applied",
+    "remaining": "Rail and domestic route validation, comparable tariffs, destination prices and access rights",
+    "owner": "Nigel / analyst; commercial team for tariffs and operating data",
+    "resolution_trigger": "Before related numerical scenario adoption or investment reliance"
+  },
+  {
+    "feedback": "Turnover and utilisation scenarios",
+    "status": "Existing registered 1/2/3 monthly gross-turn sensitivity shown",
+    "remaining": "Eligible working tankage, realised flows, achievable turn limits, peaks and occupancy",
+    "owner": "Nigel / analyst; commercial team for tariffs and operating data",
+    "resolution_trigger": "Before related numerical scenario adoption or investment reliance"
+  },
+  {
+    "feedback": "Transport time series",
+    "status": "Freight and BEV/PHEV histories shown; efficiency diagnostics distinguished",
+    "remaining": "OEM historical efficiency, adoption fleet shares and three calibrated demand paths",
+    "owner": "Nigel / analyst; commercial team for tariffs and operating data",
+    "resolution_trigger": "Before related numerical scenario adoption or investment reliance"
+  },
+  {
+    "feedback": "Power time series and generation balance",
+    "status": "Fuel, EAF and OCGT GWh shown",
+    "remaining": "Comparable load shedding, private backup, demand and wind/solar/gas schedules; dispatch calibration",
+    "owner": "Nigel / analyst; commercial team for tariffs and operating data",
+    "resolution_trigger": "Before related numerical scenario adoption or investment reliance"
+  },
+  {
+    "feedback": "Stacked supply graph and L/M/H worlds",
+    "status": "Existing capacity stack reused with correct basis and plant lever annotations",
+    "remaining": "Plant output/yield history and three numerical supply paths; capacity is not production",
+    "owner": "Nigel / analyst; commercial team for tariffs and operating data",
+    "resolution_trigger": "Before related numerical scenario adoption or investment reliance"
+  },
+  {
+    "feedback": "Consistent chart/panel alignment and visible so-what",
+    "status": "Applied",
+    "evidence": "Demand, import, route and turnover exhibits",
+    "owner": "Nigel / analyst; commercial team for tariffs and operating data",
+    "resolution_trigger": "Before related numerical scenario adoption or investment reliance"
+  }
+]

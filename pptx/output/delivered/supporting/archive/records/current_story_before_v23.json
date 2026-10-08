@@ -1,0 +1,23 @@
+{
+  "current_version": 22,
+  "slides": 33,
+  "files": [
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_v22.pptx",
+      "bytes": 2971554,
+      "sha256": "80f5b9e5641f77e39a1a0f6817e22a152cea561943e812b165390a3ffb43c147"
+    },
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_v22.pdf",
+      "bytes": 2187699,
+      "sha256": "fb55b1674667173fd6e58666483ec6dde03ecf2e973db54c891666e28d7f8b1b"
+    }
+  ],
+  "story": "pptx/story/sa_market_story_v22_2026_10_08.json",
+  "qa": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v22/checks.json",
+  "archive": "pptx/output/delivered/supporting/archive/records/cleanup_manifest.json",
+  "layout_revision": 3,
+  "canonical_author": "Nigel",
+  "canonical_source": "pptx/output/delivered/supporting/SA_Market_Story_v18_nigel.pptx",
+  "latest_change": "Agreed titles 2/4; data request p16; baseline diagnostic p32; six-step screening implementation p33. Commercial calibration open."
+}

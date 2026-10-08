@@ -1,5 +1,8 @@
 # Map source
 
+For newly revised maps, use the [shared geospatial reference](GEOSPATIAL_REFERENCE.md)
+and its downloaded GeoJSON catalogue. This defines projection, aspect ratio and provenance.
+
 `ne_110m_admin_0_countries.geojson` is Natural Earth public-domain country geometry,
 retrieved 1 October 2026 from the Natural Earth vector repository:
 https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson

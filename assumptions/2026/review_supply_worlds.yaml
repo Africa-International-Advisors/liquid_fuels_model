@@ -1,0 +1,20 @@
+capacity_cases:
+  register_id: REG-SUPPLY-CAPACITY-WORLDS
+  exception_id: EXC-SUPPLY-REVIEW-2026-10-06
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  units: categorical capacity sensitivity; not production
+  source: Authored 8 October 2026 to implement future-stack review. Low excludes Natref at the existing 2036 horizon without assuming a closure date; Medium holds the latest reported footprint; High adds the existing registered SAPREF proposal. Other plants held unchanged. Not approved market-world forecasts.
+  last_updated: '2026-10-08'
+  shared: true
+  provisional: true
+  value:
+    Low:
+      excluded_assets: [Natref]
+      include_sapref_proposal: false
+    Medium:
+      excluded_assets: []
+      include_sapref_proposal: false
+    High:
+      excluded_assets: []
+      include_sapref_proposal: true

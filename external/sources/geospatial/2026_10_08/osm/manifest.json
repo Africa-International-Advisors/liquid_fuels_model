@@ -1,0 +1,72 @@
+[
+  {
+    "country": "south-africa",
+    "url": "https://download.geofabrik.de/africa/south-africa-261006.osm.pbf",
+    "retrieved_at": "2026-10-07T23:19:37.294761+00:00",
+    "path": "external/sources/geospatial/2026_10_08/osm/south-africa.osm.pbf",
+    "bytes": 421917130,
+    "sha256": "5b1439a205a3c86102e1bdd265df58b0eb02d49d00365d5de46e206a81764dde",
+    "licence": "ODbL 1.0",
+    "attribution": "OpenStreetMap contributors; Geofabrik",
+    "download": "HTTP byte ranges checked against Content-Range"
+  },
+  {
+    "country": "namibia",
+    "url": "https://download.geofabrik.de/africa/namibia-latest.osm.pbf",
+    "retrieved_at": "2026-10-07T23:05:03.239720+00:00",
+    "http_headers": {
+      "Date": "Wed, 07 Oct 2026 01:49:41 GMT",
+      "Server": "Apache",
+      "Last-Modified": "Wed, 07 Oct 2026 01:06:01 GMT",
+      "ETag": "\"343a79b-65d35b7fce85c\"",
+      "Accept-Ranges": "bytes",
+      "Content-Length": "54765467",
+      "Cache-Control": "max-age=63072000, public",
+      "Content-Type": "application/octet-stream",
+      "Age": "76323",
+      "Cache-Status": "download-proxy12;hit;detail=match",
+      "Via": "1.1 download-proxy12 (squid/6.14)",
+      "Connection": "close"
+    },
+    "path": "external/sources/geospatial/2026_10_08/osm/namibia.osm.pbf",
+    "bytes": 54765467,
+    "sha256": "54f2591d9480545639e86d9926fd6eb273657301c894c4b3f5f4aa3afac8fc3e",
+    "licence": "ODbL 1.0",
+    "attribution": "OpenStreetMap contributors; Geofabrik"
+  },
+  {
+    "country": "botswana",
+    "url": "https://download.geofabrik.de/africa/botswana-latest.osm.pbf",
+    "retrieved_at": "2026-10-07T23:10:48.527178+00:00",
+    "http_headers": {
+      "Date": "Wed, 07 Oct 2026 01:49:44 GMT",
+      "Server": "Apache",
+      "Last-Modified": "Wed, 07 Oct 2026 01:13:25 GMT",
+      "ETag": "\"53f2f1c-65d35d26b6b58\"",
+      "Accept-Ranges": "bytes",
+      "Content-Length": "88026908",
+      "Cache-Control": "max-age=63072000, public",
+      "Content-Type": "application/octet-stream",
+      "Age": "76522",
+      "Cache-Status": "download-proxy12;hit;detail=match",
+      "Via": "1.1 download-proxy12 (squid/6.14)",
+      "Connection": "close"
+    },
+    "path": "external/sources/geospatial/2026_10_08/osm/botswana.osm.pbf",
+    "bytes": 88026908,
+    "sha256": "57846e7696ba3d0fb436ccbf61c3da89584134afd872efd818d3887739f3cc63",
+    "licence": "ODbL 1.0",
+    "attribution": "OpenStreetMap contributors; Geofabrik"
+  },
+  {
+    "country": "mozambique",
+    "url": "https://download.geofabrik.de/africa/mozambique-261006.osm.pbf",
+    "retrieved_at": "2026-10-07T23:22:35.540676+00:00",
+    "path": "external/sources/geospatial/2026_10_08/osm/mozambique.osm.pbf",
+    "bytes": 255471661,
+    "sha256": "a90a29e9c0e92e8c61e525fdde01d36eb9d5af1e735253d16f22eec6ac576e39",
+    "licence": "ODbL 1.0",
+    "attribution": "OpenStreetMap contributors; Geofabrik",
+    "download": "HTTP byte ranges checked against Content-Range"
+  }
+]

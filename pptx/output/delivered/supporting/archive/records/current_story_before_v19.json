@@ -1,0 +1,20 @@
+{
+  "current_version": 18,
+  "slides": 30,
+  "files": [
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_v18.pdf",
+      "bytes": 2069727,
+      "sha256": "feb8f593ed390d54dc05429c4c5910911d50455e7d242ebba3af65fb00b988c9"
+    },
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_v18.pptx",
+      "bytes": 2867545,
+      "sha256": "ea47448d0da2084f1ad29e734849f8a84bbd838f24dbbc4c4c6a15a3f7570160"
+    }
+  ],
+  "story": "pptx/story/sa_market_story_v18_2026_10_08.json",
+  "qa": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v18/checks.json",
+  "archive": "pptx/output/delivered/supporting/archive/records/cleanup_manifest.json",
+  "layout_revision": 3
+}

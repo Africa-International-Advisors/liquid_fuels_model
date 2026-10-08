@@ -1,0 +1,584 @@
+{
+  "style_reference": "pptx/output/delivered/Vopak_Convergence_current.pptx",
+  "cover_title": "South Africa\nliquid fuels\nmarket story",
+  "cover_subtitle": "An import and inland distribution opportunity",
+  "cover_status": "SCR and nine-world framework; calibration pending",
+  "slides": [
+    {
+      "title": "Demand growth alone provides a weak foundation for Vopak’s investment case",
+      "section": 2,
+      "sub": "",
+      "chart": "01_demand.svg",
+      "takeaway": "Petrol fell 19% and diesel rose 9% over 2013–2023. Vopak’s opportunity therefore needs to be explained through product mix, import requirements and customer routes, as well as demand growth.",
+      "note": "Department fuel sales, 2013–2023, same-series comparison. FIASA 2024 shown separately; source definitions require reconciliation. Economic context and sector mechanisms: appendix pp16–18."
+    },
+    {
+      "title": "Power shortages and road freight have supported parts of diesel demand",
+      "section": 2,
+      "sub": "",
+      "headers": [
+        "Demand support",
+        "Historical evidence",
+        "What this establishes"
+      ],
+      "rows": [
+        [
+          "Power generation",
+          "Eskom’s own OCGT fuel use rose to 1,129.5m litres in FY2024, then fell to 679.1m in FY2025 as EAF improved.",
+          "The historical diesel market includes a material power-system component whose scale can change."
+        ],
+        [
+          "Road freight",
+          "The national payload series shows road carrying substantially more tonnage than rail.",
+          "Diesel use depends on how freight moves as well as how much the economy produces."
+        ],
+        [
+          "Demand interpretation",
+          "Mining and agriculture add sector-specific diesel exposure; aviation has a separate jet-fuel market.",
+          "A national GDP forecast alone cannot explain the product and activity mix that terminals serve."
+        ]
+      ],
+      "note": "Eskom 2025 integrated report (own-fleet diesel + kerosene); Stats SA freight payload. No causal diesel attribution from tonnes alone. Details: appendix pp18, 21–22."
+    },
+    {
+      "title": "Reduced domestic production has increased the importance of imported supply",
+      "section": 2,
+      "sub": "",
+      "chart": "10_trade.svg",
+      "takeaway": "The import opportunity can expand even with limited consumption growth. The trade trend and plant evidence support this mechanism; a reconciled product balance is still needed to quantify each plant’s contribution.",
+      "note": "SARS litre-reported petrol/diesel trade; CEF 10 Sep 2026 roadmap; PetroSA recommissioning scope; Sasol reporting. Excluded units/blends and stock changes prevent a complete balance.",
+      "side_title": "Domestic supply context",
+      "side_text": "Mossgas GTL has not operated since December 2020.\n\nSAPREF’s current roadmap starts with finished-product imports.\n\nSecunda and Natref output remains material to the domestic balance."
+    },
+    {
+      "title": "The import opportunity is distributed across competing routes into inland markets",
+      "section": 2,
+      "sub": "",
+      "headers": [
+        "Route",
+        "Position in the supply chain",
+        "Market implication"
+      ],
+      "rows": [
+        [
+          "Durban–Gauteng",
+          "Vopak’s coastal and inland terminals are linked through the Transnet multi-product pipeline. Durban also has road and rail access.",
+          "The relevant market extends beyond the port into inland customer demand."
+        ],
+        [
+          "Matola / Maputo",
+          "An alternative gateway in the review’s corridor comparison. Reach depends on destination and border logistics.",
+          "Compare the same product delivered to the same customer location."
+        ],
+        [
+          "Walvis Bay",
+          "A further gateway to test for reachable inland destinations. Distance and transit time constrain the comparison.",
+          "National imports cannot all be treated as volumes accessible through Durban."
+        ]
+      ],
+      "note": "Vopak terminal pages and existing corridor evidence. Alternative gateway coverage is a scope for comparison, not a finding that each route is competitive into Gauteng."
+    },
+    {
+      "title": "Vopak has assets at both ends of the Durban–Gauteng supply chain",
+      "section": 2,
+      "sub": "",
+      "headers": [
+        "Asset",
+        "Established position",
+        "Implication"
+      ],
+      "rows": [
+        [
+          "Durban",
+          "360,246 m³ published gross capacity; vessel, pipeline, road and rail access. Petroleum products and other liquids.",
+          "The coastal asset can serve imported-product handling and onward distribution; eligible fuel tankage needs to be isolated."
+        ],
+        [
+          "Lesedi",
+          "140,000 m³ published capacity for clean petroleum products; connected to Durban via the Transnet pipeline.",
+          "The inland asset provides a distribution position in the provisional Gauteng catchment."
+        ],
+        [
+          "Commercial question",
+          "Assets establish a physical position. Customer allocation, working capacity and realised turnover determine volumes.",
+          "The investment question is how much demand these assets can capture and whether existing capacity can serve it."
+        ]
+      ],
+      "note": "Vopak operator inventory checked 6–7 Oct 2026; Gauteng catchment adopted provisionally by user. Gross capacity is not customer throughput or effective working capacity."
+    },
+    {
+      "title": "Rail recovery, EVs and efficiency could weaken transport fuel demand",
+      "section": 3,
+      "sub": "",
+      "headers": [
+        "Potential reversal",
+        "Condition for change",
+        "Fuel-demand implication"
+      ],
+      "rows": [
+        [
+          "Road to rail",
+          "A funded and reliable rail service can transfer suitable freight from trucks.",
+          "Displaced road tonne-kilometres reduce diesel use, after rail traction and last-mile fuel. The 250 Mt ambition is not a direct diesel forecast."
+        ],
+        [
+          "EV adoption",
+          "Sustained ownership-cost advantages and charging access can influence new-vehicle purchases.",
+          "Fuel-price volatility alone does not establish adoption. Replacement cycles govern the effect on the whole fleet."
+        ],
+        [
+          "Vehicle efficiency",
+          "More efficient incoming vehicles lower combustion-fleet fuel intensity over time.",
+          "Efficiency can offset part of fleet and mileage growth. Apply it only to combustion activity that remains after EV switching."
+        ]
+      ],
+      "note": "Mechanisms drawn from the reviewed scope and current cohort architecture. Rail funding evidence: appendix p23; fuel prices and efficiency: pp19–20. Demand and supply paths require calibration."
+    },
+    {
+      "title": "Power recovery can persist, but availability and replacement timing remain risks",
+      "section": 3,
+      "sub": "",
+      "headers": [
+        "Evidence",
+        "Interpretation",
+        "Implication for Vopak"
+      ],
+      "rows": [
+        [
+          "Recovery persists",
+          "A more available coal fleet and replacement generation reduce residual diesel dispatch.",
+          "Recent Eskom fuel consumption should not be extrapolated as a permanent growth source."
+        ],
+        [
+          "Recovery reverses",
+          "Major breakdowns or retirements before dependable replacement create a generation gap.",
+          "Quantify dispatch and operating constraints before translating a gap into fuel litres."
+        ],
+        [
+          "Load shedding",
+          "Grid shortages can also affect private backup generation.",
+          "Separate Eskom OCGT use from private generators. Ending load shedding does not imply zero Eskom diesel use."
+        ]
+      ],
+      "note": "Standalone power complication retained as requested. EAF, retirement and commissioning assumptions require later scenario calibration."
+    },
+    {
+      "title": "Plant-specific uncertainty can change the import requirement in either direction",
+      "section": 3,
+      "sub": "",
+      "headers": [
+        "Evidence",
+        "Interpretation",
+        "Implication for Vopak"
+      ],
+      "rows": [
+        [
+          "SAPREF",
+          "CEF describes an import phase followed by a proposed large refinery development.",
+          "Import infrastructure can precede any local production recovery. Timing, financing and yields remain conditional."
+        ],
+        [
+          "Secunda",
+          "Declining gas supply and potential MRG diversion could reduce liquid output.",
+          "MRG bridge is conditional. A quantified liquids penalty requires a gas balance and marginal conversion yield."
+        ],
+        [
+          "Natref",
+          "Sasol reported an operational disruption in September 2026.",
+          "An outage is not evidence of permanent closure. Confirm recovery and the longer-term investment outlook."
+        ],
+        [
+          "Mossgas / PetroSA",
+          "GTL has not operated since December 2020; a recommissioning proposal exists.",
+          "Separate stopped historical production from a funded future restart."
+        ]
+      ],
+      "note": "CEF 10 Sep 2026 roadmap; Sasol 6 Nov 2025 MRG and 1 Sep 2026 Natref releases; PetroSA recommissioning scope. URLs and qualifications in evidence report."
+    },
+    {
+      "title": "Competing corridors could divert inland volumes away from Durban",
+      "section": 3,
+      "sub": "",
+      "headers": [
+        "Evidence",
+        "Interpretation",
+        "Implication for Vopak"
+      ],
+      "rows": [
+        [
+          "Durban–Gauteng",
+          "Compare road, rail and pipeline to the same receiving point and product specification.",
+          "Include handling, transport, losses, inventory finance and service constraints."
+        ],
+        [
+          "Matola / Maputo",
+          "Include inland haul and border costs for each reachable destination.",
+          "A port-level cost comparison cannot establish Gauteng competitiveness."
+        ],
+        [
+          "Walvis Bay",
+          "Test distance, transit time and corridor capacity into each target market.",
+          "Do not assume that every inland customer is economically addressable."
+        ],
+        [
+          "Price bearability",
+          "Maximum affordable logistics cost = destination netback less origin product and other delivered costs.",
+          "The route with price headroom must also offer capacity and reliable access. Higher national imports do not automatically become Vopak volumes."
+        ]
+      ],
+      "note": "Submodel specification adopted from the annotated review. No route winner is asserted without matched costs, access and capacity."
+    },
+    {
+      "title": "Five arguments connect the market evidence to Vopak’s investment choice",
+      "section": 4,
+      "sub": "",
+      "headers": [
+        "Argument",
+        "Situation",
+        "Complication",
+        "Resolution / decision"
+      ],
+      "column_widths": [
+        120,
+        239,
+        239,
+        240.8
+      ],
+      "font_size": 12,
+      "rows": [
+        [
+          "Transport demand",
+          "Subdued aggregate growth masks different product trends. Road freight supports diesel use.",
+          "Sector growth, rail recovery, EVs and efficiency change fuel demand.",
+          "Define L/M/H demand paths and translate activity into fuel volumes."
+        ],
+        [
+          "Power demand",
+          "Power shortages supported diesel use; Eskom consumption has recently fallen.",
+          "Recovery may persist or reverse through outages and replacement delays.",
+          "Include explicit power assumptions in the same L/M/H demand paths."
+        ],
+        [
+          "Domestic supply",
+          "Reduced local production has increased reliance on imports.",
+          "SAPREF, Natref and Secunda can change domestic fuel output materially.",
+          "Define L/M/H domestic supply paths. Cross with demand to create nine import worlds."
+        ],
+        [
+          "Corridor competition",
+          "Durban connects imported fuel to inland customers.",
+          "Alternative gateways, delivered costs, reliability and access alter flows.",
+          "Translate each world into Durban-accessible volumes using explicit routing assumptions."
+        ],
+        [
+          "Vopak investment",
+          "Durban and Lesedi provide a coastal–inland asset position.",
+          "Capture, usable capacity and commercial returns determine expansion needs.",
+          "Compare existing capacity, debottlenecking and expansion across the matrix. M/M is baseline."
+        ]
+      ],
+      "note": "SCR synthesis of the preceding evidence and agreed scenario design. L/M/H = Low/Medium/High. Medium is the baseline; numerical calibration and commercial inputs remain open."
+    },
+    {
+      "title": "Nine demand–supply worlds frame the choice, with Medium / Medium as baseline",
+      "section": 4,
+      "sub": "",
+      "headers": [
+        "Fuel demand / domestic supply",
+        "HIGH supply",
+        "MEDIUM supply",
+        "LOW supply"
+      ],
+      "column_widths": [
+        120,
+        239,
+        239,
+        240.8
+      ],
+      "font_size": 12,
+      "body_height": 282,
+      "header_height": 40,
+      "matrix": true,
+      "rows": [
+        [
+          "LOW demand",
+          "L / H\nLOWEST IMPORT PRESSURE\nTest existing-capacity use before expansion.",
+          "L / M\nLower imports than baseline.\nTest utilisation and customer capture.",
+          "L / L\nDemand and supply both fall.\nNet import effect depends on their relative change."
+        ],
+        [
+          "MEDIUM demand",
+          "M / H\nLower imports than baseline.\nSupply recovery reduces import needs.",
+          "M / M\nBASELINE\nReference imports, terminal throughput and capacity headroom.",
+          "M / L\nHigher imports than baseline.\nSupply losses increase import needs."
+        ],
+        [
+          "HIGH demand",
+          "H / H\nDemand and supply both rise.\nNet import effect depends on their relative change.",
+          "H / M\nHigher imports than baseline.\nDemand growth increases import needs.",
+          "H / L\nHIGHEST IMPORT PRESSURE\nTest debottlenecking or expansion if capturable flows exceed capacity."
+        ]
+      ],
+      "caption": "Each cell will report imports, Vopak Durban / Lesedi throughput, capacity headroom and investment choice.",
+      "note": "Qualitative framework, not calculated results. Import directions hold exports and stock movements comparable. The diagonal contrasts investment worlds; routing, capture and returns determine the actual choice. M/M calibration remains open."
+    },
+    {
+      "title": "The initial share tests establish scale; accessible throughput remains the key uncertainty",
+      "section": 4,
+      "sub": "",
+      "headers": [
+        "Catchment",
+        "Initial inference",
+        "What the result can support"
+      ],
+      "rows": [
+        [
+          "Durban",
+          "45.1% of the combined published gross capacity of Vopak and Bidvest in Durban.",
+          "A two-operator footprint proxy with mixed products and an incomplete market denominator. It does not establish Durban throughput share."
+        ],
+        [
+          "Gauteng / Lesedi",
+          "2022 petrol + diesel sales: 6.81bn litres. Lesedi’s gross capacity equals 2.06% of that market per effective annual turn.",
+          "A cross-vintage scale test. Current sales, eligible working capacity, actual turns and Gauteng allocation are needed for a throughput estimate."
+        ],
+        [
+          "Investment implication",
+          "Convert eligible tankage and realised turns into unique customer deliveries, then compare with existing capacity.",
+          "A large market can coexist with spare terminal capacity. Market scale alone does not establish a need for additional tanks."
+        ]
+      ],
+      "note": "Operator capacities: Vopak Durban 360,246m³, Bidvest Durban 439,306m³, Lesedi 140,000m³. Department Gauteng sales 2022; appendix p24. Transfers between terminals must not be double-counted."
+    },
+    {
+      "title": "Further investment depends on capturable volume exceeding existing capacity at an adequate return",
+      "section": 4,
+      "sub": "",
+      "headers": [
+        "Decision test",
+        "Analysis required",
+        "Decision output"
+      ],
+      "rows": [
+        [
+          "Accessible volume",
+          "Test each destination against delivered cost, service, access and customer demand.",
+          "A volume opportunity that Vopak can realistically serve."
+        ],
+        [
+          "Capacity requirement",
+          "Compare the resulting flows with eligible working tankage, turnover and operational bottlenecks.",
+          "Whether the opportunity requires more tanks, faster handling or better use of existing assets."
+        ],
+        [
+          "Financial forecast",
+          "Apply storage and handling terms, operating cost, capex, tax and working capital to incremental volumes.",
+          "Cash flow, break-even utilisation, NPV and IRR against the required return. Commercial inputs remain open."
+        ],
+        [
+          "Decision today",
+          "The evidence supports testing an import-and-distribution opportunity. It does not yet establish an expansion return.",
+          "Prioritise corridor economics and terminal operating inputs, then quantify investment options. Nine-world calibration follows."
+        ]
+      ],
+      "note": "Resolution framework from the signed-off review and user comments. Financial and origin–destination modules are specified; commercial calibration and investment approval remain outstanding."
+    },
+    {
+      "title": "Supporting evidence for the main argument",
+      "section": 0,
+      "sub": "",
+      "headers": [
+        "Evidence group",
+        "Detail retained",
+        "Connection to the story"
+      ],
+      "rows": [
+        [
+          "Demand context",
+          "GDP, investment and sector activity",
+          "Pages 16–18 support situation pages 2–3."
+        ],
+        [
+          "Transport change",
+          "Fuel prices and vehicle efficiency",
+          "Pages 19–20 support the transport complication on page 7."
+        ],
+        [
+          "Historical diesel support",
+          "Eskom fuel use and freight payload",
+          "Pages 21–22 support situation page 3 and power complication page 8."
+        ],
+        [
+          "Delivery and market reach",
+          "Rail funding constraints and Gauteng demand",
+          "Pages 23–24 support corridor and share questions on pages 7, 10 and 13."
+        ]
+      ],
+      "note": "Detailed evidence retained for review. The main argument is complete on pages 2–14; appendix pages are supporting exhibits, not additional situation pages."
+    },
+    {
+      "title": "GDP and fuel volumes need separate explanations of activity and sector mix",
+      "section": 0,
+      "sub": "",
+      "chart": "02_growth.svg",
+      "takeaway": "Economic weakness means limited growth in real activity and investment. Structural change means a different mix of output, travel and fuel use; this chart alone cannot attribute causality.",
+      "note": "Staged GDP and department fuel sales, indices 2013=100. Sector attribution remains open; COVID distorts short-period comparisons."
+    },
+    {
+      "title": "Investment evidence informs the growth outlook but does not establish extra fuel demand",
+      "section": 0,
+      "sub": "",
+      "chart": "03_investment.svg",
+      "takeaway": "Fixed investment helps frame productive capacity. FDI can include large transactions; neither series is a direct investor-confidence measure or an additional fuel-demand multiplier.",
+      "note": "World Bank WDI, FDI net inflows and gross fixed capital formation as % of GDP, 2010–2025. Confidence series remains an evidence gap."
+    },
+    {
+      "title": "Mining, agriculture and aviation require distinct demand explanations",
+      "section": 0,
+      "sub": "",
+      "headers": [
+        "Evidence",
+        "Interpretation",
+        "Implication for Vopak"
+      ],
+      "rows": [
+        [
+          "Mining",
+          "Output, commodity mix and haul distance influence diesel use and freight.",
+          "Separate mine activity from the fuel impact of changing freight mode."
+        ],
+        [
+          "Agriculture",
+          "Crop cycles, weather, irrigation and logistics can shift seasonal diesel use.",
+          "Establish sector activity and fuel exposure before assigning a headwind."
+        ],
+        [
+          "Aviation",
+          "Traffic, distance, load factors and aircraft efficiency drive jet-fuel demand.",
+          "Keep jet fuel separate from petrol/diesel shares and verify terminal eligibility."
+        ],
+        [
+          "Manufacturing",
+          "Real output and industrial composition help explain the economic backdrop.",
+          "Test changes using sector data; a national fuel chart does not prove deindustrialisation."
+        ]
+      ],
+      "note": "Analytical framework following user comments. Sector-specific exhibits and causal attribution remain to be completed."
+    },
+    {
+      "title": "Fuel-price shocks affect running costs; sustained economics influence EV uptake",
+      "section": 0,
+      "sub": "",
+      "chart": "04_prices.svg",
+      "takeaway": "Shipping disruption, crude prices and FX can move fuel costs temporarily. EV adoption depends on sustained total ownership cost, purchase affordability, charging access and fleet replacement.",
+      "note": "Department fuel-price history, nominal R/litre. No quantified geopolitical premium or calibrated EV adoption response is asserted."
+    },
+    {
+      "title": "More efficient new vehicles reduce fuel intensity gradually as the fleet turns over",
+      "section": 0,
+      "sub": "",
+      "headers": [
+        "Evidence",
+        "Interpretation",
+        "Implication for Vopak"
+      ],
+      "rows": [
+        [
+          "Fleet growth",
+          "More vehicles or distance travelled can raise demand.",
+          "Measure activity before attributing lower fuel volumes to efficiency."
+        ],
+        [
+          "Efficiency",
+          "New-cohort consumption gains enter the fleet over successive replacement cycles.",
+          "Obtain OEM and real-world evidence by segment; do not apply new-vehicle gains to every vehicle."
+        ],
+        [
+          "EV substitution",
+          "EVs remove some combustion-engine vehicle activity from the fuel calculation.",
+          "Count each vehicle transition once, then calculate efficiency on the remaining combustion fleet."
+        ]
+      ],
+      "note": "Mechanism supported by existing cohort architecture. OEM historical and future efficiency evidence is still missing; no new forecast shown."
+    },
+    {
+      "title": "Eskom’s reported OCGT fuel use fell 40% in FY2025",
+      "section": 0,
+      "sub": "",
+      "chart": "05_eskom_fuel.svg",
+      "takeaway": "Reported fuel fell from 1,129.5 to 679.1 million litres as EAF improved from 54.56% to 60.60%. This removes part of the recent diesel-demand support.",
+      "note": "Eskom integrated report 2025: FY March, own-fleet diesel + kerosene. EAF association is not a dispatch model; private backup use excluded."
+    },
+    {
+      "title": "Road-to-rail recovery matters through transferable freight and haul distance",
+      "section": 0,
+      "sub": "",
+      "chart": "08_freight.svg",
+      "takeaway": "Payload establishes the historical direction. Diesel displacement requires corridor tonne-kilometres, road fuel intensity, rail traction and last-mile activity.",
+      "note": "Stats SA monthly freight payload, complete calendar years. National tonnes are not corridor tonne-kilometres or transferable freight."
+    },
+    {
+      "title": "Rail recovery on the Durban corridor depends on funding and reliable service",
+      "section": 0,
+      "sub": "",
+      "headers": [
+        "Evidence",
+        "Interpretation",
+        "Implication for Vopak"
+      ],
+      "rows": [
+        [
+          "Network ambition",
+          "The supplied brief reports a 250 Mt target dependent on a funding plan.",
+          "Do not treat every additional rail tonne as road displacement. Commodity, corridor and origin matter."
+        ],
+        [
+          "Funding constraint",
+          "Brief: R46.34bn approved over five years, including R1.71bn expansion.",
+          "Maintenance and sustaining spend dominate. A published plan is insufficient evidence of delivered capacity."
+        ],
+        [
+          "Container corridor",
+          "Brief: R2.11bn in 2026/27–2028/29; private funding expected thereafter.",
+          "Prioritise Durban–Gauteng road/rail competition and reconcile the corridor to Network Statement v4."
+        ],
+        [
+          "Two fuel effects",
+          "Rail can displace truck diesel while improved infrastructure also changes fuel-distribution economics.",
+          "Keep freight-demand effects separate from the route delivering fuel to Gauteng."
+        ]
+      ],
+      "note": "User-supplied AIA Transnet Funding Brief, Sep 2026, pp1–2; cites FY2026 AFS and Network Statement v4 Annexure 17. Primary figures not independently reconciled."
+    },
+    {
+      "title": "Gauteng provides a demand denominator for testing Lesedi’s potential reach",
+      "section": 0,
+      "sub": "",
+      "chart": "09_gauteng.svg",
+      "takeaway": "2022 petrol + diesel sales total 6.81bn litres. Lesedi’s 140,000m³ equals 2.06% of that annual market per effective gross-capacity turn. Actual turns and Gauteng allocation remain unknown.",
+      "note": "Department provincial sales, latest complete staged year 2022; Vopak Lesedi current capacity. Cross-vintage scale test only, not current observed market share."
+    }
+  ],
+  "main_story_pages": "2–14",
+  "situation_pages": "2–6",
+  "appendix_pages": "15–24",
+  "scenario_framework": {
+    "demand": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "domestic_supply": [
+      "High",
+      "Medium",
+      "Low"
+    ],
+    "baseline": "Medium / Medium",
+    "diagonal": [
+      "Low / High",
+      "Medium / Medium",
+      "High / Low"
+    ],
+    "status": "Framework adopted; quantitative results not yet populated"
+  }
+}

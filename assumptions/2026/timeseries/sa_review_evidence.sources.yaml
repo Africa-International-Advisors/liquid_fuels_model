@@ -1,0 +1,34 @@
+retrieved: '2026-10-07'
+status: source extracted; independent verification and model adoption pending
+eskom:
+  file: external/data/refresh_20261005/raw/eskom/eskom-integrated-report-2025.pdf
+  sha256: f93ca0d57a40ac159bb8342c77e8cb2b10639825a2abbcdaf6219e6b2f1e702d
+  url: https://www.eskom.co.za/investors/integrated-results/
+  limitation: Fuel volume includes kerosene; Eskom-only. Cost includes storage/demurrage.
+    FY2026 fuel volume not found in the local integrated report.
+investment:
+- id: worldbank_fdi
+  format: json
+  url: https://api.worldbank.org/v2/country/ZAF/indicator/BX.KLT.DINV.WD.GD.ZS?format=json&date=2010:2025&per_page=100
+  publication_date: null
+  purpose: FDI net inflows as percent of GDP; volatile including transactions
+  retrieved_at: '2026-10-07T18:10:15.022677+00:00'
+  resolved_url: https://api.worldbank.org/v2/country/ZAF/indicator/BX.KLT.DINV.WD.GD.ZS?format=json&date=2010:2025&per_page=100
+  file: external/data/raw/sa_review_20261007T181010425382Z/worldbank_fdi.json
+  sha256: 1dcbeb3f44bca72776ca591fd655ab97be30cc1be39b3d471cadff40ba42c40b
+  bytes: 4099
+  status: preserved; not independently verified
+- id: worldbank_gfcf
+  format: json
+  url: https://api.worldbank.org/v2/country/ZAF/indicator/NE.GDI.FTOT.ZS?format=json&date=2010:2025&per_page=100
+  publication_date: null
+  purpose: Gross fixed capital formation as percent of GDP; not real growth
+  retrieved_at: '2026-10-07T18:10:15.337423+00:00'
+  resolved_url: https://api.worldbank.org/v2/country/ZAF/indicator/NE.GDI.FTOT.ZS?format=json&date=2010:2025&per_page=100
+  file: external/data/raw/sa_review_20261007T181010425382Z/worldbank_gfcf.json
+  sha256: 75eabf6ba49107f545e02a1c3cb2c598a90cfa68310735f2b84bce3e313f7e30
+  bytes: 3848
+  status: preserved; not independently verified
+exclusions:
+- No adoption elasticity inferred from prices
+- FDI may reflect ownership transactions, not new productive capacity

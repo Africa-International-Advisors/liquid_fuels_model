@@ -17,6 +17,8 @@ These are responsibilities across one team: Manish (analyst, available 100%), Ni
 
 ## Start here
 
+- [8 October review milestone and next handbacks](WS0_governance/workplan/sa_review_milestone_2026_10_08.md)
+
 - [Current Week 1 progress and next handbacks](WS0_governance/workplan/six_week_plan.md#current-progress--7-october-2026-week-1)
 
 - [6 October stand-up transcript](WS0_governance/meetings/2026-10-06_vopak_standup.docx)

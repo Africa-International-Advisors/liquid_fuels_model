@@ -1,0 +1,370 @@
+{
+  "date": "2026-10-07",
+  "status": "Scope and work programme signed off by user; evidence and results not approved",
+  "style_reference": "pptx/output/delivered/Vopak_Convergence_current.pptx",
+  "slides": [
+    {
+      "title": "The agreed review connects market evidence to Vopak's investment opportunity",
+      "section": 1,
+      "sub": "Scope signed off on 7 October 2026 | Analysis and investment conclusions remain to be completed",
+      "headers": [
+        "Story stage",
+        "Question to answer",
+        "Required output"
+      ],
+      "rows": [
+        [
+          "Situation",
+          "How have South African fuel demand and domestic supply developed?",
+          "Historical exhibits and an evidence audit covering six themes."
+        ],
+        [
+          "Complication",
+          "Which trends could persist or reverse, and where do constraints arise?",
+          "Four explicit complications, supported by scenario levers."
+        ],
+        [
+          "Resolution",
+          "What is Vopak's share in Durban and the Lesedi catchment? Is further investment justified?",
+          "Current and scenario shares, capacity headroom and conditional investment conclusions."
+        ]
+      ],
+      "note": "Approval covers this review scope and work programme. It does not verify data or approve model results."
+    },
+    {
+      "title": "Demand history needs a stronger economic and vehicle-use explanation",
+      "section": 2,
+      "sub": "Situation | Working hypotheses to verify; existing coverage to audit",
+      "headers": [
+        "Theme",
+        "Evidence and exhibit",
+        "Work required"
+      ],
+      "rows": [
+        [
+          "Growth and investment",
+          "Petrol/diesel volumes alongside real GDP, fixed investment, FDI and confidence.",
+          "Test the view that volumes were broadly flat over the past decade; explain COVID and recovery. Separate economic weakness from structural change."
+        ],
+        [
+          "Fuel prices and EVs",
+          "Fuel-price history and paths linked to EV purchase prices and fuel/electricity running costs.",
+          "Existing price assumptions need an ownership-cost exhibit. Distinguish geopolitical shocks from sustained changes; calibrate adoption response."
+        ],
+        [
+          "Vehicle efficiency",
+          "OEM historical and expected consumption rates by segment; fleet growth and replacement.",
+          "Translate new-vehicle gains through fleet turnover and real-world use. Show the net fuel effect of fleet size, mileage and efficiency; separate EV switching."
+        ]
+      ],
+      "note": "Existing pack starting points: slides 16-17, 19 and 21. Coverage references are not source validation."
+    },
+    {
+      "title": "Power and freight need evidence that translates activity into diesel volumes",
+      "section": 2,
+      "sub": "Situation | Establish separate baselines before introducing scenario levers",
+      "headers": [
+        "Theme",
+        "Evidence and exhibit",
+        "Work required"
+      ],
+      "rows": [
+        [
+          "Eskom diesel",
+          "Annual diesel volumes and expenditure alongside EAF and diesel generation.",
+          "Align periods and plant coverage. Verify the proposed relationship between improved EAF and lower diesel use; obtain consumption rates."
+        ],
+        [
+          "Power-system plans",
+          "Fleet retirement/decommissioning and replacement wind, solar and gas commissioning plans.",
+          "Record timing, capacity and delivery uncertainty. Keep Eskom and non-Eskom diesel demand separate."
+        ],
+        [
+          "Road and rail freight",
+          "Historical payloads by corridor and commodity; road/rail network overlay and planned rail capacity.",
+          "Verify the cited Transnet ambition of 250 Mt by 2030. Confirm the roughly four national road corridors; identify transferable freight, haul distances and net diesel effects."
+        ]
+      ],
+      "note": "Existing pack starting points: slides 16-17 and 19. Transnet's cited target remains unverified in this review."
+    },
+    {
+      "title": "The domestic supply timeline must include Secunda and Mossgas",
+      "section": 2,
+      "sub": "Situation | Extend existing refinery and import coverage into one integrated supply exhibit",
+      "headers": [
+        "Coverage",
+        "Evidence required",
+        "Exhibit treatment"
+      ],
+      "rows": [
+        [
+          "Conventional refineries",
+          "Operating status, production, capacity and major changes over time.",
+          "Retain the refinery timeline; distinguish nameplate capacity from actual product output."
+        ],
+        [
+          "Secunda",
+          "Production trajectory, operating challenges and petrol/diesel yields.",
+          "Add time-series annotations or a callout showing the implications for liquid-fuel supply."
+        ],
+        [
+          "Mossgas / PetroSA",
+          "Plant-specific shutdown dates, operating status and lost fuel production.",
+          "Distinguish stopped production from permanent closure; verify the status before labelling."
+        ],
+        [
+          "Imports",
+          "Existing import series reconciled with domestic production and demand.",
+          "Show changing import dependence; do not attribute every import increase to lost local supply."
+        ]
+      ],
+      "note": "Existing pack starting points: slides 4, 6 and 26. Proposed integrated exhibit: approximately one page."
+    },
+    {
+      "title": "Transport shifts could weaken historical support for petrol and diesel demand",
+      "section": 3,
+      "sub": "Complication 1 | Economic recovery may be partly offset by structural changes",
+      "headers": [
+        "Change to test",
+        "Scenario levers",
+        "Demand translation"
+      ],
+      "rows": [
+        [
+          "Road freight returns to rail",
+          "High / medium / low rail recovery by corridor; capacity delivery, utilisation and transferable freight.",
+          "Estimate displaced road tonne-kilometres and fuel, allowing for additional diesel rail traction."
+        ],
+        [
+          "EV adoption accelerates",
+          "EV purchase-price declines, fuel/electricity costs and fleet replacement.",
+          "Link ownership economics to adoption; distinguish temporary price shocks from sustained incentives."
+        ],
+        [
+          "Vehicles become more efficient",
+          "Efficiency gains by segment, real-world adjustment, mileage and fleet turnover.",
+          "Apply gains to incoming cohorts; avoid double counting vehicles already shifted to EVs."
+        ],
+        [
+          "Growth improves or stalls",
+          "GDP, sector activity and investment outcomes.",
+          "Treat growth as a common scenario assumption. Avoid adding FDI/confidence multipliers on top of the same GDP effect."
+        ]
+      ],
+      "note": "L / M / H describes the level of each input; it does not automatically indicate the direction of total fuel demand."
+    },
+    {
+      "title": "Power-system recovery could persist or reverse",
+      "section": 3,
+      "sub": "Complication 2 | Keep power and load shedding as a standalone scenario question",
+      "headers": [
+        "Scenario driver",
+        "Levers to test",
+        "Implication to quantify"
+      ],
+      "rows": [
+        [
+          "Sustained recovery",
+          "Higher or sustained EAF and fewer fleet breakdowns.",
+          "Whether lower diesel generation can persist, and how much historical demand support unwinds."
+        ],
+        [
+          "Availability setbacks",
+          "Lower EAF, outages and major fleet breakdowns.",
+          "Additional residual generation needs and feasible diesel dispatch."
+        ],
+        [
+          "Retirement before replacement",
+          "Earlier decommissioning; delayed wind, solar or gas capacity and commissioning.",
+          "The timing and scale of any supply gap; installed capacity alone is not dependable generation."
+        ],
+        [
+          "Eskom and private response",
+          "Diesel generation availability, fuel consumption and operating constraints; non-Eskom response.",
+          "Estimate Eskom diesel and backup/self-generation separately. Do not equate Eskom diesel dispatch directly with load shedding."
+        ]
+      ],
+      "note": "Link to the Eskom volumes, expenditure and EAF exhibit. No scenario values or completed demand estimates are approved here."
+    },
+    {
+      "title": "Domestic fuel supply could recover or contract further",
+      "section": 3,
+      "sub": "Complication 3 | Production changes alter import requirements for a given demand level",
+      "headers": [
+        "Supply uncertainty",
+        "Levers to develop",
+        "Evidence or definition needed"
+      ],
+      "rows": [
+        [
+          "Major refinery restart",
+          "Restart timing, commissioning ramp-up, utilisation and petrol/diesel yields.",
+          "Confirm the facility and proposal; distinguish ambition, financed commitment and achievable output."
+        ],
+        [
+          "Secunda production",
+          "Gas-related production improvement, availability and product allocation.",
+          "Clarify the intended gas driver and substantiate its effect on output. Test any diversion away from liquid fuels."
+        ],
+        [
+          "Natref's future",
+          "Continued operation, investment, utilisation or reduced output.",
+          "Establish the operating outlook, required investment and credible alternatives."
+        ],
+        [
+          "Import consequences",
+          "Combined domestic production paths against each demand scenario.",
+          "Quantify imports consistently. Diversion away from fuel production constrains domestic supply, not end-user demand."
+        ]
+      ],
+      "note": "Existing pack starting points: slides 6, 18 and 27. Restart and gas assumptions require explicit confirmation."
+    },
+    {
+      "title": "Competing corridors could change how inland fuel demand is served",
+      "section": 3,
+      "sub": "Complication 4 | Compare access and delivered economics within each reachable market",
+      "headers": [
+        "Corridor",
+        "Comparison needed",
+        "Levers and output"
+      ],
+      "rows": [
+        [
+          "Durban",
+          "Road and rail costs, capacity, reliability and constraints; pipeline benchmark.",
+          "Test route competitiveness, bottlenecks and expansion; establish the accessible inland market."
+        ],
+        [
+          "Matola / Maputo",
+          "Reachable destinations, inland logistics, border constraints, costs and capacity.",
+          "Test whether feasible routes can capture demand currently or potentially served via Durban."
+        ],
+        [
+          "Walvis Bay",
+          "Reachable markets, distances, delivered costs, transit times and capacity.",
+          "Assess where it competes credibly; do not presume all inland markets are addressable."
+        ],
+        [
+          "Combined assessment",
+          "Corridor map and comparable delivered-cost/throughput assessment.",
+          "Allocate scenario flows with physical and commercial constraints. Higher SA imports do not automatically benefit Durban or Vopak."
+        ]
+      ],
+      "note": "Existing pack starting points: slides 7-8, 11 and 23. Fuel distribution competition is distinct from the road-to-rail demand lever."
+    },
+    {
+      "title": "The resolution must quantify Vopak's share and investment headroom",
+      "section": 4,
+      "sub": "Resolution | Report Durban and the Lesedi catchment separately",
+      "headers": [
+        "Required answer",
+        "Work needed",
+        "Decision exhibit"
+      ],
+      "rows": [
+        [
+          "Current market share",
+          "Define catchments, products, period and addressable-market denominator; obtain comparable Vopak throughput.",
+          "Vopak throughput / relevant market throughput. Show storage-capacity share separately if used."
+        ],
+        [
+          "Future market share",
+          "Translate demand, supply and route scenarios into accessible volumes; account for competitors and customers.",
+          "Market size and Vopak throughput/share by scenario; avoid double counting transfers between locations."
+        ],
+        [
+          "Capacity headroom",
+          "Compare potential throughput with usable capacity, utilisation, bottlenecks and competitor expansion.",
+          "Existing capacity versus scenario requirements; distinguish gross tankage from effective capacity."
+        ],
+        [
+          "Investment case",
+          "Assess customer commitments, commercial terms, capex and required returns.",
+          "Whether, where, when and at what scale to invest; triggers for investment, phasing or deferral."
+        ]
+      ],
+      "note": "Existing pack starting points: slides 9-11, 22-24 and 28. Market headroom is not itself a commercially justified investment."
+    },
+    {
+      "title": "The agreed work sequence builds evidence before scenario conclusions",
+      "section": 1,
+      "sub": "Delivery | Preserve the practical sequence agreed in the review",
+      "headers": [
+        "Step",
+        "Work",
+        "Completion evidence"
+      ],
+      "rows": [
+        [
+          "1. Audit",
+          "Review the existing pack, data and model against the signed-off scope.",
+          "Covered / exhibit needed / verification needed / missing data / model development."
+        ],
+        [
+          "2. Define",
+          "Resolve corridors, catchment, share denominators, restart candidate and Secunda gas driver.",
+          "Explicit definitions and recorded decisions."
+        ],
+        [
+          "3. Evidence",
+          "Close source gaps and build situation exhibits.",
+          "Sources, periods, units and limitations documented."
+        ],
+        [
+          "4. Levers",
+          "Map evidence to existing or required model functionality.",
+          "Vintaged, registered assumptions; consistent boundaries and no double counting."
+        ],
+        [
+          "5. Scenarios",
+          "Run demand, supply, imports and routing to addressable Vopak throughput.",
+          "Coherent scenario outputs with traceable assumptions."
+        ],
+        [
+          "6. Resolution",
+          "Build market-share and investment exhibits; complete relevant checks and reviews.",
+          "Conditional conclusions, open limitations and review status."
+        ]
+      ],
+      "note": "No staffing dates or new deadlines are committed by this review. Automated checks do not replace peer review or business approval."
+    },
+    {
+      "title": "The audit must make every gap, decision and limitation traceable",
+      "section": 1,
+      "sub": "Execution control | Assign owners explicitly; do not infer evidence approval from scope sign-off",
+      "headers": [
+        "Control",
+        "Required record",
+        "Resolution trigger"
+      ],
+      "rows": [
+        [
+          "Evidence tracker",
+          "Story point; exhibit; source; gap; lever; owner; resolution trigger; status.",
+          "Resolve each material gap before the related assumption or exhibit is adopted."
+        ],
+        [
+          "Definitions",
+          "Four road corridors; Lesedi catchment; market-share denominator; restart facility; Secunda gas driver.",
+          "Confirm before routing, share calculations or supply-case calibration."
+        ],
+        [
+          "Model boundary",
+          "Audit current scenario wiring and the additional routing, terminal-throughput and investment work needed.",
+          "National balances alone cannot establish Vopak share. Resolve functionality before presenting quantified resolution."
+        ],
+        [
+          "Review status",
+          "Record this conversation's scope approval separately from data verification, peer review and business approval.",
+          "Evidence acceptance before adoption; technical review before reliance; commercial approval before investment."
+        ],
+        [
+          "Responsibilities",
+          "Use existing workstream responsibilities as a starting point; assign individual items during the audit.",
+          "Named owners and expiry/resolution triggers for every unresolved input or technical limitation."
+        ]
+      ],
+      "note": "Source: signed-off conversation, 7 October 2026; repository architecture and release-gate documents. This is the approved work programme."
+    }
+  ]
+}

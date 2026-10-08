@@ -1,0 +1,75 @@
+{
+  "as_of": "2026-10-07",
+  "sources": [
+    {
+      "id": "eskom_diesel_statement",
+      "format": "html",
+      "url": "https://www.eskom.co.za/eskom-provides-update-on-diesel-usage-and-system-performance/",
+      "publication_date": "2025-11-05",
+      "purpose": "Eskom diesel costs; fiscal periods and rebate basis"
+    },
+    {
+      "id": "transnet_results_2025",
+      "format": "pdf",
+      "url": "https://www.transnet.net/getFile.ashx?id=6098",
+      "publication_date": "2025-09-05",
+      "purpose": "FY2025 actual rail volumes; targets must be distinguished"
+    },
+    {
+      "id": "transnet_target",
+      "format": "html",
+      "url": "https://www.sanews.gov.za/node/73615",
+      "publication_date": null,
+      "purpose": "Government statement on 250 Mt network ambition"
+    },
+    {
+      "id": "sasol_mrg",
+      "format": "html",
+      "url": "https://www.sasol.com/media-centre/media-releases/sasol-advances-methane-rich-gas-mrg-supply-solution-sustain-south-africas-gas-market-beyond-2028",
+      "publication_date": "2025-11-06",
+      "purpose": "Secunda MRG bridge; dependencies; no quantified liquid-fuel penalty"
+    },
+    {
+      "id": "natref_update",
+      "format": "html",
+      "url": "https://www.sasol.com/media-centre/media-releases/natref-operational-update",
+      "publication_date": "2026-09-01",
+      "purpose": "Unit outages; does not establish permanent closure"
+    },
+    {
+      "id": "sapref_roadmap",
+      "format": "html",
+      "url": "https://cefgroup.co.za/2026/09/10/cef-outlines-roadmap-to-rebuild-south-africas-refining-capacity-and-unlock-economic-opportunities-in-durban-south/",
+      "publication_date": "2026-09-10",
+      "purpose": "Former SAPREF redevelopment; target not commissioned capacity"
+    },
+    {
+      "id": "petrosa_recommission",
+      "format": "pdf",
+      "url": "https://www.etenders.gov.za/home/Download?blobName=4d10d8ce-71fc-4cbc-9286-d3b0b73a6d0e.pdf&downloadedFileName=Scope+of+Work.pdf",
+      "publication_date": null,
+      "purpose": "PetroSA tender issuer; verify non-operation since December 2020"
+    },
+    {
+      "id": "sasol_operations_2026",
+      "format": "html",
+      "url": "https://www.sec.gov/Archives/edgar/data/314590/000110465926104048/ssl-20260630xex99d6.htm",
+      "publication_date": null,
+      "purpose": "Sasol FY2026 filed report; operating recovery and future risks"
+    },
+    {
+      "id": "worldbank_fdi",
+      "format": "json",
+      "url": "https://api.worldbank.org/v2/country/ZAF/indicator/BX.KLT.DINV.WD.GD.ZS?format=json&date=2010:2025&per_page=100",
+      "publication_date": null,
+      "purpose": "FDI net inflows as percent of GDP; volatile including transactions"
+    },
+    {
+      "id": "worldbank_gfcf",
+      "format": "json",
+      "url": "https://api.worldbank.org/v2/country/ZAF/indicator/NE.GDI.FTOT.ZS?format=json&date=2010:2025&per_page=100",
+      "publication_date": null,
+      "purpose": "Gross fixed capital formation as percent of GDP; not real growth"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+year,product,production,imports,exports,final_consumption,statistical_difference,residual_before_stat_difference_bn_l,residual_after_reported_stat_difference_bn_l,sales_vs_final_consumption_bn_l,status
+2021,petrol,6.3513066666630005,5.41704428,-1.42382779,9.83617596,-0.5083471966629997,0.5083471966629993,-3.3306690738754696e-16,-0.5345917323169989,Source diagnostic only: statistical difference is not a measured stock change
+2021,diesel,5.314964285718,11.2199946,-1.02699782,13.407266190000001,-2.1006948757179975,2.1006948757179966,-8.881784197001252e-16,-0.4614834395650025,Source diagnostic only: statistical difference is not a measured stock change

@@ -1,0 +1,18 @@
+evidence:
+  value:
+    national_sales: assumptions/2026/timeseries/fuel_sales_department.csv
+    provincial_quarters: assumptions/2026/timeseries/fuel_sales_department_by_province_quarterly.csv
+    energy_balance: assumptions/2026/timeseries/energy_balance_department.csv
+    trade: pptx/story/evidence_2026_10_06/fuel_trade_sars.csv
+    terminals: pptx/story/storage_operator_inventory_2026_10_06.csv
+    routes: output/delivered/geospatial/2026_10_08/route_checks.json
+    turns: assumptions/2026/terminal_handling.yaml
+    scope: assumptions/2026/sa_review.yaml
+  units: source references; observation units retained in each source
+  source: Existing staged evidence; source hashes recorded in investment-bridge report. Reporting inputs only; no commercial calibration or forecast adoption.
+  last_updated: '2026-10-08'
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  register_id: REG-INVESTMENT-BRIDGE
+  exception_id: EXC-INVESTMENT-BRIDGE

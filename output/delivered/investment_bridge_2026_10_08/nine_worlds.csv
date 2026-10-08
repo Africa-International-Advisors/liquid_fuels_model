@@ -1,0 +1,10 @@
+demand,supply,baseline,imports_m3,captured_durban_m3,captured_lesedi_m3,required_turns,capacity_headroom_m3,investment_option,return,status
+Low,High,False,,,,,,,,Await annual product paths; T1-T5/F1 inputs. No probability assigned
+Low,Medium,False,,,,,,,,Await annual product paths; T1-T5/F1 inputs. No probability assigned
+Low,Low,False,,,,,,,,Await annual product paths; T1-T5/F1 inputs. No probability assigned
+Medium,High,False,,,,,,,,Await annual product paths; T1-T5/F1 inputs. No probability assigned
+Medium,Medium,True,,,,,,,,Await annual product paths; T1-T5/F1 inputs. No probability assigned
+Medium,Low,False,,,,,,,,Await annual product paths; T1-T5/F1 inputs. No probability assigned
+High,High,False,,,,,,,,Await annual product paths; T1-T5/F1 inputs. No probability assigned
+High,Medium,False,,,,,,,,Await annual product paths; T1-T5/F1 inputs. No probability assigned
+High,Low,False,,,,,,,,Await annual product paths; T1-T5/F1 inputs. No probability assigned

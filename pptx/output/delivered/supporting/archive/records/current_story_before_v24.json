@@ -1,0 +1,23 @@
+{
+  "current_version": 23,
+  "slides": 34,
+  "files": [
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_v23.pptx",
+      "bytes": 2973072,
+      "sha256": "0942fab1d0a0221f51608936ab26a85f9ecac50791425cc7b513ce9929644969"
+    },
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_v23.pdf",
+      "bytes": 2191909,
+      "sha256": "69c7936ced2019dec924edf95cc8925d006022506da4980b4800d7656a79493a"
+    }
+  ],
+  "story": "pptx/story/sa_market_story_v23_2026_10_08.json",
+  "qa": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v23/checks.json",
+  "archive": "pptx/output/delivered/supporting/archive/records/cleanup_manifest.json",
+  "layout_revision": 3,
+  "canonical_author": "Nigel",
+  "canonical_source": "pptx/output/delivered/supporting/SA_Market_Story_v18_nigel.pptx",
+  "latest_change": "Opening recommendation and numeric expansion conditions; nine-world investment priorities; emerging gateways; corridor/rail/EV options; priority data request. SCR retained p34."
+}

@@ -1,15 +1,19 @@
-# Supporting material
+# Current South Africa review
 
-These files serve separate purposes. For the current story and Manish's next
-review, open the [30-page Convergence pack](../README.md).
+**Current: 8 October 2026 — v25:** [PDF](SA_Market_Story_2026-10-08_v25.pdf) · [PowerPoint](SA_Market_Story_2026-10-08_v25.pptx)
 
-| Material | Files | Status / purpose |
-|---|---|---|
-| Analyst kickoff | [PDF](Vopak_Analyst_Kickoff.pdf), [PowerPoint](Vopak_Analyst_Kickoff.pptx) | Matching 53-page/slides delivered briefing; background and builder reference |
-| Assumption inventory | [PDF](Vopak_Assumption_Inventory.pdf) | 56-page detailed input inventory; separate reference |
-| Earlier Manish handover | [PDF](Vopak_Manish_Handover_2026_10_06.pdf) | 8-page data handover from 6 October; latest review tasks are linked below |
-| Market-envelope illustration | [HTML](Vopak_market_envelope_illustrative_2026_10_06.html), [PNG](Vopak_market_envelope_illustrative_2026_10_06.png) | Authored example, not actual Vopak market share or forecast |
-| Illustration tables | [National balance](illustrative_national_balance.csv), [Catchments](illustrative_market_catchments.csv), [Routes](illustrative_terminal_routes.csv) | Supporting example data; kept beside the HTML so its links work |
+- **[Review scope](Review_scope/)** — agreed scope and comments applied.
+- **[Archive](archive/)** — older story versions, background and illustrations.
 
-[Current fuel-lever review tasks](../../../../workstreams/WS0_governance/workplan/fuel_lever_review_2026-10-07.md)
-supersede earlier handover page numbers and next-step instructions.
+39 pages. Appendix starts at page 17. Nigel’s taglines form the base; authorised decision-story changes are recorded in v25. Scenario and commercial calibration remain open.
+
+Data request: page 16. Baseline reconciliation and implementation status: pages 32–33.
+
+Investment conditions: p4; nine-world investment priorities: p5; options: p15; original SCR synthesis: p34.
+
+Illustrative investment case, annual-report context, assumptions and downside tests: pages 35–38. Reported, inferred and illustrative inputs are distinguished; actual commercial calibration remains open.
+
+Previous versions are in `archive/story_versions/`, ordered by version. The Nigel-edited v18 source is preserved in the same archive.
+
+
+Page 10: current asset position and operating data gaps. Page 39: illustrative turnover sensitivity, moved from the situation.

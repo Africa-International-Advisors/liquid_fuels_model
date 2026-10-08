@@ -1,0 +1,11 @@
+{
+  "country": "south-africa",
+  "url": "https://download.geofabrik.de/africa/south-africa-261006.osm.pbf",
+  "retrieved_at": "2026-10-07T23:19:37.294761+00:00",
+  "path": "external/sources/geospatial/2026_10_08/osm/south-africa.osm.pbf",
+  "bytes": 421917130,
+  "sha256": "5b1439a205a3c86102e1bdd265df58b0eb02d49d00365d5de46e206a81764dde",
+  "licence": "ODbL 1.0",
+  "attribution": "OpenStreetMap contributors; Geofabrik",
+  "download": "HTTP byte ranges checked against Content-Range"
+}

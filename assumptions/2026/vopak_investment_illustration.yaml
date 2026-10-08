@@ -1,0 +1,61 @@
+reported:
+  value:
+    lesedi_gross_m3: 140000
+    durban_gross_m3: 360246
+    ownership_fraction: 0.70
+    group_2025_storage_revenue_eur_m: 1058.8
+    group_2025_consolidated_revenue_eur_m: 1298.9
+    group_2025_proportional_revenue_eur_m: 1916.4
+    group_2025_proportional_capacity_m3_m: 20.4
+    group_2025_proportional_occupancy_pct: 91
+    group_2025_operating_cash_return_pct: 15.6
+    gas_industrial_capex_ebitda_range: [5, 7]
+    transition_capex_ebitda_range: [4, 8]
+    annual_report: external/sources/vopak_annual_review_2026_10_08/Vopak_Annual_Report_2025.pdf
+    analyst_presentation: external/sources/vopak_annual_review_2026_10_08/Analyst_Presentation_FY2025.pdf
+  units: per-key EUR million / million m3 / m3 / fraction / percent / multiple
+  source: Vopak Annual Report 2025 pp36/39 (capacity/occupancy/cash return), p213 (IFRS revenue services), p324 (proportional revenue); FY2025 Analyst presentation p24 (sector-specific investment multiples); official our-terminals webpage checked 8 October 2026 (SA capacity/ownership). Report p63 confirms Lesedi expansion commissioned in 2025. Not site tariffs or throughput.
+  last_updated: '2026-10-08'
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  register_id: REG-VOPAK-REPORTED-CONTEXT
+  exception_id: EXC-VOPAK-ILLUSTRATION
+illustrative:
+  value:
+    demand_bn_l: {Low: 6.0, Medium: 6.8, High: 7.6}
+    domestic_deliveries_bn_l: {Low: 2.4, Medium: 3.6, High: 4.8}
+    durban_gateway_import_share: 0.70
+    vopak_share_of_durban_imports: 0.80
+    lesedi_share_of_vopak_flow: 0.90
+    lesedi_domestic_capture_share: 0.08
+    working_fraction: 0.90
+    existing_monthly_turns: 1.25
+    improved_monthly_turns: 1.50
+    operating_receipt_limit_m3: 3500000
+    operating_dispatch_limit_m3: 3500000
+    added_gross_m3: 40000
+    access_package_capex_zar: 100000000
+    tank_addition_capex_zar: 500000000
+    access_package_fixed_opex_zar: 5000000
+    tank_addition_fixed_opex_zar: 12000000
+    maintenance_capex_fraction: 0.01
+    storage_rent_zar_gross_m3_year: 1500
+    excess_service_contribution_zar_m3: 60
+    discount_rate: 0.10
+    operating_years: 20
+    ramp_fractions: [0.50, 0.75, 1.00]
+    allowable_logistics_zar_m3: 750
+    assumed_durban_logistics_zar_m3: 650
+    capex_stress_multiplier: 1.25
+    volume_stress_multiplier: 0.90
+    service_stress_contribution_zar_m3: 0
+    capture_stress_vopak_share: 0.60
+  units: per-key bn litres / m3 / turns per month / ZAR / fraction / years
+  source: Authored 8 October 2026 at user request for an illustrative case. Medium demand rounds historical Gauteng 2022 petrol/diesel sales (6.809bn L) only as a scale reference; all future demand/supply/capture/operating/commercial values are assumptions, not inferred Vopak site facts or approved forecasts. Steady-state stress snapshots, no calendar forecast year. Storage rent and chargeable excess-service contribution separate; minimum-throughput inclusions must be validated. Pre-tax unlevered constant-ZAR screen; no tax, working capital, construction delay, inflation or residual value. No project hurdle inferred from group operating cash return or sector capex/EBITDA ranges.
+  last_updated: '2026-10-08'
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  provisional: true
+  register_id: REG-VOPAK-ILLUSTRATIVE-CASE
+  exception_id: EXC-VOPAK-ILLUSTRATION

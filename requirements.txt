@@ -15,6 +15,9 @@ ruff==0.15.12
 six==1.17.0
 tzdata==2026.2
 
+# Local OpenStreetMap extract ingestion for the geospatial reference (8 Oct 2026).
+protobuf==7.34.1
+
 # Published-source PDF and legacy Excel readers (resolved 5 October 2026).
 pypdf==6.19.0
 cryptography==50.0.2

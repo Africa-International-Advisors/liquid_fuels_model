@@ -1,0 +1,24 @@
+source_extracts:
+  register_id: REG-GEOSPATIAL-REFERENCE
+  exception_id: EXC-SA-REVIEW-2026-10-07
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  last_updated: '2026-10-08'
+  shared: true
+  provisional: true
+  units: EPSG:4326 geometry and source tags
+  source: OpenStreetMap contributors / Geofabrik; retained original PBF and per-file
+    provenance
+  value: output/delivered/geospatial/2026_10_08/catalog.json
+reference_points:
+  register_id: REG-GEOSPATIAL-REFERENCE
+  exception_id: EXC-SA-REVIEW-2026-10-07
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  last_updated: '2026-10-08'
+  shared: true
+  provisional: true
+  units: EPSG:4326 geometry and source tags
+  source: Existing authored port/city reference points; approximate locations, not
+    verified terminal entrances
+  value: pptx/story/corridor_comparison_2026_10_06.json

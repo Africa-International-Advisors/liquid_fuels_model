@@ -1,0 +1,25 @@
+{
+  "current_version": 24,
+  "slides": 38,
+  "files": [
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v24.pptx",
+      "bytes": 3052290,
+      "sha256": "93e49cdbb15045aace6c388a90f00c012cfc2be13d261c53f8d69d7f64daa7b5"
+    },
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v24.pdf",
+      "bytes": 2272238,
+      "sha256": "f8de3029a861f46ffa8ef58c3a0835b46c333cbc771d62fa65178446911156f9"
+    }
+  ],
+  "story": "pptx/story/sa_market_story_v24_2026_10_08.json",
+  "qa": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v24/checks.json",
+  "archive": "pptx/output/delivered/supporting/archive/records/cleanup_manifest.json",
+  "layout_revision": 3,
+  "canonical_author": "Nigel",
+  "canonical_source": "pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_v18_nigel.pptx",
+  "latest_change": "Official Vopak context and registered illustrative pre-tax economics; numeric investment conditions, nine-world option ranking and downside tests. Worked case pp35\u201338; not investment approval.",
+  "delivery_date": "2026-10-08",
+  "cleanup_record": "pptx/output/delivered/supporting/archive/records/cleanup_2026-10-08_v24.json"
+}
