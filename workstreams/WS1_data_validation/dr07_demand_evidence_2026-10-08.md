@@ -130,5 +130,6 @@ solar and batteries or not replaced at all.
   against the page named.
 - The provinces on the fleet sheet add to the national register (tested).
 - FIASA and JODI are not used.
+- `python -m pytest -q`: 233 passed, 1 skipped. The message on commit `1c5c64d` says 234; that is wrong.
 - One input changed (Avon's last full year); the engine does not read it, so
   model results are unchanged.
