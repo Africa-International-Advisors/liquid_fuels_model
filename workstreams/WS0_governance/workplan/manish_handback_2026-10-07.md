@@ -8,7 +8,7 @@ Read first:
 
 - Deck: `pptx/output/delivered/supporting/Vopak_Manish_Handback_2026_10_07.pptx`
   (PDF alongside), one section per priority.
-- Decision log: `manish_decision_log_2026-10-07.csv`, 21 decisions with the
+- Decision log: `manish_decision_log_2026-10-07.csv`, 22 decisions with the
   evidence, my proposal, the owner and a status.
 - Workbook: `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`,
   your workshop workbook with the sourced history added.

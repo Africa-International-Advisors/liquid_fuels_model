@@ -812,7 +812,7 @@ def power_fleet_sheet(wb, d: dict) -> None:
     s = Sheet(wb, "Power fleet", "Diesel for power: the fleet, the coal retirements and three cases",
               "A block by station and year, as asked on 7 October. Capacities are from Eskom's fact sheet; retirement "
               "dates from Eskom and from reports of the environment minister's decisions. The three cases are "
-              "scenarios: yellow rows are assumptions to agree.", years=FUTURE)
+              "scenarios: yellow rows are assumptions for Nigel and Henry to confirm.", years=FUTURE)
     c = s.col
     fleet = d["power_fleet"]
     litres = s.row + 2                       # the assumption rows sit first so that every formula can point at them
@@ -820,14 +820,14 @@ def power_fleet_sheet(wb, d: dict) -> None:
     s.section("Assumptions used below")
     s.line("Diesel burned per kWh generated", "litres/kWh", "Assumption", "Reported Eskom burn over generation in three "
            "years. A proposal awaiting review.", scalar=LITRES_PER_KWH, kind="estimate", fmt="0.00",
-           source="Parliamentary replies on Eskom diesel burn; Eskom generation")
+           source="Parliamentary replies on Eskom diesel burn; Eskom generation", action="Nigel / Henry to confirm")
     backup = s.line("Share of output on diesel when gas is available", "%", "Assumption",
                     "Diesel as the backup fuel of a station whose main fuel is gas. NO SOURCE: Eskom's tender says only "
                     "that gas will be 'supplemented by diesel as and when it's required'.",
-                    scalar=10, kind="estimate", fmt="0", action="Agree a value (Nigel, Henry)")
+                    scalar=10, kind="estimate", fmt="0", action="Nigel / Henry to confirm")
     gas_lf = s.line("Load factor of a gas plant running on gas", "%", "Assumption",
                     "NO SOURCE. Eskom describes the gas it needs as dispatchable baseload, so well above a peaker.",
-                    scalar=40, kind="estimate", fmt="0", action="Agree a value (Nigel, Henry)")
+                    scalar=40, kind="estimate", fmt="0", action="Nigel / Henry to confirm")
 
     s.section("1. Stations that burn diesel today (installed capacity)")
     station = {}
@@ -910,18 +910,19 @@ def power_fleet_sheet(wb, d: dict) -> None:
              sum(float(r["capacity_mw"]) for r in fleet if r["station"] in contract and y <= contract[r["station"]])
              for y in FUTURE},
             kind="estimate", fmt="#,##0", status="What follows the agreements is not known",
-            source="African Energy, 9 October 2015 (15-year agreements)")
+            source="African Energy, 9 October 2015 (15-year agreements)", action="Nigel / Henry to confirm")
         share = s.line(
             f"Share of Ankerlig and Gourikwa output on diesel, {name}", "%", "Scenario",
             "100% until Eskom's stated gas switch in December 2027, then the backup share." if case["switch"] else
             "100% throughout: the gas supply does not arrive.",
             formula=lambda y, sw=case["switch"]: f"=$D${backup}" if sw and y >= GAS_SWITCH_YEAR else "=100",
-            kind="estimate", fmt="0", source="Eskom gas supply tender, as reported by News24, 12 June 2023")
+            kind="estimate", fmt="0", source="Eskom gas supply tender, as reported by News24, 12 June 2023",
+            action="Nigel / Henry to confirm")
         gas_mw = s.line(f"Gas turbines at the five coal sites, {name}", "MW", "Scenario",
                         "From 2030, when Camden, Grootvlei, Hendrina, Arnot and Kriel are due to stop. Which sites, and "
                         "how large, is not decided; the national gas requirement is used as a stand-in.",
                         {y: case["gas_mw"] if y >= 2030 else 0 for y in FUTURE}, kind="estimate", fmt="#,##0",
-                        source="IRP 2025 gas requirement, as reported by TechCentral, 22 April 2026")
+                        source="IRP 2025 gas requirement, as reported by TechCentral, 22 April 2026", action="Nigel / Henry to confirm")
         me = s.row + 1
         today = s.line(
             f"Diesel at today's stations, {name}", ML, "Proposed estimate",
@@ -930,7 +931,7 @@ def power_fleet_sheet(wb, d: dict) -> None:
             formula=lambda y, me=me, a=available, sh=share: (
                 f'=({c(y)}{a}+({c(y)}{station["Ankerlig"]}+{c(y)}{station["Gourikwa"]})*{c(y)}{sh}/100)'
                 f'*8.76*$D${me}/100*$D${litres}'),
-            kind="estimate", scalar=case["lf"], status="Estimate")
+            kind="estimate", scalar=case["lf"], status="Estimate", action="Nigel / Henry to confirm: the load factor in column D")
         site_lf = case["gas_lf"] or f"$D${me}"            # high case: run as peakers at the fleet's load factor
         sites = s.line(
             f"Diesel at the five coal sites, {name}", ML, "Scenario",
@@ -938,14 +939,15 @@ def power_fleet_sheet(wb, d: dict) -> None:
             + ("Run as diesel peakers at the load factor above." if case["gas_lf"] is None else
                "Run on gas at the gas-plant load factor, with the backup share on diesel."),
             formula=lambda y, r=gas_mw, lf=site_lf, sh=case["gas_diesel"]: f"={c(y)}{r}*8.76*{lf}/100*{sh}/100*$D${litres}",
-            kind="estimate", status="Scenario")
+            kind="estimate", status="Scenario", action="Nigel / Henry to confirm")
         totals[name] = s.line(f"Diesel for power, {name} case", ML, "Proposed estimate", "The two rows above added.",
                               formula=lambda y, a=today, b=sites: f"={c(y)}{a}+{c(y)}{b}", kind="estimate")
 
     s.section("5. Summary and ceiling")
     for name in cases:
         s.line(f"{name.capitalize()} case", ML, "Proposed estimate", cases[name]["story"],
-               formula=lambda y, r=totals[name]: f"={c(y)}{r}", kind="estimate")
+               formula=lambda y, r=totals[name]: f"={c(y)}{r}", kind="estimate", status="Proposed; not agreed",
+               action="Nigel / Henry to confirm")
     s.line("Ceiling: four stations and 6 GW of gas turbines on diesel all year", ML, "Reporting formula",
            "Capacity times 8,760 hours times litres per kWh. How much the fleet could consume; a physical limit, not a "
            "forecast.", formula=lambda y: f"=({c(y)}{total_mw}+{IRP_GAS_MW_2030 if y >= 2030 else 0})*8.76*$D${litres}",

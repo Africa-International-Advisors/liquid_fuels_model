@@ -584,7 +584,7 @@ table(s, [
      "Lesedi and Durban site assumptions; eight values marked to confirm with the client",
      "No Vopak operating data; other operators' sites not done"],
     ["5 Hand-back", "Ready",
-     "This deck, the hand-back note, a 21-item decision log, the workshop workbook with history from 2012, and "
+     f"This deck, the hand-back note, a {len(DECISION_ROWS)}-item decision log, the workshop workbook with history from 2012, and "
      "288 figures in the current pack checked with none differing",
      "Vehicle stock by age and by fuel within class is in no source held"],
 ], [1.9, 1.75, 4.6, 3.4], height=3.9, size=10.5)
@@ -594,12 +594,12 @@ text(s, "New evidence today: Road Accident Fund accounts give 24.4 bn litres of 
 set_note(s, HANDBACK_NOTE)
 
 s = page(4, f"Decision log: {count['Ready']} ready, {count['Proposed']} proposed, {count['Unresolved']} unresolved",
-         "Decisions for Nigel | the nine that are unresolved, with the analyst's proposal | full log in the csv")
+         f"Decisions for Nigel | the {count['Unresolved']} that are unresolved, with the analyst's proposal | full log in the csv")
 body = [["Decision", "Evidence in brief", "Proposal"]]
 for r in DECISION_ROWS:
     if r["status"] == "Unresolved":
         body.append([f'{r["id"]}  {r["decision"]}', r["evidence_in_brief"], r["analyst_proposal"]])
-table(s, body, [3.1, 5.75, 2.8], y=2.2, height=4.7, size=8.5)
+table(s, body, [3.1, 5.75, 2.8], y=2.2, height=4.7, size=8)
 set_note(s, HANDBACK_NOTE)
 
 s = page(4, "The workshop workbook now carries sourced history from 2012 and labelled provincial estimates",

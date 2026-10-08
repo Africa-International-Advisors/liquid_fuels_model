@@ -304,6 +304,21 @@ supply was still being sought in 2023. In that case the five sites burn about
 2.8 bn litres a year and today's four stations 1.4 bn. For comparison, the
 model's high scenario has 4.6 bn litres from 2030.
 
+**For Nigel and Henry to confirm.** Every case setting on the sheet carries
+"Nigel / Henry to confirm" in its action column, and the block is decision D22
+in the decision log:
+
+| To confirm | Value used | Basis |
+|---|---|---|
+| Diesel per kWh | 0.31 litres | Three years of reported Eskom burn |
+| Output on diesel when gas is available | 10% | None |
+| Load factor of a gas plant on gas | 40% | None |
+| Avon and Dedisa after 2030-2031 | Stop (low); continue (medium, high) | Agreements end; no announcement |
+| Ankerlig and Gourikwa | Gas from 2028 (low, medium); diesel throughout (high) | Eskom's 2023 tender target |
+| Gas turbines at the five coal sites from 2030 | 0 / 3,000 / 6,000 MW | IRP 2025 gas requirement; siting assumed |
+| Gas reaching those sites | Yes (medium); no (high) | None |
+| Peaker load factor | 3.6 / 9.4 / 17.1% | Observed, years to March 2026, 2025, 2024 |
+
 **Coal retirements.** Komati (990 MW) is shown as shut from 2023. Camden,
 Grootvlei, Hendrina, Arnot and Kriel (9,474 MW together) hold exemptions to 31
 March 2030. Duvha and Matla (6,600 MW) are shown to 2033. Eskom was to decide
