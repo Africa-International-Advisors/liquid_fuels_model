@@ -206,13 +206,18 @@ def history_sheet(wb, d: dict) -> dict:
         s.section(f"1. Department sales by province: {product}")
         first = s.row + 1
         for code in PROVINCES:
-            s.line(f"{PROVINCE_NAMES[code]} {product}", ML, "Source observation",
-                   "District-level sales summed to province. Shows where fuel was sold, not where it was used.",
-                   {y: d["province"].get((product, code, y)) for y in YEARS},
-                   status="2013-2022 full years; 2023 has quarter 1 only", source=dept_src + ", district workbooks")
+            rows[f"{product}_{code}"] = s.line(
+                f"{PROVINCE_NAMES[code]} {product}", ML, "Observation to 2022; estimate after",
+                "District-level sales summed to province, 2013-2022. Shows where fuel was sold, not where it was used. "
+                "2023-2025 (yellow, italic) are ESTIMATES from section 6, not department data.",
+                {y: d["province"].get((product, code, y)) for y in YEARS},
+                status="2013-2022 observed; 2023-2025 estimated",
+                source=dept_src + ", district workbooks; estimates: see section 6",
+                action="Replace the estimates when the department publishes district data after 2023 quarter 1")
         last = s.row
         rows[f"{product}_provinces"] = s.line(
-            f"Sum of nine provinces, {product}", ML, "Reporting formula", "Sum of the nine rows above.",
+            f"Sum of nine provinces, {product}", ML, "Reporting formula",
+            "Sum of the nine rows above. From 2023 it sums estimates, which add to the national figure by construction.",
             formula=lambda y, a=first, b=last: f'=IF(COUNT({col(y)}{a}:{col(y)}{b})<9,"",SUM({col(y)}{a}:{col(y)}{b}))',
             kind="formula")
         rows[f"{product}_dept"] = s.line(
@@ -222,7 +227,8 @@ def history_sheet(wb, d: dict) -> dict:
             status="2012-2023; nothing published for 2024 or 2025", source=dept_src + ", national workbooks",
             action="2024 national sales: source to be agreed (Nigel)")
         s.line(f"Provinces less national, {product}", ML, "Reporting formula",
-               "Difference between the department's two files. 2013 and 2015 traced; 2014 and 2018 for decision.",
+               "Difference between the department's two files. 2013 and 2015 traced; 2014 and 2018 for decision. "
+               "Zero from 2023 only because the estimates are shares of the national figure.",
                formula=both(rows[f"{product}_provinces"], rows[f"{product}_dept"], "{c}{a}-{c}{b}"), kind="formula",
                action="See integrity_flag_log_2026-10-06.md")
 
@@ -319,12 +325,23 @@ def history_sheet(wb, d: dict) -> dict:
                 {y: d["estimated_share"][product][y][code] * 100 for y in (2023, 2024, 2025)}, kind="estimate",
                 status="Estimate", source="Department district data, quarter 1 2023; Stats SA P0441.2", fmt="0.0")
         for code in PROVINCES:
-            s.line(f"{PROVINCE_NAMES[code]} {product}, estimated", ML, "Proposed estimate",
+            rows[f"{product}_{code}_estimate"] = s.line(f"{PROVINCE_NAMES[code]} {product}, estimated", ML, "Proposed estimate",
                    "Estimated share times national sales used (section 4). Blank where no national figure exists.",
                    formula=lambda y, a=share_rows[code], b=rows[f"sales_{product}"]:
                    (f'=IF(COUNT({col(y)}{a},{col(y)}{b})<2,"",{col(y)}{a}/100*{col(y)}{b})' if y >= 2023 else None),
                    kind="estimate", status="Estimate; 2024 also carries the unverified national total",
                    action="Replace when the department publishes district data after 2023 quarter 1")
+
+    # Bring the estimates into the province rows of section 1, marked as estimates.
+    for product in ("petrol", "diesel"):
+        for code in PROVINCES:
+            observed, estimate = rows[f"{product}_{code}"], rows[f"{product}_{code}_estimate"]
+            for year in (2023, 2024, 2025):
+                cell = s.ws[f"{col(year)}{observed}"]
+                cell.value = f'=IF(ISNUMBER({col(year)}{estimate}),{col(year)}{estimate},"")'
+                cell.fill = PatternFill("solid", fgColor=FILL["estimate"])
+                cell.font = Font(name="Arial", size=10, italic=True, color=INK)
+                cell.number_format = "#,##0.0"
     return rows
 
 

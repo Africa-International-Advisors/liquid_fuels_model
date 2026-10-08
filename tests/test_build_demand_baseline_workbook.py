@@ -59,7 +59,11 @@ def test_provincial_estimates_are_marked_and_kept_apart_from_observations():
 
     history = _rows(load_workbook(ROOT / build.OUT)["History"])
     at = {year: build.FIRST - 1 + build.YEARS.index(year) for year in build.YEARS}
-    assert history["Gauteng petrol"][at[2023]].value is None                 # observed rows stay empty after 2022
+    brought_in = history["Gauteng petrol"][at[2023]]                         # estimate, linked from section 6
+    assert str(brought_in.value).startswith("=IF(ISNUMBER(") and brought_in.font.italic
+    assert brought_in.fill.fgColor.rgb == build.FILL["estimate"]
+    assert history["Gauteng petrol"][at[2022]].fill.fgColor.rgb == build.FILL["observation"]
+    assert "ESTIMATES" in history["Gauteng petrol"][4].value
     estimated = [history[f"{name} share of petrol"][at[2023]].value for name in build.PROVINCE_NAMES.values()]
     assert sum(estimated) == pytest.approx(100)
     quarter1 = shares.share(shares.load(VINTAGE / "timeseries")["quarter1"][("petrol", 2023)])
