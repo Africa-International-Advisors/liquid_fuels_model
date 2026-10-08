@@ -6,7 +6,7 @@ M3: port and pipeline limits, route access, and matched delivered costs to the
 same destinations.
 
 Status: **started; the Durban to Gauteng pipeline route is documented, the
-rest is not.** 24 facts are taken from original documents, 1 is calculated,
+rest is not.** 31 facts are taken from original documents, 1 is calculated,
 and 8 lines are open. No matched delivered-cost comparison is possible yet.
 
 Evidence table: `dr04_routes_access_evidence_2026-10-08.csv`, one row per
@@ -55,6 +55,18 @@ the price, not what a shipper pays a haulier or Transnet.
 Petrol and diesel together, SARS customs. The office is where goods were
 cleared, not a berth or terminal record.
 
+**Liquid bulk through the ports**
+
+| Fact | Value | Source |
+|---|---|---|
+| Liquid bulk handled, all ports, years to March | 41.9 (2020), 41.8 (2021), 38.1 (2022), 35.5 (2023), 38.9 (2024) million kilolitres | Port authority reports 2023 and 2024, PDF p.9 |
+| Target for the year to March 2025 | 34.6 million kilolitres | 2024 report |
+| Planned at Island View, Durban | Berth 1 rebuilt and Berth 3 converted from dry bulk to liquid bulk, both dated 2026 | Port authority tariff application slides, September 2025, PDF p.14 |
+| Planned at Richards Bay | New liquid bulk berth 210 and the South Dunes liquid bulk development | Same, PDF pp.11-12 |
+
+These volumes are all eight ports and all liquids together, crude and chemicals
+included. No published figure found splits them by port or by product.
+
 **Access at the two Vopak sites**
 
 | Site | Receives by | Dispatches by | Source |
@@ -81,7 +93,7 @@ volumes include crude, so this is a lead to check, not a conclusion.
 |---|---|---|
 | Pipeline tariff by route (Durban to Alrode and others), cents a litre | Manish | NERSA's reasons for decision on the 2025-27 tariffs |
 | Today's trunk line capacity, and refined product volumes on it | Manish | A later Transnet or NERSA document; the 2020 figure is the latest found |
-| Port liquid-bulk capacity, berths and volumes at Durban and Richards Bay | Manish | The port authority's brochure, framework plan and statistics; its site refuses scripted downloads, so these need a browser |
+| Liquid-bulk capacity, berths and volumes at Durban and Richards Bay, by port | Manish | The port authority's brochure, framework plan and port statistics. Its site did not respond on 8 October, by script or in a browser; try again, or ask the authority |
 | Road and rail rates, Durban to Gauteng | Nigel to coordinate | Vopak, a haulier or Transnet Freight Rail; none is public |
 | Whether Vopak Durban can inject into the trunk line directly | Nigel to coordinate | Vopak operations |
 | Maputo and Matola, Walvis Bay, and inland supply from Natref and Secunda | Manish | Not started |
@@ -92,7 +104,8 @@ volumes include crude, so this is a lead to check, not a conclusion.
 Figures seen only in search summaries are recorded in the evidence table as
 "not verified" and are not used: Durban's liquid-bulk capacity of 19.5 million
 kilolitres a year with 10 berths and 962 tanks, and Richards Bay's two berths
-and 3 million kilolitres a year. The original documents could not be opened.
+and 3 million kilolitres a year. The port authority's site did not respond, so
+the original documents could not be opened.
 
 ## Checks
 
