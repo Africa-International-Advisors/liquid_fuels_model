@@ -34,7 +34,7 @@ def test_history_carries_the_registered_inputs_and_uses_formulas_for_the_balance
 def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
-        "History", "Sector history", "Diesel by use", "Power fleet", "Vehicle history", "HML response", "Gap status",
+        "History", "DR01 balance", "Sector history", "Diesel by use", "Demand by use", "Power fleet", "Vehicle history", "HML response", "Gap status",
         "Checks",
         "History sources"]
     changed = []
@@ -179,3 +179,37 @@ def test_every_row_on_the_added_sheets_names_a_source():
     assert "Commodity-Flow-and-Energy-Balance" in history["Production reported, diesel"][at].value
     assert history["Refinery output reported to JODI, diesel"][2].value == "Comparison only"
     assert "Production used, diesel" not in history
+
+
+def test_dr01_sheet_is_formulas_on_history_in_billion_litres_with_a_source_on_every_line():
+    ws = load_workbook(ROOT / build.OUT)["DR01 balance"]
+    header = [c.value for c in ws[4]]
+    assert header[0] == "Line" and header[1:13] == list(range(2014, 2026)) and header[13:] == ["Source", "Note"]
+    lines = {}
+    block = None
+    for r in ws.iter_rows(min_row=5):
+        if r[0].value in ("Diesel", "Petrol", "Diesel and petrol"):
+            block = r[0].value
+        elif r[0].value:
+            lines[(block, r[0].value)] = r
+    assert [k[1] for k in lines if k[0] == "Diesel"] == ["Sales", "Production", "Imports", "Exports", "Supply",
+                                                         "Stock change", "Supply less sales"]
+    assert all(r[13].value for r in lines.values())                                # a source on every line
+    sales_2021 = lines[("Diesel", "Sales")][1 + build.DR01_YEARS.index(2021)].value
+    assert sales_2021.startswith("=IF(ISNUMBER(History!") and sales_2021.endswith('/1000,"")')
+    assert all(c.value is None for c in lines[("Petrol", "Stock change")][1:13])    # not published
+
+
+def test_demand_by_use_sheet_lists_each_use_in_billion_litres_with_basis_and_source():
+    ws = load_workbook(ROOT / build.OUT)["Demand by use"]
+    header = [c.value for c in ws[4]]
+    assert header[0] == "Use" and header[1:11] == list(range(2014, 2024)) and header[11:] == ["Basis", "Source", "Note"]
+    labels = [r[0].value for r in ws.iter_rows(min_row=5) if r[0].value]
+    assert labels[:9] == ["Diesel", "Power generation", "Mining", "Manufacturing and other industry", "Agriculture",
+                          "Heavy vehicles", "Light vehicles", "Passenger vehicles", "Diesel sales"]
+    assert "Petrol" in labels and labels[-1] == "Petrol sales"
+    for r in ws.iter_rows(min_row=6):
+        if r[0].value and r[0].value not in ("Diesel", "Petrol"):
+            assert r[11].value and r[12].value, r[0].value                      # basis and source on every line
+    mining = next(r for r in ws.iter_rows(min_row=5) if r[0].value == "Mining")
+    assert mining[1].value.startswith("=IF(ISNUMBER('Diesel by use'!") and mining[1].value.endswith('/1000,"")')

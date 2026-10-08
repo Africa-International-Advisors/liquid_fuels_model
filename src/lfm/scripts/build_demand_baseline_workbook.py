@@ -630,7 +630,7 @@ def vehicle_sheet(wb, d: dict, history_rows: dict) -> None:
         s.line(label, "", "Missing input", why, kind="estimate", status="Gap", action="Source to be found or assumption agreed")
 
 
-def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> None:
+def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> dict:
     s = Sheet(wb, "Diesel by use", "Diesel by use: the six branches drawn at the 7 October check-in",
               "Mining, manufacturing, agriculture and power are taken from sources; road diesel is what remains of "
               "recorded sales and is split with the shares of a published vehicle study (approach A). Million litres a year.")
@@ -730,6 +730,9 @@ def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> N
            "group as the vehicle study.", scalar=60.5, kind="comparison", fmt="0.0",
            source="SA-TIED Working Paper 60, p.10")
 
+    uses = {"Sales": sales, "Power generation": power, "Mining": mining, "Manufacturing and other industry": manufacturing,
+            "Agriculture": agriculture, **split}
+
     s.section("5. Which classes of the study fall in each group")
     for group, prefixes in VEHICLE_GROUPS.items():
         every = sorted(r["vehicle_type"] for r in d["stone"].values() if r["vehicle_type"].startswith(prefixes))
@@ -744,6 +747,183 @@ def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> N
            "Car and SUV are private passenger vehicles; Bus is buses; MBT is minibus taxis; Moto is motorcycles; LCV is "
            "light commercial vehicles (bakkies and vans); HCV1 to HCV9 are trucks in nine weight classes, lightest to "
            "heaviest.", kind="comparison")
+    return uses
+
+
+BN_FORMAT = "[>=0.005]0.00;[<=-0.005]-0.00;0.00"  # two decimals; a tiny negative shows as 0.00
+DR01_YEARS = list(range(2014, 2026))
+DR01_LINES = [
+    # label, History row key (with {p} for the fuel) or formula kind, source, note
+    ("Sales", "sales_{p}", "Department: sales by province added up (2013-2022); national total (2023)",
+     "2023 by province is an estimate. Nothing published after 2023."),
+    ("Production", "production_{p}", "Department energy balances, one file a year",
+     "Last balance published is 2021."),
+    ("Imports", "import_{p}", "SARS customs, by tariff line", "Complete calendar years in litres."),
+    ("Exports", "export_{p}", "SARS customs, by tariff line", ""),
+    ("Supply", "supply", "Calculated: production + imports - exports", ""),
+    ("Stock change", None, "None", "Not published by any source used."),
+    ("Supply less sales", "difference", "Calculated: supply - sales",
+     "Stock change and statistical difference together. Not production."),
+]
+
+
+def dr01_sheet(wb, history_rows: dict) -> None:
+    """The DR01 national balance on one page, in billion litres, each cell a formula on the History sheet."""
+    ws = wb.create_sheet("DR01 balance")
+    ws["A1"] = "DR01 National balance: petrol and diesel"
+    ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
+    ws["A2"] = ("Billion litres, calendar years. Every number is a formula on the History sheet. Blank means not published. "
+                "FIASA and JODI are not used.")
+    ws["A2"].font = Font(name="Arial", size=10, color=INK)
+    header = ["Line"] + DR01_YEARS + ["Source", "Note"]
+    widths = [22] + [8.5] * len(DR01_YEARS) + [52, 58]
+    for i, label in enumerate(header, start=1):
+        cell = ws.cell(row=4, column=i, value=label)
+        cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
+        cell.fill = PatternFill("solid", fgColor=FILL["header"])
+        cell.alignment = Alignment(horizontal="right" if isinstance(label, int) else "left", vertical="top")
+        ws.column_dimensions[get_column_letter(i)].width = widths[i - 1]
+    last = len(header)
+
+    def here(year: int) -> str:
+        return get_column_letter(2 + DR01_YEARS.index(year))
+
+    row = 4
+    placed: dict = {}
+    for fuel, title in (("diesel", "Diesel"), ("petrol", "Petrol"), ("total", "Diesel and petrol")):
+        row += 2 if row > 4 else 1
+        for i in range(1, last + 1):
+            cell = ws.cell(row=row, column=i, value=title if i == 1 else None)
+            cell.font = Font(name="Arial", size=10, bold=True, color=INK)
+            cell.fill = PatternFill("solid", fgColor=FILL["section"])
+        for label, key, source, note in DR01_LINES:
+            row += 1
+            placed[(fuel, label)] = row
+            ws.cell(row=row, column=1, value=label)
+            for year in DR01_YEARS:
+                c = here(year)
+                if key is None:
+                    formula = None
+                elif fuel == "total":
+                    d, g = placed[("diesel", label)], placed[("petrol", label)]
+                    formula = f'=IF(COUNT({c}{d},{c}{g})<2,"",{c}{d}+{c}{g})'
+                elif key == "supply":
+                    m, im, ex = (placed[(fuel, name)] for name in ("Production", "Imports", "Exports"))
+                    formula = f'=IF(COUNT({c}{m},{c}{im},{c}{ex})<3,"",{c}{m}+{c}{im}-{c}{ex})'
+                elif key == "difference":
+                    su, sa = placed[(fuel, "Supply")], placed[(fuel, "Sales")]
+                    formula = f'=IF(COUNT({c}{su},{c}{sa})<2,"",{c}{su}-{c}{sa})'
+                else:
+                    ref = f"History!{col(year)}{history_rows[key.format(p=fuel)]}"
+                    formula = f'=IF(ISNUMBER({ref}),{ref}/1000,"")'
+                cell = ws.cell(row=row, column=2 + DR01_YEARS.index(year), value=formula)
+                cell.number_format = BN_FORMAT
+            ws.cell(row=row, column=last - 1, value="Sum of the diesel and petrol rows" if fuel == "total" and key else source)
+            ws.cell(row=row, column=last, value=note)
+            calculated = fuel == "total" or key in ("supply", "difference")
+            for i in range(1, last + 1):
+                cell = ws.cell(row=row, column=i)
+                cell.font = Font(name="Arial", size=10, color=INK, bold=label in ("Supply", "Supply less sales") and i == 1)
+                cell.fill = PatternFill("solid", fgColor=FILL["formula" if calculated else "observation"])
+                cell.alignment = Alignment(wrap_text=i >= last - 1, vertical="top",
+                                           horizontal="right" if 1 < i < last - 1 else "left")
+    ws.freeze_panes = "B5"
+
+
+USE_YEARS = list(range(2014, 2024))
+DIESEL_USES = [
+    # label, basis, source, note
+    ("Power generation", "Observed to 2021; estimated from 2022",
+     "Department energy balances to 2021; Eskom generation x 0.31 litres per kWh from 2022",
+     "Eskom and independent diesel turbines. The balance records almost none for 2017-2019 and nothing for "
+     "2020-2021; the Eskom generation data held starts in 2022. The 0.31 factor awaits review."),
+    ("Mining", "Observed to 2021; estimated from 2022",
+     "Department energy balances; moved with the Stats SA mining volume index after 2021", ""),
+    ("Manufacturing and other industry", "Observed to 2021; estimated from 2022",
+     "Department energy balances; moved with the Stats SA manufacturing volume index after 2021",
+     "Not reported separately before 2016."),
+    ("Agriculture", "Observed to 2021; estimated from 2022",
+     "Department energy balances; moved with agricultural real value added after 2021", ""),
+    ("Heavy vehicles", "Estimate", "Road diesel x 60.5%, the share in Stone et al. (2018)",
+     "Trucks and buses. Shares are for the 2010 fleet."),
+    ("Light vehicles", "Estimate", "Road diesel x 27.0%, the share in Stone et al. (2018)", "Bakkies and minibuses."),
+    ("Passenger vehicles", "Estimate", "Road diesel x 12.5%, the share in Stone et al. (2018)", "Cars and SUVs."),
+]
+
+
+def demand_by_use_sheet(wb, history_rows: dict, use_rows: dict) -> None:
+    """Demand by use on one page, in billion litres, each cell a formula on the sheets behind it."""
+    ws = wb.create_sheet("Demand by use")
+    ws["A1"] = "Demand by use: who burns the diesel and petrol"
+    ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
+    ws["A2"] = ("Billion litres, calendar years. Every number is a formula on the Diesel by use and History sheets. Road "
+                "diesel is what remains of sales after the four sourced uses, and includes rail, construction and ships' diesel.")
+    ws["A2"].font = Font(name="Arial", size=10, color=INK)
+    header = ["Use"] + USE_YEARS + ["Basis", "Source", "Note"]
+    widths = [32] + [8.5] * len(USE_YEARS) + [30, 62, 44]
+    for i, label in enumerate(header, start=1):
+        cell = ws.cell(row=4, column=i, value=label)
+        cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
+        cell.fill = PatternFill("solid", fgColor=FILL["header"])
+        cell.alignment = Alignment(horizontal="right" if isinstance(label, int) else "left", vertical="top")
+        ws.column_dimensions[get_column_letter(i)].width = widths[i - 1]
+    last, first_text = len(header), len(USE_YEARS) + 2
+
+    def here(year: int) -> str:
+        return get_column_letter(2 + USE_YEARS.index(year))
+
+    def write(row, label, formula, basis, source, note, kind, bold=False):
+        ws.cell(row=row, column=1, value=label)
+        for year in USE_YEARS:
+            cell = ws.cell(row=row, column=2 + USE_YEARS.index(year), value=formula(year) if formula else None)
+            cell.number_format = BN_FORMAT
+        for i, value in enumerate((basis, source, note), start=first_text):
+            ws.cell(row=row, column=i, value=value)
+        for i in range(1, last + 1):
+            cell = ws.cell(row=row, column=i)
+            cell.font = Font(name="Arial", size=10, color=INK, bold=bold and i == 1, italic=kind == "estimate" and 1 < i < first_text)
+            cell.fill = PatternFill("solid", fgColor=FILL[kind])
+            cell.alignment = Alignment(wrap_text=i >= first_text, vertical="top", horizontal="right" if 1 < i < first_text else "left")
+
+    def title(row, text):
+        for i in range(1, last + 1):
+            cell = ws.cell(row=row, column=i, value=text if i == 1 else None)
+            cell.font = Font(name="Arial", size=10, bold=True, color=INK)
+            cell.fill = PatternFill("solid", fgColor=FILL["section"])
+
+    def linked(sheet, source_row):
+        ref = lambda y: f"'{sheet}'!{col(y)}{source_row}"  # noqa: E731
+        return lambda y: f'=IF(ISNUMBER({ref(y)}),{ref(y)}/1000,"")'
+
+    title(5, "Diesel")
+    row, first = 5, 6
+    for label, basis, source, note in DIESEL_USES:
+        row += 1
+        write(row, label, linked("Diesel by use", use_rows[label]), basis, source, note,
+              "estimate" if basis == "Estimate" else "observation")
+    row += 1
+    write(row, "Diesel sales", lambda y: f'=IF(COUNT({here(y)}{first}:{here(y)}{row - 1})<{len(DIESEL_USES) - 1},"",SUM({here(y)}{first}:{here(y)}{row - 1}))',
+          "Sum of the rows above", "Equals department sales (provinces added up; national total for 2023)",
+          "Nothing published after 2023.", "formula", bold=True)
+    for share_label, group in (("Road vehicles, share of diesel", ("Heavy vehicles", "Light vehicles", "Passenger vehicles")),):
+        row += 1
+        rows_of = [first + [u[0] for u in DIESEL_USES].index(g) for g in group]
+        ws_formula = lambda y, r=rows_of, t=row - 1: (  # noqa: E731
+            f'=IF(ISNUMBER({here(y)}{t}),(' + "+".join(f"{here(y)}{n}" for n in r) + f')/{here(y)}{t},"")')
+        write(row, share_label, ws_formula, "Calculated", "Heavy, light and passenger vehicles over diesel sales", "", "formula")
+        for year in USE_YEARS:
+            ws.cell(row=row, column=2 + USE_YEARS.index(year)).number_format = "0%"
+
+    row += 2
+    title(row, "Petrol")
+    row += 1
+    write(row, "Road vehicles", linked("History", history_rows["sales_petrol"]), "Observed",
+          "Department sales (provinces added up; national total for 2023)",
+          "No source splits petrol by use; cars and light vehicles burn nearly all of it.", "observation")
+    row += 1
+    write(row, "Petrol sales", lambda y, r=row - 1: f'=IF(ISNUMBER({here(y)}{r}),{here(y)}{r},"")', "Sum of the row above",
+          "Equals department sales", "Nothing published after 2023.", "formula", bold=True)
+    ws.freeze_panes = "B5"
 
 
 def _table(wb, title: str, heading: str, sub_heading: str, header: list[str], widths: list[float], body: list[list]):
@@ -1194,12 +1374,14 @@ def main() -> int:
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 is still set to FIASA on Nigel's sheet, because the department has no 2024 "
                    "figure to switch to. The added sheets do not use FIASA for any year. For Nigel to decide.")
-    changes.append("Sheets added: History, Sector history, Diesel by use, Power fleet, Vehicle history, HML response, Gap status, "
+    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, Power fleet, Vehicle history, HML response, Gap status, "
                    "Checks, History sources. No other cell changed.")
 
     history_rows = history_sheet(wb, d)
+    dr01_sheet(wb, history_rows)
     sector_rows = sector_sheet(wb, d)
-    diesel_by_use_sheet(wb, d, history_rows, sector_rows)
+    use_rows = diesel_by_use_sheet(wb, d, history_rows, sector_rows)
+    demand_by_use_sheet(wb, history_rows, use_rows)
     power_fleet_sheet(wb, d)
     vehicle_sheet(wb, d, history_rows)
     lever_response_sheet(wb)
