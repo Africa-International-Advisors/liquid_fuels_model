@@ -202,3 +202,7 @@ checked (2021 diesel: stock change +0.59 bn litres; closing stock rose 0.38).
   equals a fresh build; JODI diesel is within 4% of the energy balance for
   2017-2021.
 - No model input read by the engine changed; model results are unchanged.
+- `python -m pytest -q`: 212 passed, 1 skipped (four tests added). The message on commit `b25661d`
+  says 215 and five; that is wrong.
+- Workbook History rows for 2017-2025 read back after recalculation in Excel: production used and the
+  unexplained line equal the balance file in every year (the workbook shows the opposite sign, as labelled).
