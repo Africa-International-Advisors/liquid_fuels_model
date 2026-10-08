@@ -64,6 +64,9 @@ def test_provincial_estimates_are_marked_and_kept_apart_from_observations():
     assert brought_in.fill.fgColor.rgb == build.FILL["estimate"]
     assert history["Gauteng petrol"][at[2022]].fill.fgColor.rgb == build.FILL["observation"]
     assert "ESTIMATES" in history["Gauteng petrol"][4].value
+    assert history["Gauteng petrol"][at[2025]].value.startswith("=")          # blank until a national figure exists
+    for product in ("petrol", "diesel"):
+        assert "No national" in history[f"Why 2025 is blank, {product}"][4].value
     estimated = [history[f"{name} share of petrol"][at[2023]].value for name in build.PROVINCE_NAMES.values()]
     assert sum(estimated) == pytest.approx(100)
     quarter1 = shares.share(shares.load(VINTAGE / "timeseries")["quarter1"][("petrol", 2023)])

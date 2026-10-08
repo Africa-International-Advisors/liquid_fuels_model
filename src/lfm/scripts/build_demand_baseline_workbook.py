@@ -231,6 +231,13 @@ def history_sheet(wb, d: dict) -> dict:
                "Zero from 2023 only because the estimates are shares of the national figure.",
                formula=both(rows[f"{product}_provinces"], rows[f"{product}_dept"], "{c}{a}-{c}{b}"), kind="formula",
                action="See integrity_flag_log_2026-10-06.md")
+        s.line(f"Why 2025 is blank, {product}", "", "Note",
+               f"No national {product} sales figure exists for 2025. The department's national series ends at 2023, and "
+               "FIASA's 2025 report repeats its 2024 row for 2025, so that row was dropped. Without a national total "
+               "there is nothing to apply the provincial shares to. The estimated 2025 shares are in section 6; the "
+               "volumes fill in by formula once a 2025 figure is added to the department or FIASA sales row.",
+               kind="comparison", status="2025 not estimated",
+               action="Add the 2025 national figure when the department or FIASA publishes it")
 
     s.section("2. Customs trade (SARS)")
     sars_src = "South African Revenue Service, trade statistics by tariff line"
