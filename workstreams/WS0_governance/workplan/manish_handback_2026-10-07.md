@@ -90,6 +90,19 @@ not published by anyone, so they cannot be filled in:
 Pipeline capacity uses Transnet's 2020 figure: 148 million litres a week on the Durban to Jameson Park trunk
 line, about 7.7 bn litres a year.
 
+**DR07 Demand evidence.** Workbook sheets DR07 evidence, DR07 power diesel and DR07 fleet by province; note
+`dr07_demand_evidence_2026-10-08.md`. Eskom's reported turbine fuel is in (0.94, 1.13 and 0.68 bn litres in the
+years to March 2023 to 2025) and confirms 0.31 litres per kWh. Not available from any source:
+
+- Diesel burned in private backup generators
+- New gas or diesel plant: commissioning dates
+- Vehicles by fuel within each class, and by province
+- Vehicles by age
+- Electric trucks and electric light commercial vehicles sold
+- Efficiency of new vehicles, by year
+- Road freight in tonne-kilometres, by year
+- Diesel used by rail locomotives
+
 ## Power generation fleet (your message of 7 October)
 
 Deck pages 11 and 12; workbook sheet Power fleet; input `assumptions/2026/infrastructure/power_fleet_diesel.csv`.

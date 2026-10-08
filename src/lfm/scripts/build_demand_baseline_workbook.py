@@ -106,6 +106,14 @@ def load(ts: Path, ref: Path) -> dict:
     d["jodi_demand"] = {(r["product"], int(r["period"])): float(r["value"]) / 1e6
                         for r in _read(ts / "oil_balance_jodi.csv")
                         if r["flow"] == "demand" and int(r["months_reported"]) == 12}
+    eskom = _read(ts / "eskom_fuel_eaf_review_2026_10_07.csv")
+    d["eskom_fuel"] = {int(r["period"]): float(r["value"]) for r in eskom if r["series"] == "eskom_ocgt_diesel_and_kerosene"}
+    turbines = _read(ts / "ocgt_generation_eskom.csv")
+    d["eskom_gwh"] = {int(r["period"]): float(r["value"]) for r in turbines if r["series"] == "eskom_ocgt"}
+    d["ipp_gwh"] = {int(r["period"]): float(r["value"]) for r in turbines if r["series"] == "ipp_ocgt"}
+    register = _read(ts / "vehicle_population_natis.csv")
+    d["natis_latest"] = max(r["period"] for r in register)
+    d["natis_by_province"] = {(r["province"], r["vehicle_class"]): float(r["value"]) for r in register if r["period"] == d["natis_latest"]}
     d["zone_differentials"] = {(r["zone"], r["product"], r["effective"][:4]): float(r["value"])
                                for r in _read(ref / "zone_differentials_department.csv")}
     d["zone_districts"] = [(r["zone"], r["magisterial_district"], r["province"]) for r in _read(ref / "zone_districts_department.csv")]
@@ -683,7 +691,7 @@ def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> d
                    kind="formula", scalar=LITRES_PER_KWH, fmt="#,##0.00",
                    status="Estimated from 2022 at 0.31 litres per kWh",
                    source="Eskom; parliamentary replies on diesel burn",
-                   action="The 0.31 factor is a proposal awaiting review")
+                   action="0.31 is confirmed by Eskom's reported fuel and generation (DR07 power diesel sheet)")
 
     s.section("2. Road diesel, by difference")
     road = s.line("Road vehicles and uses not listed above", ML, "Reporting formula",
@@ -845,7 +853,7 @@ DIESEL_USES = [
     ("Power generation", "Observed to 2021; estimated from 2022",
      "Department energy balances to 2021; Eskom generation x 0.31 litres per kWh from 2022",
      "Eskom and independent diesel turbines. The balance records almost none for 2017-2019 and nothing for "
-     "2020-2021; the Eskom generation data held starts in 2022. The 0.31 factor awaits review."),
+     "2020-2021; the Eskom generation data held starts in 2022. Eskom's reported litres are on the DR07 power diesel sheet."),
     ("Mining", "Observed to 2021; estimated from 2022",
      "Department energy balances; moved with the Stats SA mining volume index after 2021", ""),
     ("Manufacturing and other industry", "Observed to 2021; estimated from 2022",
@@ -955,22 +963,26 @@ def _sheet_head(ws, heading: str, sub_heading: str, header: list, widths: list[f
         ws.column_dimensions[get_column_letter(i)].width = widths[i - 1]
 
 
-def dr04_routes_sheet(wb) -> None:
-    """The DR04 evidence table, grouped by part: one row per fact with its source, page and open gap."""
-    ws = wb.create_sheet("DR04 routes")
-    every = _read(DR04_EVIDENCE)
-    rows = [r for r in every if r["scope"] != "other products included"]   # petrol and diesel only, plus the route itself
+def evidence_sheet(wb, title: str, path: Path, parts: list[str], heading: str, subject: str, closing: str) -> None:
+    """An evidence table grouped by part: one row per fact with its status, source, page and open gap.
+
+    Rows marked "other products included" are left out, so the sheet carries petrol and diesel only.
+    """
+    ws = wb.create_sheet(title)
+    every = _read(path)
+    rows = [r for r in every if r["scope"] != "other products included"]
     left_out = len(every) - len(rows)
-    counted = {status: sum(r["status"] == status for r in rows) for status in {r["status"] for r in rows}}
-    done = counted.get("observed", 0) + counted.get("observed, unit unclear", 0)
-    header = ["Item", "Asset or route", "Value", "Unit", "Period", "Status", "Source", "Page", "Open gap"]
-    _sheet_head(ws, "DR04 Routes and access: what the documents establish",
-                f"{done} facts read from original documents, {counted.get('inferred', 0)} calculated, "
-                f"{len(rows) - done - counted.get('inferred', 0)} still open (yellow). Petrol and diesel only: {left_out} facts that mix "
-                "in crude, jet or other liquids are left out and stay in dr04_routes_access_evidence_2026-10-08.csv.",
+    done = sum(r["status"].startswith("observed") for r in rows)
+    inferred = sum(r["status"] == "inferred" for r in rows)
+    header = ["Item", subject, "Value", "Unit", "Period", "Status", "Source", "Page", "Open gap"]
+    mixed = f" Petrol and diesel only: {left_out} facts that mix in other products are left out." if left_out else ""
+    _sheet_head(ws, heading,
+                f"{done} facts read from sources, {inferred} calculated, {len(rows) - done - inferred} not available (yellow). "
+                f"Each row gives its source.{mixed} {closing}",
                 header, [34, 30, 36, 20, 24, 14, 44, 12, 60])
+    assert {r["part"] for r in rows} <= set(parts), {r["part"] for r in rows} - set(parts)
     row = 4
-    for part in DR04_PARTS:
+    for part in parts:
         part_rows = [r for r in rows if r["part"] == part]
         if not part_rows:
             continue
@@ -989,7 +1001,114 @@ def dr04_routes_sheet(wb) -> None:
                 cell.font = Font(name="Arial", size=10, color=INK)
                 cell.fill = PatternFill("solid", fgColor=FILL[kind])
                 cell.alignment = Alignment(wrap_text=True, vertical="top")
-    assert {r["part"] for r in rows} <= set(DR04_PARTS), {r["part"] for r in rows} - set(DR04_PARTS)
+    ws.freeze_panes = "B5"
+
+
+def dr04_routes_sheet(wb) -> None:
+    evidence_sheet(wb, "DR04 routes", DR04_EVIDENCE, DR04_PARTS, "DR04 Routes and access: what the documents establish", "Asset or route",
+                   "Built from dr04_routes_access_evidence_2026-10-08.csv.")
+
+
+DR07_EVIDENCE = Path("workstreams/WS1_data_validation/dr07_demand_evidence_2026-10-08.csv")
+DR07_PARTS = ["Power generation", "Vehicle fleet", "New vehicles and electric share", "Vehicle efficiency and distance", "Freight and rail",
+              "Sector activity"]
+POWER_YEARS = list(range(2016, 2027))
+FLEET_CLASSES = [("cars", "Cars"), ("light_commercial", "Light commercial"), ("trucks", "Trucks"), ("buses", "Buses"),
+                 ("minibuses", "Minibuses"), ("motorcycles", "Motorcycles"), ("total_self_propelled", "All self-propelled")]
+FLEET_PROVINCES = [("GP", "Gauteng"), ("KZN", "KwaZulu-Natal"), ("WC", "Western Cape"), ("EC", "Eastern Cape"), ("MP", "Mpumalanga"),
+                   ("LP", "Limpopo"), ("NW", "North West"), ("FS", "Free State"), ("NC", "Northern Cape")]
+
+
+def dr07_evidence_sheet(wb) -> None:
+    evidence_sheet(wb, "DR07 evidence", DR07_EVIDENCE, DR07_PARTS, "DR07 Demand evidence: what calibrates the demand levers", "Covers",
+                   "Built by python -m lfm.scripts.build_dr07_demand_evidence.")
+
+
+def dr07_power_sheet(wb, d: dict) -> None:
+    """Diesel burned for power: Eskom's reported litres beside its generation, and the independent plants."""
+    ws = wb.create_sheet("DR07 power diesel")
+    header = ["Line"] + POWER_YEARS + ["Source", "Note"]
+    _sheet_head(ws, "DR07 Diesel burned for power generation",
+                "Years to 31 March (2025 is April 2024 to March 2025). Volumes in billion litres. Blank means not reported.",
+                header, [44] + [8.5] * len(POWER_YEARS) + [56, 60])
+    last = len(header)
+    eskom_src = "Eskom Integrated Report 2025, technical statistics, PDF p.141"
+    portal = "Eskom data portal and reports (ocgt_generation_eskom.csv)"
+
+    def here(year: int) -> str:
+        return get_column_letter(2 + POWER_YEARS.index(year))
+
+    def write(row, label, values, formula, fmt, source, note, kind, bold=False):
+        ws.cell(row=row, column=1, value=label)
+        for year in POWER_YEARS:
+            cell = ws.cell(row=row, column=2 + POWER_YEARS.index(year), value=formula(year) if formula else values.get(year))
+            cell.number_format = fmt
+        ws.cell(row=row, column=last - 1, value=source)
+        ws.cell(row=row, column=last, value=note)
+        for i in range(1, last + 1):
+            cell = ws.cell(row=row, column=i)
+            cell.font = Font(name="Arial", size=10, color=INK, bold=bold and i == 1, italic=kind == "estimate" and 1 < i < last - 1)
+            cell.fill = PatternFill("solid", fgColor=FILL[kind])
+            cell.alignment = Alignment(wrap_text=i >= last - 1, vertical="top", horizontal="right" if 1 < i < last - 1 else "left")
+
+    def band(row, text):
+        for i in range(1, last + 1):
+            cell = ws.cell(row=row, column=i, value=text if i == 1 else None)
+            cell.font = Font(name="Arial", size=10, bold=True, color=INK)
+            cell.fill = PatternFill("solid", fgColor=FILL["section"])
+
+    band(5, "Eskom's own turbines (Ankerlig, Gourikwa, Acacia, Port Rex)")
+    write(6, "Fuel burned, as reported", {y: v / 1000 for y, v in d["eskom_fuel"].items()}, None, BN_FORMAT, eskom_src,
+          "Diesel and kerosene together, as Eskom reports them. Acacia and Port Rex burn kerosene and are 342 of 2,426 MW.", "observation")
+    write(7, "Electricity generated by Eskom, GWh", d["eskom_gwh"], None, "#,##0", portal, "Published from the year to March 2022.", "observation")
+    write(8, "Litres per kWh, implied", None,
+          lambda y: f'=IF(COUNT({here(y)}6,{here(y)}7)<2,"",{here(y)}6*1000/{here(y)}7)', "0.000",
+          "Calculated: fuel burned over electricity generated", f"Confirms the {LITRES_PER_KWH} used on the Power fleet sheet.", "formula")
+    band(10, "Independent producers (Avon, Dedisa)")
+    write(11, "Electricity generated by independent plants, GWh", d["ipp_gwh"], None, "#,##0", portal, "The producers do not report litres.", "observation")
+    write(12, "Diesel burned, estimated", None,
+          lambda y: f'=IF(ISNUMBER({here(y)}11),{here(y)}11*{LITRES_PER_KWH}/1000,"")', BN_FORMAT,
+          f"Calculated: generation x {LITRES_PER_KWH} litres per kWh", "An estimate, at Eskom's implied rate.", "estimate")
+    band(14, "All grid turbines")
+    write(15, "Diesel burned, Eskom reported plus independent estimated", None,
+          lambda y: f'=IF(COUNT({here(y)}6,{here(y)}12)<2,"",{here(y)}6+{here(y)}12)', BN_FORMAT,
+          "Sum of the two volume rows above", "Only where both are known. Private backup generators are not in any source.", "formula", bold=True)
+    ws.freeze_panes = "B5"
+
+
+def dr07_fleet_sheet(wb, d: dict) -> None:
+    """Registered vehicles by province and class at the latest month published."""
+    ws = wb.create_sheet("DR07 fleet by province")
+    month = d["natis_latest"]
+    header = ["Province"] + [label for _, label in FLEET_CLASSES] + ["Share of all vehicles", "Source"]
+    _sheet_head(ws, f"DR07 Registered vehicles by province and class, {month}",
+                "Vehicles on the register at month end. The register gives class and province, not fuel: petrol and diesel are not split "
+                "by class or province in any source held (nationally, December 2023: 8.56 million petrol and 3.34 million diesel).",
+                header, [22] + [16] * len(FLEET_CLASSES) + [14, 62])
+    last, total_col = len(header), 1 + len(FLEET_CLASSES)
+    source = "eNaTIS live vehicle population by class and province (vehicle_population_natis.csv)"
+    row = 4
+    for code, name in FLEET_PROVINCES:
+        row += 1
+        ws.cell(row=row, column=1, value=name)
+        for i, (key, _) in enumerate(FLEET_CLASSES, start=2):
+            ws.cell(row=row, column=i, value=d["natis_by_province"].get((code, key))).number_format = "#,##0"
+        ws.cell(row=row, column=last, value=source)
+    top, bottom = 5, row
+    row += 1
+    ws.cell(row=row, column=1, value="South Africa")
+    for i in range(2, total_col + 1):
+        c = get_column_letter(i)
+        ws.cell(row=row, column=i, value=f"=SUM({c}{top}:{c}{bottom})").number_format = "#,##0"
+    ws.cell(row=row, column=last, value="Sum of the nine provinces")
+    t = get_column_letter(total_col)
+    for r in range(top, row + 1):
+        ws.cell(row=r, column=last - 1, value=f"={t}{r}/{t}${row}").number_format = "0.0%"
+        for i in range(1, last + 1):
+            cell = ws.cell(row=r, column=i)
+            cell.font = Font(name="Arial", size=10, color=INK, bold=r == row and i == 1)
+            cell.fill = PatternFill("solid", fgColor=FILL["formula" if r == row or i == last - 1 else "observation"])
+            cell.alignment = Alignment(wrap_text=i == last, vertical="top", horizontal="right" if 1 < i < last else "left")
     ws.freeze_panes = "B5"
 
 
@@ -1597,7 +1716,7 @@ def main() -> int:
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 is still set to FIASA on Nigel's sheet, because the department has no 2024 "
                    "figure to switch to. The added sheets do not use FIASA for any year. For Nigel to decide.")
-    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 entry points, DR04 transport cost, Power fleet, Vehicle history, HML response, Gap status, "
+    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 entry points, DR04 transport cost, DR07 evidence, DR07 power diesel, DR07 fleet by province, Power fleet, Vehicle history, HML response, Gap status, "
                    "Checks, History sources. No other cell changed.")
 
     history_rows = history_sheet(wb, d)
@@ -1608,6 +1727,9 @@ def main() -> int:
     dr04_routes_sheet(wb)
     dr04_entry_sheet(wb, d)
     dr04_transport_sheet(wb, d)
+    dr07_evidence_sheet(wb)
+    dr07_power_sheet(wb, d)
+    dr07_fleet_sheet(wb, d)
     power_fleet_sheet(wb, d)
     vehicle_sheet(wb, d, history_rows)
     lever_response_sheet(wb)
