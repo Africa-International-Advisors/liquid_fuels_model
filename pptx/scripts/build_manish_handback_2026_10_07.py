@@ -487,6 +487,64 @@ text(s, f"Road vehicles, agriculture and industry are {sector('vehicles', 2024) 
      LEFT, 6.4, WIDTH, 0.6, 11, True, BLUE)
 set_note(s, SECTOR_NOTE)
 
+# --- 3b Power fleet (asked for by Nigel on 7 October) --------------------------
+from lfm.config import Paths  # noqa: E402
+from lfm.scripts import build_demand_baseline_workbook as workbook  # noqa: E402
+
+_vintage = Paths.default().vintage_dir("2026")
+POWER = workbook.load(_vintage / "timeseries", _vintage / "reference")
+POWER_CASES = workbook.power_case_totals(POWER)
+POWER_NOTE = ("Source: power_fleet_diesel.csv and the Power fleet sheet of the workshop workbook, manish-branch; "
+              "Eskom fact sheet GX 0001 (July 2024) and the sources named in the file.")
+fleet_rows = POWER["power_fleet"]
+diesel_fleet = [r for r in fleet_rows if r["group"] == "diesel_station"]
+coal_fleet = [r for r in fleet_rows if r["group"] == "coal_retiring"]
+STOP = {"Komati": "Shut 31 October 2022", "Duvha": "21 February 2034", "Matla": "20 July 2034"}
+STATION_NOTE = {"Ankerlig": "Gas supply sought; switch targeted December 2027", "Gourikwa": "Same gas tender",
+                "Avon": "Agreement with Eskom ends July 2031", "Dedisa": "Agreement with Eskom ends October 2030"}
+
+s = page(2, f"Four stations, {sum(float(r['capacity_mw']) for r in diesel_fleet):,.0f} MW, burn diesel for power; "
+            "eight coal stations stop by 2034",
+         "Power generation fleet | installed capacity | diesel stations today and coal stations being retired")
+text(s, "Diesel stations today", LEFT, 2.2, 5.4, 0.25, 11.5, True, BLUE)
+table(s, [["Station", "Owner", "MW", "What changes"]] + [
+    [r["station"], r["owner"], f"{float(r['capacity_mw']):,.0f}", STATION_NOTE[r["station"]]] for r in diesel_fleet],
+      [1.15, 1.6, 0.6, 2.2], y=2.48, height=2.2, size=10)
+text(s, "Acacia and Port Rex (171 MW each) burn kerosene and are not counted. The model also carries two placeholder "
+        "stations of 1,000 and 2,000 MW with no source.", LEFT, 4.85, 5.5, 0.8, 10)
+text(s, "Coal stations being retired", LEFT + 5.95, 2.2, 5.4, 0.25, 11.5, True, BLUE)
+table(s, [["Station", "MW", "Stops"]] + [
+    [r["station"], f"{float(r['capacity_mw']):,.0f}", STOP.get(r["station"], "31 March 2030 (exemption ends)")]
+    for r in coal_fleet], [1.3, 0.8, 3.6], x=LEFT + 5.95, y=2.48, height=3.3, size=10)
+text(s, "Eskom was to decide by end September 2026 whether Camden, Grootvlei, Hendrina, Arnot and Kriel shut, are "
+        "repowered or run on. No decision had been announced by 8 October.", LEFT, 6.2, WIDTH, 0.6, 11, True, BLUE)
+set_note(s, POWER_NOTE)
+
+s = page(2, f"Diesel for power from 2031: {POWER_CASES['low'][2035]:,.0f} to {POWER_CASES['high'][2035]:,.0f} million "
+            "litres a year, depending on gas",
+         "Three cases for Nigel and Henry to confirm | million litres a year | the model has 3,581 for 2024")
+line_chart(s, "Diesel for power, million litres a year", workbook.FUTURE, [
+    ("Low", [POWER_CASES["low"][y] for y in workbook.FUTURE], GREY_LINE, True),
+    ("Medium", [POWER_CASES["medium"][y] for y in workbook.FUTURE], RGBColor.from_string("546CA2"), False),
+    ("High", [POWER_CASES["high"][y] for y in workbook.FUTURE], BLUE, False),
+], LEFT, 2.2, 5.6, 3.9)
+power_chart = [sh for sh in s.shapes if getattr(sh, "has_chart", False) and sh.has_chart][-1].chart
+power_chart.value_axis.maximum_scale = 5000
+power_chart.value_axis.major_unit = 1000
+power_chart.value_axis.tick_labels.number_format = "#,##0"
+table(s, [
+    ["", "Low", "Medium", "High"],
+    ["Avon and Dedisa after 2030-2031", "Stop", "Continue", "Continue"],
+    ["Ankerlig and Gourikwa", "Gas from 2028", "Gas from 2028", "Diesel throughout"],
+    ["Gas turbines at the five coal sites, 2030", "None", "3,000 MW on gas, 10% of output on diesel", "6,000 MW, no gas: diesel peakers"],
+    ["Peaker load factor", "3.6%", "9.4%", "17.1%"],
+    ["2025 / 2030 / 2035", *[" / ".join(f"{POWER_CASES[c][y]:,.0f}" for y in (2025, 2030, 2035)) for c in ("low", "medium", "high")]],
+], [2.0, 1.1, 1.3, 1.5], x=LEFT + 5.75, y=2.22, height=3.8, size=9.5)
+text(s, f"Estimated burn was {POWER_CASES['burned'][2023]:,.0f} million litres in the year to March 2024 and "
+        f"{POWER_CASES['burned'][2025]:,.0f} in the year to March 2026. The high case rests on two unsourced assumptions: that the gas "
+        "turbines are sited at the five stations, and that no gas reaches them.", LEFT, 6.2, WIDTH, 0.6, 11, True, BLUE)
+set_note(s, POWER_NOTE)
+
 # --- 4 Tank handling ---------------------------------------------------------
 SITES = REPO / "assumptions/2026/infrastructure/terminal_site_assumptions.csv"
 with SITES.open(encoding="utf-8", newline="") as fh:

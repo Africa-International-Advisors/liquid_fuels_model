@@ -151,3 +151,15 @@ def test_power_fleet_lists_the_diesel_stations_and_builds_three_cases():
     for label in ("Diesel for power, low case", "Diesel for power, high case", "High case",
                   "Ceiling: four stations and 6 GW of gas turbines on diesel all year"):
         assert str(rows[label][first + 8].value).startswith("="), label
+
+
+def test_power_case_totals_follow_the_three_stories():
+    cases = build.power_case_totals(build.load(VINTAGE / "timeseries", VINTAGE / "reference"))
+    assert cases["low"][2035] < cases["medium"][2035] < cases["high"][2035] < cases["ceiling"][2035]
+    assert cases["medium"][2028] < cases["medium"][2027]                      # Ankerlig and Gourikwa switch to gas
+    assert cases["low"][2031] < cases["low"][2029]                            # Avon and Dedisa gone
+    assert cases["medium"][2030] > cases["medium"][2029]                      # gas turbines at coal sites, diesel backup
+    assert cases["high"][2029] == pytest.approx(cases["high"][2025])          # no gas switch in the high case
+    assert cases["high"][2030] == pytest.approx(4223.5, abs=1)                # value shown by the recalculated workbook
+    assert cases["medium"][2030] == pytest.approx(637.0, abs=0.5)
+    assert cases["low"][2035] == pytest.approx(20.3, abs=0.1)

@@ -808,6 +808,36 @@ def lever_response_sheet(wb) -> None:
            [11, 30, 22, 13, 44, 22, 22, 22, 22, 20, 110], body)
 
 
+def power_case_totals(d: dict) -> dict:
+    """The three power cases as numbers, million litres a year, for use outside the workbook.
+
+    Mirrors the formulas on the Power fleet sheet with its default assumptions (0.31 litres per kWh, 10% of
+    output on diesel when gas is available, 40% load factor on gas). Returns ``{"low" | "medium" | "high" |
+    "ceiling" | "burned": {year: value}}``.
+    """
+    fleet = d["power_fleet"]
+    mw = {r["station"]: float(r["capacity_mw"]) for r in fleet}
+    contract = {r["station"]: int(r["last_full_year"]) for r in fleet if r["group"] == "diesel_station" and r["last_full_year"]}
+    eskom = mw["Ankerlig"] + mw["Gourikwa"]
+    peaking_mw = sum(mw[r["station"]] for r in fleet if r["group"] in ("diesel_station", "kerosene_station"))
+    load = {y: d["ocgt_gwh"][y] / (peaking_mw * 8.76) for y in (2024, 2025, 2026)}
+    settings = {"low": (False, True, 0, 0.0, 0.0, load[2026]),
+                "medium": (True, True, IRP_GAS_MW_2030 / 2, 0.10, 0.40, load[2025]),
+                "high": (True, False, IRP_GAS_MW_2030, 1.0, load[2024], load[2024])}
+    out: dict = {name: {} for name in settings}
+    for name, (keep, switch, gas_mw, gas_on_diesel, gas_load, peaker_load) in settings.items():
+        for year in FUTURE:
+            independents = sum(mw[st] for st in contract if keep or year <= contract[st])
+            share = 0.10 if switch and year >= GAS_SWITCH_YEAR else 1.0
+            today = (independents + eskom * share) * 8.76 * peaker_load * LITRES_PER_KWH
+            sites = (gas_mw if year >= 2030 else 0) * 8.76 * gas_load * gas_on_diesel * LITRES_PER_KWH
+            out[name][year] = today + sites
+    diesel_mw = sum(mw[r["station"]] for r in fleet if r["group"] == "diesel_station")
+    out["ceiling"] = {y: (diesel_mw + (IRP_GAS_MW_2030 if y >= 2030 else 0)) * 8.76 * LITRES_PER_KWH for y in FUTURE}
+    out["burned"] = {y - 1: v * LITRES_PER_KWH for y, v in d["ocgt_gwh"].items() if y - 1 in FUTURE}
+    return out
+
+
 def power_fleet_sheet(wb, d: dict) -> None:
     s = Sheet(wb, "Power fleet", "Diesel for power: the fleet, the coal retirements and three cases",
               "A block by station and year, as asked on 7 October. Capacities are from Eskom's fact sheet; retirement "

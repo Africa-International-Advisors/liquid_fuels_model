@@ -52,6 +52,20 @@ defined separately. The 6 October deck was corrected to match and moved to
 - Provincial estimates for 2023 and 2024 shown in the province rows, marked as estimates; 2025 explained.
 - Jet section, HML response sheet, Gap status sheet and a 25-row sources sheet.
 
+## Power generation fleet (your message of 7 October)
+
+Deck pages 11 and 12; workbook sheet Power fleet; input `assumptions/2026/infrastructure/power_fleet_diesel.csv`.
+
+- Four stations burn diesel: Ankerlig 1,338 MW and Gourikwa 746 MW (Eskom), Avon 670 MW and Dedisa 335 MW
+  (independent), 3,089 MW in all. Acacia and Port Rex burn kerosene and are not counted.
+- Coal: Komati shut in 2022; Camden, Grootvlei, Hendrina, Arnot and Kriel may run to 31 March 2030; Duvha and
+  Matla to 2034. Eskom's decision on the five, due end September 2026, had not been announced by 8 October.
+- Diesel for power, million litres a year, low / medium / high: 301 / 792 / 1,435 to 2027, 86 / 637 / 4,224 in
+  2030, 20 / 637 / 4,224 from 2031. The model has 3,581 for 2024.
+- Every case setting is yours and Henry's to confirm (decision D22). Not sourced: 10% of output on diesel when
+  gas is available, 40% load factor on gas, the gas turbines being sited at the five coal stations, and no gas
+  reaching them in the high case.
+
 ## New evidence found today
 
 - **Road Accident Fund levy.** Audited accounts give 24.25 and 24.42 bn litres
@@ -86,7 +100,7 @@ Nothing else on the branch changes model results.
 
 ## Checks
 
-- `python -m pytest -q`: 177 passed, 1 skipped.
+- `python -m pytest -q`: 179 passed, 1 skipped.
 - `python -m lfm check --vintage 2026`: coverage passed, 54 open exceptions,
   so output remains draft.
 - Both decks exported through PowerPoint and inspected; the workbook was
