@@ -6,7 +6,7 @@ M3: port and pipeline limits, route access, and matched delivered costs to the
 same destinations.
 
 Status: **started; the Durban to Gauteng pipeline route is documented, the
-rest is not.** 31 facts are taken from original documents, 1 is calculated,
+rest is not.** 44 facts are taken from original documents, 2 are calculated,
 and 8 lines are open. No matched delivered-cost comparison is possible yet.
 
 Evidence table: `dr04_routes_access_evidence_2026-10-08.csv`, one row per
@@ -64,8 +64,26 @@ cleared, not a berth or terminal record.
 | Planned at Island View, Durban | Berth 1 rebuilt and Berth 3 converted from dry bulk to liquid bulk, both dated 2026 | Port authority tariff application slides, September 2025, PDF p.14 |
 | Planned at Richards Bay | New liquid bulk berth 210 and the South Dunes liquid bulk development | Same, PDF pp.11-12 |
 
-These volumes are all eight ports and all liquids together, crude and chemicals
-included. No published figure found splits them by port or by product.
+Those volumes are all eight ports and all liquids together.
+
+**Liquid bulk by port (port statistics, calendar years, million tons)**
+
+| Port | Landed 2024 | Landed 2025 | All movements 2025 |
+|---|---|---|---|
+| Durban | 19.88 | 20.70 | 22.42 |
+| Saldanha | 5.31 | 5.12 | 5.12 |
+| Richards Bay | 1.76 | 2.16 | 3.51 |
+| Cape Town | 1.43 | 1.90 | 3.49 |
+| East London | 0.57 | 0.52 | 1.23 |
+| Mossel Bay | 0.69 | 0.49 | 0.51 |
+| Port Elizabeth | 0.16 | 0.32 | 0.85 |
+| Ngqura | 0.04 | 0.06 | 0.06 |
+| All eight ports | 29.84 | 31.27 | 37.19 |
+
+Durban landed 66% of all liquid bulk by weight in 2025 and has 8 liquid bulk berths; Richards Bay
+has 2. The statistics are in tons and cover every liquid (crude oil, fuels, gas
+and chemicals), so they do not give fuel litres. Source: the port authority's
+port statistics and Our Ports page at https://www.transnet.net/TNPA.
 
 **Access at the two Vopak sites**
 
@@ -93,7 +111,8 @@ volumes include crude, so this is a lead to check, not a conclusion.
 |---|---|---|
 | Pipeline tariff by route (Durban to Alrode and others), cents a litre | Manish | NERSA's reasons for decision on the 2025-27 tariffs |
 | Today's trunk line capacity, and refined product volumes on it | Manish | A later Transnet or NERSA document; the 2020 figure is the latest found |
-| Liquid-bulk capacity, berths and volumes at Durban and Richards Bay, by port | Manish | The port authority's brochure, framework plan and port statistics. Its site did not respond on 8 October, by script or in a browser; try again, or ask the authority |
+| Liquid-bulk capacity in kilolitres and tankage at Island View and Richards Bay | Manish | The port authority's Durban brochure and framework plan; not on its pages at transnet.net/TNPA. Ask the authority or Vopak |
+| Fuel by product through each port | Nigel to coordinate | The port statistics are tons of all liquids; a product split needs the port authority or terminal operators |
 | Road and rail rates, Durban to Gauteng | Nigel to coordinate | Vopak, a haulier or Transnet Freight Rail; none is public |
 | Whether Vopak Durban can inject into the trunk line directly | Nigel to coordinate | Vopak operations |
 | Maputo and Matola, Walvis Bay, and inland supply from Natref and Secunda | Manish | Not started |
