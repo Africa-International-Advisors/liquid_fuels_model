@@ -6,6 +6,11 @@ after Nigel's branch review (`manish_branch_review_2026-10-06.md`, findings 1
 and 2): the table is rebuilt on customs trade, and the residual is described
 as a balancing requirement, not as production.
 
+**Updated 8 October:** reported production now runs to 2024 from JODI refinery
+output, and the statement below that JODI is not usable is corrected for that
+one line. See `dr01_national_balance_2026-10-08.md`. The tables in this note
+are unchanged.
+
 Status: **partial.** Sales, imports and exports are matched by product and
 calendar year. Production after 2021, stock changes and what the sales series
 covers are **unresolved**, so the balance is not closed.

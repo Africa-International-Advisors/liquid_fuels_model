@@ -100,6 +100,9 @@ def load(ts: Path, ref: Path) -> dict:
                  if r["unit"] == "litres" and int(r["months_reported"]) == 12}
     d["balance"] = {(r["flow_key"], r["product"], int(r["period"])): float(r["value"]) / 1e6
                     for r in _read(ts / "energy_balance_department.csv") if r["flow_key"]}
+    d["jodi_output"] = {(r["product"], int(r["period"])): float(r["value"]) / 1e6
+                        for r in _read(ts / "oil_balance_jodi.csv")
+                        if r["flow"] == "refinery_output" and int(r["months_reported"]) == 12}
     d["operators"] = {(r["plant"], int(r["period"])): (float(r["value"]), r["unit"], r["period_basis"])
                       for r in _read(ref / "refinery_output_operators.csv")}
     raf = {(r["measure"], int(r["period"])): float(r["value"]) for r in _read(ref / "fuel_levy_revenue_raf.csv")}
@@ -281,12 +284,26 @@ def history_sheet(wb, d: dict) -> dict:
 
     s.section("3. Refinery production")
     for product in ("petrol", "diesel"):
-        rows[f"production_{product}"] = s.line(
+        official = s.line(
             f"Production reported, {product}", ML, "Source observation",
-            "National production line of the department's energy balance. The only production by product.",
+            "National production line of the department's energy balance.",
             {y: d["balance"].get(("production", product, y)) for y in YEARS},
-            status="2012-2021; no balance published after 2021", source="Department energy balances",
-            action="Production by product after 2021 is not published by any source found")
+            status="2012-2021; no balance published after 2021", source="Department energy balances")
+        agreement = ("Within 4% of the energy balance in 2017-2021" if product == "diesel" else
+                     "12-24% above the energy balance in 2017-2021; cause not established")
+        reported = s.line(
+            f"Refinery output reported to JODI, {product}", ML, "Source observation",
+            "South Africa's monthly submissions to the JODI oil database, added over the calendar year.",
+            {y: d["jodi_output"].get((product, y)) for y in YEARS},
+            status=f"2017-2024. {agreement}", source="JODI oil database; lowest assessment code",
+            action="Nigel: accept as the production record for 2022-2024")
+        rows[f"production_{product}"] = s.line(
+            f"Production used, {product}", ML, "Reporting formula",
+            "Energy balance while published (to 2021); JODI refinery output after that.",
+            formula=lambda y, a=official, b=reported:
+            f'=IF(ISNUMBER({col(y)}{a}),{col(y)}{a},IF(ISNUMBER({col(y)}{b}),{col(y)}{b},""))', kind="formula",
+            status="Energy balance to 2021; JODI 2022-2024" + ("" if product == "diesel" else
+                                                                "; level break at 2022 for petrol"))
     for plant, label in (("Secunda", "Secunda, all refined products"), ("Natref", "Natref, Sasol's 63.64% share"),
                          ("Astron Energy (Cape Town)", "Astron (Cape Town), all refined products")):
         sample = next(v for (p, _), v in d["operators"].items() if p == plant)
@@ -320,8 +337,8 @@ def history_sheet(wb, d: dict) -> dict:
         s.line(f"Unexplained after reported production, {product}", ML, "Reporting formula",
                "Sales less net imports less reported production: stock change plus anything the sources do not cover.",
                formula=both(slni, rows[f"production_{product}"], "{c}{a}-{c}{b}"), kind="formula",
-               status="Only where production is reported (to 2021)",
-               action="No usable stock series exists; JODI's carries its lowest reliability code")
+               status="To 2024. Negative means reported supply is above recorded sales",
+               action="No usable stock series: JODI's stock change does not agree with its own closing stock")
 
     s.section("5. Independent count of litres: Road Accident Fund levy (new evidence, 7 October)")
     raf = s.line("Litres levied, petrol and diesel", ML, "Comparison only",
@@ -730,7 +747,7 @@ def _table(wb, title: str, heading: str, sub_heading: str, header: list[str], wi
 GAP_STATUS = [
     ("G01", "National fuel balance", "Narrowed",
      "Balance rebuilt on customs trade for 2014-2025; Road Accident Fund levy found as an independent count.",
-     "2024 sales source; no 2025 sales figure; production by product after 2021; stocks.", "History, sections 2-5"),
+     "2024 sales source; no 2025 sales figure; production after 2021 rests on JODI alone; no usable stock series.", "History, sections 2-5"),
     ("G02", "Fleet and new sales", "Narrowed",
      "Registered vehicles by class 2021-2025, new sales 2017-2025 and apparent retirements lined up against the model.",
      "Stock by age and by fuel within each class is in no source held.", "Vehicle history"),
@@ -1074,6 +1091,7 @@ def sources_sheet(wb) -> None:
         "fuel_trade_fiasa": "History section 2: FIASA comparison rows",
         "fuel_sales_fiasa": "History section 4: FIASA comparison row",
         "energy_balance_department": "History section 3 and Sector history: production and diesel by sector",
+        "oil_balance_jodi": "History section 3: refinery output reported to JODI",
         "refinery_output_operators": "History section 3: operators' reported output",
         "fuel_levy_revenue_raf": "History section 5: litres levied",
         "activity_statssa_monthly": "Sector history: mining and manufacturing volume indices",

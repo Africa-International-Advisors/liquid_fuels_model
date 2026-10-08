@@ -77,7 +77,7 @@ def test_committed_balance_matches_the_registered_inputs_and_the_customs_extract
             return list(csv.DictReader(fh))
 
     stems = ["fuel_sales_department", "fuel_sales_fiasa", "fuel_trade_sars", "fuel_trade_fiasa",
-             "fuel_trade_department_review", "energy_balance_department"]
+             "fuel_trade_department_review", "energy_balance_department", "oil_balance_jodi"]
     inputs = {stem: read(TIMESERIES / f"{stem}.csv") for stem in stems}
     expected = [{k: str(round(v)) if isinstance(v, float) else str(v) for k, v in row.items()}
                 for row in bfb.build(inputs)]
@@ -96,3 +96,36 @@ def test_committed_balance_matches_the_registered_inputs_and_the_customs_extract
         if row["sales_used"]:
             residual = float(row["sales_used"]) - float(row["imports_used"]) + float(row["exports_used"])
             assert abs(float(row["sales_less_net_imports"]) - residual) <= 2
+
+
+def test_production_is_the_energy_balance_while_published_and_jodi_after():
+    inputs = _inputs([_sars("2013", "import", "41"), _sars("2013", "export", "11"),
+                      _sars("2014", "import", "50"), _sars("2014", "export", "13")])
+
+    def jodi(period, flow, value, months="12"):
+        return {"period": period, "flow": flow, "product": "diesel", "value": value, "months_reported": months}
+    inputs["oil_balance_jodi"] = [jodi("2013", "refinery_output", "70"), jodi("2014", "refinery_output", "80"),
+                                  jodi("2014", "stock_change", "3"), jodi("2015", "refinery_output", "90", "7")]
+    rows = bfb.build(inputs)
+    first, second, part = _row(rows, 2013), _row(rows, 2014), _row(rows, 2015)
+    assert (first["production_used"], first["production_used_source"]) == (65, "energy balance")
+    assert first["production_jodi"] == 70                       # kept alongside, not selected
+    assert (second["production_used"], second["production_used_source"]) == (80, "JODI")
+    assert second["supply_less_sales"] == 80 + (50 - 13) - 110
+    assert second["stock_change_jodi"] == 3
+    assert part["production_jodi"] == "" and part["production_used"] == ""   # seven months is not a year
+
+
+def test_committed_balance_carries_reported_production_to_2024_and_never_a_residual():
+    with BALANCE.open(encoding="utf-8", newline="") as fh:
+        rows = {(r["product"], int(r["period"])): r for r in csv.DictReader(fh)}
+    for product in ("petrol", "diesel"):
+        assert rows[(product, 2021)]["production_used_source"] == "energy balance"
+        for year in (2022, 2023, 2024):
+            assert rows[(product, year)]["production_used_source"] == "JODI"
+            assert rows[(product, year)]["production_used"] == rows[(product, year)]["production_jodi"]
+        assert rows[(product, 2025)]["production_used"] == ""
+    # JODI diesel output agrees with the last five energy balances, which is why it is proposed
+    for year in range(2017, 2022):
+        row = rows[("diesel", year)]
+        assert abs(float(row["production_jodi"]) / float(row["production_energy_balance"]) - 1) < 0.04
