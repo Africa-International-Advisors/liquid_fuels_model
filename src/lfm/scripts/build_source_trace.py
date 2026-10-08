@@ -198,6 +198,12 @@ TRACE: dict[str, tuple[str, ...]] = {
         "on manish-branch (external/data/raw/routes_access_20261008/)", "download and scripted extract",
         "python -m lfm.scripts.stage_zone_differentials --vintage 2026", "stage_zone_differentials.parse_zones_2014",
         "workshop workbook, DR04 transport cost sheet", "", "District list is from 2014.", "Nigel: review"),
+    "reference/demand_evidence_points.csv": (
+        "IEA; ICCT; Transnet; National Transmission Company South Africa", "https://www.iea.org/articles/fuel-economy-in-south-africa",
+        "four documents named row by row", "on manish-branch (external/data/raw/demand_evidence_20261008/)", "manual transcription",
+        "none", "typed by hand", "workshop workbook, DR07 sheets", "",
+        "Vehicle fuel consumption 2005-2019, rail volumes 2018-2025, plant shutdown and commissioning dates. Each row carries its page.",
+        "Nigel: review"),
     "reference/refinery_output_operators.csv": (
         "Sasol (production and sales metrics); Glencore (annual reports)", "https://www.sasol.com/",
         "sasol-metrics-fy2022/2025/2026.pdf, p.4; GLEN-2023/2024/2025-Annual-Report.pdf",

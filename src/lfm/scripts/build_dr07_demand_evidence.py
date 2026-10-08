@@ -55,6 +55,7 @@ def load(vintage: Path) -> dict:
     d["nev"] = {(r["drivetrain"], int(r["period"])): float(r["value"]) for r in _read(ts / "nev_sales_naamsa.csv")}
     d["stone"] = {r["vehicle_type"]: r for r in _read(ref / "vehicle_parameters_stone2018.csv")}
     d["freight"] = {(r["mode"], int(r["period"])): float(r["value"]) for r in _read(ts / "freight_payload_statssa_review.csv")}
+    d["points"] = _read(ref / "demand_evidence_points.csv")
     d["efficiency"] = {(name, r["scenario"]): float(r["value"]) for name in ("diesel", "gasoline")
                        for r in _read(ts / f"efficiency_improvement_{name}.csv") if r["period"] == "2030"}
     return d
@@ -69,6 +70,13 @@ def implied_litres_per_kwh(d: dict) -> dict[int, float]:
 
 def build(d: dict) -> list[dict]:
     rows: list[dict] = []
+    points: dict[str, list[dict]] = {}
+    for point in d["points"]:
+        points.setdefault(point["series"], []).append(point)
+
+    def one(series: str) -> dict:
+        (point,) = points[series]
+        return point
 
     def add(part, item, subject, value, unit, period, status, source, original="", page="", gap=""):
         rows.append(dict(request="DR07", part=part, item=item, asset_or_route=subject, value=value, unit=unit, period=period, status=status,
@@ -106,13 +114,22 @@ def build(d: dict) -> list[dict]:
     stations = [r for r in d["fleet"] if r["group"] == "diesel_station"]
     add("Power generation", "Diesel stations and capacity", "; ".join(r["station"] for r in stations),
         "; ".join(f"{float(r['capacity_mw']):,.0f}" for r in stations), "MW", "current", "observed", "Eskom fact sheet GX 0001 (July 2024); African Energy (2015)",
-        "assumptions/2026/infrastructure/power_fleet_diesel.csv", "", "Avon began in July 2016 and Dedisa in October 2015; their agreements end in 2031 and 2030.")
+        "assumptions/2026/infrastructure/power_fleet_diesel.csv", "", "Avon began in July 2016 and Dedisa in October 2015.")
     coal = [r for r in d["fleet"] if r["group"] == "coal_retiring"]
     add("Power generation", "Coal stations retiring", "; ".join(r["station"] for r in coal),
         "; ".join(r["last_full_year"] for r in coal), "last full year", "", "observed", "Eskom statements and press reports named in the file",
         "assumptions/2026/infrastructure/power_fleet_diesel.csv", "", "Eskom's decision on five of them, due end September 2026, had not been announced by 8 October.")
-    add("Power generation", "New gas or diesel plant: commissioning dates", "Independent producers and Eskom", "", "MW by year", "", "not available",
-        "None found with dates", "", "", "The Integrated Resource Plan gives totals, not plant dates. Needed to place diesel backup at new gas plant.")
+    for series, item in (("peaker_contract_end", "Independent diesel plants: contract end"), ("kerosene_station_shutdown", "Kerosene stations: shutdown"),
+                         ("gas_plant_commissioning", "New gas plant: commissioning"), ("turbine_use_outlook", "Diesel turbine use expected by the system operator")):
+        p = one(series)
+        value = f"{p['value']} {p['unit']}".strip() if series == "gas_plant_commissioning" else p["value"]
+        add("Power generation", item, p["subject"], value, "", p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
+    coal_out = points["coal_shutdown"]
+    add("Power generation", "Coal capacity shutting down", "Eskom coal fleet", "; ".join(p["value"] for p in coal_out), "GW",
+        "; ".join(p["period"] for p in coal_out), "observed", coal_out[0]["source"], coal_out[0]["original_file"], coal_out[0]["page"],
+        " ".join(p["note"] for p in coal_out))
+    add("Power generation", "New gas plant: dates by project", "Independent producers and Eskom", "", "MW by year", "", "not available",
+        "None found", "", "", "The outlook gives one assumed year for all 6 GW. No project has reached construction.")
 
     # --- vehicle fleet --------------------------------------------------------
     month = d["natis_month"]
@@ -148,6 +165,9 @@ def build(d: dict) -> list[dict]:
     add("New vehicles and electric share", "Share of new vehicles sold", "South Africa",
         "; ".join(f"{label} {d['nev'][(key, nev_year)] / d['new_sales'][('total', nev_year)] * 100:.2f}" for key, label in kinds), "%", str(nev_year),
         "inferred", "Calculated from the two naamsa series", "", "", "Battery electric sales fell from 2024 to 2025.")
+    share = one("diesel_share_of_new_light_vehicle_sales")
+    add("New vehicles and electric share", "Diesel share of new light vehicles sold", share["subject"], share["value"], share["unit"], share["period"],
+        "observed", share["source"], share["original_file"], share["page"], "No later figure found.")
     add("New vehicles and electric share", "Electric trucks and electric light commercial vehicles sold", "South Africa", "", "vehicles", "", "not available",
         "None found", "", "", "naamsa does not report electric sales by segment. Benchmarks from other countries are on the HML response sheet.")
 
@@ -158,8 +178,21 @@ def build(d: dict) -> list[dict]:
             f"{s['l_per_100km_fleet_average']} fleet average; {s['l_per_100km_new']} new; {float(s['km_per_year_fleet_average']):,.0f} km a year",
             "litres per 100 km; km", "2010 fleet", "observed", "Stone et al. (2018), vehicle parc model", "assumptions/2026/reference/vehicle_parameters_stone2018.csv",
             "", "One year only. All 24 vehicle types are in the file and on the Vehicle history sheet.")
-    add("Vehicle efficiency and distance", "Efficiency of new vehicles, by year", "South Africa", "", "litres per 100 km", "", "not available", "None found", "", "",
-        "No annual series of new-vehicle fuel use was found, so there is no efficiency history.")
+    history = sorted(points["new_light_vehicle_fuel_consumption"], key=lambda p: p["period"])
+    shown = [p for p in history if p["period"] in ("2005", "2010", "2015", "2019")]
+    add("Vehicle efficiency and distance", "Fuel use of new light vehicles, by year", "New cars and light commercial vehicles",
+        "; ".join(p["value"] for p in shown), history[0]["unit"], "; ".join(p["period"] for p in shown), "observed",
+        "IEA and Global Fuel Economy Initiative (Working Paper 15, 2017; country page, 2021)", history[0]["original_file"], history[0]["page"],
+        "Nine years between 2005 and 2019 are on the DR07 efficiency and rail sheet. Nothing after 2019 was found.")
+    rate = one("new_light_vehicle_fuel_consumption_change")
+    add("Vehicle efficiency and distance", "Fuel use of new light vehicles: average change", rate["subject"], rate["value"], rate["unit"], rate["period"],
+        "observed", rate["source"], rate["original_file"], rate["page"],
+        "The model assumes 0.5 to 1.5% a year, so the observed rate sits inside the model's range.")
+    car = one("new_passenger_car_fuel_consumption")
+    add("Vehicle efficiency and distance", "Fuel use of new passenger cars", car["subject"], car["value"], car["unit"], car["period"], "observed",
+        car["source"], car["original_file"], car["page"], car["note"])
+    add("Vehicle efficiency and distance", "Fuel use of new vehicles after 2019, and of trucks in any year", "South Africa", "", "litres per 100 km", "",
+        "not available", "None found", "", "", "The IEA series stops at 2019 and covers light vehicles only.")
     add("Vehicle efficiency and distance", "Efficiency gain assumed in the model", "New diesel and petrol vehicles",
         "; ".join(f"{'petrol' if name == 'gasoline' else name} {d['efficiency'][(name, case)] * 100:.1f} ({case.replace('_', ' ')})"
                   for name in ("diesel", "gasoline") for case in ("high_demand", "low_demand") if (name, case) in d["efficiency"]),
@@ -175,6 +208,18 @@ def build(d: dict) -> list[dict]:
     add("Freight and rail", "Rail's share of road and rail tonnes", "South Africa",
         "; ".join(f"{d['freight'][('rail', y)] / (d['freight'][('rail', y)] + d['freight'][('road', y)]) * 100:.1f}" for y in f_years), "%",
         "; ".join(str(y) for y in f_years), "inferred", "Calculated from the survey", "")
+    rail = sorted(points["rail_freight_volume"], key=lambda p: p["period"])
+    add("Freight and rail", "Freight carried by Transnet Freight Rail", rail[0]["subject"], "; ".join(p["value"] for p in rail), rail[0]["unit"],
+        "years to March " + "; ".join(p["period"][-4:] for p in rail), "observed", rail[0]["source"], rail[0]["original_file"], rail[0]["page"],
+        "Fell by a third from 2018 to 2023 and has risen since. " + rail[0]["note"])
+    target = one("rail_capacity_target")
+    add("Freight and rail", "Transnet's rail target", target["subject"], target["value"], target["unit"], target["period"], "observed", target["source"],
+        target["original_file"], target["page"], target["note"])
+    add("Freight and rail", "Extra rail freight if the target is met", "Transnet Freight Rail",
+        f"{float(target['value']) - float(rail[-1]['value']):.0f}", "million tonnes", f"target less the year to March {rail[-1]['period'][-4:]}", "inferred",
+        "Calculated from the two rows above", "", "",
+        f"About {(float(target['value']) - float(rail[-1]['value'])) / (d['freight'][('road', max(y for (m, y) in d['freight'] if m == 'road'))] / 1000) * 100:.0f}% "
+        "of road freight tonnes. Not all of it would come from road.")
     add("Freight and rail", "Road freight in tonne-kilometres, by year", "South Africa", "", "billion tonne-km", "", "not available",
         "None found as an annual series", "", "", "Needed to size freight that could move to rail. Only single-year figures exist in published studies.")
     add("Freight and rail", "Diesel used by rail locomotives", "Transnet Freight Rail", "", "million litres", "", "not available", "None found", "", "",

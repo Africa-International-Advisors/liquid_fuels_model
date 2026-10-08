@@ -282,7 +282,7 @@ litres at 0.31 litres per kWh. The model has 3.58 bn litres for 2024 and 4.59
 
 | | Low | Medium | High |
 |---|---|---|---|
-| Avon and Dedisa after their agreements (October 2030, July 2031) | Stop | Continue | Continue |
+| Avon and Dedisa after their contracts end (August and September 2030) | Stop | Continue | Continue |
 | Ankerlig and Gourikwa | Move to gas in 2028; 10% of output on diesel | Same | Gas does not arrive; stay on diesel |
 | Gas turbines at Camden, Grootvlei, Hendrina, Arnot and Kriel from 2030 | None | 3,000 MW, on gas, 10% of output on diesel | 6,000 MW, no gas, run as diesel peakers |
 | Load factor of the peakers | 3.6% (year to March 2026) | 9.4% (to March 2025) | 17.1% (to March 2024) |
@@ -291,7 +291,7 @@ Million litres of diesel a year:
 
 | | 2022-2027 | 2028-2029 | 2030 | 2031-2035 |
 |---|---|---|---|---|
-| Low | 301 | 118 | 86 | 20 |
+| Low | 301 | 118 | 20 | 20 |
 | Medium | 792 | 311 | 637 | 637 |
 | High | 1,435 | 1,435 | 4,224 | 4,224 |
 | Ceiling: four stations and 6 GW of gas turbines on diesel all year | 8,389 | 8,389 | 24,682 | 24,682 |
@@ -313,7 +313,7 @@ in the decision log:
 | Diesel per kWh | 0.31 litres | Three years of reported Eskom burn |
 | Output on diesel when gas is available | 10% | None |
 | Load factor of a gas plant on gas | 40% | None |
-| Avon and Dedisa after 2030-2031 | Stop (low); continue (medium, high) | Agreements end; no announcement |
+| Avon and Dedisa after 2030 | Stop (low); continue (medium, high) | Contracts end in August and September 2030; no announcement |
 | Ankerlig and Gourikwa | Gas from 2028 (low, medium); diesel throughout (high) | Eskom's 2023 tender target |
 | Gas turbines at the five coal sites from 2030 | 0 / 3,000 / 6,000 MW | IRP 2025 gas requirement; siting assumed |
 | Gas reaching those sites | Yes (medium); no (high) | None |

@@ -1,0 +1,38 @@
+{
+  "retrieved": "2026-10-08",
+  "purpose": "DR07 demand evidence: vehicle efficiency history, plant commissioning and shutdown",
+  "files": [
+    {
+      "file": "ntcsa-medium-term-system-adequacy-outlook-2026-2030.pdf",
+      "publisher": "National Transmission Company South Africa (system operator)",
+      "published": "2025-10-30",
+      "url": "https://www.ntcsa.co.za/wp-content/uploads/2025/10/Medium-Term-System-Adequacy-Outlook-2026-2030.pdf",
+      "bytes": 2155093,
+      "sha256": "6f7a7062aba0147947b4b6161fac826f89971fed1833f70d81d4c1fdff9520dc"
+    },
+    {
+      "file": "icct-south-africa-passenger-vehicle-co2-baseline-2018.pdf",
+      "publisher": "International Council on Clean Transportation",
+      "published": "2018-01",
+      "url": "https://theicct.org/wp-content/uploads/2021/06/South-Africa-PV-emission-stds_ICCT-White-Paper_17012018_vF.pdf",
+      "bytes": 883880,
+      "sha256": "de3eba25329d8c9afd6f0c540094a7d9a2e5683ae963ba791ca1c537abc75100"
+    },
+    {
+      "file": "iea-fuel-economy-in-south-africa.html",
+      "publisher": "International Energy Agency, Global Fuel Economy Initiative 2021",
+      "published": "2021-12-13",
+      "url": "https://www.iea.org/articles/fuel-economy-in-south-africa",
+      "bytes": 229321,
+      "sha256": "e588123ea63461ec724b2781eda6f0338010499ff21402b365dd442b63ac4b1d"
+    },
+    {
+      "file": "iea-gfei-international-comparison-ldv-fuel-economy-2005-2015.pdf",
+      "publisher": "International Energy Agency, Global Fuel Economy Initiative Working Paper 15",
+      "published": "2017",
+      "url": "https://iea.blob.core.windows.net/assets/6a9d5d7b-89cc-4b7e-97ef-dd40551fef26/wp15ldvcomparison.pdf",
+      "bytes": 7143487,
+      "sha256": "aaa957078528d6fd2b0d903e7d3b2eeb25dcf0f3fcc2c6b80de93fea92f00929"
+    }
+  ]
+}

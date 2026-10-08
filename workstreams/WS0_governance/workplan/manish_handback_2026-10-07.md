@@ -90,16 +90,25 @@ not published by anyone, so they cannot be filled in:
 Pipeline capacity uses Transnet's 2020 figure: 148 million litres a week on the Durban to Jameson Park trunk
 line, about 7.7 bn litres a year.
 
-**DR07 Demand evidence.** Workbook sheets DR07 evidence, DR07 power diesel and DR07 fleet by province; note
-`dr07_demand_evidence_2026-10-08.md`. Eskom's reported turbine fuel is in (0.94, 1.13 and 0.68 bn litres in the
-years to March 2023 to 2025) and confirms 0.31 litres per kWh. Not available from any source:
+**DR07 Demand evidence.** Workbook sheets DR07 evidence, DR07 power diesel, DR07 fleet by province and DR07
+efficiency and rail; note `dr07_demand_evidence_2026-10-08.md`.
+
+- Eskom's reported turbine fuel is in: 0.94, 1.13 and 0.68 bn litres in the years to March 2023 to 2025. It
+  confirms 0.31 litres per kWh. Eskom reports one total, not by station.
+- New-vehicle fuel use fell 1.3% a year from 2005 to 2019 (IEA), inside the model's 0.5 to 1.5%.
+- The system operator gives Avon's and Dedisa's contracts ending in 2030, Acacia and Port Rex shutting in
+  2030, and 6 GW of gas plant assumed for 2030. Avon's end date in `power_fleet_diesel.csv` is changed to
+  match: the low power case for 2030 falls from 86 to 20 million litres.
+- Transnet carried 160 million tonnes in the year to March 2025 and aims for 250.
+
+Not available from any source:
 
 - Diesel burned in private backup generators
-- New gas or diesel plant: commissioning dates
+- New gas plant: dates by project
 - Vehicles by fuel within each class, and by province
 - Vehicles by age
 - Electric trucks and electric light commercial vehicles sold
-- Efficiency of new vehicles, by year
+- Fuel use of new vehicles after 2019, and of trucks in any year
 - Road freight in tonne-kilometres, by year
 - Diesel used by rail locomotives
 
@@ -111,7 +120,7 @@ Deck pages 11 and 12; workbook sheet Power fleet; input `assumptions/2026/infras
   (independent), 3,089 MW in all. Acacia and Port Rex burn kerosene and are not counted.
 - Coal: Komati shut in 2022; Camden, Grootvlei, Hendrina, Arnot and Kriel may run to 31 March 2030; Duvha and
   Matla to 2034. Eskom's decision on the five, due end September 2026, had not been announced by 8 October.
-- Diesel for power, million litres a year, low / medium / high: 301 / 792 / 1,435 to 2027, 86 / 637 / 4,224 in
+- Diesel for power, million litres a year, low / medium / high: 301 / 792 / 1,435 to 2027, 20 / 637 / 4,224 in
   2030, 20 / 637 / 4,224 from 2031. The model has 3,581 for 2024.
 - Every case setting is yours and Henry's to confirm (decision D22). Not sourced: 10% of output on diesel when
   gas is available, 40% load factor on gas, the gas turbines being sited at the five coal stations, and no gas

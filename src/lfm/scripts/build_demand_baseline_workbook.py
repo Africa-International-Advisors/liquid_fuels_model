@@ -106,6 +106,7 @@ def load(ts: Path, ref: Path) -> dict:
     d["jodi_demand"] = {(r["product"], int(r["period"])): float(r["value"]) / 1e6
                         for r in _read(ts / "oil_balance_jodi.csv")
                         if r["flow"] == "demand" and int(r["months_reported"]) == 12}
+    d["evidence_points"] = _read(ref / "demand_evidence_points.csv")
     eskom = _read(ts / "eskom_fuel_eaf_review_2026_10_07.csv")
     d["eskom_fuel"] = {int(r["period"]): float(r["value"]) for r in eskom if r["series"] == "eskom_ocgt_diesel_and_kerosene"}
     turbines = _read(ts / "ocgt_generation_eskom.csv")
@@ -1076,6 +1077,58 @@ def dr07_power_sheet(wb, d: dict) -> None:
     ws.freeze_panes = "B5"
 
 
+def dr07_efficiency_rail_sheet(wb, d: dict) -> None:
+    """Two short histories: fuel use of new light vehicles, and freight carried by Transnet Freight Rail."""
+    ws = wb.create_sheet("DR07 efficiency and rail")
+    points = d["evidence_points"]
+    economy = sorted((p for p in points if p["series"] == "new_light_vehicle_fuel_consumption"), key=lambda p: p["period"])
+    rail = sorted((p for p in points if p["series"] == "rail_freight_volume"), key=lambda p: p["period"])
+    target = next(p for p in points if p["series"] == "rail_capacity_target")
+    width = max(len(economy), len(rail) + 1)
+    _sheet_head(ws, "DR07 Vehicle efficiency history and rail freight",
+                "Two series read from published documents. Each row gives its source.", ["Line"] + [""] * width + ["Source", "Note"],
+                [46] + [9] * width + [58, 62])
+    last = width + 3
+
+    def band(row, text):
+        for i in range(1, last + 1):
+            cell = ws.cell(row=row, column=i, value=text if i == 1 else None)
+            cell.font = Font(name="Arial", size=10, bold=True, color=INK)
+            cell.fill = PatternFill("solid", fgColor=FILL["section"])
+
+    def write(row, label, values, fmt, source, note, kind="observation", bold=False):
+        ws.cell(row=row, column=1, value=label)
+        for i, value in enumerate(values, start=2):
+            ws.cell(row=row, column=i, value=value).number_format = fmt
+        ws.cell(row=row, column=last - 1, value=source)
+        ws.cell(row=row, column=last, value=note)
+        for i in range(1, last + 1):
+            cell = ws.cell(row=row, column=i)
+            cell.font = Font(name="Arial", size=10, color=INK, bold=bold)
+            cell.fill = PatternFill("solid", fgColor=FILL[kind])
+            cell.alignment = Alignment(wrap_text=i >= last - 1, vertical="top", horizontal="right" if 1 < i < last - 1 else "left")
+
+    band(5, "Fuel use of new light vehicles (cars and light commercial vehicles)")
+    write(6, "Year", [int(p["period"]) for p in economy], "0", "", "", kind="formula", bold=True)
+    write(7, "Litres of petrol equivalent per 100 km", [float(p["value"]) for p in economy], "0.0",
+          "IEA and Global Fuel Economy Initiative: Working Paper 15 (2017), PDF p.119; country page (2021) for 2019",
+          "New vehicles registered that year. Nothing after 2019 was found.")
+    first_col, last_col = get_column_letter(2), get_column_letter(1 + len(economy))
+    write(8, "Change a year, first to last", [f"=({last_col}7/{first_col}7)^(1/({last_col}6-{first_col}6))-1"], "0.0%",
+          "Calculated from the row above", "The IEA states 1.3% a year for 2005 to 2019. The model assumes 0.5 to 1.5% a year.", kind="formula")
+
+    band(10, "Freight carried by Transnet Freight Rail")
+    write(11, "Year to March", [int(p["period"][-4:]) for p in rail] + ["Target"], "0", "", "", kind="formula", bold=True)
+    write(12, "Million tonnes", [float(p["value"]) for p in rail] + [float(target["value"])], "0.0",
+          "Transnet annual results 2025, presentation, PDF pp.14 and 36",
+          "Export iron ore, export coal and general freight together. The target has no year on the slide.")
+    latest = get_column_letter(1 + len(rail))
+    goal = get_column_letter(2 + len(rail))
+    write(13, "Target less the latest year, million tonnes", [f"={goal}12-{latest}12"], "0.0", "Calculated from the row above",
+          "The most freight that could move to rail if the target is met. Not all of it would come from road.", kind="formula")
+    ws.freeze_panes = "B5"
+
+
 def dr07_fleet_sheet(wb, d: dict) -> None:
     """Registered vehicles by province and class at the latest month published."""
     ws = wb.create_sheet("DR07 fleet by province")
@@ -1554,7 +1607,7 @@ def power_fleet_sheet(wb, d: dict) -> None:
             ("Which sites get gas plants, how large, and whether gas reaches them",
              "The medium and high cases use the national gas requirement as a stand-in."),
             ("Whether Ankerlig and Gourikwa switch to gas on time", "Eskom's stated target was December 2027."),
-            ("Avon and Dedisa after their agreements end", "The 15-year agreements end in October 2030 and July 2031. "
+            ("Avon and Dedisa after their agreements end", "Both contracts end in August and September 2030 (system operator). "
              "Low ends them; medium and high continue them."),
             ("Share of output on diesel when gas is available", "No source; 10% is a placeholder."),
             ("Private generators at firms and homes", "Not in this block; no measured volume exists.")):
@@ -1716,7 +1769,7 @@ def main() -> int:
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 is still set to FIASA on Nigel's sheet, because the department has no 2024 "
                    "figure to switch to. The added sheets do not use FIASA for any year. For Nigel to decide.")
-    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 entry points, DR04 transport cost, DR07 evidence, DR07 power diesel, DR07 fleet by province, Power fleet, Vehicle history, HML response, Gap status, "
+    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 entry points, DR04 transport cost, DR07 evidence, DR07 power diesel, DR07 fleet by province, DR07 efficiency and rail, Power fleet, Vehicle history, HML response, Gap status, "
                    "Checks, History sources. No other cell changed.")
 
     history_rows = history_sheet(wb, d)
@@ -1730,6 +1783,7 @@ def main() -> int:
     dr07_evidence_sheet(wb)
     dr07_power_sheet(wb, d)
     dr07_fleet_sheet(wb, d)
+    dr07_efficiency_rail_sheet(wb, d)
     power_fleet_sheet(wb, d)
     vehicle_sheet(wb, d, history_rows)
     lever_response_sheet(wb)

@@ -502,7 +502,7 @@ diesel_fleet = [r for r in fleet_rows if r["group"] == "diesel_station"]
 coal_fleet = [r for r in fleet_rows if r["group"] == "coal_retiring"]
 STOP = {"Komati": "Shut 31 October 2022", "Duvha": "21 February 2034", "Matla": "20 July 2034"}
 STATION_NOTE = {"Ankerlig": "Gas supply sought; switch targeted December 2027", "Gourikwa": "Same gas tender",
-                "Avon": "Agreement with Eskom ends July 2031", "Dedisa": "Agreement with Eskom ends October 2030"}
+                "Avon": "Contract ends in 2030 (system operator)", "Dedisa": "Contract ends in 2030 (system operator)"}
 
 s = page(2, f"Four stations, {sum(float(r['capacity_mw']) for r in diesel_fleet):,.0f} MW, burn diesel for power; "
             "eight coal stations stop by 2034",
@@ -535,7 +535,7 @@ power_chart.value_axis.major_unit = 1000
 power_chart.value_axis.tick_labels.number_format = "#,##0"
 table(s, [
     ["", "Low", "Medium", "High"],
-    ["Avon and Dedisa after 2030-2031", "Stop", "Continue", "Continue"],
+    ["Avon and Dedisa after 2030", "Stop", "Continue", "Continue"],
     ["Ankerlig and Gourikwa", "Gas from 2028", "Gas from 2028", "Diesel throughout"],
     ["Gas turbines at the five coal sites, 2030", "None", "3,000 MW on gas, 10% of output on diesel", "6,000 MW, no gas: diesel peakers"],
     ["Peaker load factor", "3.6%", "9.4%", "17.1%"],

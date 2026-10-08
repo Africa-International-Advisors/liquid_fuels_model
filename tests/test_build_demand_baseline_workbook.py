@@ -36,7 +36,7 @@ def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
         "History", "DR01 balance", "Sector history", "Diesel by use", "Demand by use", "DR04 routes", "DR04 entry points", "DR04 transport cost", "DR07 evidence", "DR07 power diesel",
-        "DR07 fleet by province", "Power fleet", "Vehicle history", "HML response", "Gap status",
+        "DR07 fleet by province", "DR07 efficiency and rail", "Power fleet", "Vehicle history", "HML response", "Gap status",
         "Checks",
         "History sources"]
     changed = []
@@ -145,7 +145,7 @@ def test_power_fleet_lists_the_diesel_stations_and_builds_three_cases():
     assert rows["Acacia (Eskom)"][2].value == "Not counted"                  # kerosene, not diesel
     assert rows["Camden"][first + 7].value == 1561 and rows["Camden"][first + 8].value == 0
     low, medium = rows["Avon and Dedisa available, low"], rows["Avon and Dedisa available, medium"]
-    assert [low[first + n].value for n in (7, 8, 9)] == [1005, 670, 0]       # Dedisa ends 2030, Avon 2031
+    assert [low[first + n].value for n in (7, 8, 9)] == [1005, 0, 0]         # both contracts end in 2030 (system operator)
     assert [medium[first + n].value for n in (7, 8, 9, 13)] == [1005] * 4    # medium: both continue
     assert [rows[f"Gas turbines at the five coal sites, {case}"][first + 8].value
             for case in ("low", "medium", "high")] == [0, 3000, 6000]
@@ -283,6 +283,7 @@ def test_dr07_sheets_show_reported_eskom_litres_the_implied_rate_and_the_fleet_b
     assert len(facts) >= 25 and all(r[2].value and r[6].value for r in facts)
     missing = [r[0].value for r in facts if r[5].value == "not available"]
     assert "Diesel burned in private backup generators" in missing and "Vehicles by age" in missing
+    assert "Fuel use of new light vehicles, by year" in {r[0].value for r in facts if r[5].value == "observed"}
     assert not any("FIASA" in str(r[6].value) or "JODI" in str(r[6].value) for r in facts)
 
     power = {r[0].value: r for r in wb["DR07 power diesel"].iter_rows(min_row=5) if r[0].value}
@@ -301,3 +302,17 @@ def test_dr07_sheets_show_reported_eskom_litres_the_implied_rate_and_the_fleet_b
     assert fleet["Gauteng"][1].value == d["natis_by_province"][("GP", "cars")]
     national = sum(fleet[name][1].value for _, name in build.FLEET_PROVINCES)
     assert national == pytest.approx(d["natis_by_province"][("ZAF", "cars")], rel=1e-9)        # provinces add to the national register
+
+
+def test_dr07_efficiency_and_rail_sheet_carries_both_histories_with_sources():
+    ws = load_workbook(ROOT / build.OUT)["DR07 efficiency and rail"]
+    rows = {r[0].value: r for r in ws.iter_rows(min_row=5) if r[0].value}
+    years = [c.value for c in rows["Year"][1:10]]
+    assert years == [2005, 2008, 2010, 2011, 2012, 2013, 2014, 2015, 2019]
+    assert [c.value for c in rows["Litres of petrol equivalent per 100 km"][1:10]] == [8.8, 8.6, 8.6, 8.2, 7.9, 7.7, 7.8, 7.8, 7.4]
+    assert (7.4 / 8.8) ** (1 / 14) - 1 == pytest.approx(-0.012, abs=0.001)                  # close to the IEA's stated 1.3% a year
+    rail = [c.value for c in rows["Million tonnes"][1:10]]
+    assert rail == [226.3, 215.1, 212.4, 183.3, 173.1, 149.5, 151.7, 160.1, 250.0]
+    assert rows["Year to March"][9].value == "Target"
+    for label in ("Litres of petrol equivalent per 100 km", "Million tonnes"):
+        assert "IEA" in rows[label][-2].value or "Transnet" in rows[label][-2].value

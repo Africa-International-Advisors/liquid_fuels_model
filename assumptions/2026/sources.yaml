@@ -377,6 +377,19 @@ zone_districts_department:
     effective 2 April 2014. Provenance in reference/zone_differentials_department.sources.yaml
   last_updated: '2026-10-08'
   shared: true
+demand_evidence_points:
+  register_id: REG-SOURCE-DEMAND_EVIDENCE_POINTS
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/demand_evidence_points.csv
+  units: mixed; see unit column
+  source: Figures read by hand from published documents for request DR07 - IEA and Global Fuel Economy Initiative
+    (new vehicle fuel consumption), ICCT, Transnet annual results 2025 (rail volumes), and the system operator's
+    Medium-Term System Adequacy Outlook 2026-2030 (plant shutdown and commissioning). Each row names its document
+    and page. Originals in external/data/raw/demand_evidence_20261008/
+  last_updated: '2026-10-08'
+  shared: true
 refinery_output_operators:
   register_id: REG-SOURCE-REFINERY_OUTPUT_OPERATORS
   exception_id: EXC-SOURCE-DATA-2026-10-05

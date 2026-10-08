@@ -20,6 +20,15 @@ def test_committed_table_equals_a_fresh_build_and_every_fact_has_a_source():
     assert not any("FIASA" in r["source"] or "JODI" in r["source"] for r in rows)
 
 
+def test_efficiency_history_and_plant_dates_come_from_the_evidence_points():
+    rows = {r["item"]: r for r in dr07.build(dr07.load(VINTAGE))}
+    assert rows["Fuel use of new light vehicles, by year"]["value"] == "8.8; 8.6; 7.8; 7.4"
+    assert rows["Fuel use of new light vehicles: average change"]["value"] == "-1.3"
+    assert rows["Independent diesel plants: contract end"]["period"] == "August and September 2030"
+    assert rows["Freight carried by Transnet Freight Rail"]["value"].endswith("151.7; 160.1")
+    assert rows["Extra rail freight if the target is met"]["value"] == "90"
+
+
 def test_eskom_reported_fuel_gives_the_litres_per_kwh_used_on_the_power_fleet_sheet():
     implied = dr07.implied_litres_per_kwh(dr07.load(VINTAGE))
     assert set(implied) >= {2023, 2024, 2025}
