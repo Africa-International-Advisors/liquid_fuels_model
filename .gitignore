@@ -38,3 +38,19 @@ frontend/.next/
 frontend/*.tsbuildinfo
 frontend/.env*
 !frontend/.env.example
+
+# 8 October review milestone: large originals and rebuildable map layers stay local.
+# Exact inventory and hashes: workstreams/WS0_governance/workplan/sa_milestone_bulk_assets_2026_10_08.json
+/external/sources/geospatial/2026_10_07/geoboundaries_zaf_adm1.geojson
+/external/sources/geospatial/2026_10_07/ne_10m_populated_places.geojson
+/external/sources/geospatial/2026_10_07/ne_10m_railroads.geojson
+/external/sources/geospatial/2026_10_07/ne_10m_roads.geojson
+/external/sources/geospatial/2026_10_08/osm/botswana.osm.pbf
+/external/sources/geospatial/2026_10_08/osm/mozambique.osm.pbf
+/external/sources/geospatial/2026_10_08/osm/namibia.osm.pbf
+/external/sources/geospatial/2026_10_08/osm/south-africa.osm.pbf
+/external/sources/vopak_annual_review_2026_10_08/Vopak_Annual_Report_2025.pdf
+/output/delivered/geospatial/2026_10_07/geoboundaries_zaf_adm1.geojson
+/output/delivered/geospatial/2026_10_08/rails.geojson
+/output/delivered/geospatial/2026_10_08/roads.geojson
+/output/delivered/geospatial/2026_10_08/transport.sqlite

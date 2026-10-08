@@ -1,0 +1,24 @@
+{
+  "country": "botswana",
+  "url": "https://download.geofabrik.de/africa/botswana-latest.osm.pbf",
+  "retrieved_at": "2026-10-07T23:10:48.527178+00:00",
+  "http_headers": {
+    "Date": "Wed, 07 Oct 2026 01:49:44 GMT",
+    "Server": "Apache",
+    "Last-Modified": "Wed, 07 Oct 2026 01:13:25 GMT",
+    "ETag": "\"53f2f1c-65d35d26b6b58\"",
+    "Accept-Ranges": "bytes",
+    "Content-Length": "88026908",
+    "Cache-Control": "max-age=63072000, public",
+    "Content-Type": "application/octet-stream",
+    "Age": "76522",
+    "Cache-Status": "download-proxy12;hit;detail=match",
+    "Via": "1.1 download-proxy12 (squid/6.14)",
+    "Connection": "close"
+  },
+  "path": "external/sources/geospatial/2026_10_08/osm/botswana.osm.pbf",
+  "bytes": 88026908,
+  "sha256": "57846e7696ba3d0fb436ccbf61c3da89584134afd872efd818d3887739f3cc63",
+  "licence": "ODbL 1.0",
+  "attribution": "OpenStreetMap contributors; Geofabrik"
+}

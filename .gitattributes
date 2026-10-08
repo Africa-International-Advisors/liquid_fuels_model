@@ -7,3 +7,6 @@
 *.xlsx binary
 *.pdf binary
 external/data/raw/fuel_supply_review_20261006/*.html binary
+
+# Preserve downloaded review HTML byte-for-byte for source hashes.
+external/data/raw/sa_review_20261007T181010425382Z/*.html binary

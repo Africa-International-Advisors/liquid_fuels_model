@@ -299,6 +299,21 @@ TRACE: dict[str, tuple[str, ...]] = {
         "manual transcription", "none", "typed by hand", "hand-back deck section 1", "",
         "Gross levies and diesel rebate in rand; litres derived in the balance note. Fiscal years; "
         "petrol and diesel together.", "Nigel: weigh against the 2024 sales figures"),
+    # ---- added by Nigel on main, 7 October (sa_review_evidence.sources.yaml) --
+    "timeseries/eskom_fuel_eaf_review_2026_10_07.csv": (
+        "Eskom", "https://www.eskom.co.za/investors/integrated-results/", "eskom-integrated-report-2025.pdf",
+        "on main (external/data/refresh_20261005/raw/eskom/)", "scripted extract",
+        "python -m lfm.scripts.stage_sa_review_evidence", "stage_sa_review_evidence", "South Africa review pack", "",
+        "Eskom energy availability and peaking fuel by financial year. Fuel volume includes kerosene and is Eskom "
+        "only; the 2026 volume was not found. Status in the sources file: independent verification pending.",
+        "Nigel: verify and decide adoption"),
+    "timeseries/investment_review_2026_10_07.csv": (
+        "World Bank", "https://api.worldbank.org/v2/country/ZAF/indicator/BX.KLT.DINV.WD.GD.ZS",
+        "worldbank_fdi.json; worldbank_gfcf.json", "on main (external/data/raw/sa_review_20261007T181010425382Z/)",
+        "scripted extract", "python -m lfm.scripts.stage_sa_review_evidence", "stage_sa_review_evidence",
+        "South Africa review pack", "",
+        "Foreign direct investment and gross fixed capital formation as a share of GDP. Status in the sources "
+        "file: preserved; not independently verified.", "Nigel: verify and decide adoption"),
     "infrastructure/power_fleet_diesel.csv": (
         "Eskom; press reports", "https://www.eskom.co.za/eskom-divisions/gx/peaking-power-stations/",
         "eskom-gx0001-generation-plant-mix-rev29.pdf", "on manish-branch (external/data/raw/eskom/)",

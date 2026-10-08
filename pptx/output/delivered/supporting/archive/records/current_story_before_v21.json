@@ -1,0 +1,23 @@
+{
+  "current_version": 20,
+  "slides": 30,
+  "files": [
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_v20.pdf",
+      "bytes": 2074537,
+      "sha256": "92da52d3cd23117e2f551e1f1043f885bb7f4a9fad2d353ed0464eb358f096f1"
+    },
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_v20.pptx",
+      "bytes": 2868437,
+      "sha256": "8683a2b05ca327eb3a978ecd8f764bb8a4031b1a2c633e5b22cfbfb21be79cc3"
+    }
+  ],
+  "story": "pptx/story/sa_market_story_v20_2026_10_08.json",
+  "qa": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v20/checks.json",
+  "archive": "pptx/output/delivered/supporting/archive/records/cleanup_manifest.json",
+  "layout_revision": 3,
+  "canonical_author": "Nigel",
+  "canonical_source": "pptx/output/delivered/supporting/SA_Market_Story_v18_nigel.pptx",
+  "latest_change": "Page 7 quantified with registered Eskom, freight and sector activity data; Nigel taglines unchanged."
+}

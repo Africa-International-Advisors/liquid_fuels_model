@@ -1,0 +1,93 @@
+[
+  {
+    "path": "external/sources/geospatial/2026_10_07/geoboundaries_zaf_adm1.geojson",
+    "bytes": 19806654,
+    "sha256": "5d82ed95b034f50d69d96c9b7136e9b5868a5fb4ef2d8905a6a6ac3715fef452",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "external/sources/geospatial/2026_10_07/ne_10m_populated_places.geojson",
+    "bytes": 19359003,
+    "sha256": "9b8e3de09048ef00dfc70357dbb9fa324493f214b5e0ae4daf1aa79a8d10116b",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "external/sources/geospatial/2026_10_07/ne_10m_railroads.geojson",
+    "bytes": 39598080,
+    "sha256": "a0962d7866060ae3e24df255f6d662389ac9ba7e0df40cf329c2281190b861e6",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "external/sources/geospatial/2026_10_07/ne_10m_roads.geojson",
+    "bytes": 50474096,
+    "sha256": "66a0c7b438e92fd124822cc5921cfa11042f48c294ade5e0f03f2c6640fd0248",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "external/sources/geospatial/2026_10_08/osm/botswana.osm.pbf",
+    "bytes": 88026908,
+    "sha256": "57846e7696ba3d0fb436ccbf61c3da89584134afd872efd818d3887739f3cc63",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "external/sources/geospatial/2026_10_08/osm/mozambique.osm.pbf",
+    "bytes": 255471661,
+    "sha256": "a90a29e9c0e92e8c61e525fdde01d36eb9d5af1e735253d16f22eec6ac576e39",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "external/sources/geospatial/2026_10_08/osm/namibia.osm.pbf",
+    "bytes": 54765467,
+    "sha256": "54f2591d9480545639e86d9926fd6eb273657301c894c4b3f5f4aa3afac8fc3e",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "external/sources/geospatial/2026_10_08/osm/south-africa.osm.pbf",
+    "bytes": 421917130,
+    "sha256": "5b1439a205a3c86102e1bdd265df58b0eb02d49d00365d5de46e206a81764dde",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "external/sources/vopak_annual_review_2026_10_08/Vopak_Annual_Report_2025.pdf",
+    "bytes": 87348656,
+    "sha256": "c9cfa54d60ab5a01dd21dd02c3dc9b4cbec4d1ba2af9f2c9d1da03c3ab588588",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "output/delivered/geospatial/2026_10_07/geoboundaries_zaf_adm1.geojson",
+    "bytes": 19806654,
+    "sha256": "5d82ed95b034f50d69d96c9b7136e9b5868a5fb4ef2d8905a6a6ac3715fef452",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "output/delivered/geospatial/2026_10_08/rails.geojson",
+    "bytes": 30631681,
+    "sha256": "aac843a09f71d30e21e71a04600754bdb8ace1895a7465ba6d674752c03581b9",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "output/delivered/geospatial/2026_10_08/roads.geojson",
+    "bytes": 87320984,
+    "sha256": "d23c8e9655903f4b666a2daf99b9b4c0469b29754237a5081b95592b44f90e9b",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  },
+  {
+    "path": "output/delivered/geospatial/2026_10_08/transport.sqlite",
+    "bytes": 442597376,
+    "sha256": "765b0c11d4b5662af6a2c20193516d15c35e23f5fc95b7bee63ff6b5dc63f0db",
+    "retention": "Preserved locally; excluded from Git",
+    "recovery": "Use source catalog and collectors; verify original hash before treating a retrieval as the same vintage."
+  }
+]

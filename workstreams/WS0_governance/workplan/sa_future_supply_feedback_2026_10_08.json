@@ -1,0 +1,12 @@
+{
+  "feedback": "Restore the future-state refinery stack, especially SAPREF and Natref, and connect it to supply scenarios.",
+  "implementation": "v12 p13: historical capacity plus illustrative 2036 Low/Medium/High stacks; p28: plant-specific assumptions and outstanding conversion to fuel output.",
+  "capacity_cases_kbpd": {"Low": 250, "Medium": 358, "High": 758},
+  "data": "output/delivered/supply_capacity_cases_2026_10_08/data.json",
+  "assumptions": ["review_capacity_scenarios.capacity_comparison", "review_supply_worlds.capacity_cases"],
+  "status": "Future-capacity visual implemented; full L/M/H fuel-output calibration remains open.",
+  "owner": "Manish; Nigel review",
+  "trigger": "Before engine adoption, scenario approval or investment reliance",
+  "remaining": ["Plant ramp-up, utilisation and product yields", "Secunda gas/MRG liquids penalty", "PetroSA restart case", "Commercial capture and achievable terminal turnover"],
+  "validation": "14 relevant tests passed; governance coverage passed with 55 open exceptions. No peer review or forecast approval inferred."
+}

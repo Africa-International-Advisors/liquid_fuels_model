@@ -1,0 +1,38 @@
+eskom_history:
+  exception_id: EXC-SA-REVIEW-2026-10-07
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  last_updated: '2026-10-07'
+  shared: true
+  provisional: true
+  needs_verification: true
+  register_id: REG-SA-REVIEW-ESKOM
+  csv: timeseries/eskom_fuel_eaf_review_2026_10_07.csv
+  units: per-row unit; FY ending 31 March
+  source: Eskom Integrated Report 2025; PDF page in each row; provenance in sa_review_evidence.sources.yaml
+investment_history:
+  exception_id: EXC-SA-REVIEW-2026-10-07
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  last_updated: '2026-10-07'
+  shared: true
+  provisional: true
+  needs_verification: true
+  register_id: REG-SA-REVIEW-INVESTMENT
+  csv: timeseries/investment_review_2026_10_07.csv
+  units: percent of GDP; calendar year
+  source: World Bank WDI API BX.KLT.DINV.WD.GD.ZS and NE.GDI.FTOT.ZS; provenance in
+    sa_review_evidence.sources.yaml
+lesedi_catchment:
+  exception_id: EXC-SA-REVIEW-2026-10-07
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  last_updated: '2026-10-07'
+  shared: true
+  provisional: true
+  needs_verification: true
+  register_id: REG-SA-REVIEW-LESEDI
+  value: GP
+  units: South African province code
+  source: 'User instruction 7 October 2026: use Gauteng for now. Provisional reporting
+    boundary; not proof of commercial reach.'

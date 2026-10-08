@@ -1,0 +1,14 @@
+{
+  "as_of": "2026-10-07",
+  "lesedi_catchment": "GP",
+  "demand_change_2013_2023_pct": {
+    "petrol": -18.97194885304613,
+    "diesel": 8.554415624512245
+  },
+  "eskom_fuel_change_FY2024_FY2025_pct": -39.87605135015493,
+  "gauteng_latest_complete_year": {
+    "petrol": 2022,
+    "diesel": 2022
+  },
+  "output_status": "review evidence and current-engine diagnostics; no calibrated new forecast or Vopak share"
+}

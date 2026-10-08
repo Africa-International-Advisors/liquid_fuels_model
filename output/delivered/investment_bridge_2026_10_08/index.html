@@ -1,0 +1,318 @@
+<!doctype html><meta charset="utf-8"><title>Investment bridge</title><style>body{font:15px Arial;margin:35px;color:#222}h1,h2{color:#0a2373}table{border-collapse:collapse;font-size:12px;width:100%}td,th{border-bottom:1px solid #ddd;padding:10px;text-align:left;vertical-align:top}h2{margin-top:40px}</style><h1>Six-step investment bridge — 8 October 2026</h1><p>Screening evidence, explicit-input calculation tools and unfilled commercial outputs. No route winner, Vopak share or investment return is asserted.</p><p><a href="data_request.csv">Detailed data request</a> · <a href="collection_templates/">Collection tables</a> · <a href="../../../workstreams/WS0_governance/workplan/sa_investment_bridge_2026_10_08.csv">Implementation log</a> · <a href="evidence.json">Evidence and source hashes</a></p><p>2021 energy-balance final consumption differs from sales. The later 2022 residual is not production. Do not infer provincial supply origins from either.</p><h2>Matched-year demand and trade</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>year</th>
+      <th>product</th>
+      <th>national_sales_bn_l</th>
+      <th>gauteng_sales_bn_l</th>
+      <th>imports_bn_l</th>
+      <th>exports_bn_l</th>
+      <th>sales_less_net_imports_bn_l</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2022</td>
+      <td>petrol</td>
+      <td>9.184870</td>
+      <td>3.530440</td>
+      <td>5.455262</td>
+      <td>0.854614</td>
+      <td>4.584222</td>
+      <td>Residual is NOT measured production; stock, product and customs coverage unresolved</td>
+    </tr>
+    <tr>
+      <td>2022</td>
+      <td>diesel</td>
+      <td>12.717326</td>
+      <td>3.278991</td>
+      <td>11.954257</td>
+      <td>0.889199</td>
+      <td>1.652269</td>
+      <td>Residual is NOT measured production; stock, product and customs coverage unresolved</td>
+    </tr>
+  </tbody>
+</table><h2>Historical balance diagnostic</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>year</th>
+      <th>product</th>
+      <th>production</th>
+      <th>imports</th>
+      <th>exports</th>
+      <th>final_consumption</th>
+      <th>statistical_difference</th>
+      <th>residual_before_stat_difference_bn_l</th>
+      <th>residual_after_reported_stat_difference_bn_l</th>
+      <th>sales_vs_final_consumption_bn_l</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2021</td>
+      <td>petrol</td>
+      <td>6.351307</td>
+      <td>5.417044</td>
+      <td>-1.423828</td>
+      <td>9.836176</td>
+      <td>-0.508347</td>
+      <td>0.508347</td>
+      <td>-3.330669e-16</td>
+      <td>-0.534592</td>
+      <td>Source diagnostic only: statistical difference is not a measured stock change</td>
+    </tr>
+    <tr>
+      <td>2021</td>
+      <td>diesel</td>
+      <td>5.314964</td>
+      <td>11.219995</td>
+      <td>-1.026998</td>
+      <td>13.407266</td>
+      <td>-2.100695</td>
+      <td>2.100695</td>
+      <td>-8.881784e-16</td>
+      <td>-0.461483</td>
+      <td>Source diagnostic only: statistical difference is not a measured stock change</td>
+    </tr>
+  </tbody>
+</table><h2>Terminal gross-turn scale</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>site</th>
+      <th>gross_capacity_m3</th>
+      <th>gross_monthly_turns_per_bn_litres</th>
+      <th>annual_bn_l_by_registered_turns</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Durban</td>
+      <td>360246.0</td>
+      <td>0.231323</td>
+      <td>{'low': 4.322952, 'base': 8.645904, 'high': 12.968856}</td>
+      <td>Gross capacity scale only; working capacity and operating constraints unknown</td>
+    </tr>
+    <tr>
+      <td>Lesedi</td>
+      <td>140000.0</td>
+      <td>0.595238</td>
+      <td>{'low': 1.68, 'base': 3.36, 'high': 5.04}</td>
+      <td>Gross capacity scale only; working capacity and operating constraints unknown</td>
+    </tr>
+  </tbody>
+</table><h2>Route readiness</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>origin</th>
+      <th>destination</th>
+      <th>mode</th>
+      <th>connectivity_distance_km</th>
+      <th>delivered_cost_zar_m3</th>
+      <th>accessible_capacity_m3</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Durban</td>
+      <td>Gauteng reference point</td>
+      <td>road</td>
+      <td>568.227885</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Connectivity diagnostic only; no competitive ranking or tanker access validation</td>
+    </tr>
+    <tr>
+      <td>Matola / Maputo</td>
+      <td>Gauteng reference point</td>
+      <td>road</td>
+      <td>533.449942</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Connectivity diagnostic only; no competitive ranking or tanker access validation</td>
+    </tr>
+    <tr>
+      <td>Walvis Bay</td>
+      <td>Gauteng reference point</td>
+      <td>road</td>
+      <td>1665.283035</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Connectivity diagnostic only; no competitive ranking or tanker access validation</td>
+    </tr>
+    <tr>
+      <td>Durban</td>
+      <td>Gauteng customer destination to confirm</td>
+      <td>pipeline</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Matched cost, service and customer access required</td>
+    </tr>
+    <tr>
+      <td>Durban</td>
+      <td>Gauteng customer destination to confirm</td>
+      <td>rail</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Matched cost, service and customer access required</td>
+    </tr>
+    <tr>
+      <td>Secunda</td>
+      <td>Gauteng customer destination to confirm</td>
+      <td>unvalidated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Matched cost, service and customer access required</td>
+    </tr>
+    <tr>
+      <td>Natref</td>
+      <td>Gauteng customer destination to confirm</td>
+      <td>unvalidated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Matched cost, service and customer access required</td>
+    </tr>
+  </tbody>
+</table><h2>Nine-world results: not yet populated</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>demand</th>
+      <th>supply</th>
+      <th>baseline</th>
+      <th>imports_m3</th>
+      <th>captured_durban_m3</th>
+      <th>captured_lesedi_m3</th>
+      <th>required_turns</th>
+      <th>capacity_headroom_m3</th>
+      <th>investment_option</th>
+      <th>return</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Low</td>
+      <td>High</td>
+      <td>False</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Await annual product paths; T1-T5/F1 inputs. No probability assigned</td>
+    </tr>
+    <tr>
+      <td>Low</td>
+      <td>Medium</td>
+      <td>False</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Await annual product paths; T1-T5/F1 inputs. No probability assigned</td>
+    </tr>
+    <tr>
+      <td>Low</td>
+      <td>Low</td>
+      <td>False</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Await annual product paths; T1-T5/F1 inputs. No probability assigned</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td>High</td>
+      <td>False</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Await annual product paths; T1-T5/F1 inputs. No probability assigned</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td>Medium</td>
+      <td>True</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Await annual product paths; T1-T5/F1 inputs. No probability assigned</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td>Low</td>
+      <td>False</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Await annual product paths; T1-T5/F1 inputs. No probability assigned</td>
+    </tr>
+    <tr>
+      <td>High</td>
+      <td>High</td>
+      <td>False</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Await annual product paths; T1-T5/F1 inputs. No probability assigned</td>
+    </tr>
+    <tr>
+      <td>High</td>
+      <td>Medium</td>
+      <td>False</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Await annual product paths; T1-T5/F1 inputs. No probability assigned</td>
+    </tr>
+    <tr>
+      <td>High</td>
+      <td>Low</td>
+      <td>False</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Unknown / not calculated</td>
+      <td>Await annual product paths; T1-T5/F1 inputs. No probability assigned</td>
+    </tr>
+  </tbody>
+</table>

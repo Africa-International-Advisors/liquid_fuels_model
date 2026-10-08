@@ -1,0 +1,274 @@
+{
+  "status": "Implemented screening tools and partial baseline; NOT calibrated investment results",
+  "latest_common_sales_trade_year": 2022,
+  "historical_balance_year": 2021,
+  "baseline": [
+    {
+      "year": 2022,
+      "product": "petrol",
+      "national_sales_bn_l": 9.184869915573,
+      "gauteng_sales_bn_l": 3.530440256933996,
+      "imports_bn_l": 5.45526181472,
+      "exports_bn_l": 0.85461371378,
+      "sales_less_net_imports_bn_l": 4.584221814633,
+      "status": "Residual is NOT measured production; stock, product and customs coverage unresolved"
+    },
+    {
+      "year": 2022,
+      "product": "diesel",
+      "national_sales_bn_l": 12.717326319019,
+      "gauteng_sales_bn_l": 3.2789905019619985,
+      "imports_bn_l": 11.9542565479,
+      "exports_bn_l": 0.88919906782,
+      "sales_less_net_imports_bn_l": 1.6522688389389997,
+      "status": "Residual is NOT measured production; stock, product and customs coverage unresolved"
+    }
+  ],
+  "historical_balance_diagnostic": [
+    {
+      "year": 2021,
+      "product": "petrol",
+      "production": 6.3513066666630005,
+      "imports": 5.41704428,
+      "exports": -1.42382779,
+      "final_consumption": 9.83617596,
+      "statistical_difference": -0.5083471966629997,
+      "residual_before_stat_difference_bn_l": 0.5083471966629993,
+      "residual_after_reported_stat_difference_bn_l": -3.3306690738754696e-16,
+      "sales_vs_final_consumption_bn_l": -0.5345917323169989,
+      "status": "Source diagnostic only: statistical difference is not a measured stock change"
+    },
+    {
+      "year": 2021,
+      "product": "diesel",
+      "production": 5.314964285718,
+      "imports": 11.2199946,
+      "exports": -1.02699782,
+      "final_consumption": 13.407266190000001,
+      "statistical_difference": -2.1006948757179975,
+      "residual_before_stat_difference_bn_l": 2.1006948757179966,
+      "residual_after_reported_stat_difference_bn_l": -8.881784197001252e-16,
+      "sales_vs_final_consumption_bn_l": -0.4614834395650025,
+      "status": "Source diagnostic only: statistical difference is not a measured stock change"
+    }
+  ],
+  "terminal_screens": [
+    {
+      "site": "Durban",
+      "gross_capacity_m3": 360246.0,
+      "gross_monthly_turns_per_bn_litres": 0.23132341048431718,
+      "annual_bn_l_by_registered_turns": {
+        "low": 4.322952,
+        "base": 8.645904,
+        "high": 12.968856
+      },
+      "status": "Gross capacity scale only; working capacity and operating constraints unknown"
+    },
+    {
+      "site": "Lesedi",
+      "gross_capacity_m3": 140000.0,
+      "gross_monthly_turns_per_bn_litres": 0.5952380952380952,
+      "annual_bn_l_by_registered_turns": {
+        "low": 1.68,
+        "base": 3.36,
+        "high": 5.04
+      },
+      "status": "Gross capacity scale only; working capacity and operating constraints unknown"
+    }
+  ],
+  "routes": [
+    {
+      "origin": "Durban",
+      "destination": "Gauteng reference point",
+      "mode": "road",
+      "connectivity_distance_km": 568.2278849150592,
+      "delivered_cost_zar_m3": null,
+      "accessible_capacity_m3": null,
+      "status": "Connectivity diagnostic only; no competitive ranking or tanker access validation"
+    },
+    {
+      "origin": "Matola / Maputo",
+      "destination": "Gauteng reference point",
+      "mode": "road",
+      "connectivity_distance_km": 533.4499417883457,
+      "delivered_cost_zar_m3": null,
+      "accessible_capacity_m3": null,
+      "status": "Connectivity diagnostic only; no competitive ranking or tanker access validation"
+    },
+    {
+      "origin": "Walvis Bay",
+      "destination": "Gauteng reference point",
+      "mode": "road",
+      "connectivity_distance_km": 1665.283035264407,
+      "delivered_cost_zar_m3": null,
+      "accessible_capacity_m3": null,
+      "status": "Connectivity diagnostic only; no competitive ranking or tanker access validation"
+    },
+    {
+      "origin": "Durban",
+      "destination": "Gauteng customer destination to confirm",
+      "mode": "pipeline",
+      "connectivity_distance_km": null,
+      "delivered_cost_zar_m3": null,
+      "accessible_capacity_m3": null,
+      "status": "Matched cost, service and customer access required"
+    },
+    {
+      "origin": "Durban",
+      "destination": "Gauteng customer destination to confirm",
+      "mode": "rail",
+      "connectivity_distance_km": null,
+      "delivered_cost_zar_m3": null,
+      "accessible_capacity_m3": null,
+      "status": "Matched cost, service and customer access required"
+    },
+    {
+      "origin": "Secunda",
+      "destination": "Gauteng customer destination to confirm",
+      "mode": "unvalidated",
+      "connectivity_distance_km": null,
+      "delivered_cost_zar_m3": null,
+      "accessible_capacity_m3": null,
+      "status": "Matched cost, service and customer access required"
+    },
+    {
+      "origin": "Natref",
+      "destination": "Gauteng customer destination to confirm",
+      "mode": "unvalidated",
+      "connectivity_distance_km": null,
+      "delivered_cost_zar_m3": null,
+      "accessible_capacity_m3": null,
+      "status": "Matched cost, service and customer access required"
+    }
+  ],
+  "nine_worlds": [
+    {
+      "demand": "Low",
+      "supply": "High",
+      "baseline": false,
+      "imports_m3": null,
+      "captured_durban_m3": null,
+      "captured_lesedi_m3": null,
+      "required_turns": null,
+      "capacity_headroom_m3": null,
+      "investment_option": null,
+      "return": null,
+      "status": "Await annual product paths; T1-T5/F1 inputs. No probability assigned"
+    },
+    {
+      "demand": "Low",
+      "supply": "Medium",
+      "baseline": false,
+      "imports_m3": null,
+      "captured_durban_m3": null,
+      "captured_lesedi_m3": null,
+      "required_turns": null,
+      "capacity_headroom_m3": null,
+      "investment_option": null,
+      "return": null,
+      "status": "Await annual product paths; T1-T5/F1 inputs. No probability assigned"
+    },
+    {
+      "demand": "Low",
+      "supply": "Low",
+      "baseline": false,
+      "imports_m3": null,
+      "captured_durban_m3": null,
+      "captured_lesedi_m3": null,
+      "required_turns": null,
+      "capacity_headroom_m3": null,
+      "investment_option": null,
+      "return": null,
+      "status": "Await annual product paths; T1-T5/F1 inputs. No probability assigned"
+    },
+    {
+      "demand": "Medium",
+      "supply": "High",
+      "baseline": false,
+      "imports_m3": null,
+      "captured_durban_m3": null,
+      "captured_lesedi_m3": null,
+      "required_turns": null,
+      "capacity_headroom_m3": null,
+      "investment_option": null,
+      "return": null,
+      "status": "Await annual product paths; T1-T5/F1 inputs. No probability assigned"
+    },
+    {
+      "demand": "Medium",
+      "supply": "Medium",
+      "baseline": true,
+      "imports_m3": null,
+      "captured_durban_m3": null,
+      "captured_lesedi_m3": null,
+      "required_turns": null,
+      "capacity_headroom_m3": null,
+      "investment_option": null,
+      "return": null,
+      "status": "Await annual product paths; T1-T5/F1 inputs. No probability assigned"
+    },
+    {
+      "demand": "Medium",
+      "supply": "Low",
+      "baseline": false,
+      "imports_m3": null,
+      "captured_durban_m3": null,
+      "captured_lesedi_m3": null,
+      "required_turns": null,
+      "capacity_headroom_m3": null,
+      "investment_option": null,
+      "return": null,
+      "status": "Await annual product paths; T1-T5/F1 inputs. No probability assigned"
+    },
+    {
+      "demand": "High",
+      "supply": "High",
+      "baseline": false,
+      "imports_m3": null,
+      "captured_durban_m3": null,
+      "captured_lesedi_m3": null,
+      "required_turns": null,
+      "capacity_headroom_m3": null,
+      "investment_option": null,
+      "return": null,
+      "status": "Await annual product paths; T1-T5/F1 inputs. No probability assigned"
+    },
+    {
+      "demand": "High",
+      "supply": "Medium",
+      "baseline": false,
+      "imports_m3": null,
+      "captured_durban_m3": null,
+      "captured_lesedi_m3": null,
+      "required_turns": null,
+      "capacity_headroom_m3": null,
+      "investment_option": null,
+      "return": null,
+      "status": "Await annual product paths; T1-T5/F1 inputs. No probability assigned"
+    },
+    {
+      "demand": "High",
+      "supply": "Low",
+      "baseline": false,
+      "imports_m3": null,
+      "captured_durban_m3": null,
+      "captured_lesedi_m3": null,
+      "required_turns": null,
+      "capacity_headroom_m3": null,
+      "investment_option": null,
+      "return": null,
+      "status": "Await annual product paths; T1-T5/F1 inputs. No probability assigned"
+    }
+  ],
+  "source_hashes": {
+    "assumptions/2026/timeseries/fuel_sales_department.csv": "41223a0fa4d749959a02499bc1f9672b39c41d28023f7ab6f7aaaa581b03428c",
+    "assumptions/2026/timeseries/fuel_sales_department_by_province_quarterly.csv": "aec82481b33f70429b6b8e7c9c02767d62a6e8c7bf6bda09e21123a5bc56c9d6",
+    "assumptions/2026/timeseries/energy_balance_department.csv": "e7a3b6b2ae23c8bf60e414470914174ea2dd226782a8ed26d438c519dbe650e9",
+    "pptx/story/evidence_2026_10_06/fuel_trade_sars.csv": "a1e7865b9eb66fef459e209cfd6f75463a5bd3329cfa4f8597a92b9563303543",
+    "pptx/story/storage_operator_inventory_2026_10_06.csv": "80c4f26bdfc43eabea78b46aee49d31acfb68548ef9fae0ec76afa31f76c20b2",
+    "output/delivered/geospatial/2026_10_08/route_checks.json": "5700dc98e4bc9ac173a09786f6ad16af953a022b278b70ce10a46c439603f3c7",
+    "assumptions/2026/terminal_handling.yaml": "5c3cdbcd436ef4ead0d81235c2b9eef2e4dd1f59d709f85ebd3fa066ada45fc9",
+    "assumptions/2026/sa_review.yaml": "f9b6a674ea28d200204f5a42d313c124073beee09f2a65c5ac970404f71945ac",
+    "assumptions/2026/investment_bridge.yaml": "495343f7b8ac05f2ef834f33dcff974ea2ad2717ce06f19537c9d986a67bfad9"
+  }
+}

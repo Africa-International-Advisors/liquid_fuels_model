@@ -1,0 +1,8 @@
+origin,destination,mode,connectivity_distance_km,delivered_cost_zar_m3,accessible_capacity_m3,status
+Durban,Gauteng reference point,road,568.2278849150592,,,Connectivity diagnostic only; no competitive ranking or tanker access validation
+Matola / Maputo,Gauteng reference point,road,533.4499417883457,,,Connectivity diagnostic only; no competitive ranking or tanker access validation
+Walvis Bay,Gauteng reference point,road,1665.283035264407,,,Connectivity diagnostic only; no competitive ranking or tanker access validation
+Durban,Gauteng customer destination to confirm,pipeline,,,,"Matched cost, service and customer access required"
+Durban,Gauteng customer destination to confirm,rail,,,,"Matched cost, service and customer access required"
+Secunda,Gauteng customer destination to confirm,unvalidated,,,,"Matched cost, service and customer access required"
+Natref,Gauteng customer destination to confirm,unvalidated,,,,"Matched cost, service and customer access required"

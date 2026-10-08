@@ -1,0 +1,23 @@
+{
+  "current_version": 21,
+  "slides": 30,
+  "files": [
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_v21.pptx",
+      "bytes": 2960397,
+      "sha256": "e3758c1f3785592eb439c7e0d61928bee3cdbfb22b7c3a144f772ccec16b2f9b"
+    },
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_v21.pdf",
+      "bytes": 2166949,
+      "sha256": "1719b59d4d3043f509a9333373abc98b82eaed9b6479375a5a58ce5db4ee56a9"
+    }
+  ],
+  "story": "pptx/story/sa_market_story_v21_2026_10_08.json",
+  "qa": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v21/checks.json",
+  "archive": "pptx/output/delivered/supporting/archive/records/cleanup_manifest.json",
+  "layout_revision": 3,
+  "canonical_author": "Nigel",
+  "canonical_source": "pptx/output/delivered/supporting/SA_Market_Story_v18_nigel.pptx",
+  "latest_change": "Page 7 horizontal paired-bar comparisons; canonical Nigel titles preserved."
+}

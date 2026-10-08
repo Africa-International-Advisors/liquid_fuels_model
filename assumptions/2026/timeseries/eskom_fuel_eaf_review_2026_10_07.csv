@@ -1,0 +1,24 @@
+country,period,scenario,series,value,unit,pdf_page,source_report,period_basis
+ZAF,2016,shared,eskom_eaf,71.07,percent,141,2025,financial year ending 31 March
+ZAF,2017,shared,eskom_eaf,77.3,percent,141,2025,financial year ending 31 March
+ZAF,2018,shared,eskom_eaf,78.0,percent,141,2025,financial year ending 31 March
+ZAF,2019,shared,eskom_eaf,69.95,percent,141,2025,financial year ending 31 March
+ZAF,2020,shared,eskom_eaf,66.64,percent,141,2025,financial year ending 31 March
+ZAF,2021,shared,eskom_eaf,64.19,percent,141,2025,financial year ending 31 March
+ZAF,2022,shared,eskom_eaf,62.02,percent,141,2025,financial year ending 31 March
+ZAF,2023,shared,eskom_eaf,56.03,percent,141,2025,financial year ending 31 March
+ZAF,2024,shared,eskom_eaf,54.56,percent,141,2025,financial year ending 31 March
+ZAF,2025,shared,eskom_eaf,60.6,percent,141,2025,financial year ending 31 March
+ZAF,2023,shared,eskom_ocgt_cost_including_storage_demurrage,21355.0,million ZAR,100,2025,financial year ending 31 March
+ZAF,2024,shared,eskom_ocgt_cost_including_storage_demurrage,23873.0,million ZAR,100,2025,financial year ending 31 March
+ZAF,2025,shared,eskom_ocgt_cost_including_storage_demurrage,13316.0,million ZAR,100,2025,financial year ending 31 March
+ZAF,2016,shared,eskom_ocgt_diesel_and_kerosene,1247.8,million litres,141,2025,financial year ending 31 March
+ZAF,2017,shared,eskom_ocgt_diesel_and_kerosene,10.0,million litres,141,2025,financial year ending 31 March
+ZAF,2018,shared,eskom_ocgt_diesel_and_kerosene,37.8,million litres,141,2025,financial year ending 31 March
+ZAF,2019,shared,eskom_ocgt_diesel_and_kerosene,385.0,million litres,141,2025,financial year ending 31 March
+ZAF,2020,shared,eskom_ocgt_diesel_and_kerosene,426.2,million litres,141,2025,financial year ending 31 March
+ZAF,2021,shared,eskom_ocgt_diesel_and_kerosene,458.7,million litres,141,2025,financial year ending 31 March
+ZAF,2022,shared,eskom_ocgt_diesel_and_kerosene,580.4,million litres,141,2025,financial year ending 31 March
+ZAF,2023,shared,eskom_ocgt_diesel_and_kerosene,937.5,million litres,141,2025,financial year ending 31 March
+ZAF,2024,shared,eskom_ocgt_diesel_and_kerosene,1129.5,million litres,141,2025,financial year ending 31 March
+ZAF,2025,shared,eskom_ocgt_diesel_and_kerosene,679.1,million litres,141,2025,financial year ending 31 March

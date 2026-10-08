@@ -1,0 +1,18 @@
+{
+  "catalog": "output/delivered/geospatial/2026_10_07/catalog.json",
+  "network_catalog": "output/delivered/geospatial/2026_10_08/catalog.json",
+  "network_database": "output/delivered/geospatial/2026_10_08/transport.sqlite",
+  "storage_crs": "EPSG:4326",
+  "display_crs": "+proj=laea +lat_0=-29 +lon_0=25 +datum=WGS84 +units=m +no_defs",
+  "extent_lonlat": [12.5, -35.5, 35.5, -17.0],
+  "fit": "uniform scale; centred letterbox; never independent x/y scaling",
+  "styles": {
+    "country_fill": "#ECEEF2",
+    "country_border": "#FFFFFF",
+    "road": "#767676",
+    "rail": "#546CA2",
+    "pipeline": "#0A2373",
+    "schematic_dash": "5 4"
+  },
+  "legacy_maps": "Preserved outputs are unchanged. Migrate old builders to this reference when revised."
+}

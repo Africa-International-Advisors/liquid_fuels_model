@@ -1,0 +1,11 @@
+{
+  "country": "mozambique",
+  "url": "https://download.geofabrik.de/africa/mozambique-261006.osm.pbf",
+  "retrieved_at": "2026-10-07T23:22:35.540676+00:00",
+  "path": "external/sources/geospatial/2026_10_08/osm/mozambique.osm.pbf",
+  "bytes": 255471661,
+  "sha256": "a90a29e9c0e92e8c61e525fdde01d36eb9d5af1e735253d16f22eec6ac576e39",
+  "licence": "ODbL 1.0",
+  "attribution": "OpenStreetMap contributors; Geofabrik",
+  "download": "HTTP byte ranges checked against Content-Range"
+}

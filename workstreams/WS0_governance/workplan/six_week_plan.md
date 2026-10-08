@@ -13,6 +13,38 @@ Proposed window: 2 October to 12 November 2026. Manish is available 100%; Nigel 
 
 ## Current progress - 7 October 2026, Week 1
 
+### Signed-off South Africa review: implementation started
+
+The user signed off the situation / complication / resolution work programme and
+authorised implementation while reviewing the separate review pack. Subsequent
+instructions set **Gauteng as the provisional Lesedi catchment**, identify **SAPREF
+and Natref** for research, and clarify **declining gas supply and MRG diversion** as
+Secunda liquid-fuel risks. The four road corridors remain unconfirmed.
+
+First implementation: [evidence exhibits](../../../output/delivered/sa_review_2026_10_07_v3/index.html),
+[owned audit tracker](sa_review_audit_2026_10_07.csv), and
+[primary-source supply findings](../../WS1_data_validation/sa_supply_findings_2026_10_07.json).
+The existing Convergence PPTX/PDF is preserved while Nigel reviews the scope pack.
+
+- Initial trace ran both current scenarios: 29 of the original 72 declared input
+  blocks were accessed; access does not prove each leaf's influence. No inputs had
+  independent verification recorded. A source metadata syntax error was repaired.
+- Added 23 Eskom fuel/EAF/cost observations and 32 WDI FDI/fixed-investment
+  observations, plus the provisional catchment, as 56 unreviewed register rows.
+  EXC-SA-REVIEW-2026-10-07 expires before adoption or on 12 November 2026.
+- Built 12 historical/diagnostic exhibits with source hashes and CSV data. Eskom
+  litres include kerosene and exclude IPPs; fiscal/calendar and Natref ownership
+  boundaries remain explicit. Gauteng's latest complete staged provincial year is 2022.
+- Added tested explicit-input calculations for rail net diesel, EV energy economics,
+  marginal liquid-fuel diversion and matched throughput share. These do **not**
+  automatically wire presentation L/M/H snapshots into the forecast engine.
+- Next acceptance work: source annual paths and conversion coefficients; confirm
+  corridors; obtain Vopak unique deliveries, commercial access, usable capacity and
+  investment inputs. Market shares and an investment conclusion remain unquantified.
+
+This records scope approval and implementation evidence, not independent peer
+review, forecast calibration or business approval.
+
 Nigel is broadly aligned with the revised story, as confirmed in the 7 October review. This records storyline alignment; data reconciliation, forecast assumptions and formal-use approval remain open. Current week: **5-9 October**. The next proposed progress review is **9 October**.
 
 | Area | Current position and evidence | Next concrete handback | Owner / review trigger |

@@ -1,0 +1,36 @@
+{
+  "database_integrity": "pass",
+  "edge_endpoints": "pass",
+  "coordinates_and_node_alignment": "pass",
+  "source_and_layer_hashes": "pass",
+  "route_checks": [
+    {
+      "origin": "Durban",
+      "destination": "Gauteng reference point",
+      "origin_snap_m": 1648.0329963839026,
+      "destination_snap_m": 44.99572960870549,
+      "length_m": 568227.8849150592,
+      "connected": true,
+      "status": "major-road connectivity only; no truck/turn-restriction/border-cost profile"
+    },
+    {
+      "origin": "Matola / Maputo",
+      "destination": "Gauteng reference point",
+      "origin_snap_m": 445.3219895095798,
+      "destination_snap_m": 44.99572960870549,
+      "length_m": 533449.9417883457,
+      "connected": true,
+      "status": "major-road connectivity only; no truck/turn-restriction/border-cost profile"
+    },
+    {
+      "origin": "Walvis Bay",
+      "destination": "Gauteng reference point",
+      "origin_snap_m": 275.33673644572053,
+      "destination_snap_m": 44.99572960870549,
+      "length_m": 1665283.035264407,
+      "connected": true,
+      "status": "major-road connectivity only; no truck/turn-restriction/border-cost profile"
+    }
+  ],
+  "routing_readiness": "geometric diagnostic only; restrictions and site access remain unvalidated"
+}

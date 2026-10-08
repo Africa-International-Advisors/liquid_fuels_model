@@ -1,17 +1,15 @@
-# Latest files to share with Manish
+# Current South Africa delivery
 
-Updated 7 October 2026. The current review pack is **Convergence, 30 pages**.
-The presentation files are stored in `pptx/output/delivered`; these links open
-the same files, without creating a second copy here.
+Updated 8 October 2026. Use the **39-page v25** pair:
 
-| File | Use |
-|---|---|
-| [Current PDF](../../pptx/output/delivered/Vopak_Convergence_current.pdf) | Read and annotate the story |
-| [Current PowerPoint](../../pptx/output/delivered/Vopak_Convergence_current.pptx) | Editable version of the same 30-page pack |
-| [Fuel input matrix](../../assumptions/2026/timeseries/fuel_lever_design_2026_10_07.csv) | Proposed diesel, jet and petrol L/M/H inputs at 2030 and 2035 |
-| [Manish review tasks](../../workstreams/WS0_governance/workplan/fuel_lever_review_2026-10-07.md) | Sources, dependencies, owners and acceptance tasks |
+- [PDF](../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pdf)
+- [PowerPoint](../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pptx)
+- [Milestone instructions](../../workstreams/WS0_governance/workplan/sa_review_milestone_2026_10_08.md)
+- [Data request](investment_bridge_2026_10_08/data_request.csv)
+- [Illustrative financial case](vopak_illustration_2026_10_08/index.html)
 
-The current deck includes national sales/trade on page 4, combined provincial geography/history on page 5, site-level refinery capacity on page 6 and logistics breakpoint tests on page 7. The appendix starts on page 14.
+Page 10 establishes the asset position and operating evidence gaps; page 16 contains the data request.
+The appendix starts on page 17; pages 35–38 explain the illustrative economics and page 39 tests tank turns.
 
 [Demand baseline workshop](Demand_baseline_workshop_2026_10_07_compact.xlsx) is the compact, formula-linked review workbook. Full descriptions are retained on Notes; HML is the last tab. Current model results are a frozen run, and sales/model scope reconciliation remains open.
 

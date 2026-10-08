@@ -1,0 +1,127 @@
+{
+  "history_bpd": {
+    "2016": {
+      "Sapref": 180000.0,
+      "Enref": 135000.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 45000.0
+    },
+    "2017": {
+      "Sapref": 180000.0,
+      "Enref": 135000.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 45000.0
+    },
+    "2018": {
+      "Sapref": 180000.0,
+      "Enref": 135000.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 45000.0
+    },
+    "2019": {
+      "Sapref": 180000.0,
+      "Enref": 135000.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 45000.0
+    },
+    "2020": {
+      "Sapref": 180000.0,
+      "Enref": 135000.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 45000.0
+    },
+    "2021": {
+      "Sapref": 180000.0,
+      "Enref": 0.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 0.0
+    },
+    "2022": {
+      "Sapref": 0.0,
+      "Enref": 0.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 0.0
+    },
+    "2023": {
+      "Sapref": 0.0,
+      "Enref": 0.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 0.0
+    },
+    "2024": {
+      "Sapref": 0.0,
+      "Enref": 0.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 0.0
+    },
+    "2025": {
+      "Sapref": 0.0,
+      "Enref": 0.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 0.0
+    }
+  },
+  "cases_bpd": {
+    "Low": {
+      "Sapref": 0.0,
+      "Enref": 0.0,
+      "Astron Energy": 100000.0,
+      "Natref": 0.0,
+      "Sasol": 150000.0,
+      "PetroSA": 0.0
+    },
+    "Medium": {
+      "Sapref": 0.0,
+      "Enref": 0.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 0.0
+    },
+    "High": {
+      "Sapref": 0.0,
+      "Enref": 0.0,
+      "Astron Energy": 100000.0,
+      "Natref": 108000.0,
+      "Sasol": 150000.0,
+      "PetroSA": 0.0,
+      "SAPREF proposal": 400000
+    }
+  },
+  "totals_bpd": {
+    "Low": 250000.0,
+    "Medium": 358000.0,
+    "High": 758000.0
+  },
+  "latest_year": 2025,
+  "horizon_year": 2036,
+  "fid_year": 2029,
+  "construction_months": 48,
+  "addition_year": 2033.0,
+  "status": "Illustrative capacity sensitivities, not approved L/M/H fuel-output paths. Low Natref unavailability is hypothetical, not a closure forecast.",
+  "provenance": {
+    "assumptions/2026/timeseries/refinery_capacity_reported.csv": "07df1233838f20c2ba38a8d46ae575261905ff4c064d1a27cd78aee280fc00d2",
+    "assumptions/2026/review_capacity_scenarios.yaml": "b2146915515f653c5a3e710564a290fd1d0e0aacd8276b9050ba82b067b5fcf7",
+    "assumptions/2026/review_supply_worlds.yaml": "076d8bb320c1540bd42d8473d22d3161afe4b2fe9936d621fb0de4c75361865f"
+  }
+}

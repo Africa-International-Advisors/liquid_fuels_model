@@ -1,0 +1,75 @@
+{
+  "source": {
+    "path": "pptx/output/delivered/supporting/SA_Market_Story_v18_nigel.pptx",
+    "sha256": "0682e7f8806212c495f8676168aad87c2c71bfd8af1323b7bf98dd5a7cff263d",
+    "adoption": "User requested Nigel taglines become canonical; new PPTX and PDF version 19.",
+    "wording": "Verbatim from saved slide-title placeholders; no copy edits."
+  },
+  "changes": [
+    {
+      "page": 2,
+      "previous": "Slow demand growth and greater import reliance set the baseline; power, refineries and routes could change it",
+      "canonical": "Slow demand growth and greater import reliance set the baseline; however, trajectories of power generation, refineries and the route to market could change it"
+    },
+    {
+      "page": 3,
+      "previous": "Vopak can capture inland growth through the Durban–Lesedi corridor, with expansion conditional on turnover and returns",
+      "canonical": "Vopak can capture inland growth through the Durban–Lesedi corridor, with capacity expansion conditional on turnover and return on investment"
+    },
+    {
+      "page": 4,
+      "previous": "Capturable volumes, route competitiveness and tank turnover determine the investment required",
+      "canonical": "Capturable volumes, route competitiveness and storage turnover determine the investment required"
+    },
+    {
+      "page": 5,
+      "previous": "Nine demand–supply worlds test the investment choice against the Medium / Medium baseline",
+      "canonical": "We define the South Africa liquids fuel market across demand–supply worldviews that test investment choices against a set of levers and outcomes"
+    },
+    {
+      "page": 6,
+      "previous": "Petrol demand has declined while diesel has grown slowly, limiting the case for demand-led expansion",
+      "canonical": "Petrol demand has declined while diesel has grown slowly, limiting the case for demand-led expansion outlook"
+    },
+    {
+      "page": 7,
+      "previous": "Power shortages and road freight have supported diesel consumption, but that support can change",
+      "canonical": "Power shortages and road freight have supported diesel consumption, but that support can change with increased support for rail reform and improved Eskom"
+    },
+    {
+      "page": 8,
+      "previous": "Lower domestic production has increased imports and shifted how inland demand is supplied",
+      "canonical": "The shut down of domestic refining capacity has lowered domestic production and has increased imports shifting how inland demand is supplied"
+    },
+    {
+      "page": 9,
+      "previous": "Domestic sources and competing gateways contest the same inland customers",
+      "canonical": "With increased imports and constrained domestic capacity, alternative gateways compete for the same inland customers"
+    },
+    {
+      "page": 10,
+      "previous": "Higher turnover could let Durban and Lesedi serve more demand through existing tanks",
+      "canonical": "Increasing asset utilisation through higher turnover could let Durban and Lesedi serve more demand through existing tanks and corridor growth opportunities"
+    },
+    {
+      "page": 11,
+      "previous": "Rail recovery, EV adoption and efficiency could reduce transport fuel demand",
+      "canonical": "Accelerated rail recovery, EV adoption and ICE technology efficiency could reduce transport fuel demand in the medium to long term"
+    },
+    {
+      "page": 12,
+      "previous": "Power recovery could lower diesel use further, while outages and replacement delays could reverse the gains",
+      "canonical": "Power generation recovery could lower diesel use further, while outages and replacement delays could sustain domestic demand"
+    },
+    {
+      "page": 14,
+      "previous": "Changes in delivered cost and reliability could shift inland flows between competing corridors",
+      "canonical": "Competitive offering on delivered cost and reliability could shift inland flows between competing corridors and strengthen growth in adjacent markets (landlocked SADC)"
+    },
+    {
+      "page": 15,
+      "previous": "Expansion requires capturable throughput beyond achievable capacity at an adequate return",
+      "canonical": "Capital allocation requires capturable throughput beyond achievable capacity and sustainable commercial terms"
+    }
+  ]
+}

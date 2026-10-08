@@ -1,0 +1,157 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Walvis: Trans-Kalahari candidate",
+        "style": "west",
+        "status": "schematic candidate; not downloaded alignment"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            14.505,
+            -22.95
+          ],
+          [
+            17.08,
+            -22.57
+          ],
+          [
+            18.97,
+            -22.45
+          ],
+          [
+            21.65,
+            -21.7
+          ],
+          [
+            23.96,
+            -24.4
+          ],
+          [
+            25.91,
+            -24.65
+          ],
+          [
+            25.7,
+            -25.25
+          ],
+          [
+            27.24,
+            -25.67
+          ],
+          [
+            28.04,
+            -26.2
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Matola: N4 candidate",
+        "style": "east",
+        "status": "schematic candidate; not downloaded alignment"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            32.47,
+            -25.96
+          ],
+          [
+            31.95,
+            -25.44
+          ],
+          [
+            30.99,
+            -25.47
+          ],
+          [
+            29.24,
+            -25.87
+          ],
+          [
+            28.04,
+            -26.2
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Durban: N3 / inland link",
+        "style": "vopak",
+        "status": "schematic candidate; not downloaded alignment"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            31.03,
+            -29.88
+          ],
+          [
+            29.6,
+            -29.6
+          ],
+          [
+            29.79,
+            -28.54
+          ],
+          [
+            28.98,
+            -28.27
+          ],
+          [
+            28.39,
+            -26.44
+          ],
+          [
+            28.04,
+            -26.2
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Durban: NMPP schematic",
+        "style": "pipe",
+        "status": "schematic candidate; not downloaded alignment"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            31.03,
+            -29.88
+          ],
+          [
+            29.9,
+            -29.45
+          ],
+          [
+            29.8,
+            -28.5
+          ],
+          [
+            28.7,
+            -27.2
+          ],
+          [
+            28.39,
+            -26.44
+          ]
+        ]
+      }
+    }
+  ]
+}

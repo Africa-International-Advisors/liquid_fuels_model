@@ -1,0 +1,145 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Walvis Bay",
+        "status": "approximate authored location"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.505,
+          -22.95
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Windhoek",
+        "status": "approximate authored location"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.08,
+          -22.57
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gaborone",
+        "status": "approximate authored location"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.91,
+          -24.65
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Matola / Maputo",
+        "status": "approximate authored location"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.47,
+          -25.96
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mbombela",
+        "status": "approximate authored location"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.99,
+          -25.47
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gauteng",
+        "status": "approximate authored location"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.04,
+          -26.2
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lesedi*",
+        "status": "approximate authored location"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.39,
+          -26.44
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Durban",
+        "status": "approximate authored location"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.03,
+          -29.88
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Komatipoort",
+        "status": "approximate authored location"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.95,
+          -25.44
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Rustenburg",
+        "status": "approximate authored location"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.24,
+          -25.67
+        ]
+      }
+    }
+  ]
+}

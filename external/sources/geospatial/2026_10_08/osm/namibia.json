@@ -1,0 +1,24 @@
+{
+  "country": "namibia",
+  "url": "https://download.geofabrik.de/africa/namibia-latest.osm.pbf",
+  "retrieved_at": "2026-10-07T23:05:03.239720+00:00",
+  "http_headers": {
+    "Date": "Wed, 07 Oct 2026 01:49:41 GMT",
+    "Server": "Apache",
+    "Last-Modified": "Wed, 07 Oct 2026 01:06:01 GMT",
+    "ETag": "\"343a79b-65d35b7fce85c\"",
+    "Accept-Ranges": "bytes",
+    "Content-Length": "54765467",
+    "Cache-Control": "max-age=63072000, public",
+    "Content-Type": "application/octet-stream",
+    "Age": "76323",
+    "Cache-Status": "download-proxy12;hit;detail=match",
+    "Via": "1.1 download-proxy12 (squid/6.14)",
+    "Connection": "close"
+  },
+  "path": "external/sources/geospatial/2026_10_08/osm/namibia.osm.pbf",
+  "bytes": 54765467,
+  "sha256": "54f2591d9480545639e86d9926fd6eb273657301c894c4b3f5f4aa3afac8fc3e",
+  "licence": "ODbL 1.0",
+  "attribution": "OpenStreetMap contributors; Geofabrik"
+}

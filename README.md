@@ -1,12 +1,11 @@
 # SACU Liquid Fuels Model
 
-**Current progress:** [Week 1 status and next handbacks](workstreams/WS0_governance/workplan/six_week_plan.md#current-progress--7-october-2026-week-1). Story broadly aligned; baseline and assumptions remain under review.
+**Current milestone:** [8 October 2026 review baseline and next handbacks](workstreams/WS0_governance/workplan/sa_review_milestone_2026_10_08.md).
 
-**Latest files:** [PDF review pack](pptx/output/delivered/Vopak_Convergence_current.pdf),
-[editable PowerPoint](pptx/output/delivered/Vopak_Convergence_current.pptx)
-and [Manish's review tasks](workstreams/WS0_governance/workplan/fuel_lever_review_2026-10-07.md).
-The [delivery index](output/delivered/README.md) identifies the current 30-page
-story, proposed input matrix, supporting material and archived versions.
+**Latest files:** [v25 PDF](pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pdf) and
+[v25 PowerPoint](pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pptx), 39 pages.
+The story is a review baseline; scenarios and investment economics remain illustrative.
+[Delivery index](pptx/output/delivered/supporting/README.md) and [data request](output/delivered/investment_bridge_2026_10_08/data_request.csv).
 
 Nigel works on `main`; Manish works on a named branch from `origin/main`. Pull before starting work and before
 pushing changes. See the

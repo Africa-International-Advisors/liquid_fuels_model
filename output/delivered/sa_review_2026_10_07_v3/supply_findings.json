@@ -1,0 +1,57 @@
+{
+  "as_of": "2026-10-07",
+  "status": "Primary-source review; independent peer review and numeric scenario calibration pending",
+  "scope_decisions": {
+    "lesedi_catchment": "Gauteng (GP), provisional user instruction",
+    "refinery_candidates": "SAPREF redevelopment and Natref outlook; user will provide additional evidence",
+    "secunda_mechanism": "Declining gas supply plus MRG diversion may reduce liquid fuels; distinct from improving coal quality/gasifier recovery",
+    "road_corridors": "Four road corridors not yet confirmed"
+  },
+  "findings": [
+    {
+      "asset": "SAPREF / SANPC",
+      "fact": "CEF describes phased redevelopment: initial terminal/depot/import functionality, then refining at approximately 400,000 bbl/day, with a longer-term 400,000-650,000 bbl/day objective subject to investment and approvals.",
+      "source_id": "sapref_roadmap",
+      "url": "https://cefgroup.co.za/2026/09/10/cef-outlines-roadmap-to-rebuild-south-africas-refining-capacity-and-unlock-economic-opportunities-in-durban-south/",
+      "date": "2026-09-10",
+      "interpretation": "A terminal/import phase can precede refining; do not replace imports with full refinery output on announcement.",
+      "gap": "FID, dates, ramp-up, product slate and financing. This release does not establish a 2033 commissioning date."
+    },
+    {
+      "asset": "Natref",
+      "fact": "Sasol's 1 September 2026 update reports a mid-August downstream-unit outage coinciding with another unit's planned shutdown; continuity measures described through end September.",
+      "source_id": "natref_update",
+      "url": "https://www.sasol.com/media-centre/media-releases/natref-operational-update",
+      "date": "2026-09-01",
+      "interpretation": "Evidence of operating risk, not permanent closure. FY2026 reported production improvement does not remove current outage risk.",
+      "gap": "Post-September operating status; outage duration, product losses, Prax/ownership and future investment."
+    },
+    {
+      "asset": "Secunda / MRG",
+      "fact": "Sasol confirms technical feasibility of supplying Secunda MRG externally July 2028-June 2030 as Mozambican gas declines; implementation depends on regulatory approval, customer compatibility and investment decisions.",
+      "source_id": "sasol_mrg",
+      "url": "https://www.sasol.com/media-centre/media-releases/sasol-advances-methane-rich-gas-mrg-supply-solution-sustain-south-africas-gas-market-beyond-2028",
+      "date": "2025-11-06",
+      "interpretation": "Treat coal/gasifier recovery and feedstock diversion as separate effects. User's liquid-fuel displacement hypothesis is not quantified by this release.",
+      "gap": "MRG PJ/year, internal gas balance, LNG/other replacement and marginal petrol/diesel output losses; updated approvals."
+    },
+    {
+      "asset": "Mossgas / PetroSA",
+      "fact": "PetroSA's published tender scope states GTL non-operation since December 2020, terminal adaptation to finished-product imports and proposed liquids-refinery recommissioning without the offshore/HTFT sections.",
+      "source_id": "petrosa_recommission",
+      "url": "https://www.etenders.gov.za/home/Download?blobName=4d10d8ce-71fc-4cbc-9286-d3b0b73a6d0e.pdf&downloadedFileName=Scope+of+Work.pdf",
+      "pdf_page": 2,
+      "date": null,
+      "interpretation": "Use 'non-operating since December 2020' rather than confirmed permanent closure. Recommissioning proposal is not committed output.",
+      "gap": "Publication date, subsequent project approvals, timeline, supply/yields and operating status confirmation."
+    },
+    {
+      "asset": "Transnet",
+      "fact": "Government communication sets at least 250 Mt on the Transnet network by 2030; FY2025 Transnet results report 160.1 Mt actual.",
+      "source_id": "transnet_target; transnet_results_2025",
+      "url": "https://www.sanews.gov.za/node/73615",
+      "interpretation": "Network ambition is not all Transnet-operated incremental freight and not all displaced road freight.",
+      "gap": "Reconcile policy target vintages; corridor/commodity detail and net road-to-rail transfer."
+    }
+  ]
+}

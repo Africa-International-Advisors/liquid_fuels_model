@@ -1,0 +1,25 @@
+{
+  "current_version": 25,
+  "slides": 39,
+  "files": [
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pptx",
+      "bytes": 3057066,
+      "sha256": "d4ca8707db454f4e209f0ce7d8de1fd331d53d385c7f7cfa8efb7b8c665bf229"
+    },
+    {
+      "path": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v25.pdf",
+      "bytes": 2277862,
+      "sha256": "2e37fa8dfa554d2c8886650f515495d9971414474662ef84d82262a7d49db372"
+    }
+  ],
+  "story": "pptx/story/sa_market_story_v25_2026_10_08.json",
+  "qa": "pptx/qa/Vopak_SA_Market_Story_2026_10_08_v25/checks.json",
+  "archive": "pptx/output/delivered/supporting/archive/records/cleanup_manifest.json",
+  "layout_revision": 3,
+  "canonical_author": "Nigel",
+  "canonical_source": "pptx/output/delivered/supporting/archive/story_versions/SA_Market_Story_v18_nigel.pptx",
+  "latest_change": "Page 10 establishes reported asset position and operating evidence gaps; illustrative turnover chart retained in investment appendix p39.",
+  "delivery_date": "2026-10-08",
+  "cleanup_record": "pptx/output/delivered/supporting/archive/records/cleanup_2026-10-08_v24.json"
+}
