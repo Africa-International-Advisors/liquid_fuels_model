@@ -77,8 +77,8 @@ def test_committed_balance_matches_the_registered_inputs_and_the_customs_extract
         with path.open(encoding="utf-8", newline="") as fh:
             return list(csv.DictReader(fh))
 
-    stems = ["fuel_sales_department", "fuel_sales_fiasa", "fuel_trade_sars", "fuel_trade_fiasa",
-             "fuel_trade_department_review", "energy_balance_department", "oil_balance_jodi"]
+    stems = ["fuel_sales_department_by_province", "fuel_sales_department", "fuel_sales_fiasa", "fuel_trade_sars",
+             "fuel_trade_fiasa", "fuel_trade_department_review", "energy_balance_department", "oil_balance_jodi"]
     inputs = {stem: read(TIMESERIES / f"{stem}.csv") for stem in stems}
     expected = [{k: str(round(v)) if isinstance(v, float) else str(v) for k, v in row.items()}
                 for row in bfb.build(inputs)]
@@ -124,10 +124,26 @@ def test_every_selected_figure_in_the_committed_balance_names_its_source():
         for value, source in (("sales_used", "sales_used"), ("imports_used", "trade_used"), ("production_used", "production_used")):
             named = row[f"{source}_source"] != "" and row[f"{source}_source_ref"] != ""
             assert named == (row[value] != ""), (row["period"], row["product"], value)
-        assert row["sales_used_source"] in ("", "department")
+        year = int(row["period"])
+        expected = "department, by province" if 2013 <= year <= 2022 else "department, national" if year <= 2023 else ""
+        assert row["sales_used_source"] == expected, (year, row["product"])
+        if expected == "department, by province":
+            assert row["sales_used"] == row["sales_provinces"]
         assert row["trade_used_source"] in ("", "SARS customs")
         assert row["production_used_source"] in ("", "energy balance")
         if int(row["period"]) > 2021:
             assert row["production_used"] == "" and row["supply_less_sales"] == ""
         if row["production_used"]:
             assert f"{row['period']}-Commodity-Flow-and-Energy-Balance" in row["production_used_source_ref"]
+
+
+def test_provincial_sales_are_used_where_all_nine_provinces_are_published():
+    inputs = _inputs([_sars("2014", "import", "50"), _sars("2014", "export", "13")])
+    inputs["fuel_sales_department_by_province"] = (
+        [{"period": "2014", "product": "diesel", "province": f"P{i}", "value": "13"} for i in range(9)]
+        + [{"period": "2013", "product": "diesel", "province": f"P{i}", "value": "13"} for i in range(8)])
+    rows = bfb.build(inputs)
+    full, short = _row(rows, 2014), _row(rows, 2013)
+    assert (full["sales_used"], full["sales_used_source"]) == (117, "department, by province")   # not the national 110
+    assert full["sales_department"] == 110                                                       # kept alongside
+    assert (short["sales_used"], short["sales_used_source"]) == (100, "department, national")     # eight provinces only

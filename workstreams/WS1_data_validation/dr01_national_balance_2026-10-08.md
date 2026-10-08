@@ -14,7 +14,8 @@ at 2023, where the department's publications stop.
 
 | Line | Source | Years | Address |
 |---|---|---|---|
-| Sales | Department of Mineral and Petroleum Resources, national fuel sales volumes | 2009-2023 | https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/media_SAVolumes.html |
+| Sales, 2013-2022 | Department of Mineral and Petroleum Resources, sales by magisterial district, added up to the nine provinces, as published | 2013-2022 | https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/media_SAVolumes.html |
+| Sales, 2009-2012 and 2023 | The same department's national sales file | 2009-2012, 2023 | Same page |
 | Imports, exports | SARS customs, trade statistics portal | 2014-2025 | https://tools.sars.gov.za/tradestatsportal/data_download.aspx |
 | Production | Department of Mineral and Petroleum Resources, energy balances | 2009-2021 | https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/Energy_Balances.html |
 | Stocks | None | — | — |
@@ -74,11 +75,11 @@ Diesel:
 
 | Year | Production | Imports | Exports | Supply | Sales | Supply less sales |
 |---|---|---|---|---|---|---|
-| 2014 | 9.59 | 4.99 | 1.49 | 13.09 | 12.62 | +0.47 |
-| 2015 | 9.37 | 6.45 | 1.61 | 14.21 | 13.52 | +0.69 |
+| 2014 | 9.59 | 4.99 | 1.49 | 13.09 | 12.74 | +0.34 |
+| 2015 | 9.37 | 6.45 | 1.61 | 14.21 | 13.49 | +0.71 |
 | 2016 | 9.01 | 4.42 | 1.89 | 11.55 | 12.08 | -0.53 |
 | 2017 | 7.92 | 6.04 | 1.78 | 12.18 | 12.15 | +0.03 |
-| 2018 | 8.43 | 5.12 | 1.58 | 11.97 | 12.54 | -0.57 |
+| 2018 | 8.43 | 5.12 | 1.58 | 11.97 | 12.32 | -0.35 |
 | 2019 | 9.08 | 5.59 | 1.74 | 12.93 | 12.91 | +0.02 |
 | 2020 | 6.45 | 6.81 | 0.91 | 12.35 | 11.69 | +0.66 |
 | 2021 | 5.31 | 9.76 | 0.89 | 14.18 | 12.95 | +1.24 |
@@ -91,11 +92,11 @@ Petrol:
 
 | Year | Production | Imports | Exports | Supply | Sales | Supply less sales |
 |---|---|---|---|---|---|---|
-| 2014 | 10.83 | 1.15 | 0.99 | 10.99 | 10.89 | +0.10 |
-| 2015 | 10.46 | 1.87 | 1.09 | 11.24 | 11.48 | -0.23 |
+| 2014 | 10.83 | 1.15 | 0.99 | 10.99 | 11.03 | -0.04 |
+| 2015 | 10.46 | 1.87 | 1.09 | 11.24 | 11.47 | -0.23 |
 | 2016 | 10.39 | 1.40 | 1.16 | 10.63 | 11.46 | -0.83 |
 | 2017 | 9.43 | 2.11 | 1.08 | 10.47 | 11.17 | -0.70 |
-| 2018 | 9.97 | 1.83 | 1.14 | 10.67 | 11.14 | -0.47 |
+| 2018 | 9.97 | 1.83 | 1.14 | 10.67 | 10.93 | -0.26 |
 | 2019 | 10.42 | 1.48 | 1.17 | 10.73 | 10.77 | -0.05 |
 | 2020 | 7.89 | 1.72 | 1.15 | 8.46 | 8.76 | -0.30 |
 | 2021 | 6.35 | 4.01 | 1.05 | 9.31 | 9.30 | +0.01 |
@@ -105,13 +106,42 @@ Petrol:
 | 2025 | — | 4.45 | 0.80 | — | — | — |
 
 Reading: for the eight matched years, 2014 to 2021, supply and recorded sales
-agree within 0.9 bn litres in every year but one. The exception is diesel in
+agree within 0.8 bn litres in every year but one. The exception is diesel in
 2021, where supply is 1.24 bn litres above recorded sales. One year is not
 a trend, and the stock change is not known. It is consistent with, but does
 not establish, the hypothesis that recorded diesel sales fall short of supply.
 
 After 2021 the balance cannot be computed: there is no production figure for
 2022 or 2023, and no sales figure for 2024 or 2025.
+
+## Sales: provincial data is the main series
+
+From 2013 to 2022 sales are the department's provincial figures added up, used
+as published and kept by province in the workbook. They equal the national
+file to within 0.2% in eight of the ten years. The two exceptions are used as
+published and are known to differ:
+
+| Year | Provinces less national, petrol | Diesel | Cause |
+|---|---|---|---|
+| 2014 | +0.14 | +0.13 | Third quarter: the district file (December 2015) is higher than the national file (January 2015) |
+| 2018 | -0.21 | -0.22 | First quarter: the district sheet lists six fewer districts, so the provincial sum is low |
+
+2023 is an estimate by province: the department's national total for the
+year, split by each province's share of first-quarter 2023 sales, the last
+provincial data published. Marked as an estimate wherever it appears.
+
+## Why 2024 and 2025 are blank
+
+The department has published no sales after 2023, nationally or by province.
+FIASA and JODI each have a national figure for 2024. Neither is reliable, and
+neither is used:
+
+| Source | 2024, bn litres | 2025 | Why it is not reliable |
+|---|---|---|---|
+| FIASA annual report | Petrol 9.03, diesel 11.73 (2025 edition, p.47) | A copy of its 2024 row | Its 2024 edition (p.32) gives 8.76 and 11.81 for the same year; it attributes its sales to the department, which has published none for 2024 |
+| JODI oil database | Petrol 10.14, diesel 10.04 | Not reported | Its demand was 0.9 to 3.0 bn litres above department sales in 2022 and 2023, so it is not on the same basis; its 2024 diesel figure is -28% below its own 2023 figure; every entry carries JODI's lowest reliability code |
+
+Neither source has provincial data. No estimate is made for 2024 or 2025.
 
 ## The 2021 to 2022 bridge
 
@@ -145,7 +175,7 @@ bridge cannot be closed.
 
 | Line | Definition | Not reconciled with |
 |---|---|---|
-| Sales | Volumes returned by licensed wholesalers, calendar year, litres | Energy balance final consumption; Road Accident Fund levy |
+| Sales | Volumes returned by licensed wholesalers, by district, calendar year, litres | The department's national file in 2014 and 2018; energy balance final consumption; Road Accident Fund levy |
 | Imports, exports | Goods cleared under the petrol and diesel tariff lines, calendar year, litres | The 2021 energy balance's own trade lines |
 | Production | Refinery and synthetic fuel output of the product, calendar year, kilolitres in the file | Operators' reports (all products, Sasol's year to June) |
 | Supply less sales | Production + imports - exports - sales | Energy balance statistical difference |
@@ -183,7 +213,7 @@ their trade lines are not used; their production lines are.
 
 ## Checks
 
-- `python -m pytest -q`: 213 passed, 1 skipped.
+- `python -m pytest -q`: 214 passed, 1 skipped.
 - `tests/test_build_fuel_balance.py`: only the department and customs are ever
   selected; every selected figure names its source and file; no production or
   supply-less-sales figure after 2021; the committed file equals a fresh build.

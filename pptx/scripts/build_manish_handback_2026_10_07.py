@@ -234,7 +234,8 @@ text(s, "Diesel", LEFT + 5.4, 2.2, 4.4, 0.25, 11.5, True, BLUE)
 table(s, [header] + body, [1.0] + [1.1] * 8, y=2.48, height=3.3, size=11, numeric_from=1)
 text(s, "Sales less net imports is what production, stock changes and gaps in sales coverage must together supply. "
         "It is not a measurement of production.\n"
-        "Sales: department, which has published to 2023; 2024 and 2025 are blank. FIASA is not used. "
+        "Sales: department provincial data added up, 2013-2022; department national total for 2023; 2024 and 2025 "
+        "blank. FIASA and JODI are not used. "
         "Rebuilt by one command from registered inputs; a test checks every year against the customs extract.",
      LEFT, 6.05, WIDTH, 0.9, 11)
 

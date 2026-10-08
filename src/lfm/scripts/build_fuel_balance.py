@@ -6,7 +6,8 @@ Reads only files already in the vintage and writes one row per product and year:
 
 Inputs (all under ``assumptions/<vintage>/timeseries/``):
 
-    fuel_sales_department.csv          department sales, complete years only
+    fuel_sales_department_by_province.csv  department district sales summed to province
+    fuel_sales_department.csv          department national sales, complete years only
     fuel_sales_fiasa.csv               FIASA annual report sales, latest edition per year
     fuel_trade_sars.csv                SARS customs imports and exports
     fuel_trade_fiasa.csv               FIASA annual report trade, latest edition per year
@@ -15,7 +16,9 @@ Inputs (all under ``assumptions/<vintage>/timeseries/``):
     oil_balance_jodi.csv               South Africa's JODI submissions; comparison columns only
 
 Selection:
-    Sales   department where all four quarters are reported; otherwise blank.
+    Sales   the sum of the nine provinces where all nine are published (2013 to
+            2022), as published; otherwise the department's national file where
+            all four quarters are reported; otherwise blank.
     Trade   SARS customs from ``SARS_PRIMARY_FROM`` where the year is complete and
             in litres; otherwise blank.
 
@@ -53,6 +56,8 @@ DEFAULT_OUT = "workstreams/WS1_data_validation/fuel_balance_petrol_diesel_2009_2
 RESIDUAL_BASIS = "sales less net imports; production, stocks and coverage unresolved"
 SUPPLY_BASIS = "reported production plus net imports less sales; stock change and statistical difference together"
 DEPARTMENT_FILES = "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/"
+PROVINCIAL_REF = ("Department of Mineral and Petroleum Resources, fuel sales volumes by magisterial district, summed to "
+                  "the nine provinces, as published (" + DEPARTMENT_FILES + "media_SAVolumes.html)")
 SALES_REF = "Department of Mineral and Petroleum Resources, national fuel sales volumes: {file} (" + DEPARTMENT_FILES + "media_SAVolumes.html)"
 TRADE_REF = ("SARS trade statistics portal, petrol and diesel tariff lines, calendar year in litres "
              "(https://tools.sars.gov.za/tradestatsportal/data_download.aspx)")
@@ -60,7 +65,7 @@ PRODUCTION_REF = "Department of Mineral and Petroleum Resources, energy balance:
 
 FIELDS = [
     "period", "country", "product",
-    "sales_department", "sales_fiasa", "sales_fiasa_edition",
+    "sales_provinces", "sales_department", "sales_fiasa", "sales_fiasa_edition",
     "imports_sars", "exports_sars", "sars_months_reported",
     "imports_fiasa", "exports_fiasa", "trade_fiasa_edition",
     "imports_trade_report", "exports_trade_report",
@@ -110,6 +115,10 @@ def build(inputs: dict[str, list[dict]]) -> list[dict]:
     """Balance rows from the input tables, keyed by file stem."""
     department = {(r["period"], r["product"]): float(r["value"])
                   for r in inputs["fuel_sales_department"] if int(r["quarters_reported"]) == 4}
+    by_province: dict[tuple, dict] = {}
+    for r in inputs.get("fuel_sales_department_by_province", []):
+        by_province.setdefault((r["period"], r["product"]), {})[r["province"]] = float(r["value"])
+    provinces = {key: sum(values.values()) for key, values in by_province.items() if len(values) == 9}
     sales_file = {(r["period"], r["product"]): r.get("source_file", "") for r in inputs["fuel_sales_department"]}
     balance_file = {(r["period"], r["product"]): r.get("source_file", "")
                     for r in inputs["energy_balance_department"] if r["flow_key"] == "production"}
@@ -130,6 +139,7 @@ def build(inputs: dict[str, list[dict]]) -> list[dict]:
             row: dict = dict.fromkeys(FIELDS, "")
             row.update(period=year, country="ZAF", product=product, unit="litres")
 
+            row["sales_provinces"] = provinces.get((y, product), "")
             row["sales_department"] = department.get((y, product), "")
             if (y, product) in fiasa_sales:
                 row["sales_fiasa"], row["sales_fiasa_edition"] = fiasa_sales[(y, product)]
@@ -146,8 +156,11 @@ def build(inputs: dict[str, list[dict]]) -> list[dict]:
             for flow, column in JODI_COLUMNS.items():
                 row[column] = jodi.get((y, flow, product), "")
 
-            if row["sales_department"] != "":
-                row["sales_used"], row["sales_used_source"] = row["sales_department"], "department"
+            if row["sales_provinces"] != "":
+                row["sales_used"], row["sales_used_source"] = row["sales_provinces"], "department, by province"
+                row["sales_used_source_ref"] = PROVINCIAL_REF
+            elif row["sales_department"] != "":
+                row["sales_used"], row["sales_used_source"] = row["sales_department"], "department, national"
                 row["sales_used_source_ref"] = SALES_REF.format(file=sales_file[(y, product)])
 
             if year >= SARS_PRIMARY_FROM and row["imports_sars"] != "" and row["exports_sars"] != "":
@@ -179,7 +192,7 @@ def main() -> int:
     args = parser.parse_args()
 
     folder = Paths.default().vintage_dir(args.vintage) / "timeseries"
-    stems = ["fuel_sales_department", "fuel_sales_fiasa", "fuel_trade_sars", "fuel_trade_fiasa",
+    stems = ["fuel_sales_department_by_province", "fuel_sales_department", "fuel_sales_fiasa", "fuel_trade_sars", "fuel_trade_fiasa",
              "fuel_trade_department_review", "energy_balance_department", "oil_balance_jodi"]
     inputs = {stem: _read(folder / f"{stem}.csv") for stem in stems}
     missing = [stem for stem, rows in inputs.items() if not rows]
@@ -195,7 +208,8 @@ def main() -> int:
             writer.writerow({k: round(v) if isinstance(v, float) else v for k, v in row.items()})
     used = [r for r in rows if r["trade_used_source"] == "SARS customs"]
     print(f"wrote {len(rows)} rows -> {out}; SARS trade selected in {len(used)} product-years, "
-          f"department sales in {sum(r['sales_used_source'] == 'department' for r in rows)}", file=sys.stderr)
+          f"provincial sales in {sum(r['sales_used_source'] == 'department, by province' for r in rows)}, "
+          f"national sales in {sum(r['sales_used_source'] == 'department, national' for r in rows)}", file=sys.stderr)
     return 0
 
 

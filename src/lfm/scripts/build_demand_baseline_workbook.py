@@ -103,6 +103,9 @@ def load(ts: Path, ref: Path) -> dict:
     d["jodi_output"] = {(r["product"], int(r["period"])): float(r["value"]) / 1e6
                         for r in _read(ts / "oil_balance_jodi.csv")
                         if r["flow"] == "refinery_output" and int(r["months_reported"]) == 12}
+    d["jodi_demand"] = {(r["product"], int(r["period"])): float(r["value"]) / 1e6
+                        for r in _read(ts / "oil_balance_jodi.csv")
+                        if r["flow"] == "demand" and int(r["months_reported"]) == 12}
     d["operators"] = {(r["plant"], int(r["period"])): (float(r["value"]), r["unit"], r["period_basis"])
                       for r in _read(ref / "refinery_output_operators.csv")}
     raf = {(r["measure"], int(r["period"])): float(r["value"]) for r in _read(ref / "fuel_levy_revenue_raf.csv")}
@@ -160,6 +163,8 @@ def load(ts: Path, ref: Path) -> dict:
 
 # --- sheet writer -------------------------------------------------------------
 # Rows that are worked out in the workbook have no publisher; they still say where the number comes from.
+FIASA_2024_EDITION = {"petrol": 8763, "diesel": 11807}  # 2024 sales as printed in FIASA's 2024 report, p.32
+
 DEFAULT_SOURCE = {
     "Reporting formula": "Calculated in this workbook from the rows named in the definition",
     "Proposed estimate": "Analyst estimate, calculated in this workbook; method in the definition",
@@ -254,16 +259,27 @@ def history_sheet(wb, d: dict) -> dict:
             status="2012-2023; nothing published for 2024 or 2025", source=dept_src + ", national workbooks",
             action="Add 2024 and 2025 when the department publishes them")
         s.line(f"Provinces less national, {product}", ML, "Reporting formula",
-               "Difference between the department's two files. 2013 and 2015 traced; 2014 and 2018 for decision. "
+               "Difference between the department's two files. The provincial figures are used as published. 2014: the "
+               "district file's third quarter is higher than the national file. 2018: the first-quarter district sheet "
+               "lists six fewer districts, so the provincial sum is about 2% low. "
                "Zero from 2023 only because the estimates are shares of the national figure.",
                formula=both(rows[f"{product}_provinces"], rows[f"{product}_dept"], "{c}{a}-{c}{b}"), kind="formula",
                action="See integrity_flag_log_2026-10-06.md")
+        fiasa_2024, jodi_2024 = d["fiasa_sales"].get((product, 2024)), d["jodi_demand"].get((product, 2024))
+        gaps = [d["jodi_demand"][(product, y)] - d["dept"][(product, y)] for y in (2022, 2023)]
         s.line(f"Why 2024 and 2025 are blank, {product}", "", "Note",
-               f"The department's national {product} series ends at 2023, and FIASA is not used as a source. Without a "
-               "national total there is nothing to apply the provincial shares to. The estimated shares are in "
-               "section 6; the volumes fill in by formula once the department's figure is added to its sales row.",
-               kind="comparison", status="2024 and 2025 not estimated",
-               action="Add the national figure when the department publishes it")
+               f"The department has published no {product} sales after 2023, by province or nationally, so there is no "
+               f"total to split. FIASA and JODI each have a national 2024 figure ({fiasa_2024:,.0f} and {jodi_2024:,.0f} "
+               "million litres) but neither is reliable, so FIASA is not used and JODI is not used. "
+               f"FIASA: its 2024 and 2025 annual reports give different figures for 2024 ({FIASA_2024_EDITION[product]:,} in "
+               "the 2024 edition), its 2025 row is a copy of its 2024 row, and it attributes its sales to the department, "
+               "which has published none. JODI: its demand was "
+               f"{min(gaps):,.0f} and {max(gaps):,.0f} million litres above department sales in 2022 and 2023, so it is not "
+               "on the same basis, and every entry carries JODI's lowest reliability code. Neither has provincial data, "
+               "and neither has a 2025 figure.",
+               kind="comparison", status="2024 and 2025 blank",
+               source="FIASA annual reports 2024 (p.32) and 2025 (p.47); JODI oil database; department sales volumes page",
+               action="Fill in when the department publishes")
 
     s.section("2. Customs trade (SARS)")
     sars_src = "South African Revenue Service, trade statistics by tariff line"
@@ -326,10 +342,12 @@ def history_sheet(wb, d: dict) -> dict:
                        source="Fuels Industry Association of South Africa, annual reports")
         del fiasa  # shown for comparison; never selected
         sales = s.line(f"Sales used, {product}", ML, "Reporting formula",
-                       "Department national file. Blank where the department has not published.",
-                       formula=lambda y, a=rows[f"{product}_dept"]:
-                       f'=IF(ISNUMBER({col(y)}{a}),{col(y)}{a},"")', kind="formula",
-                       status="Department to 2023; no figure for 2024 or 2025")
+                       "The sum of the nine provinces (section 1) where there is one; otherwise the department's "
+                       "national file. 2023 is the national total, which the provincial estimates add up to.",
+                       formula=lambda y, a=rows[f"{product}_provinces"], b=rows[f"{product}_dept"]:
+                       f'=IF(ISNUMBER({col(y)}{a}),{col(y)}{a},IF(ISNUMBER({col(y)}{b}),{col(y)}{b},""))', kind="formula",
+                       status="Provinces 2013-2023 (2023 estimated); national file 2012; blank for 2024 and 2025",
+                       source="Department district sales summed to province; national file for 2012 and the 2023 total")
         rows[f"sales_{product}"] = sales
         net = s.line(f"Net imports used, {product}", ML, "Reporting formula",
                      "SARS customs from 2014 (section 2).",
@@ -369,8 +387,8 @@ def history_sheet(wb, d: dict) -> dict:
                 status="Estimate", source="Department district data, quarter 1 2023; Stats SA P0441.2", fmt="0.0")
         for code in PROVINCES:
             rows[f"{product}_{code}_estimate"] = s.line(f"{PROVINCE_NAMES[code]} {product}, estimated", ML, "Proposed estimate",
-                   "Estimated share times national sales used (section 4). Blank where no national figure exists.",
-                   formula=lambda y, a=share_rows[code], b=rows[f"sales_{product}"]:
+                   "Estimated share times the department's national total (section 1). Blank where no national figure exists.",
+                   formula=lambda y, a=share_rows[code], b=rows[f"{product}_dept"]:
                    (f'=IF(COUNT({col(y)}{a},{col(y)}{b})<2,"",{col(y)}{a}/100*{col(y)}{b})' if y >= 2023 else None),
                    kind="estimate", status="Estimate; 2023 only, the last year with a national total",
                    action="Replace when the department publishes district data after 2023 quarter 1")

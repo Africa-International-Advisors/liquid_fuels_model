@@ -54,9 +54,11 @@ defined separately. The 6 October deck was corrected to match and moved to
 
 ## DR01 national balance and FIASA (8 October, afternoon)
 
-- FIASA is no longer selected for any figure. Sales are the department's and stop at 2023; trade is customs
-  from 2014. 2024 and 2025 sales are blank, and so are the 2024 provincial estimates. FIASA stays as
-  comparison rows only.
+- FIASA and JODI are not selected for any figure; they stay as comparison rows only.
+- Sales are the department's provincial data added up for 2013-2022, as published, and kept by province.
+  2023 is the national total split by first-quarter shares (an estimate). 2024 and 2025 are blank: FIASA and
+  JODI have 2024 figures, but neither is reliable; the reasons are on the History sheet and in the DR01 note.
+- Trade is customs from 2014.
 - Production is the department's energy balance only, which ends at 2021. JODI is not used; it is a comparison
   row only. All fifteen energy balance files were downloaded again and match the copies held. Decision D23.
 - The matched years are 2014 to 2021. Supply and recorded sales agree within 0.9 bn litres except diesel in
