@@ -34,7 +34,7 @@ def test_history_carries_the_registered_inputs_and_uses_formulas_for_the_balance
 def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
-        "History", "DR01 balance", "Sector history", "Diesel by use", "Demand by use", "Power fleet", "Vehicle history", "HML response", "Gap status",
+        "History", "DR01 balance", "Sector history", "Diesel by use", "Demand by use", "DR04 routes", "DR04 ports", "Power fleet", "Vehicle history", "HML response", "Gap status",
         "Checks",
         "History sources"]
     changed = []
@@ -213,3 +213,28 @@ def test_demand_by_use_sheet_lists_each_use_in_billion_litres_with_basis_and_sou
             assert r[11].value and r[12].value, r[0].value                      # basis and source on every line
     mining = next(r for r in ws.iter_rows(min_row=5) if r[0].value == "Mining")
     assert mining[1].value.startswith("=IF(ISNUMBER('Diesel by use'!") and mining[1].value.endswith('/1000,"")')
+
+
+def test_dr04_routes_sheet_groups_every_fact_with_status_source_and_gap():
+    ws = load_workbook(ROOT / build.OUT)["DR04 routes"]
+    assert [c.value for c in ws[4]] == ["Item", "Asset or route", "Value", "Unit", "Period", "Status", "Source", "Page", "Open gap"]
+    facts = [r for r in ws.iter_rows(min_row=5) if r[5].value]
+    with (ROOT / build.DR04_EVIDENCE).open(encoding="utf-8", newline="") as fh:
+        assert len(facts) == sum(1 for _ in fh) - 1                                   # one row per row of the evidence table
+    assert all(r[2].value and r[6].value for r in facts)                               # a value (or "Not available") and a source
+    sections = [r[0].value for r in ws.iter_rows(min_row=5) if r[0].value and not r[5].value]
+    assert sections[:3] == ["Pipeline limit", "Pipeline use", "Pipeline cost"] and "Access" in sections
+    open_rows = [r for r in facts if r[5].value not in ("observed", "inferred")]
+    assert open_rows and all(r[0].fill.fgColor.rgb == build.FILL["estimate"] for r in open_rows)
+
+
+def test_dr04_ports_sheet_shows_years_then_months_and_marks_the_month_not_published():
+    ws = load_workbook(ROOT / build.OUT)["DR04 ports"]
+    header = [c.value for c in ws[4]]
+    assert header[:3] == ["Period", "Durban", "Richards Bay"] and header[9] == "All ports" and header[-1] == "Source file"
+    rows = {r[0].value: r for r in ws.iter_rows(min_row=5) if r[0].value}
+    assert rows["2025"][1].value == pytest.approx(20.700632) and rows["2025"][9].value == pytest.approx(31.272124)
+    assert rows["2025"][10].value.startswith("=IF(COUNT(")                              # Durban share is a formula
+    assert rows["2026-08"][13].value == "tnpa-cargo-summary-2026-08.pdf"
+    assert rows["2025-01"][1].value is None and rows["2025-01"][12].value.startswith("Not published")
+    assert "invoiced" in rows["2026-04"][12].value

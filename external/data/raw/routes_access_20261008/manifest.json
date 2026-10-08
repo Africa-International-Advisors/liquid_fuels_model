@@ -67,38 +67,6 @@
       "sha256": "2fbfa9b837913e8440522cdb1373d34c1d2916a0466c39d1f7afdba3193d4e2b"
     },
     {
-      "file": "tnpa-port-statistics-total-cargo-2024-annual.pdf",
-      "publisher": "Transnet National Ports Authority",
-      "published": "calendar 2024",
-      "url": "https://www.transnet.net/getFile.ashx?id=5948",
-      "bytes": 140321,
-      "sha256": "cf47ee590ce6bd82c4dc1271574043f178245a4f1f4d6c7edbcee5db657890c8"
-    },
-    {
-      "file": "tnpa-port-statistics-total-cargo-2025-annual.pdf",
-      "publisher": "Transnet National Ports Authority",
-      "published": "calendar 2025",
-      "url": "https://www.transnet.net/getFile.ashx?id=6455",
-      "bytes": 139587,
-      "sha256": "9cb92c6497e1bc3444a75db3d0b4829f773d8bc9f40c02c1157336290decd0e7"
-    },
-    {
-      "file": "tnpa-port-statistics-total-cargo-2026-08.pdf",
-      "publisher": "Transnet National Ports Authority",
-      "published": "August 2026",
-      "url": "https://www.transnet.net/getFile.ashx?id=28113",
-      "bytes": 222846,
-      "sha256": "106b34fc13956540fd76a49ffdf67a329c27709fea66f21ff57275ae92f2cf38"
-    },
-    {
-      "file": "tnpa-port-statistics-page.html",
-      "publisher": "Transnet National Ports Authority",
-      "published": "read 2026-10-08",
-      "url": "https://www.transnet.net/SubsiteRender.aspx?id=24332214",
-      "bytes": 128879,
-      "sha256": "f74ed134f9df96b5b3d9fb4003d90d214e4c668b1a736121ce99acabff35e290"
-    },
-    {
       "file": "tnpa-our-ports-page.html",
       "publisher": "Transnet National Ports Authority",
       "published": "read 2026-10-08",
@@ -118,5 +86,6 @@
       "url": "https://www.nersa.org.za/",
       "why": "not yet located; the media statement gives revenue and the price effect only"
     }
-  ]
+  ],
+  "see_also": "Port statistics (cargo summaries, monthly and calendar year) are in external/data/raw/tnpa/ with their own manifest."
 }

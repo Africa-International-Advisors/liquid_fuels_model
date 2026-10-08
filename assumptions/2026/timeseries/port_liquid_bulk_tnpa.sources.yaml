@@ -1,0 +1,22 @@
+publisher: Transnet National Ports Authority
+page: https://www.transnet.net/SubsiteRender.aspx?id=24332214
+reached_from: https://www.transnet.net/TNPA (Port Statistics)
+retrieved: '2026-10-08'
+originals: external/data/raw/tnpa/ (28 files and a manifest with each file's address and checksum)
+command: python -m lfm.scripts.stage_tnpa --vintage 2026 --fetch
+status: observed; published by the port authority; not read by the engine
+method:
+- Each file is a one-page summary of cargo handled at the eight ports, in metric tons. Only the liquid bulk block is read.
+- Port columns are confirmed from the header row of every file.
+- Every row is checked to add across the ports to the printed total, and the four movement lines (landed, shipped,
+  coastwise, transhipment) to add to the handled total, within five tons.
+- A trailing minus in the source (for example '18 823-') is a negative correction and is kept as a negative number.
+limits:
+- Liquid bulk is every liquid together (crude oil, fuels, gas and chemicals). It is tons, not litres, and is not split
+  by product.
+- The page starts at July 2024. No earlier month is published there.
+publisher_errors:
+- '2025-01: the link leads to a container report, not the cargo summary. January 2025 has no figures. The eleven
+  months held add to 18.79 million tons landed at Durban against 20.70 for the calendar year.'
+- '2026-04: the heading says cargo invoiced, not cargo handled. Kept, with a note on each row.'
+- '2026-05: the heading says May 2025, but the figures differ from the May 2025 summary. Kept as May 2026, with a note.'

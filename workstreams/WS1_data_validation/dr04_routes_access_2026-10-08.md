@@ -6,8 +6,13 @@ M3: port and pipeline limits, route access, and matched delivered costs to the
 same destinations.
 
 Status: **started; the Durban to Gauteng pipeline route is documented, the
-rest is not.** 44 facts are taken from original documents, 2 are calculated,
+rest is not.** 45 facts are taken from original documents, 2 are calculated,
 and 8 lines are open. No matched delivered-cost comparison is possible yet.
+
+**Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`,
+sheet **DR04 routes** (every fact, grouped, with source, page and open gap; open
+lines in yellow) and sheet **DR04 ports** (liquid bulk landed at each port by
+calendar year and by month).
 
 Evidence table: `dr04_routes_access_evidence_2026-10-08.csv`, one row per
 fact, with its source, the original file, the page and the open gap.
@@ -84,6 +89,21 @@ Durban landed 66% of all liquid bulk by weight in 2025 and has 8 liquid bulk ber
 has 2. The statistics are in tons and cover every liquid (crude oil, fuels, gas
 and chemicals), so they do not give fuel litres. Source: the port authority's
 port statistics and Our Ports page at https://www.transnet.net/TNPA.
+
+**Monthly series.** The port authority publishes a summary for each month from
+July 2024. All 26 months to August 2026 were downloaded; 25 are usable.
+Durban landed between 1.23 and 2.46 million tons a month, 1.69 on average.
+Three of the publisher's files are wrong or odd, and none is filled in:
+
+| Month | Problem | Treatment |
+|---|---|---|
+| January 2025 | The link leads to a container report | No figures; shown as not published |
+| April 2026 | The heading says cargo invoiced, not handled | Kept, with a note |
+| May 2026 | The heading says May 2025, but the figures differ from May 2025 | Kept as May 2026, with a note |
+
+Staged as `assumptions/2026/timeseries/port_liquid_bulk_tnpa.csv` by
+`python -m lfm.scripts.stage_tnpa --vintage 2026 --fetch`; originals in
+`external/data/raw/tnpa/`.
 
 **Access at the two Vopak sites**
 

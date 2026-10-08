@@ -177,6 +177,14 @@ TRACE: dict[str, tuple[str, ...]] = {
         "Lowest JODI assessment code throughout. Diesel refinery output agrees with the energy balance within 4% "
         "for 2017-2021; petrol is 12-24% higher. Imports, demand and stocks are not usable.",
         "Not used (8 October)"),
+    "timeseries/port_liquid_bulk_tnpa.csv": (
+        "Transnet National Ports Authority", "https://www.transnet.net/SubsiteRender.aspx?id=24332214",
+        "tnpa-cargo-summary-<period>.pdf, July 2024 to August 2026; calendar years 2024 and 2025",
+        "on manish-branch (external/data/raw/tnpa/)", "scripted download and extract",
+        "python -m lfm.scripts.stage_tnpa --vintage 2026 --fetch", "tnpa.parse_liquid_bulk", "workshop workbook, DR04 ports sheet",
+        "January 2025 missing (publisher's link is wrong)",
+        "Tons of all liquids, not fuel by product. Two months carry a note on the publisher's heading.",
+        "Nigel: review"),
     "reference/refinery_output_operators.csv": (
         "Sasol (production and sales metrics); Glencore (annual reports)", "https://www.sasol.com/",
         "sasol-metrics-fy2022/2025/2026.pdf, p.4; GLEN-2023/2024/2025-Annual-Report.pdf",

@@ -106,6 +106,8 @@ def load(ts: Path, ref: Path) -> dict:
     d["jodi_demand"] = {(r["product"], int(r["period"])): float(r["value"]) / 1e6
                         for r in _read(ts / "oil_balance_jodi.csv")
                         if r["flow"] == "demand" and int(r["months_reported"]) == 12}
+    d["port_liquid_bulk"] = {(r["period"], r["period_basis"], r["port"], r["movement"]): (float(r["value"]), r["note"], r["source_file"])
+                             for r in _read(ts / "port_liquid_bulk_tnpa.csv")}
     d["operators"] = {(r["plant"], int(r["period"])): (float(r["value"]), r["unit"], r["period_basis"])
                       for r in _read(ref / "refinery_output_operators.csv")}
     raf = {(r["measure"], int(r["period"])): float(r["value"]) for r in _read(ref / "fuel_levy_revenue_raf.csv")}
@@ -926,6 +928,116 @@ def demand_by_use_sheet(wb, history_rows: dict, use_rows: dict) -> None:
     ws.freeze_panes = "B5"
 
 
+DR04_EVIDENCE = Path("workstreams/WS1_data_validation/dr04_routes_access_evidence_2026-10-08.csv")
+DR04_PARTS = ["Pipeline limit", "Pipeline use", "Pipeline cost", "Delivered cost", "Port use", "Port limit", "Port cost", "Access",
+              "Competing routes"]
+DR04_STATUS_FILL = {"observed": "observation", "inferred": "formula"}  # anything else is open and shown in the estimate colour
+PORT_ORDER = ["Durban", "Richards Bay", "Cape Town", "Saldanha", "East London", "Mossel Bay", "Port Elizabeth", "Ngqura", "All ports"]
+
+
+def _sheet_head(ws, heading: str, sub_heading: str, header: list, widths: list[float], row: int = 4) -> None:
+    ws["A1"] = heading
+    ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
+    ws["A2"] = sub_heading
+    ws["A2"].font = Font(name="Arial", size=10, color=INK)
+    for i, label in enumerate(header, start=1):
+        cell = ws.cell(row=row, column=i, value=label)
+        cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
+        cell.fill = PatternFill("solid", fgColor=FILL["header"])
+        cell.alignment = Alignment(wrap_text=True, vertical="top")
+        ws.column_dimensions[get_column_letter(i)].width = widths[i - 1]
+
+
+def dr04_routes_sheet(wb) -> None:
+    """The DR04 evidence table, grouped by part: one row per fact with its source, page and open gap."""
+    ws = wb.create_sheet("DR04 routes")
+    rows = _read(DR04_EVIDENCE)
+    counted = {status: sum(r["status"] == status for r in rows) for status in {r["status"] for r in rows}}
+    done = counted.get("observed", 0) + counted.get("observed, unit unclear", 0)
+    header = ["Item", "Asset or route", "Value", "Unit", "Period", "Status", "Source", "Page", "Open gap"]
+    _sheet_head(ws, "DR04 Routes and access: what the documents establish",
+                f"{done} facts read from original documents, {counted.get('inferred', 0)} calculated, "
+                f"{len(rows) - done - counted.get('inferred', 0)} still open (yellow). Each row gives its source and page. "
+                "Built from dr04_routes_access_evidence_2026-10-08.csv.",
+                header, [34, 30, 36, 20, 24, 14, 44, 12, 60])
+    row = 4
+    for part in DR04_PARTS:
+        part_rows = [r for r in rows if r["part"] == part]
+        if not part_rows:
+            continue
+        row += 2 if row > 4 else 1
+        for i in range(1, len(header) + 1):
+            cell = ws.cell(row=row, column=i, value=part if i == 1 else None)
+            cell.font = Font(name="Arial", size=10, bold=True, color=INK)
+            cell.fill = PatternFill("solid", fgColor=FILL["section"])
+        for r in part_rows:
+            row += 1
+            kind = DR04_STATUS_FILL.get(r["status"], "estimate")
+            values = [r["item"], r["asset_or_route"], r["value"] or "Not available", r["unit"], r["period"], r["status"],
+                      r["source"] or "None found", r["page"], r["unresolved_gap"]]
+            for i, value in enumerate(values, start=1):
+                cell = ws.cell(row=row, column=i, value=value)
+                cell.font = Font(name="Arial", size=10, color=INK)
+                cell.fill = PatternFill("solid", fgColor=FILL[kind])
+                cell.alignment = Alignment(wrap_text=True, vertical="top")
+    assert {r["part"] for r in rows} <= set(DR04_PARTS), {r["part"] for r in rows} - set(DR04_PARTS)
+    ws.freeze_panes = "B5"
+
+
+def dr04_ports_sheet(wb, d: dict) -> None:
+    """Liquid bulk landed at each port, by calendar year and by month, in million tons."""
+    ws = wb.create_sheet("DR04 ports")
+    series = d["port_liquid_bulk"]
+    header = ["Period"] + [f"{port}" for port in PORT_ORDER] + ["Durban share", "Durban, all movements", "Note", "Source file"]
+    _sheet_head(ws, "DR04 Liquid bulk landed at each port",
+                "Million tons of all liquids together (crude oil, fuels, gas and chemicals); not litres and not fuel by product. "
+                "Transnet National Ports Authority, port statistics, transnet.net/TNPA. Blank month: not published.",
+                header, [16] + [11] * len(PORT_ORDER) + [12, 14, 46, 44])
+    share_col, durban_col, total_col = len(PORT_ORDER) + 2, 2, len(PORT_ORDER) + 1
+    periods = sorted({(basis, period) for (period, basis, _, _) in series})
+    years = [p for b, p in periods if b == "calendar year"]
+    months = [p for b, p in periods if b == "month"]
+    listed = [m for m in (f"{y}-{mo:02d}" for y in range(int(months[0][:4]), int(months[-1][:4]) + 1) for mo in range(1, 13))
+              if months[0] <= m <= months[-1]]
+
+    def write(row, label, period, basis, bold=False):
+        ws.cell(row=row, column=1, value=label)
+        known = (period, basis, "Durban", "landed") in series
+        for i, port in enumerate(PORT_ORDER, start=2):
+            entry = series.get((period, basis, port, "landed"))
+            ws.cell(row=row, column=i, value=entry[0] / 1e6 if entry else None).number_format = "0.00"
+        c, t = get_column_letter(durban_col), get_column_letter(total_col)
+        ws.cell(row=row, column=share_col, value=f'=IF(COUNT({c}{row},{t}{row})<2,"",{c}{row}/{t}{row})').number_format = "0%"
+        handled = series.get((period, basis, "Durban", "handled"))
+        ws.cell(row=row, column=share_col + 1, value=handled[0] / 1e6 if handled else None).number_format = "0.00"
+        first = series.get((period, basis, "Durban", "landed"))
+        ws.cell(row=row, column=share_col + 2, value=(first[1] if known else "Not published: the port authority's link for this month leads to another report"))
+        ws.cell(row=row, column=share_col + 3, value=first[2] if known else "None")
+        for i in range(1, len(header) + 1):
+            cell = ws.cell(row=row, column=i)
+            cell.font = Font(name="Arial", size=10, color=INK, bold=bold and i == 1)
+            cell.fill = PatternFill("solid", fgColor=FILL["formula" if i == share_col else "observation" if known else "estimate"])
+            cell.alignment = Alignment(wrap_text=i >= share_col + 2, vertical="top", horizontal="right" if 1 < i <= share_col + 1 else "left")
+
+    def title(row, text):
+        for i in range(1, len(header) + 1):
+            cell = ws.cell(row=row, column=i, value=text if i == 1 else None)
+            cell.font = Font(name="Arial", size=10, bold=True, color=INK)
+            cell.fill = PatternFill("solid", fgColor=FILL["section"])
+
+    row = 5
+    title(row, "Calendar years")
+    for year in years:
+        row += 1
+        write(row, year, year, "calendar year", bold=True)
+    row += 2
+    title(row, "Months")
+    for month in listed:
+        row += 1
+        write(row, month, month, "month")
+    ws.freeze_panes = "B5"
+
+
 def _table(wb, title: str, heading: str, sub_heading: str, header: list[str], widths: list[float], body: list[list]):
     ws = wb.create_sheet(title)
     ws["A1"] = heading
@@ -1295,6 +1407,7 @@ def sources_sheet(wb) -> None:
         "fuel_sales_fiasa": "History section 4: FIASA comparison row",
         "energy_balance_department": "History section 3 and Sector history: production and diesel by sector",
         "oil_balance_jodi": "History section 3: refinery output reported to JODI (comparison only, not used)",
+        "port_liquid_bulk_tnpa": "DR04 ports: liquid bulk landed at each port, by month and calendar year",
         "refinery_output_operators": "History section 3: operators' reported output",
         "fuel_levy_revenue_raf": "History section 5: litres levied",
         "activity_statssa_monthly": "Sector history: mining and manufacturing volume indices",
@@ -1374,7 +1487,7 @@ def main() -> int:
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 is still set to FIASA on Nigel's sheet, because the department has no 2024 "
                    "figure to switch to. The added sheets do not use FIASA for any year. For Nigel to decide.")
-    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, Power fleet, Vehicle history, HML response, Gap status, "
+    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 ports, Power fleet, Vehicle history, HML response, Gap status, "
                    "Checks, History sources. No other cell changed.")
 
     history_rows = history_sheet(wb, d)
@@ -1382,6 +1495,8 @@ def main() -> int:
     sector_rows = sector_sheet(wb, d)
     use_rows = diesel_by_use_sheet(wb, d, history_rows, sector_rows)
     demand_by_use_sheet(wb, history_rows, use_rows)
+    dr04_routes_sheet(wb)
+    dr04_ports_sheet(wb, d)
     power_fleet_sheet(wb, d)
     vehicle_sheet(wb, d, history_rows)
     lever_response_sheet(wb)

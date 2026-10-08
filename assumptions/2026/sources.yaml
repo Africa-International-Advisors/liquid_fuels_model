@@ -342,6 +342,18 @@ oil_balance_jodi:
     Provenance and limits in timeseries/oil_balance_jodi.sources.yaml
   last_updated: '2026-10-08'
   shared: true
+port_liquid_bulk_tnpa:
+  register_id: REG-SOURCE-PORT_LIQUID_BULK_TNPA
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: timeseries/port_liquid_bulk_tnpa.csv
+  units: tonnes
+  source: Transnet National Ports Authority, port statistics, summary of cargo handled; liquid bulk by port and
+    movement, monthly from July 2024 and calendar years 2024 and 2025. All liquids together, not fuel by product.
+    Provenance and limits in timeseries/port_liquid_bulk_tnpa.sources.yaml
+  last_updated: '2026-10-08'
+  shared: true
 refinery_output_operators:
   register_id: REG-SOURCE-REFINERY_OUTPUT_OPERATORS
   exception_id: EXC-SOURCE-DATA-2026-10-05
