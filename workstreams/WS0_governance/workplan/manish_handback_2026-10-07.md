@@ -111,8 +111,25 @@ Not available from any source:
 - Vehicles by fuel within each class
 - Vehicles by year of age
 - Electric trucks and electric light commercial vehicles sold
-- Fuel use of new vehicles after 2019; of trucks by year
+- Fuel use of trucks, by year
 - Road freight in tonne-kilometres, by year
+
+**DR08 Refinery supply.** Workbook sheets DR08 evidence and DR08 refinery output; note
+`dr08_refinery_evidence_2026-10-08.md`.
+
+- Three plants operate (Secunda, Natref, Astron): 358,000 barrels a day, half of the 718,000 published in 2021.
+  Sapref, Enref and PetroSA are not refining.
+- Output by plant is all products together (Sasol, Glencore). Petrol and diesel by product exist only nationally
+  and only to 2021.
+- The capacity figures are from the department's Energy Sector Reports, whose table cites the industry
+  association (SAPIA, now FIASA). Flagged.
+
+Not available:
+
+- Petrol and diesel output by plant (Every plant)
+- Petrol and diesel produced after 2021 (South Africa)
+- Yield by plant after 2021 (Secunda, Natref, Astron Energy)
+- Output as a share of capacity (Astron Energy)
 
 ## Power generation fleet (your message of 7 October)
 

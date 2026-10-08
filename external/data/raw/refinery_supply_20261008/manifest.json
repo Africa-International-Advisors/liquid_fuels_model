@@ -1,0 +1,36 @@
+{
+  "retrieved": "2026-10-08",
+  "purpose": "DR08 refinery supply: the department's published refinery capacity tables",
+  "files": [
+    {
+      "file": "department-energy-sector-report-2021.pdf",
+      "publisher": "Department of Mineral Resources and Energy",
+      "published": "2021",
+      "url": "https://www.dmpr.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Sector%20Report/2021-South-African-Energy-Sector-Report.pdf",
+      "bytes": 376942,
+      "sha256": "e8b54cd38fe96fd04cb65e2b9ab75e5bf802b7fde428895b6083dc47920852bc"
+    },
+    {
+      "file": "department-energy-sector-report-2022.pdf",
+      "publisher": "Department of Mineral Resources and Energy",
+      "published": "2022",
+      "url": "https://www.dmpr.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Sector%20Report/2022-South-African-Energy-Sector-Report.pdf",
+      "bytes": 2921725,
+      "sha256": "40cd5069c982a33e3b047c401bcfd3c1569f7f610ff6646b25967c0457747871"
+    },
+    {
+      "file": "department-energy-sector-report-2023.pdf",
+      "publisher": "Department of Mineral Resources and Energy",
+      "published": "2023",
+      "url": "https://www.dmpr.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Sector%20Report/2023-South-African-Energy-Sector-Report.pdf",
+      "bytes": 1295486,
+      "sha256": "45e7aef0dc3348576594f1f86779b62f5997dbe335199717bdd4563fff81c0a4"
+    }
+  ],
+  "held_elsewhere": [
+    "external/data/raw/sasol/ (Sasol production and sales metrics)",
+    "external/data/raw/glencore/ (Glencore annual reports)",
+    "external/data/raw/sa_review_20261007T181010425382Z/ (Central Energy Fund, Sasol and PetroSA documents collected by Nigel)"
+  ],
+  "note": "The department's capacity table names the industry association's annual report (SAPIA, now FIASA) as its own source."
+}

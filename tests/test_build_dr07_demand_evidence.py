@@ -41,7 +41,11 @@ def test_the_eight_gaps_searched_on_8_october_are_filled_where_a_source_exists()
     assert still_missing == {
         "Diesel burned in private backup generators", "New gas plant: firm commissioning date for any project",
         "Vehicles by fuel within each class", "Vehicles by year of age", "Electric trucks and electric light commercial vehicles sold",
-        "Fuel use of new vehicles after 2019; of trucks by year", "Road freight in tonne-kilometres, by year"}
+        "Fuel use of trucks, by year", "Road freight in tonne-kilometres, by year"}
+    assert rows["Fuel use of new light vehicles: figure in use"]["value"] == "7.4"
+    shutdowns = [r for r in dr07.build(dr07.load(VINTAGE)) if r["item"] == "Coal station shutdown"]
+    assert {r["asset_or_route"] for r in shutdowns} >= {"Komati", "Duvha", "Matla", "Camden, Hendrina, Grootvlei, Arnot and Kriel"}
+    assert all("Eskom" in r["source"] or "System operator" in r["source"] for r in shutdowns)
 
 
 def test_eskom_reported_fuel_gives_the_litres_per_kwh_used_on_the_power_fleet_sheet():

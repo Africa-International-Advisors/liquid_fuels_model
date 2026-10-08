@@ -107,6 +107,7 @@ def load(ts: Path, ref: Path) -> dict:
                         for r in _read(ts / "oil_balance_jodi.csv")
                         if r["flow"] == "demand" and int(r["months_reported"]) == 12}
     d["evidence_points"] = _read(ref / "demand_evidence_points.csv")
+    d["refinery_points"] = _read(ref / "refinery_evidence_points.csv")
     d["fuel_by_province"] = {(r["province"], r["fuel_type"]): float(r["vehicles"])
                              for r in _read(ref / "vehicle_population_by_fuel_province_dot2023.csv")}
     eskom = _read(ts / "eskom_fuel_eaf_review_2026_10_07.csv")
@@ -1203,6 +1204,112 @@ def dr07_fleet_sheet(wb, d: dict) -> None:
     ws.freeze_panes = "B5"
 
 
+DR08_EVIDENCE = Path("workstreams/WS1_data_validation/dr08_refinery_evidence_2026-10-08.csv")
+DR08_PARTS = ["Capacity", "Status and dates", "Output by plant", "National output by product", "Yields", "Utilisation", "Outlook"]
+REFINERIES = [
+    # plant, type, key in the capacity points, key in the operators' file, status
+    ("Secunda (Sasol)", "Coal to liquids", "Secunda", "Secunda", "Operating"),
+    ("Natref (Sasol and TotalEnergies)", "Crude oil", "Natref", "Natref", "Operating; unit outage August to September 2026"),
+    ("Astron Energy (Glencore), Cape Town", "Crude oil", "Astron Energy", None, "Operating; restarted early 2023"),
+    ("Sapref (Central Energy Fund), Durban", "Crude oil", "Sapref", None, "Not refining"),
+    ("Enref (Engen), Durban", "Crude oil", "Enref", None, "Not operating"),
+    ("PetroSA, Mossel Bay", "Gas to liquids", "PetroSA", None, "Not operating since December 2020"),
+]
+OUTPUT_YEARS = list(range(2020, 2027))
+BALANCE_YEARS = list(range(2014, 2022))
+
+
+def dr08_evidence_sheet(wb) -> None:
+    evidence_sheet(wb, "DR08 evidence", DR08_EVIDENCE, DR08_PARTS, "DR08 Refinery supply: capacity, status, output and outlook", "Plant",
+                   "Built by python -m lfm.scripts.build_dr08_refinery_evidence.")
+
+
+def dr08_output_sheet(wb, d: dict) -> None:
+    """Refineries on one page: capacity, status and reported output; then national petrol and diesel production."""
+    ws = wb.create_sheet("DR08 refinery output")
+    header = ["Plant", "Type", "Capacity, barrels a day", "Status"] + OUTPUT_YEARS + ["Source", "Note"]
+    _sheet_head(ws, "DR08 Refineries: capacity, status and reported output",
+                "Output is million barrels of all refined products, years to 30 June, as each operator reports it. No operator publishes petrol "
+                "and diesel by plant. Capacity is crude equivalent.",
+                header, [36, 16, 14, 34] + [8.5] * len(OUTPUT_YEARS) + [58, 60])
+    last, first_year = len(header), 5
+    capacity = {p["subject"]: float(p["value"]) for p in d["refinery_points"] if p["series"] == "capacity_department_2023"}
+    operators = d["operators"]
+    cap_source = "Department, Energy Sector Report 2023, Table 1 (which cites the industry association)"
+
+    def style(row, kind, bold=False, wrap_from=None):
+        for i in range(1, last + 1):
+            cell = ws.cell(row=row, column=i)
+            cell.font = Font(name="Arial", size=10, color=INK, bold=bold and i == 1)
+            cell.fill = PatternFill("solid", fgColor=FILL[kind])
+            cell.alignment = Alignment(wrap_text=i in (1, 4) or i >= last - 1, vertical="top",
+                                       horizontal="right" if i == 3 or first_year <= i < last - 1 else "left")
+
+    row = 4
+    for plant, kind, cap_key, op_key, status in REFINERIES:
+        row += 1
+        values = [plant, kind, capacity[cap_key], status]
+        for year in OUTPUT_YEARS:
+            entry = operators.get((op_key, year)) if op_key else None
+            values.append(entry[0] if entry else None)
+        if op_key == "Secunda":
+            source, note = "Sasol production and sales metrics; capacity: " + cap_source, "All refined products."
+        elif op_key == "Natref":
+            source, note = "Sasol production and sales metrics; capacity: " + cap_source, ("Sasol's 63.64% share only. The year to June 2026 includes "
+                                                                                             "output above that share.")
+        elif cap_key == "Astron Energy":
+            source, note = "Capacity: " + cap_source + "; Glencore annual reports (100,000 steady state)", ("Glencore reports energy content, not barrels: "
+                                                                                                            "136,665, 166,204 and 164,365 billion Btu for 2023 to 2025.")
+        else:
+            source, note = "Capacity: " + cap_source, "No output." + (" The department still lists it at full capacity." if cap_key == "Sapref" else "")
+        for i, value in enumerate(values + [source, note], start=1):
+            cell = ws.cell(row=row, column=i, value=value)
+            if i == 3:
+                cell.number_format = "#,##0"
+            elif first_year <= i < last - 1:
+                cell.number_format = "0.0"
+        style(row, "observation" if status.startswith("Operating") else "comparison")
+    row += 1
+    ws.cell(row=row, column=1, value="Capacity operating (Secunda, Natref, Astron)")
+    ws.cell(row=row, column=3, value="=C5+C6+C7").number_format = "#,##0"
+    ws.cell(row=row, column=last - 1, value="Sum of the three plants operating")
+    ws.cell(row=row, column=last, value="718,000 was published for all six plants in 2021.")
+    style(row, "formula", bold=True)
+
+    row += 2
+    for i in range(1, last + 1):
+        cell = ws.cell(row=row, column=i, value="Petrol and diesel produced, all plants (billion litres, calendar years)" if i == 1 else None)
+        cell.font = Font(name="Arial", size=10, bold=True, color=INK)
+        cell.fill = PatternFill("solid", fgColor=FILL["section"])
+    row += 1
+    labels = ["Product", "", "", ""] + BALANCE_YEARS[-len(OUTPUT_YEARS):] + ["Source", "Note"]
+    years = BALANCE_YEARS[-len(OUTPUT_YEARS):]
+    for i, label in enumerate(labels, start=1):
+        cell = ws.cell(row=row, column=i, value=label)
+        cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
+        cell.fill = PatternFill("solid", fgColor=FILL["header"])
+    balance_source = "Department of Mineral and Petroleum Resources, energy balances (one file a year)"
+    first_product = row + 1
+    for product in ("petrol", "diesel"):
+        row += 1
+        ws.cell(row=row, column=1, value=product.capitalize())
+        for i, year in enumerate(years, start=first_year):
+            value = d["balance"].get(("production", product, year))
+            ws.cell(row=row, column=i, value=None if value is None else value / 1000).number_format = BN_FORMAT
+        ws.cell(row=row, column=last - 1, value=balance_source)
+        ws.cell(row=row, column=last, value="The only output by product. Ends at 2021, the last balance published.")
+        style(row, "observation")
+    row += 1
+    ws.cell(row=row, column=1, value="Petrol and diesel")
+    for i in range(first_year, first_year + len(years)):
+        c = get_column_letter(i)
+        ws.cell(row=row, column=i, value=f'=IF(COUNT({c}{first_product}:{c}{row - 1})<2,"",SUM({c}{first_product}:{c}{row - 1}))').number_format = BN_FORMAT
+    ws.cell(row=row, column=last - 1, value="Sum of the two rows above")
+    ws.cell(row=row, column=last, value="Fell by about 40% between 2019 and 2021 as the Durban refineries stopped.")
+    style(row, "formula", bold=True)
+    ws.freeze_panes = "B5"
+
+
 ENTRY_YEARS = list(range(2014, 2026))
 ENTRY_POINTS = [("Durban", "Durban", "Sea"), ("Cape Town", "Cape Town", "Sea"), ("Mosselbay", "Mossel Bay", "Sea"),
                 ("East London", "East London", "Sea"), ("Port Elizabeth", "Port Elizabeth", "Sea"),
@@ -1807,7 +1914,7 @@ def main() -> int:
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 is still set to FIASA on Nigel's sheet, because the department has no 2024 "
                    "figure to switch to. The added sheets do not use FIASA for any year. For Nigel to decide.")
-    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 entry points, DR04 transport cost, DR07 evidence, DR07 power diesel, DR07 fleet by province, DR07 efficiency and rail, Power fleet, Vehicle history, HML response, Gap status, "
+    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 entry points, DR04 transport cost, DR07 evidence, DR07 power diesel, DR07 fleet by province, DR07 efficiency and rail, DR08 evidence, DR08 refinery output, Power fleet, Vehicle history, HML response, Gap status, "
                    "Checks, History sources. No other cell changed.")
 
     history_rows = history_sheet(wb, d)
@@ -1822,6 +1929,8 @@ def main() -> int:
     dr07_power_sheet(wb, d)
     dr07_fleet_sheet(wb, d)
     dr07_efficiency_rail_sheet(wb, d)
+    dr08_evidence_sheet(wb)
+    dr08_output_sheet(wb, d)
     power_fleet_sheet(wb, d)
     vehicle_sheet(wb, d, history_rows)
     lever_response_sheet(wb)

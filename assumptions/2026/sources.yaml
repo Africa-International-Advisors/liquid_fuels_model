@@ -402,6 +402,19 @@ vehicle_population_by_fuel_province_dot2023:
     the all-fuel total, typed from PDF page 40. Original in external/data/raw/literature/
   last_updated: '2026-10-08'
   shared: true
+refinery_evidence_points:
+  register_id: REG-SOURCE-REFINERY_EVIDENCE_POINTS
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/refinery_evidence_points.csv
+  units: mixed; see unit column
+  source: Figures read by hand from published documents for request DR08 - the department's Energy Sector Reports
+    2021 and 2023 (refinery capacity and status), Glencore annual reports (Astron), Sasol business performance
+    metrics (Secunda, Natref), and Central Energy Fund and PetroSA documents. Each row names its document and page.
+    The department's capacity table itself cites the industry association (SAPIA, now FIASA)
+  last_updated: '2026-10-08'
+  shared: true
 refinery_output_operators:
   register_id: REG-SOURCE-REFINERY_OUTPUT_OPERATORS
   exception_id: EXC-SOURCE-DATA-2026-10-05

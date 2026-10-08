@@ -3,7 +3,7 @@
 For Nigel's review. Answers request DR07: the evidence that calibrates the
 demand levers. Petrol and diesel only.
 
-Status: **35 facts read from sources, 9 calculated, 7 not available.**
+Status: **42 facts read from sources, 10 calculated, 7 not available.**
 
 **Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
 
@@ -59,6 +59,22 @@ The system operator states both contracts end in 2030, so Avon's last full
 year is now 2029. Effect: the low power case for 2030 falls from 86 to 20
 million litres. The medium and high cases do not change.
 
+## Coal station shutdown dates
+
+| Stations | Date | Source |
+|---|---|---|
+| Komati | Shut down October 2022 | Eskom, coal-fired power stations page |
+| Camden, Hendrina, Grootvlei, Arnot, Kriel | By 31 March 2030; run to the end of 2028, then phased from 2029 | Eskom Integrated Report 2025; system operator outlook |
+| Duvha | February 2034 | System operator outlook, PDF p.19 |
+| Matla | July 2034 | Same |
+| Tutuka | "Scheduled for closure by 2030" under Eskom's Generation 2035 plan | Eskom, coal-fired power stations page; possibly an older plan |
+| Kendal, Lethabo, Majuba, Matimba, Medupi | No shutdown date; emissions exemption to 31 March 2030 | System operator outlook |
+
+Eskom's own reports give the dates by group, not by station. The station dates
+for Duvha and Matla come from the system operator, which is an Eskom company.
+Eskom's 2022 plan was nine stations, about 22 GW, by 2035; the delays since
+then have not been restated station by station.
+
 ## Vehicle efficiency history
 
 Average fuel use of new cars and light commercial vehicles, litres of petrol
@@ -70,7 +86,7 @@ equivalent per 100 km (IEA and Global Fuel Economy Initiative):
 
 The IEA states a fall of 1.3% a year from 2005 to 2019. The model assumes 0.5
 to 1.5% a year, so the observed rate sits inside the model's range. Nothing
-after 2019 was found, and nothing for trucks.
+after 2019 was found, so the 2019 figure (7.4) is used for later years.
 
 ## Rail
 
@@ -119,7 +135,7 @@ solar and batteries or not replaced at all.
 | Vehicles by fuel within each class | The bulletin splits fuel by province and the register splits class by province; nothing published crosses fuel with class. |
 | Vehicles by year of age | Lightstone holds the age profile and sells it; the register does not publish it. Only apparent retirements can be calculated. |
 | Electric trucks and electric light commercial vehicles sold | naamsa reports electric sales by drivetrain, not by segment (checked its fourth-quarter 2025 review). Benchmarks from other countries are on the HML response sheet. |
-| Fuel use of new vehicles after 2019; of trucks by year | The IEA series stops at 2019 (its 2021 edition is the latest with South Africa). No truck series by year exists. |
+| Fuel use of trucks, by year | Only the 2010 fleet figures above exist. No truck series by year was found. |
 | Road freight in tonne-kilometres, by year | The research group that models it (GAIN, Stellenbosch) shows yearly charts but publishes figures for single years only. |
 
 ## Checks

@@ -36,7 +36,7 @@ def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
         "History", "DR01 balance", "Sector history", "Diesel by use", "Demand by use", "DR04 routes", "DR04 entry points", "DR04 transport cost", "DR07 evidence", "DR07 power diesel",
-        "DR07 fleet by province", "DR07 efficiency and rail", "Power fleet", "Vehicle history", "HML response", "Gap status",
+        "DR07 fleet by province", "DR07 efficiency and rail", "DR08 evidence", "DR08 refinery output", "Power fleet", "Vehicle history", "HML response", "Gap status",
         "Checks",
         "History sources"]
     changed = []
@@ -322,3 +322,19 @@ def test_dr07_efficiency_and_rail_sheet_carries_both_histories_with_sources():
     assert rows["Year to March"][9].value == "Target"
     for label in ("Litres of petrol equivalent per 100 km", "Million tonnes"):
         assert "IEA" in rows[label][-2].value or "Transnet" in rows[label][-2].value
+
+
+def test_dr08_sheets_list_six_refineries_with_capacity_status_output_and_national_production():
+    wb = load_workbook(ROOT / build.OUT)
+    facts = [r for r in wb["DR08 evidence"].iter_rows(min_row=5) if r[5].value]
+    assert len(facts) >= 30 and all(r[2].value and r[6].value for r in facts)
+    assert not any("FIASA annual" in str(r[6].value) or "JODI" in str(r[6].value) for r in facts)
+    rows = {r[0].value: r for r in wb["DR08 refinery output"].iter_rows(min_row=5) if r[0].value}
+    assert [k for k in rows][:6] == [plant for plant, *_ in build.REFINERIES]
+    at = 4 + build.OUTPUT_YEARS.index(2026)
+    assert (rows["Secunda (Sasol)"][2].value, rows["Secunda (Sasol)"][at].value) == (150000, 30.6)
+    assert rows["Natref (Sasol and TotalEnergies)"][at].value == 25.8
+    assert rows["PetroSA, Mossel Bay"][2].value == 0 and rows["PetroSA, Mossel Bay"][at].value is None
+    assert rows["Capacity operating (Secunda, Natref, Astron)"][2].value == "=C5+C6+C7"
+    assert rows["Diesel"][4 + 6].value == pytest.approx(5.315, abs=0.001)            # 2021, the last energy balance (columns run 2015-2021)
+    assert all(rows[k][-2].value for k in rows if k not in ("Petrol and diesel produced, all plants (billion litres, calendar years)", "Product"))

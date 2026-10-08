@@ -125,8 +125,10 @@ def build(d: dict) -> list[dict]:
         "; ".join(f"{float(r['capacity_mw']):,.0f}" for r in stations), "MW", "current", "observed", "Eskom fact sheet GX 0001 (July 2024); African Energy (2015)",
         "assumptions/2026/infrastructure/power_fleet_diesel.csv", "", "Avon began in July 2016 and Dedisa in October 2015.")
     coal = [r for r in d["fleet"] if r["group"] == "coal_retiring"]
-    add("Power generation", "Coal stations retiring", "; ".join(r["station"] for r in coal),
-        "; ".join(r["last_full_year"] for r in coal), "last full year", "", "observed", "Eskom statements and press reports named in the file",
+    for p in points["coal_station_shutdown"]:
+        add("Power generation", "Coal station shutdown", p["subject"], p["value"], "", p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
+    add("Power generation", "Coal stations: last full year used on the Power fleet sheet", "; ".join(r["station"] for r in coal),
+        "; ".join(r["last_full_year"] for r in coal), "last full year", "", "inferred", "Read from the shutdown dates above",
         "assumptions/2026/infrastructure/power_fleet_diesel.csv", "", "Eskom's decision on five of them, due end September 2026, had not been announced by 8 October.")
     for series, item in (("peaker_contract_end", "Independent diesel plants: contract end"), ("kerosene_station_shutdown", "Kerosene stations: shutdown"),
                          ("gas_plant_commissioning", "New gas plant: commissioning"), ("turbine_use_outlook", "Diesel turbine use expected by the system operator")):
@@ -222,8 +224,12 @@ def build(d: dict) -> list[dict]:
         "Stone et al. (2018), vehicle parc model", "assumptions/2026/reference/vehicle_parameters_stone2018.csv", "",
         "One year only. Light commercial diesel vehicles use " + d["stone"]["LCVDiesel"]["l_per_100km_fleet_average"] + " and buses "
         + d["stone"]["BusDiesel"]["l_per_100km_fleet_average"] + ".")
-    add("Vehicle efficiency and distance", "Fuel use of new vehicles after 2019; of trucks by year", "South Africa", "", "litres per 100 km", "",
-        "not available", "None found", "", "", "The IEA series stops at 2019 (its 2021 edition is the latest with South Africa). No truck series by year exists.")
+    latest = history[-1]
+    add("Vehicle efficiency and distance", "Fuel use of new light vehicles: figure in use", "New cars and light commercial vehicles", latest["value"],
+        latest["unit"], latest["period"] + ", used for later years", "observed", latest["source"], latest["original_file"], latest["page"],
+        "The latest published figure. Used as it stands for the years after 2019 (Manish, 8 October).")
+    add("Vehicle efficiency and distance", "Fuel use of trucks, by year", "South Africa", "", "litres per 100 km", "",
+        "not available", "None found", "", "", "Only the 2010 fleet figures above exist. No truck series by year was found.")
     add("Vehicle efficiency and distance", "Efficiency gain assumed in the model", "New diesel and petrol vehicles",
         "; ".join(f"{'petrol' if name == 'gasoline' else name} {d['efficiency'][(name, case)] * 100:.1f} ({case.replace('_', ' ')})"
                   for name in ("diesel", "gasoline") for case in ("high_demand", "low_demand") if (name, case) in d["efficiency"]),

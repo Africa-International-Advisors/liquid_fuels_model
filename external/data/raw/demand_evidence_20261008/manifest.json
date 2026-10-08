@@ -97,6 +97,22 @@
       "url": "https://www.ipp-gas.co.za/",
       "bytes": 64012,
       "sha256": "8c69308bb3cd9b345eb182e933c0861a63b6249335c46ee6ad19b2dfdf3b6d38"
+    },
+    {
+      "file": "eskom-mes-applications-input-2022-11-24.pdf",
+      "publisher": "Eskom, input to the environment department's panel",
+      "published": "2022-11-24",
+      "url": "https://www.dffe.gov.za/sites/default/files/legislations/appeals/eskom.ems/annexure16h_medupi.matimba_24nov2022inputs.pdf",
+      "bytes": 1355522,
+      "sha256": "d8be0fbdc58ebd984a77fa94255a2c387b0d50c2360e127f863d0bc01514a5b7"
+    },
+    {
+      "file": "eskom-coal-fired-power-stations-page.html",
+      "publisher": "Eskom",
+      "published": "read 2026-10-08",
+      "url": "https://www.eskom.co.za/eskom-divisions/gx/coal-fired-power-stations/",
+      "bytes": 268139,
+      "sha256": "037b4938d96e9dbbe309582692ee00f8b6804eb3a6ca3247a7ec65f5c5c4586a"
     }
   ]
 }
