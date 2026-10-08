@@ -149,3 +149,30 @@ after 2014, and the petrol and diesel split of new sales by segment.
    agriculture with their indices.
 4. Whether History replaces the Source selection sheet as the place where the
    historical choice is made.
+
+## Diesel used by trucks: what the sources say, checked 8 October
+
+No source measures diesel used by trucks. Three were checked for the nearest
+thing; the documents are kept in `external/data/raw/literature/` and
+`external/data/raw/statssa/`.
+
+| Source | What it gives | Figure |
+|---|---|---|
+| Stats SA, Transport and storage industry 2023 (Report 71-02-01), Table 20 | Fuel bought by road freight transport enterprises | R41,640 million (2019) and R71,468 million (2023, preliminary) |
+| Merven, Hartley and Ahjum (2019), Road freight and energy in South Africa, SA-TIED WP60, p.10 | Land freight's share of domestic diesel demand, 2012 | 60.5% (and 33% of petrol) |
+| Stone et al. (2018), vehicle parameters already held | Vehicles x distance x fuel use by class, 2010 fleet | Trucks 4.84, light commercial 2.16, cars 0.70, buses and taxis 0.29 bn litres; road diesel 7.99 |
+| National GHG inventory 2000-2022 (DFFE, 2024), p.578 | Road transport as one total | Split by cars, light-duty trucks and heavy-duty trucks is marked "NE" (not estimated) |
+
+Stats SA's rand figures divided by the average inland wholesale diesel price
+over each survey's reference year (R14.58 and R22.66 a litre) give about
+**2.9 bn litres in 2019 and 3.2 bn litres in 2023**. This is the only figure
+based on what operators report. It covers enterprises whose business is road
+freight, so it leaves out trucks run by retailers, mines, farms and
+manufacturers for their own goods; it may include some petrol and lubricants;
+and operators buying in bulk pay less than the list price, which would raise
+the litres. It is a floor for truck diesel, not the total.
+
+The two modelled figures agree with each other (they come from the same
+research group) and sit above the Stats SA floor, as they should: about 4.8 bn
+litres for all trucks in 2010 against about 2.9 bn for hire-and-reward
+operators in 2019.
