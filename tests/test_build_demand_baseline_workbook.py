@@ -164,3 +164,18 @@ def test_power_case_totals_follow_the_three_stories():
     assert cases["high"][2030] == pytest.approx(4223.5, abs=1)                # value shown by the recalculated workbook
     assert cases["medium"][2030] == pytest.approx(637.0, abs=0.5)
     assert cases["low"][2035] == pytest.approx(20.3, abs=0.1)
+
+
+def test_every_row_on_the_added_sheets_names_a_source():
+    wb = load_workbook(ROOT / build.OUT)
+    for name in ("History", "Sector history", "Diesel by use", "Power fleet", "Vehicle history"):
+        ws = wb[name]
+        head = next(r for r in ws.iter_rows(min_row=1, max_row=8) if "Source" in [c.value for c in r])
+        at = [c.value for c in head].index("Source")
+        missing = [r[0].value for r in ws.iter_rows(min_row=head[0].row + 1)
+                   if r[0].value and r[2].value and r[2].value != "Note" and not r[at].value]
+        assert missing == [], (name, missing[:5])
+    history = _rows(wb["History"])
+    assert "Commodity-Flow-and-Energy-Balance" in history["Production reported, diesel"][at].value
+    assert history["Refinery output reported to JODI, diesel"][2].value == "Comparison only"
+    assert "Production used, diesel" not in history

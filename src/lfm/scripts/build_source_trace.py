@@ -172,11 +172,11 @@ TRACE: dict[str, tuple[str, ...]] = {
         "JODI oil database (South Africa's submissions)", "https://www.jodidata.org/oil/database/data-downloads.aspx",
         "jodi-secondary-zaf-2017-2022.csv; jodi-secondary-zaf-2023-2025.csv",
         "on manish-branch (external/data/raw/jodi/)", "scripted download and extract",
-        "python -m lfm.scripts.stage_jodi --vintage 2026", "jodi.annual", "petrol and diesel balance; workshop workbook",
+        "python -m lfm.scripts.stage_jodi --vintage 2026", "jodi.annual", "comparison rows only",
         "2025: no month reported",
         "Lowest JODI assessment code throughout. Diesel refinery output agrees with the energy balance within 4% "
         "for 2017-2021; petrol is 12-24% higher. Imports, demand and stocks are not usable.",
-        "Nigel: accept refinery output as the production record for 2022-2024"),
+        "Not used (8 October)"),
     "reference/refinery_output_operators.csv": (
         "Sasol (production and sales metrics); Glencore (annual reports)", "https://www.sasol.com/",
         "sasol-metrics-fy2022/2025/2026.pdf, p.4; GLEN-2023/2024/2025-Annual-Report.pdf",

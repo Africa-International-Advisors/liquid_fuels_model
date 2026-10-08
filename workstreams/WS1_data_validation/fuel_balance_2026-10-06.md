@@ -6,10 +6,11 @@ after Nigel's branch review (`manish_branch_review_2026-10-06.md`, findings 1
 and 2): the table is rebuilt on customs trade, and the residual is described
 as a balancing requirement, not as production.
 
-**Updated 8 October:** reported production now runs to 2024 from JODI refinery
-output, and the statement below that JODI is not usable is corrected for that
-one line. See `dr01_national_balance_2026-10-08.md`. The tables in this note
-are unchanged.
+**Updated 8 October:** FIASA and JODI are no longer used for any figure. Sales
+are the department's (to 2023), trade is customs (from 2014) and production is
+the department's energy balance (to 2021). See
+`dr01_national_balance_2026-10-08.md`, which replaces the tables in this note;
+they still show FIASA's 2024 sales and are kept only as a record.
 
 Status: **partial.** Sales, imports and exports are matched by product and
 calendar year. Production after 2021, stock changes and what the sales series

@@ -345,76 +345,76 @@ files:
   sha256: b37099ea8311eebebc4c353dfb40b9e0decf10fb7977fa6a0c7c3c6e7a8547b1
 - kind: energy_balance
   year: 2007
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2007-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2007-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 71f31cda65b2cc7dea0540bfd68f4269f2dafcec26a1a5c1e1e8e808a1ef3886
 - kind: energy_balance
   year: 2008
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2008-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2008-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: f164b240730aa6038cf89d78154842f5de586d99c6c842899f876e04c6eed139
 - kind: energy_balance
   year: 2009
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2009-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2009-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 7a6fcc46e38e9e341aa11d91b0adac0d50977fe4f4db1bfd20cb47523e0625da
 - kind: energy_balance
   year: 2010
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2010-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2010-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: a4959ca0c06e140b37c66bd4c145ba2cf39deb4a021f8525c4dabf067d724804
 - kind: energy_balance
   year: 2011
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2011-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2011-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 6adca2b21fb8d24238c14bac32de32d0989c67c655331ab018b0133aad9855a8
 - kind: energy_balance
   year: 2012
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2012-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2012-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: a529d1421783f3a1a7af1c425af18f85d70a1eb4dc6e5edbcde925376ec83c1e
 - kind: energy_balance
   year: 2013
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2013-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2013-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: cfe126accb36fc07c2aad29be47957bd5cb5deffbad87466e79059ec9444a056
 - kind: energy_balance
   year: 2014
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2014-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2014-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 6f7d8ac87e4de709c231d62681cf9cddfe3c95a29146ff7d634df49ca0608190
 - kind: energy_balance
   year: 2015
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2015-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2015-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 2ee38d6ba316f14461d5eaf34a48ba214a7181ded88ee4ae300000f5f6ca8941
 - kind: energy_balance
   year: 2016
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2016-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2016-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: a856b8dd7fddc3818af922952606c471cf306da4c1a283c8742ffebe5f56d1c2
 - kind: energy_balance
   year: 2017
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2017-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2017-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 4ca3b11b875fea83ae3d0ba84ebd1555839c2fde6cd3bd6ef06fdb435479e3d7
 - kind: energy_balance
   year: 2018
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2018-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2018-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 311c192615cdb838fad66c7baaf271684f485fdd76a77f94f095915196fdccd9
 - kind: energy_balance
   year: 2019
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2019-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2019-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 4096f1e63e0aefa47ebe1d1035b66d50a684a9d7592353986456af214e9b62fc
 - kind: energy_balance
   year: 2020
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2020-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2020-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 9df995f06d0d448c8b87cf7ea55bf56e715e5d222b163d0dbd160d78c57704c5
 - kind: energy_balance
   year: 2021
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2021-Commodity-Flow-and-Energy-Balance.xlsm
   file: 2021-Commodity-Flow-and-Energy-Balance.xlsm
   sha256: c88f209e1082e84b5cf7340765ca51a50fb05e005e21b5fb76675ae3e7284609

@@ -99,36 +99,35 @@ def test_committed_balance_matches_the_registered_inputs_and_the_customs_extract
             assert abs(float(row["sales_less_net_imports"]) - residual) <= 2
 
 
-def test_production_is_the_energy_balance_while_published_and_jodi_after():
+def test_production_is_the_energy_balance_only_and_jodi_is_never_selected():
     inputs = _inputs([_sars("2013", "import", "41"), _sars("2013", "export", "11"),
                       _sars("2014", "import", "50"), _sars("2014", "export", "13")])
+    inputs["energy_balance_department"].append(
+        {"period": "2014", "flow_key": "production", "product": "diesel", "value": "75", "source_file": "2014-balance.xlsx"})
 
     def jodi(period, flow, value, months="12"):
         return {"period": period, "flow": flow, "product": "diesel", "value": value, "months_reported": months}
-    inputs["oil_balance_jodi"] = [jodi("2013", "refinery_output", "70"), jodi("2014", "refinery_output", "80"),
-                                  jodi("2014", "stock_change", "3"), jodi("2015", "refinery_output", "90", "7")]
+    inputs["oil_balance_jodi"] = [jodi("2014", "refinery_output", "80"), jodi("2015", "refinery_output", "90")]
     rows = bfb.build(inputs)
-    first, second, part = _row(rows, 2013), _row(rows, 2014), _row(rows, 2015)
-    assert (first["production_used"], first["production_used_source"]) == (65, "energy balance")
-    assert first["production_jodi"] == 70                       # kept alongside, not selected
-    assert (second["production_used"], second["production_used_source"]) == (80, "JODI")
-    assert second["supply_less_sales"] == 80 + (50 - 13) - 110
-    assert second["stock_change_jodi"] == 3
-    assert part["production_jodi"] == "" and part["production_used"] == ""   # seven months is not a year
+    with_balance, without = _row(rows, 2014), _row(rows, 2015)
+    assert (with_balance["production_used"], with_balance["production_used_source"]) == (75, "energy balance")
+    assert "2014-balance.xlsx" in with_balance["production_used_source_ref"]
+    assert with_balance["production_jodi"] == 80                 # shown alongside, not selected
+    assert with_balance["supply_less_sales"] == 75 + (50 - 13) - 110
+    assert (without["production_jodi"], without["production_used"], without["supply_less_sales"]) == (90, "", "")
 
 
-def test_committed_balance_carries_reported_production_to_2024_and_never_a_residual():
+def test_every_selected_figure_in_the_committed_balance_names_its_source():
     with BALANCE.open(encoding="utf-8", newline="") as fh:
-        rows = {(r["product"], int(r["period"])): r for r in csv.DictReader(fh)}
-    for product in ("petrol", "diesel"):
-        assert rows[(product, 2021)]["production_used_source"] == "energy balance"
-        assert rows[(product, 2024)]["sales_used"] == "" and rows[(product, 2024)]["supply_less_sales"] == ""
-        assert not any(r["sales_used_source"] == "FIASA" or r["trade_used_source"] == "FIASA" for r in rows.values())
-        for year in (2022, 2023, 2024):
-            assert rows[(product, year)]["production_used_source"] == "JODI"
-            assert rows[(product, year)]["production_used"] == rows[(product, year)]["production_jodi"]
-        assert rows[(product, 2025)]["production_used"] == ""
-    # JODI diesel output agrees with the last five energy balances, which is why it is proposed
-    for year in range(2017, 2022):
-        row = rows[("diesel", year)]
-        assert abs(float(row["production_jodi"]) / float(row["production_energy_balance"]) - 1) < 0.04
+        rows = list(csv.DictReader(fh))
+    for row in rows:
+        for value, source in (("sales_used", "sales_used"), ("imports_used", "trade_used"), ("production_used", "production_used")):
+            named = row[f"{source}_source"] != "" and row[f"{source}_source_ref"] != ""
+            assert named == (row[value] != ""), (row["period"], row["product"], value)
+        assert row["sales_used_source"] in ("", "department")
+        assert row["trade_used_source"] in ("", "SARS customs")
+        assert row["production_used_source"] in ("", "energy balance")
+        if int(row["period"]) > 2021:
+            assert row["production_used"] == "" and row["supply_less_sales"] == ""
+        if row["production_used"]:
+            assert f"{row['period']}-Commodity-Flow-and-Energy-Balance" in row["production_used_source_ref"]

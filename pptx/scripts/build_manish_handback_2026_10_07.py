@@ -270,28 +270,26 @@ text(s, "In the other years from 2014, customs and FIASA differ by 0.2 bn litres
         "the balance note. Before 2014 customs is in kilograms or mixed units, so no trade figure is selected.",
      LEFT, 6.2, WIDTH, 0.6, 11)
 
-s = page(0, "Reported production now runs to 2024; stock change is still missing",
-         "Production and stocks | sales less net imports against reported production | billion litres")
+s = page(0, "Production is published to 2021 and sales to 2023; stocks are not published",
+         "Production and stocks | sales less net imports against production in the energy balance | billion litres")
 years = list(range(2014, 2025))
 for i, product in enumerate(("petrol", "diesel")):
     line_chart(s, f"{product.capitalize()}, billion litres", years, [
         ("Sales less net imports", [bn(product, y, "sales_less_net_imports") for y in years], BLUE, False),
-        ("Reported production",
+        ("Production, energy balance (to 2021)",
          [bn(product, y, "production_used") for y in years], GREY_LINE, True),
     ], LEFT + i * 3.55, 2.2, 3.5, 3.75)
 table(s, [
     ["Line", "What exists", "Limit"],
-    ["Production to 2021", "Department energy balances", "None published after 2021"],
-    ["Production 2022-2024",
-     "Refinery output South Africa reports to the JODI oil database. Diesel is within 4% of the energy balance "
-     "in 2017-2021.",
-     "Lowest JODI reliability code; petrol is 12-24% above the energy balance; decision D23"],
-    ["Stock change", "JODI reports one", "Does not agree with its own closing stock; not used"],
-    ["Sales after 2023", "None from the department", "FIASA is not used; 2024 and 2025 are blank"],
+    ["Production", "Department energy balances, 2007-2021; fifteen files, downloaded again and matched",
+     "None published after 2021; 2022 on is blank"],
+    ["Sales", "Department national sales, to 2023", "2024 and 2025 are blank"],
+    ["Imports, exports", "SARS customs, 2014-2025", "In kilograms before 2014"],
+    ["Stock change", "None", "No series is published"],
+    ["Not used", "FIASA and JODI", "Kept as comparison rows only"],
 ], [1.3, 1.8, 1.3], x=LEFT + 7.2, y=2.22, height=3.7, size=9.5)
-text(s, f"Diesel: production plus net imports is {bn('diesel', 2021, 'supply_less_sales'):.1f}, "
-        f"{bn('diesel', 2022, 'supply_less_sales'):.1f} and {bn('diesel', 2023, 'supply_less_sales'):.1f} bn litres above "
-        "recorded sales in 2021 to 2023. A hypothesis to test; it is not added to demand.",
+text(s, "Matched years are 2014 to 2021. Supply and recorded sales agree within 0.9 bn litres except diesel in "
+        f"2021, where supply is {bn('diesel', 2021, 'supply_less_sales'):.1f} bn litres higher. Not added to demand.",
      LEFT, 6.2, WIDTH, 0.6, 11, True, BLUE)
 
 # --- 2 Forecast levers -------------------------------------------------------

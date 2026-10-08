@@ -338,8 +338,8 @@ oil_balance_jodi:
   csv: timeseries/oil_balance_jodi.csv
   units: litres
   source: JODI oil database, secondary products; South Africa's monthly submissions totalled by calendar year.
-    Every entry carries JODI's lowest assessment code. Refinery output is the only flow proposed for use;
-    provenance and limits in timeseries/oil_balance_jodi.sources.yaml
+    Every entry carries JODI's lowest assessment code. Comparison only; not used for any selected figure.
+    Provenance and limits in timeseries/oil_balance_jodi.sources.yaml
   last_updated: '2026-10-08'
   shared: true
 refinery_output_operators:

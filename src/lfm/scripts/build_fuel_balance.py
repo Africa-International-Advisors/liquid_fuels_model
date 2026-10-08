@@ -12,17 +12,18 @@ Inputs (all under ``assumptions/<vintage>/timeseries/``):
     fuel_trade_fiasa.csv               FIASA annual report trade, latest edition per year
     fuel_trade_department_review.csv   department trade report, rounded narrative figures
     energy_balance_department.csv      department energy balances
-    oil_balance_jodi.csv               South Africa's JODI submissions, complete years only
+    oil_balance_jodi.csv               South Africa's JODI submissions; comparison columns only
 
 Selection:
     Sales   department where all four quarters are reported; otherwise blank.
     Trade   SARS customs from ``SARS_PRIMARY_FROM`` where the year is complete and
             in litres; otherwise blank.
-    FIASA is never selected, not even where the department or customs has no
-    figure. It and every other source stay in their own columns for comparison.
 
-    Production  department energy balance to 2021, the last one published;
-            JODI refinery output after that, where all twelve months are reported.
+    Production  department energy balance, which ends at 2021; otherwise blank.
+    FIASA and JODI are never selected. Each stays in its own columns for comparison.
+
+Every selected figure carries its source: the ``*_used_source`` column names
+the publisher and the ``*_used_source_ref`` column the file and address.
 
 ``sales_less_net_imports`` is sales minus (imports minus exports). It is the
 volume that domestic production, stock changes and differences in what "sales"
@@ -51,6 +52,11 @@ SARS_PRIMARY_FROM = 2014
 DEFAULT_OUT = "workstreams/WS1_data_validation/fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv"
 RESIDUAL_BASIS = "sales less net imports; production, stocks and coverage unresolved"
 SUPPLY_BASIS = "reported production plus net imports less sales; stock change and statistical difference together"
+DEPARTMENT_FILES = "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/"
+SALES_REF = "Department of Mineral and Petroleum Resources, national fuel sales volumes: {file} (" + DEPARTMENT_FILES + "media_SAVolumes.html)"
+TRADE_REF = ("SARS trade statistics portal, petrol and diesel tariff lines, calendar year in litres "
+             "(https://tools.sars.gov.za/tradestatsportal/data_download.aspx)")
+PRODUCTION_REF = "Department of Mineral and Petroleum Resources, energy balance: {file} (" + DEPARTMENT_FILES + "explained/{file})"
 
 FIELDS = [
     "period", "country", "product",
@@ -60,11 +66,13 @@ FIELDS = [
     "imports_trade_report", "exports_trade_report",
     "imports_energy_balance", "exports_energy_balance", "production_energy_balance",
     "final_consumption_energy_balance", "statistical_difference_energy_balance",
-    "sales_used", "sales_used_source", "imports_used", "exports_used", "trade_used_source",
+    "sales_used", "sales_used_source", "sales_used_source_ref",
+    "imports_used", "exports_used", "trade_used_source", "trade_used_source_ref",
     "net_imports_used", "sales_less_net_imports", "sales_less_net_imports_basis",
     "sales_less_net_imports_minus_energy_balance_production",
     "production_jodi", "stock_change_jodi", "closing_stock_jodi", "imports_jodi", "exports_jodi", "demand_jodi",
-    "production_used", "production_used_source", "supply_less_sales", "supply_less_sales_basis", "unit",
+    "production_used", "production_used_source", "production_used_source_ref",
+    "supply_less_sales", "supply_less_sales_basis", "unit",
 ]
 JODI_COLUMNS = {"refinery_output": "production_jodi", "stock_change": "stock_change_jodi",
                 "closing_stock": "closing_stock_jodi", "imports": "imports_jodi", "exports": "exports_jodi",
@@ -102,6 +110,9 @@ def build(inputs: dict[str, list[dict]]) -> list[dict]:
     """Balance rows from the input tables, keyed by file stem."""
     department = {(r["period"], r["product"]): float(r["value"])
                   for r in inputs["fuel_sales_department"] if int(r["quarters_reported"]) == 4}
+    sales_file = {(r["period"], r["product"]): r.get("source_file", "") for r in inputs["fuel_sales_department"]}
+    balance_file = {(r["period"], r["product"]): r.get("source_file", "")
+                    for r in inputs["energy_balance_department"] if r["flow_key"] == "production"}
     fiasa_sales = _latest_edition(inputs["fuel_sales_fiasa"], ("period", "product"))
     fiasa_trade = _latest_edition(inputs["fuel_trade_fiasa"], ("period", "flow", "product"))
     sars = sars_annual(inputs["fuel_trade_sars"])
@@ -137,10 +148,11 @@ def build(inputs: dict[str, list[dict]]) -> list[dict]:
 
             if row["sales_department"] != "":
                 row["sales_used"], row["sales_used_source"] = row["sales_department"], "department"
+                row["sales_used_source_ref"] = SALES_REF.format(file=sales_file[(y, product)])
 
             if year >= SARS_PRIMARY_FROM and row["imports_sars"] != "" and row["exports_sars"] != "":
                 row["imports_used"], row["exports_used"] = row["imports_sars"], row["exports_sars"]
-                row["trade_used_source"] = "SARS customs"
+                row["trade_used_source"], row["trade_used_source_ref"] = "SARS customs", TRADE_REF
                 row["net_imports_used"] = row["imports_used"] - row["exports_used"]
 
             if row["sales_used"] != "" and row["net_imports_used"] != "":
@@ -152,8 +164,7 @@ def build(inputs: dict[str, list[dict]]) -> list[dict]:
 
             if row["production_energy_balance"] != "":
                 row["production_used"], row["production_used_source"] = row["production_energy_balance"], "energy balance"
-            elif row["production_jodi"] != "":
-                row["production_used"], row["production_used_source"] = row["production_jodi"], "JODI"
+                row["production_used_source_ref"] = PRODUCTION_REF.format(file=balance_file[(y, product)])
             if row["production_used"] != "" and row["sales_less_net_imports"] != "":
                 row["supply_less_sales"] = row["production_used"] - row["sales_less_net_imports"]
                 row["supply_less_sales_basis"] = SUPPLY_BASIS

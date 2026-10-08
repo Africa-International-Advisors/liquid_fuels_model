@@ -57,10 +57,11 @@ defined separately. The 6 October deck was corrected to match and moved to
 - FIASA is no longer selected for any figure. Sales are the department's and stop at 2023; trade is customs
   from 2014. 2024 and 2025 sales are blank, and so are the 2024 provincial estimates. FIASA stays as
   comparison rows only.
-- Reported production now runs to 2024, from South Africa's submissions to the JODI oil database. For diesel
-  it agrees with the energy balance within 4% in 2017-2021. Decision D23.
-- Diesel supply (production plus net imports) is 1.2, 2.5 and 4.3 bn litres above recorded sales in 2021,
-  2022 and 2023. Still a hypothesis; stock change is not available.
+- Production is the department's energy balance only, which ends at 2021. JODI is not used; it is a comparison
+  row only. All fifteen energy balance files were downloaded again and match the copies held. Decision D23.
+- The matched years are 2014 to 2021. Supply and recorded sales agree within 0.9 bn litres except diesel in
+  2021 (supply 1.2 bn litres higher). Stock change is not available.
+- Every selected figure in the balance file, and every row on the added workbook sheets, names its source.
 - Detail: `workstreams/WS1_data_validation/dr01_national_balance_2026-10-08.md` and its evidence table.
 
 ## Power generation fleet (your message of 7 October)

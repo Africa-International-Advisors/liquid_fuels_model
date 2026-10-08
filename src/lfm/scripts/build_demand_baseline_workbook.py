@@ -159,6 +159,15 @@ def load(ts: Path, ref: Path) -> dict:
 
 
 # --- sheet writer -------------------------------------------------------------
+# Rows that are worked out in the workbook have no publisher; they still say where the number comes from.
+DEFAULT_SOURCE = {
+    "Reporting formula": "Calculated in this workbook from the rows named in the definition",
+    "Proposed estimate": "Analyst estimate, calculated in this workbook; method in the definition",
+    "Scenario": "Analyst scenario setting; no published source",
+    "Assumption": "Analyst assumption; no published source",
+}
+
+
 class Sheet:
     def __init__(self, wb, title: str, heading: str, sub: str, years: list[int] | None = None):
         self.ws = wb.create_sheet(title)
@@ -195,7 +204,7 @@ class Sheet:
                 cells.append(formula(year))
             else:
                 cells.append((values or {}).get(year))
-        cells += [status, source, action]
+        cells += [status, source or DEFAULT_SOURCE.get(role, "Described in the definition"), action]
         for i, value in enumerate(cells, start=1):
             cell = self.ws.cell(row=self.row, column=i, value=value)
             cell.font = Font(name="Arial", size=10, color=INK)
@@ -283,26 +292,21 @@ def history_sheet(wb, d: dict) -> dict:
 
     s.section("3. Refinery production")
     for product in ("petrol", "diesel"):
-        official = s.line(
-            f"Production reported, {product}", ML, "Source observation",
-            "National production line of the department's energy balance.",
-            {y: d["balance"].get(("production", product, y)) for y in YEARS},
-            status="2012-2021; no balance published after 2021", source="Department energy balances")
-        agreement = ("Within 4% of the energy balance in 2017-2021" if product == "diesel" else
-                     "12-24% above the energy balance in 2017-2021; cause not established")
-        reported = s.line(
-            f"Refinery output reported to JODI, {product}", ML, "Source observation",
-            "South Africa's monthly submissions to the JODI oil database, added over the calendar year.",
-            {y: d["jodi_output"].get((product, y)) for y in YEARS},
-            status=f"2017-2024. {agreement}", source="JODI oil database; lowest assessment code",
-            action="Nigel: accept as the production record for 2022-2024")
         rows[f"production_{product}"] = s.line(
-            f"Production used, {product}", ML, "Reporting formula",
-            "Energy balance while published (to 2021); JODI refinery output after that.",
-            formula=lambda y, a=official, b=reported:
-            f'=IF(ISNUMBER({col(y)}{a}),{col(y)}{a},IF(ISNUMBER({col(y)}{b}),{col(y)}{b},""))', kind="formula",
-            status="Energy balance to 2021; JODI 2022-2024" + ("" if product == "diesel" else
-                                                                "; level break at 2022 for petrol"))
+            f"Production reported, {product}", ML, "Source observation",
+            "National production line of the department's energy balance for that year.",
+            {y: d["balance"].get(("production", product, y)) for y in YEARS},
+            status="2012-2021; no balance published after 2021",
+            source="Department of Mineral and Petroleum Resources, <year>-Commodity-Flow-and-Energy-Balance.xlsx "
+                   "(2021: .xlsm); dmpr.gov.za/Portals/0/Energy_Website/files/media/Energy_Balances.html",
+            action="2022 onward: add when the department publishes a balance")
+        agreement = ("within 4% of the energy balance in 2017-2021" if product == "diesel" else
+                     "12-24% above the energy balance in 2017-2021")
+        s.line(f"Refinery output reported to JODI, {product}", ML, "Comparison only",
+               "South Africa's monthly submissions to the JODI oil database, added over the calendar year. Not used.",
+               {y: d["jodi_output"].get((product, y)) for y in YEARS}, kind="comparison",
+               status=f"Not used. 2017-2024; {agreement}",
+               source="JODI oil database, secondary products, annual files; jodidata.org; lowest assessment code")
     for plant, label in (("Secunda", "Secunda, all refined products"), ("Natref", "Natref, Sasol's 63.64% share"),
                          ("Astron Energy (Cape Town)", "Astron (Cape Town), all refined products")):
         sample = next(v for (p, _), v in d["operators"].items() if p == plant)
@@ -337,8 +341,8 @@ def history_sheet(wb, d: dict) -> dict:
         s.line(f"Unexplained after reported production, {product}", ML, "Reporting formula",
                "Sales less net imports less reported production: stock change plus anything the sources do not cover.",
                formula=both(slni, rows[f"production_{product}"], "{c}{a}-{c}{b}"), kind="formula",
-               status="To 2024. Negative means reported supply is above recorded sales",
-               action="No usable stock series: JODI's stock change does not agree with its own closing stock")
+               status="To 2021, the last energy balance. Negative means reported supply is above recorded sales",
+               action="No stock series is published")
 
     s.section("5. Independent count of litres: Road Accident Fund levy (new evidence, 7 October)")
     raf = s.line("Litres levied, petrol and diesel", ML, "Comparison only",
@@ -748,7 +752,7 @@ def _table(wb, title: str, heading: str, sub_heading: str, header: list[str], wi
 GAP_STATUS = [
     ("G01", "National fuel balance", "Narrowed",
      "Balance rebuilt on customs trade for 2014-2025; Road Accident Fund levy found as an independent count.",
-     "2024 sales source; no 2025 sales figure; production after 2021 rests on JODI alone; no usable stock series.", "History, sections 2-5"),
+     "No sales after 2023; no production after 2021 (the last energy balance); no stock series.", "History, sections 2-5"),
     ("G02", "Fleet and new sales", "Narrowed",
      "Registered vehicles by class 2021-2025, new sales 2017-2025 and apparent retirements lined up against the model.",
      "Stock by age and by fuel within each class is in no source held.", "Vehicle history"),
@@ -1092,7 +1096,7 @@ def sources_sheet(wb) -> None:
         "fuel_trade_fiasa": "History section 2: FIASA comparison rows",
         "fuel_sales_fiasa": "History section 4: FIASA comparison row",
         "energy_balance_department": "History section 3 and Sector history: production and diesel by sector",
-        "oil_balance_jodi": "History section 3: refinery output reported to JODI",
+        "oil_balance_jodi": "History section 3: refinery output reported to JODI (comparison only, not used)",
         "refinery_output_operators": "History section 3: operators' reported output",
         "fuel_levy_revenue_raf": "History section 5: litres levied",
         "activity_statssa_monthly": "Sector history: mining and manufacturing volume indices",

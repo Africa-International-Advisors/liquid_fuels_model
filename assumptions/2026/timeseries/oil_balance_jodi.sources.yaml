@@ -8,7 +8,7 @@ originals:
 - external/data/raw/jodi/jodi-secondary-zaf-2017-2022.csv
 - external/data/raw/jodi/jodi-secondary-zaf-2023-2025.csv
 command: python -m lfm.scripts.stage_jodi --vintage 2026
-status: reported by South Africa to JODI; not independently verified; not read by the engine
+status: comparison only; not used for any selected figure (instruction of 8 October 2026); not read by the engine
 method:
 - The originals hold South Africa's rows only; JODI's annual files cover every country (about 26 MB a year).
 - Only rows in JODI's KL unit (thousand kilolitres) are used. Nothing is converted from barrels or tonnes.
