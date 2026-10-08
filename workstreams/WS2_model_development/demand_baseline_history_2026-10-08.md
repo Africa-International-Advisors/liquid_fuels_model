@@ -278,20 +278,31 @@ the years to March 2023-2026, which is about 1.28, 1.59, 0.88 and 0.33 bn
 litres at 0.31 litres per kWh. The model has 3.58 bn litres for 2024 and 4.59
 (high) or 1.05 (low) for 2030 and 2035.
 
-**What it could burn.** Million litres a year:
+**Three cases.** Each is a coherent story, not only a load factor:
+
+| | Low | Medium | High |
+|---|---|---|---|
+| Avon and Dedisa after their agreements (October 2030, July 2031) | Stop | Continue | Continue |
+| Ankerlig and Gourikwa | Move to gas in 2028; 10% of output on diesel | Same | Gas does not arrive; stay on diesel |
+| Gas turbines at Camden, Grootvlei, Hendrina, Arnot and Kriel from 2030 | None | 3,000 MW, on gas, 10% of output on diesel | 6,000 MW, no gas, run as diesel peakers |
+| Load factor of the peakers | 3.6% (year to March 2026) | 9.4% (to March 2025) | 17.1% (to March 2024) |
+
+Million litres of diesel a year:
 
 | | 2022-2027 | 2028-2029 | 2030 | 2031-2035 |
 |---|---|---|---|---|
-| Low (3.6% load factor) | 301 | 118 | 86 | 20 |
-| Medium (9.4%) | 792 | 311 | 551 | 379 |
-| High (17.1%) | 1,435 | 564 | 1,060 | 749 |
-| Ceiling: everything on diesel all year | 8,389 | 8,389 | 13,996 | 12,177 |
+| Low | 301 | 118 | 86 | 20 |
+| Medium | 792 | 311 | 637 | 637 |
+| High | 1,435 | 1,435 | 4,224 | 4,224 |
+| Ceiling: four stations and 6 GW of gas turbines on diesel all year | 8,389 | 8,389 | 24,682 | 24,682 |
 
-Three things move the figures. In 2028 Ankerlig and Gourikwa move to gas
-with 10% of output still on diesel. Dedisa's agreement with Eskom ends in
-October 2030 and Avon's in July 2031, so each is shown to its last full year
-(2029 and 2030) and zero after. From 2030 the medium and high cases add gas
-plants at retired coal sites using diesel as backup.
+The high case is built on the five coal stations due to stop in 2030. It
+assumes the 6 GW of gas the national plan calls for is built at those sites,
+that gas does not reach them, and that they therefore run as diesel peakers.
+The precedent is Ankerlig and Gourikwa, which have run on diesel while a gas
+supply was still being sought in 2023. In that case the five sites burn about
+2.8 bn litres a year and today's four stations 1.4 bn. For comparison, the
+model's high scenario has 4.6 bn litres from 2030.
 
 **Coal retirements.** Komati (990 MW) is shown as shut from 2023. Camden,
 Grootvlei, Hendrina, Arnot and Kriel (9,474 MW together) hold exemptions to 31
@@ -309,9 +320,12 @@ past 2030 is possible. The sheet keeps the 31 March 2030 date.
 plants. The sheet uses the national gas requirement in IRP 2025 (about 6 GW by
 2030) as a stand-in: none, half or all of it at these sites.
 
-Three assumptions drive the result and have no source; each is a single cell
-on the sheet: 10% of output on diesel once gas is the main fuel; a 40% load
-factor for gas plants at repowered sites; and 0.31 litres per kWh.
+Assumptions that drive the result and have no source, each visible on the
+sheet: 10% of output on diesel when gas is available; a 40% load factor for a
+gas plant running on gas (medium case); 0.31 litres per kWh; that the gas
+turbines are sited at the five stations; and, in the high case, that gas does
+not arrive at all. The size of the high case rests almost entirely on the
+last two.
 
 Not included: private generators at firms and homes.
 

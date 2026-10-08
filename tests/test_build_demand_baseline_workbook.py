@@ -134,18 +134,20 @@ def test_lever_response_gap_status_jet_and_sources_are_in_the_workbook():
         assert sheet in used_for, sheet
 
 
-def test_power_fleet_lists_the_diesel_stations_and_keeps_scenarios_as_formulas():
-    sheet = load_workbook(ROOT / build.OUT)["Power fleet"]
-    rows = _rows(sheet)
-    first = build.FIRST - 1                                                  # 2022
+def test_power_fleet_lists_the_diesel_stations_and_builds_three_cases():
+    rows = _rows(load_workbook(ROOT / build.OUT)["Power fleet"])
+    first = build.FIRST - 1                                                  # 2022; +8 is 2030, +9 is 2031
     assert [rows[name][first].value for name in ("Ankerlig (Eskom)", "Gourikwa (Eskom)", "Avon (Independent producer)",
                                                  "Dedisa (Independent producer)")] == [1338, 746, 670, 335]
     assert rows["Acacia (Eskom)"][2].value == "Not counted"                  # kerosene, not diesel
-    dedisa, avon = rows["Dedisa (Independent producer)"], rows["Avon (Independent producer)"]
-    assert (dedisa[first + 7].value, dedisa[first + 8].value) == (335, 0)    # agreement ends October 2030
-    assert (avon[first + 8].value, avon[first + 9].value) == (670, 0)        # agreement ends July 2031
-    assert rows["Camden"][first + 7].value == 1561 and rows["Camden"][first + 8].value == 0     # 2029, then 2030
-    assert rows["Gas capacity at repowered sites, high"][first + 8].value == build.IRP_GAS_MW_2030
-    for label in ("Diesel stations, total", "Diesel at a high load factor", "Ceiling, all sites", "Total, medium"):
+    assert rows["Camden"][first + 7].value == 1561 and rows["Camden"][first + 8].value == 0
+    low, medium = rows["Avon and Dedisa available, low"], rows["Avon and Dedisa available, medium"]
+    assert [low[first + n].value for n in (7, 8, 9)] == [1005, 670, 0]       # Dedisa ends 2030, Avon 2031
+    assert [medium[first + n].value for n in (7, 8, 9, 13)] == [1005] * 4    # medium: both continue
+    assert [rows[f"Gas turbines at the five coal sites, {case}"][first + 8].value
+            for case in ("low", "medium", "high")] == [0, 3000, 6000]
+    assert rows["Share of Ankerlig and Gourikwa output on diesel, high"][first + 8].value == "=100"
+    assert "Camden, Grootvlei, Hendrina, Arnot and Kriel" in rows["High case"][4].value
+    for label in ("Diesel for power, low case", "Diesel for power, high case", "High case",
+                  "Ceiling: four stations and 6 GW of gas turbines on diesel all year"):
         assert str(rows[label][first + 8].value).startswith("="), label
-    assert rows["Share of output on diesel once gas is the main fuel"][2].value == "Assumption"
