@@ -1,0 +1,207 @@
+publisher: South African Revenue Service, trade statistics
+page: https://tools.sars.gov.za/tradestatsportal/data_download.aspx
+retrieved: '2026-10-06'
+selection:
+  chapter: '27'
+  tariff_lines:
+    petrol:
+    - '27101102'
+    - '27101202'
+    diesel:
+    - '27101130'
+    - '27101230'
+    - '27101930'
+    diesel_biodiesel_blend:
+    - '27102000'
+    jet:
+    - '27101107'
+    - '27101207'
+    - '27101907'
+    paraffin:
+    - '27101115'
+    - '27101126'
+    - '27101215'
+    - '27101226'
+    - '27101915'
+    - '27101926'
+    fuel_oil:
+    - '27101135'
+    - '27101235'
+    - '27101935'
+  countries: all
+  months: all
+units: as recorded by SARS; not converted
+years_with_fewer_than_12_months:
+- 2010
+- 2011
+- 2012
+- 2013
+- 2014
+- 2015
+- 2016
+- 2017
+- 2018
+- 2019
+- 2020
+- 2021
+- 2022
+- 2023
+- 2024
+- 2026
+years_with_quantities_not_in_litres:
+- 2010
+- 2011
+- 2012
+- 2013
+- 2014
+- 2015
+- 2016
+- 2017
+- 2018
+- 2019
+- 2020
+- 2021
+- 2022
+- 2023
+- 2024
+- 2025
+- 2026
+kept_in: external/data/raw/sars/
+files:
+- trade_type: Imports
+  year: 2010
+  file: sars-imports-chapter27-fuels-2010.xlsx
+  sha256: b02425ab416f01cedadda8554f7e98b111a04946925a954142d8e451b3138a84
+- trade_type: Imports
+  year: 2011
+  file: sars-imports-chapter27-fuels-2011.xlsx
+  sha256: 37518384acd37e3842eba07c0dd9b50da3c8592c89850a360b4f26c008efe29f
+- trade_type: Imports
+  year: 2012
+  file: sars-imports-chapter27-fuels-2012.xlsx
+  sha256: cbd40dffcd786b57f2c46205dfa76a12052a4a7200804749dbf22b28a272c45e
+- trade_type: Imports
+  year: 2013
+  file: sars-imports-chapter27-fuels-2013.xlsx
+  sha256: 7540c19f1f24a59ce8540cadc7ba627b4f0cdb191d9ee8b995f2fb3f00179e2b
+- trade_type: Imports
+  year: 2014
+  file: sars-imports-chapter27-fuels-2014.xlsx
+  sha256: f1e361af3c2127db8412c263374633256ecebc68247fe398f50f84a42d5a6267
+- trade_type: Imports
+  year: 2015
+  file: sars-imports-chapter27-fuels-2015.xlsx
+  sha256: a287d449f029549e6e953cc4929998051072e40c0b3c158eae68811310bc714c
+- trade_type: Imports
+  year: 2016
+  file: sars-imports-chapter27-fuels-2016.xlsx
+  sha256: 193580b8189add18834d832a90d953719134679fb66a7516086ce952205fcbf0
+- trade_type: Imports
+  year: 2017
+  file: sars-imports-chapter27-fuels-2017.xlsx
+  sha256: 43e00c15e80091bcda3e3bda6ad9b9707fba7420552fd951fb50b9ebbf5aec47
+- trade_type: Imports
+  year: 2018
+  file: sars-imports-chapter27-fuels-2018.xlsx
+  sha256: 7d68b0122282c9895bc2a7fdb4ec0088ef685e4ddb5ca0997d0cd1a598c7e4b3
+- trade_type: Imports
+  year: 2019
+  file: sars-imports-chapter27-fuels-2019.xlsx
+  sha256: cf577c563ceafa72ab34978843478237232fcea1969520ea9ff99ecbbbd5b31f
+- trade_type: Imports
+  year: 2020
+  file: sars-imports-chapter27-fuels-2020.xlsx
+  sha256: 4ef0bd86053e41b7719b7832932b2d8b7876b7f3675ffa0033429d7802ccf212
+- trade_type: Imports
+  year: 2021
+  file: sars-imports-chapter27-fuels-2021.xlsx
+  sha256: b7baaac76939b7a3a61779fbf5f03836c01aedd92927f1392062cf993ea656d2
+- trade_type: Imports
+  year: 2022
+  file: sars-imports-chapter27-fuels-2022.xlsx
+  sha256: 7c283b1f3f7cb3c7a5f0555ee8cca53b60a6aeae9d271899fff9776ccecb5354
+- trade_type: Imports
+  year: 2023
+  file: sars-imports-chapter27-fuels-2023.xlsx
+  sha256: c790c2b9affa0f63beedfc5187bbe3c40170c84afddcd97d60e91e302d8c15b9
+- trade_type: Imports
+  year: 2024
+  file: sars-imports-chapter27-fuels-2024.xlsx
+  sha256: bc2d90e629b46c11f79282e65900d12577e3a02bffb07e7c16225f4ef4cf7b4d
+- trade_type: Imports
+  year: 2025
+  file: sars-imports-chapter27-fuels-2025.xlsx
+  sha256: 48590b651132da9ad6a2028b7b5bbd930f16846a48b383833144bdb32be8bf70
+- trade_type: Imports
+  year: 2026
+  file: sars-imports-chapter27-fuels-2026.xlsx
+  sha256: d0323ff4c19295f8192d1f2d8aa434c0463d10c1706153b562fb72abfe012029
+- trade_type: Exports
+  year: 2010
+  file: sars-exports-chapter27-fuels-2010.xlsx
+  sha256: 74e55614d11e90d736f2c676e56488fdf99449d7a436c1a61fcf96ec8ccef283
+- trade_type: Exports
+  year: 2011
+  file: sars-exports-chapter27-fuels-2011.xlsx
+  sha256: 86419002f150c8bb9474bdfe8cf0a530ff5d8b367cf4710e7470b651003d09f7
+- trade_type: Exports
+  year: 2012
+  file: sars-exports-chapter27-fuels-2012.xlsx
+  sha256: 7920dc1b9bf2cc62ee542bef40506c3ccc249a5ec56ae0cf59af37a2df4ca298
+- trade_type: Exports
+  year: 2013
+  file: sars-exports-chapter27-fuels-2013.xlsx
+  sha256: 9798ac567e6877c31be26a32c7bbe2f8ba124eb9c87fd799f7a290cbdf341047
+- trade_type: Exports
+  year: 2014
+  file: sars-exports-chapter27-fuels-2014.xlsx
+  sha256: d7f9c61c9f7b75c04e9450662284c9ac8026979917a1b56aa763d9c5ba016e9e
+- trade_type: Exports
+  year: 2015
+  file: sars-exports-chapter27-fuels-2015.xlsx
+  sha256: 401d36d5dd91fc957c7090d3c52129ed2e4c7cea697190587b8ac8acd393d267
+- trade_type: Exports
+  year: 2016
+  file: sars-exports-chapter27-fuels-2016.xlsx
+  sha256: be51dfb98cc557006ce18e3f97f17f9c35561b0d0b1ae2afc6e68faa478f99a2
+- trade_type: Exports
+  year: 2017
+  file: sars-exports-chapter27-fuels-2017.xlsx
+  sha256: 9748e4a4bf086e632243e9a0444e572c6afc6485920478e056aedeef22872ed3
+- trade_type: Exports
+  year: 2018
+  file: sars-exports-chapter27-fuels-2018.xlsx
+  sha256: 06a5793ef4dc32f1ba0e88213abf4704180cb20bc90c772927a2f30ac6aeccf2
+- trade_type: Exports
+  year: 2019
+  file: sars-exports-chapter27-fuels-2019.xlsx
+  sha256: 72b8f5b7d5cee9488aa822591dfcb965715ad31ad03d71ada3abf4fb255f84df
+- trade_type: Exports
+  year: 2020
+  file: sars-exports-chapter27-fuels-2020.xlsx
+  sha256: e86460feb671fa5d97296d0afbe1d82f35b0e3dfd65cb50a7ab8832d253a1a4d
+- trade_type: Exports
+  year: 2021
+  file: sars-exports-chapter27-fuels-2021.xlsx
+  sha256: 0f338bb54e4a526908442a2672c75d2d27502dc979c881a2935f495ed76431a2
+- trade_type: Exports
+  year: 2022
+  file: sars-exports-chapter27-fuels-2022.xlsx
+  sha256: 94e4ab2dfb9a1463ef7531904ec60e376b95efb4ce6bf3a3511c800cdab64019
+- trade_type: Exports
+  year: 2023
+  file: sars-exports-chapter27-fuels-2023.xlsx
+  sha256: 3481dbfef57d59bddf6050abcf0d5c95b67703ce9fb298b78e58436caab6e7b2
+- trade_type: Exports
+  year: 2024
+  file: sars-exports-chapter27-fuels-2024.xlsx
+  sha256: 4fd737a9af7992bddced500a0d7bfb77ce6cac8e96b510921998fa537a64df66
+- trade_type: Exports
+  year: 2025
+  file: sars-exports-chapter27-fuels-2025.xlsx
+  sha256: 16bbdfb956c58d883ad3a8d975622440801407eb54e7891126d21034f5acdfb2
+- trade_type: Exports
+  year: 2026
+  file: sars-exports-chapter27-fuels-2026.xlsx
+  sha256: 219ae52c957805b1453ee2267446ff06870904da1186ad60fa0fdca3b886bf08
+warnings: []

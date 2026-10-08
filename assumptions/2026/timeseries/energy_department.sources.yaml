@@ -15,15 +15,6 @@ fuel_sales_by_province:
   - 2023
   first_year_with_province_rows: 2013
   provinces_differ_from_national_by_more_than_1pct:
-  - period: 2013
-    product: petrol
-    provinces_vs_national_pct: 2.6
-  - period: 2013
-    product: diesel
-    provinces_vs_national_pct: 2.1
-  - period: 2013
-    product: jet
-    provinces_vs_national_pct: 3.6
   - period: 2014
     product: petrol
     provinces_vs_national_pct: 1.3
@@ -93,7 +84,7 @@ fuel_sales_by_province:
     sha256: e35e025b5770c11d3235a04b9a5049b5986e996261df0ea0e4bff9cb491f1586
 fuel_prices:
   index_page: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/petroleum_arch.html
-  months: 2011-01 to 2024-04
+  months: 2011-01 to 2026-10
   full_years:
   - 2012
   - 2013
@@ -107,6 +98,8 @@ fuel_prices:
   - 2021
   - 2022
   - 2023
+  - 2024
+  - 2025
   prices_are: regulated prices in cents per litre; petrol retail, diesel wholesale
   files:
   - year: 2011
@@ -164,11 +157,86 @@ fuel_prices:
   - year: 2024
     url: (offline)
     file: fuel-price-history-2024.pdf
-    sha256: f0046b5de3714ab06e58eb6ea8452be1dce8b58f5dbaa6be1dc5418b64b564ea
+    sha256: b085671d18d24e437bfea7c9874793ffa77d7d2894d68cf04e43cde386d27808
+  - year: 2025
+    url: (offline)
+    file: fuel-price-history-2025.pdf
+    sha256: b5010b1995ed7fdc41caa2da47d78b3d363ce6113ce18f06678b0b8fc58f11dc
+  monthly_breakdown_page: https://www.dmpr.gov.za/Branches/Petroleum-Resources/Petrol-Price-Archive
+  monthly_breakdown_files:
+  - period: 2025-11
+    url: (offline)
+    file: price-breakdown-2025-11.pdf
+    sha256: 316fd2457036a80ba847fcc80af2219a1eb16eca5107942ae09d841684b15bb7
+  - period: 2025-12
+    url: (offline)
+    file: price-breakdown-2025-12.pdf
+    sha256: 3f8696d0da75544671a27afa117c9e9a83a4ca922d22fab05ab43afce0fa177a
+  - period: 2026-01
+    url: (offline)
+    file: price-breakdown-2026-01.pdf
+    sha256: 10e0b66e4803763b805c527124fc5e5c99771574270e0dc816a7783424f2eefa
+  - period: 2026-02
+    url: (offline)
+    file: price-breakdown-2026-02.pdf
+    sha256: f6f329e3c2c5a88ec1e032bfe8bade8e7fd4e6ce5a8c57a25996b8073b4a234f
+  cef_daily_sheets_page: https://cefgroup.co.za/daily-basic-fuel-price/
+  cef_daily_sheets:
+  - period: 2026-02
+    effective: '2026-02-04'
+    url: (offline)
+    file: cef-daily-2026-02-16.pdf
+    sha256: e1f5065d8365366f7050fba8ffb291a55ad603a2e19545d17f68f0212ba544d1
+  - period: 2026-03
+    effective: '2026-03-04'
+    url: (offline)
+    file: cef-daily-2026-03-16.pdf
+    sha256: f9fc4e413f2de95ec971eaf4a46f5b6583a3aea4ce69eceb0a8eb4c02a9fa265
+  - period: 2026-04
+    effective: '2026-04-01'
+    url: (offline)
+    file: cef-daily-2026-04-15.pdf
+    sha256: 5589188f0fa45f3b9e5cfee88e26a0b3084e11de3899a68e2824a1fc550d2845
+  - period: 2026-05
+    effective: '2026-05-06'
+    url: (offline)
+    file: cef-daily-2026-05-15.pdf
+    sha256: ac9d40f63414df4c002b3d6b7f3a8f88c5b75ffb6a1b247c4ae2eb302da021c8
+  - period: 2026-06
+    effective: '2026-06-03'
+    url: (offline)
+    file: cef-daily-2026-06-15.pdf
+    sha256: 299ebe8c16e8dc03f8afb0b96cc623d7da6bd8bbf0c2aa22d07c31b0390de1a2
+  - period: 2026-07
+    effective: '2026-07-01'
+    url: (offline)
+    file: cef-daily-2026-07-15.pdf
+    sha256: 6b230b571f53028bd0bc738f5d9ff90919eccca8eac96f213c6bafd627395bdb
+  - period: 2026-08
+    effective: '2026-08-05'
+    url: (offline)
+    file: cef-daily-2026-08-14.pdf
+    sha256: 8daeb8219d17ba88f6ba16c5fa77d910f52e1f9bc453f8eb0554fdb670471cf3
+  - period: 2026-09
+    effective: '2026-09-02'
+    url: (offline)
+    file: cef-daily-2026-09-15.pdf
+    sha256: 2960f730fdc1af799d7c53135edc2b9c2e8416945ea4f40aff1e20761f7d8c6e
+  - period: 2026-10
+    effective: '2026-10-07'
+    url: (offline)
+    file: cef-daily-2026-10-05.pdf
+    sha256: 2f617bef6381033a2b4225010af9c116f22c71759297582c32f9f039675d3ed6
+  series_with_no_value_in_latest_months:
+    diesel_005_coast_wholesale: not published from 2025-12 (latest month in the file
+      is 2026-10)
+    paraffin_coast: not published from 2026-03 (latest month in the file is 2026-10)
+    petrol_95_coast_retail: not published from 2026-03 (latest month in the file is
+      2026-10)
 index_pages:
 - https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/media_SAVolumes.html
 - https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/Energy_Balances.html
-retrieved: '2026-10-05'
+retrieved: '2026-10-06'
 fuel_sales:
   latest_full_year: 2023
   part_years_left_out_of_annual_file: []
@@ -176,6 +244,8 @@ energy_balance:
   latest_year: 2021
   source_unit: kilolitres (converted to litres)
 warnings:
+- 'fuel sales 2013: sheets of 2013-Annual-FSV-at-National-Level-07-February-2014.xlsx
+  disagree; used ''2013 Annual Aggregated FSV data'', not [''Sheet4'', ''Sheet1'']'
 - 'fuel prices 2011: month 9: 6 prices found, expected 7'
 files:
 - kind: fuel_sales
@@ -275,76 +345,76 @@ files:
   sha256: b37099ea8311eebebc4c353dfb40b9e0decf10fb7977fa6a0c7c3c6e7a8547b1
 - kind: energy_balance
   year: 2007
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2007-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2007-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 71f31cda65b2cc7dea0540bfd68f4269f2dafcec26a1a5c1e1e8e808a1ef3886
 - kind: energy_balance
   year: 2008
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2008-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2008-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: f164b240730aa6038cf89d78154842f5de586d99c6c842899f876e04c6eed139
 - kind: energy_balance
   year: 2009
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2009-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2009-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 7a6fcc46e38e9e341aa11d91b0adac0d50977fe4f4db1bfd20cb47523e0625da
 - kind: energy_balance
   year: 2010
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2010-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2010-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: a4959ca0c06e140b37c66bd4c145ba2cf39deb4a021f8525c4dabf067d724804
 - kind: energy_balance
   year: 2011
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2011-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2011-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 6adca2b21fb8d24238c14bac32de32d0989c67c655331ab018b0133aad9855a8
 - kind: energy_balance
   year: 2012
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2012-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2012-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: a529d1421783f3a1a7af1c425af18f85d70a1eb4dc6e5edbcde925376ec83c1e
 - kind: energy_balance
   year: 2013
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2013-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2013-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: cfe126accb36fc07c2aad29be47957bd5cb5deffbad87466e79059ec9444a056
 - kind: energy_balance
   year: 2014
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2014-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2014-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 6f7d8ac87e4de709c231d62681cf9cddfe3c95a29146ff7d634df49ca0608190
 - kind: energy_balance
   year: 2015
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2015-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2015-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 2ee38d6ba316f14461d5eaf34a48ba214a7181ded88ee4ae300000f5f6ca8941
 - kind: energy_balance
   year: 2016
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2016-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2016-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: a856b8dd7fddc3818af922952606c471cf306da4c1a283c8742ffebe5f56d1c2
 - kind: energy_balance
   year: 2017
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2017-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2017-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 4ca3b11b875fea83ae3d0ba84ebd1555839c2fde6cd3bd6ef06fdb435479e3d7
 - kind: energy_balance
   year: 2018
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2018-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2018-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 311c192615cdb838fad66c7baaf271684f485fdd76a77f94f095915196fdccd9
 - kind: energy_balance
   year: 2019
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2019-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2019-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 4096f1e63e0aefa47ebe1d1035b66d50a684a9d7592353986456af214e9b62fc
 - kind: energy_balance
   year: 2020
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2020-Commodity-Flow-and-Energy-Balance.xlsx
   file: 2020-Commodity-Flow-and-Energy-Balance.xlsx
   sha256: 9df995f06d0d448c8b87cf7ea55bf56e715e5d222b163d0dbd160d78c57704c5
 - kind: energy_balance
   year: 2021
-  url: (offline)
+  url: https://www.dmpr.gov.za/Portals/0/Energy_Website/files/media/explained/2021-Commodity-Flow-and-Energy-Balance.xlsm
   file: 2021-Commodity-Flow-and-Energy-Balance.xlsm
   sha256: c88f209e1082e84b5cf7340765ca51a50fb05e005e21b5fb76675ae3e7284609

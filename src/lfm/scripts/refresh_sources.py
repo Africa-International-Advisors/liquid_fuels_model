@@ -11,6 +11,8 @@ end and the exit code is non-zero.
     fetch_naamsa.py        hybrid and electric sales; new vehicle market and outlook
     fetch_economy.py       GDP, GDP per capita, population; Treasury growth forecast
     fetch_acsa.py          air passengers and aircraft movements
+    fetch_sars.py          customs imports and exports of refined fuels
+    fetch_statssa_monthly.py  mining, manufacturing, land transport and CPI (files placed by hand)
 
 After fetching, department and FIASA sales are compared year by year and
 any difference above 1% is printed. Both are kept; neither is altered.
@@ -35,6 +37,7 @@ from lfm.config import Paths
 FETCHERS = (
     "fetch_energy_dept.py", "fetch_fuel_sales.py", "fetch_eskom.py",
     "fetch_natis.py", "fetch_naamsa.py", "fetch_economy.py", "fetch_acsa.py",
+    "fetch_sars.py", "fetch_statssa_monthly.py",
 )
 CORE_PRODUCTS = ("petrol", "diesel", "jet")
 TOLERANCE = 0.01

@@ -40,6 +40,7 @@ import yaml
 
 from lfm.config import Paths
 from lfm.sources import energy_dept as dept
+from lfm.sources import cef
 
 
 def main() -> int:
@@ -218,19 +219,31 @@ def _prices(raw_dir: Path, out_dir: Path, offline: bool, warnings: list[str]) ->
             warnings.append(f"fuel prices: index page not reachable ({exc})")
             listed = []
         raw_dir.mkdir(parents=True, exist_ok=True)
-        for source in listed:
-            path = raw_dir / f"fuel-price-history-{source.year}.pdf"
-            try:
-                data = dept.fetch(source.url)
-                if not data.startswith(b"%PDF"):
-                    raise ValueError("not a PDF")
-                path.write_bytes(data)   # the current year's file is updated in place
-            except Exception as exc:  # noqa: BLE001
-                if not path.exists():
-                    warnings.append(f"fuel prices {source.year}: download failed ({exc})")
+        # Each year has an ordered list of addresses; the first that returns a PDF is kept.
+        # The newer monthly folders come first because they hold later months.
+        attempts: dict[int, list] = {source.year: [source] for source in listed}
+        for year in range(dept.PRICE_RECENT_FROM, date.today().year + 1):
+            attempts[year] = dept.recent_price_candidates(year) + attempts.get(year, [])
+        for year in sorted(attempts):
+            path = raw_dir / f"fuel-price-history-{year}.pdf"
+            used = None
+            for source in attempts[year]:
+                try:
+                    data = dept.fetch(source.url)
+                    if not data.startswith(b"%PDF"):
+                        raise ValueError("not a PDF")
+                    path.write_bytes(data)   # the current year's file is updated in place
+                    used = source
+                    break
+                except Exception:  # noqa: BLE001
                     continue
+            if used is None:
+                if not path.exists():
+                    warnings.append(f"fuel prices {year}: no price history file found")
+                    continue
+                warnings.append(f"fuel prices {year}: download failed; kept the copy on disk")
             files.append(dept.SourceFile(
-                year=source.year, url=source.url, path=path,
+                year=year, url=used.url if used else "(kept from an earlier run)", path=path,
                 sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
 
     monthly: list[dict] = []
@@ -247,6 +260,8 @@ def _prices(raw_dir: Path, out_dir: Path, offline: bool, warnings: list[str]) ->
                     "country": "ZAF", "period": f"{f.year}-{month:02d}", "scenario": "shared",
                     "series": series, "value": price, "unit": "cents per litre",
                     "source_file": f.path.name})
+    breakdown_files = _breakdowns(raw_dir, offline, monthly, warnings)
+    cef_files = _cef_sheets(raw_dir, offline, monthly, warnings)
     _write(out_dir / "fuel_prices_department.csv", monthly,
            ["country", "period", "scenario", "series", "value", "unit", "source_file"])
 
@@ -272,7 +287,155 @@ def _prices(raw_dir: Path, out_dir: Path, offline: bool, warnings: list[str]) ->
         "prices_are": "regulated prices in cents per litre; petrol retail, diesel wholesale",
         "files": [{"year": f.year, "url": f.url, "file": f.path.name, "sha256": f.sha256}
                   for f in files],
+        "monthly_breakdown_page": dept.PRICE_ARCHIVE_PAGE,
+        "monthly_breakdown_files": breakdown_files,
+        "cef_daily_sheets_page": cef.INDEX_URL,
+        "cef_daily_sheets": cef_files,
+        "series_with_no_value_in_latest_months": _gaps(monthly),
     }
+
+
+def _cef_sheets(raw_dir: Path, offline: bool, monthly: list[dict], warnings: list[str]) -> list:
+    """Add months after the department's latest from CEF's daily sheets (inland series only).
+
+    ``monthly`` is extended in place. The latest month the department does
+    cover is read from CEF as well and compared, as a check that the two
+    publishers print the same prices.
+    """
+    have = {(r["period"], r["series"]): r["value"] for r in monthly}
+    latest = max((r["period"] for r in monthly), default="0000-00")
+    listed: dict[tuple[int, int], tuple[date, str]] = {}
+    if offline:
+        for path in sorted(raw_dir.glob("cef-daily-*.pdf")):
+            year, month, day = (int(x) for x in path.stem.split("-")[-3:])
+            listed[(year, month)] = (date(year, month, day), "(offline)")
+    else:
+        try:
+            pages = cef.discover_year_pages(cef.fetch(cef.INDEX_URL).decode("utf-8", "replace"))
+            sheets: list = []
+            for year in sorted(y for y in pages if y >= int(latest[:4])):
+                sheets += cef.discover_daily_sheets(cef.fetch(pages[year]).decode("utf-8", "replace"))
+            listed = cef.pick_monthly(sheets)
+        except Exception as exc:  # noqa: BLE001
+            warnings.append(f"fuel prices: CEF daily sheet pages not reachable ({exc})")
+    files = []
+    for (year, month), (when, url) in sorted(listed.items()):
+        period = f"{year}-{month:02d}"
+        if period < latest:
+            continue
+        path = raw_dir / f"cef-daily-{when.isoformat()}.pdf"
+        if not offline and not path.exists():
+            try:
+                data = cef.fetch(url)
+                if not data.startswith(b"%PDF"):
+                    raise ValueError("not a PDF")
+                path.write_bytes(data)
+            except Exception as exc:  # noqa: BLE001
+                warnings.append(f"fuel prices {period}: CEF sheet download failed ({exc})")
+                continue
+        if not path.exists():
+            continue
+        try:
+            effective, prices, problems = cef.parse_daily_sheet(_pdf_text(path))
+        except Exception as exc:  # noqa: BLE001
+            warnings.append(f"fuel prices {period}: could not read {path.name} ({exc})")
+            continue
+        warnings += [f"fuel prices {period} CEF: {p}" for p in problems]
+        if effective is None:
+            continue
+        if (effective.year, effective.month) != (year, month):
+            warnings.append(f"fuel prices {period}: CEF sheet of {when} shows the price effective "
+                            f"{effective}; month left out")
+            continue
+        files.append({"period": period, "effective": effective.isoformat(), "url": url,
+                      "file": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+        for series, price in prices.items():
+            if (period, series) in have:
+                if abs(have[(period, series)] - price) > 0.005:
+                    warnings.append(f"fuel prices {period} {series}: department "
+                                    f"{have[(period, series)]} but CEF {price}")
+                continue
+            monthly.append({
+                "country": "ZAF", "period": period, "scenario": "shared", "series": series,
+                "value": price, "unit": "cents per litre", "source_file": path.name})
+    return files
+
+
+def _gaps(monthly: list[dict]) -> dict[str, str]:
+    """Series that stop before the latest month, with the first month they are missing.
+
+    The monthly breakdown pages do not carry every series of the yearly history
+    (coastal diesel is not published there), so a series can end early.
+    """
+    last: dict[str, str] = {}
+    for row in monthly:
+        last[row["series"]] = max(last.get(row["series"], ""), row["period"])
+    latest = max(last.values(), default="")
+    out = {}
+    for series, period in sorted(last.items()):
+        if period < latest:
+            year, month = int(period[:4]), int(period[5:])
+            nxt = f"{year + month // 12}-{month % 12 + 1:02d}"
+            out[series] = f"not published from {nxt} (latest month in the file is {latest})"
+    return out
+
+
+def _breakdowns(raw_dir: Path, offline: bool, monthly: list[dict], warnings: list[str]) -> list:
+    """Add months the yearly history does not cover from the monthly breakdown pages.
+
+    ``monthly`` is extended in place. The latest month the history does cover is
+    read from its breakdown page as well and compared, as a check that the two
+    documents mean the same prices.
+    """
+    have = {(r["period"], r["series"]): r["value"] for r in monthly}
+    latest = max((r["period"] for r in monthly), default="0000-00")
+    listed: list[tuple[int, int, str]] = []
+    if offline:
+        for path in sorted(raw_dir.glob("price-breakdown-*.pdf")):
+            year, month = path.stem.split("-")[-2:]
+            listed.append((int(year), int(month), "(offline)"))
+    else:
+        try:
+            listed = dept.discover_price_breakdowns(
+                dept.fetch(dept.PRICE_ARCHIVE_PAGE).decode("utf-8", "replace"))
+        except Exception as exc:  # noqa: BLE001
+            warnings.append(f"fuel prices: monthly archive page not reachable ({exc})")
+    files = []
+    for year, month, url in listed:
+        period = f"{year}-{month:02d}"
+        if period < latest:
+            continue
+        path = raw_dir / f"price-breakdown-{period}.pdf"
+        if not offline and not path.exists():
+            try:
+                data = dept.fetch(url)
+                if not data.startswith(b"%PDF"):
+                    raise ValueError("not a PDF")
+                path.write_bytes(data)
+            except Exception as exc:  # noqa: BLE001
+                warnings.append(f"fuel prices {period}: breakdown download failed ({exc})")
+                continue
+        if not path.exists():
+            continue
+        try:
+            prices, problems = dept.parse_price_breakdown(_pdf_text(path))
+        except Exception as exc:  # noqa: BLE001
+            warnings.append(f"fuel prices {period}: could not read {path.name} ({exc})")
+            continue
+        warnings += [f"fuel prices {period} breakdown: {p}" for p in problems]
+        files.append({"period": period, "url": url, "file": path.name,
+                      "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+        for series, price in prices.items():
+            if (period, series) in have:
+                if abs(have[(period, series)] - price) > 0.005:
+                    warnings.append(
+                        f"fuel prices {period} {series}: history {have[(period, series)]} "
+                        f"but breakdown {price}")
+                continue
+            monthly.append({
+                "country": "ZAF", "period": period, "scenario": "shared", "series": series,
+                "value": price, "unit": "cents per litre", "source_file": path.name})
+    return files
 
 
 def _pdf_text(path: Path) -> str:
@@ -300,10 +463,16 @@ def _sales(files: list, warnings: list[str]) -> tuple[list, list, list]:
     quarterly: list[dict] = []
     part_years: list[int] = []
     for f in files:
-        products = dept.parse_sales(dept.read_workbook(f.path))
-        if not products:
+        readings = dept.sales_readings(dept.read_workbook(f.path))
+        if not readings:
             warnings.append(f"fuel sales {f.year}: product rows not found in {f.path.name}")
             continue
+        used, products = next(iter(readings.items()))
+        differing = [name for name, other in readings.items() if other != products]
+        if differing:
+            warnings.append(
+                f"fuel sales {f.year}: sheets of {f.path.name} disagree; used '{used}', "
+                f"not {differing}")
         base = {"country": "ZAF", "scenario": "shared", "unit": "litres",
                 "source_file": f.path.name}
         complete = True

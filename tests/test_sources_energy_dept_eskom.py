@@ -214,3 +214,100 @@ def test_discover_price_files_rewrites_old_addresses() -> None:
     assert [f.year for f in files] == [2011, 2022]
     assert files[0].url.endswith("/esources/petroleum/Dec2011/FuelPriceHistory.pdf")
     assert files[0].url.startswith("https://www.dmpr.gov.za/")
+
+
+def test_parse_sales_prefers_the_published_table_over_a_working_pivot() -> None:
+    # The 2013 workbook keeps a pivot with a superseded fourth quarter ahead of
+    # the published table.
+    sheets = {
+        "Sheet4": [
+            ["Diesel", 1.0, 2.0, 3.0, 4.0, 10.0],
+            ["Jet Fuel", 1.0, 1.0, 1.0, 1.0, 4.0],
+            ["Petrol", 1.0, 2.0, 3.0, 4.0, 10.0],
+        ],
+        "2013 Annual Aggregated FSV data": [
+            [None, "2013 JANUARY TO DECEMBER SA FUEL SALES VOLUME / CONSUMPTION"],
+            [None, "Diesel (All grades)", 1.0, 2.0, 3.0, 9.0, 15.0],
+            [None, "Petrol (All grades)", 1.0, 2.0, 3.0, 8.0, 14.0],
+            [None, "Jet Fuel", 1.0, 1.0, 1.0, 2.0, 5.0],
+        ],
+    }
+    assert dept.parse_sales(sheets)["diesel"] == [1.0, 2.0, 3.0, 9.0]
+    readings = dept.sales_readings(sheets)
+    assert list(readings) == ["2013 Annual Aggregated FSV data", "Sheet4"]
+    assert readings["Sheet4"]["petrol"] != readings["2013 Annual Aggregated FSV data"]["petrol"]
+
+
+def test_price_history_joins_a_price_printed_with_a_gap() -> None:
+    text = (
+        "Jan 2134.00 2055.00 2159.00 1928.55 1849.55 1227.118 1326.318\n"
+        "Feb 2097.00 2029.00 2 112.00 1913.35 1830.05 1197.118 1 298.618\n"
+    )
+    months, warnings = dept.parse_price_history(text)
+    assert months[2][2] == 2112.0
+    assert months[2][6] == 1298.618
+    assert warnings == []
+
+
+def test_price_history_leaves_out_a_month_with_an_implausible_jump() -> None:
+    text = (
+        "Jan 2134.00 2055.00 2159.00 1928.55 1849.55 1227.118 1326.318\n"
+        "Feb 2097.00 2029.00 112.00 1913.35 1830.05 1197.118 1298.618\n"
+    )
+    months, warnings = dept.parse_price_history(text)
+    assert list(months) == [1]
+    assert "month 2" in warnings[0]
+
+
+def test_recent_price_candidates_try_the_latest_month_first() -> None:
+    candidates = dept.recent_price_candidates(2025)
+    assert len(candidates) == 12
+    assert candidates[0].url.endswith("2025/December%202025/Fuel-Price-History.pdf")
+    assert candidates[-1].url.endswith("2025/January%202025/Fuel-Price-History.pdf")
+
+
+def test_price_breakdowns_are_found_on_the_archive_page() -> None:
+    html = """
+    <div class="archive-card"><h4>January 2026</h4><ul>
+     <li><a download="" href="/uat1/API/Files/DownloadFile?ItemId=2825&amp;TabId=154">Petrol Regulation </a></li>
+     <li><a download="" href="/uat1/API/Files/DownloadFile?ItemId=2824&amp;TabId=154">Breakdown of Fuel Prices </a></li>
+    </ul></div>
+    <div class="archive-card"><h4>December 2025</h4><ul>
+     <li><a href="/uat1/Portals/0/Fuel Prices Per Zone/2025/December 2025/Breakdown-of-Prices-.pdf">Breakdown of Prices</a></li>
+    </ul></div>
+    <div class="archive-card"><h4>November 2025</h4><ul><li><a href="/x/Regs.xlsx">Fuel Regulations</a></li></ul></div>
+    """
+    found = dept.discover_price_breakdowns(html)
+    assert [(y, m) for y, m, _ in found] == [(2025, 12), (2026, 1)]
+    assert found[1][2] == "https://www.dmpr.gov.za/API/Files/DownloadFile?ItemId=2824&TabId=154"
+    assert found[0][2].endswith("/Portals/0/Fuel%20Prices%20Per%20Zone/2025/December%202025/Breakdown-of-Prices-.pdf")
+
+
+def test_price_breakdown_page_is_read_by_grade_and_region() -> None:
+    text = """Breakdown of petrol, diesel and paraffin prices as at 04 February 2026
+    Petrol
+    04 February 2026 1999.00 c/l
+    (93 ULP &
+    LRP)
+    Inland Region
+    04 February 2026 2010.00 c/l (95 ULP & LRP) Inland Region
+    04 February 2026 1916.00 c/l (93 ULP & LRP) Coastal Region
+    04 February 2026 1927.00c/l (95 ULP & LRP) Coastal Region
+    Diesel
+    04 February 2026 1791.83 c/l (0.05%) Inland Region
+    04 February 2026 1796.23 c/l (0.005%) Inland Region
+    Paraffin
+    04 February 2026 1210.098
+    c/l  Inland Region
+    04 February 2026 1108.598
+    c/l Coastal Region
+    Single Maximum Retail Price For Illuminating Paraffin
+    04 February 2026 1529.0 c/l  Country-Wide
+    """
+    prices, warnings = dept.parse_price_breakdown(text)
+    assert warnings == []
+    assert prices == {
+        "petrol_93_inland_retail": 1999.0, "petrol_95_inland_retail": 2010.0,
+        "petrol_95_coast_retail": 1927.0, "diesel_005_inland_wholesale": 1791.83,
+        "paraffin_inland": 1210.098, "paraffin_coast": 1108.598,
+    }

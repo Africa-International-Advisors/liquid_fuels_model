@@ -14,16 +14,16 @@ base_year_volume:
   owner: nigel.zhuwaki
   confidence: unassessed
   by_country:
-    ZAF: { value: 0.7e9, year: 2024 }   # provisional ~0.7 BL/yr
+    ZAF: { value: 1058398950, year: 2021 }   # energy balance 2021, agriculture/forestry
     BWA: { value: null,  year: null }
     LSO: { value: null,  year: null }
     NAM: { value: null,  year: null }
     SWZ: { value: null,  year: null }
   units: litres per year (diesel)
-  provisional: true
+  provisional: false
   needs_verification: true
-  source: PROVISIONAL — placeholder pending sourcing (DAFF / DALRRD energy use studies, sector reports). See docs/methodology/params_sourcing.md
-  last_updated: null
+  source: Department of Mineral and Petroleum Resources, 2021 Commodity Flow and Energy Balance, diesel, "Agriculture/forestry" (timeseries/energy_balance_department.csv). Replaces an unsourced 0.7e9 placeholder for 2024. The balance ends in 2021; its 2016 and 2017 figures are about double the other years. Awaiting review.
+  last_updated: 2026-10-06
   shared: true
 
 elasticity:

@@ -1,0 +1,15 @@
+# Evidence record for ocgt_diesel_burn_reported.csv
+what_this_is: Diesel burned in Eskom's own open-cycle gas turbines, as reported to Parliament. Same series
+  and financial years as eskom_ocgt in timeseries/ocgt_generation_eskom.csv.
+retrieved: '2026-10-06'
+transcription: Typed by hand from the sources in the url column.
+check_against_generation:
+  '2022': 571 ML over 1,826 GWh = 0.313 litres per kWh
+  '2023': 937.5 ML over 3,018 GWh = 0.311 litres per kWh
+  '2025': 679 ML over 2,176 GWh = 0.312 litres per kWh
+limits:
+- Only the 2025 figure was read from the parliamentary reply itself; 2022 and 2023 are press reports of
+  replies.
+- No figure found for the year to March 2024; a reply of 25 April 2024 gives spend only (R23.38 bn).
+- Eskom's own turbines only; the independent producers' turbines are not covered.
+- The litres-per-kWh factor is not adopted in generation.yaml; that is a model decision for review.

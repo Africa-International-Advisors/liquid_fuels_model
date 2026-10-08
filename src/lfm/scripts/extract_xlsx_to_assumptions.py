@@ -63,6 +63,21 @@ def to_year(v) -> int:
     return int(v)
 
 
+def leading_year_rows(rows: list[list]) -> list[list]:
+    """Rows up to the first one that does not start with a year.
+
+    A named range can run past its table (`Production_High` covers 13,001 rows
+    and seven unrelated tables below the one it names); the table itself ends
+    at the first blank row.
+    """
+    out: list[list] = []
+    for row in rows:
+        if not is_year(row[0]):
+            break
+        out.append(row)
+    return out
+
+
 def extract_macro(wb) -> None:
     """GDP, GDP/capita, population — historical (shared) plus high/low forecast.
 
@@ -276,9 +291,7 @@ def extract_refinery_production(wb) -> None:
 
     records: list[tuple] = []
     for src, scenario in [(high, "high_demand"), (low, "low_demand")]:
-        for row in src[1:]:
-            if not is_year(row[0]):
-                continue
+        for row in leading_year_rows(src[1:]):
             year = to_year(row[0])
             for refinery, util in zip(refineries, row[1:7]):
                 if util is not None:
@@ -316,24 +329,24 @@ def extract_historical_demand(wb) -> None:
         total = 0
         for sheet_name, product, year_col, value_col, header_row in sheets:
             ws = wb[sheet_name]
-            # Walk down from the row immediately after the header until we
-            # stop seeing year-like values. Stop at the first non-year row.
+            # Walk down from the row after the header and stop at the first
+            # row that is not a year once the table has started. The jet sheet
+            # has regional tables further down the same columns that also carry
+            # years; reading on would file them as national demand.
+            started = False
             for row_idx in range(header_row + 1, ws.max_row + 1):
                 year_v = ws[f"{year_col}{row_idx}"].value
-                if not is_year(year_v):
-                    # Allow blank rows mid-table; only stop after a streak of misses.
-                    if year_v is None:
-                        continue
-                    # Could be "2023*" annotation — try string parse.
-                    if isinstance(year_v, str):
-                        digits = "".join(c for c in year_v if c.isdigit())
-                        if not digits or not (1900 <= int(digits) <= 2200):
-                            continue
-                        year_int = int(digits)
-                    else:
-                        continue
-                else:
+                if is_year(year_v):
                     year_int = to_year(year_v)
+                else:
+                    # "2023*" style annotation: keep the digits.
+                    digits = "".join(c for c in year_v if c.isdigit()) if isinstance(year_v, str) else ""
+                    if not digits or not (1900 <= int(digits) <= 2200):
+                        if started:
+                            break
+                        continue
+                    year_int = int(digits)
+                started = True
                 value = ws[f"{value_col}{row_idx}"].value
                 if value is None or not isinstance(value, (int, float)) or value == 0:
                     continue

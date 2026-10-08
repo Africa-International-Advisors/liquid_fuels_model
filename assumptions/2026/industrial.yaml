@@ -12,16 +12,16 @@ base_year_volume:
   owner: nigel.zhuwaki
   confidence: unassessed
   by_country:
-    ZAF: { value: 2.5e9,  year: 2024 }   # provisional ~2.5 BL/yr (mid-range guess)
+    ZAF: { value: 1499139260, year: 2021 }   # energy balance 2021, industry sector (mining 1 293 813 000)
     BWA: { value: null,   year: null }
     LSO: { value: null,   year: null }
     NAM: { value: null,   year: null }
     SWZ: { value: null,   year: null }
   units: litres per year (diesel)
-  provisional: true
+  provisional: false
   needs_verification: true
-  source: PROVISIONAL — derived as residual of (xlsx total diesel - vehicles - OCGT - marine - agri); awaits proper sourcing (DMRE energy balances, mining sector reports, manufacturing energy intensity studies). See docs/methodology/params_sourcing.md
-  last_updated: null
+  source: Department of Mineral and Petroleum Resources, 2021 Commodity Flow and Energy Balance, diesel, "Industry" (timeseries/energy_balance_department.csv). Replaces an unsourced 2.5e9 placeholder for 2024. The balance ends in 2021 and its sector boundaries shift in 2016. Awaiting review.
+  last_updated: 2026-10-06
   shared: true
 
 elasticity:

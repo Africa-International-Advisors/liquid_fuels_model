@@ -173,10 +173,24 @@ def read_workbook(path: Path) -> dict[str, list[list]]:
 def parse_sales(sheets: dict[str, list[list]]) -> dict[str, list[float | None]]:
     """Quarterly litres per product: ``{product: [q1, q2, q3, q4]}``.
 
-    Uses the first sheet that carries the product rows. A quarter with no
-    figure comes back as ``None`` so a part-year file is visible as such.
+    Uses the department's titled presentation sheet where there is one, else
+    the first sheet that carries the product rows. A quarter with no figure
+    comes back as ``None`` so a part-year file is visible as such.
     """
-    for rows in sheets.values():
+    readings = sales_readings(sheets)
+    return next(iter(readings.values()), {})
+
+
+def sales_readings(sheets: dict[str, list[list]]) -> dict[str, dict[str, list[float | None]]]:
+    """Every sheet's reading of the product rows, the titled sheet first.
+
+    Some workbooks keep a working pivot beside the published table (the 2013
+    file's pivot still holds a superseded fourth quarter). The published table
+    is the one headed "FUEL SALES VOLUME"; callers compare the readings to
+    report a workbook whose sheets disagree.
+    """
+    out: dict[str, dict[str, list[float | None]]] = {}
+    for name, rows in sheets.items():
         found: dict[str, list[float | None]] = {}
         for row in rows:
             label = next((c for c in row if isinstance(c, str) and c.strip()), None)
@@ -191,8 +205,16 @@ def parse_sales(sheets: dict[str, list[list]]) -> dict[str, list[float | None]]:
             quarters += [None] * (4 - len(quarters))
             found[product] = quarters
         if len(found) >= 3:
-            return found
-    return {}
+            out[name] = found
+    titled = [name for name in out if _has_sales_title(sheets[name])]
+    return {name: out[name] for name in titled + [n for n in out if n not in titled]}
+
+
+def _has_sales_title(rows: list[list]) -> bool:
+    return any(
+        isinstance(cell, str) and "FUEL SALES VOLUME" in cell.upper()
+        for row in rows[:6] for cell in row
+    )
 
 
 def parse_balance(sheets: dict[str, list[list]]) -> tuple[list[dict], list[str]]:
@@ -380,6 +402,11 @@ _MONTH_WORD = re.compile(
     r"\b(Jan|Feb|Mar|Apr|May|Jun|July|Jul|Aug|Sept|Sep|Oct|Nov|Dec)[a-z]*\b", re.IGNORECASE)
 # A price in cents: "1936.00", "2295,00", and occasionally with no decimals ("1482").
 _PRICE = re.compile(r"(?<![\d.,])\d{3,4}(?:[.,]\d{1,3})?(?![\d%])")
+# Some files print a price with a gap after the thousands digit: "2 112.00".
+_SPLIT_PRICE = re.compile(r"(?<![\d.,])(\d) (\d{3}[.,]\d{1,3})(?![\d%])")
+# The largest genuine monthly move on record is 52% (paraffin, 2020); a step
+# beyond 70% means a misread figure (a dropped thousands digit is -77% or more).
+PRICE_MAX_MONTHLY_CHANGE = 0.7
 
 
 def discover_price_files(index_html: str) -> list[SourceFile]:
@@ -392,12 +419,32 @@ def discover_price_files(index_html: str) -> list[SourceFile]:
     return [SourceFile(year=y, url=found[y]) for y in sorted(found)]
 
 
+# From mid-2024 the department files each month's price documents under a new
+# folder, "<year>/<Month> <year>/", and no longer lists them on the old archive
+# page. The latest month's "Fuel Price History" holds the year to date.
+PRICE_RECENT_BASE = (
+    "https://www.dmpr.gov.za/Portals/0/Resources/Fuel Prices Adjustments/Fuel Prices Per Zone/")
+PRICE_RECENT_FROM = 2024
+_MONTH_NAMES = ("January", "February", "March", "April", "May", "June", "July", "August",
+                "September", "October", "November", "December")
+
+
+def recent_price_candidates(year: int) -> list[SourceFile]:
+    """Addresses to try for a year's price history, latest month first."""
+    return [
+        SourceFile(year=year, url=urllib.parse.quote(
+            f"{PRICE_RECENT_BASE}{year}/{month} {year}/Fuel-Price-History.pdf", safe=":/"))
+        for month in reversed(_MONTH_NAMES)
+    ]
+
+
 def parse_price_history(text: str) -> tuple[dict[int, list[float]], list[str]]:
     """Monthly prices in cents per litre: ``({month number: [seven prices]}, warnings)``.
 
     The seven prices are in the order of ``PRICE_SERIES``. A month the
     department has not yet filled in is left out; a month with some other
-    number of prices is reported and left out.
+    number of prices, or with a price that jumps implausibly from the month
+    before, is reported and left out.
     """
     body = text[text.lower().find("jan"):] if "jan" in text.lower() else ""
     marks = [m for m in _MONTH_WORD.finditer(body)]
@@ -411,6 +458,7 @@ def parse_price_history(text: str) -> tuple[dict[int, list[float]], list[str]]:
         chunk = body[mark.end():end]
         if "ytd" in chunk.lower():
             chunk = chunk[:chunk.lower().find("ytd")]
+        chunk = _SPLIT_PRICE.sub(lambda m: m.group(1) + m.group(2), chunk)
         prices = [float(p.replace(",", ".")) for p in _PRICE.findall(chunk)]
         if not prices:
             continue
@@ -419,6 +467,70 @@ def parse_price_history(text: str) -> tuple[dict[int, list[float]], list[str]]:
                             f"{len(PRICE_SERIES)}")
             continue
         out[month] = prices
+    for month in sorted(out):
+        before = out.get(month - 1)
+        if before and any(
+            abs(now / then - 1) > PRICE_MAX_MONTHLY_CHANGE for now, then in zip(out[month], before)
+        ):
+            warnings.append(f"month {month}: a price differs from the month before by more than "
+                            f"{PRICE_MAX_MONTHLY_CHANGE:.0%}; month left out")
+            del out[month]
+    return out, warnings
+
+
+# From December 2025 the department stopped posting the yearly "Fuel Price
+# History" and posts only a monthly "Breakdown of Prices" page: one price per
+# grade and region on the date it took effect. Those are listed on the archive
+# page below, a card per month.
+
+PRICE_ARCHIVE_PAGE = "https://www.dmpr.gov.za/Branches/Petroleum-Resources/Petrol-Price-Archive"
+_ARCHIVE_CARD = re.compile(r"<h4>\s*([A-Za-z]+)\s+((?:19|20)\d{2})\s*</h4>(.*?)(?=<h4>|\Z)", re.DOTALL)
+_ARCHIVE_LINK = re.compile(r'<a[^>]*href="([^"]+)"[^>]*>\s*Breakdown of[^<]*</a>', re.IGNORECASE)
+_AMOUNT = r"(\d{3,4}(?:[.,]\d{1,3})?)\s*c/l"
+_BREAKDOWN_PRICES = {
+    "petrol_93_inland_retail": _AMOUNT + r"\s*\(93 ULP[^)]*\)\s*Inland",
+    "petrol_95_inland_retail": _AMOUNT + r"\s*\(95 ULP[^)]*\)\s*Inland",
+    "petrol_95_coast_retail": _AMOUNT + r"\s*\(95 ULP[^)]*\)\s*Coastal",
+    "diesel_005_inland_wholesale": _AMOUNT + r"\s*\(0\.05%\)\s*Inland",
+    "paraffin_inland": r"Paraffin\b.*?" + _AMOUNT + r"\s*Inland",
+    "paraffin_coast": r"Paraffin\b.*?" + _AMOUNT + r"\s*Coastal",
+}
+
+
+def discover_price_breakdowns(archive_html: str) -> list[tuple[int, int, str]]:
+    """``(year, month, address)`` of each monthly "Breakdown of Prices" document."""
+    found: dict[tuple[int, int], str] = {}
+    for month_name, year, card in _ARCHIVE_CARD.findall(archive_html):
+        if month_name[:3].lower() not in _MONTHS:
+            continue
+        link = _ARCHIVE_LINK.search(card)
+        if not link:
+            continue
+        # The page carries test-site ("/uat1") links for recent months; the same
+        # path without that prefix is the live file.
+        href = link.group(1).replace("&amp;", "&").removeprefix("/uat1")
+        url = urllib.parse.urljoin(PRICE_ARCHIVE_PAGE, urllib.parse.quote(href, safe="/:?&=%"))
+        found.setdefault((int(year), _MONTHS.index(month_name[:3].lower()) + 1), url)
+    return [(year, month, found[(year, month)]) for year, month in sorted(found)]
+
+
+def parse_price_breakdown(text: str) -> tuple[dict[str, float], list[str]]:
+    """Prices in cents per litre from one "Breakdown of Prices" page, by series.
+
+    The page does not give coastal diesel, so ``diesel_005_coast_wholesale`` is
+    never returned. A series whose line cannot be found is reported and left out.
+    """
+    page = " ".join(text.split())
+    cut = page.find("Single Maximum")       # the retail paraffin cap follows; not a series here
+    page = page[:cut] if cut > 0 else page
+    out: dict[str, float] = {}
+    warnings: list[str] = []
+    for series, pattern in _BREAKDOWN_PRICES.items():
+        match = re.search(pattern, page, re.IGNORECASE)
+        if match:
+            out[series] = float(match.group(1).replace(",", "."))
+        else:
+            warnings.append(f"{series}: not found")
     return out, warnings
 
 

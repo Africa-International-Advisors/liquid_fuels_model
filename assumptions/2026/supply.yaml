@@ -16,7 +16,9 @@ refinery_capacity:
       enref:    120     # Engen, Durban
       sapref:   180     # Shell/BP, Durban (mothballed since 2022)
       natref:   108.5   # Sasol/TotalEnergies, Sasolburg
-      sasol:     75     # Sasol Synfuels, Secunda (CTL)
+      sasol:    150     # Sasol Synfuels, Secunda (CTL); crude equivalent, FIASA annual report 2025 p.49.
+                        # Was 75 (Reatile xlsx). Changed 7 October 2026; Secunda utilisation halved in
+                        # refinery_production.csv so modelled output is unchanged. Pending Nigel's review.
       astron:   100     # Astron, Cape Town
       petrosa:   45     # PetroSA Mossel Bay (GTL; mothballed)
     BWA: null

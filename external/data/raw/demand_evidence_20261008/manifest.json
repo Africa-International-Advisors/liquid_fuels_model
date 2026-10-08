@@ -1,0 +1,118 @@
+{
+  "retrieved": "2026-10-08",
+  "purpose": "DR07 demand evidence: vehicle efficiency history, plant commissioning and shutdown",
+  "files": [
+    {
+      "file": "ntcsa-medium-term-system-adequacy-outlook-2026-2030.pdf",
+      "publisher": "National Transmission Company South Africa (system operator)",
+      "published": "2025-10-30",
+      "url": "https://www.ntcsa.co.za/wp-content/uploads/2025/10/Medium-Term-System-Adequacy-Outlook-2026-2030.pdf",
+      "bytes": 2155093,
+      "sha256": "6f7a7062aba0147947b4b6161fac826f89971fed1833f70d81d4c1fdff9520dc"
+    },
+    {
+      "file": "icct-south-africa-passenger-vehicle-co2-baseline-2018.pdf",
+      "publisher": "International Council on Clean Transportation",
+      "published": "2018-01",
+      "url": "https://theicct.org/wp-content/uploads/2021/06/South-Africa-PV-emission-stds_ICCT-White-Paper_17012018_vF.pdf",
+      "bytes": 883880,
+      "sha256": "de3eba25329d8c9afd6f0c540094a7d9a2e5683ae963ba791ca1c537abc75100"
+    },
+    {
+      "file": "iea-fuel-economy-in-south-africa.html",
+      "publisher": "International Energy Agency, Global Fuel Economy Initiative 2021",
+      "published": "2021-12-13",
+      "url": "https://www.iea.org/articles/fuel-economy-in-south-africa",
+      "bytes": 229321,
+      "sha256": "e588123ea63461ec724b2781eda6f0338010499ff21402b365dd442b63ac4b1d"
+    },
+    {
+      "file": "iea-gfei-international-comparison-ldv-fuel-economy-2005-2015.pdf",
+      "publisher": "International Energy Agency, Global Fuel Economy Initiative Working Paper 15",
+      "published": "2017",
+      "url": "https://iea.blob.core.windows.net/assets/6a9d5d7b-89cc-4b7e-97ef-dd40551fef26/wp15ldvcomparison.pdf",
+      "bytes": 7143487,
+      "sha256": "aaa957078528d6fd2b0d903e7d3b2eeb25dcf0f3fcc2c6b80de93fea92f00929"
+    },
+    {
+      "file": "lightstone-average-vehicle-age.html",
+      "publisher": "Lightstone Auto Insights",
+      "published": "2022-04",
+      "url": "https://lightstone.co.za/newsletters/auto/april/average-vehicle-age",
+      "bytes": 16689,
+      "sha256": "919b4b50764f21327bd1c2a995c6d58ed7302e5e183eaa2e9d9254a0c79bf351"
+    },
+    {
+      "file": "naamsa-q4-2025-review-of-business-conditions.pdf",
+      "publisher": "naamsa",
+      "published": "2026-02-17",
+      "url": "https://naamsa.net/wp-content/uploads/2026/02/20260217-naamsa-4th-Quarter-2025-Review-of-Business-Conditions.pdf",
+      "bytes": 699376,
+      "sha256": "e8a09c6f6727b399c7711e6dd39c661632fe4dfa313d10c106fad465cf6a6181"
+    },
+    {
+      "file": "nersa-reasons-eskom-3000mw-gas-determination-2024-11.pdf",
+      "publisher": "National Energy Regulator of South Africa",
+      "published": "2024-11",
+      "url": "https://www.nersa.org.za/files/files/2024/11/11DECISION_RFD_ON_3000MW_CCGT_GAS_s34_DETERMINATION.pdf",
+      "bytes": 2411707,
+      "sha256": "f6e2556ca011d17077d321da6c4da1f347515d566311f1031b5e9749c379292e"
+    },
+    {
+      "file": "satied-havenga-road-to-rail-strategy.pdf",
+      "publisher": "SA-TIED (UNU-WIDER and National Treasury); Havenga et al.",
+      "published": "undated report",
+      "url": "https://sa-tied.wider.unu.edu/sites/default/files/SA-TIED-Havenga-Report.pdf",
+      "bytes": 3459220,
+      "sha256": "1b049f92884e6e1f23f6b02177f0799057371857bffa6e2271546c3951552b2a"
+    },
+    {
+      "file": "gain-network-statement-presentation-2024-05-21.pdf",
+      "publisher": "GAIN Group, to the Department of Transport",
+      "published": "2024-05-21",
+      "url": "https://www.transport.gov.za/wp-content/uploads/2023/02/Gain-Group-Pty-Ltd-Presentation-on-Draft-Network-Statement_21-May-2024.pdf",
+      "bytes": 2295880,
+      "sha256": "ef6b27e445ce8a2cbb2759a2aa4f7f045f3cd481afed6a89ecd8807fc92c2629"
+    },
+    {
+      "file": "sarb-oben-2301-load-shedding-and-potential-gdp-2023-06.pdf",
+      "publisher": "South African Reserve Bank",
+      "published": "2023-06",
+      "url": "https://www.resbank.co.za/content/dam/sarb/publications/occasional-bulletin-of-economic-notes/2023/reflections-on-load-shedding-and-potential-gdp-june-2023.pdf",
+      "bytes": 572335,
+      "sha256": "d58c7b892e21e6595904cff1a059acb1ba753d9c82a44f4cf6cea28bf3a87f24"
+    },
+    {
+      "file": "csir-utility-scale-power-generation-statistics-2024.pdf",
+      "publisher": "Council for Scientific and Industrial Research",
+      "published": "2025-01",
+      "url": "https://www.csir.co.za/sites/default/files/2025-09/Utility%20Statistics%20Report_Jan%202025_Final.pdf",
+      "bytes": 3469741,
+      "sha256": "ac89c2e8271b380e8ab86bb8731fac5b1a04458f67252ae41601b8e2dbdb6a8b"
+    },
+    {
+      "file": "ipp-gas-programme-page.html",
+      "publisher": "Independent Power Producers Office (gas programme site)",
+      "published": "read 2026-10-08",
+      "url": "https://www.ipp-gas.co.za/",
+      "bytes": 64012,
+      "sha256": "8c69308bb3cd9b345eb182e933c0861a63b6249335c46ee6ad19b2dfdf3b6d38"
+    },
+    {
+      "file": "eskom-mes-applications-input-2022-11-24.pdf",
+      "publisher": "Eskom, input to the environment department's panel",
+      "published": "2022-11-24",
+      "url": "https://www.dffe.gov.za/sites/default/files/legislations/appeals/eskom.ems/annexure16h_medupi.matimba_24nov2022inputs.pdf",
+      "bytes": 1355522,
+      "sha256": "d8be0fbdc58ebd984a77fa94255a2c387b0d50c2360e127f863d0bc01514a5b7"
+    },
+    {
+      "file": "eskom-coal-fired-power-stations-page.html",
+      "publisher": "Eskom",
+      "published": "read 2026-10-08",
+      "url": "https://www.eskom.co.za/eskom-divisions/gx/coal-fired-power-stations/",
+      "bytes": 268139,
+      "sha256": "037b4938d96e9dbbe309582692ee00f8b6804eb3a6ca3247a7ec65f5c5c4586a"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+country,period,period_basis,measure,value,unit,source_file,source_page,note
+ZAF,2024,year to 31 March,gross_fuel_levies,52856640,thousand rand,raf-annual-report-2024-25.pdf,183,note 16 comparative
+ZAF,2025,year to 31 March,gross_fuel_levies,53244855,thousand rand,raf-annual-report-2024-25.pdf,183,note 16
+ZAF,2024,year to 31 March,diesel_rebate,4246375,thousand rand,raf-annual-report-2024-25.pdf,183,note 16 comparative
+ZAF,2025,year to 31 March,diesel_rebate,3174358,thousand rand,raf-annual-report-2024-25.pdf,183,note 16
+ZAF,2024,year to 31 March,levy_rate,218,cents per litre,raf-annual-report-2024-25.pdf,181,unchanged for four years (p.64)
+ZAF,2025,year to 31 March,levy_rate,218,cents per litre,raf-annual-report-2024-25.pdf,181,

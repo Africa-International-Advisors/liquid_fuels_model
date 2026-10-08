@@ -1,0 +1,33 @@
+publisher: Joint Organisations Data Initiative (JODI), oil database, secondary products
+page: https://www.jodidata.org/oil/database/data-downloads.aspx
+files: https://www.jodidata.org/_resources/files/downloads/oil-data/annual-csv/secondary/<year>.csv
+retrieved:
+  '2017-2022': '2026-10-08'
+  '2023-2025': '2026-10-06'
+originals:
+- external/data/raw/jodi/jodi-secondary-zaf-2017-2022.csv
+- external/data/raw/jodi/jodi-secondary-zaf-2023-2025.csv
+command: python -m lfm.scripts.stage_jodi --vintage 2026
+status: comparison only; not used for any selected figure (instruction of 8 October 2026); not read by the engine
+method:
+- The originals hold South Africa's rows only; JODI's annual files cover every country (about 26 MB a year).
+- Only rows in JODI's KL unit (thousand kilolitres) are used. Nothing is converted from barrels or tonnes.
+- Flows are the sum of the months reported; closing stock is the December level.
+checks:
+- All twelve months are reported for petrol and diesel refinery output, imports, exports, stock change and
+  demand in every year 2017-2024. No month of 2025 is reported.
+- >-
+  Diesel refinery output against the department's energy balance production, bn litres: 2017 8.06 / 7.92;
+  2018 8.14 / 8.43; 2019 8.89 / 9.08; 2020 6.36 / 6.45; 2021 5.30 / 5.31. Within 4% in every year.
+- >-
+  Petrol refinery output is 12% to 24% above the energy balance in the same years (2021: 7.12 / 6.35). The
+  cause is not established.
+limits:
+- Every entry carries assessment code 3, JODI's lowest.
+- >-
+  Imports are about half of customs (2023 diesel: 6.80 against 12.87 bn litres) and demand is above recorded
+  sales. Imports, exports, demand and the statistical difference are staged for the record and are not
+  proposed for use.
+- >-
+  Stock change does not agree with the movement in closing stock (2021 diesel: stock change +0.59 bn litres;
+  closing stock rose 0.38). Neither is proposed for use.

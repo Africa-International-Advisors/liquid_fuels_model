@@ -1,0 +1,629 @@
+country,period,scenario,product,flow,value,unit,basis,months_reported,assessment_code,source_file
+ZAF,2017,shared,diesel,closing_stock,724480600,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,diesel,demand,14307009600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,diesel,exports,384176400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,diesel,imports,3794333700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,diesel,interproduct_transfers,64029400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,diesel,refinery_output,8062958800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,diesel,statistical_difference,-3129139300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,diesel,stock_change,359276000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,fuel_oil,closing_stock,151702300,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,fuel_oil,demand,2704841300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,fuel_oil,exports,390091700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,fuel_oil,imports,30959600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,fuel_oil,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,fuel_oil,refinery_output,2776048500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,fuel_oil,statistical_difference,-249741400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,fuel_oil,stock_change,-38183500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,jet,closing_stock,54844400,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,jet,demand,1725104200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,jet,exports,31161700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,jet,imports,52351500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,jet,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,jet,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,jet,refinery_output,1624140700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,jet,statistical_difference,-188215900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,jet,stock_change,73541300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,lpg,closing_stock,12951000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,lpg,demand,765957300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,lpg,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,lpg,imports,3700300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,lpg,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,lpg,refinery_output,719703700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,lpg,statistical_difference,-48103600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,lpg,stock_change,1850200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,naphtha,closing_stock,38247600,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,naphtha,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,naphtha,exports,242235100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,naphtha,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,naphtha,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,naphtha,receipts,0,litres,sum of months reported,4,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,naphtha,refinery_output,303147800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,naphtha,statistical_difference,58079800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,naphtha,stock_change,2833200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,other_products,closing_stock,0,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,other_products,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,other_products,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,other_products,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,other_products,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,other_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,other_products,refinery_output,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,other_products,statistical_difference,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,other_products,stock_change,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,paraffin,closing_stock,74010300,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,paraffin,demand,2163860700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,paraffin,exports,31360100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,paraffin,imports,15052800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,paraffin,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,paraffin,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,paraffin,refinery_output,2079815000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,paraffin,statistical_difference,-166836900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,paraffin,stock_change,61466300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,petrol,closing_stock,779327500,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,petrol,demand,15912278900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,petrol,exports,257083900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,petrol,imports,1197929800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,petrol,interproduct_transfers,297463500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,petrol,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,petrol,refinery_output,11731637900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,petrol,statistical_difference,-3145575800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,petrol,stock_change,207282200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,total_products,closing_stock,1781000000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,total_products,demand,35854000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,total_products,exports,1305000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,total_products,imports,5042000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,total_products,interproduct_transfers,361000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,total_products,products_transferred,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,total_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,total_products,refinery_output,25673000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,total_products,statistical_difference,-6681000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2017,shared,total_products,stock_change,594000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,diesel,closing_stock,416191000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,diesel,demand,13646558300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,diesel,exports,188531000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,diesel,imports,3552444900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,diesel,interproduct_transfers,106715600,litres,sum of months reported,11,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,diesel,refinery_output,8136474400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,diesel,statistical_difference,-2529160600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,diesel,stock_change,492077600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,fuel_oil,closing_stock,112486700,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,fuel_oil,demand,3026821500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,fuel_oil,exports,309596600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,fuel_oil,imports,3096000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,fuel_oil,interproduct_transfers,0,litres,sum of months reported,11,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,fuel_oil,refinery_output,2561395000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,fuel_oil,statistical_difference,-732711800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,fuel_oil,stock_change,-41279600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,jet,closing_stock,27422200,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,jet,demand,1488276200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,jet,exports,7478800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,jet,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,jet,interproduct_transfers,0,litres,sum of months reported,11,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,jet,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,jet,refinery_output,1523177300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,jet,statistical_difference,-13711100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,jet,stock_change,42379900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,lpg,closing_stock,9250700,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,lpg,demand,634597500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,lpg,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,lpg,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,lpg,receipts,0,litres,sum of months reported,11,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,lpg,refinery_output,612395800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,lpg,statistical_difference,-18501300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,lpg,stock_change,-1850100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,naphtha,closing_stock,43914000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,naphtha,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,naphtha,exports,201154200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,naphtha,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,naphtha,interproduct_transfers,0,litres,sum of months reported,11,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,naphtha,refinery_output,269149900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,naphtha,statistical_difference,66579200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,naphtha,stock_change,2833200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,other_products,closing_stock,0,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,other_products,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,other_products,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,other_products,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,other_products,interproduct_transfers,0,litres,sum of months reported,11,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,other_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,other_products,refinery_output,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,other_products,statistical_difference,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,other_products,stock_change,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,paraffin,closing_stock,51430900,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,paraffin,demand,1973189800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,paraffin,exports,7526400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,paraffin,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,paraffin,interproduct_transfers,0,litres,sum of months reported,11,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,paraffin,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,paraffin,refinery_output,2027129800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,paraffin,statistical_difference,100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,paraffin,stock_change,40141300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,petrol,closing_stock,426678400,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,petrol,demand,14978162900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,petrol,exports,336497200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,petrol,imports,932770100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,petrol,interproduct_transfers,187092400,litres,sum of months reported,11,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,petrol,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,petrol,refinery_output,11313035400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,petrol,statistical_difference,-2581606200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,petrol,stock_change,-297463600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,total_products,closing_stock,1060000000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,total_products,demand,34259000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,total_products,exports,1045000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,total_products,imports,4489000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,total_products,interproduct_transfers,293000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,total_products,products_transferred,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,total_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,total_products,refinery_output,24919000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,total_products,statistical_difference,-5796000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2018,shared,total_products,stock_change,194000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,diesel,closing_stock,371133300,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,diesel,demand,13833903300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,diesel,exports,283389300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,diesel,imports,3765876300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,diesel,interproduct_transfers,50986300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,diesel,refinery_output,8889412300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,diesel,statistical_difference,-1904281300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,diesel,stock_change,496820600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,fuel_oil,closing_stock,122806600,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,fuel_oil,demand,2667689700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,fuel_oil,exports,470586600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,fuel_oil,imports,55727300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,fuel_oil,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,fuel_oil,refinery_output,2683169500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,fuel_oil,statistical_difference,-333332200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,fuel_oil,stock_change,-65015300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,jet,closing_stock,46119100,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,jet,demand,1278870600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,jet,exports,7478800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,jet,imports,7478800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,jet,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,jet,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,jet,refinery_output,1515698600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,jet,statistical_difference,205666300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,jet,stock_change,32408100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,lpg,closing_stock,16651200,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,lpg,demand,706752800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,lpg,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,lpg,imports,3700300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,lpg,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,lpg,refinery_output,660499200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,lpg,statistical_difference,-46253400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,lpg,stock_change,-1850100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,naphtha,closing_stock,42497400,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,naphtha,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,naphtha,exports,222403000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,naphtha,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,naphtha,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,naphtha,receipts,0,litres,sum of months reported,2,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,naphtha,refinery_output,293231900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,naphtha,statistical_difference,92077900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,naphtha,stock_change,-12749300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,other_products,closing_stock,0,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,other_products,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,other_products,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,other_products,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,other_products,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,other_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,other_products,refinery_output,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,other_products,statistical_difference,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,other_products,stock_change,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,paraffin,closing_stock,65229400,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,paraffin,demand,1752413400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,paraffin,exports,7526400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,paraffin,imports,7526400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,paraffin,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,paraffin,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,paraffin,refinery_output,1990751700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,paraffin,statistical_difference,269698500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,paraffin,stock_change,-33869000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,petrol,closing_stock,538395500,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,petrol,demand,14878559500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,petrol,exports,422640500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,petrol,imports,508783600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,petrol,interproduct_transfers,154788900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,petrol,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,petrol,refinery_output,12109860800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,petrol,statistical_difference,-2535842900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,petrol,stock_change,13459800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,total_products,closing_stock,1157000000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,total_products,demand,33839000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,total_products,exports,1405000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,total_products,imports,4343000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,total_products,interproduct_transfers,207000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,total_products,products_transferred,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,total_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,total_products,refinery_output,26627000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,total_products,statistical_difference,-4457000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2019,shared,total_products,stock_change,397000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,diesel,closing_stock,452948600,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,diesel,demand,12833148000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,diesel,exports,256117400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,diesel,imports,3384071300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,diesel,interproduct_transfers,49800800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,diesel,refinery_output,6356694700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,diesel,statistical_difference,-3113725000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,diesel,stock_change,-183788000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,fuel_oil,closing_stock,109390800,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,fuel_oil,demand,1391120100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,fuel_oil,exports,360163900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,fuel_oil,imports,60887300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,fuel_oil,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,fuel_oil,refinery_output,1604741800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,fuel_oil,statistical_difference,204333700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,fuel_oil,stock_change,-297212600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,jet,closing_stock,38640300,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,jet,demand,896206700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,jet,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,jet,imports,44872800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,jet,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,jet,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,jet,refinery_output,933600500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,jet,statistical_difference,67309000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,jet,stock_change,14957700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,lpg,closing_stock,14801100,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,lpg,demand,579093200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,lpg,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,lpg,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,lpg,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,lpg,refinery_output,566142400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,lpg,statistical_difference,-12950800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,lpg,stock_change,-1850000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,naphtha,closing_stock,32581300,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,naphtha,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,naphtha,exports,135991500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,naphtha,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,naphtha,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,naphtha,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,naphtha,refinery_output,172822700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,naphtha,statistical_difference,67996000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,naphtha,stock_change,-33998100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,other_products,closing_stock,0,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,other_products,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,other_products,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,other_products,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,other_products,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,other_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,other_products,refinery_output,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,other_products,statistical_difference,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,other_products,stock_change,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,paraffin,closing_stock,62720600,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,paraffin,demand,1293298500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,paraffin,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,paraffin,imports,45158400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,paraffin,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,paraffin,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,paraffin,refinery_output,1323404500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,paraffin,statistical_difference,66483900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,paraffin,stock_change,6272000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,petrol,closing_stock,555893400,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,petrol,demand,12649602200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,petrol,exports,390336800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,petrol,imports,1039103200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,petrol,interproduct_transfers,17497900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,petrol,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,petrol,refinery_output,8927943300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,petrol,statistical_difference,-3439001200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,petrol,stock_change,394374700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,total_products,closing_stock,1228000000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,total_products,demand,28746000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,total_products,exports,1144000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,total_products,imports,4530000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,total_products,interproduct_transfers,66000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,total_products,products_transferred,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,total_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,total_products,refinery_output,18952000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,total_products,statistical_difference,-6226000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2020,shared,total_products,stock_change,-116000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,diesel,closing_stock,834753400,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,diesel,demand,13677387200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,diesel,exports,257303300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,diesel,imports,4288782600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,diesel,interproduct_transfers,3557200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,diesel,refinery_output,5295466900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,diesel,statistical_difference,-4936190900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,diesel,stock_change,591679000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,fuel_oil,closing_stock,90815000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,fuel_oil,demand,1391120200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,fuel_oil,exports,37151800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,fuel_oil,imports,114550800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,fuel_oil,interproduct_transfers,10319900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,fuel_oil,refinery_output,1192978400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,fuel_oil,statistical_difference,-100103000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,fuel_oil,stock_change,-10319900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,jet,closing_stock,26175700,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,jet,demand,583344500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,jet,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,jet,imports,44872800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,jet,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,jet,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,jet,refinery_output,862552000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,jet,statistical_difference,275468400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,jet,stock_change,48612200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,lpg,closing_stock,5550400,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,lpg,demand,262719700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,lpg,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,lpg,imports,18501400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,lpg,interproduct_transfers,0,litres,sum of months reported,1,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,lpg,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,lpg,refinery_output,329324600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,lpg,statistical_difference,85106200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,lpg,stock_change,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,naphtha,closing_stock,28331600,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,naphtha,demand,1416600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,naphtha,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,naphtha,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,naphtha,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,naphtha,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,naphtha,refinery_output,31164900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,naphtha,statistical_difference,32581600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,naphtha,stock_change,-7082900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,other_products,closing_stock,0,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,other_products,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,other_products,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,other_products,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,other_products,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,other_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,other_products,refinery_output,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,other_products,statistical_difference,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,other_products,stock_change,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,paraffin,closing_stock,38886800,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,paraffin,demand,604626500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,paraffin,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,paraffin,imports,45158400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,paraffin,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,paraffin,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,paraffin,refinery_output,905685500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,paraffin,statistical_difference,318620700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,paraffin,stock_change,22579300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,petrol,closing_stock,523589600,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,petrol,demand,11715486000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,petrol,exports,386298600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,petrol,imports,508783700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,petrol,interproduct_transfers,5384000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,petrol,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,petrol,refinery_output,7124318500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,petrol,statistical_difference,-5741988100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,petrol,stock_change,1275997300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,total_products,closing_stock,1522000000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,total_products,demand,27652000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,total_products,exports,681000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,total_products,imports,4974000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,total_products,interproduct_transfers,19000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,total_products,products_transferred,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,total_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,total_products,refinery_output,14879000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,total_products,statistical_difference,-10344000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2021,shared,total_products,stock_change,1872000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,diesel,closing_stock,726852000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,diesel,demand,14181322100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,diesel,exports,194459600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,diesel,imports,5353567700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,diesel,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,diesel,refinery_output,4110923400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,diesel,statistical_difference,-5207723000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,diesel,stock_change,297618100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,fuel_oil,closing_stock,74303200,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,fuel_oil,demand,1250769600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,fuel_oil,exports,31991900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,fuel_oil,imports,80495400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,fuel_oil,interproduct_transfers,12384000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,fuel_oil,refinery_output,998964800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,fuel_oil,statistical_difference,36119700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,fuel_oil,stock_change,-231165400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,jet,closing_stock,34901000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,jet,demand,759095900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,jet,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,jet,imports,44872800,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,jet,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,jet,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,jet,refinery_output,875016700,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,jet,statistical_difference,100963400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,jet,stock_change,59830400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,lpg,closing_stock,5550400,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,lpg,demand,373728200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,lpg,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,lpg,imports,16651200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,lpg,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,lpg,refinery_output,336725200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,lpg,statistical_difference,-27752000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,lpg,stock_change,5550300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,naphtha,closing_stock,32581300,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,naphtha,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,naphtha,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,naphtha,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,naphtha,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,naphtha,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,naphtha,refinery_output,24082100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,naphtha,statistical_difference,21248900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,naphtha,stock_change,-12749500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,other_products,closing_stock,0,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,other_products,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,other_products,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,other_products,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,other_products,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,other_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,other_products,refinery_output,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,other_products,statistical_difference,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,other_products,stock_change,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,paraffin,closing_stock,42650000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,paraffin,demand,780244200,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,paraffin,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,paraffin,imports,45158400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,paraffin,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,paraffin,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,paraffin,refinery_output,913212000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,paraffin,statistical_difference,156801500,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,paraffin,stock_change,15053100,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,petrol,closing_stock,545125400,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,petrol,demand,12220231900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,petrol,exports,378222400,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,petrol,imports,1445591900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,petrol,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,petrol,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,petrol,refinery_output,6638416300,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,petrol,statistical_difference,-5641038900,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,petrol,stock_change,1126592600,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,total_products,closing_stock,1427000000,litres,level at end of December,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,total_products,demand,28807000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,total_products,exports,604000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,total_products,imports,6942000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,total_products,interproduct_transfers,12000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,total_products,products_transferred,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,total_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,total_products,refinery_output,13023000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,total_products,statistical_difference,-10661000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2022,shared,total_products,stock_change,1200000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2017-2022.csv
+ZAF,2023,shared,diesel,closing_stock,646222500,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,diesel,demand,13852874900,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,diesel,exports,457691700,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,diesel,imports,6804900400,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,diesel,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,diesel,refinery_output,5187565400,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,diesel,statistical_difference,-2338258100,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,diesel,stock_change,11857300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,fuel_oil,closing_stock,100102900,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,fuel_oil,demand,1562430300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,fuel_oil,exports,110422900,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,fuel_oil,imports,143446300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,fuel_oil,interproduct_transfers,12384000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,fuel_oil,refinery_output,1343648800,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,fuel_oil,statistical_difference,-154798100,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,fuel_oil,stock_change,-15479700,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,jet,closing_stock,37393900,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,jet,demand,962269100,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,jet,exports,38640300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,jet,imports,98470600,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,jet,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,jet,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,jet,refinery_output,1118077000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,jet,statistical_difference,179490700,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,jet,stock_change,36147400,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,lpg,closing_stock,5550400,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,lpg,demand,362627300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,lpg,exports,1850100,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,lpg,imports,68455100,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,lpg,interproduct_transfers,0,litres,sum of months reported,1,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,lpg,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,lpg,refinery_output,360777100,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,lpg,statistical_difference,61054600,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,lpg,stock_change,5550300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,naphtha,closing_stock,11332600,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,naphtha,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,naphtha,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,naphtha,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,naphtha,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,naphtha,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,naphtha,refinery_output,16999200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,naphtha,statistical_difference,19832300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,naphtha,stock_change,-16999200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,other_products,closing_stock,0,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,other_products,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,other_products,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,other_products,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,other_products,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,other_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,other_products,refinery_output,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,other_products,statistical_difference,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,other_products,stock_change,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,paraffin,closing_stock,42650000,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,paraffin,demand,979695700,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,paraffin,exports,38886800,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,paraffin,imports,99098400,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,paraffin,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,paraffin,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,paraffin,refinery_output,1142769200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,paraffin,statistical_difference,204469200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,paraffin,stock_change,20070700,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,petrol,closing_stock,407834600,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,petrol,demand,11684528400,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,petrol,exports,648766200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,petrol,imports,1115824600,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,petrol,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,petrol,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,petrol,refinery_output,8522800800,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,petrol,statistical_difference,-3492840800,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,petrol,stock_change,795479200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,total_products,closing_stock,1214000000,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,total_products,demand,28442000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,total_products,exports,1257000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,total_products,imports,8230000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,total_products,interproduct_transfers,12000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,total_products,products_transferred,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,total_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,total_products,refinery_output,16575000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,total_products,statistical_difference,-5699000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2023,shared,total_products,stock_change,800000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,diesel,closing_stock,546621200,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,diesel,demand,10038383800,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,diesel,exports,222917100,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,diesel,imports,4828289600,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,diesel,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,diesel,refinery_output,3892749200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,diesel,statistical_difference,-1150157500,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,diesel,stock_change,-387733400,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,fuel_oil,closing_stock,120742600,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,fuel_oil,demand,1333328700,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,fuel_oil,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,fuel_oil,imports,205365700,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,fuel_oil,interproduct_transfers,13416000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,fuel_oil,refinery_output,998964800,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,fuel_oil,statistical_difference,-76367200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,fuel_oil,stock_change,-37151500,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,jet,closing_stock,18696900,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,jet,demand,590823400,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,jet,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,jet,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,jet,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,jet,refinery_output,993430700,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,jet,statistical_difference,315354900,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,jet,stock_change,87252700,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,lpg,closing_stock,7400600,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,lpg,demand,323774300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,lpg,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,lpg,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,lpg,refinery_output,318223900,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,lpg,statistical_difference,-14801000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,lpg,stock_change,12951000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,naphtha,closing_stock,0,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,naphtha,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,naphtha,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,naphtha,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,naphtha,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,naphtha,refinery_output,19832300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,naphtha,statistical_difference,32581800,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,naphtha,stock_change,-12749400,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,other_products,closing_stock,0,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,other_products,demand,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,other_products,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,other_products,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,other_products,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,other_products,receipts,0,litres,sum of months reported,11,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,other_products,refinery_output,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,other_products,statistical_difference,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,other_products,stock_change,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,paraffin,closing_stock,22579400,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,paraffin,demand,594591200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,paraffin,exports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,paraffin,imports,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,paraffin,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,paraffin,refinery_output,1027363500,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,paraffin,statistical_difference,341200200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,paraffin,stock_change,87809100,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,petrol,closing_stock,469750100,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,petrol,demand,10137987300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,petrol,exports,371493300,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,petrol,imports,2401243900,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,petrol,interproduct_transfers,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,petrol,refinery_output,7341022700,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,petrol,statistical_difference,-1110440600,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,petrol,stock_change,339189200,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,total_products,closing_stock,1167000000,litres,level at end of December,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,total_products,demand,22426000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,total_products,exports,594000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,total_products,imports,7434000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,total_products,interproduct_transfers,13000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,total_products,products_transferred,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,total_products,receipts,0,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,total_products,refinery_output,13599000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,total_products,statistical_difference,-1977000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv
+ZAF,2024,shared,total_products,stock_change,1000000,litres,sum of months reported,12,3,jodi-secondary-zaf-2023-2025.csv

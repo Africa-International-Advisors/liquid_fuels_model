@@ -1,0 +1,81 @@
+{
+  "retrieved": "2026-10-08",
+  "purpose": "DR08 refinery supply: capacity tables, closure dates, stated product splits and the United Nations output series",
+  "files": [
+    {
+      "file": "department-energy-sector-report-2021.pdf",
+      "publisher": "Department of Mineral Resources and Energy",
+      "published": "2021",
+      "url": "https://www.dmpr.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Sector%20Report/2021-South-African-Energy-Sector-Report.pdf",
+      "bytes": 376942,
+      "sha256": "e8b54cd38fe96fd04cb65e2b9ab75e5bf802b7fde428895b6083dc47920852bc"
+    },
+    {
+      "file": "department-energy-sector-report-2022.pdf",
+      "publisher": "Department of Mineral Resources and Energy",
+      "published": "2022",
+      "url": "https://www.dmpr.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Sector%20Report/2022-South-African-Energy-Sector-Report.pdf",
+      "bytes": 2921725,
+      "sha256": "40cd5069c982a33e3b047c401bcfd3c1569f7f610ff6646b25967c0457747871"
+    },
+    {
+      "file": "department-energy-sector-report-2023.pdf",
+      "publisher": "Department of Mineral Resources and Energy",
+      "published": "2023",
+      "url": "https://www.dmpr.gov.za/Portals/0/Resources/Publications/Reports/Energy%20Sector%20Reports/SA%20Energy%20Sector%20Report/2023-South-African-Energy-Sector-Report.pdf",
+      "bytes": 1295486,
+      "sha256": "45e7aef0dc3348576594f1f86779b62f5997dbe335199717bdd4563fff81c0a4"
+    },
+    {
+      "file": "shell-sapref-to-pause-refinery-operations-2022-02-10.html",
+      "publisher": "Shell South Africa",
+      "published": "2022-02-10",
+      "url": "https://www.shell.co.za/media/2022-media-releases/sapref-to-pause-refinery-operations.html",
+      "bytes": 71446,
+      "sha256": "56e5459a9c36710a2ddfcbea2a6c98fe183c898c349281f172e3283e3e322af9"
+    },
+    {
+      "file": "pmg-engen-refinery-explosion-committee-2020-12.html",
+      "publisher": "Parliamentary Monitoring Group",
+      "published": "2020-12-08",
+      "url": "https://pmg.org.za/committee-meeting/31716/",
+      "bytes": 141084,
+      "sha256": "0352e1dc424abdb78c6ec2b225ad0b92a718876d0ae1b1ba92f951361ba5c781"
+    },
+    {
+      "file": "engineeringnews-engen-refinery-to-terminal-2021-04-23.html",
+      "publisher": "Engineering News (Creamer Media)",
+      "published": "2021-04-23",
+      "url": "https://www.engineeringnews.co.za/article/engen-to-shut-refinery-and-repurpose-kzn-site-as-an-import-terminal-2021-04-23",
+      "bytes": 261799,
+      "sha256": "eb62cd2add164f5724e867934f44b8ef6f5e3f8479304d842e16ed1c4be77181"
+    },
+    {
+      "file": "sasol-business-overview-2021-04.pdf",
+      "publisher": "Sasol Limited",
+      "published": "2021-04",
+      "url": "https://www.sasol.com/sites/default/files/2022-06/Sasol%20Business%20Overview%20Document.pdf",
+      "bytes": 1603196,
+      "sha256": "800d1260bfce8e3bc39a6f2d263c15307c90ce46fc9eedf4c7717a32e77ec283"
+    },
+    {
+      "file": "un-energy-statistics-zaf-petrol-diesel-2019-2023.csv",
+      "publisher": "United Nations Statistics Division",
+      "published": "retrieved 2026-10-08",
+      "url": "https://data.un.org/ws/rest/data/UNSD,DF_UNDATA_ENERGY/all?startPeriod=2019&endPeriod=2024&dimensionAtObservation=AllDimensions",
+      "bytes": 24034,
+      "sha256": "efffda68a4c480623df65d0c89ec4bc5a0f7ee20c4de38ef41c218b60ee82964"
+    }
+  ],
+  "held_elsewhere": [
+    "external/data/raw/sasol/ (Sasol production and sales metrics)",
+    "external/data/raw/glencore/ (Glencore annual reports)",
+    "external/data/raw/sa_review_20261007T181010425382Z/ (Central Energy Fund, Sasol and PetroSA documents collected by Nigel)"
+  ],
+  "note": "The department's capacity table names the industry association's annual report (SAPIA, now FIASA) as its own source.",
+  "notes": [
+    "The Shell page is the copy served to search crawlers; the ordinary page loads its text by script.",
+    "The United Nations file keeps South Africa's rows (area 710) for motor gasoline (4652) and gas oil/diesel (4670) from the full download.",
+    "Sasol's metrics for the year to June 2024 were added to external/data/raw/sasol/ (https://www.sasol.com/sites/default/files/2024-07/Production%20and%20sales%20metrics%20for%20the%20year%20ended%2030%20June%202024.pdf)."
+  ]
+}

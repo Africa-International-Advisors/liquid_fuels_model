@@ -1,0 +1,44 @@
+publisher: Statistics South Africa, monthly statistical releases
+page: https://www.statssa.gov.za/?page_id=1847
+read_on: '2026-10-06'
+how_obtained: release zips placed by hand or through a browser; the site refuses scripted downloads
+kept_in: external/data/raw/statssa/
+not_fuel_volumes: activity measures only; none is litres of fuel
+seasonal_adjustment: none (actual indices and actual values)
+files:
+- release: mining
+  file: P2041 Mining Production and sales(202607).zip
+  sha256: 27eec7466c40f3f69d435a3da7870fc268bf3a3c7c7c7e444a6ae811c031a6f6
+  first_month: 2003-01
+  latest_month: 2026-07
+  series:
+  - mining_volume_total
+  - mining_volume_excluding_gold
+  - mining_volume_coal
+- release: manufacturing
+  file: P3041.2 Manufacturing_ Production and sales(202607).zip
+  sha256: cafce35ab8a7434619e4ee21366a257c2d430592b72e5bd4ab8324a7c92f0270
+  first_month: 1998-01
+  latest_month: 2026-07
+  series:
+  - manufacturing_volume_total
+- release: land_transport
+  file: P7162 Land transport survey(202607).zip
+  sha256: 14f6ffbd80b7f9c1b21689d14ab784f6beec809134b73fc98bf418f00e76c513
+  first_month: 2008-01
+  latest_month: 2026-07
+  series:
+  - freight_payload_total
+  - passenger_journeys_total
+  - freight_payload_rail
+  - freight_payload_road
+  - passenger_journeys_rail
+  - passenger_journeys_road
+- release: consumer_prices
+  file: P0141 - CPI(COICOP) from Jan 2008 (202608).zip
+  sha256: a6d2ae54c6741957dc7d66c2f7f97fef08d62aba89e151d67b365da9cf57fd0a
+  first_month: 2008-01
+  latest_month: 2026-08
+  series:
+  - consumer_price_index_headline
+warnings: []

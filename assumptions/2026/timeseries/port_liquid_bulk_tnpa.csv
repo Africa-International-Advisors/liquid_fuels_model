@@ -1,0 +1,1216 @@
+country,period,period_basis,scenario,port,movement,value,unit,note,source_file
+ZAF,2024,calendar year,shared,All ports,coastwise,4085475,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Cape Town,coastwise,1406959,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Durban,coastwise,1141269,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,East London,coastwise,774986,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Mossel Bay,coastwise,9156,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Port Elizabeth,coastwise,188842,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Richards Bay,coastwise,252776,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Saldanha,coastwise,311486,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,All ports,handled,35853305,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Cape Town,handled,3053900,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Durban,handled,21599516,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,East London,handled,1349959,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Mossel Bay,handled,695523,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Ngqura,handled,90763,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Port Elizabeth,handled,347905,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Richards Bay,handled,2987760,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Saldanha,handled,5727979,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,All ports,landed,29840777,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Cape Town,landed,1432265,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Durban,landed,19879892,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,East London,landed,574973,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Mossel Bay,landed,686366,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Ngqura,landed,40208,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Port Elizabeth,landed,159063,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Richards Bay,landed,1756300,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Saldanha,landed,5311710,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,All ports,shipped,1720788,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Cape Town,shipped,211497,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Durban,shipped,531483,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Richards Bay,shipped,977808,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,All ports,transhipment,206265,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Cape Town,transhipment,3179,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Durban,transhipment,46872,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Ngqura,transhipment,50556,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Port Elizabeth,transhipment,0,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Richards Bay,transhipment,876,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2024,calendar year,shared,Saldanha,transhipment,104782,tonnes,,tnpa-cargo-summary-2024-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,All ports,coastwise,4137754,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Cape Town,coastwise,1501946,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Durban,coastwise,1232955,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,East London,coastwise,713879,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Mossel Bay,coastwise,18132,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Port Elizabeth,coastwise,368649,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Richards Bay,coastwise,302194,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,All ports,handled,37189729,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Cape Town,handled,3489941,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Durban,handled,22418885,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,East London,handled,1230327,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Mossel Bay,handled,512322,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Ngqura,handled,57156,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Port Elizabeth,handled,850736,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Richards Bay,handled,3506261,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Saldanha,handled,5124100,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,All ports,landed,31272124,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Cape Town,landed,1901482,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Durban,landed,20700632,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,East London,landed,516448,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Mossel Bay,landed,494190,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Ngqura,landed,57156,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Port Elizabeth,landed,318665,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Richards Bay,landed,2159449,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Saldanha,landed,5124100,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,All ports,shipped,1485739,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Cape Town,shipped,81764,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Durban,shipped,405154,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Richards Bay,shipped,998821,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,All ports,transhipment,294112,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Cape Town,transhipment,4749,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Durban,transhipment,80145,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Port Elizabeth,transhipment,163422,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Richards Bay,transhipment,45797,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2025,calendar year,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-12-calendar-year.pdf
+ZAF,2024-07,month,shared,All ports,coastwise,385410,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Cape Town,coastwise,151749,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Durban,coastwise,138014,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,East London,coastwise,76208,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Port Elizabeth,coastwise,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Richards Bay,coastwise,19439,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,All ports,handled,2874885,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Cape Town,handled,269514,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Durban,handled,1844167,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,East London,handled,112788,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Mossel Bay,handled,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Port Elizabeth,handled,-18823,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Richards Bay,handled,274509,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Saldanha,handled,392731,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,All ports,landed,2358971,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Cape Town,landed,94839,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Durban,landed,1661183,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,East London,landed,36580,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Mossel Bay,landed,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Port Elizabeth,landed,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Richards Bay,landed,173638,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Saldanha,landed,392731,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,All ports,shipped,127124,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Cape Town,shipped,22926,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Durban,shipped,22768,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Richards Bay,shipped,81431,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,All ports,transhipment,3380,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Durban,transhipment,22202,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Port Elizabeth,transhipment,-18823,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-07,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2024-07.pdf
+ZAF,2024-08,month,shared,All ports,coastwise,741798,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Cape Town,coastwise,205103,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Durban,coastwise,116860,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,East London,coastwise,77940,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Port Elizabeth,coastwise,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Richards Bay,coastwise,30410,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Saldanha,coastwise,311486,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,All ports,handled,3182095,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Cape Town,handled,305757,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Durban,handled,1713976,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,East London,handled,109313,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Mossel Bay,handled,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Ngqura,handled,27192,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Port Elizabeth,handled,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Richards Bay,handled,309920,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Saldanha,handled,715937,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,All ports,landed,2261600,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Cape Town,landed,51538,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Durban,landed,1550897,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,East London,landed,31373,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Mossel Bay,landed,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Ngqura,landed,27360,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Port Elizabeth,landed,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Richards Bay,landed,195980,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Saldanha,landed,404451,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,All ports,shipped,176825,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Cape Town,shipped,49116,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Durban,shipped,44179,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Richards Bay,shipped,83530,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,All ports,transhipment,1872,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Durban,transhipment,2040,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Ngqura,transhipment,-168,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Port Elizabeth,transhipment,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-08,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2024-08.pdf
+ZAF,2024-09,month,shared,All ports,coastwise,329659,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Cape Town,coastwise,59579,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Durban,coastwise,160095,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,East London,coastwise,98276,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Port Elizabeth,coastwise,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Richards Bay,coastwise,11708,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,All ports,handled,3185844,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Cape Town,handled,187405,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Durban,handled,1981594,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,East London,handled,161626,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Mossel Bay,handled,58441,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Port Elizabeth,handled,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Richards Bay,handled,194208,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Saldanha,handled,602570,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,All ports,landed,2664522,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Cape Town,landed,119591,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Durban,landed,1760206,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,East London,landed,63350,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Mossel Bay,landed,58441,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Port Elizabeth,landed,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Richards Bay,landed,136499,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Saldanha,landed,526436,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,All ports,shipped,115528,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Cape Town,shipped,8235,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Durban,shipped,61292,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Richards Bay,shipped,46001,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,All ports,transhipment,76135,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Durban,transhipment,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Port Elizabeth,transhipment,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-09,month,shared,Saldanha,transhipment,76135,tonnes,,tnpa-cargo-summary-2024-09.pdf
+ZAF,2024-10,month,shared,All ports,coastwise,245897,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Cape Town,coastwise,87964,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Durban,coastwise,36171,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,East London,coastwise,95136,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Port Elizabeth,coastwise,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Richards Bay,coastwise,26626,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,All ports,handled,2628066,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Cape Town,handled,196856,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Durban,handled,1593360,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,East London,handled,127053,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Mossel Bay,handled,87660,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Port Elizabeth,handled,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Richards Bay,handled,225968,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Saldanha,handled,397171,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,All ports,landed,2202138,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Cape Town,landed,97209,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Durban,landed,1496290,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,East London,landed,31917,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Mossel Bay,landed,87660,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Port Elizabeth,landed,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Richards Bay,landed,168026,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Saldanha,landed,321036,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,All ports,shipped,94867,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Cape Town,shipped,11683,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Durban,shipped,51869,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Richards Bay,shipped,31315,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,All ports,transhipment,85165,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Durban,transhipment,9030,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Port Elizabeth,transhipment,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-10,month,shared,Saldanha,transhipment,76135,tonnes,,tnpa-cargo-summary-2024-10.pdf
+ZAF,2024-11,month,shared,All ports,coastwise,304473,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Cape Town,coastwise,176030,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Durban,coastwise,72987,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,East London,coastwise,37818,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Mossel Bay,coastwise,7132,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Port Elizabeth,coastwise,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Richards Bay,coastwise,10506,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,All ports,handled,3379413,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Cape Town,handled,298085,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Durban,handled,2091151,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,East London,handled,125142,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Mossel Bay,handled,82311,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Port Elizabeth,handled,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Richards Bay,handled,222589,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Saldanha,handled,560134,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,All ports,landed,2972047,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Cape Town,landed,122055,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Durban,landed,1982472,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,East London,landed,87324,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Mossel Bay,landed,75179,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Port Elizabeth,landed,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Richards Bay,landed,144883,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Saldanha,landed,560134,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,All ports,shipped,93647,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Cape Town,shipped,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Durban,shipped,27322,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Richards Bay,shipped,66325,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,All ports,transhipment,9245,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Durban,transhipment,8370,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Port Elizabeth,transhipment,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Richards Bay,transhipment,876,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-11,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2024-11.pdf
+ZAF,2024-12,month,shared,All ports,coastwise,322558,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Cape Town,coastwise,130719,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Durban,coastwise,93496,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,East London,coastwise,75565,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Mossel Bay,coastwise,2024,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Port Elizabeth,coastwise,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Richards Bay,coastwise,20754,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,All ports,handled,2852973,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Cape Town,handled,309405,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Durban,handled,1688858,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,East London,handled,134968,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Mossel Bay,handled,21680,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Port Elizabeth,handled,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Richards Bay,handled,293381,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Saldanha,handled,404680,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,All ports,landed,2254521,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Cape Town,landed,165966,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Durban,landed,1547478,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,East London,landed,59404,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Mossel Bay,landed,19656,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Port Elizabeth,landed,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Richards Bay,landed,162040,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Saldanha,landed,299978,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,All ports,shipped,162784,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Cape Town,shipped,9541,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Durban,shipped,42656,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Richards Bay,shipped,110587,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,All ports,transhipment,113110,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Cape Town,transhipment,3179,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Durban,transhipment,5230,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Port Elizabeth,transhipment,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2024-12,month,shared,Saldanha,transhipment,104702,tonnes,,tnpa-cargo-summary-2024-12.pdf
+ZAF,2025-02,month,shared,All ports,coastwise,317584,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Cape Town,coastwise,72205,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Durban,coastwise,129420,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,East London,coastwise,75949,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Port Elizabeth,coastwise,25735,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Richards Bay,coastwise,14274,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,All ports,handled,2865590,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Cape Town,handled,252212,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Durban,handled,1772898,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,East London,handled,119542,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Mossel Bay,handled,72813,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Port Elizabeth,handled,58592,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Richards Bay,handled,243012,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Saldanha,handled,346520,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,All ports,landed,2493824,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Cape Town,landed,136384,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Durban,landed,1586763,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,East London,landed,43592,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Mossel Bay,landed,72813,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Port Elizabeth,landed,21745,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Richards Bay,landed,136657,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Saldanha,landed,495869,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,All ports,shipped,30011,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Cape Town,shipped,38874,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Durban,shipped,48405,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Richards Bay,shipped,92080,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Saldanha,shipped,-149349,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,All ports,transhipment,24171,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Cape Town,transhipment,4749,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Durban,transhipment,8311,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Port Elizabeth,transhipment,11112,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-02,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-02.pdf
+ZAF,2025-03,month,shared,All ports,coastwise,430285,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Cape Town,coastwise,125186,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Durban,coastwise,154469,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,East London,coastwise,55314,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Mossel Bay,coastwise,3918,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Port Elizabeth,coastwise,47664,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Richards Bay,coastwise,43735,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,All ports,handled,3965453,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Cape Town,handled,384789,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Durban,handled,2224390,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,East London,handled,97401,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Mossel Bay,handled,151241,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Ngqura,handled,30139,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Port Elizabeth,handled,118540,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Richards Bay,handled,343509,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Saldanha,handled,615444,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,All ports,landed,3177567,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Cape Town,landed,226693,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Durban,landed,2034462,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,East London,landed,42088,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Mossel Bay,landed,147323,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Ngqura,landed,30139,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Port Elizabeth,landed,43613,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Richards Bay,landed,187154,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Saldanha,landed,466095,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,All ports,shipped,330338,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Cape Town,shipped,32910,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Durban,shipped,35459,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Richards Bay,shipped,112620,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Saldanha,shipped,149349,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,All ports,transhipment,27263,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Durban,transhipment,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Port Elizabeth,transhipment,27263,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-03,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-03.pdf
+ZAF,2025-04,month,shared,All ports,coastwise,267694,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Cape Town,coastwise,120430,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Durban,coastwise,56052,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,East London,coastwise,53044,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Port Elizabeth,coastwise,12159,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Richards Bay,coastwise,26009,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,All ports,handled,2680491,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Cape Town,handled,364526,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Durban,handled,1591993,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,East London,handled,113315,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Mossel Bay,handled,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Port Elizabeth,handled,43410,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Richards Bay,handled,245925,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Saldanha,handled,321322,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,All ports,landed,2305306,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Cape Town,landed,244096,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Durban,landed,1521570,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,East London,landed,60272,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Mossel Bay,landed,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Port Elizabeth,landed,33188,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Richards Bay,landed,124859,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Saldanha,landed,321322,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,All ports,shipped,110301,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Cape Town,shipped,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Durban,shipped,15243,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Richards Bay,shipped,95057,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,All ports,transhipment,-2809,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Durban,transhipment,-872,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Port Elizabeth,transhipment,-1937,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-04,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-04.pdf
+ZAF,2025-05,month,shared,All ports,coastwise,323659,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Cape Town,coastwise,141729,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Durban,coastwise,113731,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,East London,coastwise,34528,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Port Elizabeth,coastwise,23153,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Richards Bay,coastwise,10518,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,All ports,handled,2916933,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Cape Town,handled,295175,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Durban,handled,1789963,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,East London,handled,80883,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Mossel Bay,handled,49893,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Port Elizabeth,handled,59988,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Richards Bay,handled,286105,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Saldanha,handled,354927,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,All ports,landed,2446490,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Cape Town,landed,153446,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Durban,landed,1621996,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,East London,landed,46354,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Mossel Bay,landed,49893,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Port Elizabeth,landed,36835,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Richards Bay,landed,183039,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Saldanha,landed,354927,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,All ports,shipped,146784,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Cape Town,shipped,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Durban,shipped,54236,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Richards Bay,shipped,92548,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,All ports,transhipment,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Durban,transhipment,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Port Elizabeth,transhipment,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-05,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-05.pdf
+ZAF,2025-06,month,shared,All ports,coastwise,367151,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Cape Town,coastwise,128932,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Durban,coastwise,124639,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,East London,coastwise,64792,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Mossel Bay,coastwise,1931,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Port Elizabeth,coastwise,20856,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Richards Bay,coastwise,26001,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,All ports,handled,2713690,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Cape Town,handled,306700,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Durban,handled,1633475,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,East London,handled,91646,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Mossel Bay,handled,1931,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Port Elizabeth,handled,50983,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Richards Bay,handled,298908,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Saldanha,handled,330047,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,All ports,landed,2220896,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Cape Town,landed,175720,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Durban,landed,1468651,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,East London,landed,26853,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Mossel Bay,landed,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Port Elizabeth,landed,30128,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Richards Bay,landed,189497,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Saldanha,landed,330047,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,All ports,shipped,104219,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Cape Town,shipped,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Durban,shipped,20808,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Richards Bay,shipped,83410,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,All ports,transhipment,21424,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Cape Town,transhipment,2048,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Durban,transhipment,19376,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Port Elizabeth,transhipment,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-06,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-06.pdf
+ZAF,2025-07,month,shared,All ports,coastwise,392157,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Cape Town,coastwise,157677,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Durban,coastwise,115237,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,East London,coastwise,62588,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Port Elizabeth,coastwise,38705,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Richards Bay,coastwise,17949,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,All ports,handled,3090421,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Cape Town,handled,408146,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Durban,handled,1749818,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,East London,handled,97925,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Mossel Bay,handled,48609,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Port Elizabeth,handled,73283,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Richards Bay,handled,237539,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Saldanha,handled,475101,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,All ports,landed,2594209,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Cape Town,landed,238467,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Durban,landed,1603955,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,East London,landed,35337,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Mossel Bay,landed,48609,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Port Elizabeth,landed,26809,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Richards Bay,landed,165931,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Saldanha,landed,475101,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,All ports,shipped,91207,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Cape Town,shipped,9944,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Durban,shipped,27604,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Richards Bay,shipped,53659,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,All ports,transhipment,12849,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Cape Town,transhipment,2057,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Durban,transhipment,3023,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Port Elizabeth,transhipment,7769,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-07,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-07.pdf
+ZAF,2025-08,month,shared,All ports,coastwise,289294,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Cape Town,coastwise,115907,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Durban,coastwise,62027,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,East London,coastwise,50177,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Port Elizabeth,coastwise,26477,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Richards Bay,coastwise,34706,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,All ports,handled,2857082,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Cape Town,handled,195494,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Durban,handled,1715896,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,East London,handled,94910,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Mossel Bay,handled,48609,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Port Elizabeth,handled,76107,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Richards Bay,handled,412098,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Saldanha,handled,313968,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,All ports,landed,2410957,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Cape Town,landed,79587,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Durban,landed,1615866,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,East London,landed,44733,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Mossel Bay,landed,48609,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Port Elizabeth,landed,33293,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Richards Bay,landed,274900,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Saldanha,landed,313968,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,All ports,shipped,83586,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Cape Town,shipped,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Durban,shipped,26892,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Richards Bay,shipped,56694,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,All ports,transhipment,73245,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Durban,transhipment,11111,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Port Elizabeth,transhipment,16337,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Richards Bay,transhipment,45797,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-08,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-08.pdf
+ZAF,2025-09,month,shared,All ports,coastwise,354754,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Cape Town,coastwise,117842,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Durban,coastwise,93730,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,East London,coastwise,66161,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Port Elizabeth,coastwise,55889,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Richards Bay,coastwise,21132,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,All ports,handled,4055852,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Cape Town,handled,254588,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Durban,handled,2592992,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,East London,handled,115422,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Mossel Bay,handled,25629,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Ngqura,handled,27017,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Port Elizabeth,handled,134249,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Richards Bay,handled,279448,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Saldanha,handled,626508,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,All ports,landed,3557070,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Cape Town,landed,140851,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Durban,landed,2457135,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,East London,landed,49261,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Mossel Bay,landed,25629,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Ngqura,landed,27017,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Port Elizabeth,landed,46311,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Richards Bay,landed,184359,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Saldanha,landed,626508,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,All ports,shipped,111639,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Cape Town,shipped,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Durban,shipped,37682,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Richards Bay,shipped,73957,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,All ports,transhipment,32388,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Cape Town,transhipment,-4105,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Durban,transhipment,4445,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Port Elizabeth,transhipment,32049,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-09,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-09.pdf
+ZAF,2025-10,month,shared,All ports,coastwise,282109,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Cape Town,coastwise,99100,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Durban,coastwise,82090,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,East London,coastwise,38723,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Mossel Bay,coastwise,3509,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Port Elizabeth,coastwise,18024,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Richards Bay,coastwise,40662,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,All ports,handled,2665558,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Cape Town,handled,183683,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Durban,handled,1635186,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,East London,handled,75704,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Mossel Bay,handled,54651,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Port Elizabeth,handled,55945,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Richards Bay,handled,300318,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Saldanha,handled,360071,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,All ports,landed,2274002,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Cape Town,landed,84583,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Durban,landed,1526118,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,East London,landed,36981,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Mossel Bay,landed,51142,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Port Elizabeth,landed,37921,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Richards Bay,landed,177187,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Saldanha,landed,360071,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,All ports,shipped,97602,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Cape Town,shipped,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Durban,shipped,15133,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Richards Bay,shipped,82469,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,All ports,transhipment,11845,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Durban,transhipment,11845,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Port Elizabeth,transhipment,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-10,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-10.pdf
+ZAF,2025-11,month,shared,All ports,coastwise,356976,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Cape Town,coastwise,149888,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Durban,coastwise,63891,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,East London,coastwise,61177,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Mossel Bay,coastwise,6177,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Port Elizabeth,coastwise,55360,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Richards Bay,coastwise,20483,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,All ports,handled,2840930,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Cape Town,handled,252962,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Durban,handled,1538981,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,East London,handled,87864,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Mossel Bay,handled,6177,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Port Elizabeth,handled,71450,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Richards Bay,handled,300663,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Saldanha,handled,582832,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,All ports,landed,2355222,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Cape Town,landed,103075,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Durban,landed,1425437,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,East London,landed,26686,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Mossel Bay,landed,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Port Elizabeth,landed,-7429,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Richards Bay,landed,224621,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Saldanha,landed,582832,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,All ports,shipped,90972,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Cape Town,shipped,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Durban,shipped,35413,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Richards Bay,shipped,55559,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,All ports,transhipment,37759,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Durban,transhipment,14240,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Port Elizabeth,transhipment,23519,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-11,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-11.pdf
+ZAF,2025-12,month,shared,All ports,coastwise,369387,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Cape Town,coastwise,135535,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Durban,coastwise,103498,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,East London,coastwise,65692,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Port Elizabeth,coastwise,36559,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Richards Bay,coastwise,28102,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,All ports,handled,3091414,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Cape Town,handled,319956,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Durban,handled,2065725,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,East London,handled,138127,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Mossel Bay,handled,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Port Elizabeth,handled,100120,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Richards Bay,handled,293286,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Saldanha,handled,174200,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,All ports,landed,2532869,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Cape Town,landed,184385,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Durban,landed,1930507,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,East London,landed,72435,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Mossel Bay,landed,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Port Elizabeth,landed,16251,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Richards Bay,landed,155091,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Saldanha,landed,174200,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,All ports,shipped,137782,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Cape Town,shipped,36,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Durban,shipped,27652,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Richards Bay,shipped,110093,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,All ports,transhipment,51377,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Durban,transhipment,4067,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Port Elizabeth,transhipment,47310,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2025-12,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2025-12.pdf
+ZAF,2026-01,month,shared,All ports,coastwise,447785,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Cape Town,coastwise,174551,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Durban,coastwise,143319,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,East London,coastwise,60816,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Port Elizabeth,coastwise,46594,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Richards Bay,coastwise,22506,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,All ports,handled,3230886,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Cape Town,handled,335390,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Durban,handled,1874212,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,East London,handled,76802,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Mossel Bay,handled,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Port Elizabeth,handled,116805,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Richards Bay,handled,332988,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Saldanha,handled,494689,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,All ports,landed,2599858,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Cape Town,landed,147978,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Durban,landed,1680115,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,East London,landed,15986,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Mossel Bay,landed,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Port Elizabeth,landed,42604,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Richards Bay,landed,218487,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Saldanha,landed,494689,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,All ports,shipped,155635,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Cape Town,shipped,12862,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Durban,shipped,50777,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Richards Bay,shipped,91996,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,All ports,transhipment,27608,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Durban,transhipment,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Port Elizabeth,transhipment,27608,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-01,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2026-01.pdf
+ZAF,2026-02,month,shared,All ports,coastwise,234700,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Cape Town,coastwise,89711,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Durban,coastwise,61858,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,East London,coastwise,41849,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Port Elizabeth,coastwise,32486,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Richards Bay,coastwise,8795,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,All ports,handled,2691316,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Cape Town,handled,211717,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Durban,handled,1692907,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,East London,handled,80548,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Mossel Bay,handled,33610,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Port Elizabeth,handled,87449,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Richards Bay,handled,262501,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Saldanha,handled,322584,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,All ports,landed,2258755,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Cape Town,landed,122070,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Durban,landed,1568126,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,East London,landed,38699,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Mossel Bay,landed,33610,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Port Elizabeth,landed,31717,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Richards Bay,landed,141950,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Saldanha,landed,322584,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,All ports,shipped,156946,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Cape Town,shipped,-65,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Durban,shipped,45254,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Richards Bay,shipped,111757,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,All ports,transhipment,40915,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Durban,transhipment,17669,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Port Elizabeth,transhipment,23246,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-02,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2026-02.pdf
+ZAF,2026-03,month,shared,All ports,coastwise,335751,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Cape Town,coastwise,37532,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Durban,coastwise,129422,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,East London,coastwise,65114,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Port Elizabeth,coastwise,74090,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Richards Bay,coastwise,29593,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,All ports,handled,3464794,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Cape Town,handled,464698,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Durban,handled,2231230,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,East London,handled,97022,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Mossel Bay,handled,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Ngqura,handled,8543,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Port Elizabeth,handled,182989,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Richards Bay,handled,296888,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Saldanha,handled,183424,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,All ports,landed,2740045,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Cape Town,landed,427167,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Durban,landed,2057631,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,East London,landed,31908,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Mossel Bay,landed,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Port Elizabeth,landed,39539,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Richards Bay,landed,169314,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Saldanha,landed,14486,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,All ports,shipped,130961,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Cape Town,shipped,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Durban,shipped,32980,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Richards Bay,shipped,97981,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,All ports,transhipment,258037,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Durban,transhipment,11197,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Ngqura,transhipment,8543,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Port Elizabeth,transhipment,69359,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-03,month,shared,Saldanha,transhipment,168938,tonnes,,tnpa-cargo-summary-2026-03.pdf
+ZAF,2026-04,month,shared,All ports,coastwise,213503,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Cape Town,coastwise,48653,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Durban,coastwise,81658,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,East London,coastwise,42937,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Mossel Bay,coastwise,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Ngqura,coastwise,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Port Elizabeth,coastwise,34958,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Richards Bay,coastwise,5298,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Saldanha,coastwise,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,All ports,handled,2264840,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Cape Town,handled,411049,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Durban,handled,1397062,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,East London,handled,66496,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Mossel Bay,handled,51706,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Ngqura,handled,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Port Elizabeth,handled,74266,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Richards Bay,handled,246808,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Saldanha,handled,17452,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,All ports,landed,1970388,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Cape Town,landed,362156,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Durban,landed,1281786,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,East London,landed,23560,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Mossel Bay,landed,51706,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Ngqura,landed,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Port Elizabeth,landed,20147,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Richards Bay,landed,213581,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Saldanha,landed,17452,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,All ports,shipped,61787,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Cape Town,shipped,240,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Durban,shipped,33618,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,East London,shipped,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Mossel Bay,shipped,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Ngqura,shipped,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Port Elizabeth,shipped,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Richards Bay,shipped,27929,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Saldanha,shipped,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,All ports,transhipment,19161,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Cape Town,transhipment,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Durban,transhipment,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,East London,transhipment,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Mossel Bay,transhipment,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Ngqura,transhipment,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Port Elizabeth,transhipment,19161,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Richards Bay,transhipment,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-04,month,shared,Saldanha,transhipment,0,tonnes,"heading says cargo invoiced, not handled",tnpa-cargo-summary-2026-04.pdf
+ZAF,2026-05,month,shared,All ports,coastwise,330991,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Cape Town,coastwise,93825,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Durban,coastwise,137892,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,East London,coastwise,38510,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Mossel Bay,coastwise,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Ngqura,coastwise,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Port Elizabeth,coastwise,16007,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Richards Bay,coastwise,44758,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Saldanha,coastwise,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,All ports,handled,3554076,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Cape Town,handled,343688,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Durban,handled,2421598,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,East London,handled,77760,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Mossel Bay,handled,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Ngqura,handled,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Port Elizabeth,handled,56827,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Richards Bay,handled,314336,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Saldanha,handled,339867,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,All ports,landed,3262716,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Cape Town,landed,249864,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Durban,landed,2254843,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,East London,landed,39250,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Mossel Bay,landed,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Ngqura,landed,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Port Elizabeth,landed,31386,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Richards Bay,landed,178569,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Saldanha,landed,508805,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,All ports,shipped,112760,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Cape Town,shipped,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Durban,shipped,21751,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,East London,shipped,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Mossel Bay,shipped,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Ngqura,shipped,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Port Elizabeth,shipped,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Richards Bay,shipped,91009,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Saldanha,shipped,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,All ports,transhipment,-152391,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Cape Town,transhipment,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Durban,transhipment,7113,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,East London,transhipment,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Mossel Bay,transhipment,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Ngqura,transhipment,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Port Elizabeth,transhipment,9434,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Richards Bay,transhipment,0,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-05,month,shared,Saldanha,transhipment,-168938,tonnes,heading says 2025-05; the page lists it as 2026-05 and the figures differ from 2025-05,tnpa-cargo-summary-2026-05.pdf
+ZAF,2026-06,month,shared,All ports,coastwise,300627,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Cape Town,coastwise,120677,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Durban,coastwise,74524,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,East London,coastwise,68142,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Port Elizabeth,coastwise,25012,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Richards Bay,coastwise,12272,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,All ports,handled,3153985,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Cape Town,handled,207868,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Durban,handled,1819726,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,East London,handled,98367,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Mossel Bay,handled,26574,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Ngqura,handled,14324,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Port Elizabeth,handled,61486,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Richards Bay,handled,415335,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Saldanha,handled,510304,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,All ports,landed,2703566,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Cape Town,landed,87191,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Durban,landed,1713074,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,East London,landed,30225,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Mossel Bay,landed,26574,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Ngqura,landed,14324,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Port Elizabeth,landed,24747,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Richards Bay,landed,297127,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Saldanha,landed,510304,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,All ports,shipped,138062,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Cape Town,shipped,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Durban,shipped,32129,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Richards Bay,shipped,105934,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,All ports,transhipment,11730,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Durban,transhipment,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Port Elizabeth,transhipment,11728,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Richards Bay,transhipment,2,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-06,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2026-06.pdf
+ZAF,2026-07,month,shared,All ports,coastwise,336513,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Cape Town,coastwise,144496,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Durban,coastwise,86368,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,East London,coastwise,43368,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Mossel Bay,coastwise,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Port Elizabeth,coastwise,28748,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Richards Bay,coastwise,33533,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,All ports,handled,2718142,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Cape Town,handled,210284,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Durban,handled,1860600,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,East London,handled,71023,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Mossel Bay,handled,37061,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Ngqura,handled,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Port Elizabeth,handled,59678,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Richards Bay,handled,309165,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Saldanha,handled,170331,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,All ports,landed,2287294,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Cape Town,landed,59710,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Durban,landed,1742768,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,East London,landed,27655,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Mossel Bay,landed,37061,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Port Elizabeth,landed,17704,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Richards Bay,landed,232065,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Saldanha,landed,170331,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,All ports,shipped,81110,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Cape Town,shipped,6078,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Durban,shipped,31463,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Richards Bay,shipped,43569,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,All ports,transhipment,13225,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Durban,transhipment,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Ngqura,transhipment,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Port Elizabeth,transhipment,13227,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Richards Bay,transhipment,-2,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-07,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2026-07.pdf
+ZAF,2026-08,month,shared,All ports,coastwise,315627,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Cape Town,coastwise,156377,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Durban,coastwise,36582,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,East London,coastwise,47437,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Mossel Bay,coastwise,8668,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Ngqura,coastwise,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Port Elizabeth,coastwise,42510,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Richards Bay,coastwise,24054,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Saldanha,coastwise,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,All ports,handled,2583193,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Cape Town,handled,261244,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Durban,handled,1319488,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,East London,handled,49541,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Mossel Bay,handled,8668,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Ngqura,handled,36244,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Port Elizabeth,handled,109680,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Richards Bay,handled,308660,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Saldanha,handled,489669,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,All ports,landed,2068816,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Cape Town,landed,84428,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Durban,landed,1227180,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,East London,landed,2104,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Mossel Bay,landed,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Ngqura,landed,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Port Elizabeth,landed,27010,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Richards Bay,landed,238425,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Saldanha,landed,489669,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,All ports,shipped,112779,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Cape Town,shipped,20439,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Durban,shipped,46160,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,East London,shipped,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Mossel Bay,shipped,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Ngqura,shipped,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Port Elizabeth,shipped,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Richards Bay,shipped,46180,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Saldanha,shipped,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,All ports,transhipment,85971,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Cape Town,transhipment,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Durban,transhipment,9566,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,East London,transhipment,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Mossel Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Ngqura,transhipment,36244,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Port Elizabeth,transhipment,40160,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Richards Bay,transhipment,0,tonnes,,tnpa-cargo-summary-2026-08.pdf
+ZAF,2026-08,month,shared,Saldanha,transhipment,0,tonnes,,tnpa-cargo-summary-2026-08.pdf

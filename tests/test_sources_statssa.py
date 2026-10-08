@@ -99,3 +99,84 @@ def test_average_growth_over_a_window() -> None:
     rate, first, last = statssa.average_growth({2021: 100.0, 2026: 110.0, 2025: 108.0}, 5)
     assert (first, last) == (2021, 2026)
     assert abs((1 + rate) ** 5 - 1.10) < 1e-12
+
+
+def test_quarterly_series_take_unadjusted_constant_price_rows_only() -> None:
+    header = ["H01", "H02", "H03", "H04", "H05", "H06", "H15", "H16", "H17", "H25",
+              "202504", "202601", "202602"]
+    rows = [
+        header,
+        ["P0441", "GDP", "QNU1002", "Value added at basic prices", "Mining and quarrying", None,
+         "Current prices", "Actual values", "R million", "Quarterly", 9.0, 9.0, 9.0],
+        ["P0441", "GDP", "QRU1002", "Value added at basic prices", "Mining and quarrying", None,
+         "Constant 2015 prices", "Actual values", "R million", "Quarterly", 54.0, 47.0, 52.0],
+        ["P0441", "GDP", "QRS1002", "Value added at basic prices", "Mining and quarrying", None,
+         "Constant 2015 prices", "Seasonally adjusted and annualised values", "R million",
+         "Quarterly", 200.0, 201.0, 202.0],
+        ["P0441", "GDP", "QRU1000", "GDP at market prices", "GDP at market prices", None,
+         "Constant 2015 prices", "Actual values", "R million", "Quarterly", 1195.0, 1168.0, None],
+        ["P0441", "GDP", "QRU1099", "Value added at basic prices", "Mining and quarrying", None,
+         "Constant 2015 prices", "Actual values", "% of GDP", "Quarterly", 4.5, 4.0, 4.4],
+    ]
+    series, warnings = statssa.parse_quarterly_constant_price_series(rows)
+    assert warnings == []
+    assert [s["code"] for s in series] == ["QRU1002", "QRU1000"]
+    assert series[0]["values"] == {"2025-Q4": 54e6, "2026-Q1": 47e6, "2026-Q2": 52e6}
+    assert series[1]["name"] == "gdp" and "2026-Q2" not in series[1]["values"]
+
+
+def test_monthly_series_are_read_by_code_and_missing_codes_are_reported() -> None:
+    rows = [
+        ["H01", "H02", "H03", "H04", "H05", "H16", "H17", "H18", "H25", "MO062026", "MO072026"],
+        ["P2041", "Mining", "FMP20000", "Physical volume", "Total, gold included",
+         "Actual indices", "Index", "2019=100", "Monthly", 96, "91,4"],
+        ["P2041", "Mining", "FMP20000S", "Physical volume", "Total, gold included",
+         "Seasonally adjusted indices", "Index", "2019=100", "Monthly", 95.0, 94.0],
+        ["P2041", "Mining", "FMP21000", "Physical volume", "Coal",
+         "Actual indices", "Index", "2019=100", "Monthly", 93.0, ".."],
+    ]
+    wanted = {"FMP20000": ("mining_volume_total", "index, 2019=100"),
+              "FMP21000": ("mining_volume_coal", "index, 2019=100"),
+              "FMP99999": ("not_there", "index")}
+    series, warnings = statssa.parse_monthly_series(rows, wanted)
+    by = {s["name"]: s for s in series}
+    assert by["mining_volume_total"]["values"] == {"2026-06": 96.0, "2026-07": 91.4}
+    assert by["mining_volume_coal"]["values"] == {"2026-06": 93.0}
+    assert warnings == ["series FMP99999 not found"]
+
+
+def test_latest_release_file_picks_the_newest_stamp(tmp_path) -> None:
+    for name in ("P7162 Land transport survey(202605).zip", "P7162 Land transport survey(202607).zip",
+                 "P7162 Land transport survey.zip"):
+        (tmp_path / name).write_bytes(b"")
+    found = statssa.latest_release_file(tmp_path, "P7162 Land transport survey(*).zip")
+    assert found.name == "P7162 Land transport survey(202607).zip"
+
+
+def test_provincial_gdp_reads_the_constant_price_block_only() -> None:
+    sheet = [
+        ["Western Cape – GDPR by activity", None, None],
+        ["a. Current prices - Rand million", None, None],
+        ["Industry", "2023", "2024"],
+        ["Mining and quarrying", 1921.9, 1863.5],
+        ["GDPR at market prices", 900000.0, 950000.0],
+        [None, None, None],
+        ["c. Constant 2015 prices - Rand million", None, None],
+        ["Industry", "2023", "2024"],
+        ["Mining and quarrying", 1500.0, 1400.0],
+        ["GDPR at market prices", 600000.0, 604000.0],
+        [None, None, None],
+        ["d. Constant 2015 prices - percentage changes", None, None],
+        ["Industry", "2023", "2024"],
+        ["Mining and quarrying", None, -6.7],
+    ]
+    rows, warnings = statssa.parse_provincial_gdp({
+        "ReadMe": [["Description of tables"]],
+        "Table 1": [["South Africa – GDP by activity"]],
+        "Table 2": sheet,
+    })
+    assert {(r["province"], r["industry"], r["year"]): r["value"] for r in rows} == {
+        ("WC", "Mining and quarrying", 2023): 1.5e9, ("WC", "Mining and quarrying", 2024): 1.4e9,
+        ("WC", "GDPR at market prices", 2023): 6.0e11, ("WC", "GDPR at market prices", 2024): 6.04e11,
+    }
+    assert "no sheet read for province GP" in warnings and len(warnings) == 8
