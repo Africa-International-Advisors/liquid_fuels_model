@@ -221,8 +221,8 @@ retitle(closing, {"6 October 2026": "7 October 2026", "Agree priorities": "Revie
                   "Confirm demand, routes and access": "manish-branch | checks pass | nothing merged to main"})
 
 # --- 1 National balance ------------------------------------------------------
-both_2024 = bn("petrol", 2024, "sales_less_net_imports") + bn("diesel", 2024, "sales_less_net_imports")
-s = page(0, f"On customs trade, 2024 petrol and diesel sales exceed net imports by {both_2024:.1f} bn litres",
+both_2023 = bn("petrol", 2023, "sales_less_net_imports") + bn("diesel", 2023, "sales_less_net_imports")
+s = page(0, f"On customs trade, 2023 petrol and diesel sales exceed net imports by {both_2023:.1f} bn litres",
          "Corrected balance | calendar years, billion litres | imports and exports from SARS customs")
 header = ["Year", "Sales", "Imports", "Exports", "Sales less\nnet imports", "Sales", "Imports", "Exports",
           "Sales less\nnet imports"]
@@ -234,7 +234,7 @@ text(s, "Diesel", LEFT + 5.4, 2.2, 4.4, 0.25, 11.5, True, BLUE)
 table(s, [header] + body, [1.0] + [1.1] * 8, y=2.48, height=3.3, size=11, numeric_from=1)
 text(s, "Sales less net imports is what production, stock changes and gaps in sales coverage must together supply. "
         "It is not a measurement of production.\n"
-        "Sales: department to 2023; 2024 is FIASA's figure and is unverified; none yet for 2025. "
+        "Sales: department, which has published to 2023; 2024 and 2025 are blank. FIASA is not used. "
         "Rebuilt by one command from registered inputs; a test checks every year against the customs extract.",
      LEFT, 6.05, WIDTH, 0.9, 11)
 
@@ -246,8 +246,8 @@ table(s, [
      f"FIASA 2025 edition, p.47: petrol {show('petrol', 2024, 'sales_fiasa')}, "
      f"diesel {show('diesel', 2024, 'sales_fiasa')}. FIASA 2024 edition, p.32: 8.76 and 11.81. "
      "JODI: 10.14 and 10.04 (lowest reliability code). Department: not published. Road Accident Fund levy: "
-     "24.4 bn litres for both fuels in the year to March 2025, up 0.7%, against 20.76 here.",
-     "FIASA 2025 edition, flagged unverified", "Nigel: agree the 2024 sales source"],
+     "24.4 bn litres for both fuels in the year to March 2025, up 0.7%.",
+     "None. 2024 is left blank; FIASA is not used", "Nigel: note"],
     ["2024 diesel imports",
      f"Customs {show('diesel', 2024, 'imports_sars', 3)}. Department trade report 10.8 (rounded). "
      f"FIASA {show('diesel', 2024, 'imports_fiasa', 3)}, a suspected misprint.",
@@ -267,29 +267,31 @@ table(s, [
      "Not used for trade", "Nigel: confirm"],
 ], [2.3, 5.2, 2.2, 1.95], height=3.6, size=10)
 text(s, "In the other years from 2014, customs and FIASA differ by 0.2 bn litres or less; the full list is in "
-        "the balance note. Before 2014 customs is in kilograms or mixed units, so FIASA is used.",
+        "the balance note. Before 2014 customs is in kilograms or mixed units, so no trade figure is selected.",
      LEFT, 6.2, WIDTH, 0.6, 11)
 
-s = page(0, "Production after 2021 and stock changes are missing, so the balance is not closed",
-         "Missing production and stocks | sales less net imports against production reported in the energy balance")
+s = page(0, "Reported production now runs to 2024; stock change is still missing",
+         "Production and stocks | sales less net imports against reported production | billion litres")
 years = list(range(2014, 2025))
 for i, product in enumerate(("petrol", "diesel")):
     line_chart(s, f"{product.capitalize()}, billion litres", years, [
         ("Sales less net imports", [bn(product, y, "sales_less_net_imports") for y in years], BLUE, False),
-        ("Reported production (to 2021)",
-         [bn(product, y, "production_energy_balance") for y in years], GREY_LINE, True),
+        ("Reported production",
+         [bn(product, y, "production_used") for y in years], GREY_LINE, True),
     ], LEFT + i * 3.55, 2.2, 3.5, 3.75)
 table(s, [
-    ["Missing", "What exists", "Limit"],
-    ["Production by product, 2022 on",
-     "Sasol, year to June 2024: Secunda 29.1 and Natref 17.8 million barrels. "
-     "Glencore, calendar 2024: Astron 166,204 billion Btu.",
-     "All refined products; fiscal against calendar years; Natref is Sasol's share only"],
-    ["Stock changes", "JODI monthly stocks, 2023 and 2024", "Lowest reliability code; not usable as it stands"],
-    ["Sales coverage", "SARS fuel levy volumes, round figures in media releases", "Period is assumed; indicative only"],
+    ["Line", "What exists", "Limit"],
+    ["Production to 2021", "Department energy balances", "None published after 2021"],
+    ["Production 2022-2024",
+     "Refinery output South Africa reports to the JODI oil database. Diesel is within 4% of the energy balance "
+     "in 2017-2021.",
+     "Lowest JODI reliability code; petrol is 12-24% above the energy balance; decision D23"],
+    ["Stock change", "JODI reports one", "Does not agree with its own closing stock; not used"],
+    ["Sales after 2023", "None from the department", "FIASA is not used; 2024 and 2025 are blank"],
 ], [1.3, 1.8, 1.3], x=LEFT + 7.2, y=2.22, height=3.7, size=9.5)
-text(s, "A diesel gap of 3 to 4 bn litres a year remains a hypothesis to test. It is not added to demand. "
-        "Needed to close: output by product and plant, a stock series, and matched periods.",
+text(s, f"Diesel: production plus net imports is {bn('diesel', 2021, 'supply_less_sales'):.1f}, "
+        f"{bn('diesel', 2022, 'supply_less_sales'):.1f} and {bn('diesel', 2023, 'supply_less_sales'):.1f} bn litres above "
+        "recorded sales in 2021 to 2023. A hypothesis to test; it is not added to demand.",
      LEFT, 6.2, WIDTH, 0.6, 11, True, BLUE)
 
 # --- 2 Forecast levers -------------------------------------------------------
@@ -646,8 +648,8 @@ table(s, [
      "288 figures in the current pack checked with none differing",
      "Vehicle stock by age and by fuel within class is in no source held"],
 ], [1.9, 1.75, 4.6, 3.4], height=3.9, size=10.5)
-text(s, "New evidence today: Road Accident Fund accounts give 24.4 bn litres of petrol and diesel levied in the year "
-        "to March 2025, against 20.8 recorded as sold, and show volumes rising where FIASA shows a fall.",
+text(s, "New evidence: Road Accident Fund accounts give 24.3 bn litres of petrol and diesel levied in the year "
+        "to March 2024, against 21.9 recorded as sold in calendar 2023, and 24.4 bn in the year to March 2025.",
      LEFT, 6.3, WIDTH, 0.6, 11, True, BLUE)
 set_note(s, HANDBACK_NOTE)
 
@@ -682,7 +684,7 @@ table(s, [
     ["History sources", "Publisher, link, original file, extract and refresh command for each dataset", ""],
 ], [2.0, 5.1, 4.55], height=4.0, size=9.5)
 text(s, "One change to an existing sheet: source selection for 2022 and 2023 is set to the department instead of "
-        "FIASA. 2024 stays on FIASA, unverified. 2025 has no national sales figure from any source.",
+        "FIASA. The added sheets use no FIASA figure; 2024 on Nigel's own sheet is still set to FIASA, for him to decide.",
      LEFT, 6.3, WIDTH, 0.6, 11)
 set_note(s, HANDBACK_NOTE)
 

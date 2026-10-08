@@ -45,29 +45,30 @@ def _row(rows, year):
     return next(r for r in rows if r["product"] == "diesel" and r["period"] == year)
 
 
-def test_customs_is_selected_from_2014_and_other_sources_stay_in_their_own_columns():
+def test_customs_is_selected_from_2014_and_fiasa_is_never_selected():
     rows = bfb.build(_inputs([_sars("2013", "import", "41"), _sars("2013", "export", "11"),
                               _sars("2014", "import", "50"), _sars("2014", "export", "13")]))
     before, after = _row(rows, 2013), _row(rows, 2014)
-    assert (before["trade_used_source"], before["imports_used"], before["exports_used"]) == ("FIASA", 40, 10)
+    assert (before["trade_used_source"], before["imports_used"], before["exports_used"]) == ("", "", "")
+    assert (before["imports_fiasa"], before["sales_less_net_imports"]) == (40, "")   # shown, not used
     assert (after["trade_used_source"], after["imports_used"], after["exports_used"]) == ("SARS customs", 50, 13)
     assert (after["imports_fiasa"], after["exports_fiasa"]) == (55, 12)
     assert after["sales_less_net_imports"] == 110 - (50 - 13)
     assert before["exports_energy_balance"] == 9
-    assert before["sales_less_net_imports_minus_energy_balance_production"] == (100 - 30) - 65
 
 
 def test_part_years_and_kilogram_records_are_not_selected():
     rows = bfb.build(_inputs([_sars("2014", "import", "50", unit="kilograms"), _sars("2014", "export", "13"),
                               _sars("2015", "import", "30", months="8"), _sars("2015", "export", "7", months="8")]))
-    assert _row(rows, 2014)["trade_used_source"] == "FIASA"
+    assert _row(rows, 2014)["trade_used_source"] == ""
     assert _row(rows, 2014)["imports_sars"] == ""
-    assert _row(rows, 2015)["trade_used_source"] == "FIASA"
+    assert _row(rows, 2015)["trade_used_source"] == ""
 
 
-def test_incomplete_department_year_falls_back_to_the_latest_fiasa_edition():
+def test_incomplete_department_year_is_left_blank_and_fiasa_stays_a_comparison():
     row = _row(bfb.build(_inputs([])), 2015)
-    assert (row["sales_used"], row["sales_used_source"], row["sales_fiasa_edition"]) == (120, "FIASA", "2025")
+    assert (row["sales_used"], row["sales_used_source"]) == ("", "")
+    assert (row["sales_fiasa"], row["sales_fiasa_edition"]) == (120, "2025")
 
 
 @pytest.mark.skipif(not BALANCE.exists(), reason="balance file not built")
@@ -88,7 +89,7 @@ def test_committed_balance_matches_the_registered_inputs_and_the_customs_extract
     for row in committed:
         year = int(row["period"])
         if year < bfb.SARS_PRIMARY_FROM:
-            assert row["trade_used_source"] == "FIASA"
+            assert row["trade_used_source"] == "" and row["imports_used"] == ""
             continue
         assert row["trade_used_source"] == "SARS customs", (year, row["product"])
         for flow, name in (("import", "imports"), ("export", "exports")):
@@ -121,6 +122,8 @@ def test_committed_balance_carries_reported_production_to_2024_and_never_a_resid
         rows = {(r["product"], int(r["period"])): r for r in csv.DictReader(fh)}
     for product in ("petrol", "diesel"):
         assert rows[(product, 2021)]["production_used_source"] == "energy balance"
+        assert rows[(product, 2024)]["sales_used"] == "" and rows[(product, 2024)]["supply_less_sales"] == ""
+        assert not any(r["sales_used_source"] == "FIASA" or r["trade_used_source"] == "FIASA" for r in rows.values())
         for year in (2022, 2023, 2024):
             assert rows[(product, year)]["production_used_source"] == "JODI"
             assert rows[(product, year)]["production_used"] == rows[(product, year)]["production_jodi"]

@@ -76,7 +76,7 @@ Diesel:
 | 2021 | 5.31 | energy balance | 9.76 | 0.89 | 14.18 | 12.95 | +1.24 |
 | 2022 | 4.11 | JODI | 11.95 | 0.89 | 15.18 | 12.72 | +2.46 |
 | 2023 | 5.19 | JODI | 12.87 | 0.89 | 17.17 | 12.91 | +4.26 |
-| 2024 | 3.89 | JODI | 10.79 | 0.80 | 13.89 | 11.73 (FIASA) | +2.16 |
+| 2024 | 3.89 | JODI | 10.79 | 0.80 | 13.89 | — | — |
 | 2025 | — | — | 12.25 | 0.75 | — | — | — |
 
 Petrol:
@@ -90,23 +90,28 @@ Petrol:
 | 2021 | 6.35 | energy balance | 4.01 | 1.05 | 9.31 | 9.30 | +0.01 |
 | 2022 | 6.64 | JODI | 5.46 | 0.85 | 11.24 | 9.18 | +2.05 |
 | 2023 | 8.52 | JODI | 4.48 | 0.99 | 12.01 | 9.04 | +2.97 |
-| 2024 | 7.34 | JODI | 4.00 | 0.92 | 10.42 | 9.03 (FIASA) | +1.39 |
+| 2024 | 7.34 | JODI | 4.00 | 0.92 | 10.42 | — | — |
 | 2025 | — | — | 4.45 | 0.80 | — | — | — |
 
 Reading, diesel: reported supply and recorded sales agree within 0.7 bn litres
 in every year from 2017 to 2020. From 2021 reported supply is above recorded
-sales, by 1.2, 2.5, 4.3 and 2.2 bn litres. This is the first evidence on a
+sales, by 1.2, 2.5 and 4.3 bn litres (2021 to 2023). This is the first evidence on a
 matched basis (calendar years, one product, production reported) for the
 hypothesis that recorded diesel sales fall short of supply. It remains a
 hypothesis: the stock change is not known, and the production figures for
 2022 to 2024 carry JODI's lowest assessment code.
 
-Reading, petrol: the balance closes within 0.7 bn litres to 2021. The 2022 to
-2024 differences (2.1, 3.0 and 1.4 bn litres) are partly the break in level
+**2024 and 2025 have no sales figure.** The department has published nothing
+after 2023, and FIASA is not used as a source, so the balance stops at 2023 on
+the sales side. Supply for 2024 is shown because production and trade are
+reported.
+
+Reading, petrol: the balance closes within 0.7 bn litres to 2021. The 2022 and
+2023 differences (2.1 and 3.0 bn litres) are partly the break in level
 between the two production sources, which accounts for 0.8 to 1.0 bn litres a year. If JODI petrol is scaled by its average
 ratio to the energy balance in 2018 to 2021 (0.880), production is
 5.84, 7.50 and 6.46 bn litres and supply less sales is
-+1.25, +1.95 and +0.51. That scaling is an inference, shown here only;
++1.25 and +1.95 for 2022 and 2023. That scaling is an inference, shown here only;
 it is not in the balance file.
 
 ## The 2021 to 2022 bridge
@@ -147,8 +152,8 @@ changes. On JODI's own basis petrol output fell from 7.12 to 6.64 bn litres
 | Line | Selected | Definition | Differs from |
 |---|---|---|---|
 | Production | Energy balance to 2021; JODI 2022-2024 | Refinery and synthetic fuel plant output of the product, calendar year | Operators' reports (all products, Sasol's year to June) |
-| Imports, exports | SARS customs from 2014 | Goods cleared under the petrol and diesel tariff lines, litres | FIASA (2018, 2019); the 2021 energy balance; JODI |
-| Sales | Department national file to 2023 | Volumes returned by licensed wholesalers | FIASA 2024 (two editions); Road Accident Fund levy; energy balance final consumption |
+| Imports, exports | SARS customs, 2014-2025; blank before | Goods cleared under the petrol and diesel tariff lines, litres | The 2021 energy balance; JODI |
+| Sales | Department national file, 2009-2023; blank after | Volumes returned by licensed wholesalers | Road Accident Fund levy; energy balance final consumption |
 | Stock change | None | — | JODI reports one but it is not usable |
 | Supply less sales | Computed | Production + imports - exports - sales | Energy balance statistical difference |
 
@@ -192,7 +197,7 @@ checked (2021 diesel: stock change +0.59 bn litres; closing stock rose 0.38).
 | Petrol: why JODI is 12-24% above the energy balance | Manish | The department's JODI questionnaire definition; not found in public metadata |
 | JODI total output for 2023 against operators | Manish | Product split from Sasol or Astron; part of DR08 |
 | 2021 energy balance imports above customs | Manish | The department's working for the 2021 balance |
-| 2024 sales source; no 2025 sales | Nigel | Department publication; decision D01 |
+| No sales figure for 2024 or 2025 | Nigel to coordinate | Department publication. FIASA is shown as a comparison column only and is never selected |
 
 ## Checks
 
@@ -202,6 +207,7 @@ checked (2021 diesel: stock change +0.59 bn litres; closing stock rose 0.38).
   equals a fresh build; JODI diesel is within 4% of the energy balance for
   2017-2021.
 - No model input read by the engine changed; model results are unchanged.
+- FIASA is not selected for any product or year (test added). Its figures remain in their own columns.
 - `python -m pytest -q`: 212 passed, 1 skipped (four tests added). The message on commit `b25661d`
   says 215 and five; that is wrong.
 - Workbook History rows for 2017-2025 read back after recalculation in Excel: production used and the

@@ -15,10 +15,11 @@ Inputs (all under ``assumptions/<vintage>/timeseries/``):
     oil_balance_jodi.csv               South Africa's JODI submissions, complete years only
 
 Selection:
-    Sales   department where all four quarters are reported, else FIASA.
+    Sales   department where all four quarters are reported; otherwise blank.
     Trade   SARS customs from ``SARS_PRIMARY_FROM`` where the year is complete and
-            in litres; FIASA before that. Every other source stays in its own
-            column for comparison and is never mixed into the selected figure.
+            in litres; otherwise blank.
+    FIASA is never selected, not even where the department or customs has no
+    figure. It and every other source stay in their own columns for comparison.
 
     Production  department energy balance to 2021, the last one published;
             JODI refinery output after that, where all twelve months are reported.
@@ -136,14 +137,10 @@ def build(inputs: dict[str, list[dict]]) -> list[dict]:
 
             if row["sales_department"] != "":
                 row["sales_used"], row["sales_used_source"] = row["sales_department"], "department"
-            elif row["sales_fiasa"] != "":
-                row["sales_used"], row["sales_used_source"] = row["sales_fiasa"], "FIASA"
 
-            use_sars = year >= SARS_PRIMARY_FROM and row["imports_sars"] != "" and row["exports_sars"] != ""
-            source = "sars" if use_sars else "fiasa"
-            if row[f"imports_{source}"] != "" and row[f"exports_{source}"] != "":
-                row["imports_used"], row["exports_used"] = row[f"imports_{source}"], row[f"exports_{source}"]
-                row["trade_used_source"] = "SARS customs" if use_sars else "FIASA"
+            if year >= SARS_PRIMARY_FROM and row["imports_sars"] != "" and row["exports_sars"] != "":
+                row["imports_used"], row["exports_used"] = row["imports_sars"], row["exports_sars"]
+                row["trade_used_source"] = "SARS customs"
                 row["net_imports_used"] = row["imports_used"] - row["exports_used"]
 
             if row["sales_used"] != "" and row["net_imports_used"] != "":
@@ -187,7 +184,7 @@ def main() -> int:
             writer.writerow({k: round(v) if isinstance(v, float) else v for k, v in row.items()})
     used = [r for r in rows if r["trade_used_source"] == "SARS customs"]
     print(f"wrote {len(rows)} rows -> {out}; SARS trade selected in {len(used)} product-years, "
-          f"FIASA in {sum(r['trade_used_source'] == 'FIASA' for r in rows)}", file=sys.stderr)
+          f"department sales in {sum(r['sales_used_source'] == 'department' for r in rows)}", file=sys.stderr)
     return 0
 
 

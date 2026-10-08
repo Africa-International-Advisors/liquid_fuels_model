@@ -227,7 +227,7 @@ def history_sheet(wb, d: dict) -> dict:
             rows[f"{product}_{code}"] = s.line(
                 f"{PROVINCE_NAMES[code]} {product}", ML, "Observation to 2022; estimate after",
                 "District-level sales summed to province, 2013-2022. Shows where fuel was sold, not where it was used. "
-                "2023-2025 (yellow, italic) are ESTIMATES from section 6, not department data.",
+                "2023 (yellow, italic) holds ESTIMATES from section 6, not department data; 2024 and 2025 are blank.",
                 {y: d["province"].get((product, code, y)) for y in YEARS},
                 status="2013-2022 observed; 2023-2025 estimated",
                 source=dept_src + ", district workbooks; estimates: see section 6",
@@ -243,19 +243,18 @@ def history_sheet(wb, d: dict) -> dict:
             "National annual workbook, years with four quarters reported.",
             {y: d["dept"].get((product, y)) for y in YEARS},
             status="2012-2023; nothing published for 2024 or 2025", source=dept_src + ", national workbooks",
-            action="2024 national sales: source to be agreed (Nigel)")
+            action="Add 2024 and 2025 when the department publishes them")
         s.line(f"Provinces less national, {product}", ML, "Reporting formula",
                "Difference between the department's two files. 2013 and 2015 traced; 2014 and 2018 for decision. "
                "Zero from 2023 only because the estimates are shares of the national figure.",
                formula=both(rows[f"{product}_provinces"], rows[f"{product}_dept"], "{c}{a}-{c}{b}"), kind="formula",
                action="See integrity_flag_log_2026-10-06.md")
-        s.line(f"Why 2025 is blank, {product}", "", "Note",
-               f"No national {product} sales figure exists for 2025. The department's national series ends at 2023, and "
-               "FIASA's 2025 report repeats its 2024 row for 2025, so that row was dropped. Without a national total "
-               "there is nothing to apply the provincial shares to. The estimated 2025 shares are in section 6; the "
-               "volumes fill in by formula once a 2025 figure is added to the department or FIASA sales row.",
-               kind="comparison", status="2025 not estimated",
-               action="Add the 2025 national figure when the department or FIASA publishes it")
+        s.line(f"Why 2024 and 2025 are blank, {product}", "", "Note",
+               f"The department's national {product} series ends at 2023, and FIASA is not used as a source. Without a "
+               "national total there is nothing to apply the provincial shares to. The estimated shares are in "
+               "section 6; the volumes fill in by formula once the department's figure is added to its sales row.",
+               kind="comparison", status="2024 and 2025 not estimated",
+               action="Add the national figure when the department publishes it")
 
     s.section("2. Customs trade (SARS)")
     sars_src = "South African Revenue Service, trade statistics by tariff line"
@@ -319,13 +318,14 @@ def history_sheet(wb, d: dict) -> dict:
         fiasa = s.line(f"FIASA sales, {product}", ML, "Comparison only",
                        "FIASA annual report, latest edition. Attributed by FIASA to the department.",
                        {y: d["fiasa_sales"].get((product, y)) for y in YEARS}, kind="comparison",
-                       status="2024 differs between FIASA's 2024 and 2025 editions",
+                       status="Not used. 2024 differs between FIASA's 2024 and 2025 editions",
                        source="Fuels Industry Association of South Africa, annual reports")
+        del fiasa  # shown for comparison; never selected
         sales = s.line(f"Sales used, {product}", ML, "Reporting formula",
-                       "Department national file where published; otherwise FIASA, which is unverified.",
-                       formula=lambda y, a=rows[f"{product}_dept"], b=fiasa:
-                       f'=IF(ISNUMBER({col(y)}{a}),{col(y)}{a},IF(ISNUMBER({col(y)}{b}),{col(y)}{b},""))', kind="formula",
-                       status="Department to 2023; FIASA for 2024", action="Agree the 2024 source (Nigel)")
+                       "Department national file. Blank where the department has not published.",
+                       formula=lambda y, a=rows[f"{product}_dept"]:
+                       f'=IF(ISNUMBER({col(y)}{a}),{col(y)}{a},"")', kind="formula",
+                       status="Department to 2023; no figure for 2024 or 2025")
         rows[f"sales_{product}"] = sales
         net = s.line(f"Net imports used, {product}", ML, "Reporting formula",
                      "SARS customs from 2014 (section 2).",
@@ -368,7 +368,7 @@ def history_sheet(wb, d: dict) -> dict:
                    "Estimated share times national sales used (section 4). Blank where no national figure exists.",
                    formula=lambda y, a=share_rows[code], b=rows[f"sales_{product}"]:
                    (f'=IF(COUNT({col(y)}{a},{col(y)}{b})<2,"",{col(y)}{a}/100*{col(y)}{b})' if y >= 2023 else None),
-                   kind="estimate", status="Estimate; 2024 also carries the unverified national total",
+                   kind="estimate", status="Estimate; 2023 only, the last year with a national total",
                    action="Replace when the department publishes district data after 2023 quarter 1")
 
     s.section("7. Jet fuel: sales, trade, production and aircraft movements")
@@ -377,10 +377,11 @@ def history_sheet(wb, d: dict) -> dict:
                       {y: d["dept"].get(("jet", y)) for y in YEARS}, status="2012-2023", source=dept_src + ", national workbooks")
     jet_fiasa = s.line("FIASA sales, jet", ML, "Comparison only", "FIASA annual report, latest edition.",
                        {y: d["fiasa_sales"].get(("jet", y)) for y in YEARS}, kind="comparison",
-                       status="2024: 1,754 in FIASA's 2024 edition, 1,955 in its 2025 edition",
+                       status="Not used. 2024: 1,754 in FIASA's 2024 edition, 1,955 in its 2025 edition",
                        source="Fuels Industry Association of South Africa, annual reports")
-    jet_sales = s.line("Sales used, jet", ML, "Reporting formula", "Department where published; otherwise FIASA, unverified.",
-                       formula=lambda y: f'=IF(ISNUMBER({col(y)}{jet_dept}),{col(y)}{jet_dept},IF(ISNUMBER({col(y)}{jet_fiasa}),{col(y)}{jet_fiasa},""))',
+    del jet_fiasa  # shown for comparison; never selected
+    jet_sales = s.line("Sales used, jet", ML, "Reporting formula", "Department national file. Blank where not published.",
+                       formula=lambda y: f'=IF(ISNUMBER({col(y)}{jet_dept}),{col(y)}{jet_dept},"")',
                        kind="formula")
     jet_in = s.line("Imports, jet", ML, "Source observation", "Complete years reported in litres.",
                     {y: d["sars"].get(("import", "jet", y)) for y in YEARS},
@@ -620,9 +621,9 @@ def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> N
 
     s.section("1. Sales and the uses taken from sources")
     sales = s.line("Diesel sales used", ML, "Reporting formula",
-                   "From History: department national file to 2023, FIASA (unverified) for 2024.",
+                   "From History: department national file, to 2023.",
                    formula=lambda y: f'=IF(ISNUMBER(History!{col(y)}{history_rows["sales_diesel"]}),History!{col(y)}{history_rows["sales_diesel"]},"")',
-                   kind="formula", status="2012-2024")
+                   kind="formula", status="2012-2023")
     mining = s.line("Mining", ML, "Observation, then estimate",
                     "Energy balance to 2021; from 2022 the indicative figure on Sector history. Driver: mining production index.",
                     formula=sector("mining"), kind="formula", status="Observed to 2021; estimated after",
@@ -783,7 +784,7 @@ GAP_STATUS = [
      "Jet sales, trade, production and aircraft movements lined up; jet sold per movement computed.",
      "Cargo, aircraft and route mix; airports outside ACSA; jet by airport.", "History, section 7"),
     ("G11", "Provincial demand", "Narrowed",
-     "2013-2022 observed; 2023 and 2024 estimated with the best of six methods back-tested.",
+     "2013-2022 observed; 2023 estimated with the best of six methods back-tested; 2024 blank (no national total).",
      "District data after 2023 quarter 1, which the department has not published; 2025 national total.", "History, sections 1 and 6"),
     ("G12", "Marine and other coverage", "Open", "Nothing new. The model's marine placeholder equals the 2007 balance figure.",
      "Everything listed.", ""),
@@ -1169,7 +1170,8 @@ def main() -> int:
             cells[4].value = "Department"
             changes.append(f"Source selection!{cells[4].coordinate}: {cells[0].value} {cells[1].value} FIASA -> Department "
                            "(official series; the two agree to within rounding in these years).")
-    changes.append("Source selection: 2024 left on FIASA, which is unverified; the department has published no 2024 figure.")
+    changes.append("Source selection: 2024 is still set to FIASA on Nigel's sheet, because the department has no 2024 "
+                   "figure to switch to. The added sheets do not use FIASA for any year. For Nigel to decide.")
     changes.append("Sheets added: History, Sector history, Diesel by use, Power fleet, Vehicle history, HML response, Gap status, "
                    "Checks, History sources. No other cell changed.")
 

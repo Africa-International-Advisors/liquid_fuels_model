@@ -8,7 +8,7 @@ Read first:
 
 - Deck: `pptx/output/delivered/supporting/Vopak_Manish_Handback_2026_10_07.pptx`
   (PDF alongside), one section per priority.
-- Decision log: `manish_decision_log_2026-10-07.csv`, 22 decisions with the
+- Decision log: `manish_decision_log_2026-10-07.csv`, 23 decisions with the
   evidence, my proposal, the owner and a status.
 - Workbook: `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`,
   your workshop workbook with the sourced history added.
@@ -51,6 +51,17 @@ defined separately. The 6 October deck was corrected to match and moved to
   and 3.2 bn (2023) bought by hire-and-reward road freight firms.
 - Provincial estimates for 2023 and 2024 shown in the province rows, marked as estimates; 2025 explained.
 - Jet section, HML response sheet, Gap status sheet and a 25-row sources sheet.
+
+## DR01 national balance and FIASA (8 October, afternoon)
+
+- FIASA is no longer selected for any figure. Sales are the department's and stop at 2023; trade is customs
+  from 2014. 2024 and 2025 sales are blank, and so are the 2024 provincial estimates. FIASA stays as
+  comparison rows only.
+- Reported production now runs to 2024, from South Africa's submissions to the JODI oil database. For diesel
+  it agrees with the energy balance within 4% in 2017-2021. Decision D23.
+- Diesel supply (production plus net imports) is 1.2, 2.5 and 4.3 bn litres above recorded sales in 2021,
+  2022 and 2023. Still a hypothesis; stock change is not available.
+- Detail: `workstreams/WS1_data_validation/dr01_national_balance_2026-10-08.md` and its evidence table.
 
 ## Power generation fleet (your message of 7 October)
 
