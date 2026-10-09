@@ -1,0 +1,188 @@
+{
+  "purpose": "Regulated transport cost to Gauteng, month by month, from the department's yearly price tables",
+  "page": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/petroleum_arch.html",
+  "files": [
+    {
+      "file": "department-diesel-margins-2024.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/April2024/Diesel-margins.pdf",
+      "bytes": 85602,
+      "sha256": "4e575631c48678e3a2e0c7642835a3ca2259784682e58d9d09e6d09dd07c9baa"
+    },
+    {
+      "file": "department-petrol-margins-2024.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/April2024/Petrol-margins.pdf",
+      "bytes": 89510,
+      "sha256": "f0b270f8bffea18b1719f00805e0f47ab102c349fb5bfb72bb48ed4243e7a26f"
+    },
+    {
+      "file": "department-diesel-margins-2013.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/Dec-2013/Diesel-Price-Margins.pdf",
+      "bytes": 67326,
+      "sha256": "d8a49d5e7e03a30aa4cad527c27c7f92555d42444668d8754decba2f4fbbf172"
+    },
+    {
+      "file": "department-petrol-margins-2013.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/Dec-2013/Petrol-Price-Margin.pdf",
+      "bytes": 71196,
+      "sha256": "8e7f4de5a173358581be4c6c88a38da45259b7dd544ad2d4d8325c09bf55fc0c"
+    },
+    {
+      "file": "department-diesel-margins-2012.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2012/Diesel_margins_guidelines.pdf",
+      "bytes": 95387,
+      "sha256": "98d4fe7edb5f4d13b765549a1a4389ef93aa91106d70d4b59d97fdd38c8911ab"
+    },
+    {
+      "file": "department-petrol-margins-2012.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2012/Petrol_price_Margin.pdf",
+      "bytes": 111155,
+      "sha256": "ab8009610c72ee71fa9cf4e374ed1908932e16b588b0013b1b65b700b02c28f3"
+    },
+    {
+      "file": "department-diesel-margins-2014.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2014/Diesel-Price-Margins.pdf",
+      "bytes": 111884,
+      "sha256": "7010dfd262ffe95a4c256b57ef2d551475b5ddf915b7da6e37c10a0f37eb6bc4"
+    },
+    {
+      "file": "department-petrol-margins-2014.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2014/Petrol-price-Margin.pdf",
+      "bytes": 111316,
+      "sha256": "d70aaa027a356341f07c0f7ca9a6d1fa6b8ee007c0d33c56af5965dbfec541b8"
+    },
+    {
+      "file": "department-diesel-margins-2015.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2015/Diesel-price-margins.pdf",
+      "bytes": 112078,
+      "sha256": "7b179b9ea6b4cdd319e3880cfcd17cc26ca43b94dd8da17a6e35b9fadd3f72d9"
+    },
+    {
+      "file": "department-petrol-margins-2015.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2015/Petrol-Price-Margin.pdf",
+      "bytes": 118585,
+      "sha256": "ae46df88d74782b8daa4ccbc111501bdfae892ec1c57a9ada894997e0decde69"
+    },
+    {
+      "file": "department-diesel-margins-2016.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2016/Diesel-margins.pdf",
+      "bytes": 100569,
+      "sha256": "8682688965dbcd20fffd1a0d6210db46b417fc42363a4f4530cc0cbbc301d7e2"
+    },
+    {
+      "file": "department-petrol-margins-2016.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2016/Petrol-Price-Margin.pdf",
+      "bytes": 104348,
+      "sha256": "83aa888fa44cf86111d91e634d0d80fa22d4a5488823e8621c7bbbabe5affea5"
+    },
+    {
+      "file": "department-diesel-margins-2017.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2017/Diesel-margins.pdf",
+      "bytes": 107362,
+      "sha256": "22da7a98d526b03ea9ba2670b4553c49eceb763f58567ba50b609dd8e717c81e"
+    },
+    {
+      "file": "department-petrol-margins-2017.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2017/Petrol-margins.pdf",
+      "bytes": 96999,
+      "sha256": "4212841b484b27aadeeccbd033e17f1b0dd70f92acb54b405354453d61996499"
+    },
+    {
+      "file": "department-diesel-margins-2018.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2018/Diesel-margins.pdf",
+      "bytes": 97457,
+      "sha256": "705b55c571bad73fe60d2c2798b3892c5802e1f2797bebf4aa8216e28cc1d544"
+    },
+    {
+      "file": "department-petrol-margins-2018.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2018/Petrol-margins.pdf",
+      "bytes": 99662,
+      "sha256": "f7dcfae2ea71654b38aeb96168f6ef64a22a73d10d732aa4d71eb388abae4290"
+    },
+    {
+      "file": "department-diesel-margins-2019.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2019/Diesel-margins.pdf",
+      "bytes": 97530,
+      "sha256": "e7ed099cc78f272ea0f314c890a5881b8df0e594fcaab5e55841d0398fcc5f5f"
+    },
+    {
+      "file": "department-petrol-margins-2019.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2019/Petrol-margins.pdf",
+      "bytes": 116574,
+      "sha256": "4a148490a4957d4b1de48fa4f065d70a85e5a45c52ae1467ef8056d2089a0154"
+    },
+    {
+      "file": "department-diesel-margins-2020.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2020/Diesel-margins.pdf",
+      "bytes": 96450,
+      "sha256": "8e1d121c1993b295ac669f4d5f2aca0f58e20aa0057fdeaab06c9ad8430ed749"
+    },
+    {
+      "file": "department-petrol-margins-2020.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2020/Petrol-margins.pdf",
+      "bytes": 115185,
+      "sha256": "db069009155f565de7a1da11ba11e3f02dacf78b6840dde6c61377c60aa91a8b"
+    },
+    {
+      "file": "department-diesel-margins-2021.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2021/Diesel-margins.pdf",
+      "bytes": 92810,
+      "sha256": "d16aa36465e164369bb7de438e8b507a70260a3c1d9ef3f7a87be798f4b56fa3"
+    },
+    {
+      "file": "department-petrol-margins-2021.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2021/Erratum-Petrol-margins.pdf",
+      "bytes": 100159,
+      "sha256": "e45070c0a046b0278ad8b8fbe786138816351c3c6b44ebae7e7c2b7160518e22"
+    },
+    {
+      "file": "department-diesel-margins-2022.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2022/Diesel-margins.pdf",
+      "bytes": 89427,
+      "sha256": "84df61684a0fc2c90a9a163e7fcf7f6264bb31d2d08936e40bee91eb3a369a0c"
+    },
+    {
+      "file": "department-petrol-margins-2022.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2022/Petrol-margins.pdf",
+      "bytes": 99336,
+      "sha256": "fde4e69ece12dc9cf411d2cb6f51e9bc8f2eed4734a94a3a9ba5c65152efb70c"
+    },
+    {
+      "file": "department-diesel-margins-2023.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2023/Diesel-margins.pdf",
+      "bytes": 87825,
+      "sha256": "099c7f95037929333e419cff1ad94690c0f41eec9421b1be3b0d3bc85d2dc449"
+    },
+    {
+      "file": "department-petrol-margins-2023.pdf",
+      "publisher": "Department of Mineral and Petroleum Resources",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/December2023/Petrol-margins.pdf",
+      "bytes": 90703,
+      "sha256": "6b9542244862937313f6d81628451a92a98df0479e701d633091785fc3d6ca6a"
+    }
+  ]
+}

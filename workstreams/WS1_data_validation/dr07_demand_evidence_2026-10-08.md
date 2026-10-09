@@ -5,9 +5,9 @@ demand levers. Petrol and diesel only.
 
 Status: **56 facts read from sources, 9 calculated, 6 not available.**
 
-**Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
+**Where to look:** the data requests workbook `output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx`.
 
-- Sheet **DR07 evidence**: every fact with its source and open gap.
+- Sheet **DR07 demand evidence**: every fact with its source and open gap.
 - Sheet **DR07 power diesel**: Eskom's reported litres beside its generation.
 - Sheet **DR07 fleet by province**: registered vehicles by province and class,
   and petrol and diesel vehicles by province.

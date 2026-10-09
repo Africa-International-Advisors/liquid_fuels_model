@@ -366,6 +366,18 @@ zone_differentials_department:
     commercial rate. Provenance in reference/zone_differentials_department.sources.yaml
   last_updated: '2026-10-08'
   shared: true
+transport_cost_gauteng_department:
+  register_id: REG-SOURCE-TRANSPORT_COST_GAUTENG_DEPARTMENT
+  exception_id: EXC-SOURCE-DATA-2026-10-05
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  csv: reference/transport_cost_gauteng_department.csv
+  units: cents per litre
+  source: Department of Mineral and Petroleum Resources; yearly petrol and diesel price tables (levies, taxes and
+    margins), Transport cost column, month by month from January 2012 to April 2024. A regulated allowance in the
+    Gauteng price, not a commercial rate. Files and addresses in external/data/raw/fuel_price_margins/manifest.json
+  last_updated: '2026-10-09'
+  shared: true
 zone_districts_department:
   register_id: REG-SOURCE-ZONE_DISTRICTS_DEPARTMENT
   exception_id: EXC-SOURCE-DATA-2026-10-05

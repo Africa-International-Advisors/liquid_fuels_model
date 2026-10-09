@@ -218,7 +218,7 @@ def build(d: dict) -> list[dict]:
     add("Vehicle efficiency and distance", "Fuel use of new passenger cars", car["subject"], car["value"], car["unit"], car["period"], "observed",
         car["source"], car["original_file"], car["page"], car["note"])
     trucks = [d["stone"][k] for k in ("HCV1Diesel", "HCV3Diesel", "HCV6Diesel", "HCV9Diesel")]
-    add("Vehicle efficiency and distance", "Fuel use of trucks, lightest to heaviest class", "Diesel trucks (classes 1, 3, 6 and 9 of nine)",
+    add("Vehicle efficiency and distance", "Fuel use of trucks, lightest to heaviest class", "Diesel trucks, class 1 of nine; Class 3; Class 6; Class 9",
         "; ".join(t["l_per_100km_fleet_average"] for t in trucks), "litres per 100 km, fleet average", "2010 fleet", "observed",
         "Stone et al. (2018), vehicle parc model", "assumptions/2026/reference/vehicle_parameters_stone2018.csv", "",
         "One year only. Light commercial diesel vehicles use " + d["stone"]["LCVDiesel"]["l_per_100km_fleet_average"] + " and buses "

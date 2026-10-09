@@ -1,15 +1,16 @@
 """The extended demand baseline workbook: sheets present, inputs carried faithfully, Nigel's cells untouched."""
-import csv
 from pathlib import Path
 
 import pytest
 from openpyxl import load_workbook
 
+from lfm.scripts import build_data_requests_workbook as requests
 from lfm.scripts import build_demand_baseline_workbook as build
 
 ROOT = Path(__file__).resolve().parents[1]
 VINTAGE = ROOT / "assumptions" / "2026"
-pytestmark = pytest.mark.skipif(not (ROOT / build.OUT).exists(), reason="workbook not built")
+DR = ROOT / requests.OUT                                  # the data request sheets are in their own workbook
+pytestmark = pytest.mark.skipif(not (ROOT / build.OUT).exists() or not DR.exists(), reason="workbook not built")
 
 
 def _rows(ws):
@@ -35,8 +36,7 @@ def test_history_carries_the_registered_inputs_and_uses_formulas_for_the_balance
 def test_only_the_source_selection_changes_in_nigels_sheets():
     before, after = load_workbook(ROOT / build.SOURCE), load_workbook(ROOT / build.OUT)
     assert [ws.title for ws in after.worksheets] == [ws.title for ws in before.worksheets] + [
-        "History", "DR01 balance", "Sector history", "Diesel by use", "Demand by use", "DR04 routes", "DR04 entry points", "DR04 transport cost", "DR07 evidence", "DR07 power diesel",
-        "DR07 fleet by province", "DR07 efficiency and rail", "DR08 evidence", "DR08 refinery output", "Power fleet", "Vehicle history", "HML response", "Gap status",
+        "History", "Sector history", "Diesel by use", "Demand by use", "Power fleet", "Vehicle history", "HML response", "Gap status",
         "Checks",
         "History sources"]
     changed = []
@@ -183,25 +183,6 @@ def test_every_row_on_the_added_sheets_names_a_source():
     assert "Production used, diesel" not in history
 
 
-def test_dr01_sheet_is_formulas_on_history_in_billion_litres_with_a_source_on_every_line():
-    ws = load_workbook(ROOT / build.OUT)["DR01 balance"]
-    header = [c.value for c in ws[4]]
-    assert header[0] == "Line" and header[1:13] == list(range(2014, 2026)) and header[13:] == ["Source", "Note"]
-    lines = {}
-    block = None
-    for r in ws.iter_rows(min_row=5):
-        if r[0].value in ("Diesel", "Petrol", "Diesel and petrol"):
-            block = r[0].value
-        elif r[0].value:
-            lines[(block, r[0].value)] = r
-    assert [k[1] for k in lines if k[0] == "Diesel"] == ["Sales", "Production", "Imports", "Exports", "Supply",
-                                                         "Stock change", "Supply less sales"]
-    assert all(r[13].value for r in lines.values())                                # a source on every line
-    sales_2021 = lines[("Diesel", "Sales")][1 + build.DR01_YEARS.index(2021)].value
-    assert sales_2021.startswith("=IF(ISNUMBER(History!") and sales_2021.endswith('/1000,"")')
-    assert all(c.value is None for c in lines[("Petrol", "Stock change")][1:13])    # not published
-
-
 def test_demand_by_use_sheet_lists_each_use_in_billion_litres_with_basis_and_source():
     ws = load_workbook(ROOT / build.OUT)["Demand by use"]
     header = [c.value for c in ws[4]]
@@ -217,27 +198,8 @@ def test_demand_by_use_sheet_lists_each_use_in_billion_litres_with_basis_and_sou
     assert mining[1].value.startswith("=IF(ISNUMBER('Diesel by use'!") and mining[1].value.endswith('/1000,"")')
 
 
-def test_dr04_routes_sheet_groups_every_fact_with_status_source_and_gap():
-    ws = load_workbook(ROOT / build.OUT)["DR04 routes"]
-    assert [c.value for c in ws[4]] == ["Item", "Asset or route", "Value", "Unit", "Period", "Status", "Source", "Page", "Open gap"]
-    facts = [r for r in ws.iter_rows(min_row=5) if r[5].value]
-    with (ROOT / build.DR04_EVIDENCE).open(encoding="utf-8", newline="") as fh:
-        evidence = list(csv.DictReader(fh))
-    kept = [r for r in evidence if r["scope"] != "other products included"]
-    assert len(facts) == len(kept) < len(evidence)                                     # mixed-product facts are left out
-    shown = {r[0].value for r in facts}
-    assert not shown & {"Liquid bulk landed (imports)", "Liquid bulk landed, by month", "Petroleum volumes transported"}
-    assert "Pipeline tariff, Durban to Alrode" in shown and "Diesel imported by road from Mozambique" in shown
-    assert all(r[2].value and r[6].value for r in facts)                               # a value (or "Not available") and a source
-    sections = [r[0].value for r in ws.iter_rows(min_row=5) if r[0].value and not r[5].value]
-    assert sections[:2] == ["Pipeline limit", "Pipeline cost"] and {"Access", "Competing routes"} <= set(sections)
-    assert "Pipeline use" not in sections                       # those volumes include crude and jet, so the section is empty
-    open_rows = [r for r in facts if r[5].value not in ("observed", "inferred")]
-    assert open_rows and all(r[0].fill.fgColor.rgb == build.FILL["estimate"] for r in open_rows)
-
-
 def test_dr04_entry_points_sheet_is_petrol_and_diesel_only_and_adds_to_national_imports():
-    wb = load_workbook(ROOT / build.OUT)
+    wb = load_workbook(DR)
     assert "DR04 ports" not in wb.sheetnames                                           # all-liquids tonnage is not shown
     ws = wb["DR04 entry points"]
     header = [c.value for c in ws[4]]
@@ -260,7 +222,7 @@ def test_dr04_entry_points_sheet_is_petrol_and_diesel_only_and_adds_to_national_
 
 
 def test_dr04_transport_cost_sheet_lists_every_zone_with_a_source_and_marks_unpublished_rates():
-    ws = load_workbook(ROOT / build.OUT)["DR04 transport cost"]
+    ws = load_workbook(DR)["DR04 transport cost"]
     elements = {r[0].value: r for r in ws.iter_rows(min_row=6, max_row=11)}
     assert elements["Pipeline tariff, Durban to Alrode"][1].value == 67.99
     assert elements["Regulated transport differential, Gauteng (zone 9C)"][3].value == 91.1
@@ -277,15 +239,7 @@ def test_dr04_transport_cost_sheet_lists_every_zone_with_a_source_and_marks_unpu
 
 
 def test_dr07_sheets_show_reported_eskom_litres_the_implied_rate_and_the_fleet_by_province():
-    wb = load_workbook(ROOT / build.OUT)
-    evidence = wb["DR07 evidence"]
-    facts = [r for r in evidence.iter_rows(min_row=5) if r[5].value]
-    assert len(facts) >= 25 and all(r[2].value and r[6].value for r in facts)
-    missing = [r[0].value for r in facts if r[5].value == "not available"]
-    assert "Diesel burned in private backup generators" in missing and "Vehicles by year of age" in missing
-    assert "Fuel use of new light vehicles, by year" in {r[0].value for r in facts if r[5].value == "observed"}
-    assert not any("FIASA" in str(r[6].value) or "JODI" in str(r[6].value) for r in facts)
-
+    wb = load_workbook(DR)
     power = {r[0].value: r for r in wb["DR07 power diesel"].iter_rows(min_row=5) if r[0].value}
     at = 1 + build.POWER_YEARS.index(2024)
     assert power["Fuel burned, as reported"][at].value == pytest.approx(1.1295)                # 1,129.5 million litres, Eskom p.141
@@ -311,7 +265,7 @@ def test_dr07_sheets_show_reported_eskom_litres_the_implied_rate_and_the_fleet_b
 
 
 def test_dr07_efficiency_and_rail_sheet_carries_both_histories_with_sources():
-    ws = load_workbook(ROOT / build.OUT)["DR07 efficiency and rail"]
+    ws = load_workbook(DR)["DR07 efficiency and rail"]
     rows = {r[0].value: r for r in ws.iter_rows(min_row=5) if r[0].value}
     years = [c.value for c in rows["Year"][1:10]]
     assert years == [2005, 2008, 2010, 2011, 2012, 2013, 2014, 2015, 2019]
@@ -325,10 +279,7 @@ def test_dr07_efficiency_and_rail_sheet_carries_both_histories_with_sources():
 
 
 def test_dr08_sheets_list_six_refineries_with_capacity_status_output_and_national_production():
-    wb = load_workbook(ROOT / build.OUT)
-    facts = [r for r in wb["DR08 evidence"].iter_rows(min_row=5) if r[5].value]
-    assert len(facts) >= 30 and all(r[2].value and r[6].value for r in facts)
-    assert not any("FIASA annual" in str(r[6].value) or "JODI" in str(r[6].value) for r in facts)
+    wb = load_workbook(DR)
     rows = {r[0].value: r for r in wb["DR08 refinery output"].iter_rows(min_row=5) if r[0].value}
     assert [k for k in rows][:6] == [plant for plant, *_ in build.REFINERIES]
     at = 4 + build.OUTPUT_YEARS.index(2026)

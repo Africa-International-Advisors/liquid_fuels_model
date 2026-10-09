@@ -13,6 +13,15 @@ Read first:
 - Workbook: `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`,
   your workshop workbook with the sourced history added.
 
+## One workbook for the data requests (9 October)
+
+`output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx` holds DR01, DR04, DR07 and DR08 and nothing else: a contents page, one main sheet for each request with
+its detail tables beside it, sales by province for 2013 to 2023, and a sheet listing the 18 items that could not be found. Figures reported for several
+years are set out one column a year. The demand baseline workbook no longer carries these sheets.
+
+New on DR04: the regulated transport cost to Gauteng by year, 2012 to 2024, from the department's yearly price
+tables (26.8 cents a litre in 2012, 75.7 in 2023).
+
 ## Status against the five priorities
 
 | # | Priority | Output asked for | Status | What is ready | What is not |
@@ -91,7 +100,7 @@ recorded as not available and no further search is planned:
 Pipeline capacity uses Transnet's 2020 figure: 148 million litres a week on the Durban to Jameson Park trunk
 line, about 7.7 bn litres a year.
 
-**DR07 Demand evidence.** Workbook sheets DR07 evidence, DR07 power diesel, DR07 fleet by province and DR07
+**DR07 Demand evidence.** Data requests workbook, sheets DR07 demand evidence, DR07 power diesel, DR07 fleet by province and DR07
 efficiency and rail; note `dr07_demand_evidence_2026-10-08.md`.
 
 - Eskom's reported turbine fuel is in: 0.94, 1.13 and 0.68 bn litres in the years to March 2023 to 2025. It
@@ -120,7 +129,7 @@ Not available from any source:
 - Fuel use of trucks, by year
 - Road freight in tonne-kilometres, by year
 
-**DR08 Refinery supply.** Workbook sheets DR08 evidence and DR08 refinery output; note
+**DR08 Refinery supply.** Data requests workbook, sheets DR08 refinery supply and DR08 refinery output; note
 `dr08_refinery_evidence_2026-10-08.md`.
 
 - Three plants operate (Secunda, Natref, Astron): 358,000 barrels a day, half of the 718,000 published in 2021.

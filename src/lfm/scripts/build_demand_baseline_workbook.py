@@ -695,7 +695,7 @@ def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> d
                    kind="formula", scalar=LITRES_PER_KWH, fmt="#,##0.00",
                    status="Estimated from 2022 at 0.31 litres per kWh",
                    source="Eskom; parliamentary replies on diesel burn",
-                   action="0.31 is confirmed by Eskom's reported fuel and generation (DR07 power diesel sheet)")
+                   action="0.31 is confirmed by Eskom's reported fuel and generation (data requests workbook, DR07 power diesel sheet)")
 
     s.section("2. Road diesel, by difference")
     road = s.line("Road vehicles and uses not listed above", ML, "Reporting formula",
@@ -772,83 +772,6 @@ def diesel_by_use_sheet(wb, d: dict, history_rows: dict, sector_rows: dict) -> d
 
 
 BN_FORMAT = "[>=0.005]0.00;[<=-0.005]-0.00;0.00"  # two decimals; a tiny negative shows as 0.00
-DR01_YEARS = list(range(2014, 2026))
-DR01_LINES = [
-    # label, History row key (with {p} for the fuel) or formula kind, source, note
-    ("Sales", "sales_{p}", "Department: sales by province added up (2013-2022); national total (2023)",
-     "2023 by province is an estimate. Nothing published after 2023."),
-    ("Production", "production_{p}", "Department energy balances, one file a year",
-     "Last balance published is 2021."),
-    ("Imports", "import_{p}", "SARS customs, by tariff line", "Complete calendar years in litres."),
-    ("Exports", "export_{p}", "SARS customs, by tariff line", ""),
-    ("Supply", "supply", "Calculated: production + imports - exports", ""),
-    ("Stock change", None, "None", "Not published by any source used."),
-    ("Supply less sales", "difference", "Calculated: supply - sales",
-     "Stock change and statistical difference together. Not production."),
-]
-
-
-def dr01_sheet(wb, history_rows: dict) -> None:
-    """The DR01 national balance on one page, in billion litres, each cell a formula on the History sheet."""
-    ws = wb.create_sheet("DR01 balance")
-    ws["A1"] = "DR01 National balance: petrol and diesel"
-    ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
-    ws["A2"] = ("Billion litres, calendar years. Every number is a formula on the History sheet. Blank means not published. "
-                "FIASA and JODI are not used.")
-    ws["A2"].font = Font(name="Arial", size=10, color=INK)
-    header = ["Line"] + DR01_YEARS + ["Source", "Note"]
-    widths = [22] + [8.5] * len(DR01_YEARS) + [52, 58]
-    for i, label in enumerate(header, start=1):
-        cell = ws.cell(row=4, column=i, value=label)
-        cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
-        cell.fill = PatternFill("solid", fgColor=FILL["header"])
-        cell.alignment = Alignment(horizontal="right" if isinstance(label, int) else "left", vertical="top")
-        ws.column_dimensions[get_column_letter(i)].width = widths[i - 1]
-    last = len(header)
-
-    def here(year: int) -> str:
-        return get_column_letter(2 + DR01_YEARS.index(year))
-
-    row = 4
-    placed: dict = {}
-    for fuel, title in (("diesel", "Diesel"), ("petrol", "Petrol"), ("total", "Diesel and petrol")):
-        row += 2 if row > 4 else 1
-        for i in range(1, last + 1):
-            cell = ws.cell(row=row, column=i, value=title if i == 1 else None)
-            cell.font = Font(name="Arial", size=10, bold=True, color=INK)
-            cell.fill = PatternFill("solid", fgColor=FILL["section"])
-        for label, key, source, note in DR01_LINES:
-            row += 1
-            placed[(fuel, label)] = row
-            ws.cell(row=row, column=1, value=label)
-            for year in DR01_YEARS:
-                c = here(year)
-                if key is None:
-                    formula = None
-                elif fuel == "total":
-                    d, g = placed[("diesel", label)], placed[("petrol", label)]
-                    formula = f'=IF(COUNT({c}{d},{c}{g})<2,"",{c}{d}+{c}{g})'
-                elif key == "supply":
-                    m, im, ex = (placed[(fuel, name)] for name in ("Production", "Imports", "Exports"))
-                    formula = f'=IF(COUNT({c}{m},{c}{im},{c}{ex})<3,"",{c}{m}+{c}{im}-{c}{ex})'
-                elif key == "difference":
-                    su, sa = placed[(fuel, "Supply")], placed[(fuel, "Sales")]
-                    formula = f'=IF(COUNT({c}{su},{c}{sa})<2,"",{c}{su}-{c}{sa})'
-                else:
-                    ref = f"History!{col(year)}{history_rows[key.format(p=fuel)]}"
-                    formula = f'=IF(ISNUMBER({ref}),{ref}/1000,"")'
-                cell = ws.cell(row=row, column=2 + DR01_YEARS.index(year), value=formula)
-                cell.number_format = BN_FORMAT
-            ws.cell(row=row, column=last - 1, value="Sum of the diesel and petrol rows" if fuel == "total" and key else source)
-            ws.cell(row=row, column=last, value=note)
-            calculated = fuel == "total" or key in ("supply", "difference")
-            for i in range(1, last + 1):
-                cell = ws.cell(row=row, column=i)
-                cell.font = Font(name="Arial", size=10, color=INK, bold=label in ("Supply", "Supply less sales") and i == 1)
-                cell.fill = PatternFill("solid", fgColor=FILL["formula" if calculated else "observation"])
-                cell.alignment = Alignment(wrap_text=i >= last - 1, vertical="top",
-                                           horizontal="right" if 1 < i < last - 1 else "left")
-    ws.freeze_panes = "B5"
 
 
 USE_YEARS = list(range(2014, 2024))
@@ -967,52 +890,6 @@ def _sheet_head(ws, heading: str, sub_heading: str, header: list, widths: list[f
         ws.column_dimensions[get_column_letter(i)].width = widths[i - 1]
 
 
-def evidence_sheet(wb, title: str, path: Path, parts: list[str], heading: str, subject: str, closing: str) -> None:
-    """An evidence table grouped by part: one row per fact with its status, source, page and open gap.
-
-    Rows marked "other products included" are left out, so the sheet carries petrol and diesel only.
-    """
-    ws = wb.create_sheet(title)
-    every = _read(path)
-    rows = [r for r in every if r["scope"] != "other products included"]
-    left_out = len(every) - len(rows)
-    done = sum(r["status"].startswith("observed") for r in rows)
-    inferred = sum(r["status"] == "inferred" for r in rows)
-    header = ["Item", subject, "Value", "Unit", "Period", "Status", "Source", "Page", "Open gap"]
-    mixed = f" Petrol and diesel only: {left_out} facts that mix in other products are left out." if left_out else ""
-    _sheet_head(ws, heading,
-                f"{done} facts read from sources, {inferred} calculated, {len(rows) - done - inferred} not available (yellow). "
-                f"Each row gives its source.{mixed} {closing}",
-                header, [34, 30, 36, 20, 24, 14, 44, 12, 60])
-    assert {r["part"] for r in rows} <= set(parts), {r["part"] for r in rows} - set(parts)
-    row = 4
-    for part in parts:
-        part_rows = [r for r in rows if r["part"] == part]
-        if not part_rows:
-            continue
-        row += 2 if row > 4 else 1
-        for i in range(1, len(header) + 1):
-            cell = ws.cell(row=row, column=i, value=part if i == 1 else None)
-            cell.font = Font(name="Arial", size=10, bold=True, color=INK)
-            cell.fill = PatternFill("solid", fgColor=FILL["section"])
-        for r in part_rows:
-            row += 1
-            kind = DR04_STATUS_FILL.get(r["status"], "estimate")
-            values = [r["item"], r["asset_or_route"], r["value"] or "Not available", r["unit"], r["period"], r["status"],
-                      r["source"] or "None found", r["page"], r["unresolved_gap"]]
-            for i, value in enumerate(values, start=1):
-                cell = ws.cell(row=row, column=i, value=value)
-                cell.font = Font(name="Arial", size=10, color=INK)
-                cell.fill = PatternFill("solid", fgColor=FILL[kind])
-                cell.alignment = Alignment(wrap_text=True, vertical="top")
-    ws.freeze_panes = "B5"
-
-
-def dr04_routes_sheet(wb) -> None:
-    evidence_sheet(wb, "DR04 routes", DR04_EVIDENCE, DR04_PARTS, "DR04 Routes and access: what the documents establish", "Asset or route",
-                   "Built from dr04_routes_access_evidence_2026-10-08.csv.")
-
-
 DR07_EVIDENCE = Path("workstreams/WS1_data_validation/dr07_demand_evidence_2026-10-08.csv")
 DR07_PARTS = ["Power generation", "Vehicle fleet", "New vehicles and electric share", "Vehicle efficiency and distance", "Freight and rail",
               "Sector activity"]
@@ -1021,11 +898,6 @@ FLEET_CLASSES = [("cars", "Cars"), ("light_commercial", "Light commercial"), ("t
                  ("minibuses", "Minibuses"), ("motorcycles", "Motorcycles"), ("total_self_propelled", "All self-propelled")]
 FLEET_PROVINCES = [("GP", "Gauteng"), ("KZN", "KwaZulu-Natal"), ("WC", "Western Cape"), ("EC", "Eastern Cape"), ("MP", "Mpumalanga"),
                    ("LP", "Limpopo"), ("NW", "North West"), ("FS", "Free State"), ("NC", "Northern Cape")]
-
-
-def dr07_evidence_sheet(wb) -> None:
-    evidence_sheet(wb, "DR07 evidence", DR07_EVIDENCE, DR07_PARTS, "DR07 Demand evidence: what calibrates the demand levers", "Covers",
-                   "Built by python -m lfm.scripts.build_dr07_demand_evidence.")
 
 
 def dr07_power_sheet(wb, d: dict) -> None:
@@ -1217,11 +1089,6 @@ REFINERIES = [
 ]
 OUTPUT_YEARS = list(range(2020, 2027))
 BALANCE_YEARS = list(range(2014, 2022))
-
-
-def dr08_evidence_sheet(wb) -> None:
-    evidence_sheet(wb, "DR08 evidence", DR08_EVIDENCE, DR08_PARTS, "DR08 Refinery supply: capacity, status, output and outlook", "Plant",
-                   "Built by python -m lfm.scripts.build_dr08_refinery_evidence.")
 
 
 def dr08_output_sheet(wb, d: dict) -> None:
@@ -1914,23 +1781,14 @@ def main() -> int:
                            "(official series; the two agree to within rounding in these years).")
     changes.append("Source selection: 2024 is still set to FIASA on Nigel's sheet, because the department has no 2024 "
                    "figure to switch to. The added sheets do not use FIASA for any year. For Nigel to decide.")
-    changes.append("Sheets added: History, DR01 balance, Sector history, Diesel by use, Demand by use, DR04 routes, DR04 entry points, DR04 transport cost, DR07 evidence, DR07 power diesel, DR07 fleet by province, DR07 efficiency and rail, DR08 evidence, DR08 refinery output, Power fleet, Vehicle history, HML response, Gap status, "
-                   "Checks, History sources. No other cell changed.")
+    changes.append("Sheets added: History, Sector history, Diesel by use, Demand by use, Power fleet, Vehicle history, HML response, Gap status, "
+                   "Checks, History sources. No other cell changed. The data request sheets (DR01, DR04, DR07, DR08) are in their own workbook, "
+                   "Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx.")
 
     history_rows = history_sheet(wb, d)
-    dr01_sheet(wb, history_rows)
     sector_rows = sector_sheet(wb, d)
     use_rows = diesel_by_use_sheet(wb, d, history_rows, sector_rows)
     demand_by_use_sheet(wb, history_rows, use_rows)
-    dr04_routes_sheet(wb)
-    dr04_entry_sheet(wb, d)
-    dr04_transport_sheet(wb, d)
-    dr07_evidence_sheet(wb)
-    dr07_power_sheet(wb, d)
-    dr07_fleet_sheet(wb, d)
-    dr07_efficiency_rail_sheet(wb, d)
-    dr08_evidence_sheet(wb)
-    dr08_output_sheet(wb, d)
     power_fleet_sheet(wb, d)
     vehicle_sheet(wb, d, history_rows)
     lever_response_sheet(wb)

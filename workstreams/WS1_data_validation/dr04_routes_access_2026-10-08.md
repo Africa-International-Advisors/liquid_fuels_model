@@ -11,9 +11,9 @@ zone. Fuel tanker road and rail rates are not published.** 44 facts are read
 from original documents or registered inputs, 5 are calculated, and 6 lines
 are open.
 
-**Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
+**Where to look:** the data requests workbook `output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx`.
 
-- Sheet **DR04 routes**: every fact, grouped, with status, source, page and
+- Sheet **DR04 routes and access**: every fact, grouped, with status, source, page and
   open gap. Open lines are yellow.
 - Sheet **DR04 entry points**: petrol and diesel imports by customs office,
   2014 to 2025, in billion litres.
@@ -157,6 +157,22 @@ carries jet fuel. If the capacity figure is still right, close to half of the
 petrol and diesel landed at Durban cannot go inland by pipeline and must be
 used on the coast or move by road or rail. The capacity figure is from 2020,
 so this is a lead to check, not a conclusion.
+
+## Added on 9 October: the regulated transport cost to Gauteng by year
+
+The department's yearly price tables give the transport cost in the Gauteng price month by month from January
+2012 to April 2024. Cents a litre, as it stood at the end of each year (it is reset each April):
+
+| 2012 | 2013 | 2014 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | April 2024 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 26.8 | 28.9 | 33.1 | 35.3 | 41.0 | 41.5 | 51.7 | 57.4 | 63.7 | 64.9 | 64.9 | 75.7 | 75.7 |
+
+Diesel table shown; the petrol table is the same except 2014 (28.9 all year) and December 2022 (67.9). It almost
+trebled in eleven years. Staged as `reference/transport_cost_gauteng_department.csv` by
+`python -m lfm.scripts.stage_fuel_price_margins --vintage 2026 --fetch`.
+
+Two cautions. The April 2024 table shows 75.7 while the zone list of the same month shows 82.8; both are kept and
+the difference is not explained. Eight months are unreadable in the department's tables and are left out.
 
 ## Added on 9 October: a second search of official sources
 

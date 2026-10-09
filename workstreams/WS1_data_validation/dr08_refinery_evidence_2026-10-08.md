@@ -6,9 +6,9 @@ dates. Petrol and diesel only.
 
 Status: **43 facts read from sources, 9 calculated, 3 not available.**
 
-**Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
+**Where to look:** the data requests workbook `output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx`.
 
-- Sheet **DR08 evidence**: every fact with its source and open gap.
+- Sheet **DR08 refinery supply**: every fact with its source and open gap.
 - Sheet **DR08 refinery output**: the six refineries with capacity, status and
   reported output, then national petrol and diesel production.
 
