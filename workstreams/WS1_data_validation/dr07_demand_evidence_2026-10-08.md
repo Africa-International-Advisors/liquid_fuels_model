@@ -3,7 +3,7 @@
 For Nigel's review. Answers request DR07: the evidence that calibrates the
 demand levers. Petrol and diesel only.
 
-Status: **51 facts read from sources, 10 calculated, 7 not available.**
+Status: **55 facts read from sources, 10 calculated, 7 not available.**
 
 **Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
 
@@ -144,7 +144,20 @@ The programme allows more than a year to financial close and then 36 months to b
 plant from this round runs before about 2031 (my reading, not a published date). The system operator's outlook
 assumes 6 GW of gas in 2030; nothing found supports that date.
 
-Not found: any gas project for ACWA Power, the members of the Pictor consortium, or a dated gas conversion for Avon.
+**Three sets of dates, which do not agree:**
+
+| | Eskom 3,000 MW | Independent producers |
+|---|---|---|
+| Integrated Resource Plan 2025 (Table 1) | 2029 | 3,000 MW in 2030 |
+| Eskom, June 2026 | from 2031 | |
+| Programme timetable (my reading) | | about 2031 |
+| AIA working timeline (chart from Manish, not published) | 2032 | 2030: Acwa 990 MW, Avon 670 MW, FlexED 450 MW; Vutomi 800 MW in the high case |
+
+The plan also says converting the existing diesel peaking plants to natural gas should be considered and that plans
+are being developed at most of them (p.46). That covers Avon, with no date.
+
+Not found in a published source: a date for ACWA Power or for an Avon conversion, and the members of the Pictor
+consortium. Acwa's 990 MW on the AIA chart is the size of the Pictor bid; the link is not confirmed.
 
 ## Still not available
 

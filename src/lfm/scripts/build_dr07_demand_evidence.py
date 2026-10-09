@@ -144,7 +144,7 @@ def build(d: dict) -> list[dict]:
     add("Power generation", "New gas plant: firm commissioning date for any project", "Independent producers and Eskom", "", "", "", "not available",
         "None exists", "", "",
         "No project has a preferred bidder, financial close or construction start. The nearest thing to a date is Eskom's plan to produce from 2031. "
-        "No gas project was found for ACWA Power, and no dated gas conversion for Avon.")
+        "The Integrated Resource Plan schedules Eskom for 2029 and independent producers for 2030. No published source dates ACWA Power or an Avon conversion.")
 
     # --- vehicle fleet --------------------------------------------------------
     month = d["natis_month"]

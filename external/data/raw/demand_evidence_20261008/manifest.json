@@ -145,6 +145,22 @@
       "url": "https://www.engineeringnews.co.za/article/new-determination-opens-way-for-public-procurement-of-large-scale-battery-storage-and-gas-to-power-2026-10-07",
       "bytes": 263585,
       "sha256": "c29b820e188bcf0986c5fb7875ba844eb35d1af16feb821a3a303002de155680"
+    },
+    {
+      "file": "department-integrated-resource-plan-2025.pdf",
+      "publisher": "Department of Electricity and Energy",
+      "published": "2025-10",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy%20Resources/IRP/IRP%202025/User-Friendly-IRP-2025.pdf",
+      "bytes": 2967660,
+      "sha256": "333937bf47896094bf42e30adab5897c8b9d12427bab7b79f75e9ff2cdaf3795"
+    },
+    {
+      "file": "aia-gas-to-power-demand-timeline-chart.png",
+      "publisher": "Africa International Advisors (chart supplied by Manish, 9 October 2026)",
+      "published": "not stated",
+      "url": "not published",
+      "bytes": 16431,
+      "sha256": "dd655931891f167ca5a6a91e7388b7b521082d5b05bf092e3ca767a410306b1b"
     }
   ]
 }
