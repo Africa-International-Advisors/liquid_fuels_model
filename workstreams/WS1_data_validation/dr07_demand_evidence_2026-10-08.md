@@ -3,7 +3,7 @@
 For Nigel's review. Answers request DR07: the evidence that calibrates the
 demand levers. Petrol and diesel only.
 
-Status: **42 facts read from sources, 10 calculated, 7 not available.**
+Status: **51 facts read from sources, 10 calculated, 7 not available.**
 
 **Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
 
@@ -126,12 +126,32 @@ the HML response sheet. No South African forecast was found.
 The ceiling is not an estimate. Much of the electricity shed was replaced by
 solar and batteries or not replaced at all.
 
+## Gas plant by project (added 9 October)
+
+No project has a firm commissioning date. What is published:
+
+| Project | Size | Status | Date | Source |
+|---|---|---|---|---|
+| Eskom, Richards Bay | 3,000 MW | Gas supply agreement signed with Zululand Energy Terminal on 5 June 2026; environmental assessment to be redone | Eskom plans to produce from 2031 | Eskom statement; Engineering News, 5 June 2026 |
+| Khanyazwe Flexpower (FlexED), Mpumalanga | 440 MW | Bid, 29 May 2026 | None | Official bid list |
+| Pictor consortium, KwaZulu-Natal | 990 MW | Bid, 29 May 2026 | None | Official bid list |
+| Kelvin Redevelopment, Gauteng | 600 MW | Bid, 29 May 2026 | None | Official bid list |
+| Komatipoort Power (Vutomi Energy), Mpumalanga | 800 MW | Bid, 29 May 2026 | None | Official bid list |
+| New determination | 5,000 MW | Announced 7 October 2026; bidding rounds to follow | None | Engineering News, 7 October 2026 |
+
+The four bids total 2,830 MW against 2,000 MW sought. No preferred bidder had been named by 7 October 2026.
+The programme allows more than a year to financial close and then 36 months to build, so on its own timetable no
+plant from this round runs before about 2031 (my reading, not a published date). The system operator's outlook
+assumes 6 GW of gas in 2030; nothing found supports that date.
+
+Not found: any gas project for ACWA Power, the members of the Pictor consortium, or a dated gas conversion for Avon.
+
 ## Still not available
 
 | What | Why |
 |---|---|
 | Diesel burned in private backup generators | No source measures it: checked the Reserve Bank, the CSIR, Eskom and the system operator. It is inside recorded diesel sales and cannot be separated. |
-| New gas plant: firm commissioning date for any project | No gas project has a bidder appointed or is in construction, so no firm date exists to find. |
+| New gas plant: firm commissioning date for any project | No project has a preferred bidder, financial close or construction start. See the gas plant table above. |
 | Vehicles by fuel within each class | The bulletin splits fuel by province and the register splits class by province; nothing published crosses fuel with class. |
 | Vehicles by year of age | Lightstone holds the age profile and sells it; the register does not publish it. Only apparent retirements can be calculated. |
 | Electric trucks and electric light commercial vehicles sold | naamsa reports electric sales by drivetrain, not by segment (checked its fourth-quarter 2025 review). Benchmarks from other countries are on the HML response sheet. |

@@ -108,7 +108,10 @@ efficiency and rail; note `dr07_demand_evidence_2026-10-08.md`.
 Not available from any source:
 
 - Diesel burned in private backup generators
-- New gas plant: firm commissioning date for any project
+- New gas plant: firm commissioning date for any project. Found on 9 October: Eskom plans to produce at Richards Bay
+  from 2031; four bids of 29 May 2026 (Khanyazwe Flexpower 440 MW, Pictor 990 MW, Kelvin 600 MW, Komatipoort
+  Power/Vutomi 800 MW) with no preferred bidder yet; a new 5,000 MW determination on 7 October 2026. The system
+  operator's 2030 for 6 GW is not supported by any of these
 - Vehicles by fuel within each class
 - Vehicles by year of age
 - Electric trucks and electric light commercial vehicles sold

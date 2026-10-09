@@ -142,7 +142,9 @@ def build(d: dict) -> list[dict]:
     for p in points["gas_plant_project"]:
         add("Power generation", "New gas plant, by project", p["subject"], p["value"], "", p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
     add("Power generation", "New gas plant: firm commissioning date for any project", "Independent producers and Eskom", "", "", "", "not available",
-        "None exists", "", "", "No gas project has a bidder appointed or is in construction, so no firm date exists to find.")
+        "None exists", "", "",
+        "No project has a preferred bidder, financial close or construction start. The nearest thing to a date is Eskom's plan to produce from 2031. "
+        "No gas project was found for ACWA Power, and no dated gas conversion for Avon.")
 
     # --- vehicle fleet --------------------------------------------------------
     month = d["natis_month"]
