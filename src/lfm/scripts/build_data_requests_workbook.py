@@ -10,6 +10,7 @@ Sheets:
     DR01 national balance     sales, production, imports and exports by year, billion litres
       DR01 sales by province  petrol and diesel sold in each province by year
       DR01 demand by sector   diesel and petrol used by each sector, to 2021
+      DR01 sector activity    activity to 2025 and estimated diesel after 2021, by formula on the sheet above
     DR04 routes and access    pipeline, cost, ports, access and competing routes
       DR04 entry points       petrol and diesel imports by customs office and year
       DR04 transport cost     the Gauteng route by element and every pricing zone
@@ -373,13 +374,16 @@ def province_sheet(wb, d: dict) -> None:
 
 
 SECTOR_YEARS = list(range(2014, 2022))
-SECTORS = [("final_consumption", "All sectors"), ("road", "Road transport"), ("rail", "Rail"), ("mining", "Mining"), ("industry", "Manufacturing and other industry"),
-           ("construction", "Construction"), ("agriculture", "Agriculture"), ("commercial_public", "Commercial and public services"),
+SECTORS = [("final_consumption", "All sectors"), ("road", "Road transport"), ("rail", "Rail"), ("industry", "Industry, all"), ("mining", "Mining (part of industry)"),
+           ("construction", "Construction (part of industry)"), ("agriculture", "Agriculture"), ("commercial_public", "Commercial and public services"),
            ("residential", "Households"), ("electricity_plants", "Power stations")]
 
 
-def sector_sheet(wb, timeseries: Path) -> None:
-    """Diesel and petrol used by each sector, from the department's energy balances, billion litres."""
+def sector_sheet(wb, timeseries: Path) -> dict[tuple[str, str], int]:
+    """Diesel and petrol used by each sector, from the department's energy balances, billion litres.
+
+    Returns the row of each ``(product, sector key)`` so other sheets can point at these cells and not repeat them.
+    """
     ws = wb.create_sheet("DR01 demand by sector")
     ws["A1"] = "DR01 Demand by sector: diesel and petrol"
     ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
@@ -392,8 +396,9 @@ def sector_sheet(wb, timeseries: Path) -> None:
     data = {(r["product"], r["flow_key"], int(r["period"])): float(r["value"]) / 1e9 for r in _read(timeseries / "energy_balance_department.csv")}
     notes = {"commercial_public": "Jumps from almost nothing to several billion litres from 2016: the department moved volumes between sectors, so read with care.",
              "electricity_plants": "The balances record little or none after 2016; Eskom's own reported fuel is on the DR07 sheet.",
-             "final_consumption": "The department's total for all sectors. It is not the sales figure on the national balance sheet."}
-    row = 3
+             "final_consumption": "The department's total for all sectors. It is not the sales figure on the national balance sheet.",
+             "industry": "Mining, construction, manufacturing and industry not specified, together. Manufacturing and other industry is this line less the two below."}
+    row, at = 3, {}
 
     def write(values, fill, bold=False, white=False):
         for i, value in enumerate(values, start=1):
@@ -414,9 +419,85 @@ def sector_sheet(wb, timeseries: Path) -> None:
             if not any(values):
                 continue                                              # a sector that uses none of this fuel
             row += 1
+            at[(product, key)] = row
             write([label] + values + ["Department of Mineral and Petroleum Resources, energy balances, one file a year", notes.get(key, "")],
                   "observation", bold=key == "final_consumption")
     ws.freeze_panes = "B3"
+    return at
+
+
+ACTIVITY_YEARS = list(range(2014, 2026))
+INTENSITY_YEARS = (2018, 2021)             # the estimate after 2021 uses the average of these years, as on the demand baseline workbook
+
+
+def activity_sheet(wb, d: dict, at: dict) -> None:
+    """Mining, manufacturing and agriculture: activity by year, diesel per unit of activity, and estimated diesel after 2021.
+
+    Diesel itself is not repeated here: every figure that needs it is a formula on the demand by sector sheet.
+    """
+    ws = wb.create_sheet("DR01 sector activity")
+    ws["A1"] = "DR01 Sector activity: mining, manufacturing and agriculture"
+    ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
+    ws["A2"] = ("Activity is published to 2025; diesel by sector stops at 2021. The estimate for later years is the average diesel per unit of activity in "
+                f"{INTENSITY_YEARS[0]} to {INTENSITY_YEARS[1]} times the activity of that year. Diesel is read from the demand by sector sheet, not repeated here.")
+    ws["A2"].font = Font(name="Arial", size=10, color=INK)
+    header = ["Line", "Unit"] + ACTIVITY_YEARS + ["Source", "Note"]
+    for i, w in enumerate([44, 30] + [8.5] * len(ACTIVITY_YEARS) + [50, 66], start=1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+    sheet = "'DR01 demand by sector'!"
+
+    def here(year):
+        return get_column_letter(3 + ACTIVITY_YEARS.index(year))
+
+    def there(year, key):
+        return f"{sheet}{get_column_letter(2 + SECTOR_YEARS.index(year))}{at[('diesel', key)]}"
+
+    blocks = [
+        ("Mining", "Mining production volume", "index, 2019 = 100", {y: d["index"].get(("mining_volume_total", y)) for y in ACTIVITY_YEARS},
+         "Statistics South Africa, Mining production and sales (P2041)", lambda y: there(y, "mining"),
+         "The energy balance's mining line includes mines' haul trucks and road vehicles."),
+        ("Manufacturing and other industry", "Manufacturing production volume", "index, 2019 = 100",
+         {y: d["index"].get(("manufacturing_volume_total", y)) for y in ACTIVITY_YEARS}, "Statistics South Africa, Manufacturing production and sales (P3041.2)",
+         lambda y: f"({there(y, 'industry')}-{there(y, 'mining')}-N({there(y, 'construction')}))",
+         "Diesel is industry less mining less construction. It is small (0.1 to 0.3 billion litres), so it moves with reclassification more than with output."),
+        ("Agriculture", "Agriculture, forestry and fishing real value added", "billion rand, 2015 prices",
+         {y: d["macro"].get(("agriculture_forestry_and_fishing", y)) for y in ACTIVITY_YEARS}, "Statistics South Africa, Gross domestic product (P0441)",
+         lambda y: there(y, "agriculture"), "The balance's 2016 and 2017 figures are about double the other years and look like reclassification."),
+    ]
+    row = 3
+
+    def write(values, fill, bold=False, white=False, fmt=None):
+        for i, value in enumerate(values, start=1):
+            cell = ws.cell(row=row, column=i, value=value)
+            cell.font = Font(name="Arial", size=10, bold=bold, color="FFFFFFFF" if white else INK)
+            cell.fill = PatternFill("solid", fgColor=FILL[fill])
+            cell.alignment = Alignment(wrap_text=i > len(ACTIVITY_YEARS) + 2 or i == 1, vertical="top")
+            if fmt and 2 < i <= len(ACTIVITY_YEARS) + 2:
+                cell.number_format = fmt
+
+    first, last = INTENSITY_YEARS
+    for title, activity_label, unit, activity, source, diesel, note in blocks:
+        row += 2
+        write([title] + [None] * (len(header) - 1), "section", bold=True)
+        row += 1
+        write(header, "header", bold=True, white=True)
+        row += 1
+        activity_row = row
+        write([activity_label, unit] + [activity.get(y) for y in ACTIVITY_YEARS] + [source, "Published to 2025."], "observation", fmt="#,##0.0")
+        row += 1
+        intensity_row = row
+        per = "million litres per " + ("index point" if "index" in unit else "billion rand")
+        write(["Diesel per unit of activity", per]
+              + [f"={diesel(y)}*1000/{here(y)}{activity_row}" if y in SECTOR_YEARS else None for y in ACTIVITY_YEARS]
+              + ["Calculated: diesel on the demand by sector sheet over the activity above", note], "formula", fmt="#,##0.00")
+        row += 1
+        average = f"AVERAGE({here(first)}{intensity_row}:{here(last)}{intensity_row})"
+        write(["Estimated diesel after 2021", "billion litres"]
+              + [f"={average}*{here(y)}{activity_row}/1000" if y > SECTOR_YEARS[-1] and activity.get(y) is not None else None for y in ACTIVITY_YEARS]
+              + [f"Calculated: average diesel per unit of activity, {first} to {last}, times that year's activity",
+                 "An estimate, not an observation and not an accepted model input. Holds diesel per unit of activity constant. For Nigel to agree."],
+              "formula", fmt=base.BN_FORMAT)
+    ws.freeze_panes = "C3"
 
 
 def sizing_sheet(wb) -> None:
@@ -524,8 +605,10 @@ def build(vintage: Path) -> Workbook:
     summary = [("DR01 national balance", "Sales, production, imports and exports by year, with the difference between supply and sales", balance_sheet(wb))]
     province_sheet(wb, d)
     summary.append(("DR01 sales by province", "Petrol and diesel sold in each of the nine provinces by year; 2023 estimated", None))
-    sector_sheet(wb, vintage / "timeseries")
-    summary.append(("DR01 demand by sector", "Diesel and petrol used by mining, manufacturing, agriculture, transport and other sectors, 2014 to 2021", None))
+    at = sector_sheet(wb, vintage / "timeseries")
+    summary.append(("DR01 demand by sector", "Diesel and petrol used by industry, mining, agriculture, transport and other sectors, 2014 to 2021", None))
+    activity_sheet(wb, d, at)
+    summary.append(("DR01 sector activity", "Mining, manufacturing and agriculture: activity to 2025, diesel per unit of activity, and estimated diesel after 2021", None))
     holds = {"DR04": "Pipeline limit and cost, regulated and published transport costs, port use, access at Durban and Lesedi, competing routes",
              "DR07": "Eskom and independent diesel burn, plant dates, vehicle fleet, new vehicles, efficiency, freight and rail",
              "DR08": "Capacity, status and closure dates, output by plant and nationally, yields, utilisation and outlook"}

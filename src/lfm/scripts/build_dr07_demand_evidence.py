@@ -339,7 +339,7 @@ def build(d: dict) -> list[dict]:
         "About 1% of diesel sales. So freight moving to rail saves nearly all the road diesel it displaces. " + share["note"])
 
     # --- sector activity ------------------------------------------------------
-    add("Sector activity", "Mining, manufacturing and agriculture: activity and diesel per unit", "South Africa", "On the Sector history sheet", "", "2012-2025",
+    add("Sector activity", "Mining, manufacturing and agriculture: activity and diesel per unit", "South Africa", "On the DR01 sector activity sheet", "", "2014-2025",
         "observed", "Statistics South Africa (P2041, P3041.2, P0441); department energy balances", "assumptions/2026/timeseries/activity_statssa_monthly.csv", "",
         "Diesel by sector is observed to 2021 only, the last energy balance.")
     order = {part: i for i, part in enumerate(PARTS)}

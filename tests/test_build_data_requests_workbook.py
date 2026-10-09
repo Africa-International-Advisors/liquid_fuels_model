@@ -15,7 +15,7 @@ pytestmark = pytest.mark.skipif(not (ROOT / requests.OUT).exists(), reason="work
 def test_workbook_has_one_main_sheet_a_request_with_its_detail_tables_and_a_contents_page():
     wb = load_workbook(ROOT / requests.OUT)
     assert wb.sheetnames == [
-        "Contents", "DR01 national balance", "DR01 sales by province", "DR01 demand by sector", "DR04 routes and access", "DR04 entry points",
+        "Contents", "DR01 national balance", "DR01 sales by province", "DR01 demand by sector", "DR01 sector activity", "DR04 routes and access", "DR04 entry points",
         "DR04 transport cost", "DR07 demand evidence", "DR07 fleet by province", "DR08 refinery supply", "Market sizing", "Not available"]
     listed = [r[0].value for r in wb["Contents"].iter_rows(min_row=5, max_row=4 + len(wb.sheetnames) - 1)]
     assert listed == wb.sheetnames[1:]                               # every sheet is described on the contents page
@@ -125,13 +125,32 @@ def test_demand_by_sector_carries_the_energy_balance_figures_for_mining_industry
         elif r[0].value and r[0].value != "Sector":
             blocks.setdefault(block, {})[r[0].value] = r
     diesel = blocks["Diesel"]
-    assert {"Mining", "Manufacturing and other industry", "Agriculture", "Road transport", "All sectors"} <= set(diesel)
+    assert {"Industry, all", "Mining (part of industry)", "Construction (part of industry)", "Agriculture", "Road transport", "All sectors"} <= set(diesel)
     at = {year: 1 + requests.SECTOR_YEARS.index(year) for year in requests.SECTOR_YEARS}
     with (VINTAGE / "timeseries" / "energy_balance_department.csv").open(encoding="utf-8", newline="") as fh:
         balance = {(r["product"], r["flow_key"], int(r["period"])): float(r["value"]) / 1e9 for r in csv.DictReader(fh)}
-    assert diesel["Mining"][at[2021]].value == pytest.approx(balance[("diesel", "mining", 2021)])
+    assert diesel["Mining (part of industry)"][at[2021]].value == pytest.approx(balance[("diesel", "mining", 2021)])
+    assert diesel["Industry, all"][at[2021]].value > diesel["Mining (part of industry)"][at[2021]].value          # the parent line holds mining
     assert diesel["Agriculture"][at[2014]].value == pytest.approx(balance[("diesel", "agriculture", 2014)])
     assert all(r[9].value for r in diesel.values())                    # a source on every line
+
+
+def test_sector_activity_points_at_the_sector_sheet_and_estimates_only_the_years_after_2021():
+    ws = load_workbook(ROOT / requests.OUT)["DR01 sector activity"]
+    rows = [r for r in ws.iter_rows(min_row=4) if r[0].value]
+    at = {year: 2 + requests.ACTIVITY_YEARS.index(year) for year in requests.ACTIVITY_YEARS}
+    activity = [r for r in rows if r[0].value in ("Mining production volume", "Manufacturing production volume", "Agriculture, forestry and fishing real value added")]
+    assert len(activity) == 3 and all(isinstance(r[at[2025]].value, (int, float)) for r in activity)      # published to 2025
+    intensity = [r for r in rows if r[0].value == "Diesel per unit of activity"]
+    estimate = [r for r in rows if r[0].value == "Estimated diesel after 2021"]
+    assert len(intensity) == len(estimate) == 3
+    for r in intensity:
+        assert str(r[at[2021]].value).startswith("=") and "'DR01 demand by sector'!" in r[at[2021]].value   # diesel is read, not repeated
+        assert r[at[2022]].value is None
+    for r in estimate:
+        assert r[at[2021]].value is None and str(r[at[2023]].value).startswith("=AVERAGE(")
+    typed = [c.value for r in rows if r[0].value not in {x[0].value for x in activity} | {"Line"} for c in r[2:14] if isinstance(c.value, (int, float))]
+    assert typed == []                                                    # no diesel figure is typed on this sheet
 
 
 def test_dr08_says_which_plants_are_refining_and_holds_the_assumed_astron_split():

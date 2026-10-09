@@ -53,12 +53,12 @@ each, and treat road as what remains. For 2021, the last year every line is publ
 | Sales (the total) | 12.95 | 9.30 | Department, provinces added up |
 | Power generation | 0.58 | | Eskom, year to March 2022, reported |
 | Mining | 1.29 | 0.05 | Energy balance |
-| Manufacturing, other industry, construction | 0.26 | 0.02 | Energy balance |
+| Manufacturing, other industry, construction | 0.21 | 0.02 | Energy balance |
 | Agriculture | 1.06 | 0.12 | Energy balance |
 | Rail | 0.14 | | Transnet, estimated (DR07) |
-| Road, as the remainder | 9.62 | 9.11 | Sales less the lines above |
+| Road, as the remainder | 9.67 | 9.11 | Sales less the lines above |
 
-Road diesel at 9.6 sits close to the balance's road plus commercial lines (10.6), which
+Road diesel at 9.7 sits close to the balance's road plus commercial lines (10.6), which
 supports reading "other" as road fuel.
 
 ## What would change in the model
@@ -66,8 +66,8 @@ supports reading "other" as road fuel.
 | Billion litres | Model, 2024 | Proposed basis | Change |
 |---|---|---|---|
 | Power generation | 3.58 | 0.9 to 1.6 | Down about 2 to 2.7 |
-| Vehicles, petrol and diesel | 16.43 | about 18.7 (road as the remainder) | Up about 2.3 |
-| Mining, manufacturing, agriculture | 2.57 | 2.8 | Little change |
+| Vehicles, petrol and diesel | 16.43 | about 18.8 (road as the remainder) | Up about 2.4 |
+| Mining, manufacturing, agriculture | 2.57 | 2.7 | Little change |
 | Total | 23.4 | sales were 21.9 in 2023 | |
 
 The model's total is near sales, but for the wrong reasons: too much diesel for power

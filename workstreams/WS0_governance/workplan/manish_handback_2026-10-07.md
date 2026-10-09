@@ -35,7 +35,9 @@ Done in the data requests workbook:
 - One row, one data point: each coal station, diesel plant, gas project, terminal operator and berth has its own row.
 - Duplicates removed: the power diesel, efficiency and rail, and refinery output sheets are gone; their figures are on
   the main request sheets, with the full run of years.
-- Mining, manufacturing and agriculture brought in: sheet DR01 demand by sector, from the energy balances to 2021.
+- Mining, manufacturing and agriculture brought in: sheet DR01 demand by sector (energy balances to 2021) and sheet DR01
+  sector activity (Stats SA activity to 2025, diesel per unit of activity, estimated diesel after 2021). The second reads
+  its diesel from the first by formula, so no figure is held twice.
 - Astron assumed at 50% petrol, 50% diesel. DR08 now opens with which plants are refining in 2026.
 - Jameson Park recorded as not one of Transnet's five storage sites out for proposal.
 
