@@ -5,7 +5,7 @@ Updated 8 October 2026. The current market story is the matching **43-page v27**
 - [Current PDF](supporting/SA_Market_Story_2026-10-08_v27.pdf)
 - [Current editable PowerPoint](supporting/SA_Market_Story_2026-10-08_v27.pptx)
 - [Supporting material and page guide](supporting/README.md)
-- [8 October PS market-sizing issue tree and outstanding data, two pages](supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v2.pdf) / [editable PowerPoint](supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v2.pptx).
+- [Durban and Lesedi market sizing pack: national balance, issue tree, deep dives and next steps](supporting/09102026_Vopak_Market_Sizing_v1100.pdf) / [editable PowerPoint](supporting/09102026_Vopak_Market_Sizing_v1100.pptx).
 - [Older material — archive](supporting/archive/)
 
 The Appendix cover is page 19. Scenario calibration, commercial inputs and operational

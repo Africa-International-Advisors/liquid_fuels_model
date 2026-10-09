@@ -28,7 +28,7 @@ Immediate priority: Manish reconciles DR01 and assembles DR04/07/08 public evide
 
 ## 8 October PS follow-up
 
-The additional two-page handback is the [market-sizing issue tree and outstanding requests PDF](../../../pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v2.pdf) and [editable PowerPoint](../../../pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v2.pptx). It supplements the v25 story. Nigel retains the original session transcript and marked storyboard locally; they are excluded from this public handback. Obtain the originals from Nigel before reviewing the session sources.
+The market sizing pack (built 9 October 2026 11:00: cover, national balance, issue tree, three demand deep dives, port and logistics, outstanding data, decisions and next steps) is the [PDF](../../../pptx/output/delivered/supporting/09102026_Vopak_Market_Sizing_v1100.pdf) and [editable PowerPoint](../../../pptx/output/delivered/supporting/09102026_Vopak_Market_Sizing_v1100.pptx). It supplements the v25 story. Nigel retains the original session transcript and marked storyboard locally; they are excluded from this public handback. Obtain the originals from Nigel before reviewing the session sources.
 
 Manish's next handback has three parts: close the remaining evidence gaps, consolidate a reconciled current petrol/diesel baseline, and estimate the accessible annual market separately for Durban and Lesedi. Build the market-size calculation from destination demand, gross imports and exports, actual domestic production, feasible routes, competing supply and terminal access. Show ranges, assumptions and shared Durban-Lesedi flows explicitly. The approximately 20 billion litres discussed is a provisional consumption starting point, not imports or Vopak-accessible volume.
 
@@ -36,7 +36,7 @@ Prioritise reported historical Eskom diesel litres, provincial vehicle compositi
 
 Nigel coordinates client movements/customer commitments (DR02/05), actual operating capacity (DR03), and commercial/project inputs (DR06). Manish can estimate accessible-market ranges while those inputs are pending; current capture and market share remain unverified until client evidence is reconciled. Compare achievable additional capture with existing assets and operational improvements before testing expansion economics. Nigel/Henry review scenario settings. The request register remains prepared, not sent, with no receipt recorded; this handback does not record approval or a new deadline.
 
-Rebuild the two-page handback with `pptx/scripts/build_market_sizing_issue_tree.ps1 -Version <new-number> -IncludeRequests` in PowerShell. It uses the preserved v25 Vopak master and named `Header only` layout, preserves previous deliveries, and exports the PPTX, PDF and PNGs. The builder checks bounds and text fit; visually inspect the exports before delivery.
+Rebuild the pack with `python pptx/scripts/issue_tree_volumes.py` and then `pptx/scripts/build_market_sizing_issue_tree.ps1 -IncludeRequests -Layout flow` in PowerShell. It uses the preserved v25 Vopak master, its `1_Title` cover and named `Header only` layout, preserves previous deliveries, and exports the PPTX, PDF and PNGs. The builder checks bounds and text fit; visually inspect the exports before delivery.
 
 ## What the current numbers mean
 

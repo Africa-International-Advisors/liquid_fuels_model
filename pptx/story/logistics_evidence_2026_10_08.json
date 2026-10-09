@@ -1,0 +1,43 @@
+{
+  "title": "Port and logistics system: how fuel reaches coastal and inland demand",
+  "note": "Rows compare modes: network, actual throughput, capacity and use, relevance to Durban and Lesedi. Manish's DR04 and DR08 evidence (8 October, merged as PR #1) is primary; tags marked 'pack research' are public sources found separately the same day and not in DR04. Overlaps are recorded in workstreams/WS0_governance/workplan/overlap_log_2026_10_08.md (item 4). Transnet FY24 = year to March 2024.",
+  "footer": "Source: Manish DR04, DR08 (8 Oct): SARS customs by office, Transnet Pipelines 2020, NERSA, department zone differentials, CEF. Pack research: Transnet Pipelines 2024, Transnet IR 2025, NERSA jet fuel paper (Jun 2026). Overlaps: overlap log, 8 Oct.",
+  "modes": [
+    {
+      "heading": "1  PORTS AND LIQUID BULK",
+      "cells": [
+        {"title": "Port network", "copy": ["Durban 8 liquid-bulk berths", "Richards Bay 2; Island View hub"], "tag": "DR04 · TNPA Our Ports"},
+        {"title": "Fuel imports by port, 2025", "copy": ["Durban 13.2 of 16.7B L (79%)", "Cape Town 1.5, Richards Bay 0.7"], "tag": "2025 · petrol, diesel · customs · DR04"},
+        {"title": "All liquids landed, 2025", "copy": ["Durban {landed_durban_mt} of {landed_all_ports_mt}M t ({durban_share_pct}%)", "Crude, fuels, gas and chemicals"], "tag": "2025 · TNPA tonnes, all products · DR04"},
+        {"title": "Durban role", "copy": ["Ship receipt; dispatch mainly road", "Trunk-line injection to confirm"], "tag": "DR04 · Vopak NERSA filing"}
+      ]
+    },
+    {
+      "heading": "2  PIPELINES",
+      "cells": [
+        {"title": "Pipeline network", "copy": ["NMPP Durban to Jameson Park", "(TM2, 180M L); old DJP retiring"], "tag": "DR04 · Transnet Pipelines 2020"},
+        {"title": "Pipeline throughput", "copy": ["All products FY24 15.2B L", "incl. crude and jet; FY25 13.4B L"], "tag": "Pack research · TPL 2024, IR 2025"},
+        {"title": "Capacity and use", "copy": ["148M L/week = ~7.7B L/yr", "vs 13.2B L landed at Durban"], "tag": "DR04 · 2020 capacity, lead to check"},
+        {"title": "Lesedi role", "copy": ["4 pipeline intakes, 8 road bays", "Customers ship via the trunk line"], "tag": "DR04 · NERSA, Feb 2026"}
+      ]
+    },
+    {
+      "heading": "3  RAIL",
+      "cells": [
+        {"title": "Rail network", "copy": ["Island View rail gantries", "Durban and Matola to Gauteng"], "tag": "Pack research · NERSA 2026"},
+        {"title": "Rail throughput", "copy": ["Durban-Gauteng fuel: not published", "Airport jet by rail: 37% to 5%"], "tag": "Pending · Transnet; jet FY18-FY22"},
+        {"title": "Capacity and reliability", "copy": ["Wagon turnaround 33 days", "against 14-day design"], "tag": "Pack research · industry, via NERSA"},
+        {"title": "Relevance", "copy": ["Airport jet shifted to pipeline,", "rail to pipeline 30:70 to ~10:90"], "tag": "Pack research · NERSA 2026"}
+      ]
+    },
+    {
+      "heading": "4  ROAD",
+      "cells": [
+        {"title": "Road network", "copy": ["Tankers, coast to inland", "Mozambique road imports 0.5%"], "tag": "2025 · customs · DR04"},
+        {"title": "Road throughput", "copy": ["Corridor volume not published", "Residual needs a common basis"], "tag": "Pending · DR04 open"},
+        {"title": "Cost and constraints", "copy": ["Pipeline tariff 68 to 77 c/l", "Gauteng allowance 83 to 91 c/l"], "tag": "2024-26 · NERSA, dept · DR04"},
+        {"title": "Relevance", "copy": ["Shippers moving to road", "Sapref: planned import terminal"], "tag": "DR04, DR08 · news, CEF"}
+      ]
+    }
+  ]
+}
