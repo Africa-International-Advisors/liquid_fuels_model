@@ -1,4 +1,7 @@
-"""Build one workbook for the four data requests Manish holds: DR01, DR04, DR07 and DR08.
+"""Build the master data book: the sourced data for the South Africa story, by data request (DR01, DR04, DR07, DR08).
+
+This is the one place to look for a sourced figure (decision D25, 9 October 2026). The demand baseline workbook keeps
+the model history and the analysis built on it and takes no new sourced data.
 
     output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx
 
@@ -486,9 +489,10 @@ def missing_sheet(wb, rows: list) -> None:
 
 def contents_sheet(ws, summary: list[tuple[str, str, dict | None]]) -> None:
     ws.title = "Contents"
-    ws["A1"] = "Data requests DR01, DR04, DR07 and DR08"
+    ws["A1"] = "Master data book: sourced data for the South Africa story"
     ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
-    ws["A2"] = "Petrol and diesel only. Every figure names its source. Built by python -m lfm.scripts.build_data_requests_workbook --vintage 2026."
+    ws["A2"] = ("The one place to look for a sourced figure, set out by data request (DR01, DR04, DR07, DR08). Petrol and diesel only. Every figure names its "
+                "source. Built by python -m lfm.scripts.build_data_requests_workbook --vintage 2026; do not edit by hand.")
     ws["A2"].font = Font(name="Arial", size=10, color=INK)
     widths = [26, 78, 13, 12, 14]
     for i, (label, w) in enumerate(zip(["Sheet", "What it holds", "From source", "Calculated", "Not available"], widths), start=1):

@@ -8,10 +8,17 @@ Read first:
 
 - Deck: `pptx/output/delivered/supporting/Vopak_Manish_Handback_2026_10_07.pptx`
   (PDF alongside), one section per priority.
-- Decision log: `manish_decision_log_2026-10-07.csv`, 24 decisions with the
+- Decision log: `manish_decision_log_2026-10-07.csv`, 25 decisions with the
   evidence, my proposal, the owner and a status.
 - Workbook: `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`,
   your workshop workbook with the sourced history added.
+
+## The master data book (9 October)
+
+`output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx` is now the master data book (decision D25): the one place to look for a sourced figure.
+The demand baseline workbook keeps the model history and analysis and takes no new sourced data. New data goes into the
+evidence tables and registered inputs, and the workbook is rebuilt from them; it is not edited by hand. The file keeps its
+name so existing links hold.
 
 ## One workbook for the data requests (9 October)
 
