@@ -1,0 +1,214 @@
+{
+ "date": "2026-10-09",
+ "status": "completed",
+ "current_version": 14,
+ "current_files": [
+  "pptx/output/delivered/supporting/09102026_Vopak_Market_Sizing_v1100.pptx",
+  "pptx/output/delivered/supporting/09102026_Vopak_Market_Sizing_v1100.pdf"
+ ],
+ "archived": [
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v2.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v2.pptx",
+   "sha256": "71a156e149c8f904cb80ef855856e7edfeff58d60bf98eaf3051682b46399ded",
+   "bytes": 979685,
+   "tracked": true
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v2.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v2.pdf",
+   "sha256": "dbe0672d5410927ebfb0b525fbb73d6fc06b678bf99be2452ca512d237a30248",
+   "bytes": 306974,
+   "tracked": true
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v3.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v3.pptx",
+   "sha256": "402cf64c6c1680621120ca895860f09dfaacd1ca9d51025a60d166ef7178ba93",
+   "bytes": 980089,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v3.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v3.pdf",
+   "sha256": "1e9f01d51806afb36bf4ce107efe58589a52f2e2a896942a2c27c579df017ad5",
+   "bytes": 305698,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v4.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v4.pptx",
+   "sha256": "0021b167fa464ff0f4dfb65fd480f13471889e10809fc8c2d3566e81e5ae57c6",
+   "bytes": 979769,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v4.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v4.pdf",
+   "sha256": "6b1dac5f113e760607a90bf2f9794679c6e6f7adc28d5bf9b6936a3ba910a22c",
+   "bytes": 306006,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v5.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v5.pptx",
+   "sha256": "3fa902e54c4850fdab9bf681040225d03d67307cdce20a9b7d887d3509a59ed2",
+   "bytes": 979961,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v5.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v5.pdf",
+   "sha256": "91577c242da66ed1da890be214462429a225b04499f1c8dfe374b76f83359b5e",
+   "bytes": 306279,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v6.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v6.pptx",
+   "sha256": "47356465740475eca0e357907cd73be2b9dca4b4aeb676a14bfde28700a4bfbc",
+   "bytes": 982216,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v6.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v6.pdf",
+   "sha256": "4a8b32beabc265e6e12066b465497fa34c780ebcc572cfd6cd0d741b0abb907e",
+   "bytes": 311356,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v7.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v7.pptx",
+   "sha256": "4eb26d70e7e069b9df4092368b21bcb10856369ee7791c79dc62860bf5a043df",
+   "bytes": 989602,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v7.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v7.pdf",
+   "sha256": "1e4e4a778aeba44c5eeb1f09dd05c614910ad33aa126c71d56b1fc63899ad225",
+   "bytes": 320684,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v8.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v8.pptx",
+   "sha256": "7fa798a28028c961029c3264b1f223c6de4e7ede2501785ddfcf673db51da4eb",
+   "bytes": 990073,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v8.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v8.pdf",
+   "sha256": "6d7bcf65f6ea5941309c75d0e42e661bf1b3ba076ac6e5107c3854e8ec6fef00",
+   "bytes": 323459,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v9.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v9.pptx",
+   "sha256": "a486283ce00e982a929c94867897cb02886aba8b832174a20d6e776c642401bd",
+   "bytes": 998902,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v9.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v9.pdf",
+   "sha256": "65fdb3c581f3bb2d8966fe70c5ab5451b926262bc87c9f9dbf4e68b207a0ede3",
+   "bytes": 337111,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v10.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v10.pptx",
+   "sha256": "2acaed37b363e95c626882f317963782cc9a47a507082cfd0ec9eb3bfbbec89c",
+   "bytes": 998418,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v10.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v10.pdf",
+   "sha256": "f8fffbc06c9c9c1417e9154079942c362a54d0e5cf2191bb5fd2fb1f5ee2e4e6",
+   "bytes": 336833,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v11.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v11.pptx",
+   "sha256": "f76e7e970032ebc0fc5b4a887eb4cdae5fa112609813c04ff52a75b7cf366e54",
+   "bytes": 998491,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v11.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v11.pdf",
+   "sha256": "0e6eae8f656ce675b95db6e8b1afd57d87c145ec624ef86dc737e65f42382883",
+   "bytes": 337047,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v12.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v12.pptx",
+   "sha256": "4a6864c829b7c92cb7e16e7284716a6090f585dbe36094eb40faccf4670f03bb",
+   "bytes": 1018699,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v12.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v12.pdf",
+   "sha256": "9143c1e3d60b66fbb0133e620a5ed7d60fd527c43af1dd37b6f1e775534e4835",
+   "bytes": 361917,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v13.pptx",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v13.pptx",
+   "sha256": "d3ecd4ccedb3d81405e40e041f34bdc2d12b4b32418bb248c6d48f255f944189",
+   "bytes": 1018708,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  },
+  {
+   "source": "pptx/output/delivered/supporting/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v13.pdf",
+   "destination": "pptx/output/delivered/supporting/archive/story_versions/Vopak_Market_Sizing_Issue_Tree_2026_10_08_v13.pdf",
+   "sha256": "37880144a017fb3c32b4c3f103a6eef99432937cd223e6929c3488c46b1cdf62",
+   "bytes": 362027,
+   "tracked": false,
+   "deleted": "2026-10-09"
+  }
+ ],
+ "preservation": "Moved, not deleted; each file's checksum verified after the move. v1 was archived earlier under archive/background/.",
+ "renamed": [
+  {
+   "from": "Vopak_Market_Sizing_Issue_Tree_2026_10_08_v14",
+   "to": "09102026_Vopak_Market_Sizing_v1100",
+   "rule": "ddmmyyyy_filename_vHHMM, build time 11:10 rounded to the nearest half hour",
+   "files": [
+    "pptx",
+    "pdf"
+   ]
+  }
+ ],
+ "committed": "Only v2 (previously committed) is kept, in archive/story_versions/. v3-v13 were working drafts of 8-9 October, never committed, and were deleted on 9 October at Nigel's request; their checksums above remain the record of what existed."
+}
