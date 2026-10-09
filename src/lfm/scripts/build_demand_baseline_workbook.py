@@ -1783,7 +1783,7 @@ def main() -> int:
                    "figure to switch to. The added sheets do not use FIASA for any year. For Nigel to decide.")
     changes.append("Sheets added: History, Sector history, Diesel by use, Demand by use, Power fleet, Vehicle history, HML response, Gap status, "
                    "Checks, History sources. No other cell changed. The data request sheets (DR01, DR04, DR07, DR08) are in their own workbook, "
-                   "Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx.")
+                   "Master_data_book.xlsx.")
 
     history_rows = history_sheet(wb, d)
     sector_rows = sector_sheet(wb, d)

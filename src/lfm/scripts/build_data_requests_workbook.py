@@ -3,7 +3,7 @@
 This is the one place to look for a sourced figure (decision D25, 9 October 2026). The demand baseline workbook keeps
 the model history and the analysis built on it and takes no new sourced data.
 
-    output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx
+    output/delivered/Master_data_book.xlsx
 
 Sheets:
     Contents                  what each sheet holds and how many facts it carries
@@ -44,7 +44,7 @@ from lfm.config import Paths
 from lfm.scripts import build_demand_baseline_workbook as base
 from lfm.scripts import build_dr08_refinery_evidence as dr08
 
-OUT = Path("output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx")
+OUT = Path("output/delivered/Master_data_book.xlsx")
 BALANCE = Path("workstreams/WS1_data_validation/fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv")
 SIZING = Path("workstreams/WS2_model_development/market_sizing_durban_lesedi_2026-10-09.csv")
 INK, FILL = base.INK, base.FILL

@@ -7,7 +7,7 @@ dates. Petrol and diesel only.
 Status: **43 facts read from sources, 19 calculated or assumed, 2 not available.** The table opens with which plants are
 refining in 2026: Secunda, Natref and Astron yes; Sapref, Enref and PetroSA no.
 
-**Where to look:** the data requests workbook `output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx`.
+**Where to look:** the data requests workbook `output/delivered/Master_data_book.xlsx`.
 
 - Sheet **DR08 refinery supply**: every fact with its source and open gap.
 - Sheet **DR08 refinery output**: the six refineries with capacity, status and

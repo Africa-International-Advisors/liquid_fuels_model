@@ -15,14 +15,13 @@ Read first:
 
 ## The master data book (9 October)
 
-`output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx` is now the master data book (decision D25): the one place to look for a sourced figure.
+`output/delivered/Master_data_book.xlsx` is now the master data book (decision D25): the one place to look for a sourced figure.
 The demand baseline workbook keeps the model history and analysis and takes no new sourced data. New data goes into the
-evidence tables and registered inputs, and the workbook is rebuilt from them; it is not edited by hand. The file keeps its
-name so existing links hold.
+evidence tables and registered inputs, and the workbook is rebuilt from them; it is not edited by hand.
 
 ## One workbook for the data requests (9 October)
 
-`output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx` holds DR01, DR04, DR07 and DR08 and nothing else: a contents page, one main sheet for each request with
+`output/delivered/Master_data_book.xlsx` holds DR01, DR04, DR07 and DR08 and nothing else: a contents page, one main sheet for each request with
 its detail tables beside it, sales by province for 2013 to 2023, and a sheet listing the 16 items that could not be found. Figures reported for several
 years are set out one column a year. The demand baseline workbook no longer carries these sheets.
 
