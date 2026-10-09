@@ -72,7 +72,8 @@ Workbook sheets: DR01 balance, Demand by use, DR04 routes, DR04 entry points, DR
 `workstreams/WS1_data_validation/dr01_national_balance_2026-10-08.md` and `dr04_routes_access_2026-10-08.md`.
 
 **DR01 National balance: data not available.** The work is done as far as the sources go. Three things are
-not published by anyone, so they cannot be filled in:
+not published by anyone, so they cannot be filled in. Confirmed on 9 October after a second search: these are
+recorded as not available and no further search is planned:
 
 - Production after 2021 (the department's last energy balance is 2021)
 - Sales for 2024 and 2025 (the department's sales data stops at 2023)
@@ -85,7 +86,6 @@ not published by anyone, so they cannot be filled in:
 - Island View capacity for petrol and diesel: needs the port authority or Vopak. Found: 10 berths, 10 operators
 - How Vopak Durban connects to the pipeline: needs Vopak. Found: the former Sapref site and Sasol inject directly
 - Pipeline tariffs on routes other than Durban to Johannesburg: not found online
-- Petrol and diesel storage at Matola: one terminal found (Galp, 40,000 m3 diesel and 20,000 m3 petrol)
 - The delivered-cost comparison itself, which depends on the rates above
 
 Pipeline capacity uses Transnet's 2020 figure: 148 million litres a week on the Durban to Jameson Park trunk

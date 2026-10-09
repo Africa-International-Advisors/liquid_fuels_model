@@ -8,7 +8,7 @@ same destinations. **Petrol and diesel only.**
 Status: **the Durban to Gauteng pipeline route and the entry points are
 documented, and the regulated cost of transport is known for every pricing
 zone. Fuel tanker road and rail rates are not published.** 44 facts are read
-from original documents or registered inputs, 5 are calculated, and 7 lines
+from original documents or registered inputs, 5 are calculated, and 6 lines
 are open.
 
 **Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
@@ -187,7 +187,7 @@ None of these is a fuel tanker rate, so the delivered-cost comparison is still n
 | Fuel tanker road and rail rates, Durban to Gauteng and Matola to Gauteng | Nigel to coordinate | Vopak, a haulier or Transnet Freight Rail; only container and all-goods figures are published |
 | Zone differentials after April 2024, and which mode serves each zone | Manish | The department's current zone schedule; its site did not respond on 8 October |
 | How Vopak Durban connects to the trunk line (own lines or through a neighbour) | Nigel to coordinate | Vopak operations; two neighbours inject directly |
-| Petrol and diesel storage at Matola beyond the Galp terminal; fuel that Maputo and Walvis Bay supply to neighbours | Manish | Not found for petrol and diesel alone |
+| Fuel that Maputo and Walvis Bay supply to neighbours | Manish | Not found for petrol and diesel alone. Matola terminals other than Galp's are not pursued (Manish, 9 October) |
 | Inland supply from Natref and Secunda | Manish | DR08 |
 | Matched delivered cost to the same destination | Manish, once the above are in | Same product, date, destination and tax basis for each route |
 
