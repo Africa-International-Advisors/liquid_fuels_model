@@ -116,10 +116,6 @@ def build(d: dict) -> list[dict]:
     shed = sorted(points["load_shedding_energy"], key=lambda p: p["period"])
     add("Power generation", "Electricity not supplied through load-shedding", shed[0]["subject"], "; ".join(p["value"] for p in shed), shed[0]["unit"],
         "; ".join(p["period"] for p in shed), "observed", shed[0]["source"], shed[0]["original_file"], shed[0]["page"], shed[0]["note"])
-    add("Power generation", "Ceiling on backup generator diesel", "Businesses and households",
-        "; ".join(f"{float(p['value']) * LITRES_PER_KWH:.1f}" for p in shed), "billion litres", "; ".join(p["period"] for p in shed), "inferred",
-        f"Load-shedding energy x {LITRES_PER_KWH} litres per kWh", "", "",
-        "The most diesel that replacing every unit shed could have burned. Not an estimate: much of the gap was met by solar, batteries or going without.")
     stations = [r for r in d["fleet"] if r["group"] == "diesel_station"]
     add("Power generation", "Diesel stations and capacity", "; ".join(r["station"] for r in stations),
         "; ".join(f"{float(r['capacity_mw']):,.0f}" for r in stations), "MW", "current", "observed", "Eskom fact sheet GX 0001 (July 2024); African Energy (2015)",

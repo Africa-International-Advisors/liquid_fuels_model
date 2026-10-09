@@ -3,7 +3,7 @@
 For Nigel's review. Answers request DR07: the evidence that calibrates the
 demand levers. Petrol and diesel only.
 
-Status: **56 facts read from sources, 10 calculated, 6 not available.**
+Status: **56 facts read from sources, 9 calculated, 6 not available.**
 
 **Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
 
@@ -121,10 +121,7 @@ the HML response sheet. No South African forecast was found.
 | Vehicles by age | **Average only.** 10.5 years in 2022, up from 9 years 4 months in 2014-2015 | Lightstone, April 2022. It sells the age profile; the register does not publish it |
 | Gas plant dates by project | **Found, but no firm date exists.** Eskom's 3,000 MW Richards Bay plant was determined for connection "not beyond 2028"; the independent 2,000 MW round was issued in December 2023 with no bidder appointed. The system operator now assumes 2030 | NERSA reasons for decision, November 2024; gas programme site |
 | Electric trucks and light commercial vehicles sold | Not published | naamsa reports by drivetrain, not segment (fourth-quarter 2025 review checked) |
-| Private backup generator diesel | Not measured by anyone. A ceiling only: load-shedding was 10.6 TWh in 2023 and 2.5 in 2024, which at 0.31 litres per kWh is at most 3.3 and 0.8 bn litres | CSIR power statistics 2024. Reserve Bank, Eskom and the system operator checked; none gives litres |
-
-The ceiling is not an estimate. Much of the electricity shed was replaced by
-solar and batteries or not replaced at all.
+| Private backup generator diesel | Data unavailable. Not measured by anyone | Reserve Bank, CSIR, Eskom and the system operator checked; none gives litres |
 
 ## Gas plant by project (added 9 October)
 

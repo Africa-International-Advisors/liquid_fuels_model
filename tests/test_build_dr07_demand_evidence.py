@@ -36,7 +36,7 @@ def test_the_eight_gaps_searched_on_8_october_are_filled_where_a_source_exists()
     assert rows["Average age of vehicles"]["value"] == "10.5"
     assert rows["Diesel vehicles by province"]["value"].startswith("1,142,275")              # Gauteng
     assert rows["Fuel use of trucks, lightest to heaviest class"]["value"] == "17.3; 24.6; 44.9; 51.6"
-    assert rows["Ceiling on backup generator diesel"]["status"] == "inferred"
+    assert "Ceiling on backup generator diesel" not in rows                                  # the data is recorded as unavailable; no stand-in
     still_missing = {r["item"] for r in rows.values() if r["status"] == "not available"}
     assert still_missing == {
         "Diesel burned in private backup generators",
