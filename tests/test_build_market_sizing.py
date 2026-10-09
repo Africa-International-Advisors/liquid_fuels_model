@@ -43,3 +43,13 @@ def test_capacity_lines_are_marked_assumed_and_never_called_a_share():
     assert all("ceiling, not a share" in r["note"].lower() for r in tanks)
     lesedi = float(rows[("Lesedi", "petrol and diesel", "Throughput the tanks allow at 2 turns a month")]["value"])
     assert lesedi == pytest.approx(124000 * 2 * 12 * 1000 / 1e9, abs=0.001)            # 124,000 m3 operational, two turns a month
+
+
+def test_trunk_line_use_is_below_capacity_and_the_road_and_rail_remainder_follows():
+    rows = _rows()
+    value = lambda site, product, measure: float(rows[(site, product, measure)]["value"])  # noqa: E731
+    capacity = value("Durban and Lesedi", "all products", "Trunk line capacity, Durban to Jameson Park")
+    used = value("Durban and Lesedi", "all products", "Trunk line use, Durban to Jameson Park")
+    assert (capacity, used) == (pytest.approx(7.696), pytest.approx(5.044))          # 148 and 97 million litres a week
+    inland = value("Durban", "petrol and diesel", "Inland-bound through Durban")
+    assert value("Durban and Lesedi", "petrol and diesel", "Inland-bound fuel beyond what the trunk line carried") == pytest.approx(inland - used, abs=0.002)

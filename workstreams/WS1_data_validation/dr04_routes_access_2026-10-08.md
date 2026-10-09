@@ -7,8 +7,8 @@ same destinations. **Petrol and diesel only.**
 
 Status: **the Durban to Gauteng pipeline route and the entry points are
 documented, and the regulated cost of transport is known for every pricing
-zone. Fuel tanker road and rail rates are not published.** 60 facts are read
-from original documents or registered inputs, 5 are calculated, and 6 lines
+zone. Fuel tanker road and rail rates are not published.** 64 facts are read
+from original documents or registered inputs, 6 are calculated, and 7 lines
 are open. Each row holds one data point.
 
 **Where to look:** the data requests workbook `output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx`.
@@ -190,6 +190,33 @@ tariff proposal, Stats SA's land transport survey and Galp.
 | Matola storage | One terminal: 40,000 m3 diesel and 20,000 m3 petrol | Galp |
 
 None of these is a fuel tanker rate, so the delivered-cost comparison is still not built.
+
+## Added on 9 October: the trunk line today, and the open lines of Nigel's task 5
+
+**Trunk line capacity and use (task 6).** Transnet's Pipelines Report 2024 (KPI table, PDF p.5) still gives the
+multi-product pipeline a capacity of 148 million litres a week, the 2020 figure, and reports use against it:
+
+| Year to March | 2021 | 2022 | 2023 | 2024 | 2025 target |
+|---|---|---|---|---|---|
+| Use, million litres a week | 81 | 91 | 87 | 97 | 104 |
+
+So the line was about two thirds full in the year to March 2024: 5.0 billion litres a year against a capacity of 7.7.
+No later report was found.
+
+**Task 5, line by line.**
+
+| Open line | Result | Source, or where I looked |
+|---|---|---|
+| Petrol and diesel on the trunk line | Not split by product. All refined products on the line: 5.0 billion litres (year to March 2024). Petrol and diesel on every Transnet line: 9.5 billion litres | Transnet Pipelines Report 2024, PDF p.5 |
+| NERSA's reasons for decision; tariffs beyond Durban to Alrode | Not available | NERSA's decisions pages (petroleum pipelines, tariff decisions), its 2024/25 annual report and the 15 April 2025 statement. Only Durban to Alrode is quoted |
+| Zone differentials after April 2024 | Gauteng only: 87.1 cents a litre from June 2025 and 91.1 from April 2026. The full zone list after April 2024 was not found | Central Energy Fund price releases, p.3 |
+| The gap between tariff and regulated differential | About 14 cents a litre in each of 2024/25, 2025/26 and 2026/27 (82.8, 87.1, 91.1 against 67.99, 73.22, 77.02). What it pays for is not itemised anywhere found | Department price tables and the releases above. The 2025 release shows differentials are rebuilt from the pipeline tariff to each zone's supply point |
+| Matched delivered cost to the same destination | Not available. Pipeline: 77.02 (tariff) or 91.1 (allowance). No fuel tanker or rail rate is published | Transnet's tariff proposal, Stats SA, NERSA, Parliament |
+
+**What the pipeline tariff covers (call of 9 October).** NERSA sets one set of tariffs for Transnet's whole licensed
+petroleum pipelines system. The department uses the Durban to Alrode tariff as its proxy for moving fuel from Durban to
+Johannesburg. The statement does not say which products or line each route tariff applies to; that detail is in the
+reasons for decision, which are not online. Nigel to validate next week, as agreed.
 
 ## Open, by owner
 

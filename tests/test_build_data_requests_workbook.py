@@ -16,7 +16,7 @@ def test_workbook_has_one_main_sheet_a_request_with_its_detail_tables_and_a_cont
     wb = load_workbook(ROOT / requests.OUT)
     assert wb.sheetnames == [
         "Contents", "DR01 national balance", "DR01 sales by province", "DR01 demand by sector", "DR04 routes and access", "DR04 entry points",
-        "DR04 transport cost", "DR07 demand evidence", "DR07 fleet by province", "DR08 refinery supply", "Not available"]
+        "DR04 transport cost", "DR07 demand evidence", "DR07 fleet by province", "DR08 refinery supply", "Market sizing", "Not available"]
     listed = [r[0].value for r in wb["Contents"].iter_rows(min_row=5, max_row=4 + len(wb.sheetnames) - 1)]
     assert listed == wb.sheetnames[1:]                               # every sheet is described on the contents page
 

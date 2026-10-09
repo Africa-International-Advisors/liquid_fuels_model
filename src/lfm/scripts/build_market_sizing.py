@@ -42,7 +42,8 @@ PRODUCTS = ("petrol", "diesel")
 COASTAL_CATCHMENT = ("KZN",)                                     # Durban's own province
 INLAND = ("GP", "MP", "FS", "NW", "LP", "NC")
 TRADE_YEAR, SALES_YEAR = 2025, 2022                              # latest full customs year; last year of provincial sales as published
-TRUNK_LINE_M3_PER_WEEK = 148_000                                 # Transnet Pipelines, 2020: every shipper and product, jet included
+TRUNK_LINE_M3_PER_WEEK = 148_000                                 # Transnet Pipelines: capacity, unchanged from 2020 to the year to March 2024
+TRUNK_LINE_USED_M3_PER_WEEK = 97_000                             # Transnet Pipelines Report 2024: use in the year to March 2024
 CUSTOMS = "SARS customs, imports by office of clearance (fuel_trade_sars_by_office.csv)"
 PROVINCES = "Department of Mineral and Petroleum Resources, sales by magisterial district added up by province"
 SITES = "infrastructure/terminal_site_assumptions.csv (NERSA licence, Vopak statements and analyst estimates, each marked)"
@@ -112,11 +113,17 @@ def build(d: dict) -> list[dict]:
         add("Durban and Lesedi", product, "Both sites, counted once", landed[product], str(TRADE_YEAR), "observed", "landed at Durban", CUSTOMS,
             "Every litre Lesedi receives by pipeline landed at Durban first, so the two site markets are not added together.")
     both = "petrol and diesel"
-    add("Durban and Lesedi", "all products", "Trunk line capacity, Durban to Jameson Park", trunk, "as stated in 2020", "observed", "148,000 m3 a week x 52",
-        "Transnet Pipelines 2020 report", "Every shipper and product, jet fuel included. A current figure has not been found.")
+    used = TRUNK_LINE_USED_M3_PER_WEEK * 52 * 1000 / 1e9
+    add("Durban and Lesedi", "all products", "Trunk line capacity, Durban to Jameson Park", trunk, "years to March 2021 to 2024", "observed", "148,000 m3 a week x 52",
+        "Transnet Pipelines Report 2024, key performance indicators", "Every shipper and refined product. Unchanged from the 2020 figure.")
+    add("Durban and Lesedi", "all products", "Trunk line use, Durban to Jameson Park", used, "year to March 2024", "observed", "97,000 m3 a week x 52",
+        "Transnet Pipelines Report 2024, key performance indicators", "About two thirds of capacity. Not split by product.")
     add("Durban and Lesedi", both, "Inland-bound fuel beyond the trunk line's capacity", landed[both] - coastal[both] - trunk, mixed, "estimated",
         "inland-bound through Durban less trunk line capacity", "Calculated from the rows above",
-        "At least this much must leave Durban by road or rail, and more once jet fuel's share of the line is counted.")
+        "At least this much must leave Durban by road or rail even with the line full.")
+    add("Durban and Lesedi", both, "Inland-bound fuel beyond what the trunk line carried", landed[both] - coastal[both] - used, f"{mixed}, pipeline year to March 2024",
+        "estimated", "inland-bound through Durban less trunk line use", "Calculated from the rows above",
+        "The fuel that left Durban for the interior by road or rail, on these figures. Mixes three periods, so read as an order of size.")
     for site in ("Vopak Durban", "Vopak Lesedi"):
         short = site.replace("Vopak ", "")
         tanks = operational_m3(d, site)

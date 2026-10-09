@@ -46,9 +46,11 @@ That is the flow Lesedi competes for, and it is already inside Durban's 13.2.
 
 ## Against the route and the tanks
 
-- **The trunk line cannot carry all of it.** Its stated capacity is 7.7 billion litres a
-  year (Transnet, 2020, all products including jet). The inland-bound flow is 8.9, so at
-  least 1.2 billion litres a year leaves Durban by road or rail.
+- **The trunk line cannot carry all of it, and does not run full.** Its capacity is 7.7
+  billion litres a year and it carried 5.0 in the year to March 2024 (Transnet Pipelines
+  Report 2024). The inland-bound flow is 8.9, so at least 1.2 billion litres a year must
+  leave Durban by road or rail even with the line full, and about 3.8 did on the latest
+  figures.
 - **What the tanks allow.** At two turns a month, Durban's tanks allow about 3.5 billion
   litres a year and Lesedi's about 3.0. These are ceilings, not shares: the turns are
   analyst estimates from `terminal_site_assumptions.csv`, and actual throughput needs

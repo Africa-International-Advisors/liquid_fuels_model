@@ -13,6 +13,7 @@ Sheets:
     DR07 demand evidence      power, vehicles, efficiency, freight and rail
       DR07 fleet by province  vehicles by class and by fuel in each province
     DR08 refinery supply      capacity, status, output, yields, utilisation and outlook
+    Market sizing             what each Vopak site can reach, from the sizing table
     Not available             everything that could not be found, with the reason
 
 Each request sheet is built from that request's evidence table. A fact reported
@@ -42,6 +43,7 @@ from lfm.scripts import build_dr08_refinery_evidence as dr08
 
 OUT = Path("output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx")
 BALANCE = Path("workstreams/WS1_data_validation/fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv")
+SIZING = Path("workstreams/WS2_model_development/market_sizing_durban_lesedi_2026-10-09.csv")
 INK, FILL = base.INK, base.FILL
 STATUS_FILL = {"observed": "observation", "inferred": "formula"}                   # anything else is open: yellow
 STATUS_LABEL = {"observed": "From source", "inferred": "Calculated"}
@@ -414,6 +416,41 @@ def sector_sheet(wb, timeseries: Path) -> None:
     ws.freeze_panes = "B3"
 
 
+def sizing_sheet(wb) -> None:
+    """The Durban and Lesedi market sizing: one row a measure, petrol, diesel and both side by side."""
+    ws = wb.create_sheet("Market sizing")
+    ws["A1"] = "Market sizing: what each Vopak site can reach"
+    ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
+    ws["A2"] = ("Billion litres a year unless the unit says otherwise. Public data only: no client throughput is assumed. Every litre Lesedi receives by pipeline "
+                "lands at Durban first, so the two site markets are never added together.")
+    ws["A2"].font = Font(name="Arial", size=10, color=INK)
+    header = ["Site", "Measure", "Petrol", "Diesel", "Both", "Unit", "Period", "Status", "Source", "Note"]
+    widths = [18, 48, 9, 9, 9, 20, 30, 12, 52, 70]
+    for i, (label, w) in enumerate(zip(header, widths), start=1):
+        cell = ws.cell(row=4, column=i, value=label)
+        cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFFFF")
+        cell.fill = PatternFill("solid", fgColor=FILL["header"])
+        ws.column_dimensions[get_column_letter(i)].width = w
+    lines: dict[tuple[str, str], dict] = {}
+    for r in _read(SIZING):
+        lines.setdefault((r["site"], r["measure"]), {})[r["product"]] = r
+    fills = {"observed": "observation", "estimated": "formula", "assumed": "estimate"}
+    for n, ((site, measure), by_product) in enumerate(lines.items(), start=5):
+        first = next(iter(by_product.values()))
+        both = by_product.get("petrol and diesel") or by_product.get("all products")
+        values = [site, measure] + [float(by_product[p]["value"]) if p in by_product else None for p in ("petrol", "diesel")] + [
+            float(both["value"]) if both else None, first["unit"], first["period"], first["status"].capitalize(), first["source"], first["note"]]
+        for i, value in enumerate(values, start=1):
+            cell = ws.cell(row=n, column=i, value=value)
+            cell.font = Font(name="Arial", size=10, color=INK)
+            cell.fill = PatternFill("solid", fgColor=FILL[fills[first["status"]]])
+            cell.alignment = Alignment(wrap_text=True, vertical="top")
+            if isinstance(value, float):
+                cell.number_format = "0.00"
+        ws.row_dimensions[n].height = 13.5 * max(1, math.ceil(len(first["note"]) / (widths[-1] * 1.15)), math.ceil(len(first["source"]) / (widths[-2] * 1.15))) + 2
+    ws.freeze_panes = "C5"
+
+
 def missing_rows(reference: Path) -> list[tuple[str, str, str, str]]:
     """Everything not found: ``(request, what, covers, why)``."""
     out = [("DR01", "Production after 2021", "South Africa", "The department's last energy balance is 2021. Confirmed not available on 9 October."),
@@ -494,6 +531,8 @@ def build(vintage: Path) -> Workbook:
         for add, name, text in DETAIL[request]:                      # the fuller tables behind the request, one sheet each
             add(wb, d)
             summary.append((name, text, None))
+    sizing_sheet(wb)
+    summary.append(("Market sizing", "What Vopak Durban and Vopak Lesedi can reach: site markets, the inland-bound flow, the trunk line and what the tanks allow", None))
     missing = missing_rows(reference)
     missing_sheet(wb, missing)
     summary.append(("Not available", f"The {len(missing)} items that could not be found, with the reason for each", None))

@@ -193,6 +193,14 @@
       "url": "https://www.galp.com/mz/en/node/115",
       "bytes": 105720,
       "sha256": "2f073d5dd91b8cfc1178bd644a732bd570c88538e5d5ac4e24b0b1bb60ded2c9"
+    },
+    {
+      "file": "cef-press-release-2025-05-30-prices-from-2025-06-04.pdf",
+      "publisher": "Central Energy Fund",
+      "published": "2025-05-30",
+      "url": "https://cefgroup.co.za/wp-content/uploads/2025/06/Press-Release-30-May-2025-Change-04-June-2025.pdf",
+      "bytes": 85457,
+      "sha256": "c1776bfe5dbe6916a352604b01c6ec4d8ffec0b5febe5ff29b506e5a23db834d"
     }
   ],
   "not_obtained": [

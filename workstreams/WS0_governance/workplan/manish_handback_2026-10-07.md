@@ -46,6 +46,21 @@ Also done from the call:
 - **Light commercial vehicles going electric:** a forecast of ours in three cases, on the DR07 sheet. Small to 2035.
 - **Vehicles by fuel within each class:** estimated and on the DR07 sheet.
 
+## Your seven tasks of 9 October: where each stands
+
+| # | Task | Status | Where |
+|---|---|---|---|
+| 1 | Market sizing for Durban and Lesedi | Done. Durban 4.3 to 13.2, Lesedi 6.8 to 12.0, both counted once 13.2 billion litres a year | `WS2_model_development/market_sizing_durban_lesedi_2026-10-09.md`; workbook sheet Market sizing |
+| 2 | Demand-by-use calibration | Proposal written, nothing changed. The power gap is the two placeholder stations; the balance's "other" is road fuel moved to another line from 2016 | `WS2_model_development/demand_by_use_calibration_2026-10-09.md` |
+| 3 | DR07 double-count check | Done. Nothing is counted twice today; two pairs will be if wired carelessly. One test added | `WS2_model_development/dr07_lever_double_count_check_2026-10-09.md` |
+| 4 | Figure check for the pack | Done. 24 figures recomputed from the inputs, all match | `python -m lfm.scripts.check_issue_tree_figures --vintage 2026`; `WS3_reporting_delivery/issue_tree_figure_check_2026-10-09.csv` |
+| 5 | DR04 open lines | Each closed or marked not available with where I looked | `WS1_data_validation/dr04_routes_access_2026-10-08.md`, section of 9 October |
+| 6 | Trunk-line capacity today | Found: still 148 million litres a week, and 97 used (year to March 2024) | Transnet Pipelines Report 2024, PDF p.5 |
+| 7 | 2021 energy balance imports against customs | Recorded as unexplained, with what the figures show | `WS1_data_validation/dr01_national_balance_2026-10-08.md`, last section |
+
+For you to decide from these: the baseline in task 2; whether to remove the two placeholder stations; and the two
+rules in task 3 before hybrids or rail are wired into the engine.
+
 Still to do:
 
 - The 3 billion litre question: imports were 16.7 billion litres in 2025; whether the rest of demand is domestic

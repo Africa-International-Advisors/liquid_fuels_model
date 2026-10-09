@@ -221,3 +221,26 @@ their trade lines are not used; their production lines are.
   sheets has a source.
 - The fifteen energy balance files re-downloaded and matched by checksum.
 - No model input read by the engine changed; model results are unchanged.
+
+## Why the 2021 energy balance shows more imports than customs (9 October)
+
+Task 7 of Nigel's next-steps note. **Recorded as unexplained**, with what the figures show.
+
+| Billion litres | 2014 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 |
+|---|---|---|---|---|---|---|---|---|
+| Diesel imports, energy balance | 5.00 | 3.47 | 4.42 | 6.04 | 6.11 | 6.11 | 5.86 | 11.22 |
+| Diesel imports, customs | 4.99 | 6.45 | 4.42 | 6.04 | 5.12 | 5.59 | 6.81 | 9.76 |
+| Petrol imports, energy balance | 1.15 | 1.87 | 1.40 | 2.11 | 2.20 | 2.20 | 1.48 | 5.42 |
+| Petrol imports, customs | 1.15 | 1.87 | 1.40 | 2.11 | 1.83 | 1.48 | 1.72 | 4.01 |
+
+- **The balance is built from customs.** The two agree to the litre for diesel in 2014,
+  2016 and 2017 and for petrol in 2014 to 2017.
+- **From 2018 they part.** The 2019 balance repeats the 2018 import and export figures
+  exactly for both fuels, so that year was carried forward, not measured.
+- **2021 is about 1.4 billion litres higher for each fuel** (diesel 1.46, petrol 1.41).
+  The department publishes no working for the trade lines.
+- **Not the cause:** customs records these fuels in litres throughout, so no kilogram
+  lines are missing; and a year to March does not reproduce the balance figure either.
+
+DR01 uses customs for trade, so the balance's 2021 import figure is not used anywhere.
+Closing this would need the department's own working.
