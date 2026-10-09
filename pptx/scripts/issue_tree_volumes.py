@@ -17,6 +17,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 SERIES = REPO / "assumptions" / "2026" / "timeseries"
 BALANCE_FILE = REPO / "workstreams" / "WS1_data_validation" / "fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv"
+SIZING_FILE = REPO / "workstreams" / "WS2_model_development" / "market_sizing_durban_lesedi_2026-10-09.csv"
 OUTPUT = REPO / "pptx" / "story" / "issue_tree_volumes_2026_10_08.json"
 PRODUCTS = ("petrol", "diesel")
 COASTAL_PROVINCES = ("KZN", "WC", "EC")
@@ -179,6 +180,29 @@ def sector_use(flow_total):
     }
 
 
+def site_markets():
+    """The Durban and Lesedi market sizes from Manish's sizing file (lfm.scripts.build_market_sizing), petrol and diesel together."""
+    rows = {(r["site"], r["measure"]): r for r in read(SIZING_FILE) if r["product"] in ("petrol and diesel", "all products")}
+
+    def value(site, measure):
+        return round(float(rows[(site, measure)]["value"]), 1)
+
+    return {
+        "year": rows[("Durban", "Landed at Durban")]["period"],
+        "sales_year": rows[("Durban", "Coastal catchment: KwaZulu-Natal sales")]["period"],
+        "combined": value("Durban and Lesedi", "Both sites, counted once"),
+        "durban_coastal": value("Durban", "Coastal catchment: KwaZulu-Natal sales"),
+        "durban_landed": value("Durban", "Landed at Durban"),
+        "inland_bound": value("Durban", "Inland-bound through Durban"),
+        "lesedi_gauteng": value("Lesedi", "Near catchment: Gauteng sales"),
+        "lesedi_inland": value("Lesedi", "Inland catchment: six inland provinces"),
+        "durban_tanks_allow": value("Durban", "Throughput the tanks allow at 2 turns a month"),
+        "lesedi_tanks_allow": value("Lesedi", "Throughput the tanks allow at 2 turns a month"),
+        "status": "estimate from public data; turns assumed; no client data",
+        "source": "market_sizing_durban_lesedi_2026-10-09.csv (lfm.scripts.build_market_sizing)",
+    }
+
+
 def demand_levers():
     rows = read(LEVER_FILE)
     groups = []
@@ -266,6 +290,7 @@ def main():
         "provinces": provinces_by_year(),
         "sector_use": sector_use(flow_total),
         "levers": demand_levers(),
+        "site_markets": site_markets(),
     }
     OUTPUT.write_text(json.dumps(volumes, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: v for k, v in volumes.items() if k != "balance"}, indent=2))

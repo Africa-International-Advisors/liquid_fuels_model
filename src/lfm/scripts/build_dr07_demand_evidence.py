@@ -24,6 +24,7 @@ import sys
 from pathlib import Path
 
 from lfm.config import Paths
+from lfm.scripts import vehicle_inference as infer
 
 OUT = Path("workstreams/WS1_data_validation/dr07_demand_evidence_2026-10-08.csv")
 FIELDS = ["request", "part", "item", "asset_or_route", "value", "unit", "period", "status", "source", "original_file", "page",
@@ -56,6 +57,13 @@ def load(vintage: Path) -> dict:
     d["stone"] = {r["vehicle_type"]: r for r in _read(ref / "vehicle_parameters_stone2018.csv")}
     d["freight"] = {(r["mode"], int(r["period"])): float(r["value"]) for r in _read(ts / "freight_payload_statssa_review.csv")}
     d["points"] = _read(ref / "demand_evidence_points.csv")
+    d["natis_2023"] = {r["vehicle_class"]: float(r["value"]) for r in natis if r["period"] == "2023-12" and r["province"] == "ZAF"}
+    d["sales_outlook"] = {(r["segment"], int(r["period"])): float(r["value"]) for r in _read(ts / "new_vehicle_market_naamsa.csv")}
+    levers = _read(Path("workstreams/WS2_model_development/fuel_lever_response_2026-10-07.csv"))
+    d["lcv_cases"] = {}
+    for r in levers:
+        if r["lever"] == "electric_share_of_new_light_commercial_sales":
+            d["lcv_cases"].setdefault(r["case"], {})[int(r["period"])] = float(r["analyst_value"])
     d["fuel_by_province"] = {(r["province"], r["fuel_type"]): float(r["vehicles"]) for r in _read(ref / "vehicle_population_by_fuel_province_dot2023.csv")}
     d["efficiency"] = {(name, r["scenario"]): float(r["value"]) for name in ("diesel", "gasoline")
                        for r in _read(ts / f"efficiency_improvement_{name}.csv") if r["period"] == "2030"}
@@ -67,6 +75,28 @@ def implied_litres_per_kwh(d: dict) -> dict[int, float]:
     return {year: d["eskom"][("eskom_ocgt_diesel_and_kerosene", year)] / d["ocgt"][("eskom_ocgt", year)]
             for year in range(2016, 2027)
             if ("eskom_ocgt_diesel_and_kerosene", year) in d["eskom"] and ("eskom_ocgt", year) in d["ocgt"]}
+
+
+LEVERS = "workstreams/WS2_model_development/fuel_lever_response_2026-10-07.csv"
+
+
+def fuel_by_class(d: dict) -> tuple[dict[str, tuple[float, float]], float]:
+    """Petrol and diesel vehicles in each register class at December 2023, fitted to the bulletin's fuel totals."""
+    classes = {n: d["natis_2023"][n] for n in infer.CLASSES}
+    diesel = d["by_fuel"]["diesel"] / (d["by_fuel"]["diesel"] + d["by_fuel"]["petrol"]) * sum(classes.values())
+    return infer.fuel_by_class(classes, diesel, infer.seed_shares(d["stone"]))
+
+
+def lcv_litres_a_year(d: dict) -> float:
+    """Fuel an average light commercial vehicle burns in a year, weighted by the estimated petrol and diesel split."""
+    petrol, diesel = fuel_by_class(d)[0]["light_commercial"]
+    use = {t: float(d["stone"][t]["l_per_100km_fleet_average"]) * float(d["stone"][t]["km_per_year_fleet_average"]) / 100 for t in ("LCVDiesel", "LCVGasoline")}
+    return (diesel * use["LCVDiesel"] + petrol * use["LCVGasoline"]) / (petrol + diesel)
+
+
+def lcv_forecast(d: dict) -> dict:
+    sales = {y: v for (segment, y), v in d["sales_outlook"].items() if segment == "light_commercial" and y >= 2026}
+    return infer.light_commercial_electric_forecast(d["lcv_cases"], sales, d["natis"][("ZAF", "light_commercial")], lcv_litres_a_year(d))
 
 
 def build(d: dict) -> list[dict]:
@@ -167,8 +197,19 @@ def build(d: dict) -> list[dict]:
                   for p in (max(PROVINCES, key=lambda q: d["fuel_by_province"][(q, "diesel")] / d["fuel_by_province"][(q, "petrol")]),
                             min(PROVINCES, key=lambda q: d["fuel_by_province"][(q, "diesel")] / d["fuel_by_province"][(q, "petrol")]))),
         "%", "December 2023", "inferred", "Calculated from the bulletin", "", "")
-    add("Vehicle fleet", "Vehicles by fuel within each class", "South Africa", "", "vehicles", "", "not available", "None found", "", "",
-        "The bulletin splits fuel by province and the register splits class by province; nothing published crosses fuel with class.")
+    by_class, factor = fuel_by_class(d)
+    names = [n for n in infer.CLASSES if n in by_class]
+    labels = "; ".join(n.replace("_", " ") for n in names)
+    method = ("Estimated, not published: each class's diesel share in the 2010 fleet (Stone et al. 2018) moved by one common factor so the classes add up to the "
+              "bulletin's diesel total. Nothing published crosses fuel with class.")
+    source = "Calculated from the register (December 2023), the transport bulletin (December 2023) and Stone et al. (2018)"
+    add("Vehicle fleet", "Diesel vehicles by class, estimated", labels, "; ".join(f"{by_class[n][1]:,.0f}" for n in names), "vehicles", "December 2023", "inferred",
+        source, "", "", method)
+    add("Vehicle fleet", "Petrol vehicles by class, estimated", labels, "; ".join(f"{by_class[n][0]:,.0f}" for n in names), "vehicles", "December 2023", "inferred",
+        source, "", "", method)
+    add("Vehicle fleet", "Diesel share by class, estimated", labels, "; ".join(f"{by_class[n][1] / sum(by_class[n]) * 100:.1f}" for n in names), "%",
+        "December 2023", "inferred", source, "", "",
+        f"The common factor is {factor:.2f}: diesel has gained share in every mixed class since 2010. Tractors and plant are taken as all diesel, an assumption.")
     age = one("vehicle_average_age")
     add("Vehicle fleet", "Average age of vehicles", age["subject"], age["value"], age["unit"], age["period"], "observed", age["source"], age["original_file"],
         age["page"], age["note"])
@@ -192,6 +233,26 @@ def build(d: dict) -> list[dict]:
     share = one("diesel_share_of_new_light_vehicle_sales")
     add("New vehicles and electric share", "Diesel share of new light vehicles sold", share["subject"], share["value"], share["unit"], share["period"],
         "observed", share["source"], share["original_file"], share["page"], "No later figure found.")
+    forecast = lcv_forecast(d)
+    years = "; ".join(str(y) for y in infer.FORECAST_YEARS)
+    basis = ("A forecast of ours, not a published one. The 2030 and 2035 shares are the three cases on the HML response sheet, set against benchmarks abroad; "
+             "the path between them is a straight line from nil in 2025.")
+    for case in ("low", "medium", "high"):
+        f = forecast[case]
+        add("New vehicles and electric share", "Electric share of new light commercial sales, forecast", f"{case.capitalize()} case",
+            "; ".join(f"{f['share'][y]:.1f}" for y in infer.FORECAST_YEARS), "%", years, "inferred", "Analyst forecast from the lever cases", LEVERS, "", basis)
+    for case in ("low", "medium", "high"):
+        f = forecast[case]
+        add("New vehicles and electric share", "Electric light commercial vehicles on the road, forecast", f"{case.capitalize()} case",
+            "; ".join(f"{f['on_road'][y]:,.0f}" for y in infer.FORECAST_YEARS), "vehicles", years, "inferred",
+            "Forecast share x naamsa's sales outlook, added up", LEVERS, "",
+            f"{f['fleet_share'][2035]:.1f}% of today's light commercial fleet by 2035. Sales after 2027 are held at naamsa's 2027 projection; no electric vehicle is scrapped.")
+    for case in ("low", "medium", "high"):
+        f = forecast[case]
+        add("New vehicles and electric share", "Petrol and diesel displaced by electric light commercial vehicles, forecast", f"{case.capitalize()} case",
+            "; ".join(f"{f['displaced_million_litres'][y]:,.0f}" for y in infer.FORECAST_YEARS), "million litres a year", years, "inferred",
+            "Electric vehicles on the road x a light commercial vehicle's yearly fuel use (Stone et al. 2018)", LEVERS, "",
+            "Each electric vehicle is taken to replace an average light commercial vehicle. Delivery vans drive more than average, so the true figure is higher.")
     add("New vehicles and electric share", "Electric trucks and electric light commercial vehicles sold", "South Africa", "", "vehicles", "", "not available",
         "None published", "", "", "naamsa reports electric sales by drivetrain, not by segment (checked its fourth-quarter 2025 review). "
         "Benchmarks from other countries are on the HML response sheet.")

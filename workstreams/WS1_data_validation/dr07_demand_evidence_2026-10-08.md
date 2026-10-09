@@ -3,7 +3,7 @@
 For Nigel's review. Answers request DR07: the evidence that calibrates the
 demand levers. Petrol and diesel only.
 
-Status: **75 facts read from sources, 9 calculated, 6 not available.** Each row holds one data point: every station, plant and
+Status: **75 facts read from sources, 21 calculated or forecast, 5 not available.** Each row holds one data point: every station, plant and
 project has its own row.
 
 **Where to look:** the data requests workbook `output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx`.
@@ -161,12 +161,41 @@ Not found in a published source: a date for Acwa's project or for an Avon conver
 project only as the Pictor consortium; it is called Acwa here on Manish's instruction. FlexED is 440 MW, as on the
 bid list (the chart shows 450).
 
+## Two estimates added on 9 October
+
+**Vehicles by fuel within each class, December 2023.** Nothing published crosses fuel with class, so this is fitted:
+each class's diesel share in the 2010 fleet (Stone et al. 2018) is moved by one common factor until the classes add
+up to the bulletin's diesel total.
+
+| Class | Diesel | Petrol | Diesel share |
+|---|---|---|---|
+| Cars | 1,080,644 | 6,713,520 | 13.9% |
+| Light commercial | 1,506,107 | 1,183,203 | 56.0% |
+| Trucks | 388,778 | 3,571 | 99.1% |
+| Buses | 64,982 | 0 | 100% |
+| Minibuses | 54,087 | 301,148 | 15.2% |
+| Motorcycles | 0 | 349,215 | 0% |
+| Tractors and plant | 238,955 | 0 | 100% (assumed) |
+
+The 2010 shares were 7% for cars and 38% for light commercial vehicles, so diesel has gained ground in both.
+
+**Light commercial vehicles going electric: our forecast.** No history is published by segment. The three cases
+for the electric share of new light commercial sales (0, 5 and 10% by 2035) are turned into a yearly path:
+
+| Case | Share of new sales, 2030 | 2035 | Electric vehicles on the road, 2035 | Fuel displaced, 2035 |
+|---|---|---|---|---|
+| Low | 0% | 0% | 0 | 0 |
+| Medium | 1% | 5% | 35,960 | 95 million litres a year |
+| High | 5% | 10% | 98,800 | 260 million litres a year |
+
+Even the high case is 3.5% of today's light commercial fleet and about 1% of national petrol and diesel sales, so this
+lever is small to 2035. Sales after 2027 are held at naamsa's 2027 projection.
+
 ## Still not available
 
 | What | Why |
 |---|---|
 | Diesel burned in private backup generators | No source measures it: checked the Reserve Bank, the CSIR, Eskom and the system operator. It is inside recorded diesel sales and cannot be separated. |
-| Vehicles by fuel within each class | The bulletin splits fuel by province and the register splits class by province; nothing published crosses fuel with class. |
 | Vehicles by year of age | Lightstone holds the age profile and sells it; the register does not publish it. Only apparent retirements can be calculated. |
 | Electric trucks and electric light commercial vehicles sold | naamsa reports electric sales by drivetrain, not by segment (checked its fourth-quarter 2025 review). Benchmarks from other countries are on the HML response sheet. |
 | Fuel use of trucks, by year | Only the 2010 fleet figures above exist. No truck series by year was found. |

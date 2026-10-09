@@ -696,5 +696,19 @@
     ],
     "status": "analyst proposal, not accepted",
     "source": "fuel_lever_response_2026-10-07.csv (Manish)"
+  },
+  "site_markets": {
+    "year": "2025",
+    "sales_year": "2022",
+    "combined": 13.2,
+    "durban_coastal": 4.3,
+    "durban_landed": 13.2,
+    "inland_bound": 8.9,
+    "lesedi_gauteng": 6.8,
+    "lesedi_inland": 12.0,
+    "durban_tanks_allow": 3.5,
+    "lesedi_tanks_allow": 3.0,
+    "status": "estimate from public data; turns assumed; no client data",
+    "source": "market_sizing_durban_lesedi_2026-10-09.csv (lfm.scripts.build_market_sizing)"
   }
 }
