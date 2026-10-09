@@ -134,7 +134,7 @@ No project has a firm commissioning date. What is published:
 |---|---|---|---|---|
 | Eskom, Richards Bay | 3,000 MW | Gas supply agreement signed with Zululand Energy Terminal on 5 June 2026; environmental assessment to be redone | Eskom plans to produce from 2031 | Eskom statement; Engineering News, 5 June 2026 |
 | Khanyazwe Flexpower (FlexED), Mpumalanga | 440 MW | Bid, 29 May 2026 | None | Official bid list |
-| Pictor consortium, KwaZulu-Natal | 990 MW | Bid, 29 May 2026 | None | Official bid list |
+| Acwa (listed as the Pictor consortium), KwaZulu-Natal | 990 MW | Bid, 29 May 2026 | None | Official bid list |
 | Kelvin Redevelopment, Gauteng | 600 MW | Bid, 29 May 2026 | None | Official bid list |
 | Komatipoort Power (Vutomi Energy), Mpumalanga | 800 MW | Bid, 29 May 2026 | None | Official bid list |
 | New determination | 5,000 MW | Announced 7 October 2026; bidding rounds to follow | None | Engineering News, 7 October 2026 |
@@ -151,13 +151,14 @@ assumes 6 GW of gas in 2030; nothing found supports that date.
 | Integrated Resource Plan 2025 (Table 1) | 2029 | 3,000 MW in 2030 |
 | Eskom, June 2026 | from 2031 | |
 | Programme timetable (my reading) | | about 2031 |
-| AIA working timeline (chart from Manish, not published) | 2032 | 2030: Acwa 990 MW, Avon 670 MW, FlexED 450 MW; Vutomi 800 MW in the high case |
+| AIA working timeline (chart from Manish, not published) | 2032 | 2030: Acwa 990 MW, Avon 670 MW, FlexED 440 MW; Vutomi 800 MW in the high case |
 
 The plan also says converting the existing diesel peaking plants to natural gas should be considered and that plans
 are being developed at most of them (p.46). That covers Avon, with no date.
 
-Not found in a published source: a date for ACWA Power or for an Avon conversion, and the members of the Pictor
-consortium. Acwa's 990 MW on the AIA chart is the size of the Pictor bid; the link is not confirmed.
+Not found in a published source: a date for Acwa's project or for an Avon conversion. The bid list names Acwa's
+project only as the Pictor consortium; it is called Acwa here on Manish's instruction. FlexED is 440 MW, as on the
+bid list (the chart shows 450).
 
 ## Still not available
 
