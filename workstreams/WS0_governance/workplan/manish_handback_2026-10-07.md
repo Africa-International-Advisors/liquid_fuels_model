@@ -80,11 +80,12 @@ not published by anyone, so they cannot be filled in:
 
 **DR04 Routes and access: not done.**
 
-- Commercial road and rail rates: not published; needs Vopak, a haulier or Transnet
-- Island View capacity for petrol and diesel: needs the port authority or Vopak
-- Whether Vopak Durban can inject straight into the pipeline: needs Vopak
-- Pipeline tariffs on routes other than Durban to Johannesburg
-- Petrol and diesel storage at Matola
+- Fuel tanker road and rail rates: not published; needs Vopak, a haulier or Transnet. Found on 9 October: Transnet's
+  container comparison (road 1.23, rail 0.43 rand per net tonne-kilometre) and Stats SA's all-goods income per tonne
+- Island View capacity for petrol and diesel: needs the port authority or Vopak. Found: 10 berths, 10 operators
+- How Vopak Durban connects to the pipeline: needs Vopak. Found: the former Sapref site and Sasol inject directly
+- Pipeline tariffs on routes other than Durban to Johannesburg: not found online
+- Petrol and diesel storage at Matola: one terminal found (Galp, 40,000 m3 diesel and 20,000 m3 petrol)
 - The delivered-cost comparison itself, which depends on the rates above
 
 Pipeline capacity uses Transnet's 2020 figure: 148 million litres a week on the Durban to Jameson Park trunk

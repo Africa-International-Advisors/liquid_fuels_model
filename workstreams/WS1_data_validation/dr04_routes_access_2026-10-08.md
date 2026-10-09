@@ -7,8 +7,8 @@ same destinations. **Petrol and diesel only.**
 
 Status: **the Durban to Gauteng pipeline route and the entry points are
 documented, and the regulated cost of transport is known for every pricing
-zone. Commercial road and rail rates are not published.** 32 facts are read
-from original documents or registered inputs, 3 are calculated, and 6 lines
+zone. Fuel tanker road and rail rates are not published.** 44 facts are read
+from original documents or registered inputs, 5 are calculated, and 7 lines
 are open.
 
 **Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
@@ -27,7 +27,7 @@ addresses and checksums) and `external/data/raw/vopak_storage_20261006/`.
 ## Petrol and diesel only
 
 The tables show only facts about petrol and diesel, or about the route itself
-(a pipeline's capacity, a tariff, a site's connections). 26 facts that mix
+(a pipeline's capacity, a tariff, a site's connections). 27 facts that mix
 in other products are kept in the evidence file, marked "other products
 included", and are not shown: the port authority's liquid bulk tonnage (all
 liquids, crude and chemicals included), Transnet's pipeline volumes (crude and
@@ -158,6 +158,23 @@ petrol and diesel landed at Durban cannot go inland by pipeline and must be
 used on the coast or move by road or rail. The capacity figure is from 2020,
 so this is a lead to check, not a conclusion.
 
+## Added on 9 October: a second search of official sources
+
+Sources: Parliament's committee report on Island View (11 March 2026), NERSA's licence decisions, Transnet's rail
+tariff proposal, Stats SA's land transport survey and Galp.
+
+| Gap | What was found | Source |
+|---|---|---|
+| Road and rail rates | No fuel rate. Transnet's own comparison for containers: road 1.23 and rail 0.43 rand per net tonne-kilometre (2025). Track access for tankers: 30 rand per train-kilometre plus 6.96 cents per gross tonne-kilometre | Transnet Rail Infrastructure Manager, Tariff Proposal 2025/26 |
+| Road and rail rates | Average income per tonne carried, all goods: road 205 and rail 272 rand in 2025 | Stats SA, Land transport survey |
+| Island View | 10 berths, 10 operators (Vopak included). No capacity figure for petrol and diesel | Parliament |
+| Pipeline use | About 70% of capacity, all products | Minister of Transport to Parliament |
+| Direct injection | The former Sapref site and Sasol both inject straight into the pipeline. Vopak says it works with Transnet on pipeline evacuation but does not say how it connects | NERSA; Parliament |
+| Island View leases | All ten leases to be renewed for 25 years, with third-party access and more pipeline use required | Parliament |
+| Matola storage | One terminal: 40,000 m3 diesel and 20,000 m3 petrol | Galp |
+
+None of these is a fuel tanker rate, so the delivered-cost comparison is still not built.
+
 ## Open, by owner
 
 | Gap | Owner | What would close it |
@@ -166,11 +183,11 @@ so this is a lead to check, not a conclusion.
 | Pipeline tariff on routes other than Durban to Alrode; NERSA's own statements | Manish | NERSA's reasons for decision; not located |
 | What makes up the 10 to 11 cents between the tariff and the regulated price difference | Manish | The department's price structure by zone |
 | Petrol and diesel through each port, by terminal | Nigel to coordinate | The port authority's statistics are all liquids in tons; a product split needs the authority or terminal operators |
-| Island View capacity and tankage for petrol and diesel | Nigel to coordinate | Port authority or Vopak; the brochure is not on the authority's site |
-| Commercial road tanker and rail rates, Durban to Gauteng and Matola to Gauteng | Nigel to coordinate | Vopak, a haulier or Transnet Freight Rail; none is published. The regulated differentials are the stand-in until then |
+| Island View capacity and tankage for petrol and diesel | Nigel to coordinate | Port authority or Vopak; Parliament's report gives berths and operators only |
+| Fuel tanker road and rail rates, Durban to Gauteng and Matola to Gauteng | Nigel to coordinate | Vopak, a haulier or Transnet Freight Rail; only container and all-goods figures are published |
 | Zone differentials after April 2024, and which mode serves each zone | Manish | The department's current zone schedule; its site did not respond on 8 October |
-| Whether Vopak Durban can inject into the trunk line directly | Nigel to coordinate | Vopak operations |
-| Petrol and diesel storage at Matola; fuel that Maputo and Walvis Bay supply to neighbours | Manish | Not found for petrol and diesel alone |
+| How Vopak Durban connects to the trunk line (own lines or through a neighbour) | Nigel to coordinate | Vopak operations; two neighbours inject directly |
+| Petrol and diesel storage at Matola beyond the Galp terminal; fuel that Maputo and Walvis Bay supply to neighbours | Manish | Not found for petrol and diesel alone |
 | Inland supply from Natref and Secunda | Manish | DR08 |
 | Matched delivered cost to the same destination | Manish, once the above are in | Same product, date, destination and tax basis for each route |
 
