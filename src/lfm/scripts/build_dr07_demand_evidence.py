@@ -85,19 +85,19 @@ def build(d: dict) -> list[dict]:
 
     # --- power generation ---------------------------------------------------
     fuel_years = sorted(y for (s, y) in d["eskom"] if s == "eskom_ocgt_diesel_and_kerosene")
-    recent = fuel_years[-5:]
+    recent = fuel_years
     add("Power generation", "Fuel burned at Eskom's turbines, as reported", "Eskom: Ankerlig, Gourikwa, Acacia, Port Rex",
         "; ".join(f"{d['eskom'][('eskom_ocgt_diesel_and_kerosene', y)]:,.1f}" for y in recent), "million litres",
         "years to March " + "; ".join(str(y) for y in recent), "observed", "Eskom Integrated Report 2025, technical statistics",
         ESKOM_REPORT, "PDF p.141",
         "Eskom reports diesel and kerosene together. Acacia and Port Rex burn kerosene and are 342 MW of Eskom's 2,426 MW, so "
-        "nearly all of it is diesel. Ten years (2016-2025) are on the DR07 power diesel sheet. 2026 is not yet reported.")
+        "nearly all of it is diesel. 2026 is not yet reported.")
     gen_years = sorted(y for (s, y) in d["ocgt"] if s == "eskom_ocgt")
     add("Power generation", "Electricity generated at Eskom's turbines", "Eskom",
         "; ".join(f"{d['ocgt'][('eskom_ocgt', y)]:,.0f}" for y in gen_years), "GWh", "years to March " + "; ".join(str(y) for y in gen_years),
         "observed", "Eskom data portal and reports", "assumptions/2026/timeseries/ocgt_generation_eskom.csv")
     implied = implied_litres_per_kwh(d)
-    matched = [y for y in sorted(implied) if d["ocgt"][("eskom_ocgt", y)] > 0][-3:]
+    matched = [y for y in sorted(implied) if d["ocgt"][("eskom_ocgt", y)] > 0]
     add("Power generation", "Litres burned per kWh, implied", "Eskom",
         "; ".join(f"{implied[y]:.3f}" for y in matched), "litres per kWh", "years to March " + "; ".join(str(y) for y in matched), "inferred",
         "Reported fuel divided by reported generation", ESKOM_REPORT, "",
@@ -128,9 +128,8 @@ def build(d: dict) -> list[dict]:
         "assumptions/2026/infrastructure/power_fleet_diesel.csv", "", "Eskom's decision on five of them, due end September 2026, had not been announced by 8 October.")
     for series, item in (("peaker_contract_end", "Independent diesel plants: contract end"), ("kerosene_station_shutdown", "Kerosene stations: shutdown"),
                          ("gas_plant_commissioning", "New gas plant: commissioning"), ("turbine_use_outlook", "Diesel turbine use expected by the system operator")):
-        p = one(series)
-        value = f"{p['value']} {p['unit']}".strip() if series == "gas_plant_commissioning" else p["value"]
-        add("Power generation", item, p["subject"], value, "", p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
+        for p in points[series]:
+            add("Power generation", item, p["subject"], p["value"], p["unit"], p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
     coal_out = points["coal_shutdown"]
     add("Power generation", "Coal capacity shutting down", "Eskom coal fleet", "; ".join(p["value"] for p in coal_out), "GW",
         "; ".join(p["period"] for p in coal_out), "observed", coal_out[0]["source"], coal_out[0]["original_file"], coal_out[0]["page"],
@@ -205,11 +204,11 @@ def build(d: dict) -> list[dict]:
             "litres per 100 km; km", "2010 fleet", "observed", "Stone et al. (2018), vehicle parc model", "assumptions/2026/reference/vehicle_parameters_stone2018.csv",
             "", "One year only. All 24 vehicle types are in the file and on the Vehicle history sheet.")
     history = sorted(points["new_light_vehicle_fuel_consumption"], key=lambda p: p["period"])
-    shown = [p for p in history if p["period"] in ("2005", "2010", "2015", "2019")]
+    shown = history
     add("Vehicle efficiency and distance", "Fuel use of new light vehicles, by year", "New cars and light commercial vehicles",
         "; ".join(p["value"] for p in shown), history[0]["unit"], "; ".join(p["period"] for p in shown), "observed",
         "IEA and Global Fuel Economy Initiative (Working Paper 15, 2017; country page, 2021)", history[0]["original_file"], history[0]["page"],
-        "Nine years between 2005 and 2019 are on the DR07 efficiency and rail sheet. Nothing after 2019 was found.")
+        "Nothing after 2019 was found.")
     rate = one("new_light_vehicle_fuel_consumption_change")
     add("Vehicle efficiency and distance", "Fuel use of new light vehicles: average change", rate["subject"], rate["value"], rate["unit"], rate["period"],
         "observed", rate["source"], rate["original_file"], rate["page"],
@@ -229,11 +228,14 @@ def build(d: dict) -> list[dict]:
         "The latest published figure. Used as it stands for the years after 2019 (Manish, 8 October).")
     add("Vehicle efficiency and distance", "Fuel use of trucks, by year", "South Africa", "", "litres per 100 km", "",
         "not available", "None found", "", "", "Only the 2010 fleet figures above exist. No truck series by year was found.")
-    add("Vehicle efficiency and distance", "Efficiency gain assumed in the model", "New diesel and petrol vehicles",
-        "; ".join(f"{'petrol' if name == 'gasoline' else name} {d['efficiency'][(name, case)] * 100:.1f} ({case.replace('_', ' ')})"
-                  for name in ("diesel", "gasoline") for case in ("high_demand", "low_demand") if (name, case) in d["efficiency"]),
-        "% a year", "2030", "observed", "Reatile workbook (model input)", "assumptions/2026/timeseries/efficiency_improvement_diesel.csv", "",
-        "A model setting with no source behind it. Nothing was found to confirm or replace it.")
+    for name in ("diesel", "gasoline"):
+        for case in ("high_demand", "low_demand"):
+            if (name, case) in d["efficiency"]:
+                fuel = "petrol" if name == "gasoline" else name
+                add("Vehicle efficiency and distance", "Efficiency gain assumed in the model", f"New {fuel} vehicles, {case.replace('_', ' ')} case",
+                    f"{d['efficiency'][(name, case)] * 100:.1f}", "% a year", "2030", "observed", "Reatile workbook (model input)",
+                    f"assumptions/2026/timeseries/efficiency_improvement_{name}.csv", "",
+                    "A model setting with no source behind it. Nothing was found to confirm or replace it.")
 
     # --- freight and rail -----------------------------------------------------
     f_years = sorted({y for (_, y) in d["freight"]})

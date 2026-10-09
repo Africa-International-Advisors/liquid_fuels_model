@@ -16,11 +16,35 @@ Read first:
 ## One workbook for the data requests (9 October)
 
 `output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx` holds DR01, DR04, DR07 and DR08 and nothing else: a contents page, one main sheet for each request with
-its detail tables beside it, sales by province for 2013 to 2023, and a sheet listing the 18 items that could not be found. Figures reported for several
+its detail tables beside it, sales by province for 2013 to 2023, and a sheet listing the 17 items that could not be found. Figures reported for several
 years are set out one column a year. The demand baseline workbook no longer carries these sheets.
 
 New on DR04: the regulated transport cost to Gauteng by year, 2012 to 2024, from the department's yearly price
 tables (26.8 cents a litre in 2012, 75.7 in 2023).
+
+## After the call of 9 October
+
+Done in the data requests workbook:
+
+- One row, one data point: each coal station, diesel plant, gas project, terminal operator and berth has its own row.
+- Duplicates removed: the power diesel, efficiency and rail, and refinery output sheets are gone; their figures are on
+  the main request sheets, with the full run of years.
+- Mining, manufacturing and agriculture brought in: sheet DR01 demand by sector, from the energy balances to 2021.
+- Astron assumed at 50% petrol, 50% diesel. DR08 now opens with which plants are refining in 2026.
+- Jameson Park recorded as not one of Transnet's five storage sites out for proposal.
+
+Still to do from the call:
+
+- Fill your framework page with numbers once it is on the repo: national demand, imports against production, what
+  Durban and Lesedi can serve, against Vopak's capacity.
+- A map of the Durban to Jameson Park pipeline against the two Vopak terminals.
+- A forecast of light commercial vehicles going electric.
+- Vehicles by fuel within each class, inferred from the tables held.
+- The 3 billion litre question: imports were 16.7 billion litres in 2025; whether the rest of demand is domestic
+  production is a hypothesis to test, since neither sales nor production is published for that year.
+
+Secunda's litres by product are not in Sasol's annual statements; I checked the filing, the integrated report and the
+analyst book.
 
 ## Status against the five priorities
 
@@ -147,7 +171,6 @@ Not available:
 
 - Petrol and diesel output for Secunda and Astron Energy
 - Petrol and diesel produced after 2021 on the department's basis
-- Yield for Astron Energy
 
 Searched again on 9 October (Sasol's annual filing and Secunda site-visit pack, Astron's and Glencore's sites): no
 petrol and diesel split for Secunda or Astron. Astron's utilisation is now estimated at about 78% in 2024 and 2025

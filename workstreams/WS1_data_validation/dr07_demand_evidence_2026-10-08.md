@@ -3,12 +3,12 @@
 For Nigel's review. Answers request DR07: the evidence that calibrates the
 demand levers. Petrol and diesel only.
 
-Status: **56 facts read from sources, 9 calculated, 6 not available.**
+Status: **75 facts read from sources, 9 calculated, 6 not available.** Each row holds one data point: every station, plant and
+project has its own row.
 
 **Where to look:** the data requests workbook `output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx`.
 
 - Sheet **DR07 demand evidence**: every fact with its source and open gap.
-- Sheet **DR07 power diesel**: Eskom's reported litres beside its generation.
 - Sheet **DR07 fleet by province**: registered vehicles by province and class,
   and petrol and diesel vehicles by province.
 - Sheet **DR07 efficiency and rail**: new-vehicle fuel use 2005 to 2019, and

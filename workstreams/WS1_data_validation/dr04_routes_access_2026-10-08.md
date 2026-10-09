@@ -7,9 +7,9 @@ same destinations. **Petrol and diesel only.**
 
 Status: **the Durban to Gauteng pipeline route and the entry points are
 documented, and the regulated cost of transport is known for every pricing
-zone. Fuel tanker road and rail rates are not published.** 44 facts are read
+zone. Fuel tanker road and rail rates are not published.** 60 facts are read
 from original documents or registered inputs, 5 are calculated, and 6 lines
-are open.
+are open. Each row holds one data point.
 
 **Where to look:** the data requests workbook `output/delivered/Data_requests_DR01_DR04_DR07_DR08_2026_10_09.xlsx`.
 

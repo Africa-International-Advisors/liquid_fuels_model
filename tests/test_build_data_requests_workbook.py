@@ -15,8 +15,8 @@ pytestmark = pytest.mark.skipif(not (ROOT / requests.OUT).exists(), reason="work
 def test_workbook_has_one_main_sheet_a_request_with_its_detail_tables_and_a_contents_page():
     wb = load_workbook(ROOT / requests.OUT)
     assert wb.sheetnames == [
-        "Contents", "DR01 national balance", "DR01 sales by province", "DR04 routes and access", "DR04 entry points", "DR04 transport cost", "DR07 demand evidence",
-        "DR07 power diesel", "DR07 fleet by province", "DR07 efficiency and rail", "DR08 refinery supply", "DR08 refinery output", "Not available"]
+        "Contents", "DR01 national balance", "DR01 sales by province", "DR01 demand by sector", "DR04 routes and access", "DR04 entry points",
+        "DR04 transport cost", "DR07 demand evidence", "DR07 fleet by province", "DR08 refinery supply", "Not available"]
     listed = [r[0].value for r in wb["Contents"].iter_rows(min_row=5, max_row=4 + len(wb.sheetnames) - 1)]
     assert listed == wb.sheetnames[1:]                               # every sheet is described on the contents page
 
@@ -46,12 +46,17 @@ def test_request_sheets_carry_every_fact_of_the_tables_in_year_columns():
         rows = requests.evidence(ROOT / path, VINTAGE / "reference", request)
         items = {r[0].value for r in wb[title].iter_rows(min_row=4) if r[0].value}
         assert {r["item"] for r in rows} <= items, title
+        grouped = [r["asset_or_route"] for r in rows if r["item"] in ("Coal station shutdown", "Kerosene stations: shutdown", "Independent diesel plants: contract end",
+                                                                      "Output while not operating", "Terminal operator at Island View")
+                   and (" and " in r["asset_or_route"] or "," in r["asset_or_route"]) and "about 22 GW" not in r["asset_or_route"]]
+        assert grouped == [], (title, grouped)                        # one station, plant or operator to a row
         assert set(parts) & items                                     # the section headings
     ws = wb["DR07 demand evidence"]
     header = next(r for r in ws.iter_rows(min_row=4) if r[0].value == "Item")
     years = [c.value for c in header[4:14] if isinstance(c.value, int)]
     fuel = next(r for r in ws.iter_rows(min_row=4) if r[0].value and r[0].value.startswith("Fuel burned at Eskom"))
     assert fuel[4 + years.index(2024)].value == pytest.approx(1129.5) and fuel[3].value == "years to March"
+    assert fuel[4 + years.index(2016)].value == pytest.approx(1247.8)  # all ten years Eskom reports, not the last five
     stations = [r[1].value for r in ws.iter_rows(min_row=4) if r[0].value == "Diesel stations and capacity"]
     assert stations == ["Ankerlig", "Gourikwa", "Avon", "Dedisa"]     # one row a station
     sources = [str(c.value) for title, *_ in requests.REQUESTS for r in wb[title].iter_rows(min_row=4) for c in r[-3:-2]]
@@ -111,6 +116,37 @@ def test_sales_by_province_adds_to_the_national_sales_line_and_marks_2023_as_an_
     assert all(r[14].value for r in list(diesel.values())[:11])        # a source on every line: nine provinces, the total, the national file
 
 
+def test_demand_by_sector_carries_the_energy_balance_figures_for_mining_industry_and_agriculture():
+    ws = load_workbook(ROOT / requests.OUT)["DR01 demand by sector"]
+    blocks, block = {}, None
+    for r in ws.iter_rows(min_row=4):
+        if r[0].value in ("Petrol", "Diesel"):
+            block = r[0].value
+        elif r[0].value and r[0].value != "Sector":
+            blocks.setdefault(block, {})[r[0].value] = r
+    diesel = blocks["Diesel"]
+    assert {"Mining", "Manufacturing and other industry", "Agriculture", "Road transport", "All sectors"} <= set(diesel)
+    at = {year: 1 + requests.SECTOR_YEARS.index(year) for year in requests.SECTOR_YEARS}
+    with (VINTAGE / "timeseries" / "energy_balance_department.csv").open(encoding="utf-8", newline="") as fh:
+        balance = {(r["product"], r["flow_key"], int(r["period"])): float(r["value"]) / 1e9 for r in csv.DictReader(fh)}
+    assert diesel["Mining"][at[2021]].value == pytest.approx(balance[("diesel", "mining", 2021)])
+    assert diesel["Agriculture"][at[2014]].value == pytest.approx(balance[("diesel", "agriculture", 2014)])
+    assert all(r[9].value for r in diesel.values())                    # a source on every line
+
+
+def test_dr08_says_which_plants_are_refining_and_holds_the_assumed_astron_split():
+    from lfm.scripts import build_dr08_refinery_evidence as dr08
+
+    rows = dr08.build(dr08.load(VINTAGE))
+    refining = {r["asset_or_route"]: r["value"] for r in rows if r["item"] == "Refining in 2026"}
+    assert refining == {"Secunda": "Yes", "Natref": "Yes", "Astron Energy": "Yes", "Sapref": "No", "Enref": "No", "PetroSA": "No"}
+    split = {r["item"]: r for r in rows if r["asset_or_route"] == "Astron Energy" and "assumed" in r["item"]}
+    assert {r["value"] for r in split.values()} == {"50"} and len(split) == 2
+    assert all(r["status"] == "inferred" and "Assumption" in r["source"] for r in split.values())
+    idle = {r["asset_or_route"] for r in rows if r["item"] == "Output while not operating"}
+    assert idle == {"Sapref", "Enref", "PetroSA"}
+
+
 def test_not_available_sheet_lists_every_open_item_with_its_reason():
     rows = requests.missing_rows(VINTAGE / "reference")
     ws = load_workbook(ROOT / requests.OUT)["Not available"]
@@ -118,5 +154,5 @@ def test_not_available_sheet_lists_every_open_item_with_its_reason():
     assert shown == rows and all(why for *_, why in rows)
     what = {(request, item) for request, item, *_ in rows}
     assert {("DR01", "Production after 2021"), ("DR01", "Sales for 2024 and 2025"), ("DR07", "Diesel burned in private backup generators"),
-            ("DR04", "Commercial road tanker rate, Durban to Gauteng"), ("DR08", "Yield by plant")} <= what
+            ("DR04", "Commercial road tanker rate, Durban to Gauteng"), ("DR08", "Petrol and diesel output by plant")} <= what
     assert not any("Ceiling" in item for _, item, *_ in rows)

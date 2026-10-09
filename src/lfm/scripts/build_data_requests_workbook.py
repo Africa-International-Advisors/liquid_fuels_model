@@ -6,13 +6,13 @@ Sheets:
     Contents                  what each sheet holds and how many facts it carries
     DR01 national balance     sales, production, imports and exports by year, billion litres
       DR01 sales by province  petrol and diesel sold in each province by year
+      DR01 demand by sector   diesel and petrol used by each sector, to 2021
     DR04 routes and access    pipeline, cost, ports, access and competing routes
       DR04 entry points       petrol and diesel imports by customs office and year
       DR04 transport cost     the Gauteng route by element and every pricing zone
     DR07 demand evidence      power, vehicles, efficiency, freight and rail
-      DR07 power diesel, DR07 fleet by province, DR07 efficiency and rail
+      DR07 fleet by province  vehicles by class and by fuel in each province
     DR08 refinery supply      capacity, status, output, yields, utilisation and outlook
-      DR08 refinery output    the six refineries side by side
     Not available             everything that could not be found, with the reason
 
 Each request sheet is built from that request's evidence table. A fact reported
@@ -56,10 +56,8 @@ DETAIL = {
     "DR04": [(base.dr04_entry_sheet, "DR04 entry points", "Petrol and diesel imports cleared at each customs office, by year"),
              (base.dr04_transport_sheet, "DR04 transport cost",
               "The Durban to Gauteng route by cost element, and the regulated transport differential for all 54 pricing zones")],
-    "DR07": [(base.dr07_power_sheet, "DR07 power diesel", "Eskom's reported turbine fuel and generation, ten years, with the litres per kWh they imply"),
-             (base.dr07_fleet_sheet, "DR07 fleet by province", "Registered vehicles by class and province, and petrol and diesel vehicles by province"),
-             (base.dr07_efficiency_rail_sheet, "DR07 efficiency and rail", "Fuel use of new vehicles by year, and rail freight volumes by year")],
-    "DR08": [(base.dr08_output_sheet, "DR08 refinery output", "The six refineries with capacity, status and reported output, then national production by product")],
+    "DR07": [(base.dr07_fleet_sheet, "DR07 fleet by province", "Registered vehicles by class and province, and petrol and diesel vehicles by province")],
+    "DR08": [],
 }
 TEXT_COLUMNS = 6            # single facts spread their value over this many year columns, so long text has room
 _NUMBER = re.compile(r"^-?[\d,]+(\.\d+)?$")
@@ -369,6 +367,53 @@ def province_sheet(wb, d: dict) -> None:
     ws.freeze_panes = "B3"
 
 
+SECTOR_YEARS = list(range(2014, 2022))
+SECTORS = [("final_consumption", "All sectors"), ("road", "Road transport"), ("rail", "Rail"), ("mining", "Mining"), ("industry", "Manufacturing and other industry"),
+           ("construction", "Construction"), ("agriculture", "Agriculture"), ("commercial_public", "Commercial and public services"),
+           ("residential", "Households"), ("electricity_plants", "Power stations")]
+
+
+def sector_sheet(wb, timeseries: Path) -> None:
+    """Diesel and petrol used by each sector, from the department's energy balances, billion litres."""
+    ws = wb.create_sheet("DR01 demand by sector")
+    ws["A1"] = "DR01 Demand by sector: diesel and petrol"
+    ws["A1"].font = Font(name="Arial", size=15, bold=True, color=INK)
+    ws["A2"] = ("Billion litres, calendar years, as reported in the department's energy balances. The last balance is 2021, so nothing later is published by "
+                "sector. Blank means the balance gives no figure.")
+    ws["A2"].font = Font(name="Arial", size=10, color=INK)
+    header = ["Sector"] + SECTOR_YEARS + ["Source", "Note"]
+    for i, w in enumerate([34] + [8.5] * len(SECTOR_YEARS) + [58, 70], start=1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+    data = {(r["product"], r["flow_key"], int(r["period"])): float(r["value"]) / 1e9 for r in _read(timeseries / "energy_balance_department.csv")}
+    notes = {"commercial_public": "Jumps from almost nothing to several billion litres from 2016: the department moved volumes between sectors, so read with care.",
+             "electricity_plants": "The balances record little or none after 2016; Eskom's own reported fuel is on the DR07 sheet.",
+             "final_consumption": "The department's total for all sectors. It is not the sales figure on the national balance sheet."}
+    row = 3
+
+    def write(values, fill, bold=False, white=False):
+        for i, value in enumerate(values, start=1):
+            cell = ws.cell(row=row, column=i, value=value)
+            cell.font = Font(name="Arial", size=10, bold=bold, color="FFFFFFFF" if white else INK)
+            cell.fill = PatternFill("solid", fgColor=FILL[fill])
+            cell.alignment = Alignment(wrap_text=i > len(SECTOR_YEARS) + 1, vertical="top")
+            if 1 < i <= len(SECTOR_YEARS) + 1 and not white:
+                cell.number_format = base.BN_FORMAT
+
+    for product in ("diesel", "petrol"):
+        row += 2
+        write([product.capitalize()] + [None] * (len(header) - 1), "section", bold=True)
+        row += 1
+        write(header, "header", bold=True, white=True)
+        for key, label in SECTORS:
+            values = [data.get((product, key, y)) for y in SECTOR_YEARS]
+            if not any(values):
+                continue                                              # a sector that uses none of this fuel
+            row += 1
+            write([label] + values + ["Department of Mineral and Petroleum Resources, energy balances, one file a year", notes.get(key, "")],
+                  "observation", bold=key == "final_consumption")
+    ws.freeze_panes = "B3"
+
+
 def missing_rows(reference: Path) -> list[tuple[str, str, str, str]]:
     """Everything not found: ``(request, what, covers, why)``."""
     out = [("DR01", "Production after 2021", "South Africa", "The department's last energy balance is 2021. Confirmed not available on 9 October."),
@@ -438,6 +483,8 @@ def build(vintage: Path) -> Workbook:
     summary = [("DR01 national balance", "Sales, production, imports and exports by year, with the difference between supply and sales", balance_sheet(wb))]
     province_sheet(wb, d)
     summary.append(("DR01 sales by province", "Petrol and diesel sold in each of the nine provinces by year; 2023 estimated", None))
+    sector_sheet(wb, vintage / "timeseries")
+    summary.append(("DR01 demand by sector", "Diesel and petrol used by mining, manufacturing, agriculture, transport and other sectors, 2014 to 2021", None))
     holds = {"DR04": "Pipeline limit and cost, regulated and published transport costs, port use, access at Durban and Lesedi, competing routes",
              "DR07": "Eskom and independent diesel burn, plant dates, vehicle fleet, new vehicles, efficiency, freight and rail",
              "DR08": "Capacity, status and closure dates, output by plant and nationally, yields, utilisation and outlook"}
