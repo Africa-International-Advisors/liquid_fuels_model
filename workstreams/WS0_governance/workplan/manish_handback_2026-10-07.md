@@ -181,6 +181,21 @@ Deck pages 11 and 12; workbook sheet Power fleet; input `assumptions/2026/infras
 
 Nothing else on the branch changes model results.
 
+## GDP: proposed for you, not changed (9 October)
+
+The model still reads GDP from the Vopak/Reatile workbook (`timeseries/gdp.csv`, `gdp_per_capita.csv`,
+`gdp_growth.csv`). The Stats SA series is staged beside it (`timeseries/macro_statssa.csv`, P0441, 1993-2025) and
+is not read by the model. Proposal: point the model's GDP history at Stats SA. I have not made the change.
+
+- The two agree for 2005-2017 except 2007, where the model's figure is 5.1% below Stats SA: it repeats the 2006
+  value, which looks like a copy error.
+- 2018-2024 differ by up to 0.5% (Stats SA revisions since); 2025 is 0.8% below Stats SA.
+- Growth after 2025 (1.6% high, 1.0% low) is a separate assumption. Treasury forecasts 1.6%, 1.8% and 2.0% for
+  2026-2028 (`timeseries/gdp_growth_treasury.csv`); nothing official exists after 2028.
+- Yearly refresh: `python -m lfm.scripts.fetch_economy --vintage <year>`. Stats SA's site blocks scripted
+  downloads, so the P0441, P0441.2 and P0302 files are first saved by hand into `external/data/raw/statssa/`.
+  The World Bank and Treasury figures are fetched automatically.
+
 ## Checks
 
 - `python -m pytest -q`: 179 passed, 1 skipped.
