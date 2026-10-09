@@ -1,0 +1,700 @@
+{
+  "consumption": {
+    "year": "2023",
+    "billion_litres": 21.9,
+    "status": "observed",
+    "source": "DR01 balance file, department sales"
+  },
+  "petrol": {
+    "year": "2023",
+    "billion_litres": 9.0,
+    "status": "observed"
+  },
+  "diesel": {
+    "year": "2023",
+    "billion_litres": 12.9,
+    "status": "observed"
+  },
+  "imports": {
+    "year": "2023",
+    "billion_litres": 17.4,
+    "status": "customs",
+    "petrol": 4.5,
+    "diesel": 12.9,
+    "source": "DR01 balance file, SARS customs"
+  },
+  "exports": {
+    "year": "2023",
+    "billion_litres": 1.9,
+    "status": "customs"
+  },
+  "production": {
+    "year": "2021",
+    "billion_litres": 11.7,
+    "status": "last published",
+    "source": "DR01 balance file, department energy balance"
+  },
+  "entry_points": {
+    "year": "2025",
+    "billion_litres": 16.7,
+    "status": "customs",
+    "durban": 13.2,
+    "durban_share_pct": 79,
+    "by_office": {
+      "Durban": 13.2,
+      "Cape Town": 1.5,
+      "Richards Bay": 0.7,
+      "Mosselbay": 0.5,
+      "East London": 0.4,
+      "Port Elizabeth": 0.3
+    },
+    "source": "fuel_trade_sars_by_office.csv (DR04)"
+  },
+  "port_liquid_bulk": {
+    "year": "2025",
+    "status": "all products, tonnes",
+    "landed_all_ports_mt": 31.3,
+    "landed_durban_mt": 20.7,
+    "durban_share_pct": 66,
+    "source": "port_liquid_bulk_tnpa.csv (registered; DR04)"
+  },
+  "demand_by_use": {
+    "year": "2021",
+    "billion_litres": 23.2,
+    "status": "balance",
+    "road": 15.1,
+    "transport_other": 0.1,
+    "industry_incl_mining": 1.6,
+    "agriculture": 1.2,
+    "other": 5.3,
+    "source": "energy_balance_department.csv final consumption; industry includes mining"
+  },
+  "coastal_demand": {
+    "year": "2022",
+    "billion_litres": 10.0,
+    "status": "proxy",
+    "provinces": [
+      "KZN",
+      "WC",
+      "EC"
+    ],
+    "source": "fuel_sales_department_by_province.csv"
+  },
+  "inland_demand": {
+    "year": "2022",
+    "billion_litres": 12.0,
+    "status": "proxy",
+    "provinces": [
+      "FS",
+      "GP",
+      "LP",
+      "MP",
+      "NC",
+      "NW"
+    ],
+    "source": "fuel_sales_department_by_province.csv"
+  },
+  "balance": [
+    {
+      "year": "2019",
+      "basis": "Energy balance, customs, sales",
+      "production": {
+        "value": 19.5,
+        "split": {
+          "petrol": 10.4,
+          "diesel": 9.1
+        },
+        "status": "observed"
+      },
+      "imports": {
+        "value": 7.1,
+        "split": {
+          "petrol": 1.5,
+          "diesel": 5.6
+        },
+        "status": "customs"
+      },
+      "exports": {
+        "value": 2.9,
+        "split": {
+          "petrol": 1.2,
+          "diesel": 1.7
+        },
+        "status": "customs"
+      },
+      "sales": {
+        "value": 23.7,
+        "split": {
+          "petrol": 10.8,
+          "diesel": 12.9
+        },
+        "status": "observed"
+      },
+      "supply_less_sales": {
+        "value": 0.0,
+        "split": {
+          "petrol": 0.0,
+          "diesel": 0.0
+        },
+        "status": "calculated"
+      }
+    },
+    {
+      "year": "2021",
+      "basis": "Energy balance, customs, sales",
+      "production": {
+        "value": 11.7,
+        "split": {
+          "petrol": 6.4,
+          "diesel": 5.3
+        },
+        "status": "observed"
+      },
+      "imports": {
+        "value": 13.8,
+        "split": {
+          "petrol": 4.0,
+          "diesel": 9.8
+        },
+        "status": "customs"
+      },
+      "exports": {
+        "value": 1.9,
+        "split": {
+          "petrol": 1.1,
+          "diesel": 0.9
+        },
+        "status": "customs"
+      },
+      "sales": {
+        "value": 22.2,
+        "split": {
+          "petrol": 9.3,
+          "diesel": 12.9
+        },
+        "status": "observed"
+      },
+      "supply_less_sales": {
+        "value": 1.2,
+        "split": {
+          "petrol": 0.0,
+          "diesel": 1.2
+        },
+        "status": "calculated"
+      }
+    },
+    {
+      "year": "2023",
+      "basis": "Customs and sales",
+      "production": {
+        "value": null,
+        "split": null,
+        "status": "not published"
+      },
+      "imports": {
+        "value": 17.4,
+        "split": {
+          "petrol": 4.5,
+          "diesel": 12.9
+        },
+        "status": "customs"
+      },
+      "exports": {
+        "value": 1.9,
+        "split": {
+          "petrol": 1.0,
+          "diesel": 0.9
+        },
+        "status": "customs"
+      },
+      "sales": {
+        "value": 21.9,
+        "split": {
+          "petrol": 9.0,
+          "diesel": 12.9
+        },
+        "status": "observed"
+      },
+      "supply_less_sales": {
+        "value": null,
+        "split": null,
+        "status": "cannot close"
+      }
+    }
+  ],
+  "closure": {
+    "from": "2014",
+    "to": "2021",
+    "within": 0.8,
+    "exception": {
+      "year": "2021",
+      "product": "diesel",
+      "value": 1.2
+    }
+  },
+  "provinces": {
+    "year": "2022",
+    "first_year": "2013",
+    "status": "observed",
+    "rows": [
+      {
+        "code": "GP",
+        "name": "Gauteng",
+        "coastal": false,
+        "petrol": 3.5,
+        "diesel": 3.3,
+        "total": 6.8,
+        "petrol_2013": 4.2,
+        "diesel_2013": 2.8,
+        "change_pct": -2,
+        "share_pct": 31
+      },
+      {
+        "code": "KZN",
+        "name": "KwaZulu-Natal",
+        "coastal": true,
+        "petrol": 1.5,
+        "diesel": 2.8,
+        "total": 4.3,
+        "petrol_2013": 1.8,
+        "diesel_2013": 2.3,
+        "change_pct": 5,
+        "share_pct": 20
+      },
+      {
+        "code": "WC",
+        "name": "Western Cape",
+        "coastal": true,
+        "petrol": 1.4,
+        "diesel": 2.5,
+        "total": 3.9,
+        "petrol_2013": 1.7,
+        "diesel_2013": 2.0,
+        "change_pct": 6,
+        "share_pct": 18
+      },
+      {
+        "code": "EC",
+        "name": "Eastern Cape",
+        "coastal": true,
+        "petrol": 0.7,
+        "diesel": 1.0,
+        "total": 1.7,
+        "petrol_2013": 0.8,
+        "diesel_2013": 0.8,
+        "change_pct": 9,
+        "share_pct": 8
+      },
+      {
+        "code": "MP",
+        "name": "Mpumalanga",
+        "coastal": false,
+        "petrol": 0.6,
+        "diesel": 1.1,
+        "total": 1.8,
+        "petrol_2013": 0.8,
+        "diesel_2013": 1.5,
+        "change_pct": -24,
+        "share_pct": 8
+      },
+      {
+        "code": "FS",
+        "name": "Free State",
+        "coastal": false,
+        "petrol": 0.6,
+        "diesel": 0.8,
+        "total": 1.4,
+        "petrol_2013": 1.0,
+        "diesel_2013": 1.3,
+        "change_pct": -39,
+        "share_pct": 6
+      },
+      {
+        "code": "NW",
+        "name": "North West",
+        "coastal": false,
+        "petrol": 0.4,
+        "diesel": 0.6,
+        "total": 1.1,
+        "petrol_2013": 0.6,
+        "diesel_2013": 0.7,
+        "change_pct": -16,
+        "share_pct": 5
+      },
+      {
+        "code": "LP",
+        "name": "Limpopo",
+        "coastal": false,
+        "petrol": 0.3,
+        "diesel": 0.2,
+        "total": 0.5,
+        "petrol_2013": 0.4,
+        "diesel_2013": 0.4,
+        "change_pct": -40,
+        "share_pct": 2
+      },
+      {
+        "code": "NC",
+        "name": "Northern Cape",
+        "coastal": false,
+        "petrol": 0.1,
+        "diesel": 0.4,
+        "total": 0.5,
+        "petrol_2013": 0.1,
+        "diesel_2013": 0.5,
+        "change_pct": -23,
+        "share_pct": 2
+      }
+    ],
+    "coastal_total": 10.0,
+    "inland_total": 12.0,
+    "petrol_fell_in": 9,
+    "province_count": 9,
+    "estimate_year": "2023",
+    "estimate_status": "estimated",
+    "estimate_error_points": {
+      "petrol": 2.5,
+      "diesel": 5.3
+    },
+    "source": "provincial_petrol_diesel_2013_2024_2026-10-06.csv (DR01)"
+  },
+  "sector_use": {
+    "balance_year": "2021",
+    "model_year": "2024",
+    "sectors": [
+      {
+        "key": "road",
+        "label": "Road transport",
+        "balance": 15.1,
+        "model": 16.4,
+        "reported": null
+      },
+      {
+        "key": "industry",
+        "label": "Mining and industry",
+        "balance": 1.6,
+        "model": 1.5,
+        "reported": null,
+        "note": "mining 1.3 of balance"
+      },
+      {
+        "key": "agriculture",
+        "label": "Agriculture",
+        "balance": 1.2,
+        "model": 1.1,
+        "reported": null
+      },
+      {
+        "key": "power",
+        "label": "Power generation",
+        "balance": null,
+        "model": 3.6,
+        "reported": {
+          "2023": 1.3,
+          "2024": 1.6,
+          "2025": 0.9
+        }
+      },
+      {
+        "key": "other",
+        "label": "Other and marine",
+        "balance": 5.3,
+        "model": 0.8,
+        "reported": null
+      }
+    ],
+    "balance_total": 23.2,
+    "model_total": 23.4,
+    "source": "energy balance 2021; sector_baselines_2026-10-07.csv (model, high demand, 2024); DR07 (Eskom reported, independent estimated)"
+  },
+  "levers": {
+    "period": "2035",
+    "groups": [
+      {
+        "group": "Economic activity",
+        "levers": [
+          {
+            "label": "GDP growth",
+            "fuels": [
+              {
+                "fuel": "petrol",
+                "unit": "percent_per_year",
+                "baseline": "0.5",
+                "cases_2035": [
+                  "0.7",
+                  "1.6",
+                  "2"
+                ],
+                "changed": 3,
+                "proposed_2035": [
+                  "1",
+                  "2",
+                  "3"
+                ]
+              }
+            ]
+          },
+          {
+            "label": "Road freight activity",
+            "fuels": [
+              {
+                "fuel": "diesel",
+                "unit": "index_2024_100",
+                "baseline": "100",
+                "cases_2035": [
+                  "95",
+                  "135",
+                  "150"
+                ],
+                "changed": 1,
+                "proposed_2035": [
+                  "95",
+                  "135",
+                  "175"
+                ]
+              }
+            ]
+          },
+          {
+            "label": "Real fuel price",
+            "fuels": [
+              {
+                "fuel": "petrol",
+                "unit": "index_2024_100",
+                "baseline": "100",
+                "cases_2035": [
+                  "80",
+                  "100",
+                  "120"
+                ],
+                "changed": 0,
+                "proposed_2035": [
+                  "",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "fuel": "diesel",
+                "unit": "index_2024_100",
+                "baseline": "100",
+                "cases_2035": [
+                  "80",
+                  "100",
+                  "140"
+                ],
+                "changed": 0,
+                "proposed_2035": [
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Vehicle fleet",
+        "levers": [
+          {
+            "label": "Battery EV share of new sales",
+            "fuels": [
+              {
+                "fuel": "petrol",
+                "unit": "percent",
+                "baseline": "0.2",
+                "cases_2035": [
+                  "2",
+                  "15",
+                  "40"
+                ],
+                "changed": 3,
+                "proposed_2035": [
+                  "15",
+                  "35",
+                  "60"
+                ]
+              }
+            ]
+          },
+          {
+            "label": "New-vehicle efficiency",
+            "fuels": [
+              {
+                "fuel": "petrol",
+                "unit": "percent_per_year",
+                "baseline": "1.0 to 1.5",
+                "cases_2035": [
+                  "1",
+                  "1.25",
+                  "1.5"
+                ],
+                "changed": 0,
+                "proposed_2035": [
+                  "1",
+                  "1.25",
+                  "1.5"
+                ]
+              },
+              {
+                "fuel": "diesel",
+                "unit": "percent_per_year",
+                "baseline": "0.5 to 1.0",
+                "cases_2035": [
+                  "0.5",
+                  "0.75",
+                  "1"
+                ],
+                "changed": 0,
+                "proposed_2035": [
+                  "0.5",
+                  "0.75",
+                  "1"
+                ]
+              }
+            ]
+          },
+          {
+            "label": "Hybrid share of new sales",
+            "fuels": [
+              {
+                "fuel": "petrol",
+                "unit": "percent",
+                "baseline": "2.1",
+                "cases_2035": [
+                  "2.1",
+                  "6.7",
+                  "11.3"
+                ],
+                "changed": 0,
+                "proposed_2035": [
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Freight and rail",
+        "levers": [
+          {
+            "label": "Road freight moved to rail",
+            "fuels": [
+              {
+                "fuel": "diesel",
+                "unit": "percent",
+                "baseline": "0",
+                "cases_2035": [
+                  "0",
+                  "7",
+                  "13"
+                ],
+                "changed": 2,
+                "proposed_2035": [
+                  "0",
+                  "20",
+                  "35"
+                ]
+              }
+            ]
+          },
+          {
+            "label": "Electric share of new trucks",
+            "fuels": [
+              {
+                "fuel": "diesel",
+                "unit": "percent",
+                "baseline": "not reported",
+                "cases_2035": [
+                  "0",
+                  "3",
+                  "9"
+                ],
+                "changed": 0,
+                "proposed_2035": [
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            ]
+          },
+          {
+            "label": "Rail passenger journeys",
+            "fuels": [
+              {
+                "fuel": "petrol",
+                "unit": "million_per_year",
+                "baseline": "74",
+                "cases_2035": [
+                  "100",
+                  "250",
+                  "320"
+                ],
+                "changed": 0,
+                "proposed_2035": [
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Power",
+        "levers": [
+          {
+            "label": "Diesel turbine output",
+            "fuels": [
+              {
+                "fuel": "diesel",
+                "unit": "index_FY2024_100",
+                "baseline": "100",
+                "cases_2035": [
+                  "5",
+                  "15",
+                  "50"
+                ],
+                "changed": 0,
+                "proposed_2035": [
+                  "5",
+                  "15",
+                  "50"
+                ]
+              }
+            ]
+          },
+          {
+            "label": "Private backup generation",
+            "fuels": [
+              {
+                "fuel": "diesel",
+                "unit": "bn_litres_per_year",
+                "baseline": "not measured",
+                "cases_2035": [
+                  "0",
+                  "0",
+                  "0.5"
+                ],
+                "changed": 0,
+                "proposed_2035": [
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "analyst proposal, not accepted",
+    "source": "fuel_lever_response_2026-10-07.csv (Manish)"
+  }
+}
