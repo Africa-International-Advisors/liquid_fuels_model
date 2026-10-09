@@ -141,10 +141,11 @@ def build(d: dict) -> list[dict]:
         " ".join(p["note"] for p in coal_out))
     for p in points["gas_plant_project"]:
         add("Power generation", "New gas plant, by project", p["subject"], p["value"], "", p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
-    add("Power generation", "New gas plant: firm commissioning date for any project", "Independent producers and Eskom", "", "", "", "not available",
-        "None exists", "", "",
-        "No project has a preferred bidder, financial close or construction start. The nearest thing to a date is Eskom's plan to produce from 2031. "
-        "The Integrated Resource Plan schedules Eskom for 2029 and independent producers for 2030. No published source dates ACWA Power or an Avon conversion.")
+    plan = [p for p in points["gas_plant_project"] if p["subject"].startswith("Integrated Resource Plan 2025") and p["period"].isdigit()]
+    add("Power generation", "New gas plant: dates in use", "; ".join(p["subject"].split(": ")[1] for p in plan), "; ".join(p["period"] for p in plan), "year",
+        "", "observed", plan[0]["source"], plan[0]["original_file"], "PDF p.41, Table 1",
+        "The plan's schedule, used on Manish's instruction of 9 October (decision D24). No project has a preferred bidder, financial close or construction start, "
+        "and Eskom itself says 2031, so these are the earliest dates.")
 
     # --- vehicle fleet --------------------------------------------------------
     month = d["natis_month"]

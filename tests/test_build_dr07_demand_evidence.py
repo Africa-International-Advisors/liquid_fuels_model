@@ -39,10 +39,11 @@ def test_the_eight_gaps_searched_on_8_october_are_filled_where_a_source_exists()
     assert rows["Ceiling on backup generator diesel"]["status"] == "inferred"
     still_missing = {r["item"] for r in rows.values() if r["status"] == "not available"}
     assert still_missing == {
-        "Diesel burned in private backup generators", "New gas plant: firm commissioning date for any project",
+        "Diesel burned in private backup generators",
         "Vehicles by fuel within each class", "Vehicles by year of age", "Electric trucks and electric light commercial vehicles sold",
         "Fuel use of trucks, by year", "Road freight in tonne-kilometres, by year"}
     assert rows["Fuel use of new light vehicles: figure in use"]["value"] == "7.4"
+    assert (rows["New gas plant: dates in use"]["value"], rows["New gas plant: dates in use"]["asset_or_route"]) == ("2029; 2030", "Eskom gas; independent producers' gas")
     shutdowns = [r for r in dr07.build(dr07.load(VINTAGE)) if r["item"] == "Coal station shutdown"]
     assert {r["asset_or_route"] for r in shutdowns} >= {"Komati", "Duvha", "Matla", "Camden, Hendrina, Grootvlei, Arnot and Kriel"}
     assert all("Eskom" in r["source"] or "System operator" in r["source"] for r in shutdowns)

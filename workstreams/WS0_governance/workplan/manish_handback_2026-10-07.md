@@ -8,7 +8,7 @@ Read first:
 
 - Deck: `pptx/output/delivered/supporting/Vopak_Manish_Handback_2026_10_07.pptx`
   (PDF alongside), one section per priority.
-- Decision log: `manish_decision_log_2026-10-07.csv`, 23 decisions with the
+- Decision log: `manish_decision_log_2026-10-07.csv`, 24 decisions with the
   evidence, my proposal, the owner and a status.
 - Workbook: `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`,
   your workshop workbook with the sourced history added.
@@ -108,11 +108,12 @@ efficiency and rail; note `dr07_demand_evidence_2026-10-08.md`.
 Not available from any source:
 
 - Diesel burned in private backup generators
-- New gas plant: firm commissioning date for any project. Found on 9 October: Eskom plans to produce at Richards Bay
+- New gas plant: no project has a firm date, so the Integrated Resource Plan's dates are used (decision D24): Eskom
+  2029, independent producers 2030. Found on 9 October: Eskom plans to produce at Richards Bay
   from 2031; four bids of 29 May 2026 (FlexED 440 MW, Acwa 990 MW, Kelvin 600 MW, Komatipoort
   Power/Vutomi 800 MW) with no preferred bidder yet; a new 5,000 MW determination on 7 October 2026. The
   Integrated Resource Plan 2025 schedules Eskom's 3,000 MW for 2029 and the independent 3,000 MW for 2030. The AIA
-  timeline chart has the independent projects in 2030 and Eskom in 2032. These dates do not agree; yours to choose
+  timeline chart has the independent projects in 2030 and Eskom in 2032. These dates do not agree; yours to confirm
 - Vehicles by fuel within each class
 - Vehicles by year of age
 - Electric trucks and electric light commercial vehicles sold
@@ -138,7 +139,10 @@ Not available:
 - Petrol and diesel output for Secunda and Astron Energy
 - Petrol and diesel produced after 2021 on the department's basis
 - Yield for Astron Energy
-- Output as a share of capacity (Astron Energy)
+
+Searched again on 9 October (Sasol's annual filing and Secunda site-visit pack, Astron's and Glencore's sites): no
+petrol and diesel split for Secunda or Astron. Astron's utilisation is now estimated at about 78% in 2024 and 2025
+from Glencore's energy figure; its chief executive says the refinery runs at full capacity.
 
 ## Power generation fleet (your message of 7 October)
 

@@ -4,7 +4,7 @@ For Nigel's review. Answers request DR08: for each refinery, PetroSA included,
 its capacity, output, yields, utilisation, feedstock and closure or restart
 dates. Petrol and diesel only.
 
-Status: **40 facts read from sources, 8 calculated, 4 not available.**
+Status: **43 facts read from sources, 9 calculated, 3 not available.**
 
 **Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
 
@@ -102,6 +102,10 @@ Nigel: whether to use it at all.
   years to June 2020 to 2026; Natref 67, 71, 75, 69, 71, 59% for 2020 to 2025. Capacity is
   crude equivalent and output is refined product, so these understate how hard
   the plants run.
+- **Astron, estimated:** 65, 78 and 78% for 2023, 2024 and 2025. Glencore's energy
+  figure is turned into barrels of oil equivalent at 5.8 million Btu a barrel and
+  set against 100,000 barrels a day. No throughput in barrels is published. The
+  chief executive says the refinery runs at full capacity (2025).
 
 ## Outlook
 
@@ -114,6 +118,12 @@ Nigel: whether to use it at all.
 The first phase at Sapref is an import terminal in Durban, which would compete
 with existing terminals there. That bears directly on Vopak.
 
+## Second search, 9 October
+
+Checked for a petrol and diesel split by plant: Sasol's annual filing (Form 20-F, June 2025), Sasol's Secunda
+site-visit pack, Astron's site and Glencore's oil page. None gives one. The site-visit pack puts Secunda at about
+160,000 barrels of oil equivalent a day, about 60% fuels and 40% chemicals.
+
 ## Not available
 
 | What | Why |
@@ -121,7 +131,6 @@ with existing terminals there. That bears directly on Vopak.
 | Petrol and diesel output, Secunda and Astron Energy | Sasol states Secunda's split but not the total it applies to. Glencore publishes no split. Needs the operators, through Nigel. |
 | Petrol and diesel produced after 2021, on the department's basis | The department has published no balance after 2021. The United Nations series does not match it. |
 | Yield, Astron Energy | Nothing found. No plant publishes a split by year. |
-| Output as a share of capacity, Astron Energy | Glencore reports energy content, not barrels, and no throughput in barrels was found. |
 
 ## Checks
 

@@ -3,7 +3,7 @@
 For Nigel's review. Answers request DR07: the evidence that calibrates the
 demand levers. Petrol and diesel only.
 
-Status: **55 facts read from sources, 10 calculated, 7 not available.**
+Status: **56 facts read from sources, 10 calculated, 6 not available.**
 
 **Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
 
@@ -144,6 +144,10 @@ The programme allows more than a year to financial close and then 36 months to b
 plant from this round runs before about 2031 (my reading, not a published date). The system operator's outlook
 assumes 6 GW of gas in 2030; nothing found supports that date.
 
+**Dates in use: the Integrated Resource Plan's.** Eskom's 3,000 MW in 2029 and the independent producers' 3,000 MW in
+2030, on Manish's instruction of 9 October (decision D24). They are the plan's schedule and the earliest dates on
+offer: no project has a preferred bidder, financial close or construction start.
+
 **Three sets of dates, which do not agree:**
 
 | | Eskom 3,000 MW | Independent producers |
@@ -165,7 +169,6 @@ bid list (the chart shows 450).
 | What | Why |
 |---|---|
 | Diesel burned in private backup generators | No source measures it: checked the Reserve Bank, the CSIR, Eskom and the system operator. It is inside recorded diesel sales and cannot be separated. |
-| New gas plant: firm commissioning date for any project | No project has a preferred bidder, financial close or construction start. See the gas plant table above. |
 | Vehicles by fuel within each class | The bulletin splits fuel by province and the register splits class by province; nothing published crosses fuel with class. |
 | Vehicles by year of age | Lightstone holds the age profile and sells it; the register does not publish it. Only apparent retirements can be calculated. |
 | Electric trucks and electric light commercial vehicles sold | naamsa reports electric sales by drivetrain, not by segment (checked its fourth-quarter 2025 review). Benchmarks from other countries are on the HML response sheet. |
