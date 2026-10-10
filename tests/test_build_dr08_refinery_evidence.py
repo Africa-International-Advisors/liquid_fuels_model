@@ -26,6 +26,7 @@ def test_capacity_output_and_utilisation_follow_the_sources():
     use = dr08.utilisation(d)
     assert use[("Secunda", 2026)] == pytest.approx(30.6e6 / (150000 * 365))
     assert use[("Natref", 2024)] == pytest.approx(17.8e6 / 0.6364 / (108000 * 366))
+    assert dr08.astron_utilisation(d)[2025] == pytest.approx(164365e9 / 5.8e6 / (100000 * 365))      # Glencore energy content as barrels of oil equivalent
     assert ("Natref", 2026) not in use                                    # that year's figure includes output above Sasol's share
     rows = {(r["item"], r["asset_or_route"]): r for r in dr08.build(d)}
     assert rows[("Diesel produced, all plants", "South Africa")]["value"].endswith("6.45; 5.31")

@@ -65,6 +65,30 @@
       "url": "https://data.un.org/ws/rest/data/UNSD,DF_UNDATA_ENERGY/all?startPeriod=2019&endPeriod=2024&dimensionAtObservation=AllDimensions",
       "bytes": 24034,
       "sha256": "efffda68a4c480623df65d0c89ec4bc5a0f7ee20c4de38ef41c218b60ee82964"
+    },
+    {
+      "file": "sasol-secunda-operations-site-visit.pdf",
+      "publisher": "Sasol Limited",
+      "published": "copyright 2023; posted 2025-12",
+      "url": "https://sasol.com/sites/default/files/2025-12/Secunda%20Site%20visit_Secunda%20Operations%20site%20tour.pdf",
+      "bytes": 1139780,
+      "sha256": "d678156793670d4754ef875156647e620cb744a7bbaff3d2b0221e753b1c24f9"
+    },
+    {
+      "file": "engineeringnews-astron-refinery-2025.html",
+      "publisher": "Engineering News (Creamer Media), company-supplied article",
+      "published": "2025",
+      "url": "https://www.engineeringnews.co.za/article/why-astron-energy-refinery-is-critical-to-sa-economy-2025-01-23",
+      "bytes": 260788,
+      "sha256": "cde798d3733fb154726cd2d9f6ab321e01c7e2fa758f59d388c5528882ef7fc1"
+    },
+    {
+      "file": "astron-energy-about-us-page.html",
+      "publisher": "Astron Energy",
+      "published": "retrieved 2026-10-09",
+      "url": "https://www.astronenergy.co.za/about-us/",
+      "bytes": 117936,
+      "sha256": "a8e5451c5a70eccb538b494d403f6ad02111b08ee8478a15e9e7035f599f28d3"
     }
   ],
   "held_elsewhere": [
@@ -76,6 +100,7 @@
   "notes": [
     "The Shell page is the copy served to search crawlers; the ordinary page loads its text by script.",
     "The United Nations file keeps South Africa's rows (area 710) for motor gasoline (4652) and gas oil/diesel (4670) from the full download.",
-    "Sasol's metrics for the year to June 2024 were added to external/data/raw/sasol/ (https://www.sasol.com/sites/default/files/2024-07/Production%20and%20sales%20metrics%20for%20the%20year%20ended%2030%20June%202024.pdf)."
+    "Sasol's metrics for the year to June 2024 were added to external/data/raw/sasol/ (https://www.sasol.com/sites/default/files/2024-07/Production%20and%20sales%20metrics%20for%20the%20year%20ended%2030%20June%202024.pdf).",
+    "Checked on 9 October and not kept, because they give no petrol and diesel split: Sasol Form 20-F for the year to June 2025 (https://www.sasol.com/sites/default/files/2025-08/Sasol%20Form20-F_0.pdf) and Glencore's oil page."
   ]
 }

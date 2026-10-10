@@ -7,13 +7,13 @@ same destinations. **Petrol and diesel only.**
 
 Status: **the Durban to Gauteng pipeline route and the entry points are
 documented, and the regulated cost of transport is known for every pricing
-zone. Commercial road and rail rates are not published.** 32 facts are read
-from original documents or registered inputs, 3 are calculated, and 6 lines
-are open.
+zone. Fuel tanker road and rail rates are not published.** 64 facts are read
+from original documents or registered inputs, 6 are calculated, and 7 lines
+are open. Each row holds one data point.
 
-**Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
+**Where to look:** the data requests workbook `output/delivered/Master_data_book.xlsx`.
 
-- Sheet **DR04 routes**: every fact, grouped, with status, source, page and
+- Sheet **DR04 routes and access**: every fact, grouped, with status, source, page and
   open gap. Open lines are yellow.
 - Sheet **DR04 entry points**: petrol and diesel imports by customs office,
   2014 to 2025, in billion litres.
@@ -27,7 +27,7 @@ addresses and checksums) and `external/data/raw/vopak_storage_20261006/`.
 ## Petrol and diesel only
 
 The tables show only facts about petrol and diesel, or about the route itself
-(a pipeline's capacity, a tariff, a site's connections). 26 facts that mix
+(a pipeline's capacity, a tariff, a site's connections). 27 facts that mix
 in other products are kept in the evidence file, marked "other products
 included", and are not shown: the port authority's liquid bulk tonnage (all
 liquids, crude and chemicals included), Transnet's pipeline volumes (crude and
@@ -158,6 +158,66 @@ petrol and diesel landed at Durban cannot go inland by pipeline and must be
 used on the coast or move by road or rail. The capacity figure is from 2020,
 so this is a lead to check, not a conclusion.
 
+## Added on 9 October: the regulated transport cost to Gauteng by year
+
+The department's yearly price tables give the transport cost in the Gauteng price month by month from January
+2012 to April 2024. Cents a litre, as it stood at the end of each year (it is reset each April):
+
+| 2012 | 2013 | 2014 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | April 2024 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 26.8 | 28.9 | 33.1 | 35.3 | 41.0 | 41.5 | 51.7 | 57.4 | 63.7 | 64.9 | 64.9 | 75.7 | 75.7 |
+
+Diesel table shown; the petrol table is the same except 2014 (28.9 all year) and December 2022 (67.9). It almost
+trebled in eleven years. Staged as `reference/transport_cost_gauteng_department.csv` by
+`python -m lfm.scripts.stage_fuel_price_margins --vintage 2026 --fetch`.
+
+Two cautions. The April 2024 table shows 75.7 while the zone list of the same month shows 82.8; both are kept and
+the difference is not explained. Eight months are unreadable in the department's tables and are left out.
+
+## Added on 9 October: a second search of official sources
+
+Sources: Parliament's committee report on Island View (11 March 2026), NERSA's licence decisions, Transnet's rail
+tariff proposal, Stats SA's land transport survey and Galp.
+
+| Gap | What was found | Source |
+|---|---|---|
+| Road and rail rates | No fuel rate. Transnet's own comparison for containers: road 1.23 and rail 0.43 rand per net tonne-kilometre (2025). Track access for tankers: 30 rand per train-kilometre plus 6.96 cents per gross tonne-kilometre | Transnet Rail Infrastructure Manager, Tariff Proposal 2025/26 |
+| Road and rail rates | Average income per tonne carried, all goods: road 205 and rail 272 rand in 2025 | Stats SA, Land transport survey |
+| Island View | 10 berths, 10 operators (Vopak included). No capacity figure for petrol and diesel | Parliament |
+| Pipeline use | About 70% of capacity, all products | Minister of Transport to Parliament |
+| Direct injection | The former Sapref site and Sasol both inject straight into the pipeline. Vopak says it works with Transnet on pipeline evacuation but does not say how it connects | NERSA; Parliament |
+| Island View leases | All ten leases to be renewed for 25 years, with third-party access and more pipeline use required | Parliament |
+| Matola storage | One terminal: 40,000 m3 diesel and 20,000 m3 petrol | Galp |
+
+None of these is a fuel tanker rate, so the delivered-cost comparison is still not built.
+
+## Added on 9 October: the trunk line today, and the open lines of Nigel's task 5
+
+**Trunk line capacity and use (task 6).** Transnet's Pipelines Report 2024 (KPI table, PDF p.5) still gives the
+multi-product pipeline a capacity of 148 million litres a week, the 2020 figure, and reports use against it:
+
+| Year to March | 2021 | 2022 | 2023 | 2024 | 2025 target |
+|---|---|---|---|---|---|
+| Use, million litres a week | 81 | 91 | 87 | 97 | 104 |
+
+So the line was about two thirds full in the year to March 2024: 5.0 billion litres a year against a capacity of 7.7.
+No later report was found.
+
+**Task 5, line by line.**
+
+| Open line | Result | Source, or where I looked |
+|---|---|---|
+| Petrol and diesel on the trunk line | Not split by product. All refined products on the line: 5.0 billion litres (year to March 2024). Petrol and diesel on every Transnet line: 9.5 billion litres | Transnet Pipelines Report 2024, PDF p.5 |
+| NERSA's reasons for decision; tariffs beyond Durban to Alrode | Not available | NERSA's decisions pages (petroleum pipelines, tariff decisions), its 2024/25 annual report and the 15 April 2025 statement. Only Durban to Alrode is quoted |
+| Zone differentials after April 2024 | Gauteng only: 87.1 cents a litre from June 2025 and 91.1 from April 2026. The full zone list after April 2024 was not found | Central Energy Fund price releases, p.3 |
+| The gap between tariff and regulated differential | About 14 cents a litre in each of 2024/25, 2025/26 and 2026/27 (82.8, 87.1, 91.1 against 67.99, 73.22, 77.02). What it pays for is not itemised anywhere found | Department price tables and the releases above. The 2025 release shows differentials are rebuilt from the pipeline tariff to each zone's supply point |
+| Matched delivered cost to the same destination | Not available. Pipeline: 77.02 (tariff) or 91.1 (allowance). No fuel tanker or rail rate is published | Transnet's tariff proposal, Stats SA, NERSA, Parliament |
+
+**What the pipeline tariff covers (call of 9 October).** NERSA sets one set of tariffs for Transnet's whole licensed
+petroleum pipelines system. The department uses the Durban to Alrode tariff as its proxy for moving fuel from Durban to
+Johannesburg. The statement does not say which products or line each route tariff applies to; that detail is in the
+reasons for decision, which are not online. Nigel to validate next week, as agreed.
+
 ## Open, by owner
 
 | Gap | Owner | What would close it |
@@ -166,11 +226,11 @@ so this is a lead to check, not a conclusion.
 | Pipeline tariff on routes other than Durban to Alrode; NERSA's own statements | Manish | NERSA's reasons for decision; not located |
 | What makes up the 10 to 11 cents between the tariff and the regulated price difference | Manish | The department's price structure by zone |
 | Petrol and diesel through each port, by terminal | Nigel to coordinate | The port authority's statistics are all liquids in tons; a product split needs the authority or terminal operators |
-| Island View capacity and tankage for petrol and diesel | Nigel to coordinate | Port authority or Vopak; the brochure is not on the authority's site |
-| Commercial road tanker and rail rates, Durban to Gauteng and Matola to Gauteng | Nigel to coordinate | Vopak, a haulier or Transnet Freight Rail; none is published. The regulated differentials are the stand-in until then |
+| Island View capacity and tankage for petrol and diesel | Nigel to coordinate | Port authority or Vopak; Parliament's report gives berths and operators only |
+| Fuel tanker road and rail rates, Durban to Gauteng and Matola to Gauteng | Nigel to coordinate | Vopak, a haulier or Transnet Freight Rail; only container and all-goods figures are published |
 | Zone differentials after April 2024, and which mode serves each zone | Manish | The department's current zone schedule; its site did not respond on 8 October |
-| Whether Vopak Durban can inject into the trunk line directly | Nigel to coordinate | Vopak operations |
-| Petrol and diesel storage at Matola; fuel that Maputo and Walvis Bay supply to neighbours | Manish | Not found for petrol and diesel alone |
+| How Vopak Durban connects to the trunk line (own lines or through a neighbour) | Nigel to coordinate | Vopak operations; two neighbours inject directly |
+| Fuel that Maputo and Walvis Bay supply to neighbours | Manish | Not found for petrol and diesel alone. Matola terminals other than Galp's are not pursued (Manish, 9 October) |
 | Inland supply from Natref and Secunda | Manish | DR08 |
 | Matched delivered cost to the same destination | Manish, once the above are in | Same product, date, destination and tax basis for each route |
 

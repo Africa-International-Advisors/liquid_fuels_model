@@ -161,6 +161,46 @@
       "url": "https://www.moneyweb.co.za/news/south-africa/south-african-suppliers-truck-fuel-as-pipeline-fees-spike/",
       "bytes": 372838,
       "sha256": "157be0220b6dad3f4b3d6393c1df59c475db911c6da92ffc944be02249540b82"
+    },
+    {
+      "file": "pmg-island-view-committee-report-2026-03-11.html",
+      "publisher": "Parliament of South Africa (Parliamentary Monitoring Group copy)",
+      "published": "2026-03-11",
+      "url": "https://pmg.org.za/tabled-committee-report/6507/",
+      "bytes": 200573,
+      "sha256": "36148147f6f7c37f92536261d8543403baf43c0154e754615441b61e7e8226a5"
+    },
+    {
+      "file": "nersa-sapref-island-view-licence-amendment-2025-06-30.pdf",
+      "publisher": "National Energy Regulator of South Africa",
+      "published": "2025-07-09",
+      "url": "https://www.nersa.org.za/files/files/2025/08/250731Non-ConfidentialDRfD-bpSAShellEnergySaprefOpLicAM2.pdf",
+      "bytes": 460838,
+      "sha256": "5d080aa61ae9165b896baebacc7f8832324912dbfedb6f787c6cc944dd9204cb"
+    },
+    {
+      "file": "transnet-rail-infrastructure-manager-tariff-proposal-2025-26.pdf",
+      "publisher": "Transnet Rail Infrastructure Manager",
+      "published": "2025",
+      "url": "https://www.transnet.net/getFile.ashx?id=5251",
+      "bytes": 767484,
+      "sha256": "f7fb8b50dd5b66930c8bbc3a836bae4c07335c1dfc2d61fb09ec60727a7d514e"
+    },
+    {
+      "file": "galp-mozambique-logistics-page.html",
+      "publisher": "Galp",
+      "published": "retrieved 2026-10-09",
+      "url": "https://www.galp.com/mz/en/node/115",
+      "bytes": 105720,
+      "sha256": "2f073d5dd91b8cfc1178bd644a732bd570c88538e5d5ac4e24b0b1bb60ded2c9"
+    },
+    {
+      "file": "cef-press-release-2025-05-30-prices-from-2025-06-04.pdf",
+      "publisher": "Central Energy Fund",
+      "published": "2025-05-30",
+      "url": "https://cefgroup.co.za/wp-content/uploads/2025/06/Press-Release-30-May-2025-Change-04-June-2025.pdf",
+      "bytes": 85457,
+      "sha256": "c1776bfe5dbe6916a352604b01c6ec4d8ffec0b5febe5ff29b506e5a23db834d"
     }
   ],
   "not_obtained": [

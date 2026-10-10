@@ -304,10 +304,11 @@ try {
         $inlandDemand = Add-Box $slide 'Inland demand' 'Inland demand' "Gauteng and interior`rSix inland provinces" 342 $rowTop[2] 120 $rowHeight $fontSize
         $supplyParameters = Add-Box $slide 'Supply and route parameters' 'Supply and route parameters' "Refinery closures, restarts, gas`rDelivered cost, routes, contracts`rPort, pipeline, rail capacity" 210 $rowTop[3] 252 $rowHeight $fontSize
 
-        $marketSizing = Add-Box $slide 'Market sizing' 'Market sizing' "Accessible coastal and inland demand`rShared flows counted once" 486 $rowTop[0] 225 $rowHeight $fontSize
-        $durban = Add-Box $slide 'Durban opportunity' 'Durban market' "Coastal catchment`rShip receipt" 486 $rowTop[1] 108 $rowHeight $fontSize
-        $lesedi = Add-Box $slide 'Lesedi opportunity' 'Lesedi market' "Inland catchment`rPipeline receipt" 603 $rowTop[1] 108 $rowHeight $fontSize
-        $share = Add-Box $slide 'Share' 'Market share' "Client throughput / site market`rBy site and product" 486 $rowTop[2] 225 $rowHeight $fontSize
+        $sites = $volumes.site_markets
+        $marketSizing = Add-Box $slide 'Market sizing' 'Market sizing' ("Coastal {0:0.0}B L, inland-bound {1:0.0}B L`rShared flows counted once" -f $sites.durban_coastal, $sites.inland_bound) 486 $rowTop[0] 225 $rowHeight $fontSize
+        $durban = Add-Box $slide 'Durban opportunity' 'Durban market' ("Coastal {0:0.0}B L`rAll landed {1:0.0}B L" -f $sites.durban_coastal, $sites.durban_landed) 486 $rowTop[1] 108 $rowHeight $fontSize
+        $lesedi = Add-Box $slide 'Lesedi opportunity' 'Lesedi market' ("Gauteng {0:0.0}B L`rVia Durban {1:0.0}B L" -f $sites.lesedi_gauteng, $sites.inland_bound) 603 $rowTop[1] 108 $rowHeight $fontSize
+        $share = Add-Box $slide 'Share' 'Market share' ("Tanks allow at 2 turns a month:`rDurban {0:0.0}B L, Lesedi {1:0.0}B L" -f $sites.durban_tanks_allow, $sites.lesedi_tanks_allow) 486 $rowTop[2] 225 $rowHeight $fontSize
         $headroom = Add-Box $slide 'Headroom' 'Headroom' "Site market less current capture`rShared Durban-Lesedi flows once" 486 $rowTop[3] 225 $rowHeight $fontSize
 
         $capture = Add-Box $slide 'Additional capture' 'Additional capture' "Customers, contracts`rCompetition" 735 $rowTop[0] 140 $rowHeight $fontSize
@@ -330,10 +331,10 @@ try {
         [void](Add-Tag $slide $inland 'Capacity ~7.7B L/yr')
         [void](Add-Tag $slide $coastal (Format-Volume $volumes.coastal_demand 'proxy'))
         [void](Add-Tag $slide $inlandDemand (Format-Volume $volumes.inland_demand 'proxy'))
-        [void](Add-Tag $slide $marketSizing 'Pending · DR02/05, method')
-        [void](Add-Tag $slide $durban 'Pending · DR02/05')
-        [void](Add-Tag $slide $lesedi 'Pending · DR02/05')
-        [void](Add-Tag $slide $share 'Pending · DR02/05')
+        [void](Add-Tag $slide $marketSizing ('{0} · {1:0.0}B L · estimate' -f $sites.year, $sites.combined))
+        [void](Add-Tag $slide $durban ('{0:0.0} to {1:0.0}B L' -f $sites.durban_coastal, $sites.durban_landed))
+        [void](Add-Tag $slide $lesedi ('{0:0.0} to {1:0.0}B L' -f $sites.lesedi_gauteng, $sites.lesedi_inland))
+        [void](Add-Tag $slide $share 'Ceiling, not share · DR02/05')
         [void](Add-Tag $slide $headroom 'Pending · DR02/05')
         [void](Add-Tag $slide $capture 'Pending · DR02/05')
         [void](Add-Tag $slide $capacity 'Pending · DR03')

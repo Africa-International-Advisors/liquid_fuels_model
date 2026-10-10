@@ -22,9 +22,9 @@ def test_committed_table_equals_a_fresh_build_and_every_fact_has_a_source():
 
 def test_efficiency_history_and_plant_dates_come_from_the_evidence_points():
     rows = {r["item"]: r for r in dr07.build(dr07.load(VINTAGE))}
-    assert rows["Fuel use of new light vehicles, by year"]["value"] == "8.8; 8.6; 7.8; 7.4"
+    assert rows["Fuel use of new light vehicles, by year"]["value"] == "8.8; 8.6; 8.6; 8.2; 7.9; 7.7; 7.8; 7.8; 7.4"   # every year published
     assert rows["Fuel use of new light vehicles: average change"]["value"] == "-1.3"
-    assert rows["Independent diesel plants: contract end"]["period"] == "August and September 2030"
+    assert rows["Independent diesel plants: contract end"]["period"] == "August or September 2030"   # one row for each plant
     assert rows["Freight carried by Transnet Freight Rail"]["value"].endswith("151.7; 160.1")
     assert rows["Extra rail freight if the target is met"]["value"] == "90"
 
@@ -36,15 +36,17 @@ def test_the_eight_gaps_searched_on_8_october_are_filled_where_a_source_exists()
     assert rows["Average age of vehicles"]["value"] == "10.5"
     assert rows["Diesel vehicles by province"]["value"].startswith("1,142,275")              # Gauteng
     assert rows["Fuel use of trucks, lightest to heaviest class"]["value"] == "17.3; 24.6; 44.9; 51.6"
-    assert rows["Ceiling on backup generator diesel"]["status"] == "inferred"
+    assert "Ceiling on backup generator diesel" not in rows                                  # the data is recorded as unavailable; no stand-in
     still_missing = {r["item"] for r in rows.values() if r["status"] == "not available"}
     assert still_missing == {
-        "Diesel burned in private backup generators", "New gas plant: firm commissioning date for any project",
-        "Vehicles by fuel within each class", "Vehicles by year of age", "Electric trucks and electric light commercial vehicles sold",
+        "Diesel burned in private backup generators",
+        "Vehicles by year of age", "Electric trucks and electric light commercial vehicles sold",
         "Fuel use of trucks, by year", "Road freight in tonne-kilometres, by year"}
     assert rows["Fuel use of new light vehicles: figure in use"]["value"] == "7.4"
+    assert (rows["New gas plant: dates in use"]["value"], rows["New gas plant: dates in use"]["asset_or_route"]) == ("2029; 2030", "Eskom gas; independent producers' gas")
     shutdowns = [r for r in dr07.build(dr07.load(VINTAGE)) if r["item"] == "Coal station shutdown"]
-    assert {r["asset_or_route"] for r in shutdowns} >= {"Komati", "Duvha", "Matla", "Camden, Hendrina, Grootvlei, Arnot and Kriel"}
+    assert {r["asset_or_route"] for r in shutdowns} >= {"Komati", "Duvha", "Matla", "Camden", "Hendrina", "Grootvlei", "Arnot", "Kriel"}
+    assert not any(" and " in r["asset_or_route"] and "," in r["asset_or_route"] for r in shutdowns)      # one station to a row
     assert all("Eskom" in r["source"] or "System operator" in r["source"] for r in shutdowns)
 
 

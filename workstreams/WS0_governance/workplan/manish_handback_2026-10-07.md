@@ -8,10 +8,74 @@ Read first:
 
 - Deck: `pptx/output/delivered/supporting/Vopak_Manish_Handback_2026_10_07.pptx`
   (PDF alongside), one section per priority.
-- Decision log: `manish_decision_log_2026-10-07.csv`, 23 decisions with the
+- Decision log: `manish_decision_log_2026-10-07.csv`, 25 decisions with the
   evidence, my proposal, the owner and a status.
 - Workbook: `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`,
   your workshop workbook with the sourced history added.
+
+## The master data book (9 October)
+
+`output/delivered/Master_data_book.xlsx` is now the master data book (decision D25): the one place to look for a sourced figure.
+The demand baseline workbook keeps the model history and analysis and takes no new sourced data. New data goes into the
+evidence tables and registered inputs, and the workbook is rebuilt from them; it is not edited by hand.
+
+## One workbook for the data requests (9 October)
+
+`output/delivered/Master_data_book.xlsx` holds DR01, DR04, DR07 and DR08 and nothing else: a contents page, one main sheet for each request with
+its detail tables beside it, sales by province for 2013 to 2023, and a sheet listing the 16 items that could not be found. Figures reported for several
+years are set out one column a year. The demand baseline workbook no longer carries these sheets.
+
+New on DR04: the regulated transport cost to Gauteng by year, 2012 to 2024, from the department's yearly price
+tables (26.8 cents a litre in 2012, 75.7 in 2023).
+
+## After the call of 9 October
+
+Done in the data requests workbook:
+
+- One row, one data point: each coal station, diesel plant, gas project, terminal operator and berth has its own row.
+- Duplicates removed: the power diesel, efficiency and rail, and refinery output sheets are gone; their figures are on
+  the main request sheets, with the full run of years.
+- Mining, manufacturing and agriculture brought in: sheet DR01 demand by sector (energy balances to 2021) and sheet DR01
+  sector activity (Stats SA activity to 2025, diesel per unit of activity, estimated diesel after 2021). The second reads
+  its diesel from the first by formula, so no figure is held twice.
+- Astron assumed at 50% petrol, 50% diesel. DR08 now opens with which plants are refining in 2026.
+- Jameson Park recorded as not one of Transnet's five storage sites out for proposal.
+
+Also done from the call:
+
+- **Framework page filled (task 1 of your next-steps note).** Durban's market is 4.3 to 13.2 billion litres a year and
+  Lesedi's 6.8 to 12.0; both sites counted once are 13.2. Method and limits:
+  `workstreams/WS2_model_development/market_sizing_durban_lesedi_2026-10-09.md`. The pack is rebuilt as
+  `pptx/output/delivered/supporting/09102026_Vopak_Market_Sizing_v*.pdf` (latest build time); I changed
+  `issue_tree_volumes.py` and four boxes of the builder to read the sizing file. Market share and headroom stay
+  pending the client's throughput.
+- **Pipeline map:** `output/delivered/geospatial/2026_10_09/nmpp_vopak_terminals.png`. The mapped line is 560 km and
+  both terminals sit at its ends. Site positions are approximate.
+- **Light commercial vehicles going electric:** a forecast of ours in three cases, on the DR07 sheet. Small to 2035.
+- **Vehicles by fuel within each class:** estimated and on the DR07 sheet.
+
+## Your seven tasks of 9 October: where each stands
+
+| # | Task | Status | Where |
+|---|---|---|---|
+| 1 | Market sizing for Durban and Lesedi | Done. Durban 4.3 to 13.2, Lesedi 6.8 to 12.0, both counted once 13.2 billion litres a year | `WS2_model_development/market_sizing_durban_lesedi_2026-10-09.md`; workbook sheet Market sizing |
+| 2 | Demand-by-use calibration | Proposal written, nothing changed. The power gap is the two placeholder stations; the balance's "other" is road fuel moved to another line from 2016 | `WS2_model_development/demand_by_use_calibration_2026-10-09.md` |
+| 3 | DR07 double-count check | Done. Nothing is counted twice today; two pairs will be if wired carelessly. One test added | `WS2_model_development/dr07_lever_double_count_check_2026-10-09.md` |
+| 4 | Figure check for the pack | Done. 24 figures recomputed from the inputs, all match | `python -m lfm.scripts.check_issue_tree_figures --vintage 2026`; `WS3_reporting_delivery/issue_tree_figure_check_2026-10-09.csv` |
+| 5 | DR04 open lines | Each closed or marked not available with where I looked | `WS1_data_validation/dr04_routes_access_2026-10-08.md`, section of 9 October |
+| 6 | Trunk-line capacity today | Found: still 148 million litres a week, and 97 used (year to March 2024) | Transnet Pipelines Report 2024, PDF p.5 |
+| 7 | 2021 energy balance imports against customs | Recorded as unexplained, with what the figures show | `WS1_data_validation/dr01_national_balance_2026-10-08.md`, last section |
+
+For you to decide from these: the baseline in task 2; whether to remove the two placeholder stations; and the two
+rules in task 3 before hybrids or rail are wired into the engine.
+
+Still to do:
+
+- The 3 billion litre question: imports were 16.7 billion litres in 2025; whether the rest of demand is domestic
+  production is a hypothesis to test, since neither sales nor production is published for that year.
+
+Secunda's litres by product are not in Sasol's annual statements; I checked the filing, the integrated report and the
+analyst book.
 
 ## Status against the five priorities
 
@@ -72,7 +136,8 @@ Workbook sheets: DR01 balance, Demand by use, DR04 routes, DR04 entry points, DR
 `workstreams/WS1_data_validation/dr01_national_balance_2026-10-08.md` and `dr04_routes_access_2026-10-08.md`.
 
 **DR01 National balance: data not available.** The work is done as far as the sources go. Three things are
-not published by anyone, so they cannot be filled in:
+not published by anyone, so they cannot be filled in. Confirmed on 9 October after a second search: these are
+recorded as not available and no further search is planned:
 
 - Production after 2021 (the department's last energy balance is 2021)
 - Sales for 2024 and 2025 (the department's sales data stops at 2023)
@@ -80,17 +145,17 @@ not published by anyone, so they cannot be filled in:
 
 **DR04 Routes and access: not done.**
 
-- Commercial road and rail rates: not published; needs Vopak, a haulier or Transnet
-- Island View capacity for petrol and diesel: needs the port authority or Vopak
-- Whether Vopak Durban can inject straight into the pipeline: needs Vopak
-- Pipeline tariffs on routes other than Durban to Johannesburg
-- Petrol and diesel storage at Matola
+- Fuel tanker road and rail rates: not published; needs Vopak, a haulier or Transnet. Found on 9 October: Transnet's
+  container comparison (road 1.23, rail 0.43 rand per net tonne-kilometre) and Stats SA's all-goods income per tonne
+- Island View capacity for petrol and diesel: needs the port authority or Vopak. Found: 10 berths, 10 operators
+- How Vopak Durban connects to the pipeline: needs Vopak. Found: the former Sapref site and Sasol inject directly
+- Pipeline tariffs on routes other than Durban to Johannesburg: not found online
 - The delivered-cost comparison itself, which depends on the rates above
 
 Pipeline capacity uses Transnet's 2020 figure: 148 million litres a week on the Durban to Jameson Park trunk
 line, about 7.7 bn litres a year.
 
-**DR07 Demand evidence.** Workbook sheets DR07 evidence, DR07 power diesel, DR07 fleet by province and DR07
+**DR07 Demand evidence.** Data requests workbook, sheets DR07 demand evidence, DR07 power diesel, DR07 fleet by province and DR07
 efficiency and rail; note `dr07_demand_evidence_2026-10-08.md`.
 
 - Eskom's reported turbine fuel is in: 0.94, 1.13 and 0.68 bn litres in the years to March 2023 to 2025. It
@@ -107,14 +172,19 @@ efficiency and rail; note `dr07_demand_evidence_2026-10-08.md`.
 Not available from any source:
 
 - Diesel burned in private backup generators
-- New gas plant: firm commissioning date for any project
+- New gas plant: no project has a firm date, so the Integrated Resource Plan's dates are used (decision D24): Eskom
+  2029, independent producers 2030. Found on 9 October: Eskom plans to produce at Richards Bay
+  from 2031; four bids of 29 May 2026 (FlexED 440 MW, Acwa 990 MW, Kelvin 600 MW, Komatipoort
+  Power/Vutomi 800 MW) with no preferred bidder yet; a new 5,000 MW determination on 7 October 2026. The
+  Integrated Resource Plan 2025 schedules Eskom's 3,000 MW for 2029 and the independent 3,000 MW for 2030. The AIA
+  timeline chart has the independent projects in 2030 and Eskom in 2032. These dates do not agree; yours to confirm
 - Vehicles by fuel within each class
 - Vehicles by year of age
 - Electric trucks and electric light commercial vehicles sold
 - Fuel use of trucks, by year
 - Road freight in tonne-kilometres, by year
 
-**DR08 Refinery supply.** Workbook sheets DR08 evidence and DR08 refinery output; note
+**DR08 Refinery supply.** Data requests workbook, sheets DR08 refinery supply and DR08 refinery output; note
 `dr08_refinery_evidence_2026-10-08.md`.
 
 - Three plants operate (Secunda, Natref, Astron): 358,000 barrels a day, half of the 718,000 published in 2021.
@@ -132,8 +202,10 @@ Not available:
 
 - Petrol and diesel output for Secunda and Astron Energy
 - Petrol and diesel produced after 2021 on the department's basis
-- Yield for Astron Energy
-- Output as a share of capacity (Astron Energy)
+
+Searched again on 9 October (Sasol's annual filing and Secunda site-visit pack, Astron's and Glencore's sites): no
+petrol and diesel split for Secunda or Astron. Astron's utilisation is now estimated at about 78% in 2024 and 2025
+from Glencore's energy figure; its chief executive says the refinery runs at full capacity.
 
 ## Power generation fleet (your message of 7 October)
 
@@ -180,6 +252,21 @@ Deck pages 11 and 12; workbook sheet Power fleet; input `assumptions/2026/infras
 | Secunda capacity 75 to 150 with utilisation halved (7 October) | None | unreviewed in the register |
 
 Nothing else on the branch changes model results.
+
+## GDP: proposed for you, not changed (9 October)
+
+The model still reads GDP from the Vopak/Reatile workbook (`timeseries/gdp.csv`, `gdp_per_capita.csv`,
+`gdp_growth.csv`). The Stats SA series is staged beside it (`timeseries/macro_statssa.csv`, P0441, 1993-2025) and
+is not read by the model. Proposal: point the model's GDP history at Stats SA. I have not made the change.
+
+- The two agree for 2005-2017 except 2007, where the model's figure is 5.1% below Stats SA: it repeats the 2006
+  value, which looks like a copy error.
+- 2018-2024 differ by up to 0.5% (Stats SA revisions since); 2025 is 0.8% below Stats SA.
+- Growth after 2025 (1.6% high, 1.0% low) is a separate assumption. Treasury forecasts 1.6%, 1.8% and 2.0% for
+  2026-2028 (`timeseries/gdp_growth_treasury.csv`); nothing official exists after 2028.
+- Yearly refresh: `python -m lfm.scripts.fetch_economy --vintage <year>`. Stats SA's site blocks scripted
+  downloads, so the P0441, P0441.2 and P0302 files are first saved by hand into `external/data/raw/statssa/`.
+  The World Bank and Treasury figures are fetched automatically.
 
 ## Checks
 

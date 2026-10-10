@@ -24,6 +24,7 @@ import sys
 from pathlib import Path
 
 from lfm.config import Paths
+from lfm.scripts import vehicle_inference as infer
 
 OUT = Path("workstreams/WS1_data_validation/dr07_demand_evidence_2026-10-08.csv")
 FIELDS = ["request", "part", "item", "asset_or_route", "value", "unit", "period", "status", "source", "original_file", "page",
@@ -56,6 +57,13 @@ def load(vintage: Path) -> dict:
     d["stone"] = {r["vehicle_type"]: r for r in _read(ref / "vehicle_parameters_stone2018.csv")}
     d["freight"] = {(r["mode"], int(r["period"])): float(r["value"]) for r in _read(ts / "freight_payload_statssa_review.csv")}
     d["points"] = _read(ref / "demand_evidence_points.csv")
+    d["natis_2023"] = {r["vehicle_class"]: float(r["value"]) for r in natis if r["period"] == "2023-12" and r["province"] == "ZAF"}
+    d["sales_outlook"] = {(r["segment"], int(r["period"])): float(r["value"]) for r in _read(ts / "new_vehicle_market_naamsa.csv")}
+    levers = _read(Path("workstreams/WS2_model_development/fuel_lever_response_2026-10-07.csv"))
+    d["lcv_cases"] = {}
+    for r in levers:
+        if r["lever"] == "electric_share_of_new_light_commercial_sales":
+            d["lcv_cases"].setdefault(r["case"], {})[int(r["period"])] = float(r["analyst_value"])
     d["fuel_by_province"] = {(r["province"], r["fuel_type"]): float(r["vehicles"]) for r in _read(ref / "vehicle_population_by_fuel_province_dot2023.csv")}
     d["efficiency"] = {(name, r["scenario"]): float(r["value"]) for name in ("diesel", "gasoline")
                        for r in _read(ts / f"efficiency_improvement_{name}.csv") if r["period"] == "2030"}
@@ -67,6 +75,28 @@ def implied_litres_per_kwh(d: dict) -> dict[int, float]:
     return {year: d["eskom"][("eskom_ocgt_diesel_and_kerosene", year)] / d["ocgt"][("eskom_ocgt", year)]
             for year in range(2016, 2027)
             if ("eskom_ocgt_diesel_and_kerosene", year) in d["eskom"] and ("eskom_ocgt", year) in d["ocgt"]}
+
+
+LEVERS = "workstreams/WS2_model_development/fuel_lever_response_2026-10-07.csv"
+
+
+def fuel_by_class(d: dict) -> tuple[dict[str, tuple[float, float]], float]:
+    """Petrol and diesel vehicles in each register class at December 2023, fitted to the bulletin's fuel totals."""
+    classes = {n: d["natis_2023"][n] for n in infer.CLASSES}
+    diesel = d["by_fuel"]["diesel"] / (d["by_fuel"]["diesel"] + d["by_fuel"]["petrol"]) * sum(classes.values())
+    return infer.fuel_by_class(classes, diesel, infer.seed_shares(d["stone"]))
+
+
+def lcv_litres_a_year(d: dict) -> float:
+    """Fuel an average light commercial vehicle burns in a year, weighted by the estimated petrol and diesel split."""
+    petrol, diesel = fuel_by_class(d)[0]["light_commercial"]
+    use = {t: float(d["stone"][t]["l_per_100km_fleet_average"]) * float(d["stone"][t]["km_per_year_fleet_average"]) / 100 for t in ("LCVDiesel", "LCVGasoline")}
+    return (diesel * use["LCVDiesel"] + petrol * use["LCVGasoline"]) / (petrol + diesel)
+
+
+def lcv_forecast(d: dict) -> dict:
+    sales = {y: v for (segment, y), v in d["sales_outlook"].items() if segment == "light_commercial" and y >= 2026}
+    return infer.light_commercial_electric_forecast(d["lcv_cases"], sales, d["natis"][("ZAF", "light_commercial")], lcv_litres_a_year(d))
 
 
 def build(d: dict) -> list[dict]:
@@ -85,19 +115,19 @@ def build(d: dict) -> list[dict]:
 
     # --- power generation ---------------------------------------------------
     fuel_years = sorted(y for (s, y) in d["eskom"] if s == "eskom_ocgt_diesel_and_kerosene")
-    recent = fuel_years[-5:]
+    recent = fuel_years
     add("Power generation", "Fuel burned at Eskom's turbines, as reported", "Eskom: Ankerlig, Gourikwa, Acacia, Port Rex",
         "; ".join(f"{d['eskom'][('eskom_ocgt_diesel_and_kerosene', y)]:,.1f}" for y in recent), "million litres",
         "years to March " + "; ".join(str(y) for y in recent), "observed", "Eskom Integrated Report 2025, technical statistics",
         ESKOM_REPORT, "PDF p.141",
         "Eskom reports diesel and kerosene together. Acacia and Port Rex burn kerosene and are 342 MW of Eskom's 2,426 MW, so "
-        "nearly all of it is diesel. Ten years (2016-2025) are on the DR07 power diesel sheet. 2026 is not yet reported.")
+        "nearly all of it is diesel. 2026 is not yet reported.")
     gen_years = sorted(y for (s, y) in d["ocgt"] if s == "eskom_ocgt")
     add("Power generation", "Electricity generated at Eskom's turbines", "Eskom",
         "; ".join(f"{d['ocgt'][('eskom_ocgt', y)]:,.0f}" for y in gen_years), "GWh", "years to March " + "; ".join(str(y) for y in gen_years),
         "observed", "Eskom data portal and reports", "assumptions/2026/timeseries/ocgt_generation_eskom.csv")
     implied = implied_litres_per_kwh(d)
-    matched = [y for y in sorted(implied) if d["ocgt"][("eskom_ocgt", y)] > 0][-3:]
+    matched = [y for y in sorted(implied) if d["ocgt"][("eskom_ocgt", y)] > 0]
     add("Power generation", "Litres burned per kWh, implied", "Eskom",
         "; ".join(f"{implied[y]:.3f}" for y in matched), "litres per kWh", "years to March " + "; ".join(str(y) for y in matched), "inferred",
         "Reported fuel divided by reported generation", ESKOM_REPORT, "",
@@ -116,10 +146,6 @@ def build(d: dict) -> list[dict]:
     shed = sorted(points["load_shedding_energy"], key=lambda p: p["period"])
     add("Power generation", "Electricity not supplied through load-shedding", shed[0]["subject"], "; ".join(p["value"] for p in shed), shed[0]["unit"],
         "; ".join(p["period"] for p in shed), "observed", shed[0]["source"], shed[0]["original_file"], shed[0]["page"], shed[0]["note"])
-    add("Power generation", "Ceiling on backup generator diesel", "Businesses and households",
-        "; ".join(f"{float(p['value']) * LITRES_PER_KWH:.1f}" for p in shed), "billion litres", "; ".join(p["period"] for p in shed), "inferred",
-        f"Load-shedding energy x {LITRES_PER_KWH} litres per kWh", "", "",
-        "The most diesel that replacing every unit shed could have burned. Not an estimate: much of the gap was met by solar, batteries or going without.")
     stations = [r for r in d["fleet"] if r["group"] == "diesel_station"]
     add("Power generation", "Diesel stations and capacity", "; ".join(r["station"] for r in stations),
         "; ".join(f"{float(r['capacity_mw']):,.0f}" for r in stations), "MW", "current", "observed", "Eskom fact sheet GX 0001 (July 2024); African Energy (2015)",
@@ -132,17 +158,19 @@ def build(d: dict) -> list[dict]:
         "assumptions/2026/infrastructure/power_fleet_diesel.csv", "", "Eskom's decision on five of them, due end September 2026, had not been announced by 8 October.")
     for series, item in (("peaker_contract_end", "Independent diesel plants: contract end"), ("kerosene_station_shutdown", "Kerosene stations: shutdown"),
                          ("gas_plant_commissioning", "New gas plant: commissioning"), ("turbine_use_outlook", "Diesel turbine use expected by the system operator")):
-        p = one(series)
-        value = f"{p['value']} {p['unit']}".strip() if series == "gas_plant_commissioning" else p["value"]
-        add("Power generation", item, p["subject"], value, "", p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
+        for p in points[series]:
+            add("Power generation", item, p["subject"], p["value"], p["unit"], p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
     coal_out = points["coal_shutdown"]
     add("Power generation", "Coal capacity shutting down", "Eskom coal fleet", "; ".join(p["value"] for p in coal_out), "GW",
         "; ".join(p["period"] for p in coal_out), "observed", coal_out[0]["source"], coal_out[0]["original_file"], coal_out[0]["page"],
         " ".join(p["note"] for p in coal_out))
     for p in points["gas_plant_project"]:
         add("Power generation", "New gas plant, by project", p["subject"], p["value"], "", p["period"], "observed", p["source"], p["original_file"], p["page"], p["note"])
-    add("Power generation", "New gas plant: firm commissioning date for any project", "Independent producers and Eskom", "", "", "", "not available",
-        "None exists", "", "", "No gas project has a bidder appointed or is in construction, so no firm date exists to find.")
+    plan = [p for p in points["gas_plant_project"] if p["subject"].startswith("Integrated Resource Plan 2025") and p["period"].isdigit()]
+    add("Power generation", "New gas plant: dates in use", "; ".join(p["subject"].split(": ")[1] for p in plan), "; ".join(p["period"] for p in plan), "year",
+        "", "observed", plan[0]["source"], plan[0]["original_file"], "PDF p.41, Table 1",
+        "The plan's schedule, used on Manish's instruction of 9 October (decision D24). No project has a preferred bidder, financial close or construction start, "
+        "and Eskom itself says 2031, so these are the earliest dates.")
 
     # --- vehicle fleet --------------------------------------------------------
     month = d["natis_month"]
@@ -169,8 +197,19 @@ def build(d: dict) -> list[dict]:
                   for p in (max(PROVINCES, key=lambda q: d["fuel_by_province"][(q, "diesel")] / d["fuel_by_province"][(q, "petrol")]),
                             min(PROVINCES, key=lambda q: d["fuel_by_province"][(q, "diesel")] / d["fuel_by_province"][(q, "petrol")]))),
         "%", "December 2023", "inferred", "Calculated from the bulletin", "", "")
-    add("Vehicle fleet", "Vehicles by fuel within each class", "South Africa", "", "vehicles", "", "not available", "None found", "", "",
-        "The bulletin splits fuel by province and the register splits class by province; nothing published crosses fuel with class.")
+    by_class, factor = fuel_by_class(d)
+    names = [n for n in infer.CLASSES if n in by_class]
+    labels = "; ".join(n.replace("_", " ") for n in names)
+    method = ("Estimated, not published: each class's diesel share in the 2010 fleet (Stone et al. 2018) moved by one common factor so the classes add up to the "
+              "bulletin's diesel total. Nothing published crosses fuel with class.")
+    source = "Calculated from the register (December 2023), the transport bulletin (December 2023) and Stone et al. (2018)"
+    add("Vehicle fleet", "Diesel vehicles by class, estimated", labels, "; ".join(f"{by_class[n][1]:,.0f}" for n in names), "vehicles", "December 2023", "inferred",
+        source, "", "", method)
+    add("Vehicle fleet", "Petrol vehicles by class, estimated", labels, "; ".join(f"{by_class[n][0]:,.0f}" for n in names), "vehicles", "December 2023", "inferred",
+        source, "", "", method)
+    add("Vehicle fleet", "Diesel share by class, estimated", labels, "; ".join(f"{by_class[n][1] / sum(by_class[n]) * 100:.1f}" for n in names), "%",
+        "December 2023", "inferred", source, "", "",
+        f"The common factor is {factor:.2f}: diesel has gained share in every mixed class since 2010. Tractors and plant are taken as all diesel, an assumption.")
     age = one("vehicle_average_age")
     add("Vehicle fleet", "Average age of vehicles", age["subject"], age["value"], age["unit"], age["period"], "observed", age["source"], age["original_file"],
         age["page"], age["note"])
@@ -194,6 +233,26 @@ def build(d: dict) -> list[dict]:
     share = one("diesel_share_of_new_light_vehicle_sales")
     add("New vehicles and electric share", "Diesel share of new light vehicles sold", share["subject"], share["value"], share["unit"], share["period"],
         "observed", share["source"], share["original_file"], share["page"], "No later figure found.")
+    forecast = lcv_forecast(d)
+    years = "; ".join(str(y) for y in infer.FORECAST_YEARS)
+    basis = ("A forecast of ours, not a published one. The 2030 and 2035 shares are the three cases on the HML response sheet, set against benchmarks abroad; "
+             "the path between them is a straight line from nil in 2025.")
+    for case in ("low", "medium", "high"):
+        f = forecast[case]
+        add("New vehicles and electric share", "Electric share of new light commercial sales, forecast", f"{case.capitalize()} case",
+            "; ".join(f"{f['share'][y]:.1f}" for y in infer.FORECAST_YEARS), "%", years, "inferred", "Analyst forecast from the lever cases", LEVERS, "", basis)
+    for case in ("low", "medium", "high"):
+        f = forecast[case]
+        add("New vehicles and electric share", "Electric light commercial vehicles on the road, forecast", f"{case.capitalize()} case",
+            "; ".join(f"{f['on_road'][y]:,.0f}" for y in infer.FORECAST_YEARS), "vehicles", years, "inferred",
+            "Forecast share x naamsa's sales outlook, added up", LEVERS, "",
+            f"{f['fleet_share'][2035]:.1f}% of today's light commercial fleet by 2035. Sales after 2027 are held at naamsa's 2027 projection; no electric vehicle is scrapped.")
+    for case in ("low", "medium", "high"):
+        f = forecast[case]
+        add("New vehicles and electric share", "Petrol and diesel displaced by electric light commercial vehicles, forecast", f"{case.capitalize()} case",
+            "; ".join(f"{f['displaced_million_litres'][y]:,.0f}" for y in infer.FORECAST_YEARS), "million litres a year", years, "inferred",
+            "Electric vehicles on the road x a light commercial vehicle's yearly fuel use (Stone et al. 2018)", LEVERS, "",
+            "Each electric vehicle is taken to replace an average light commercial vehicle. Delivery vans drive more than average, so the true figure is higher.")
     add("New vehicles and electric share", "Electric trucks and electric light commercial vehicles sold", "South Africa", "", "vehicles", "", "not available",
         "None published", "", "", "naamsa reports electric sales by drivetrain, not by segment (checked its fourth-quarter 2025 review). "
         "Benchmarks from other countries are on the HML response sheet.")
@@ -206,11 +265,11 @@ def build(d: dict) -> list[dict]:
             "litres per 100 km; km", "2010 fleet", "observed", "Stone et al. (2018), vehicle parc model", "assumptions/2026/reference/vehicle_parameters_stone2018.csv",
             "", "One year only. All 24 vehicle types are in the file and on the Vehicle history sheet.")
     history = sorted(points["new_light_vehicle_fuel_consumption"], key=lambda p: p["period"])
-    shown = [p for p in history if p["period"] in ("2005", "2010", "2015", "2019")]
+    shown = history
     add("Vehicle efficiency and distance", "Fuel use of new light vehicles, by year", "New cars and light commercial vehicles",
         "; ".join(p["value"] for p in shown), history[0]["unit"], "; ".join(p["period"] for p in shown), "observed",
         "IEA and Global Fuel Economy Initiative (Working Paper 15, 2017; country page, 2021)", history[0]["original_file"], history[0]["page"],
-        "Nine years between 2005 and 2019 are on the DR07 efficiency and rail sheet. Nothing after 2019 was found.")
+        "Nothing after 2019 was found.")
     rate = one("new_light_vehicle_fuel_consumption_change")
     add("Vehicle efficiency and distance", "Fuel use of new light vehicles: average change", rate["subject"], rate["value"], rate["unit"], rate["period"],
         "observed", rate["source"], rate["original_file"], rate["page"],
@@ -219,7 +278,7 @@ def build(d: dict) -> list[dict]:
     add("Vehicle efficiency and distance", "Fuel use of new passenger cars", car["subject"], car["value"], car["unit"], car["period"], "observed",
         car["source"], car["original_file"], car["page"], car["note"])
     trucks = [d["stone"][k] for k in ("HCV1Diesel", "HCV3Diesel", "HCV6Diesel", "HCV9Diesel")]
-    add("Vehicle efficiency and distance", "Fuel use of trucks, lightest to heaviest class", "Diesel trucks (classes 1, 3, 6 and 9 of nine)",
+    add("Vehicle efficiency and distance", "Fuel use of trucks, lightest to heaviest class", "Diesel trucks, class 1 of nine; Class 3; Class 6; Class 9",
         "; ".join(t["l_per_100km_fleet_average"] for t in trucks), "litres per 100 km, fleet average", "2010 fleet", "observed",
         "Stone et al. (2018), vehicle parc model", "assumptions/2026/reference/vehicle_parameters_stone2018.csv", "",
         "One year only. Light commercial diesel vehicles use " + d["stone"]["LCVDiesel"]["l_per_100km_fleet_average"] + " and buses "
@@ -230,11 +289,14 @@ def build(d: dict) -> list[dict]:
         "The latest published figure. Used as it stands for the years after 2019 (Manish, 8 October).")
     add("Vehicle efficiency and distance", "Fuel use of trucks, by year", "South Africa", "", "litres per 100 km", "",
         "not available", "None found", "", "", "Only the 2010 fleet figures above exist. No truck series by year was found.")
-    add("Vehicle efficiency and distance", "Efficiency gain assumed in the model", "New diesel and petrol vehicles",
-        "; ".join(f"{'petrol' if name == 'gasoline' else name} {d['efficiency'][(name, case)] * 100:.1f} ({case.replace('_', ' ')})"
-                  for name in ("diesel", "gasoline") for case in ("high_demand", "low_demand") if (name, case) in d["efficiency"]),
-        "% a year", "2030", "observed", "Reatile workbook (model input)", "assumptions/2026/timeseries/efficiency_improvement_diesel.csv", "",
-        "A model setting with no source behind it. Nothing was found to confirm or replace it.")
+    for name in ("diesel", "gasoline"):
+        for case in ("high_demand", "low_demand"):
+            if (name, case) in d["efficiency"]:
+                fuel = "petrol" if name == "gasoline" else name
+                add("Vehicle efficiency and distance", "Efficiency gain assumed in the model", f"New {fuel} vehicles, {case.replace('_', ' ')} case",
+                    f"{d['efficiency'][(name, case)] * 100:.1f}", "% a year", "2030", "observed", "Reatile workbook (model input)",
+                    f"assumptions/2026/timeseries/efficiency_improvement_{name}.csv", "",
+                    "A model setting with no source behind it. Nothing was found to confirm or replace it.")
 
     # --- freight and rail -----------------------------------------------------
     f_years = sorted({y for (_, y) in d["freight"]})
@@ -277,7 +339,7 @@ def build(d: dict) -> list[dict]:
         "About 1% of diesel sales. So freight moving to rail saves nearly all the road diesel it displaces. " + share["note"])
 
     # --- sector activity ------------------------------------------------------
-    add("Sector activity", "Mining, manufacturing and agriculture: activity and diesel per unit", "South Africa", "On the Sector history sheet", "", "2012-2025",
+    add("Sector activity", "Mining, manufacturing and agriculture: activity and diesel per unit", "South Africa", "On the DR01 sector activity sheet", "", "2014-2025",
         "observed", "Statistics South Africa (P2041, P3041.2, P0441); department energy balances", "assumptions/2026/timeseries/activity_statssa_monthly.csv", "",
         "Diesel by sector is observed to 2021 only, the last energy balance.")
     order = {part: i for i, part in enumerate(PARTS)}

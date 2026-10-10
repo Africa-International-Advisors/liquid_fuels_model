@@ -185,6 +185,15 @@ TRACE: dict[str, tuple[str, ...]] = {
         "January 2025 missing (publisher's link is wrong)",
         "Tons of all liquids, not fuel by product. Two months carry a note on the publisher's heading.",
         "Nigel: review"),
+    "reference/transport_cost_gauteng_department.csv": (
+        DEPT, "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/petroleum_arch.html",
+        "department-petrol-margins-<year>.pdf and department-diesel-margins-<year>.pdf, 2012 to 2024",
+        "on manish-branch (external/data/raw/fuel_price_margins/)", "download and scripted extract",
+        "python -m lfm.scripts.stage_fuel_price_margins --vintage 2026 --fetch", "stage_fuel_price_margins.parse_transport_cost",
+        "data requests workbook, DR04 Routes and access sheet", "",
+        "Regulated transport cost in the Gauteng price, month by month. Not a commercial rate. Eight months are unreadable in the "
+        "department's tables and are left out. Ends April 2024.",
+        "Nigel: review"),
     "reference/zone_differentials_department.csv": (
         DEPT, "https://www.dmpr.gov.za/Portals/0/Energy_Website/files/esources/petroleum/petroleum_fuelprices.html",
         "department-diesel-wholesale-by-zone-2024-04.pdf; department-transport-cost-by-zone-2014-04-02.xls",

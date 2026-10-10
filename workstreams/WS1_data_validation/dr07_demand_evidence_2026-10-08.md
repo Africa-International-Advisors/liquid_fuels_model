@@ -3,12 +3,12 @@
 For Nigel's review. Answers request DR07: the evidence that calibrates the
 demand levers. Petrol and diesel only.
 
-Status: **42 facts read from sources, 10 calculated, 7 not available.**
+Status: **75 facts read from sources, 21 calculated or forecast, 5 not available.** Each row holds one data point: every station, plant and
+project has its own row.
 
-**Where to look:** the workbook `output/delivered/Demand_baseline_workshop_2026_10_08_history.xlsx`.
+**Where to look:** the data requests workbook `output/delivered/Master_data_book.xlsx`.
 
-- Sheet **DR07 evidence**: every fact with its source and open gap.
-- Sheet **DR07 power diesel**: Eskom's reported litres beside its generation.
+- Sheet **DR07 demand evidence**: every fact with its source and open gap.
 - Sheet **DR07 fleet by province**: registered vehicles by province and class,
   and petrol and diesel vehicles by province.
 - Sheet **DR07 efficiency and rail**: new-vehicle fuel use 2005 to 2019, and
@@ -121,18 +121,81 @@ the HML response sheet. No South African forecast was found.
 | Vehicles by age | **Average only.** 10.5 years in 2022, up from 9 years 4 months in 2014-2015 | Lightstone, April 2022. It sells the age profile; the register does not publish it |
 | Gas plant dates by project | **Found, but no firm date exists.** Eskom's 3,000 MW Richards Bay plant was determined for connection "not beyond 2028"; the independent 2,000 MW round was issued in December 2023 with no bidder appointed. The system operator now assumes 2030 | NERSA reasons for decision, November 2024; gas programme site |
 | Electric trucks and light commercial vehicles sold | Not published | naamsa reports by drivetrain, not segment (fourth-quarter 2025 review checked) |
-| Private backup generator diesel | Not measured by anyone. A ceiling only: load-shedding was 10.6 TWh in 2023 and 2.5 in 2024, which at 0.31 litres per kWh is at most 3.3 and 0.8 bn litres | CSIR power statistics 2024. Reserve Bank, Eskom and the system operator checked; none gives litres |
+| Private backup generator diesel | Data unavailable. Not measured by anyone | Reserve Bank, CSIR, Eskom and the system operator checked; none gives litres |
 
-The ceiling is not an estimate. Much of the electricity shed was replaced by
-solar and batteries or not replaced at all.
+## Gas plant by project (added 9 October)
+
+No project has a firm commissioning date. What is published:
+
+| Project | Size | Status | Date | Source |
+|---|---|---|---|---|
+| Eskom, Richards Bay | 3,000 MW | Gas supply agreement signed with Zululand Energy Terminal on 5 June 2026; environmental assessment to be redone | Eskom plans to produce from 2031 | Eskom statement; Engineering News, 5 June 2026 |
+| Khanyazwe Flexpower (FlexED), Mpumalanga | 440 MW | Bid, 29 May 2026 | None | Official bid list |
+| Acwa (listed as the Pictor consortium), KwaZulu-Natal | 990 MW | Bid, 29 May 2026 | None | Official bid list |
+| Kelvin Redevelopment, Gauteng | 600 MW | Bid, 29 May 2026 | None | Official bid list |
+| Komatipoort Power (Vutomi Energy), Mpumalanga | 800 MW | Bid, 29 May 2026 | None | Official bid list |
+| New determination | 5,000 MW | Announced 7 October 2026; bidding rounds to follow | None | Engineering News, 7 October 2026 |
+
+The four bids total 2,830 MW against 2,000 MW sought. No preferred bidder had been named by 7 October 2026.
+The programme allows more than a year to financial close and then 36 months to build, so on its own timetable no
+plant from this round runs before about 2031 (my reading, not a published date). The system operator's outlook
+assumes 6 GW of gas in 2030; nothing found supports that date.
+
+**Dates in use: the Integrated Resource Plan's.** Eskom's 3,000 MW in 2029 and the independent producers' 3,000 MW in
+2030, on Manish's instruction of 9 October (decision D24). They are the plan's schedule and the earliest dates on
+offer: no project has a preferred bidder, financial close or construction start.
+
+**Three sets of dates, which do not agree:**
+
+| | Eskom 3,000 MW | Independent producers |
+|---|---|---|
+| Integrated Resource Plan 2025 (Table 1) | 2029 | 3,000 MW in 2030 |
+| Eskom, June 2026 | from 2031 | |
+| Programme timetable (my reading) | | about 2031 |
+| AIA working timeline (chart from Manish, not published) | 2032 | 2030: Acwa 990 MW, Avon 670 MW, FlexED 440 MW; Vutomi 800 MW in the high case |
+
+The plan also says converting the existing diesel peaking plants to natural gas should be considered and that plans
+are being developed at most of them (p.46). That covers Avon, with no date.
+
+Not found in a published source: a date for Acwa's project or for an Avon conversion. The bid list names Acwa's
+project only as the Pictor consortium; it is called Acwa here on Manish's instruction. FlexED is 440 MW, as on the
+bid list (the chart shows 450).
+
+## Two estimates added on 9 October
+
+**Vehicles by fuel within each class, December 2023.** Nothing published crosses fuel with class, so this is fitted:
+each class's diesel share in the 2010 fleet (Stone et al. 2018) is moved by one common factor until the classes add
+up to the bulletin's diesel total.
+
+| Class | Diesel | Petrol | Diesel share |
+|---|---|---|---|
+| Cars | 1,080,644 | 6,713,520 | 13.9% |
+| Light commercial | 1,506,107 | 1,183,203 | 56.0% |
+| Trucks | 388,778 | 3,571 | 99.1% |
+| Buses | 64,982 | 0 | 100% |
+| Minibuses | 54,087 | 301,148 | 15.2% |
+| Motorcycles | 0 | 349,215 | 0% |
+| Tractors and plant | 238,955 | 0 | 100% (assumed) |
+
+The 2010 shares were 7% for cars and 38% for light commercial vehicles, so diesel has gained ground in both.
+
+**Light commercial vehicles going electric: our forecast.** No history is published by segment. The three cases
+for the electric share of new light commercial sales (0, 5 and 10% by 2035) are turned into a yearly path:
+
+| Case | Share of new sales, 2030 | 2035 | Electric vehicles on the road, 2035 | Fuel displaced, 2035 |
+|---|---|---|---|---|
+| Low | 0% | 0% | 0 | 0 |
+| Medium | 1% | 5% | 35,960 | 95 million litres a year |
+| High | 5% | 10% | 98,800 | 260 million litres a year |
+
+Even the high case is 3.5% of today's light commercial fleet and about 1% of national petrol and diesel sales, so this
+lever is small to 2035. Sales after 2027 are held at naamsa's 2027 projection.
 
 ## Still not available
 
 | What | Why |
 |---|---|
 | Diesel burned in private backup generators | No source measures it: checked the Reserve Bank, the CSIR, Eskom and the system operator. It is inside recorded diesel sales and cannot be separated. |
-| New gas plant: firm commissioning date for any project | No gas project has a bidder appointed or is in construction, so no firm date exists to find. |
-| Vehicles by fuel within each class | The bulletin splits fuel by province and the register splits class by province; nothing published crosses fuel with class. |
 | Vehicles by year of age | Lightstone holds the age profile and sells it; the register does not publish it. Only apparent retirements can be calculated. |
 | Electric trucks and electric light commercial vehicles sold | naamsa reports electric sales by drivetrain, not by segment (checked its fourth-quarter 2025 review). Benchmarks from other countries are on the HML response sheet. |
 | Fuel use of trucks, by year | Only the 2010 fleet figures above exist. No truck series by year was found. |

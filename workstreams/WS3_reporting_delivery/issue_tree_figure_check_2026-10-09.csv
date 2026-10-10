@@ -1,0 +1,25 @@
+item,pack_value,recomputed,result,shown_in_pack,input_file
+"National consumption, 2023",21.9,21.944,matches,yes,workstreams\WS1_data_validation\fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv
+"Petrol sales, 2023",9.0,9.037,matches,yes,workstreams\WS1_data_validation\fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv
+"Diesel sales, 2023",12.9,12.907,matches,yes,workstreams\WS1_data_validation\fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv
+"Gross imports, 2023",17.4,17.353,matches,yes,workstreams\WS1_data_validation\fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv
+"Petrol imports, 2023",4.5,4.483,matches,yes,workstreams\WS1_data_validation\fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv
+"Diesel imports, 2023",12.9,12.870,matches,yes,workstreams\WS1_data_validation\fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv
+"Exports, 2023",1.9,1.883,matches,yes,workstreams\WS1_data_validation\fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv
+"Production, 2021",11.7,11.666,matches,yes,workstreams\WS1_data_validation\fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv
+"Imports through every office, 2025",16.7,16.702,matches,yes,fuel_trade_sars_by_office.csv
+"Imports through Durban, 2025",13.2,13.161,matches,yes,fuel_trade_sars_by_office.csv
+"Durban share of imports, 2025 (%)",79,78.795,matches,yes,fuel_trade_sars_by_office.csv
+"Demand by use: road, 2021",15.1,15.063,matches,yes,energy_balance_department.csv
+"Demand by use: agriculture, 2021",1.2,1.179,matches,yes,energy_balance_department.csv
+"Demand by use: all uses, 2021",23.2,23.243,matches,yes,energy_balance_department.csv
+"Coastal demand, 2022",10.0,9.951,matches,yes,fuel_sales_department_by_province.csv
+"Inland demand, 2022",12.0,11.951,matches,yes,fuel_sales_department_by_province.csv
+"Both Vopak sites, counted once",13.2,13.161,matches,yes,workstreams\WS2_model_development\market_sizing_durban_lesedi_2026-10-09.csv
+"Durban market, low",4.3,4.284,matches,yes,workstreams\WS2_model_development\market_sizing_durban_lesedi_2026-10-09.csv
+"Durban market, high",13.2,13.161,matches,yes,workstreams\WS2_model_development\market_sizing_durban_lesedi_2026-10-09.csv
+Inland-bound through Durban,8.9,8.876,matches,yes,workstreams\WS2_model_development\market_sizing_durban_lesedi_2026-10-09.csv
+"Lesedi market, low",6.8,6.809,matches,yes,workstreams\WS2_model_development\market_sizing_durban_lesedi_2026-10-09.csv
+"Lesedi market, high",12.0,11.951,matches,yes,workstreams\WS2_model_development\market_sizing_durban_lesedi_2026-10-09.csv
+Durban tanks at two turns a month,3.5,3.504,matches,yes,workstreams\WS2_model_development\market_sizing_durban_lesedi_2026-10-09.csv
+Lesedi tanks at two turns a month,3.0,2.976,matches,yes,workstreams\WS2_model_development\market_sizing_durban_lesedi_2026-10-09.csv

@@ -28,9 +28,19 @@ OUT = Path("workstreams/WS1_data_validation/dr08_refinery_evidence_2026-10-08.cs
 FIELDS = ["request", "part", "item", "asset_or_route", "value", "unit", "period", "status", "source", "original_file", "page",
           "unresolved_gap", "scope"]
 PARTS = ["Capacity", "Status and dates", "Output by plant", "National output by product", "Yields", "Utilisation", "Outlook"]
+REFINING_NOW = [
+    # plant, refining in 2026, period, source
+    ("Secunda", "Yes", "2026", "Sasol business performance metrics, June 2026"),
+    ("Natref", "Yes", "2026; planned shutdown and a unit outage, August to September", "Sasol business performance metrics, June 2026; Natref update, 1 September 2026"),
+    ("Astron Energy", "Yes", "since the restart in early 2023", "Glencore annual reports 2023 to 2025"),
+    ("Sapref", "No", "since the pause at the end of March 2022", "Shell South Africa release, 10 February 2022; Central Energy Fund, September 2026"),
+    ("Enref", "No", "since the fire of 4 December 2020", "Engen's account to Parliament, 8 December 2020; department's 2023 report"),
+    ("PetroSA", "No", "since December 2020", "PetroSA tender scope of work; department's 2023 report"),
+]
 PLANTS = ["Secunda", "Natref", "Astron Energy", "Sapref", "Enref", "PetroSA"]
 NATREF_SASOL_SHARE = 0.6364
 LITRES_PER_BARREL = 158.987
+BTU_PER_BARREL_OF_OIL_EQUIVALENT = 5.8e6          # the standard definition of a barrel of oil equivalent
 BALANCE_YEARS = range(2014, 2022)
 
 
@@ -70,6 +80,13 @@ def utilisation(d: dict) -> dict[tuple[str, int], float]:
         elif plant == "Natref" and year != 2026:
             out[(plant, year)] = float(row["value"]) * 1e6 / NATREF_SASOL_SHARE / (cap["Natref"] * days)
     return out
+
+
+def astron_utilisation(d: dict) -> dict[int, float]:
+    """Astron's output over capacity by calendar year, with Glencore's energy content turned into barrels of oil equivalent."""
+    cap = capacity(d)["Astron Energy"]
+    return {year: float(row["value"]) * 1e9 / BTU_PER_BARREL_OF_OIL_EQUIVALENT / (cap * (366 if year % 4 == 0 else 365))
+            for (plant, year), row in d["operators"].items() if plant.startswith("Astron") and row["unit"] == "billion Btu"}
 
 
 def natref_by_product(d: dict) -> dict[tuple[str, int], tuple[float, float]]:
@@ -114,6 +131,10 @@ def build(d: dict) -> list[dict]:
         "Sum of the three plants operating", "", "", "Half of the 718,000 published in 2021. Sapref is still listed at 180,000 by the department although it is not refining.")
 
     # --- status and dates -----------------------------------------------------
+    for plant, refining, since, source in REFINING_NOW:
+        add("Status and dates", "Refining in 2026", plant, refining, "", since, "inferred", source, "", "",
+            "Read from the status rows below." + (" Natref is its own crude refinery at Sasolburg, part-owned by Sasol; its output is not part of Secunda's."
+                                                    if plant == "Natref" else ""))
     for p in points["status"]:
         from_point("Status and dates", "Status", p)
 
@@ -142,9 +163,11 @@ def build(d: dict) -> list[dict]:
             "assumptions/2026/reference/refinery_output_operators.csv; assumptions/2026/reference/refinery_evidence_points.csv", "",
             "An estimate: the split is a range Sasol stated in April 2021, applied to every year. The year to June 2026 is left out.")
     add("Output by plant", "Petrol and diesel output by plant", "Secunda and Astron Energy", "", "litres", "", "not available", "None published", "", "",
-        "Sasol states Secunda's split (65% petrol, 35% diesel) but not the total it applies to. Glencore publishes no split for Astron. Needs the operators.")
-    add("Output by plant", "Output of Sapref, Enref and PetroSA", "Plants not operating", "0", "", "while not operating", "inferred",
-        "From the status rows", "", "", "Enref since the fire of 4 December 2020; PetroSA since December 2020; Sapref since the pause at the end of March 2022.")
+        "Sasol states Secunda's split (65% petrol, 35% diesel) but not the total it applies to. Glencore publishes no split for Astron. "
+        "Sasol's annual filing and both companies' sites were checked on 9 October. Needs the operators.")
+    for plant, since in (("Sapref", "since the pause at the end of March 2022"), ("Enref", "since the fire of 4 December 2020"),
+                         ("PetroSA", "since December 2020")):
+        add("Output by plant", "Output while not operating", plant, "0", "barrels a day", since, "inferred", "From the status rows", "", "", "")
 
     # --- national output by product -------------------------------------------
     years = [y for y in BALANCE_YEARS if ("petrol", y) in d["production"]]
@@ -176,8 +199,10 @@ def build(d: dict) -> list[dict]:
         for p in points.get(series, []):
             add("Yields", f"{p['subject'].capitalize()} share of output", plant, p["value"].replace("-", " to "), p["unit"], p["period"], "observed",
                 p["source"], p["original_file"], p["page"], p["note"])
-    add("Yields", "Yield by plant", "Astron Energy", "", "%", "", "not available", "None published", "", "",
-        "Nothing found for Astron. Natref and Secunda are as Sasol stated them in 2021; no plant publishes a split by year.")
+    for product in ("petrol", "diesel"):
+        add("Yields", f"{product.capitalize()} share of output, assumed", "Astron Energy", "50", "% of petrol and diesel", "assumption", "inferred",
+            "Assumption agreed with Nigel on the call of 9 October 2026", "", "",
+            "Nothing is published for Astron. An even split, so the model responds sensibly when the plant is switched on or off; not a measured figure.")
 
     # --- utilisation --------------------------------------------------------------
     use = utilisation(d)
@@ -189,8 +214,14 @@ def build(d: dict) -> list[dict]:
             "assumptions/2026/reference/refinery_output_operators.csv", "",
             "Capacity is crude equivalent and output is refined product, so this understates how hard the plant runs."
             + (" The year to June 2026 is left out because Sasol's figure includes output above its share." if plant == "Natref" else ""))
-    add("Utilisation", "Output as a share of capacity", "Astron Energy", "", "%", "", "not available", "Not calculable",
-        "", "", "Glencore reports energy content, not barrels, and no throughput in barrels was found. Converting needs an assumed energy content per barrel.")
+    astron = astron_utilisation(d)
+    add("Utilisation", "Output as a share of published capacity, estimated", "Astron Energy", "; ".join(f"{astron[y] * 100:.0f}" for y in sorted(astron)), "%",
+        "; ".join(str(y) for y in sorted(astron)), "inferred", "Glencore's energy content at 5.8 million Btu a barrel of oil equivalent, over published capacity",
+        "assumptions/2026/reference/refinery_output_operators.csv", "",
+        "An estimate: no throughput in barrels is published. Refined products hold a little less energy per barrel than the standard, so true utilisation is "
+        "somewhat higher. 2023 is the restart year.")
+    for p in points.get("astron_statement", []):
+        from_point("Utilisation", "Utilisation as stated by the operator", p)
 
     # --- outlook --------------------------------------------------------------------
     for p in points["outlook"]:

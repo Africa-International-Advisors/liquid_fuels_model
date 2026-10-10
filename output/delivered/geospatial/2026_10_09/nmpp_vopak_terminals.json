@@ -1,0 +1,15 @@
+{
+  "pipeline_length_km": 560.0,
+  "ways": 10,
+  "coastal_end": [
+    30.9732,
+    -29.9317
+  ],
+  "inland_end": [
+    28.3215,
+    -26.4492
+  ],
+  "straight_line_end_to_end_km": 466.3,
+  "island_view_to_pipeline_km": 7.7,
+  "lesedi_position": "placed at the inland end of the mapped pipeline (Transnet's Jameson Park terminal); not a surveyed site position"
+}

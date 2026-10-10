@@ -113,6 +113,54 @@
       "url": "https://www.eskom.co.za/eskom-divisions/gx/coal-fired-power-stations/",
       "bytes": 268139,
       "sha256": "037b4938d96e9dbbe309582692ee00f8b6804eb3a6ca3247a7ec65f5c5c4586a"
+    },
+    {
+      "file": "dbsa-gas-ippp-bw1-bids-received-2026-05-29.pdf",
+      "publisher": "Development Bank of Southern Africa (Independent Power Producers Office)",
+      "published": "2026-05-29",
+      "url": "https://www.dbsa.org/sites/default/files/media/documents/2026-05/GASIPPPP%20BW1%20Bids%20Received%2029%20May%202026.pdf",
+      "bytes": 166986,
+      "sha256": "bb34edc7d7e3cc03ff34a5f28cba93e270f77c9c12931ab20da7dc9bb46c84c2"
+    },
+    {
+      "file": "eskom-zet-heads-of-agreement-2026-06-05.html",
+      "publisher": "Eskom",
+      "published": "2026-06-05",
+      "url": "https://www.eskom.co.za/joint-media-statement-eskom-and-zululand-energy-terminal-sign-heads-of-agreement-to-advance-strategic-gas-to-power-development/",
+      "bytes": 183583,
+      "sha256": "c7e8e4f869d4add287d36a556a8b236c7dc730ddfd2ef117881974e62c5cf8b5"
+    },
+    {
+      "file": "engineeringnews-eskom-zet-2026-06-05.html",
+      "publisher": "Engineering News (Creamer Media)",
+      "published": "2026-06-05",
+      "url": "https://www.engineeringnews.co.za/article/eskom-signs-agreement-with-zululand-energy-terminal-as-it-seeks-to-advance-3-gw-richards-bay-gas-fired-power-project-2026-06-05",
+      "bytes": 264069,
+      "sha256": "b840595c07f9475bde094e5aac5eee97aa3e3cc3e6668c5b0959593802e211f4"
+    },
+    {
+      "file": "engineeringnews-gas-battery-determination-2026-10-07.html",
+      "publisher": "Engineering News (Creamer Media)",
+      "published": "2026-10-07",
+      "url": "https://www.engineeringnews.co.za/article/new-determination-opens-way-for-public-procurement-of-large-scale-battery-storage-and-gas-to-power-2026-10-07",
+      "bytes": 263585,
+      "sha256": "c29b820e188bcf0986c5fb7875ba844eb35d1af16feb821a3a303002de155680"
+    },
+    {
+      "file": "department-integrated-resource-plan-2025.pdf",
+      "publisher": "Department of Electricity and Energy",
+      "published": "2025-10",
+      "url": "https://www.dmpr.gov.za/Portals/0/Energy%20Resources/IRP/IRP%202025/User-Friendly-IRP-2025.pdf",
+      "bytes": 2967660,
+      "sha256": "333937bf47896094bf42e30adab5897c8b9d12427bab7b79f75e9ff2cdaf3795"
+    },
+    {
+      "file": "aia-gas-to-power-demand-timeline-chart.png",
+      "publisher": "Africa International Advisors (chart supplied by Manish, 9 October 2026)",
+      "published": "not stated",
+      "url": "not published",
+      "bytes": 16431,
+      "sha256": "dd655931891f167ca5a6a91e7388b7b521082d5b05bf092e3ca767a410306b1b"
     }
   ]
 }

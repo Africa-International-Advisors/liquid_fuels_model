@@ -11,6 +11,8 @@ Updated 8 October 2026. Use the **43-page v27** pair:
 Page 11 establishes the asset position and operating evidence gaps; page 18 contains the data request.
 The appendix starts on page 19; pages 39–42 explain the illustrative economics and page 43 tests tank turns.
 
+[Master data book](Master_data_book.xlsx) is the one place to look for a sourced figure: national balance, sales by province, demand by sector, routes and access, demand evidence, refinery supply, the Durban and Lesedi market sizing, and a sheet of what could not be found. It is rebuilt by `python -m lfm.scripts.build_data_requests_workbook --vintage 2026` and is not edited by hand.
+
 [Demand baseline workshop](Demand_baseline_workshop_2026_10_07_compact.xlsx) is the compact, formula-linked review workbook. Full descriptions are retained on Notes; HML is the last tab. Current model results are a frozen run, and sales/model scope reconciliation remains open.
 
 The input ranges are proposed review inputs; they have not been calibrated or approved.
