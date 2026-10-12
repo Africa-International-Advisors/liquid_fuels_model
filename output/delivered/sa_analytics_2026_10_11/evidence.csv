@@ -1,0 +1,144 @@
+Input,Value,Unit,Source / period
+sales_diesel_2013,12.141281548,bn L,Department national fuel sales; 2013-Annual-FSV-at-National-Level-07-February-2014.xlsx; Reported input
+sales_petrol_2013,11.439925235,bn L,Department national fuel sales; 2013-Annual-FSV-at-National-Level-07-February-2014.xlsx; Reported input
+sales_diesel_2014,12.615023359,bn L,Department national fuel sales; 2014-Annual-FSV-at-National-Level-Quarter-3-16Jan2015.xlsx; Reported input
+sales_petrol_2014,10.890207679,bn L,Department national fuel sales; 2014-Annual-FSV-at-National-Level-Quarter-3-16Jan2015.xlsx; Reported input
+sales_diesel_2015,13.52013925195,bn L,Department national fuel sales; 2015-Annual-FSV-at-National-Level.xlsx; Reported input
+sales_petrol_2015,11.475709420318001,bn L,Department national fuel sales; 2015-Annual-FSV-at-National-Level.xlsx; Reported input
+sales_diesel_2016,12.082374038422001,bn L,Department national fuel sales; 2016-National-Aggregated-Fuel-Sales-Volumes-data.xlsx; Reported input
+sales_petrol_2016,11.462252466686001,bn L,Department national fuel sales; 2016-National-Aggregated-Fuel-Sales-Volumes-data.xlsx; Reported input
+sales_diesel_2017,12.147245167188997,bn L,Department national fuel sales; 2017-Quarter3-FSV-Annual-data.xls; Reported input
+sales_petrol_2017,11.174082980369999,bn L,Department national fuel sales; 2017-Quarter3-FSV-Annual-data.xls; Reported input
+sales_diesel_2018,12.538744325998,bn L,Department national fuel sales; 2018-National-Aggregated-FSV.xls; Reported input
+sales_petrol_2018,11.141630546702,bn L,Department national fuel sales; 2018-National-Aggregated-FSV.xls; Reported input
+sales_diesel_2019,12.908631232217,bn L,Department national fuel sales; 2019-National-Aggregated-FSV.xls; Reported input
+sales_petrol_2019,10.773208065062,bn L,Department national fuel sales; 2019-National-Aggregated-FSV.xls; Reported input
+sales_diesel_2020,11.689957759296,bn L,Department national fuel sales; 2020-National-Aggregated-FSV-data-Quarter4.xls; Reported input
+sales_petrol_2020,8.761470961496,bn L,Department national fuel sales; 2020-National-Aggregated-FSV-data-Quarter4.xls; Reported input
+sales_diesel_2021,12.945782750434999,bn L,Department national fuel sales; 2021-National-Aggregated-FSV-data-Quarter4.xls; Reported input
+sales_petrol_2021,9.301584227683001,bn L,Department national fuel sales; 2021-National-Aggregated-FSV-data-Quarter4.xls; Reported input
+sales_diesel_2022,12.717326319019001,bn L,Department national fuel sales; 2022-National-Aggregated-FSV-data-Quarter4.xls; Reported input
+sales_petrol_2022,9.184869915573,bn L,Department national fuel sales; 2022-National-Aggregated-FSV-data-Quarter4.xls; Reported input
+sales_diesel_2023,12.907499965808,bn L,Department national fuel sales; 2023-National-Aggregated-FSV-data-Quarter4.xls; Reported input
+sales_petrol_2023,9.036950113492,bn L,Department national fuel sales; 2023-National-Aggregated-FSV-data-Quarter4.xls; Reported input
+fiasa_diesel_2024,11.734,bn L,FIASA Annual Report 2025; definition reconciliation pending; Alternative source anchor
+fiasa_petrol_2024,9.029,bn L,FIASA Annual Report 2025; definition reconciliation pending; Alternative source anchor
+eb_industry_2018,1.884421682861328,bn L,Department energy balance 2018; industry; Reported input
+eb_mining_2018,1.650123,bn L,Department energy balance 2018; mining; Reported input
+eb_construction_2018,0.074592859375,bn L,Department energy balance 2018; construction; Reported input
+eb_road_2018,6.3919425,bn L,Department energy balance 2018; road; Reported input
+eb_agriculture_2018,0.8998834375,bn L,Department energy balance 2018; agriculture; Reported input
+eb_industry_2019,1.8979908483886718,bn L,Department energy balance 2019; industry; Reported input
+eb_mining_2019,1.66724925,bn L,Department energy balance 2019; mining; Reported input
+eb_road_2019,6.725982,bn L,Department energy balance 2019; road; Reported input
+eb_agriculture_2019,0.9218486875,bn L,Department energy balance 2019; agriculture; Reported input
+eb_industry_2020,1.4462206990966797,bn L,Department energy balance 2020; industry; Reported input
+eb_mining_2020,1.26340575,bn L,Department energy balance 2020; mining; Reported input
+eb_construction_2020,0.04284740625,bn L,Department energy balance 2020; construction; Reported input
+eb_road_2020,5.8481915,bn L,Department energy balance 2020; road; Reported input
+eb_agriculture_2020,1.0489635,bn L,Department energy balance 2020; agriculture; Reported input
+eb_industry_2021,1.4991392599999998,bn L,Department energy balance 2021; industry; Reported input
+eb_mining_2021,1.29381342,bn L,Department energy balance 2021; mining; Reported input
+eb_construction_2021,0.04869243,bn L,Department energy balance 2021; construction; Reported input
+eb_road_2021,6.32795728,bn L,Department energy balance 2021; road; Reported input
+eb_agriculture_2021,1.05839895,bn L,Department energy balance 2021; agriculture; Reported input
+mining_activity_2018,100.925,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+mining_activity_2019,99.98333333333333,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+mining_activity_2020,89.10000000000001,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+mining_activity_2021,100.875,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+mining_activity_2022,93.00833333333333,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+mining_activity_2023,93.01666666666667,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+mining_activity_2024,93.53333333333335,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+mining_activity_2025,93.70833333333333,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+manufacturing_activity_2018,101.10000000000001,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+manufacturing_activity_2019,99.98333333333333,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+manufacturing_activity_2020,87.66666666666667,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+manufacturing_activity_2021,93.11666666666667,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+manufacturing_activity_2022,93.14166666666667,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+manufacturing_activity_2023,93.71666666666665,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+manufacturing_activity_2024,93.33333333333333,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+manufacturing_activity_2025,92.14166666666667,index 2019=100,Stats SA monthly production index; twelve-month mean; Reported input
+agriculture_activity_2018,112.09492575179875,bn real 2015 ZAR,Stats SA P0441 agriculture real GVA; Reported input
+agriculture_activity_2019,104.7847576991143,bn real 2015 ZAR,Stats SA P0441 agriculture real GVA; Reported input
+agriculture_activity_2020,122.87009907534619,bn real 2015 ZAR,Stats SA P0441 agriculture real GVA; Reported input
+agriculture_activity_2021,128.9830895613611,bn real 2015 ZAR,Stats SA P0441 agriculture real GVA; Reported input
+agriculture_activity_2022,131.7706421450265,bn real 2015 ZAR,Stats SA P0441 agriculture real GVA; Reported input
+agriculture_activity_2023,125.74664214502654,bn real 2015 ZAR,Stats SA P0441 agriculture real GVA; Reported input
+agriculture_activity_2024,114.79164214502653,bn real 2015 ZAR,Stats SA P0441 agriculture real GVA; Reported input
+agriculture_activity_2025,134.79674698171317,bn real 2015 ZAR,Stats SA P0441 agriculture real GVA; Reported input
+eskom_2021,0.4587,bn L,"Eskom Integrated Report 2025 p141; FY ending March; diesel and kerosene; FY proxy for calendar year, fuel mix retained"
+eskom_2022,0.5804,bn L,"Eskom Integrated Report 2025 p141; FY ending March; diesel and kerosene; FY proxy for calendar year, fuel mix retained"
+eskom_2023,0.9375,bn L,"Eskom Integrated Report 2025 p141; FY ending March; diesel and kerosene; FY proxy for calendar year, fuel mix retained"
+eskom_2024,1.1295,bn L,"Eskom Integrated Report 2025 p141; FY ending March; diesel and kerosene; FY proxy for calendar year, fuel mix retained"
+eskom_2025,0.6791,bn L,"Eskom Integrated Report 2025 p141; FY ending March; diesel and kerosene; FY proxy for calendar year, fuel mix retained"
+ipp_gwh_2023,1098.0,GWh,Eskom statistical tables; IPP OCGT generation; FY ending March; Reported input
+ipp_gwh_2024,1509.0,GWh,Eskom statistical tables; IPP OCGT generation; FY ending March; Reported input
+ipp_gwh_2025,662.0,GWh,Eskom statistical tables; IPP OCGT generation; FY ending March; Reported input
+freight_rail_2024,160.745,million tonnes,"Stats SA P7162 December 2025, p7; all reported freight, not tonne-km; Reported input"
+freight_road_2024,979.798,million tonnes,"Stats SA P7162 December 2025, p7; all reported freight, not tonne-km; Reported input"
+freight_rail_2025,168.263,million tonnes,"Stats SA P7162 December 2025, p7; all reported freight, not tonne-km; Reported input"
+freight_road_2025,976.468,million tonnes,"Stats SA P7162 December 2025, p7; all reported freight, not tonne-km; Reported input"
+trade_Durban_import_petrol_2019,1.25634839252,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_diesel_2019,3.80914333,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_petrol_2019,0.03866750897,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_diesel_2019,0.21272690407,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_petrol_2019,1.4773858410899998,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_petrol_2019,1.17470177789,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_diesel_2019,5.590272108560001,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_diesel_2019,1.7413773122,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_petrol_2020,0.664092731,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_diesel_2020,3.825937678,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_petrol_2020,0.030842959,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_diesel_2020,0.20753876099000002,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_petrol_2020,1.71967306448,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_petrol_2020,1.1547790711800001,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_diesel_2020,6.81498544784,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_diesel_2020,0.91381452025,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_petrol_2021,2.436564685,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_diesel_2021,5.83487318,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_petrol_2021,0.039454367,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_diesel_2021,0.20133574,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_petrol_2021,4.00861276378,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_petrol_2021,1.0524951445700002,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_diesel_2021,9.761395305739999,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_diesel_2021,0.8934881057699999,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_petrol_2022,3.882669362,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_diesel_2022,7.88124800634,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_petrol_2022,0.028805741,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_diesel_2022,0.27415852432,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_petrol_2022,5.45526181472,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_petrol_2022,0.85461371378,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_diesel_2022,11.9542565479,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_diesel_2022,0.88919906782,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_petrol_2023,4.165599231,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_diesel_2023,9.12503651042,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_petrol_2023,0.000125422,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_diesel_2023,0.254570839,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_petrol_2023,4.48277476038,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_petrol_2023,0.9940195590199999,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_diesel_2023,12.87003210067,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_diesel_2023,0.8894459079200001,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_petrol_2024,3.804725224,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_diesel_2024,8.03288993764,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_petrol_2024,0.001009567,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_diesel_2024,0.18582006085,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_petrol_2024,4.00085443345,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_petrol_2024,0.91974501589,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_diesel_2024,10.79254713405,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_diesel_2024,0.79583467852,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_petrol_2025,4.228979739,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Durban_import_diesel_2025,8.93153544064,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_petrol_2025,0.004416485,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_Komatipoort_import_diesel_2025,0.082022506,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_petrol_2025,4.45347117815,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_petrol_2025,0.801762466,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_import_diesel_2025,12.24872026207,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+trade_All_export_diesel_2025,0.74670021007,bn L,SARS customs by office; litres only; office is a gateway proxy; Reported input
+output_Secunda_2024,29.1,million barrels,Operator production: sasol-metrics-fy2025.pdf; all refined products; no split by product; Reported input
+output_Natref_2024,17.8,million barrels,Operator production: sasol-metrics-fy2025.pdf; Sasol's reported Natref production (its 63.64% share); Reported input
+output_Secunda_2025,27.6,million barrels,Operator production: sasol-metrics-fy2025.pdf; all refined products; no split by product; Reported input
+output_Natref_2025,14.7,million barrels,Operator production: sasol-metrics-fy2025.pdf; Sasol's reported Natref production (its 63.64% share); Reported input
+output_Secunda_2026,30.6,million barrels,Operator production: sasol-metrics-fy2026.pdf; all refined products; no split by product; Reported input
+output_Natref_2026,25.8,million barrels,Operator production: sasol-metrics-fy2026.pdf; includes 6.9 million barrels produced above Sasol's 63.64% shareholding; Reported input
+output_Astron_2024,166204.0,billion Btu,Operator production: GLEN-2024-Annual-Report.pdf; all refined products; no split by product; Reported input
+output_Astron_2025,164365.0,billion Btu,Operator production: GLEN-2025-Annual-Report.pdf; all refined products; no split by product; Reported input

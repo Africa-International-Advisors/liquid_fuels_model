@@ -36,3 +36,7 @@ STRIP_SAMPLE_SLIDES = True
 STRIP_RECENT_COLORS = True
 AUTHOR = "Africa International Advisors"
 COMPANY = "Africa International Advisors"
+
+# Project-owned approved layout extension; consumed by the story delivery workflow.
+EXHIBIT_LAYOUT_CONTRACT = Path(__file__).with_name("vopak_layout.json")
+EXHIBIT_LAYOUT_NAME = "Vopak Exhibit + Commentary v1"

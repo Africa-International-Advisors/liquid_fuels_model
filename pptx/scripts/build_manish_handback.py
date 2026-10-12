@@ -21,7 +21,7 @@ from pptx.util import Inches, Pt
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "output/delivered/archive/2026-10-06_storyline/Vopak_Week1_Analytical_Pack_2026_10_06.pptx"
-OUT = ROOT / "output/delivered/supporting/Vopak_Manish_Handback_2026_10_06.pptx"
+OUT = ROOT / "output/delivered/supporting/archive/2026-10-11_cleanup/Vopak_Manish_Handback_2026_10_06.pptx"
 
 FONT = "Lato"
 BLUE = RGBColor.from_string("0A2373")

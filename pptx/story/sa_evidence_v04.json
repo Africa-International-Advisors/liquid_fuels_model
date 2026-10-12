@@ -1,0 +1,305 @@
+[
+  {
+    "page": 4,
+    "title": "South Africa’s estimated 21bn-litre fuel market is dominated by road demand",
+    "kind": "chart",
+    "categories": [
+      "2013",
+      "2014",
+      "2015",
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024E",
+      "2025E"
+    ],
+    "series": [
+      {
+        "name": "Petrol",
+        "values": [
+          11.439925235,
+          10.890207679,
+          11.475709420318001,
+          11.462252466686001,
+          11.174082980369999,
+          11.141630546702,
+          10.773208065062,
+          8.761470961496,
+          9.301584227683001,
+          9.184869915573,
+          9.036950113492,
+          8.945902841098569,
+          8.855772869974501
+        ]
+      },
+      {
+        "name": "Diesel",
+        "values": [
+          12.141281548,
+          12.615023359,
+          13.52013925195,
+          12.082374038422001,
+          12.147245167188997,
+          12.538744325998,
+          12.908631232217,
+          11.689957759296,
+          12.945782750434999,
+          12.717326319019001,
+          12.907499965808,
+          13.13520616546608,
+          12.131615327120741
+        ]
+      }
+    ],
+    "side": [
+      "2025 estimated demand",
+      "Petrol road 8.59 | Freight 4.82",
+      "Other road diesel 1.61",
+      "Mining 1.41 | Agriculture 1.13",
+      "Power 1.08 | Manufacturing 0.17",
+      "Other petrol 0.27 | Other diesel 1.91",
+      "All values: bn litres. Allocations are estimates; manufacturing is an industry residual."
+    ],
+    "takeaway": "Demand is estimated at 20.99bn litres in 2025; road uses account for most allocated demand.",
+    "source": "Department annual sales, 2013–2023. Estimated 2024–2025: analytical workbook v02. The Department series is used consistently. Segment split: analytical workbook v02, Segments. Displayed figures rounded; other diesel remains unallocated.",
+    "chartType": "line",
+    "direction": "column",
+    "chartHeading": "Petrol and diesel demand, 2013–2025"
+  },
+  {
+    "page": 7,
+    "title": "Agricultural fuel demand rebounds while mining and manufacturing remain broadly flat",
+    "kind": "chart",
+    "categories": [
+      "2023E",
+      "2024E",
+      "2025E"
+    ],
+    "series": [
+      {
+        "name": "Mining",
+        "values": [
+          1.3959664570874284,
+          1.4037204366913902,
+          1.406346784621764
+        ]
+      },
+      {
+        "name": "Agriculture",
+        "values": [
+          1.0552755203659356,
+          0.9633403153504746,
+          1.1312246982365153
+        ]
+      },
+      {
+        "name": "Manufacturing",
+        "values": [
+          0.16789786744139165,
+          0.16721110753544252,
+          0.16507618000173108
+        ]
+      }
+    ],
+    "side": [
+      "Estimated diesel use",
+      "Mining: 1.40 → 1.41bn L",
+      "Agriculture: 1.06 → 1.13bn L",
+      "Manufacturing: about 0.17bn L",
+      "Manufacturing covers the energy-balance industry residual, not a complete industrial census."
+    ],
+    "takeaway": "Sector activity produces different demand paths; applying one GDP growth rate would hide these differences.",
+    "source": "Stats SA mining/manufacturing indices and agriculture real GVA; mean 2018–2021 fuel intensity. Sector diesel values after 2021 are estimates.",
+    "chartType": "line",
+    "direction": "column",
+    "chartHeading": "Estimated sector diesel demand"
+  },
+  {
+    "page": 8,
+    "title": "Eskom’s fuel use fell by 40% in FY2025 as electricity supply improved",
+    "kind": "chart",
+    "categories": [
+      "FY2023",
+      "FY2024",
+      "FY2025"
+    ],
+    "series": [
+      {
+        "name": "Eskom diesel + kerosene, bn litres",
+        "values": [
+          0.9375,
+          1.1295,
+          0.6791
+        ]
+      }
+    ],
+    "side": [
+      "Observed use and estimated scope",
+      "Eskom: 1.130bn L in FY2024 → 0.679bn L in FY2025 (diesel + kerosene).",
+      "2025 utility + private power estimate: 1.08bn L, including 0.20bn L assumed private backup.",
+      "IPP conversion and fiscal-year proxies are estimates; private use is not measured by Eskom."
+    ],
+    "takeaway": "Improved electricity supply reduces peaking and backup fuel use; the private-backup contribution remains estimated.",
+    "source": "Eskom Integrated Report 2025, p141. Fiscal years end in March. Reported series includes diesel and kerosene; private backup consumption is outside this series. Analytical workbook v02, Segments: IPP conversion and private-backup assumptions.",
+    "chartType": "bar",
+    "direction": "column",
+    "chartHeading": "Eskom diesel and kerosene use"
+  },
+  {
+    "page": 9,
+    "title": "Rail volumes are recovering, creating scope to reduce road diesel use",
+    "kind": "chart",
+    "categories": [
+      "2024",
+      "2025"
+    ],
+    "series": [
+      {
+        "name": "Road, million tonnes",
+        "values": [
+          979.798,
+          976.468
+        ]
+      },
+      {
+        "name": "Rail, million tonnes",
+        "values": [
+          160.745,
+          168.263
+        ]
+      }
+    ],
+    "side": [
+      "Recovery and displacement",
+      "Rail: 160.7m tonnes in 2024 to 168.3m in 2025. Road: 979.8m to 976.5m tonnes.",
+      "A shift of mining, agricultural and manufactured goods to rail can reduce truck fuel use.",
+      "Rail growth alone does not prove road displacement; distance, cargo and traction mix matter."
+    ],
+    "takeaway": "Road remains the dominant freight mode; sustained rail recovery could change the diesel required to move goods.",
+    "source": "Stats SA P7162 December 2025 p7; all reported freight. Analytical workbook v02, Evidence.",
+    "chartType": "bar",
+    "direction": "column",
+    "chartHeading": "Reported road and rail freight"
+  },
+  {
+    "kind": "chart",
+    "chartType": "bar",
+    "direction": "column",
+    "title": "Hybrids dominate electrified new-vehicle sales; fleet fuel savings emerge as vehicles turn over",
+    "categories": [
+      "BEV",
+      "Plug-in hybrid",
+      "Conventional hybrid"
+    ],
+    "series": [
+      {
+        "name": "2025 new sales",
+        "values": [
+          1088,
+          2810,
+          12818
+        ]
+      }
+    ],
+    "chartHeading": "Electrified vehicle sales, 2025",
+    "unit": "Vehicles sold",
+    "side": [
+      "Different fuel-use effects",
+      "BEV: 1,088 sales, or 0.18% of all new vehicles.",
+      "PHEVs and conventional hybrids still consume fuel; savings depend on usage.",
+      "New sales are not fleet penetration. Efficiency and mileage must be modelled separately."
+    ],
+    "takeaway": "The model’s fuel-efficiency path is a planning assumption; new-vehicle sales alone do not quantify national fuel savings.",
+    "source": "naamsa all-market sales 2025; master workbook Vehicle history S31:S36; evidence retained in market story v27 p11. Analytical workbook v02: efficiency is a planning assumption; avoid double-counting hybrid savings."
+  },
+  {
+    "page": 10,
+    "kind": "table",
+    "title": "Changes in refinery output alter the volume that imports must supply",
+    "headers": [
+      "Domestic supply",
+      "Reported evidence",
+      "Implication for imports"
+    ],
+    "rows": [
+      [
+        "Secunda",
+        "Refined-products output: 29.1m barrels in FY2024; 27.6m in FY2025; 30.6m in FY2026",
+        "Operating recovery can increase domestic supply; petrol and diesel yields determine import displacement."
+      ],
+      [
+        "Natref",
+        "Sasol-reported output: 17.8m barrels in FY2024; 14.7m in FY2025; 25.8m in FY2026",
+        "FY2026 includes above-share production, so the latest reported change cannot be treated as a like-for-like change in whole-plant output."
+      ],
+      [
+        "Astron",
+        "Reported refined products: 166,204 billion Btu in 2024; 164,365 billion Btu in 2025",
+        "Output and product mix affect supply; energy units require conversion before comparison with customs litres."
+      ],
+      [
+        "SAPREF and PetroSA",
+        "No refining contribution included in the 2025 production assessment",
+        "Restored refining would displace imports only when plants produce saleable products. Terminal handling is not refinery output."
+      ]
+    ],
+    "widths": [
+      240,
+      425,
+      453
+    ],
+    "font": 17,
+    "takeaway": "The 5.8bn-litre 2025 petrol/diesel baseline is a planning assumption; these differently scoped plant disclosures do not sum directly to it.",
+    "source": "Sasol production metrics FY2025 and FY2026; Glencore annual reports 2024 and 2025; 2025 plant assessment. Fiscal and calendar periods and reporting scopes differ. Product yields and reporting scopes require reconciliation to the 5.8bn-litre planning baseline."
+  },
+  {
+    "page": 11,
+    "title": "Durban’s inland share depends on competing gateways and reliable onward connections",
+    "kind": "table",
+    "headers": [
+      "Supply route",
+      "Evidence available",
+      "Implication for addressable flows"
+    ],
+    "rows": [
+      [
+        "Durban and other SA ports",
+        "Durban customs: 13.16bn L of petrol/diesel imports in 2025",
+        "Allocate national imports across gateways before assessing inland customer reach."
+      ],
+      [
+        "Durban–NMPP–Lesedi",
+        "Existing coastal-to-inland connection; customer and product access remain to be established",
+        "Pipeline, receipt and dispatch constraints determine the flows Vopak can serve."
+      ],
+      [
+        "Matola infrastructure",
+        "Galp/IPG: 60,000m³ petrol/diesel storage; Petromoc: 390,000m³ across liquid fuels",
+        "Do not add potentially overlapping capacities or equate tankage with annual SA deliveries."
+      ],
+      [
+        "Observed Mozambique route",
+        "Komatipoort recorded imports: 0.303bn L in 2022 → 0.086bn L in 2025",
+        "Observed cross-border flows provide a firmer volume anchor than storage capacity."
+      ],
+      [
+        "Walvis Bay alternative",
+        "Comparable delivered-cost, access and SA flow evidence is not established in this review",
+        "Retain as a route to assess; no quantified diversion or customer capture is assigned."
+      ]
+    ],
+    "takeaway": "Compare the same product and inland destination across routes; Matola and Walvis Bay affect gateway share, not national demand.",
+    "source": "SARS customs 2022/2025; Galp Matola commissioning, 3 December 2020; Petromoc logistics; existing Durban–Lesedi corridor evidence in market-sizing workbook. Walvis Bay diversion is unquantified; comparable delivered-cost evidence remains open.",
+    "widths": [
+      245,
+      418,
+      455
+    ],
+    "font": 17
+  }
+]

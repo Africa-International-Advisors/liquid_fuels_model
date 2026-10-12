@@ -1,0 +1,11 @@
+Measure,Value,Unit,Interpretation
+2025 demand estimate,20.987388197095243,bn L,"Department 2023 sales extended with explicit activity, efficiency and power assumptions"
+2025 FIASA-anchor sensitivity,19.654429925,bn L,Alternative 2024 source followed by the same annual drivers
+2025 domestic production,10.225867130847352,bn L,Petrol/diesel subset estimated from plant output
+2025 gross customs imports,16.70219144022,bn L,"Recorded national trade, not a demand estimate"
+Unexplained supply-demand difference,4.3922076979021085,bn L,Keep visible; do not present a fully reconciled national balance
+2030 base demand,20.856616056089173,bn L,"Explicit scenario, not reported forecast"
+2030 base import change,-0.1307721410060676,bn L,Change is more interpretable than the unresolved absolute import level
+2030 base trade-anchored imports,16.57141929921393,bn L,2025 customs plus modelled change; holds unexplained difference constant
+2030 base Mozambique diversion,0.2,bn L,Route substitution; does not reduce national imports
+Matola logistics premium,0.1924315068493152,ZAR/L,Assumed route economics; obtain comparable quotes

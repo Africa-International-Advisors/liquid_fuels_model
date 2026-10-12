@@ -1,0 +1,19 @@
+{
+  "retrieved_date": "2026-10-10",
+  "use": "Audit evidence only; proposed correction, not adopted as a model input",
+  "files": [
+    {
+      "file": "transnet-pipelines-2025.pdf",
+      "source_url": "https://www.transnet.net/getFile.ashx?id=6121",
+      "sha256": "7ac5b0477cfb4e6de2e3a13be49da7c945db6f5ee3533100cb12f17e4c682851",
+      "source": "Transnet Pipelines 2025, printed page 8",
+      "facts": {
+        "MPP_2024_actual_Ml_per_week": 97,
+        "MPP_2025_actual_Ml_per_week": 105,
+        "MPP_capacity_Ml_per_week": 148
+      },
+      "review_owner": "Manish; Nigel review",
+      "adoption_trigger": "Before the next workbook and pack rebuild"
+    }
+  ]
+}

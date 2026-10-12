@@ -1,0 +1,568 @@
+demand_world,supply_world,option,year,incremental_pre_tax_cashflow_zar
+Low,High,Existing,0,0
+Low,High,Existing,1,0.0
+Low,High,Existing,2,0.0
+Low,High,Existing,3,0.0
+Low,High,Existing,4,0.0
+Low,High,Existing,5,0.0
+Low,High,Existing,6,0.0
+Low,High,Existing,7,0.0
+Low,High,Existing,8,0.0
+Low,High,Existing,9,0.0
+Low,High,Existing,10,0.0
+Low,High,Existing,11,0.0
+Low,High,Existing,12,0.0
+Low,High,Existing,13,0.0
+Low,High,Existing,14,0.0
+Low,High,Existing,15,0.0
+Low,High,Existing,16,0.0
+Low,High,Existing,17,0.0
+Low,High,Existing,18,0.0
+Low,High,Existing,19,0.0
+Low,High,Existing,20,0.0
+Low,High,Improve access / dispatch,0,-100000000
+Low,High,Improve access / dispatch,1,-6000000.0
+Low,High,Improve access / dispatch,2,-6000000.0
+Low,High,Improve access / dispatch,3,-6000000.0
+Low,High,Improve access / dispatch,4,-6000000.0
+Low,High,Improve access / dispatch,5,-6000000.0
+Low,High,Improve access / dispatch,6,-6000000.0
+Low,High,Improve access / dispatch,7,-6000000.0
+Low,High,Improve access / dispatch,8,-6000000.0
+Low,High,Improve access / dispatch,9,-6000000.0
+Low,High,Improve access / dispatch,10,-6000000.0
+Low,High,Improve access / dispatch,11,-6000000.0
+Low,High,Improve access / dispatch,12,-6000000.0
+Low,High,Improve access / dispatch,13,-6000000.0
+Low,High,Improve access / dispatch,14,-6000000.0
+Low,High,Improve access / dispatch,15,-6000000.0
+Low,High,Improve access / dispatch,16,-6000000.0
+Low,High,Improve access / dispatch,17,-6000000.0
+Low,High,Improve access / dispatch,18,-6000000.0
+Low,High,Improve access / dispatch,19,-6000000.0
+Low,High,Improve access / dispatch,20,-6000000.0
+Low,High,Improve + add tanks,0,-600000000
+Low,High,Improve + add tanks,1,-23000000.0
+Low,High,Improve + add tanks,2,-23000000.0
+Low,High,Improve + add tanks,3,-23000000.0
+Low,High,Improve + add tanks,4,-23000000.0
+Low,High,Improve + add tanks,5,-23000000.0
+Low,High,Improve + add tanks,6,-23000000.0
+Low,High,Improve + add tanks,7,-23000000.0
+Low,High,Improve + add tanks,8,-23000000.0
+Low,High,Improve + add tanks,9,-23000000.0
+Low,High,Improve + add tanks,10,-23000000.0
+Low,High,Improve + add tanks,11,-23000000.0
+Low,High,Improve + add tanks,12,-23000000.0
+Low,High,Improve + add tanks,13,-23000000.0
+Low,High,Improve + add tanks,14,-23000000.0
+Low,High,Improve + add tanks,15,-23000000.0
+Low,High,Improve + add tanks,16,-23000000.0
+Low,High,Improve + add tanks,17,-23000000.0
+Low,High,Improve + add tanks,18,-23000000.0
+Low,High,Improve + add tanks,19,-23000000.0
+Low,High,Improve + add tanks,20,-23000000.0
+Low,Medium,Existing,0,0
+Low,Medium,Existing,1,0.0
+Low,Medium,Existing,2,0.0
+Low,Medium,Existing,3,0.0
+Low,Medium,Existing,4,0.0
+Low,Medium,Existing,5,0.0
+Low,Medium,Existing,6,0.0
+Low,Medium,Existing,7,0.0
+Low,Medium,Existing,8,0.0
+Low,Medium,Existing,9,0.0
+Low,Medium,Existing,10,0.0
+Low,Medium,Existing,11,0.0
+Low,Medium,Existing,12,0.0
+Low,Medium,Existing,13,0.0
+Low,Medium,Existing,14,0.0
+Low,Medium,Existing,15,0.0
+Low,Medium,Existing,16,0.0
+Low,Medium,Existing,17,0.0
+Low,Medium,Existing,18,0.0
+Low,Medium,Existing,19,0.0
+Low,Medium,Existing,20,0.0
+Low,Medium,Improve access / dispatch,0,-100000000
+Low,Medium,Improve access / dispatch,1,-6000000.0
+Low,Medium,Improve access / dispatch,2,-6000000.0
+Low,Medium,Improve access / dispatch,3,-6000000.0
+Low,Medium,Improve access / dispatch,4,-6000000.0
+Low,Medium,Improve access / dispatch,5,-6000000.0
+Low,Medium,Improve access / dispatch,6,-6000000.0
+Low,Medium,Improve access / dispatch,7,-6000000.0
+Low,Medium,Improve access / dispatch,8,-6000000.0
+Low,Medium,Improve access / dispatch,9,-6000000.0
+Low,Medium,Improve access / dispatch,10,-6000000.0
+Low,Medium,Improve access / dispatch,11,-6000000.0
+Low,Medium,Improve access / dispatch,12,-6000000.0
+Low,Medium,Improve access / dispatch,13,-6000000.0
+Low,Medium,Improve access / dispatch,14,-6000000.0
+Low,Medium,Improve access / dispatch,15,-6000000.0
+Low,Medium,Improve access / dispatch,16,-6000000.0
+Low,Medium,Improve access / dispatch,17,-6000000.0
+Low,Medium,Improve access / dispatch,18,-6000000.0
+Low,Medium,Improve access / dispatch,19,-6000000.0
+Low,Medium,Improve access / dispatch,20,-6000000.0
+Low,Medium,Improve + add tanks,0,-600000000
+Low,Medium,Improve + add tanks,1,-23000000.0
+Low,Medium,Improve + add tanks,2,-23000000.0
+Low,Medium,Improve + add tanks,3,-23000000.0
+Low,Medium,Improve + add tanks,4,-23000000.0
+Low,Medium,Improve + add tanks,5,-23000000.0
+Low,Medium,Improve + add tanks,6,-23000000.0
+Low,Medium,Improve + add tanks,7,-23000000.0
+Low,Medium,Improve + add tanks,8,-23000000.0
+Low,Medium,Improve + add tanks,9,-23000000.0
+Low,Medium,Improve + add tanks,10,-23000000.0
+Low,Medium,Improve + add tanks,11,-23000000.0
+Low,Medium,Improve + add tanks,12,-23000000.0
+Low,Medium,Improve + add tanks,13,-23000000.0
+Low,Medium,Improve + add tanks,14,-23000000.0
+Low,Medium,Improve + add tanks,15,-23000000.0
+Low,Medium,Improve + add tanks,16,-23000000.0
+Low,Medium,Improve + add tanks,17,-23000000.0
+Low,Medium,Improve + add tanks,18,-23000000.0
+Low,Medium,Improve + add tanks,19,-23000000.0
+Low,Medium,Improve + add tanks,20,-23000000.0
+Low,Low,Existing,0,0
+Low,Low,Existing,1,0.0
+Low,Low,Existing,2,0.0
+Low,Low,Existing,3,0.0
+Low,Low,Existing,4,0.0
+Low,Low,Existing,5,0.0
+Low,Low,Existing,6,0.0
+Low,Low,Existing,7,0.0
+Low,Low,Existing,8,0.0
+Low,Low,Existing,9,0.0
+Low,Low,Existing,10,0.0
+Low,Low,Existing,11,0.0
+Low,Low,Existing,12,0.0
+Low,Low,Existing,13,0.0
+Low,Low,Existing,14,0.0
+Low,Low,Existing,15,0.0
+Low,Low,Existing,16,0.0
+Low,Low,Existing,17,0.0
+Low,Low,Existing,18,0.0
+Low,Low,Existing,19,0.0
+Low,Low,Existing,20,0.0
+Low,Low,Improve access / dispatch,0,-100000000
+Low,Low,Improve access / dispatch,1,-1608000.0
+Low,Low,Improve access / dispatch,2,588000.0
+Low,Low,Improve access / dispatch,3,2784000.0
+Low,Low,Improve access / dispatch,4,2784000.0
+Low,Low,Improve access / dispatch,5,2784000.0
+Low,Low,Improve access / dispatch,6,2784000.0
+Low,Low,Improve access / dispatch,7,2784000.0
+Low,Low,Improve access / dispatch,8,2784000.0
+Low,Low,Improve access / dispatch,9,2784000.0
+Low,Low,Improve access / dispatch,10,2784000.0
+Low,Low,Improve access / dispatch,11,2784000.0
+Low,Low,Improve access / dispatch,12,2784000.0
+Low,Low,Improve access / dispatch,13,2784000.0
+Low,Low,Improve access / dispatch,14,2784000.0
+Low,Low,Improve access / dispatch,15,2784000.0
+Low,Low,Improve access / dispatch,16,2784000.0
+Low,Low,Improve access / dispatch,17,2784000.0
+Low,Low,Improve access / dispatch,18,2784000.0
+Low,Low,Improve access / dispatch,19,2784000.0
+Low,Low,Improve access / dispatch,20,2784000.0
+Low,Low,Improve + add tanks,0,-600000000
+Low,Low,Improve + add tanks,1,-18608000.0
+Low,Low,Improve + add tanks,2,-16412000.0
+Low,Low,Improve + add tanks,3,-14216000.0
+Low,Low,Improve + add tanks,4,-14216000.0
+Low,Low,Improve + add tanks,5,-14216000.0
+Low,Low,Improve + add tanks,6,-14216000.0
+Low,Low,Improve + add tanks,7,-14216000.0
+Low,Low,Improve + add tanks,8,-14216000.0
+Low,Low,Improve + add tanks,9,-14216000.0
+Low,Low,Improve + add tanks,10,-14216000.0
+Low,Low,Improve + add tanks,11,-14216000.0
+Low,Low,Improve + add tanks,12,-14216000.0
+Low,Low,Improve + add tanks,13,-14216000.0
+Low,Low,Improve + add tanks,14,-14216000.0
+Low,Low,Improve + add tanks,15,-14216000.0
+Low,Low,Improve + add tanks,16,-14216000.0
+Low,Low,Improve + add tanks,17,-14216000.0
+Low,Low,Improve + add tanks,18,-14216000.0
+Low,Low,Improve + add tanks,19,-14216000.0
+Low,Low,Improve + add tanks,20,-14216000.0
+Medium,High,Existing,0,0
+Medium,High,Existing,1,0.0
+Medium,High,Existing,2,0.0
+Medium,High,Existing,3,0.0
+Medium,High,Existing,4,0.0
+Medium,High,Existing,5,0.0
+Medium,High,Existing,6,0.0
+Medium,High,Existing,7,0.0
+Medium,High,Existing,8,0.0
+Medium,High,Existing,9,0.0
+Medium,High,Existing,10,0.0
+Medium,High,Existing,11,0.0
+Medium,High,Existing,12,0.0
+Medium,High,Existing,13,0.0
+Medium,High,Existing,14,0.0
+Medium,High,Existing,15,0.0
+Medium,High,Existing,16,0.0
+Medium,High,Existing,17,0.0
+Medium,High,Existing,18,0.0
+Medium,High,Existing,19,0.0
+Medium,High,Existing,20,0.0
+Medium,High,Improve access / dispatch,0,-100000000
+Medium,High,Improve access / dispatch,1,-6000000.0
+Medium,High,Improve access / dispatch,2,-6000000.0
+Medium,High,Improve access / dispatch,3,-6000000.0
+Medium,High,Improve access / dispatch,4,-6000000.0
+Medium,High,Improve access / dispatch,5,-6000000.0
+Medium,High,Improve access / dispatch,6,-6000000.0
+Medium,High,Improve access / dispatch,7,-6000000.0
+Medium,High,Improve access / dispatch,8,-6000000.0
+Medium,High,Improve access / dispatch,9,-6000000.0
+Medium,High,Improve access / dispatch,10,-6000000.0
+Medium,High,Improve access / dispatch,11,-6000000.0
+Medium,High,Improve access / dispatch,12,-6000000.0
+Medium,High,Improve access / dispatch,13,-6000000.0
+Medium,High,Improve access / dispatch,14,-6000000.0
+Medium,High,Improve access / dispatch,15,-6000000.0
+Medium,High,Improve access / dispatch,16,-6000000.0
+Medium,High,Improve access / dispatch,17,-6000000.0
+Medium,High,Improve access / dispatch,18,-6000000.0
+Medium,High,Improve access / dispatch,19,-6000000.0
+Medium,High,Improve access / dispatch,20,-6000000.0
+Medium,High,Improve + add tanks,0,-600000000
+Medium,High,Improve + add tanks,1,-23000000.0
+Medium,High,Improve + add tanks,2,-23000000.0
+Medium,High,Improve + add tanks,3,-23000000.0
+Medium,High,Improve + add tanks,4,-23000000.0
+Medium,High,Improve + add tanks,5,-23000000.0
+Medium,High,Improve + add tanks,6,-23000000.0
+Medium,High,Improve + add tanks,7,-23000000.0
+Medium,High,Improve + add tanks,8,-23000000.0
+Medium,High,Improve + add tanks,9,-23000000.0
+Medium,High,Improve + add tanks,10,-23000000.0
+Medium,High,Improve + add tanks,11,-23000000.0
+Medium,High,Improve + add tanks,12,-23000000.0
+Medium,High,Improve + add tanks,13,-23000000.0
+Medium,High,Improve + add tanks,14,-23000000.0
+Medium,High,Improve + add tanks,15,-23000000.0
+Medium,High,Improve + add tanks,16,-23000000.0
+Medium,High,Improve + add tanks,17,-23000000.0
+Medium,High,Improve + add tanks,18,-23000000.0
+Medium,High,Improve + add tanks,19,-23000000.0
+Medium,High,Improve + add tanks,20,-23000000.0
+Medium,Medium,Existing,0,0
+Medium,Medium,Existing,1,0.0
+Medium,Medium,Existing,2,0.0
+Medium,Medium,Existing,3,0.0
+Medium,Medium,Existing,4,0.0
+Medium,Medium,Existing,5,0.0
+Medium,Medium,Existing,6,0.0
+Medium,Medium,Existing,7,0.0
+Medium,Medium,Existing,8,0.0
+Medium,Medium,Existing,9,0.0
+Medium,Medium,Existing,10,0.0
+Medium,Medium,Existing,11,0.0
+Medium,Medium,Existing,12,0.0
+Medium,Medium,Existing,13,0.0
+Medium,Medium,Existing,14,0.0
+Medium,Medium,Existing,15,0.0
+Medium,Medium,Existing,16,0.0
+Medium,Medium,Existing,17,0.0
+Medium,Medium,Existing,18,0.0
+Medium,Medium,Existing,19,0.0
+Medium,Medium,Existing,20,0.0
+Medium,Medium,Improve access / dispatch,0,-100000000
+Medium,Medium,Improve access / dispatch,1,-4776000.000000007
+Medium,Medium,Improve access / dispatch,2,-4164000.0000000102
+Medium,Medium,Improve access / dispatch,3,-3552000.000000014
+Medium,Medium,Improve access / dispatch,4,-3552000.000000014
+Medium,Medium,Improve access / dispatch,5,-3552000.000000014
+Medium,Medium,Improve access / dispatch,6,-3552000.000000014
+Medium,Medium,Improve access / dispatch,7,-3552000.000000014
+Medium,Medium,Improve access / dispatch,8,-3552000.000000014
+Medium,Medium,Improve access / dispatch,9,-3552000.000000014
+Medium,Medium,Improve access / dispatch,10,-3552000.000000014
+Medium,Medium,Improve access / dispatch,11,-3552000.000000014
+Medium,Medium,Improve access / dispatch,12,-3552000.000000014
+Medium,Medium,Improve access / dispatch,13,-3552000.000000014
+Medium,Medium,Improve access / dispatch,14,-3552000.000000014
+Medium,Medium,Improve access / dispatch,15,-3552000.000000014
+Medium,Medium,Improve access / dispatch,16,-3552000.000000014
+Medium,Medium,Improve access / dispatch,17,-3552000.000000014
+Medium,Medium,Improve access / dispatch,18,-3552000.000000014
+Medium,Medium,Improve access / dispatch,19,-3552000.000000014
+Medium,Medium,Improve access / dispatch,20,-3552000.000000014
+Medium,Medium,Improve + add tanks,0,-600000000
+Medium,Medium,Improve + add tanks,1,-21776000.000000007
+Medium,Medium,Improve + add tanks,2,-21164000.00000001
+Medium,Medium,Improve + add tanks,3,-20552000.000000015
+Medium,Medium,Improve + add tanks,4,-20552000.000000015
+Medium,Medium,Improve + add tanks,5,-20552000.000000015
+Medium,Medium,Improve + add tanks,6,-20552000.000000015
+Medium,Medium,Improve + add tanks,7,-20552000.000000015
+Medium,Medium,Improve + add tanks,8,-20552000.000000015
+Medium,Medium,Improve + add tanks,9,-20552000.000000015
+Medium,Medium,Improve + add tanks,10,-20552000.000000015
+Medium,Medium,Improve + add tanks,11,-20552000.000000015
+Medium,Medium,Improve + add tanks,12,-20552000.000000015
+Medium,Medium,Improve + add tanks,13,-20552000.000000015
+Medium,Medium,Improve + add tanks,14,-20552000.000000015
+Medium,Medium,Improve + add tanks,15,-20552000.000000015
+Medium,Medium,Improve + add tanks,16,-20552000.000000015
+Medium,Medium,Improve + add tanks,17,-20552000.000000015
+Medium,Medium,Improve + add tanks,18,-20552000.000000015
+Medium,Medium,Improve + add tanks,19,-20552000.000000015
+Medium,Medium,Improve + add tanks,20,-20552000.000000015
+Medium,Low,Existing,0,0
+Medium,Low,Existing,1,0.0
+Medium,Low,Existing,2,0.0
+Medium,Low,Existing,3,0.0
+Medium,Low,Existing,4,0.0
+Medium,Low,Existing,5,0.0
+Medium,Low,Existing,6,0.0
+Medium,Low,Existing,7,0.0
+Medium,Low,Existing,8,0.0
+Medium,Low,Existing,9,0.0
+Medium,Low,Existing,10,0.0
+Medium,Low,Existing,11,0.0
+Medium,Low,Existing,12,0.0
+Medium,Low,Existing,13,0.0
+Medium,Low,Existing,14,0.0
+Medium,Low,Existing,15,0.0
+Medium,Low,Existing,16,0.0
+Medium,Low,Existing,17,0.0
+Medium,Low,Existing,18,0.0
+Medium,Low,Existing,19,0.0
+Medium,Low,Existing,20,0.0
+Medium,Low,Improve access / dispatch,0,-100000000
+Medium,Low,Improve access / dispatch,1,5160000.0
+Medium,Low,Improve access / dispatch,2,10740000.0
+Medium,Low,Improve access / dispatch,3,16320000.0
+Medium,Low,Improve access / dispatch,4,16320000.0
+Medium,Low,Improve access / dispatch,5,16320000.0
+Medium,Low,Improve access / dispatch,6,16320000.0
+Medium,Low,Improve access / dispatch,7,16320000.0
+Medium,Low,Improve access / dispatch,8,16320000.0
+Medium,Low,Improve access / dispatch,9,16320000.0
+Medium,Low,Improve access / dispatch,10,16320000.0
+Medium,Low,Improve access / dispatch,11,16320000.0
+Medium,Low,Improve access / dispatch,12,16320000.0
+Medium,Low,Improve access / dispatch,13,16320000.0
+Medium,Low,Improve access / dispatch,14,16320000.0
+Medium,Low,Improve access / dispatch,15,16320000.0
+Medium,Low,Improve access / dispatch,16,16320000.0
+Medium,Low,Improve access / dispatch,17,16320000.0
+Medium,Low,Improve access / dispatch,18,16320000.0
+Medium,Low,Improve access / dispatch,19,16320000.0
+Medium,Low,Improve access / dispatch,20,16320000.0
+Medium,Low,Improve + add tanks,0,-600000000
+Medium,Low,Improve + add tanks,1,1842838.7096774206
+Medium,Low,Improve + add tanks,2,14264258.064516127
+Medium,Low,Improve + add tanks,3,26685677.41935484
+Medium,Low,Improve + add tanks,4,26685677.41935484
+Medium,Low,Improve + add tanks,5,26685677.41935484
+Medium,Low,Improve + add tanks,6,26685677.41935484
+Medium,Low,Improve + add tanks,7,26685677.41935484
+Medium,Low,Improve + add tanks,8,26685677.41935484
+Medium,Low,Improve + add tanks,9,26685677.41935484
+Medium,Low,Improve + add tanks,10,26685677.41935484
+Medium,Low,Improve + add tanks,11,26685677.41935484
+Medium,Low,Improve + add tanks,12,26685677.41935484
+Medium,Low,Improve + add tanks,13,26685677.41935484
+Medium,Low,Improve + add tanks,14,26685677.41935484
+Medium,Low,Improve + add tanks,15,26685677.41935484
+Medium,Low,Improve + add tanks,16,26685677.41935484
+Medium,Low,Improve + add tanks,17,26685677.41935484
+Medium,Low,Improve + add tanks,18,26685677.41935484
+Medium,Low,Improve + add tanks,19,26685677.41935484
+Medium,Low,Improve + add tanks,20,26685677.41935484
+High,High,Existing,0,0
+High,High,Existing,1,0.0
+High,High,Existing,2,0.0
+High,High,Existing,3,0.0
+High,High,Existing,4,0.0
+High,High,Existing,5,0.0
+High,High,Existing,6,0.0
+High,High,Existing,7,0.0
+High,High,Existing,8,0.0
+High,High,Existing,9,0.0
+High,High,Existing,10,0.0
+High,High,Existing,11,0.0
+High,High,Existing,12,0.0
+High,High,Existing,13,0.0
+High,High,Existing,14,0.0
+High,High,Existing,15,0.0
+High,High,Existing,16,0.0
+High,High,Existing,17,0.0
+High,High,Existing,18,0.0
+High,High,Existing,19,0.0
+High,High,Existing,20,0.0
+High,High,Improve access / dispatch,0,-100000000
+High,High,Improve access / dispatch,1,-6000000.0
+High,High,Improve access / dispatch,2,-6000000.0
+High,High,Improve access / dispatch,3,-6000000.0
+High,High,Improve access / dispatch,4,-6000000.0
+High,High,Improve access / dispatch,5,-6000000.0
+High,High,Improve access / dispatch,6,-6000000.0
+High,High,Improve access / dispatch,7,-6000000.0
+High,High,Improve access / dispatch,8,-6000000.0
+High,High,Improve access / dispatch,9,-6000000.0
+High,High,Improve access / dispatch,10,-6000000.0
+High,High,Improve access / dispatch,11,-6000000.0
+High,High,Improve access / dispatch,12,-6000000.0
+High,High,Improve access / dispatch,13,-6000000.0
+High,High,Improve access / dispatch,14,-6000000.0
+High,High,Improve access / dispatch,15,-6000000.0
+High,High,Improve access / dispatch,16,-6000000.0
+High,High,Improve access / dispatch,17,-6000000.0
+High,High,Improve access / dispatch,18,-6000000.0
+High,High,Improve access / dispatch,19,-6000000.0
+High,High,Improve access / dispatch,20,-6000000.0
+High,High,Improve + add tanks,0,-600000000
+High,High,Improve + add tanks,1,-23000000.0
+High,High,Improve + add tanks,2,-23000000.0
+High,High,Improve + add tanks,3,-23000000.0
+High,High,Improve + add tanks,4,-23000000.0
+High,High,Improve + add tanks,5,-23000000.0
+High,High,Improve + add tanks,6,-23000000.0
+High,High,Improve + add tanks,7,-23000000.0
+High,High,Improve + add tanks,8,-23000000.0
+High,High,Improve + add tanks,9,-23000000.0
+High,High,Improve + add tanks,10,-23000000.0
+High,High,Improve + add tanks,11,-23000000.0
+High,High,Improve + add tanks,12,-23000000.0
+High,High,Improve + add tanks,13,-23000000.0
+High,High,Improve + add tanks,14,-23000000.0
+High,High,Improve + add tanks,15,-23000000.0
+High,High,Improve + add tanks,16,-23000000.0
+High,High,Improve + add tanks,17,-23000000.0
+High,High,Improve + add tanks,18,-23000000.0
+High,High,Improve + add tanks,19,-23000000.0
+High,High,Improve + add tanks,20,-23000000.0
+High,Medium,Existing,0,0
+High,Medium,Existing,1,0.0
+High,Medium,Existing,2,0.0
+High,Medium,Existing,3,0.0
+High,Medium,Existing,4,0.0
+High,Medium,Existing,5,0.0
+High,Medium,Existing,6,0.0
+High,Medium,Existing,7,0.0
+High,Medium,Existing,8,0.0
+High,Medium,Existing,9,0.0
+High,Medium,Existing,10,0.0
+High,Medium,Existing,11,0.0
+High,Medium,Existing,12,0.0
+High,Medium,Existing,13,0.0
+High,Medium,Existing,14,0.0
+High,Medium,Existing,15,0.0
+High,Medium,Existing,16,0.0
+High,Medium,Existing,17,0.0
+High,Medium,Existing,18,0.0
+High,Medium,Existing,19,0.0
+High,Medium,Existing,20,0.0
+High,Medium,Improve access / dispatch,0,-100000000
+High,Medium,Improve access / dispatch,1,5160000.0
+High,Medium,Improve access / dispatch,2,10740000.0
+High,Medium,Improve access / dispatch,3,16320000.0
+High,Medium,Improve access / dispatch,4,16320000.0
+High,Medium,Improve access / dispatch,5,16320000.0
+High,Medium,Improve access / dispatch,6,16320000.0
+High,Medium,Improve access / dispatch,7,16320000.0
+High,Medium,Improve access / dispatch,8,16320000.0
+High,Medium,Improve access / dispatch,9,16320000.0
+High,Medium,Improve access / dispatch,10,16320000.0
+High,Medium,Improve access / dispatch,11,16320000.0
+High,Medium,Improve access / dispatch,12,16320000.0
+High,Medium,Improve access / dispatch,13,16320000.0
+High,Medium,Improve access / dispatch,14,16320000.0
+High,Medium,Improve access / dispatch,15,16320000.0
+High,Medium,Improve access / dispatch,16,16320000.0
+High,Medium,Improve access / dispatch,17,16320000.0
+High,Medium,Improve access / dispatch,18,16320000.0
+High,Medium,Improve access / dispatch,19,16320000.0
+High,Medium,Improve access / dispatch,20,16320000.0
+High,Medium,Improve + add tanks,0,-600000000
+High,Medium,Improve + add tanks,1,-6292903.22580649
+High,Medium,Improve + add tanks,2,2060645.1612902656
+High,Medium,Improve + add tanks,3,10414193.54838702
+High,Medium,Improve + add tanks,4,10414193.54838702
+High,Medium,Improve + add tanks,5,10414193.54838702
+High,Medium,Improve + add tanks,6,10414193.54838702
+High,Medium,Improve + add tanks,7,10414193.54838702
+High,Medium,Improve + add tanks,8,10414193.54838702
+High,Medium,Improve + add tanks,9,10414193.54838702
+High,Medium,Improve + add tanks,10,10414193.54838702
+High,Medium,Improve + add tanks,11,10414193.54838702
+High,Medium,Improve + add tanks,12,10414193.54838702
+High,Medium,Improve + add tanks,13,10414193.54838702
+High,Medium,Improve + add tanks,14,10414193.54838702
+High,Medium,Improve + add tanks,15,10414193.54838702
+High,Medium,Improve + add tanks,16,10414193.54838702
+High,Medium,Improve + add tanks,17,10414193.54838702
+High,Medium,Improve + add tanks,18,10414193.54838702
+High,Medium,Improve + add tanks,19,10414193.54838702
+High,Medium,Improve + add tanks,20,10414193.54838702
+High,Low,Existing,0,0
+High,Low,Existing,1,0.0
+High,Low,Existing,2,0.0
+High,Low,Existing,3,0.0
+High,Low,Existing,4,0.0
+High,Low,Existing,5,0.0
+High,Low,Existing,6,0.0
+High,Low,Existing,7,0.0
+High,Low,Existing,8,0.0
+High,Low,Existing,9,0.0
+High,Low,Existing,10,0.0
+High,Low,Existing,11,0.0
+High,Low,Existing,12,0.0
+High,Low,Existing,13,0.0
+High,Low,Existing,14,0.0
+High,Low,Existing,15,0.0
+High,Low,Existing,16,0.0
+High,Low,Existing,17,0.0
+High,Low,Existing,18,0.0
+High,Low,Existing,19,0.0
+High,Low,Existing,20,0.0
+High,Low,Improve access / dispatch,0,-100000000
+High,Low,Improve access / dispatch,1,5160000.0
+High,Low,Improve access / dispatch,2,10740000.0
+High,Low,Improve access / dispatch,3,16320000.0
+High,Low,Improve access / dispatch,4,16320000.0
+High,Low,Improve access / dispatch,5,16320000.0
+High,Low,Improve access / dispatch,6,16320000.0
+High,Low,Improve access / dispatch,7,16320000.0
+High,Low,Improve access / dispatch,8,16320000.0
+High,Low,Improve access / dispatch,9,16320000.0
+High,Low,Improve access / dispatch,10,16320000.0
+High,Low,Improve access / dispatch,11,16320000.0
+High,Low,Improve access / dispatch,12,16320000.0
+High,Low,Improve access / dispatch,13,16320000.0
+High,Low,Improve access / dispatch,14,16320000.0
+High,Low,Improve access / dispatch,15,16320000.0
+High,Low,Improve access / dispatch,16,16320000.0
+High,Low,Improve access / dispatch,17,16320000.0
+High,Low,Improve access / dispatch,18,16320000.0
+High,Low,Improve access / dispatch,19,16320000.0
+High,Low,Improve access / dispatch,20,16320000.0
+High,Low,Improve + add tanks,0,-600000000
+High,Low,Improve + add tanks,1,32906580.645161256
+High,Low,Improve + add tanks,2,60859870.96774188
+High,Low,Improve + add tanks,3,88813161.29032251
+High,Low,Improve + add tanks,4,88813161.29032251
+High,Low,Improve + add tanks,5,88813161.29032251
+High,Low,Improve + add tanks,6,88813161.29032251
+High,Low,Improve + add tanks,7,88813161.29032251
+High,Low,Improve + add tanks,8,88813161.29032251
+High,Low,Improve + add tanks,9,88813161.29032251
+High,Low,Improve + add tanks,10,88813161.29032251
+High,Low,Improve + add tanks,11,88813161.29032251
+High,Low,Improve + add tanks,12,88813161.29032251
+High,Low,Improve + add tanks,13,88813161.29032251
+High,Low,Improve + add tanks,14,88813161.29032251
+High,Low,Improve + add tanks,15,88813161.29032251
+High,Low,Improve + add tanks,16,88813161.29032251
+High,Low,Improve + add tanks,17,88813161.29032251
+High,Low,Improve + add tanks,18,88813161.29032251
+High,Low,Improve + add tanks,19,88813161.29032251
+High,Low,Improve + add tanks,20,88813161.29032251

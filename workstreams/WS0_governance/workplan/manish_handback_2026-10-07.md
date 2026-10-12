@@ -6,7 +6,7 @@ has gone to `main`. `main` was merged in five times, last at `37ffa0b`.
 
 Read first:
 
-- Deck: `pptx/output/delivered/supporting/Vopak_Manish_Handback_2026_10_07.pptx`
+- Deck: `pptx/output/delivered/supporting/archive/2026-10-11_cleanup/Vopak_Manish_Handback_2026_10_07.pptx`
   (PDF alongside), one section per priority.
 - Decision log: `manish_decision_log_2026-10-07.csv`, 25 decisions with the
   evidence, my proposal, the owner and a status.

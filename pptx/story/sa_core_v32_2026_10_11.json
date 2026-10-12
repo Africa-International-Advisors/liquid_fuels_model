@@ -1,0 +1,112 @@
+{
+ "core": [1,2,3,4,8,"new6",11,12,13,29,"new11",15,"new13","new14",17,36,44,18,"new19"],
+ "appendix": [20,5,6,7,9,10,14,16,19,21,22,23,24,25,26,27,28,30,31,32,33,34,35,37,38,39,40,41,42,43],
+ "tables": {
+  "4": {
+   "title":"South Africa has a large fuel market and substantial imports; the source years differ",
+   "headers":["Baseline measure","Latest evidence used","What it establishes"],
+   "widths":[250,360,508],
+   "rows":[
+    ["National petrol and diesel sales","2023: 21.94bn litres\nPetrol 9.04; diesel 12.91","Historical market scale. Comparable 2024 sales remain unverified; 2025 sales are unavailable."],
+    ["Finished-product trade","2025: imports 16.70bn litres\nExports 1.55; net imports 15.15","Import scale by product. Imports and sales refer to different years and cannot establish current import penetration."],
+    ["Domestic supply","Product production series ends in 2021; newer plant disclosures are available","Refinery shutdowns changed the supply base. A recent national product balance still needs reconciliation."],
+    ["Gateway and inland context","2025 Durban customs: 13.16bn litres\n2022 Gauteng sales: 6.81bn litres","Durban is a major import gateway. Provincial demand overlaps its potential catchment; it is not additional volume."]
+   ],
+   "takeaway":"The following pages establish demand, supply and market geography before testing how the outlook could change.",
+   "footer":"Department national sales 2023 and provincial sales 2022; SARS petrol/diesel customs 2025; registered market_review.yaml. Latest available periods differ. No matched-year import share is inferred."
+  },
+  "6": {
+   "title":"Road transport is the largest reported end use; sector and power estimates need distinct treatment",
+   "headers":["Use","Evidence and period","Interpretation"],
+   "widths":[245,345,528],
+   "rows":[
+    ["Road transport","2021 energy balance: 15.1bn litres\nPetrol and diesel","Largest reported final-use category. A later fuel-by-use split has not been reconciled."],
+    ["Power generation","FY2025 Eskom own fuel: 0.678bn litres\nEskom plus estimated IPPs: ~0.89bn","Own use includes diesel and kerosene. Power is transformation input in the energy balance; private backup remains unmeasured."],
+    ["Mining","2025 diesel estimate: 1.406bn litres","Activity multiplied by historical intensity. Road-use overlap requires reconciliation."],
+    ["Manufacturing / industry residual","2025 diesel estimate: 0.165bn litres","Residual excludes mining and construction; coverage does not establish a complete industrial census."],
+    ["Agriculture / forestry","2025 diesel estimate: 1.131bn litres","Activity-based estimate. Weather, irrigation and transport affect fuel intensity."],
+    ["Other and marine","2021 energy balance: 5.3bn litres\nPetrol and diesel","Broad residual category with a different scope from the model’s marine-only segment."]
+   ],
+   "height":438,
+   "font":17,
+   "takeaway":"Read these as separate evidence points. Different years, scopes and overlaps prevent a valid sum to national sales.",
+   "footer":"Department energy balance 2021; Eskom Integrated Report 2025; Manish master: Sector history, Diesel by use and Power fleet. 2025 sector litres and IPP burn are estimates, not directly reported fuel sales."
+  },
+  "11": {
+   "title":"Sector activity and vehicle efficiency create different demand paths",
+   "headers":["Driver","What the baseline shows","How it could change fuel demand"],
+   "widths":[240,405,473],
+   "rows":[
+    ["Mining","2025 activity-based diesel estimate: 1.41bn litres","Output, haul distances and equipment intensity can move consumption independently of national GDP."],
+    ["Manufacturing","2025 industry-residual estimate: 0.17bn litres; incomplete sector coverage","Changes in production and energy use affect diesel, but the sector boundary must be reconciled before forecasting."],
+    ["Agriculture / forestry","2025 activity-based diesel estimate: 1.13bn litres","Harvests, weather, irrigation and transport demand create a different path from mining or manufacturing."],
+    ["Vehicle fleet and fuel intensity","BEVs were 0.18% of new sales in 2025. Sales shares differ from fleet shares.","EV/HEV uptake and vehicle replacement change fuel use gradually. Fuel prices affect travel; avoid counting hybrid and efficiency savings twice."]
+   ],
+   "takeaway":"Sector activity, kilometres travelled and litres per kilometre need separate assumptions; no combined reduction forecast is adopted here.",
+   "footer":"Master workbook Sector history and Vehicle history; naamsa 2025. Post-2021 sector litres are activity/intensity estimates. EV/efficiency implementation reviewed; hybrid/rail combination rules and calibration remain open."
+  },
+  "13": {
+   "title":"Refinery developments require evidence of delivery before they change the supply outlook",
+   "headers":["Asset / development","Evidence available","What makes a future output case credible"],
+   "widths":[235,420,463],
+   "rows":[
+    ["SAPREF","Roadmap includes an import-terminal phase before refining","Confirm sanction, funding, commissioning, ramp-up and product yields. The terminal phase can compete before a refinery restart."],
+    ["Secunda","FY2026 all-refined-products output: 30.6m barrels; FY2025: 27.6m","Specify availability and the mechanism linking coal-derived gas / MRG choices to petrol and diesel output."],
+    ["Natref","Recent Sasol output disclosures include use of co-owner capacity","Confirm the ownership/reporting basis, availability and product yields. Historic ownership shares cannot scale the latest output mechanically."],
+    ["Astron","Operator output evidence is available","Separate actual output from the assumed 50/50 petrol/diesel mix used in the current illustration."],
+    ["PetroSA / Mossel Bay","Restart remains uncertain in the evidence reviewed","Require a supported feedstock plan, sanction and dated output path before including restored production."]
+   ],
+   "height":420,
+   "font":17,
+   "takeaway":"The evidence supports conditional asset cases. It does not establish a probability of opening or an agreed start date for proposed capacity.",
+   "footer":"Manish DR08 handback through 9 October; Sasol FY2026 operating metrics; Glencore/Astron evidence; CEF SAPREF roadmap. Capacity, fiscal-year output and petrol/diesel production are different measures."
+  },
+  "14": {
+   "title":"Domestic product output could move the import requirement in either direction",
+   "headers":["Supply path","Effect on imports, all else equal","What must be quantified"],
+   "widths":[250,410,458],
+   "rows":[
+    ["Higher domestic output","Restarts, improved availability or added production could displace finished-product imports","Delivered petrol/diesel output, commissioning and ramp-up, rather than nameplate refinery capacity."],
+    ["Broadly stable domestic output","Demand changes drive much of the change in import requirements","The transport, sector and power-demand paths established on the preceding pages."],
+    ["Lower domestic output","Outages, reduced availability or closures could increase reliance on imports","Plant-specific lost output and duration; product mix, stocks and exports can alter the effect."]
+   ],
+   "height":355,
+   "takeaway":"2025 gross imports of 16.70bn litres provide context. A future import forecast requires matched demand, product output, exports and stock changes; current capacity sensitivities remain illustrative.",
+   "footer":"SARS customs 2025; registered review_capacity_scenarios.yaml and review_supply_worlds.yaml; DR08 evidence. Directional mechanisms hold other factors constant. No probability or new numerical import forecast is assigned."
+  },
+  "18": {
+   "title":"Investment follows the customer opportunity and the constraint that limits service",
+   "headers":["Decision","When it becomes relevant","Evidence needed before commitment"],
+   "widths":[265,395,458],
+   "rows":[
+    ["Use and improve existing assets","Profitable customer growth can be served through better tank turns, scheduling or dispatch","Current throughput, eligible working tanks, seasonal peaks and the specific operating constraint."],
+    ["Improve corridor access","Competitive customer flows are constrained by transport access, cost or reliability","Comparable delivered quotes, injection and capacity rights, service performance and customer commitments."],
+    ["Add tank capacity","Secured incremental flows exceed achievable handling and storage is the binding constraint","Product-compatible capacity, project cost and timing, chargeable revenues and returns under downside cases."]
+   ],
+   "height":365,
+   "takeaway":"Current evidence supports these decision tests. The financial illustration in the appendix uses separate capture and commercial assumptions and does not establish an approved investment.",
+   "footer":"Vopak asset evidence; registered terminal_site_assumptions.csv; client requests DR02/03/05/06. Detailed investment illustration, assumptions and downside results are retained in the appendix; EV adjacencies remain separately scoped."
+  },
+  "19": {
+   "title":"The market opportunity is established; Vopak’s share and expansion case remain conditional",
+   "headers":["Conclusion today","What could change the answer","Next decision / responsibility"],
+   "widths":[375,390,353],
+   "rows":[
+    ["South Africa has substantial finished-product imports, with Durban a major entry point","Comparable current sales, domestic product output and stock movements","Agree the reconciled baseline. Manish evidence; Nigel review."],
+    ["Transport, sector activity, power recovery and refinery developments can change demand and imports","Dated driver assumptions, asset milestones and product-output paths","Agree the scenario paths. Nigel / Henry review; Manish integration."],
+    ["The capture cases quantify conditional Durban–Lesedi volumes","Customer destinations, current site movements, shared transfers and competing delivered costs","Validate accessible customer share. Nigel coordinates Vopak inputs."],
+    ["Additional investment depends on a proven service constraint and commercial return","Working capacity, actual turns and peaks, access, tariffs and project costs","Compare operating improvement, access and tanks after the client evidence arrives."]
+   ],
+   "takeaway":"The immediate priority is to validate customer flows and operating limits, then connect the agreed market scenarios to investment economics.",
+   "footer":"Evidence through Manish’s 9 October handback; review and sensitivity work dated 10 October. Detailed source gaps, owners and client requests are retained in the appendix and reviewed master workbook. No business approval is inferred."
+  }
+ },
+ "edits": {
+  "3": {"title":"Import dependence supports Vopak’s opportunity; demand, supply and access determine its scale"},
+  "7": {"title":"Refinery shutdowns have coincided with growth in finished-product imports"},
+  "10": {"title":"Road-to-rail recovery could reduce truck diesel demand; transferable freight determines the scale", "interpretation":"Road carried 85.3% of reported tonnes in 2025. Quantifying a rail shift requires eligible freight, tonne-kilometres, timing and diesel intensity; payload alone is insufficient."},
+  "12": {"title":"Eskom’s fuel use has fallen; sustained recovery could reduce power diesel further", "interpretation":"Own Eskom OCGT fuel fell from 1,129.5m litres in FY2024 to 677.9m in FY2025. Assess Eskom, IPPs and private backup separately; recovery, outages and replacement timing determine the next phase."},
+  "16": {"title":"Vopak capture remains conditional: the base case gives Durban 2.63bn litres, including Lesedi 1.32bn"},
+  "17": {"title":"Actual throughput and operating limits determine whether existing assets can serve growth"}
+ }
+}

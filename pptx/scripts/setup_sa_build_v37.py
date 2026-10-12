@@ -1,0 +1,20 @@
+from pathlib import Path
+r=Path(__file__).resolve().parents[2];p=r/'pptx/scripts'
+s=(p/'build_sa_story_v36.mjs').read_text(encoding='utf8').replace('v36','v37')
+s=s.replace('slideMap={1:old[0],19:old[1]}','slideMap={1:old[0]}')
+s=s.replace('d.page===22','d.page===23')
+s=s.replace("if(d.kind==='scr'){", "if(d.kind==='divider'){\n  get(s,'Title 1').text='';\n  add(s,'Appendix title','Appendix',48,245,1118,85,52,true,'#0A2373');\n  add(s,'Appendix subtitle','Supporting analysis and assumptions',48,340,1118,65,30,false,'#11151A');\n  add(s,'Appendix contents','Power and freight sensitivities • Refinery and route assumptions\\nProduct balance • Demand methodology • Sources',48,445,1118,90,22,false,'#11151A');\n }else if(d.kind==='scr'){")
+s=s.replace("if(d.kind!=='scr')add", "if(!['scr','divider'].includes(d.kind))add")
+s=s.replace("'pp3–6, 22'","'pp3–6, 23'").replace("'p6'","'p7'").replace("'pp7–8'","'p8'").replace("'pp9–10, 21'","'pp9, 22'").replace("'pp11–13'","'p10'").replace("'pp14–15'","'p11'").replace("'pp16–18'","'pp12–15'")
+s=s.replace("'Matola and Walvis Bay'","'Matola and inland routes'")
+s=s.replace("'Competing gateways could divert inland flows from Durban, depending on delivered cost, reliability and access.'","'Matola provides an alternative gateway for inland supply; delivered cost, reliability and access determine its reach.'")
+s=s.replace('user-directed 5.8bn litres','assumed 5.8bn litres')
+s=s.replace("if(i>=1&&i<18)nav.main[i+1]=i<3?0:i<6?1:i<15?2:3;","if(i>=1&&i<15)nav.main[i+1]=i<3?0:i<6?1:i<11?2:3;")
+s=s.replace("if(i>=18)nav.appendix[i+1]=i===18?0:2;","if(i>=15)nav.appendix[i+1]=i===15?0:2;")
+s=s.replace('keep_count:23','keep_count:24').replace('23-page','24-page')
+(p/'build_sa_story_v37.mjs').write_text(s,encoding='utf8')
+for name in ['trim_sa_story_v36.py','style_sa_story_v36.py','apply_sa_story_navigation_v36.py','package_sa_chart_workbooks_v36.py','finalize_sa_story_v36.mjs']:
+ t=(p/name).read_text(encoding='utf8').replace('v36','v37')
+ if name.startswith('trim_'):t=t.replace('[23:]','[24:]')
+ if name.startswith('apply_'):t=t.replace('len(native)==22','len(native)==23').replace('Exported 23 slides; 22','Exported 24 slides; 23')
+ (p/name.replace('v36','v37')).write_text(t,encoding='utf8')

@@ -1,0 +1,27 @@
+Item,Value,Unit,Basis / source
+Galp/IPG Matola,60000,petrol + diesel m3,Operating; inaugurated 3 December 2020; https://www.galp.com/corp/pt/media/comunicados-de-imprensa/comunicado/id/1172
+Petromoc Lingamo,390000,all liquid fuels m3,Operating; includes jet and paraffin; capacity overlap with other operators unconfirmed; https://www.petromoc.co.mz/product-service/logistica/
+Petromoc Nacala,47500,all liquid fuels m3,Northern regional supply; no incremental SA allocation assumed; https://www.petromoc.co.mz/product-service/logistica/
+Petromoc Pemba,18000,all liquid fuels m3,Northern regional supply; no incremental SA allocation assumed; https://www.petromoc.co.mz/product-service/logistica/
+Galp/IPG Beira,,capacity not established here,Operating since February 2021; central regional supply; https://www.galp.com/mz/pt-pt/institucional/logistica
+Temane PSA,4000,barrels light oil/day,"Production began December 2025; light oil, gas and LPG, not finished petrol/diesel; https://sasol.com/our-businesses/energy/gas-sourcing-and-operations"
+CFM Matola berth,5000000,tonnes/year all petroleum,Shared berth capacity; not additive to storage or SA throughput; https://www.cfm.co.mz/terminal-de-combustiveis/
+Komatipoort imports 2019,0.25139441304,bn L,SARS office proxy; not terminal-specific; litres only
+Komatipoort imports 2020,0.23838171999000002,bn L,SARS office proxy; not terminal-specific; litres only
+Komatipoort imports 2021,0.240790107,bn L,SARS office proxy; not terminal-specific; litres only
+Komatipoort imports 2022,0.30296426532,bn L,SARS office proxy; not terminal-specific; litres only
+Komatipoort imports 2023,0.254696261,bn L,SARS office proxy; not terminal-specific; litres only
+Komatipoort imports 2024,0.18682962784999999,bn L,SARS office proxy; not terminal-specific; litres only
+Komatipoort imports 2025,0.08643899099999999,bn L,SARS office proxy; not terminal-specific; litres only
+Durban road logistics,0.95,ZAR/L,Illustrative same inland destination; round-trip truck cost includes empty return; excludes common product price and taxes
+Matola road logistics,1.1424315068493152,ZAR/L,"Illustrative costs, not freight quotes. Landed product premium is editable; comparable tax treatment assumed, not a legal assessment"
+Matola premium vs Durban,0.1924315068493152,ZAR/L,Positive value means Matola is more expensive under these assumptions
+Required Matola landed discount,0.1924315068493152,ZAR/L,Discount required to offset the modelled logistics disadvantage
+Galp SA volume screen,0.1836,bn L/year,Individual facility sensitivity only; no customer commitment. Not additive to Petromoc pending asset overlap check
+Petromoc SA volume screen,0.2808,bn L/year,"Individual facility sensitivity; assumed petrol/diesel share, working capacity and SA allocation. Not added to Galp"
+Matola premium: Low border delay,0.08750000000000013,ZAR/L,Delay sensitivity; see editable days in Assumptions; all other route inputs fixed
+Matola premium: Base border delay,0.1924315068493152,ZAR/L,Delay sensitivity; see editable days in Assumptions; all other route inputs fixed
+Matola premium: High border delay,0.40229452054794534,ZAR/L,Delay sensitivity; see editable days in Assumptions; all other route inputs fixed
+Trucks/day: Low imports diversion,45.45454545454545,loaded trucks/day,"Incremental SA flow scenario; compare with terminal loading and border availability, not gross port capacity"
+Trucks/day: Base diversion,15.151515151515152,loaded trucks/day,"Incremental SA flow scenario; compare with terminal loading and border availability, not gross port capacity"
+Trucks/day: High imports diversion,3.787878787878788,loaded trucks/day,"Incremental SA flow scenario; compare with terminal loading and border availability, not gross port capacity"

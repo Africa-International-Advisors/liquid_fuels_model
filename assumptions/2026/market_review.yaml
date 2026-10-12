@@ -1,0 +1,34 @@
+screen:
+  value:
+    trade_year: 2025
+    national_sales_year: 2023
+    provincial_sales_year: 2022
+    products: [petrol, diesel]
+    inland_provinces: [GP, MP, FS, NW, LP, NC]
+    capture_cases: {Low: 0.10, Base: 0.20, High: 0.30}
+    lesedi_fraction_of_captured_durban_flow: 0.50
+    operating_case: base
+  units: per-key year / code / fraction / case
+  source: Authored 10 October 2026 for the user-authorised market update. Capture fractions of 10/20/30 percent and a 50 percent Lesedi routing fraction are illustrative sensitivity settings, with no inferred customer commitments or probabilities. Screen holds existing registered base turns fixed. Uses 2025 Durban customs imports as a gateway proxy, conditional on terminal and pipeline access. Excludes Lesedi receipts from other terminals and domestic sources. Total site movements include repeat handling; unique volume counts the Durban flow once. No forecast year or incremental revenue is implied.
+  last_updated: '2026-10-10'
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  provisional: true
+  register_id: REG-MARKET-REVIEW-SCREEN
+  exception_id: EXC-INVESTMENT-BRIDGE
+pipeline_evidence:
+  value:
+    fiscal_year_ending_march: 2025
+    mpp_usage_million_litres_week: 105
+    mpp_capacity_million_litres_week: 148
+    annualisation_weeks: 52
+    system_total_petroleum_million_litres: 13372
+    system_refined_million_litres: 8619
+  units: per-key fiscal year / million litres per week / weeks / million litres
+  source: Transnet Pipelines 2025, printed page 8 (PDF page 6), 2025 Actual column, https://www.transnet.net/getFile.ashx?id=6121. Original retained at external/data/raw/review_20261010/transnet-pipelines-2025.pdf. MPP 105:148 Ml/week is shared infrastructure, not Vopak access or product-specific throughput. The 52-week conversion is an annualised equivalent, not a separate reported annual trunk-line total. System total and refined volumes cover the whole network and differ from the MPP measure.
+  last_updated: '2026-10-10'
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  register_id: REG-MARKET-REVIEW-PIPELINE
+  exception_id: EXC-SOURCE-DATA-2026-10-05

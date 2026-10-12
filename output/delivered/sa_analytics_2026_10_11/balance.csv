@@ -1,0 +1,10 @@
+Measure,Petrol bn L,Diesel bn L,Total bn L,Treatment
+2025 demand,8.855772869974501,12.131615327120741,20.987388197095243,Department anchored estimate
+Domestic production,5.6410532847474215,4.58481384609993,10.225867130847352,Plant-output estimate with explicit product yields
+Gross customs imports,4.45347117815,12.24872026207,16.70219144022,"Recorded litres, calendar 2025"
+Customs exports,0.801762466,0.74670021007,1.54846267607,"Recorded litres, calendar 2025"
+Supply plus net imports,9.292761996897422,16.08683389809993,25.37959589499735,Availability before stock changes and statistical/scope differences
+Unexplained availability less demand,0.4369891269229207,3.955218570979188,4.3922076979021085,"Not assigned to stocks or concealed in demand; investigate sales coverage, FY conversion, yields, customs scope and re-exports"
+Demand-implied gross imports,4.016482051227079,8.29350169109081,12.30998374231789,Zero stock-change assumption; not reconciled to customs imports
+FIASA-anchor alternative demand,8.938032824999999,10.7163971,19.654429925,Source-choice sensitivity only
+Domestic output implied by demand/trade,5.204064157824501,0.6295952751207412,5.833659432945242,Zero stock change. Compare this implied output with the plant estimate; it is not a replacement production assumption.

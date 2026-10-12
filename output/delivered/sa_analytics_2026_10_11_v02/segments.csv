@@ -1,0 +1,12 @@
+Segment,2023 bn L,2024 bn L,2025 bn L,2023-25 change,Treatment
+Petrol road use,8.765841610087241,8.677525755865611,8.590099683875266,-0.17574192621197504,"97% road-use allocation; includes cars and commercial vehicles, not passenger-only"
+Mining,1.3959664570874284,1.4037204366913902,1.406346784621764,0.01038032753433571,2018-2021 mean fuel/activity intensity x annual activity; manufacturing is industry less mining and construction. Sector road use retained here.
+Manufacturing,0.16789786744139165,0.16721110753544252,0.16507618000173108,-0.002821687439660575,2018-2021 mean fuel/activity intensity x annual activity; manufacturing is industry less mining and construction. Sector road use retained here.
+Agriculture,1.0552755203659356,0.9633403153504746,1.1312246982365153,0.07594917787057964,2018-2021 mean fuel/activity intensity x annual activity; manufacturing is industry less mining and construction. Sector road use retained here.
+Utility and private power,2.0778800000000004,2.19729,1.08432,-0.9935600000000004,FY utility proxy; private backup 0.8/0.6/0.2bn L in 2023/24/25 is an assumption. No addition to national total.
+Road freight diesel,4.841361915996,4.86532665748018,4.824547112387935,-0.016814803608064643,"75% assumed share of road diesel. Road excludes sector-attributed purchases by convention; 2025 all-goods tonnes proxy activity, constant distance/mix."
+Other road diesel,1.613787305332,1.6217755524933932,1.6081823707959784,-0.005604934536021622,"Passenger, light commercial and buses; complementary share of road diesel"
+Other petrol,0.2711085034047603,0.2683770852329573,0.2656731860992353,-0.005435317305524989,Complement of assumed road petrol share
+Other diesel / unallocated,1.7553308995852444,1.9165420959151986,1.9119181810768164,0.15658728149157208,"Explicit residual: commercial/public, construction, rail, marine and classification differences. Not assigned to freight or manufacturing."
+Total,21.944450079300005,22.081109006564645,20.987388197095246,-0.9570618822047585,Reconciles to independent national demand estimate; detailed use allocation remains estimated
+Allocation less national total,3.552713678800501e-15,-3.552713678800501e-15,3.552713678800501e-15,0.0,Arithmetic reconciliation; zero does not establish empirical sector coverage

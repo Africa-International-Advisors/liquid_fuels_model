@@ -1,0 +1,38 @@
+South Africa analytics: 2025 baseline and 2030 sensitivities
+Prepared 11 October 2026. Petrol and diesel only. All volumes bn litres unless stated.
+
+CURRENT PLANNING CASE: User-directed domestic production 5.8bn L. The original 10.23bn plant estimate remains a reference only. Original mix allocates the override by product; the small total residual masks offsetting petrol and diesel differences. Do not infer verified production or product reconciliation from aggregate closure.
+2025 demand estimate: 20.9874
+2025 FIASA-anchor sensitivity: 19.6544
+2025 domestic production: 5.8000
+2025 gross customs imports: 16.7022
+Unexplained supply-demand difference: -0.0337
+2030 base demand: 20.8566
+2030 base import change: -0.1308
+2030 base trade-anchored imports: 16.5714
+2030 base Mozambique diversion: 0.2000
+Matola logistics premium: 0.1924
+
+1 DEMAND
+Department 2023 sales are the primary national anchor. Petrol grows with assumed activity (+0.5%/year) and efficiency (-1.5%/year). Non-power diesel grows 1%/year; utility and assumed private-backup volumes are replaced annually. FIASA 2024 is a separate source-choice sensitivity.
+Sector estimates use 2018-2021 mean intensity at observed annual activity. Road diesel starts with the 2021 energy-balance road category; 2025 road tonnes proxy activity. A 75% road-diesel freight allocation is authored, not a measured split. Sector-attributed road purchases stay with those sectors. Other diesel remains a visible residual. The construction of disjoint categories is an analytical convention, not a newly verified census.
+Eskom p141 contains 679.1m litres of diesel and kerosene for FY2025, whereas the prior slides cited 677.9m. This run explicitly uses the p141 series consistently. FY measures proxy calendar years; all Eskom fuel is provisionally treated as diesel. Private-backup assumptions are 0.8/0.6/0.2bn in 2023/24/25. They are not reported measurements.
+
+2 DOMESTIC SUPPLY
+Secunda: FY2025 27.6m barrels of refined products, 90% assumed petrol/diesel, 65/35 within that subset. Natref: FY2025 Sasol 14.7m barrels / 63.64%, petrol yield 30.5%, diesel 34%. FY2026 is not grossed up using that share because reported output includes above-share processing. Astron: 164365 billion Btu / 35.5 MJ per litre, assuming 80% petrol/diesel and 50/50 within that subset. SAPREF, PetroSA and Enref contribute zero 2025 refining output.
+The original independent supply-plus-net-import estimate exceeded demand. The directed national total approximately balances, but its provisional product allocation creates offsetting differences. This is an unresolved statistical/scope difference, not assumed stocks, not incremental demand, and not Vopak opportunity. Product-level differences are on Balance. Sales coverage, refinery yields, fiscal timing and trade scope require reconciliation.
+
+3 OUTLOOK
+Three authored 2025-2030 paths vary activity, road efficiency, rail displacement, power recovery and refinery availability/restarts. Rail displacement applies only to freight after growth and efficiency, with 10% diesel rebound for rail. Power reductions apply separately. Refinery restarts ramp to scenario utilisation over two years; the base case has none through 2030.
+Demand-implied imports use zero stock change and constant 2025 exports. A separate trade-anchored series applies modelled changes to observed 2025 customs imports; it preserves, rather than solves, the opening discrepancy. The workbook shows both and must not conflate them.
+
+4 MOZAMBIQUE
+Existing liquid-fuel nodes: Galp/IPG Matola, Petromoc Lingamo, Galp/IPG Beira, Petromoc Nacala and Pemba. Galp Matola was inaugurated in December 2020 and Beira operates since February 2021, so these are not new 2025 additions. Lingamo has a published 390000m3 across liquid fuels. Potential overlap with other operator capacity is unconfirmed; individual facility sensitivities are not added.
+Temane PSA began production in December 2025, but disclosed output is light oil, gas and LPG, not finished petrol/diesel. No direct finished-fuel supply is credited. CFM berth tonnes/year are not storage or South African delivered volumes.
+Route economics compare the same inland destination using explicit illustrative distance, tanker, border, terminal and financing inputs. They are not quoted tariffs or a determination of customs/tax treatment. Gas and coal developments are excluded from petrol/diesel terminal capacity. Diversion reallocates South African imports between gateways, rather than reducing national demand.
+
+PRIORITIES / OWNERS / EXPIRY
+Manish: reconcile Department/FIASA sales definitions and SARS product/quantity scope; obtain calendar-year plant output and product yields. Trigger: before using a single national balance externally.
+Nigel with Vopak/hauliers: replace route cost assumptions with matched product/destination quotes, border costs, allocation and terminal access. Trigger: before ranking routes or treating diversion as contracted volume.
+Nigel: review private-backup demand, road-freight split, restart dates and scenario assumptions. Trigger: before external presentation; registered expiry 12 November 2026.
+No independent review or business approval is inferred. Existing model forecast defaults and previous delivered workbooks are preserved.

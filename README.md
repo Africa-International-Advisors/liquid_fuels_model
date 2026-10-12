@@ -2,8 +2,8 @@
 
 **Current milestone:** [8 October 2026 review baseline and next handbacks](workstreams/WS0_governance/workplan/sa_review_milestone_2026_10_08.md).
 
-**Latest files:** [v27 PDF](pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pdf) and
-[v27 PowerPoint](pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pptx), 43 pages. Updated from Manish's workbook, with industry demand, vehicle calibration, power fleet and the Durban–Lesedi issue tree.
+**Latest files:** [v10 PDF](pptx/output/delivered/supporting/SA_SCR_Evidence_2026-10-12_v10.pdf) and [v10 PowerPoint](pptx/output/delivered/supporting/SA_SCR_Evidence_2026-10-12_v10.pptx), 16 pages. Accepted South Africa story with demand, supply, routes, mass balance and Vopak sizing framework.
+**Saved styling:** [Vopak layout contract and workflow](pptx/brand_configs/VOPAK_LAYOUT.md).
 The story is a review baseline; scenarios and investment economics remain illustrative.
 [Delivery index](pptx/output/delivered/supporting/README.md) and [data request](output/delivered/investment_bridge_2026_10_08/data_request.csv).
 

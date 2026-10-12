@@ -4,7 +4,7 @@ The current review is the 43-page v27 South Africa story, refreshed from Manish'
 
 ## Start here
 
-- [Current PDF](../../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pdf) and [editable PowerPoint](../../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pptx).
+- [Current PDF](../../../pptx/output/delivered/supporting/archive/2026-10-11_cleanup/SA_Market_Story_2026-10-08_v27.pdf) and [editable PowerPoint](../../../pptx/output/delivered/supporting/archive/2026-10-11_cleanup/SA_Market_Story_2026-10-08_v27.pptx).
 - [Canonical story](../../../pptx/story/sa_market_story_v27_2026_10_08.json). Preserve Nigel's taglines unless a reviewed change is recorded.
 - [Workbook page audit](../../WS3_reporting_delivery/sa_pack_workbook_audit_2026_10_08.csv) and [63-cell evidence trace](../../../pptx/story/sa_workbook_evidence_v26_2026_10_08.json); source branch commit `8a3c884`.
 - [Data request DR01–DR09](../../../output/delivered/investment_bridge_2026_10_08/data_request.csv). Prepared, not sent. Nigel coordinates commercial requests; do not represent a request as received evidence.
@@ -28,7 +28,7 @@ Immediate priority: Manish reconciles DR01 and assembles DR04/07/08 public evide
 
 ## 8 October PS follow-up
 
-The market sizing pack (built 9 October 2026 11:00: cover, national balance, issue tree, three demand deep dives, port and logistics, outstanding data, decisions and next steps) is the [PDF](../../../pptx/output/delivered/supporting/09102026_Vopak_Market_Sizing_v1100.pdf) and [editable PowerPoint](../../../pptx/output/delivered/supporting/09102026_Vopak_Market_Sizing_v1100.pptx). It supplements the v25 story. Nigel retains the original session transcript and marked storyboard locally; they are excluded from this public handback. Obtain the originals from Nigel before reviewing the session sources.
+The market sizing pack (built 9 October 2026 11:00: cover, national balance, issue tree, three demand deep dives, port and logistics, outstanding data, decisions and next steps) is the [PDF](../../../pptx/output/delivered/supporting/archive/2026-10-11_cleanup/09102026_Vopak_Market_Sizing_v1100.pdf) and [editable PowerPoint](../../../pptx/output/delivered/supporting/archive/2026-10-11_cleanup/09102026_Vopak_Market_Sizing_v1100.pptx). It supplements the v25 story. Nigel retains the original session transcript and marked storyboard locally; they are excluded from this public handback. Obtain the originals from Nigel before reviewing the session sources.
 
 Manish's next handback has three parts: close the remaining evidence gaps, consolidate a reconciled current petrol/diesel baseline, and estimate the accessible annual market separately for Durban and Lesedi. Build the market-size calculation from destination demand, gross imports and exports, actual domestic production, feasible routes, competing supply and terminal access. Show ranges, assumptions and shared Durban-Lesedi flows explicitly. The approximately 20 billion litres discussed is a provisional consumption starting point, not imports or Vopak-accessible volume.
 

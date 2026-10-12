@@ -1,0 +1,4 @@
+Case,Activity bn L,Efficiency bn L,Rail net bn L,Power bn L,Operating supply bn L,Restart supply bn L,Net import change bn L,Basis
+Low imports,0.502577413071174,-1.1210241261215144,-0.6191584173707062,-0.704808,1.5338800696271018,5.666664912647508,-9.142958112695656,Supply increases reduce imports; Mozambique is route diversion only and does not reduce national demand or imports
+Base,1.5381887998552797,-0.7931698551445201,-0.33363108571683103,-0.54216,0.0,0.0,-0.13077214100607143,Supply increases reduce imports; Mozambique is route diversion only and does not reduce national demand or imports
+High imports,2.6154266228205083,-0.420695762564489,-0.11977710182335803,-0.0,-1.5338800696271029,0.0,3.6088338280597636,Supply increases reduce imports; Mozambique is route diversion only and does not reduce national demand or imports

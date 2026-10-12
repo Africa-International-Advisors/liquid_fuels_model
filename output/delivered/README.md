@@ -1,9 +1,15 @@
-# Current South Africa delivery
+# Latest story — 12 October 2026
+
+[Accepted v10 PowerPoint](../../pptx/output/delivered/supporting/SA_SCR_Evidence_2026-10-12_v10.pptx) · [PDF](../../pptx/output/delivered/supporting/SA_SCR_Evidence_2026-10-12_v10.pdf) · [Delivery index](../../pptx/output/delivered/supporting/README.md).
+
+The older delivery notes below are retained as history.
+
+# Earlier South Africa delivery — 8 October 2026
 
 Updated 8 October 2026. Use the **43-page v27** pair:
 
-- [PDF](../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pdf)
-- [PowerPoint](../../pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pptx)
+- [PDF](../../pptx/output/delivered/supporting/archive/2026-10-11_cleanup/SA_Market_Story_2026-10-08_v27.pdf)
+- [PowerPoint](../../pptx/output/delivered/supporting/archive/2026-10-11_cleanup/SA_Market_Story_2026-10-08_v27.pptx)
 - [Milestone instructions](../../workstreams/WS0_governance/workplan/sa_review_milestone_2026_10_08.md)
 - [Data request](investment_bridge_2026_10_08/data_request.csv)
 - [Illustrative financial case](vopak_illustration_2026_10_08/index.html)

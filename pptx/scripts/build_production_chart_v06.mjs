@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+import {pathToFileURL} from 'node:url';
+import path from 'node:path';
+const root=path.resolve(import.meta.dirname,'../..');
+const rt='C:/Users/ITafr/.cache/codex-runtimes/codex-primary-runtime/dependencies';
+const {Presentation,PresentationFile}=await import(pathToFileURL(rt+'/node/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs').href);
+const d=JSON.parse(await fs.readFile(root+'/pptx/story/sa_production_history_v06.json','utf8'));
+const p=Presentation.create({slideSize:{width:1217,height:720}});const s=p.slides.add();
+s.charts.add('line',{position:{left:48,top:240,width:745,height:300},categories:d.years.map(String),series:d.series.map((v,i)=>({...v,fill:['#0A2373','#6782B4'][i],line:{fill:['#0A2373','#6782B4'][i],width:2.5},valuesFormatCode:'0.00'})),hasLegend:true,legend:{position:'bottom'},xAxis:{textStyle:{fontFamily:'Lato',fontSize:12}},yAxis:{numberFormatCode:'0.0',textStyle:{fontFamily:'Lato',fontSize:12}}});
+await (await PresentationFile.exportPptx(p)).save(root+'/pptx/qa/evidence_v06/production_chart.pptx');

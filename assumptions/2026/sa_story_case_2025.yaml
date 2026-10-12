@@ -1,0 +1,12 @@
+production:
+  value:
+    domestic_petrol_diesel_bn_l: 5.8
+    product_allocation: proportional_to_original_plant_estimate
+  units: bn litres / allocation rule
+  source: User direction on 11 October 2026 to use 5.8bn litres for domestic production. This is a national planning override, not operator-reported output or a validated plant estimate. Product allocation retains the original estimated plant mix solely for transparency and sensitivity; aggregate balance closure does not verify product balances.
+  last_updated: '2026-10-11'
+  owner: nigel.zhuwaki
+  confidence: unassessed
+  provisional: true
+  register_id: REG-SA-STORY-CASE-2025
+  exception_id: EXC-SA-ANALYTICS-202510

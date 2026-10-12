@@ -1,0 +1,6 @@
+Measure,Value,Unit,Treatment
+Selected national production,5.8,bn L,"User-directed planning assumption, 11 October 2026; not reported production"
+Petrol fraction,0.5516454705078868,fraction,Original plant-estimate mix retained provisionally; no product-balance calibration
+Allocated petrol production,3.1995437289457436,bn L,Planning allocation only
+Allocated diesel production,2.6004562710542563,bn L,Planning allocation only
+Original plant-based estimate,10.225867130847352,bn L,Reference sensitivity; does not govern this planning case

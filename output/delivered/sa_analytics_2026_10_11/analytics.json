@@ -1,0 +1,3358 @@
+{
+  "sheets": {
+    "Summary": {
+      "title": "South Africa fuel baseline and outlook",
+      "headers": [
+        "Measure",
+        "Value",
+        "Unit",
+        "Interpretation"
+      ],
+      "rows": [
+        [
+          "2025 demand estimate",
+          {
+            "formula": "='Balance'!D5",
+            "value": 20.987388197095243
+          },
+          "bn L",
+          "Department 2023 sales extended with explicit activity, efficiency and power assumptions"
+        ],
+        [
+          "2025 FIASA-anchor sensitivity",
+          {
+            "formula": "='Demand history'!D19",
+            "value": 19.654429925
+          },
+          "bn L",
+          "Alternative 2024 source followed by the same annual drivers"
+        ],
+        [
+          "2025 domestic production",
+          {
+            "formula": "='Balance'!D6",
+            "value": 10.225867130847352
+          },
+          "bn L",
+          "Petrol/diesel subset estimated from plant output"
+        ],
+        [
+          "2025 gross customs imports",
+          {
+            "formula": "='Balance'!D7",
+            "value": 16.70219144022
+          },
+          "bn L",
+          "Recorded national trade, not a demand estimate"
+        ],
+        [
+          "Unexplained supply-demand difference",
+          {
+            "formula": "='Balance'!D10",
+            "value": 4.3922076979021085
+          },
+          "bn L",
+          "Keep visible; do not present a fully reconciled national balance"
+        ],
+        [
+          "2030 base demand",
+          {
+            "formula": "='Scenarios'!B16",
+            "value": 20.856616056089173
+          },
+          "bn L",
+          "Explicit scenario, not reported forecast"
+        ],
+        [
+          "2030 base import change",
+          {
+            "formula": "='Scenarios'!E16",
+            "value": -0.1307721410060676
+          },
+          "bn L",
+          "Change is more interpretable than the unresolved absolute import level"
+        ],
+        [
+          "2030 base trade-anchored imports",
+          {
+            "formula": "='Scenarios'!F16",
+            "value": 16.57141929921393
+          },
+          "bn L",
+          "2025 customs plus modelled change; holds unexplained difference constant"
+        ],
+        [
+          "2030 base Mozambique diversion",
+          {
+            "formula": "='Scenarios'!G16",
+            "value": 0.2
+          },
+          "bn L",
+          "Route substitution; does not reduce national imports"
+        ],
+        [
+          "Matola logistics premium",
+          {
+            "formula": "='Mozambique'!B20-'Mozambique'!B19",
+            "value": 0.1924315068493152
+          },
+          "ZAR/L",
+          "Assumed route economics; obtain comparable quotes"
+        ]
+      ],
+      "widths": [
+        43,
+        20,
+        20,
+        105
+      ]
+    },
+    "Demand history": {
+      "title": "Reported demand and the estimated 2025 baseline",
+      "headers": [
+        "Year",
+        "Petrol bn L",
+        "Diesel bn L",
+        "Total bn L",
+        "Basis"
+      ],
+      "rows": [
+        [
+          2013,
+          {
+            "formula": "='Evidence'!B6",
+            "value": 11.439925235
+          },
+          {
+            "formula": "='Evidence'!B5",
+            "value": 12.141281548
+          },
+          {
+            "formula": "=B5+C5",
+            "value": 23.581206783
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2014,
+          {
+            "formula": "='Evidence'!B8",
+            "value": 10.890207679
+          },
+          {
+            "formula": "='Evidence'!B7",
+            "value": 12.615023359
+          },
+          {
+            "formula": "=B6+C6",
+            "value": 23.505231037999998
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2015,
+          {
+            "formula": "='Evidence'!B10",
+            "value": 11.475709420318001
+          },
+          {
+            "formula": "='Evidence'!B9",
+            "value": 13.52013925195
+          },
+          {
+            "formula": "=B7+C7",
+            "value": 24.995848672268004
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2016,
+          {
+            "formula": "='Evidence'!B12",
+            "value": 11.462252466686001
+          },
+          {
+            "formula": "='Evidence'!B11",
+            "value": 12.082374038422001
+          },
+          {
+            "formula": "=B8+C8",
+            "value": 23.544626505108003
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2017,
+          {
+            "formula": "='Evidence'!B14",
+            "value": 11.174082980369999
+          },
+          {
+            "formula": "='Evidence'!B13",
+            "value": 12.147245167188997
+          },
+          {
+            "formula": "=B9+C9",
+            "value": 23.321328147558994
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2018,
+          {
+            "formula": "='Evidence'!B16",
+            "value": 11.141630546702
+          },
+          {
+            "formula": "='Evidence'!B15",
+            "value": 12.538744325998
+          },
+          {
+            "formula": "=B10+C10",
+            "value": 23.6803748727
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2019,
+          {
+            "formula": "='Evidence'!B18",
+            "value": 10.773208065062
+          },
+          {
+            "formula": "='Evidence'!B17",
+            "value": 12.908631232217
+          },
+          {
+            "formula": "=B11+C11",
+            "value": 23.681839297278998
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2020,
+          {
+            "formula": "='Evidence'!B20",
+            "value": 8.761470961496
+          },
+          {
+            "formula": "='Evidence'!B19",
+            "value": 11.689957759296
+          },
+          {
+            "formula": "=B12+C12",
+            "value": 20.451428720792002
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2021,
+          {
+            "formula": "='Evidence'!B22",
+            "value": 9.301584227683001
+          },
+          {
+            "formula": "='Evidence'!B21",
+            "value": 12.945782750434999
+          },
+          {
+            "formula": "=B13+C13",
+            "value": 22.247366978118002
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2022,
+          {
+            "formula": "='Evidence'!B24",
+            "value": 9.184869915573
+          },
+          {
+            "formula": "='Evidence'!B23",
+            "value": 12.717326319019001
+          },
+          {
+            "formula": "=B14+C14",
+            "value": 21.902196234592
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2023,
+          {
+            "formula": "='Evidence'!B26",
+            "value": 9.036950113492
+          },
+          {
+            "formula": "='Evidence'!B25",
+            "value": 12.907499965808
+          },
+          {
+            "formula": "=B15+C15",
+            "value": 21.9444500793
+          },
+          "Department reported sales; national petrol and diesel"
+        ],
+        [
+          2024,
+          {
+            "formula": "=B15*(1+'Assumptions'!B5)*(1-'Assumptions'!B6)",
+            "value": 8.945902841098569
+          },
+          {
+            "formula": "=(C15-'Assumptions'!B85)*(1+'Assumptions'!B7)+'Assumptions'!B86",
+            "value": 13.13520616546608
+          },
+          {
+            "formula": "=B16+C16",
+            "value": 22.08110900656465
+          },
+          "Estimate from Department 2023 anchor; power FY proxy; explicit activity and efficiency assumptions"
+        ],
+        [
+          2025,
+          {
+            "formula": "=B16*(1+'Assumptions'!B5)*(1-'Assumptions'!B6)",
+            "value": 8.855772869974501
+          },
+          {
+            "formula": "=(C16-'Assumptions'!B86)*(1+'Assumptions'!B7)+'Assumptions'!B87",
+            "value": 12.131615327120741
+          },
+          {
+            "formula": "=B17+C17",
+            "value": 20.987388197095243
+          },
+          "Estimate from Department 2023 anchor; power FY proxy; explicit activity and efficiency assumptions"
+        ],
+        [
+          "2024 FIASA",
+          {
+            "formula": "='Evidence'!B28",
+            "value": 9.029
+          },
+          {
+            "formula": "='Evidence'!B27",
+            "value": 11.734
+          },
+          {
+            "formula": "=B18+C18",
+            "value": 20.762999999999998
+          },
+          "Alternative source; not spliced into the Department series"
+        ],
+        [
+          "2025 alternative",
+          {
+            "formula": "=B18*(1+'Assumptions'!B5)*(1-'Assumptions'!B6)",
+            "value": 8.938032824999999
+          },
+          {
+            "formula": "=(C18-'Assumptions'!B86)*(1+'Assumptions'!B7)+'Assumptions'!B87",
+            "value": 10.7163971
+          },
+          {
+            "formula": "=B19+C19",
+            "value": 19.654429925
+          },
+          "Same drivers applied to 2024 FIASA anchor; source-choice sensitivity"
+        ]
+      ],
+      "widths": [
+        12,
+        18,
+        18,
+        18,
+        100
+      ]
+    },
+    "Segments": {
+      "title": "2025 demand by use",
+      "headers": [
+        "Segment",
+        "2023 bn L",
+        "2024 bn L",
+        "2025 bn L",
+        "2023-25 change",
+        "Treatment"
+      ],
+      "rows": [
+        [
+          "Petrol road use",
+          {
+            "formula": "='Demand history'!B15*'Assumptions'!B9",
+            "value": 8.765841610087241
+          },
+          {
+            "formula": "='Demand history'!B16*'Assumptions'!B9",
+            "value": 8.677525755865611
+          },
+          {
+            "formula": "='Demand history'!B17*'Assumptions'!B9",
+            "value": 8.590099683875266
+          },
+          {
+            "formula": "=D5-B5",
+            "value": -0.17574192621197504
+          },
+          "97% road-use allocation; includes cars and commercial vehicles, not passenger-only"
+        ],
+        [
+          "Mining",
+          {
+            "formula": "=((('Evidence'!B30/'Evidence'!B48)+('Evidence'!B35/'Evidence'!B49)+('Evidence'!B39/'Evidence'!B50)+('Evidence'!B44/'Evidence'!B51))/4)*'Evidence'!B53",
+            "value": 1.3959664570874284
+          },
+          {
+            "formula": "=((('Evidence'!B30/'Evidence'!B48)+('Evidence'!B35/'Evidence'!B49)+('Evidence'!B39/'Evidence'!B50)+('Evidence'!B44/'Evidence'!B51))/4)*'Evidence'!B54",
+            "value": 1.4037204366913902
+          },
+          {
+            "formula": "=((('Evidence'!B30/'Evidence'!B48)+('Evidence'!B35/'Evidence'!B49)+('Evidence'!B39/'Evidence'!B50)+('Evidence'!B44/'Evidence'!B51))/4)*'Evidence'!B55",
+            "value": 1.406346784621764
+          },
+          {
+            "formula": "=D6-B6",
+            "value": 0.01038032753433571
+          },
+          "2018-2021 mean fuel/activity intensity x annual activity; manufacturing is industry less mining and construction. Sector road use retained here."
+        ],
+        [
+          "Manufacturing",
+          {
+            "formula": "=(((('Evidence'!B29-'Evidence'!B30-'Evidence'!B31)/'Evidence'!B56)+(('Evidence'!B34-'Evidence'!B35-'Assumptions'!B49)/'Evidence'!B57)+(('Evidence'!B38-'Evidence'!B39-'Evidence'!B40)/'Evidence'!B58)+(('Evidence'!B43-'Evidence'!B44-'Evidence'!B45)/'Evidence'!B59))/4)*'Evidence'!B61",
+            "value": 0.16789786744139165
+          },
+          {
+            "formula": "=(((('Evidence'!B29-'Evidence'!B30-'Evidence'!B31)/'Evidence'!B56)+(('Evidence'!B34-'Evidence'!B35-'Assumptions'!B49)/'Evidence'!B57)+(('Evidence'!B38-'Evidence'!B39-'Evidence'!B40)/'Evidence'!B58)+(('Evidence'!B43-'Evidence'!B44-'Evidence'!B45)/'Evidence'!B59))/4)*'Evidence'!B62",
+            "value": 0.16721110753544252
+          },
+          {
+            "formula": "=(((('Evidence'!B29-'Evidence'!B30-'Evidence'!B31)/'Evidence'!B56)+(('Evidence'!B34-'Evidence'!B35-'Assumptions'!B49)/'Evidence'!B57)+(('Evidence'!B38-'Evidence'!B39-'Evidence'!B40)/'Evidence'!B58)+(('Evidence'!B43-'Evidence'!B44-'Evidence'!B45)/'Evidence'!B59))/4)*'Evidence'!B63",
+            "value": 0.16507618000173108
+          },
+          {
+            "formula": "=D7-B7",
+            "value": -0.002821687439660575
+          },
+          "2018-2021 mean fuel/activity intensity x annual activity; manufacturing is industry less mining and construction. Sector road use retained here."
+        ],
+        [
+          "Agriculture",
+          {
+            "formula": "=((('Evidence'!B33/'Evidence'!B64)+('Evidence'!B37/'Evidence'!B65)+('Evidence'!B42/'Evidence'!B66)+('Evidence'!B47/'Evidence'!B67))/4)*'Evidence'!B69",
+            "value": 1.0552755203659356
+          },
+          {
+            "formula": "=((('Evidence'!B33/'Evidence'!B64)+('Evidence'!B37/'Evidence'!B65)+('Evidence'!B42/'Evidence'!B66)+('Evidence'!B47/'Evidence'!B67))/4)*'Evidence'!B70",
+            "value": 0.9633403153504746
+          },
+          {
+            "formula": "=((('Evidence'!B33/'Evidence'!B64)+('Evidence'!B37/'Evidence'!B65)+('Evidence'!B42/'Evidence'!B66)+('Evidence'!B47/'Evidence'!B67))/4)*'Evidence'!B71",
+            "value": 1.1312246982365153
+          },
+          {
+            "formula": "=D8-B8",
+            "value": 0.07594917787057964
+          },
+          "2018-2021 mean fuel/activity intensity x annual activity; manufacturing is industry less mining and construction. Sector road use retained here."
+        ],
+        [
+          "Utility and private power",
+          {
+            "formula": "='Assumptions'!B85",
+            "value": 2.0778800000000004
+          },
+          {
+            "formula": "='Assumptions'!B86",
+            "value": 2.19729
+          },
+          {
+            "formula": "='Assumptions'!B87",
+            "value": 1.08432
+          },
+          {
+            "formula": "=D9-B9",
+            "value": -0.9935600000000004
+          },
+          "FY utility proxy; private backup 0.8/0.6/0.2bn L in 2023/24/25 is an assumption. No addition to national total."
+        ],
+        [
+          "Road freight diesel",
+          {
+            "formula": "=('Evidence'!B46*(1+'Assumptions'!B7)^2)*'Assumptions'!B10",
+            "value": 4.841361915996
+          },
+          {
+            "formula": "=(('Evidence'!B46*(1+'Assumptions'!B7)^2)*(1+'Assumptions'!B7)*(1-'Assumptions'!B8))*'Assumptions'!B10",
+            "value": 4.86532665748018
+          },
+          {
+            "formula": "=((('Evidence'!B46*(1+'Assumptions'!B7)^2)*(1+'Assumptions'!B7)*(1-'Assumptions'!B8))*('Evidence'!B83/'Evidence'!B81)*(1-'Assumptions'!B8))*'Assumptions'!B10",
+            "value": 4.824547112387935
+          },
+          {
+            "formula": "=D10-B10",
+            "value": -0.016814803608064643
+          },
+          "75% assumed share of road diesel. Road excludes sector-attributed purchases by convention; 2025 all-goods tonnes proxy activity, constant distance/mix."
+        ],
+        [
+          "Other road diesel",
+          {
+            "formula": "=('Evidence'!B46*(1+'Assumptions'!B7)^2)*(1-'Assumptions'!B10)",
+            "value": 1.613787305332
+          },
+          {
+            "formula": "=(('Evidence'!B46*(1+'Assumptions'!B7)^2)*(1+'Assumptions'!B7)*(1-'Assumptions'!B8))*(1-'Assumptions'!B10)",
+            "value": 1.6217755524933932
+          },
+          {
+            "formula": "=((('Evidence'!B46*(1+'Assumptions'!B7)^2)*(1+'Assumptions'!B7)*(1-'Assumptions'!B8))*('Evidence'!B83/'Evidence'!B81)*(1-'Assumptions'!B8))*(1-'Assumptions'!B10)",
+            "value": 1.6081823707959784
+          },
+          {
+            "formula": "=D11-B11",
+            "value": -0.005604934536021622
+          },
+          "Passenger, light commercial and buses; complementary share of road diesel"
+        ],
+        [
+          "Other petrol",
+          {
+            "formula": "='Demand history'!B15*(1-'Assumptions'!B9)",
+            "value": 0.2711085034047603
+          },
+          {
+            "formula": "='Demand history'!B16*(1-'Assumptions'!B9)",
+            "value": 0.2683770852329573
+          },
+          {
+            "formula": "='Demand history'!B17*(1-'Assumptions'!B9)",
+            "value": 0.2656731860992353
+          },
+          {
+            "formula": "=D12-B12",
+            "value": -0.005435317305524989
+          },
+          "Complement of assumed road petrol share"
+        ],
+        [
+          "Other diesel / unallocated",
+          {
+            "formula": "='Demand history'!C15-B6-B7-B8-B9-B10-B11",
+            "value": 1.7553308995852444
+          },
+          {
+            "formula": "='Demand history'!C16-C6-C7-C8-C9-C10-C11",
+            "value": 1.9165420959151986
+          },
+          {
+            "formula": "='Demand history'!C17-D6-D7-D8-D9-D10-D11",
+            "value": 1.9119181810768164
+          },
+          {
+            "formula": "=D13-B13",
+            "value": 0.15658728149157208
+          },
+          "Explicit residual: commercial/public, construction, rail, marine and classification differences. Not assigned to freight or manufacturing."
+        ],
+        [
+          "Total",
+          {
+            "formula": "=B5+B6+B7+B8+B9+B10+B11+B12+B13",
+            "value": 21.944450079300005
+          },
+          {
+            "formula": "=C5+C6+C7+C8+C9+C10+C11+C12+C13",
+            "value": 22.081109006564645
+          },
+          {
+            "formula": "=D5+D6+D7+D8+D9+D10+D11+D12+D13",
+            "value": 20.987388197095246
+          },
+          {
+            "formula": "=D14-B14",
+            "value": -0.9570618822047585
+          },
+          "Reconciles to independent national demand estimate; detailed use allocation remains estimated"
+        ],
+        [
+          "Allocation less national total",
+          {
+            "formula": "=B14-'Demand history'!D15",
+            "value": 3.552713678800501e-15
+          },
+          {
+            "formula": "=C14-'Demand history'!D16",
+            "value": -3.552713678800501e-15
+          },
+          {
+            "formula": "=D14-'Demand history'!D17",
+            "value": 3.552713678800501e-15
+          },
+          {
+            "formula": "=D15-B15",
+            "value": 0.0
+          },
+          "Arithmetic reconciliation; zero does not establish empirical sector coverage"
+        ]
+      ],
+      "widths": [
+        36,
+        18,
+        18,
+        18,
+        19,
+        100
+      ]
+    },
+    "Plant supply": {
+      "title": "2025 domestic petrol and diesel supply estimate",
+      "headers": [
+        "Plant",
+        "All products bn L",
+        "Petrol yield",
+        "Diesel yield",
+        "Petrol bn L",
+        "Diesel bn L",
+        "Total P+D bn L",
+        "Basis"
+      ],
+      "rows": [
+        [
+          "Secunda",
+          {
+            "formula": "='Evidence'!B142*'Assumptions'!B16/1000",
+            "value": 4.388049340012801
+          },
+          {
+            "formula": "='Assumptions'!B18*'Assumptions'!B19",
+            "value": 0.5850000000000001
+          },
+          {
+            "formula": "='Assumptions'!B18*(1-'Assumptions'!B19)",
+            "value": 0.315
+          },
+          {
+            "formula": "=B5*C5",
+            "value": 2.5670088639074886
+          },
+          {
+            "formula": "=B5*D5",
+            "value": 1.3822355421040322
+          },
+          {
+            "formula": "=E5+F5",
+            "value": 3.9492444060115206
+          },
+          "FY2025 all-refined-products proxy for calendar 2025; excludes chemical output"
+        ],
+        [
+          "Natref",
+          {
+            "formula": "='Evidence'!B143/'Assumptions'!B20*'Assumptions'!B16/1000",
+            "value": 3.6723966615989947
+          },
+          {
+            "formula": "='Assumptions'!B21",
+            "value": 0.305
+          },
+          {
+            "formula": "='Assumptions'!B22",
+            "value": 0.34
+          },
+          {
+            "formula": "=B6*C6",
+            "value": 1.1200809817876933
+          },
+          {
+            "formula": "=B6*D6",
+            "value": 1.2486148649436584
+          },
+          {
+            "formula": "=E6+F6",
+            "value": 2.3686958467313515
+          },
+          "FY2025 share basis only. FY2026 includes above-share output and is not mechanically grossed up."
+        ],
+        [
+          "Astron",
+          {
+            "formula": "='Evidence'!B147*'Assumptions'!B17/'Assumptions'!B25",
+            "value": 4.8849085976306
+          },
+          {
+            "formula": "='Assumptions'!B23*'Assumptions'!B24",
+            "value": 0.4
+          },
+          {
+            "formula": "='Assumptions'!B23*(1-'Assumptions'!B24)",
+            "value": 0.4
+          },
+          {
+            "formula": "=B7*C7",
+            "value": 1.9539634390522402
+          },
+          {
+            "formula": "=B7*D7",
+            "value": 1.9539634390522402
+          },
+          {
+            "formula": "=E7+F7",
+            "value": 3.9079268781044805
+          },
+          "Calendar 2025 billion Btu converted to bn litres; energy density and product split assumed"
+        ],
+        [
+          "SAPREF",
+          {
+            "formula": "=0",
+            "value": 0
+          },
+          {
+            "formula": "=0",
+            "value": 0
+          },
+          {
+            "formula": "=0",
+            "value": 0
+          },
+          {
+            "formula": "=B8*C8",
+            "value": 0
+          },
+          {
+            "formula": "=B8*D8",
+            "value": 0
+          },
+          {
+            "formula": "=E8+F8",
+            "value": 0
+          },
+          "No refining output in 2025; terminal activity is not production"
+        ],
+        [
+          "PetroSA",
+          {
+            "formula": "=0",
+            "value": 0
+          },
+          {
+            "formula": "=0",
+            "value": 0
+          },
+          {
+            "formula": "=0",
+            "value": 0
+          },
+          {
+            "formula": "=B9*C9",
+            "value": 0
+          },
+          {
+            "formula": "=B9*D9",
+            "value": 0
+          },
+          {
+            "formula": "=E9+F9",
+            "value": 0
+          },
+          "No refining output in 2025; terminal activity is not production"
+        ],
+        [
+          "Enref",
+          {
+            "formula": "=0",
+            "value": 0
+          },
+          {
+            "formula": "=0",
+            "value": 0
+          },
+          {
+            "formula": "=0",
+            "value": 0
+          },
+          {
+            "formula": "=B10*C10",
+            "value": 0
+          },
+          {
+            "formula": "=B10*D10",
+            "value": 0
+          },
+          {
+            "formula": "=E10+F10",
+            "value": 0
+          },
+          "No refining output in 2025; terminal activity is not production"
+        ],
+        [
+          "Total",
+          {
+            "formula": "=B5+B6+B7+B8+B9+B10",
+            "value": 12.945354599242396
+          },
+          null,
+          null,
+          {
+            "formula": "=E5+E6+E7+E8+E9+E10",
+            "value": 5.6410532847474215
+          },
+          {
+            "formula": "=F5+F6+F7+F8+F9+F10",
+            "value": 4.58481384609993
+          },
+          {
+            "formula": "=G5+G6+G7+G8+G9+G10",
+            "value": 10.225867130847352
+          },
+          "Petrol/diesel subset only; plant production is estimated, not national reported output"
+        ]
+      ],
+      "widths": [
+        28,
+        21,
+        18,
+        18,
+        18,
+        18,
+        20,
+        95
+      ]
+    },
+    "Balance": {
+      "title": "Demand and supply reconciliation",
+      "headers": [
+        "Measure",
+        "Petrol bn L",
+        "Diesel bn L",
+        "Total bn L",
+        "Treatment"
+      ],
+      "rows": [
+        [
+          "2025 demand",
+          {
+            "formula": "='Demand history'!B17",
+            "value": 8.855772869974501
+          },
+          {
+            "formula": "='Demand history'!C17",
+            "value": 12.131615327120741
+          },
+          {
+            "formula": "=B5+C5",
+            "value": 20.987388197095243
+          },
+          "Department anchored estimate"
+        ],
+        [
+          "Domestic production",
+          {
+            "formula": "='Plant supply'!E11",
+            "value": 5.6410532847474215
+          },
+          {
+            "formula": "='Plant supply'!F11",
+            "value": 4.58481384609993
+          },
+          {
+            "formula": "=B6+C6",
+            "value": 10.225867130847352
+          },
+          "Plant-output estimate with explicit product yields"
+        ],
+        [
+          "Gross customs imports",
+          {
+            "formula": "='Evidence'!B136",
+            "value": 4.45347117815
+          },
+          {
+            "formula": "='Evidence'!B138",
+            "value": 12.24872026207
+          },
+          {
+            "formula": "=B7+C7",
+            "value": 16.70219144022
+          },
+          "Recorded litres, calendar 2025"
+        ],
+        [
+          "Customs exports",
+          {
+            "formula": "='Evidence'!B137",
+            "value": 0.801762466
+          },
+          {
+            "formula": "='Evidence'!B139",
+            "value": 0.74670021007
+          },
+          {
+            "formula": "=B8+C8",
+            "value": 1.54846267607
+          },
+          "Recorded litres, calendar 2025"
+        ],
+        [
+          "Supply plus net imports",
+          {
+            "formula": "=B6+B7-B8",
+            "value": 9.292761996897422
+          },
+          {
+            "formula": "=C6+C7-C8",
+            "value": 16.08683389809993
+          },
+          {
+            "formula": "=B9+C9",
+            "value": 25.37959589499735
+          },
+          "Availability before stock changes and statistical/scope differences"
+        ],
+        [
+          "Unexplained availability less demand",
+          {
+            "formula": "=B9-B5",
+            "value": 0.4369891269229207
+          },
+          {
+            "formula": "=C9-C5",
+            "value": 3.955218570979188
+          },
+          {
+            "formula": "=B10+C10",
+            "value": 4.3922076979021085
+          },
+          "Not assigned to stocks or concealed in demand; investigate sales coverage, FY conversion, yields, customs scope and re-exports"
+        ],
+        [
+          "Demand-implied gross imports",
+          {
+            "formula": "=B5-B6+B8",
+            "value": 4.016482051227079
+          },
+          {
+            "formula": "=C5-C6+C8",
+            "value": 8.29350169109081
+          },
+          {
+            "formula": "=B11+C11",
+            "value": 12.30998374231789
+          },
+          "Zero stock-change assumption; not reconciled to customs imports"
+        ],
+        [
+          "FIASA-anchor alternative demand",
+          {
+            "formula": "='Demand history'!B19",
+            "value": 8.938032824999999
+          },
+          {
+            "formula": "='Demand history'!C19",
+            "value": 10.7163971
+          },
+          {
+            "formula": "=B12+C12",
+            "value": 19.654429925
+          },
+          "Source-choice sensitivity only"
+        ],
+        [
+          "Domestic output implied by demand/trade",
+          {
+            "formula": "=B5-B7+B8",
+            "value": 5.204064157824501
+          },
+          {
+            "formula": "=C5-C7+C8",
+            "value": 0.6295952751207412
+          },
+          {
+            "formula": "=B13+C13",
+            "value": 5.833659432945242
+          },
+          "Zero stock change. Compare this implied output with the plant estimate; it is not a replacement production assumption."
+        ]
+      ],
+      "widths": [
+        43,
+        19,
+        19,
+        19,
+        105
+      ]
+    },
+    "Scenarios": {
+      "title": "2025-2030 demand and import sensitivities",
+      "headers": [
+        "Case / year",
+        "Demand bn L",
+        "Supply bn L",
+        "Gross import need bn L",
+        "Change vs 2025 bn L",
+        "Trade-anchored bn L",
+        "Added Moz flow bn L",
+        "Imports ex-Moz proxy bn L",
+        "Meaning"
+      ],
+      "rows": [
+        [
+          "Low imports 2025",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B52)^0-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B52)^0*(1-(1-'Assumptions'!B53)^0))+(-'Segments'!D10*(1+'Assumptions'!B52)^0*(1-'Assumptions'!B53)^0*'Assumptions'!B54*0.0*(1-'Assumptions'!B55))+(-'Segments'!D9*(1-'Assumptions'!B56)*0.0)",
+            "value": 20.987388197095243
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B57-1)*0.0)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B59*MIN(1,MAX(0,(2025-'Assumptions'!B58+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B61*MIN(1,MAX(0,(2025-'Assumptions'!B60+1)/2)))",
+            "value": 10.225867130847352
+          },
+          {
+            "formula": "=B5-C5+'Balance'!D8",
+            "value": 12.309983742317891
+          },
+          {
+            "formula": "=D5-'Balance'!D11",
+            "value": 1.7763568394002505e-15
+          },
+          {
+            "formula": "='Balance'!D7+E5",
+            "value": 16.70219144022
+          },
+          {
+            "formula": "='Assumptions'!B62*0.0",
+            "value": 0.0
+          },
+          {
+            "formula": "=F5-G5-'Evidence'!B134-'Evidence'!B135",
+            "value": 16.615752449219997
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Low imports 2026",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B52)^1-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B52)^1*(1-(1-'Assumptions'!B53)^1))+(-'Segments'!D10*(1+'Assumptions'!B52)^1*(1-'Assumptions'!B53)^1*'Assumptions'!B54*0.2*(1-'Assumptions'!B55))+(-'Segments'!D9*(1-'Assumptions'!B56)*0.2)",
+            "value": 20.59052241378107
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B57-1)*0.2)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B59*MIN(1,MAX(0,(2026-'Assumptions'!B58+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B61*MIN(1,MAX(0,(2026-'Assumptions'!B60+1)/2)))",
+            "value": 10.532643144772772
+          },
+          {
+            "formula": "=B6-C6+'Balance'!D8",
+            "value": 11.606341945078299
+          },
+          {
+            "formula": "=D6-'Balance'!D11",
+            "value": -0.703641797239591
+          },
+          {
+            "formula": "='Balance'!D7+E6",
+            "value": 15.998549642980407
+          },
+          {
+            "formula": "='Assumptions'!B62*0.2",
+            "value": 0.12
+          },
+          {
+            "formula": "=F6-G6-'Evidence'!B134-'Evidence'!B135",
+            "value": 15.792110651980408
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Low imports 2027",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B52)^2-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B52)^2*(1-(1-'Assumptions'!B53)^2))+(-'Segments'!D10*(1+'Assumptions'!B52)^2*(1-'Assumptions'!B53)^2*'Assumptions'!B54*0.4*(1-'Assumptions'!B55))+(-'Segments'!D9*(1-'Assumptions'!B56)*0.4)",
+            "value": 20.197901888154842
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B57-1)*0.4)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B59*MIN(1,MAX(0,(2027-'Assumptions'!B58+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B61*MIN(1,MAX(0,(2027-'Assumptions'!B60+1)/2)))",
+            "value": 10.839419158698192
+          },
+          {
+            "formula": "=B7-C7+'Balance'!D8",
+            "value": 10.90694540552665
+          },
+          {
+            "formula": "=D7-'Balance'!D11",
+            "value": -1.403038336791239
+          },
+          {
+            "formula": "='Balance'!D7+E7",
+            "value": 15.29915310342876
+          },
+          {
+            "formula": "='Assumptions'!B62*0.4",
+            "value": 0.24
+          },
+          {
+            "formula": "=F7-G7-'Evidence'!B134-'Evidence'!B135",
+            "value": 14.97271411242876
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Low imports 2028",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B52)^3-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B52)^3*(1-(1-'Assumptions'!B53)^3))+(-'Segments'!D10*(1+'Assumptions'!B52)^3*(1-'Assumptions'!B53)^3*'Assumptions'!B54*0.6*(1-'Assumptions'!B55))+(-'Segments'!D9*(1-'Assumptions'!B56)*0.6)",
+            "value": 19.809472599297052
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B57-1)*0.6)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B59*MIN(1,MAX(0,(2028-'Assumptions'!B58+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B61*MIN(1,MAX(0,(2028-'Assumptions'!B60+1)/2)))",
+            "value": 11.146195172623612
+          },
+          {
+            "formula": "=B8-C8+'Balance'!D8",
+            "value": 10.211740102743441
+          },
+          {
+            "formula": "=D8-'Balance'!D11",
+            "value": -2.0982436395744486
+          },
+          {
+            "formula": "='Balance'!D7+E8",
+            "value": 14.60394780064555
+          },
+          {
+            "formula": "='Assumptions'!B62*0.6",
+            "value": 0.36
+          },
+          {
+            "formula": "=F8-G8-'Evidence'!B134-'Evidence'!B135",
+            "value": 14.15750880964555
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Low imports 2029",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B52)^4-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B52)^4*(1-(1-'Assumptions'!B53)^4))+(-'Segments'!D10*(1+'Assumptions'!B52)^4*(1-'Assumptions'!B53)^4*'Assumptions'!B54*0.8*(1-'Assumptions'!B55))+(-'Segments'!D9*(1-'Assumptions'!B56)*0.8)",
+            "value": 19.425181211618764
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B57-1)*0.8)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B59*MIN(1,MAX(0,(2029-'Assumptions'!B58+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B61*MIN(1,MAX(0,(2029-'Assumptions'!B60+1)/2)))",
+            "value": 14.286303642872788
+          },
+          {
+            "formula": "=B9-C9+'Balance'!D8",
+            "value": 6.687340244815975
+          },
+          {
+            "formula": "=D9-'Balance'!D11",
+            "value": -5.622643497501914
+          },
+          {
+            "formula": "='Balance'!D7+E9",
+            "value": 11.079547942718083
+          },
+          {
+            "formula": "='Assumptions'!B62*0.8",
+            "value": 0.48
+          },
+          {
+            "formula": "=F9-G9-'Evidence'!B134-'Evidence'!B135",
+            "value": 10.513108951718083
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Low imports 2030",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B52)^5-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B52)^5*(1-(1-'Assumptions'!B53)^5))+(-'Segments'!D10*(1+'Assumptions'!B52)^5*(1-'Assumptions'!B53)^5*'Assumptions'!B54*1.0*(1-'Assumptions'!B55))+(-'Segments'!D9*(1-'Assumptions'!B56)*1.0)",
+            "value": 19.044975066674194
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B57-1)*1.0)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B59*MIN(1,MAX(0,(2030-'Assumptions'!B58+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B61*MIN(1,MAX(0,(2030-'Assumptions'!B60+1)/2)))",
+            "value": 17.426412113121962
+          },
+          {
+            "formula": "=B10-C10+'Balance'!D8",
+            "value": 3.1670256296222314
+          },
+          {
+            "formula": "=D10-'Balance'!D11",
+            "value": -9.14295811269566
+          },
+          {
+            "formula": "='Balance'!D7+E10",
+            "value": 7.559233327524339
+          },
+          {
+            "formula": "='Assumptions'!B62*1.0",
+            "value": 0.6
+          },
+          {
+            "formula": "=F10-G10-'Evidence'!B134-'Evidence'!B135",
+            "value": 6.872794336524339
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Base 2025",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B63)^0-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B63)^0*(1-(1-'Assumptions'!B64)^0))+(-'Segments'!D10*(1+'Assumptions'!B63)^0*(1-'Assumptions'!B64)^0*'Assumptions'!B65*0.0*(1-'Assumptions'!B66))+(-'Segments'!D9*(1-'Assumptions'!B67)*0.0)",
+            "value": 20.987388197095243
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B68-1)*0.0)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B70*MIN(1,MAX(0,(2025-'Assumptions'!B69+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B72*MIN(1,MAX(0,(2025-'Assumptions'!B71+1)/2)))",
+            "value": 10.225867130847352
+          },
+          {
+            "formula": "=B11-C11+'Balance'!D8",
+            "value": 12.309983742317891
+          },
+          {
+            "formula": "=D11-'Balance'!D11",
+            "value": 1.7763568394002505e-15
+          },
+          {
+            "formula": "='Balance'!D7+E11",
+            "value": 16.70219144022
+          },
+          {
+            "formula": "='Assumptions'!B73*0.0",
+            "value": 0.0
+          },
+          {
+            "formula": "=F11-G11-'Evidence'!B134-'Evidence'!B135",
+            "value": 16.615752449219997
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Base 2026",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B63)^1-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B63)^1*(1-(1-'Assumptions'!B64)^1))+(-'Segments'!D10*(1+'Assumptions'!B63)^1*(1-'Assumptions'!B64)^1*'Assumptions'!B65*0.2*(1-'Assumptions'!B66))+(-'Segments'!D9*(1-'Assumptions'!B67)*0.2)",
+            "value": 20.959573230766598
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B68-1)*0.2)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B70*MIN(1,MAX(0,(2026-'Assumptions'!B69+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B72*MIN(1,MAX(0,(2026-'Assumptions'!B71+1)/2)))",
+            "value": 10.225867130847352
+          },
+          {
+            "formula": "=B12-C12+'Balance'!D8",
+            "value": 12.282168775989247
+          },
+          {
+            "formula": "=D12-'Balance'!D11",
+            "value": -0.02781496632864311
+          },
+          {
+            "formula": "='Balance'!D7+E12",
+            "value": 16.674376473891357
+          },
+          {
+            "formula": "='Assumptions'!B73*0.2",
+            "value": 0.04000000000000001
+          },
+          {
+            "formula": "=F12-G12-'Evidence'!B134-'Evidence'!B135",
+            "value": 16.547937482891356
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Base 2027",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B63)^2-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B63)^2*(1-(1-'Assumptions'!B64)^2))+(-'Segments'!D10*(1+'Assumptions'!B63)^2*(1-'Assumptions'!B64)^2*'Assumptions'!B65*0.4*(1-'Assumptions'!B66))+(-'Segments'!D9*(1-'Assumptions'!B67)*0.4)",
+            "value": 20.93257485416837
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B68-1)*0.4)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B70*MIN(1,MAX(0,(2027-'Assumptions'!B69+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B72*MIN(1,MAX(0,(2027-'Assumptions'!B71+1)/2)))",
+            "value": 10.225867130847352
+          },
+          {
+            "formula": "=B13-C13+'Balance'!D8",
+            "value": 12.255170399391018
+          },
+          {
+            "formula": "=D13-'Balance'!D11",
+            "value": -0.05481334292687201
+          },
+          {
+            "formula": "='Balance'!D7+E13",
+            "value": 16.647378097293128
+          },
+          {
+            "formula": "='Assumptions'!B73*0.4",
+            "value": 0.08000000000000002
+          },
+          {
+            "formula": "=F13-G13-'Evidence'!B134-'Evidence'!B135",
+            "value": 16.48093910629313
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Base 2028",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B63)^3-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B63)^3*(1-(1-'Assumptions'!B64)^3))+(-'Segments'!D10*(1+'Assumptions'!B63)^3*(1-'Assumptions'!B64)^3*'Assumptions'!B65*0.6*(1-'Assumptions'!B66))+(-'Segments'!D9*(1-'Assumptions'!B67)*0.6)",
+            "value": 20.906406633523154
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B68-1)*0.6)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B70*MIN(1,MAX(0,(2028-'Assumptions'!B69+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B72*MIN(1,MAX(0,(2028-'Assumptions'!B71+1)/2)))",
+            "value": 10.225867130847352
+          },
+          {
+            "formula": "=B14-C14+'Balance'!D8",
+            "value": 12.229002178745803
+          },
+          {
+            "formula": "=D14-'Balance'!D11",
+            "value": -0.0809815635720863
+          },
+          {
+            "formula": "='Balance'!D7+E14",
+            "value": 16.62120987664791
+          },
+          {
+            "formula": "='Assumptions'!B73*0.6",
+            "value": 0.12
+          },
+          {
+            "formula": "=F14-G14-'Evidence'!B134-'Evidence'!B135",
+            "value": 16.414770885647908
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Base 2029",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B63)^4-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B63)^4*(1-(1-'Assumptions'!B64)^4))+(-'Segments'!D10*(1+'Assumptions'!B63)^4*(1-'Assumptions'!B64)^4*'Assumptions'!B65*0.8*(1-'Assumptions'!B66))+(-'Segments'!D9*(1-'Assumptions'!B67)*0.8)",
+            "value": 20.881082360561916
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B68-1)*0.8)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B70*MIN(1,MAX(0,(2029-'Assumptions'!B69+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B72*MIN(1,MAX(0,(2029-'Assumptions'!B71+1)/2)))",
+            "value": 10.225867130847352
+          },
+          {
+            "formula": "=B15-C15+'Balance'!D8",
+            "value": 12.203677905784565
+          },
+          {
+            "formula": "=D15-'Balance'!D11",
+            "value": -0.10630583653332515
+          },
+          {
+            "formula": "='Balance'!D7+E15",
+            "value": 16.595885603686675
+          },
+          {
+            "formula": "='Assumptions'!B73*0.8",
+            "value": 0.16000000000000003
+          },
+          {
+            "formula": "=F15-G15-'Evidence'!B134-'Evidence'!B135",
+            "value": 16.349446612686673
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "Base 2030",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B63)^5-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B63)^5*(1-(1-'Assumptions'!B64)^5))+(-'Segments'!D10*(1+'Assumptions'!B63)^5*(1-'Assumptions'!B64)^5*'Assumptions'!B65*1.0*(1-'Assumptions'!B66))+(-'Segments'!D9*(1-'Assumptions'!B67)*1.0)",
+            "value": 20.856616056089173
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B68-1)*1.0)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B70*MIN(1,MAX(0,(2030-'Assumptions'!B69+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B72*MIN(1,MAX(0,(2030-'Assumptions'!B71+1)/2)))",
+            "value": 10.225867130847352
+          },
+          {
+            "formula": "=B16-C16+'Balance'!D8",
+            "value": 12.179211601311822
+          },
+          {
+            "formula": "=D16-'Balance'!D11",
+            "value": -0.1307721410060676
+          },
+          {
+            "formula": "='Balance'!D7+E16",
+            "value": 16.57141929921393
+          },
+          {
+            "formula": "='Assumptions'!B73*1.0",
+            "value": 0.2
+          },
+          {
+            "formula": "=F16-G16-'Evidence'!B134-'Evidence'!B135",
+            "value": 16.284980308213928
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "High imports 2025",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B74)^0-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B74)^0*(1-(1-'Assumptions'!B75)^0))+(-'Segments'!D10*(1+'Assumptions'!B74)^0*(1-'Assumptions'!B75)^0*'Assumptions'!B76*0.0*(1-'Assumptions'!B77))+(-'Segments'!D9*(1-'Assumptions'!B78)*0.0)",
+            "value": 20.987388197095243
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B79-1)*0.0)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B81*MIN(1,MAX(0,(2025-'Assumptions'!B80+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B83*MIN(1,MAX(0,(2025-'Assumptions'!B82+1)/2)))",
+            "value": 10.225867130847352
+          },
+          {
+            "formula": "=B17-C17+'Balance'!D8",
+            "value": 12.309983742317891
+          },
+          {
+            "formula": "=D17-'Balance'!D11",
+            "value": 1.7763568394002505e-15
+          },
+          {
+            "formula": "='Balance'!D7+E17",
+            "value": 16.70219144022
+          },
+          {
+            "formula": "='Assumptions'!B84*0.0",
+            "value": 0.0
+          },
+          {
+            "formula": "=F17-G17-'Evidence'!B134-'Evidence'!B135",
+            "value": 16.615752449219997
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "High imports 2026",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B74)^1-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B74)^1*(1-(1-'Assumptions'!B75)^1))+(-'Segments'!D10*(1+'Assumptions'!B74)^1*(1-'Assumptions'!B75)^1*'Assumptions'!B76*0.2*(1-'Assumptions'!B77))+(-'Segments'!D9*(1-'Assumptions'!B78)*0.2)",
+            "value": 21.385830945103333
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B79-1)*0.2)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B81*MIN(1,MAX(0,(2026-'Assumptions'!B80+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B83*MIN(1,MAX(0,(2026-'Assumptions'!B82+1)/2)))",
+            "value": 9.919091116921932
+          },
+          {
+            "formula": "=B18-C18+'Balance'!D8",
+            "value": 13.015202504251402
+          },
+          {
+            "formula": "=D18-'Balance'!D11",
+            "value": 0.7052187619335122
+          },
+          {
+            "formula": "='Balance'!D7+E18",
+            "value": 17.40741020215351
+          },
+          {
+            "formula": "='Assumptions'!B84*0.2",
+            "value": 0.010000000000000002
+          },
+          {
+            "formula": "=F18-G18-'Evidence'!B134-'Evidence'!B135",
+            "value": 17.310971211153507
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "High imports 2027",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B74)^2-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B74)^2*(1-(1-'Assumptions'!B75)^2))+(-'Segments'!D10*(1+'Assumptions'!B74)^2*(1-'Assumptions'!B75)^2*'Assumptions'!B76*0.4*(1-'Assumptions'!B77))+(-'Segments'!D9*(1-'Assumptions'!B78)*0.4)",
+            "value": 21.79237795194973
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B79-1)*0.4)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B81*MIN(1,MAX(0,(2027-'Assumptions'!B80+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B83*MIN(1,MAX(0,(2027-'Assumptions'!B82+1)/2)))",
+            "value": 9.61231510299651
+          },
+          {
+            "formula": "=B19-C19+'Balance'!D8",
+            "value": 13.728525525023223
+          },
+          {
+            "formula": "=D19-'Balance'!D11",
+            "value": 1.4185417827053328
+          },
+          {
+            "formula": "='Balance'!D7+E19",
+            "value": 18.12073322292533
+          },
+          {
+            "formula": "='Assumptions'!B84*0.4",
+            "value": 0.020000000000000004
+          },
+          {
+            "formula": "=F19-G19-'Evidence'!B134-'Evidence'!B135",
+            "value": 18.01429423192533
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "High imports 2028",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B74)^3-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B74)^3*(1-(1-'Assumptions'!B75)^3))+(-'Segments'!D10*(1+'Assumptions'!B74)^3*(1-'Assumptions'!B75)^3*'Assumptions'!B76*0.6*(1-'Assumptions'!B77))+(-'Segments'!D9*(1-'Assumptions'!B78)*0.6)",
+            "value": 22.207197175375317
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B79-1)*0.6)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B81*MIN(1,MAX(0,(2028-'Assumptions'!B80+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B83*MIN(1,MAX(0,(2028-'Assumptions'!B82+1)/2)))",
+            "value": 9.30553908907109
+          },
+          {
+            "formula": "=B20-C20+'Balance'!D8",
+            "value": 14.450120762374228
+          },
+          {
+            "formula": "=D20-'Balance'!D11",
+            "value": 2.140137020056338
+          },
+          {
+            "formula": "='Balance'!D7+E20",
+            "value": 18.842328460276335
+          },
+          {
+            "formula": "='Assumptions'!B84*0.6",
+            "value": 0.03
+          },
+          {
+            "formula": "=F20-G20-'Evidence'!B134-'Evidence'!B135",
+            "value": 18.725889469276332
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "High imports 2029",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B74)^4-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B74)^4*(1-(1-'Assumptions'!B75)^4))+(-'Segments'!D10*(1+'Assumptions'!B74)^4*(1-'Assumptions'!B75)^4*'Assumptions'!B76*0.8*(1-'Assumptions'!B77))+(-'Segments'!D9*(1-'Assumptions'!B78)*0.8)",
+            "value": 22.63046012824642
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B79-1)*0.8)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B81*MIN(1,MAX(0,(2029-'Assumptions'!B80+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B83*MIN(1,MAX(0,(2029-'Assumptions'!B82+1)/2)))",
+            "value": 8.99876307514567
+          },
+          {
+            "formula": "=B21-C21+'Balance'!D8",
+            "value": 15.18015972917075
+          },
+          {
+            "formula": "=D21-'Balance'!D11",
+            "value": 2.8701759868528605
+          },
+          {
+            "formula": "='Balance'!D7+E21",
+            "value": 19.57236742707286
+          },
+          {
+            "formula": "='Assumptions'!B84*0.8",
+            "value": 0.04000000000000001
+          },
+          {
+            "formula": "=F21-G21-'Evidence'!B134-'Evidence'!B135",
+            "value": 19.445928436072858
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ],
+        [
+          "High imports 2030",
+          {
+            "formula": "='Balance'!D5+(('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B74)^5-1))+(-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B74)^5*(1-(1-'Assumptions'!B75)^5))+(-'Segments'!D10*(1+'Assumptions'!B74)^5*(1-'Assumptions'!B75)^5*'Assumptions'!B76*1.0*(1-'Assumptions'!B77))+(-'Segments'!D9*(1-'Assumptions'!B78)*1.0)",
+            "value": 23.062341955527902
+          },
+          {
+            "formula": "='Balance'!D6+('Balance'!D6*('Assumptions'!B79-1)*1.0)+('Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B81*MIN(1,MAX(0,(2030-'Assumptions'!B80+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B83*MIN(1,MAX(0,(2030-'Assumptions'!B82+1)/2)))",
+            "value": 8.69198706122025
+          },
+          {
+            "formula": "=B22-C22+'Balance'!D8",
+            "value": 15.918817570377653
+          },
+          {
+            "formula": "=D22-'Balance'!D11",
+            "value": 3.6088338280597636
+          },
+          {
+            "formula": "='Balance'!D7+E22",
+            "value": 20.311025268279764
+          },
+          {
+            "formula": "='Assumptions'!B84*1.0",
+            "value": 0.05
+          },
+          {
+            "formula": "=F22-G22-'Evidence'!B134-'Evidence'!B135",
+            "value": 20.17458627727976
+          },
+          "Gross imports = demand - domestic supply + fixed 2025 exports; zero stock change. Trade anchor preserves the unresolved 2025 gap. Ex-Moz proxy deducts 2025 Komatipoort flow and additional diversion; other border routes remain, so this is not port throughput or Vopak demand."
+        ]
+      ],
+      "widths": [
+        23,
+        18,
+        18,
+        23,
+        23,
+        23,
+        21,
+        25,
+        90
+      ]
+    },
+    "Driver bridge": {
+      "title": "2030 volume changes by driver",
+      "headers": [
+        "Case",
+        "Activity bn L",
+        "Efficiency bn L",
+        "Rail net bn L",
+        "Power bn L",
+        "Operating supply bn L",
+        "Restart supply bn L",
+        "Net import change bn L",
+        "Basis"
+      ],
+      "rows": [
+        [
+          "Low imports",
+          {
+            "formula": "=('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B52)^5-1)",
+            "value": 0.502577413071174
+          },
+          {
+            "formula": "=-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B52)^5*(1-(1-'Assumptions'!B53)^5)",
+            "value": -1.1210241261215144
+          },
+          {
+            "formula": "=-'Segments'!D10*(1+'Assumptions'!B52)^5*(1-'Assumptions'!B53)^5*'Assumptions'!B54*1.0*(1-'Assumptions'!B55)",
+            "value": -0.6191584173707062
+          },
+          {
+            "formula": "=-'Segments'!D9*(1-'Assumptions'!B56)*1.0",
+            "value": -0.704808
+          },
+          {
+            "formula": "='Balance'!D6*('Assumptions'!B57-1)*1.0",
+            "value": 1.5338800696271018
+          },
+          {
+            "formula": "='Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B59*MIN(1,MAX(0,(2030-'Assumptions'!B58+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B61*MIN(1,MAX(0,(2030-'Assumptions'!B60+1)/2))",
+            "value": 5.666664912647508
+          },
+          {
+            "formula": "=B5+C5+D5+E5-F5-G5",
+            "value": -9.142958112695656
+          },
+          "Supply increases reduce imports; Mozambique is route diversion only and does not reduce national demand or imports"
+        ],
+        [
+          "Base",
+          {
+            "formula": "=('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B63)^5-1)",
+            "value": 1.5381887998552797
+          },
+          {
+            "formula": "=-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B63)^5*(1-(1-'Assumptions'!B64)^5)",
+            "value": -0.7931698551445201
+          },
+          {
+            "formula": "=-'Segments'!D10*(1+'Assumptions'!B63)^5*(1-'Assumptions'!B64)^5*'Assumptions'!B65*1.0*(1-'Assumptions'!B66)",
+            "value": -0.33363108571683103
+          },
+          {
+            "formula": "=-'Segments'!D9*(1-'Assumptions'!B67)*1.0",
+            "value": -0.54216
+          },
+          {
+            "formula": "='Balance'!D6*('Assumptions'!B68-1)*1.0",
+            "value": 0.0
+          },
+          {
+            "formula": "='Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B70*MIN(1,MAX(0,(2030-'Assumptions'!B69+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B72*MIN(1,MAX(0,(2030-'Assumptions'!B71+1)/2))",
+            "value": 0.0
+          },
+          {
+            "formula": "=B6+C6+D6+E6-F6-G6",
+            "value": -0.13077214100607143
+          },
+          "Supply increases reduce imports; Mozambique is route diversion only and does not reduce national demand or imports"
+        ],
+        [
+          "High imports",
+          {
+            "formula": "=('Balance'!D5-'Segments'!D9)*((1+'Assumptions'!B74)^5-1)",
+            "value": 2.6154266228205083
+          },
+          {
+            "formula": "=-('Segments'!D5+'Segments'!D10+'Segments'!D11)*(1+'Assumptions'!B74)^5*(1-(1-'Assumptions'!B75)^5)",
+            "value": -0.420695762564489
+          },
+          {
+            "formula": "=-'Segments'!D10*(1+'Assumptions'!B74)^5*(1-'Assumptions'!B75)^5*'Assumptions'!B76*1.0*(1-'Assumptions'!B77)",
+            "value": -0.11977710182335803
+          },
+          {
+            "formula": "=-'Segments'!D9*(1-'Assumptions'!B78)*1.0",
+            "value": -0.0
+          },
+          {
+            "formula": "='Balance'!D6*('Assumptions'!B79-1)*1.0",
+            "value": -1.5338800696271029
+          },
+          {
+            "formula": "='Assumptions'!B46*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B81*MIN(1,MAX(0,(2030-'Assumptions'!B80+1)/2))+'Assumptions'!B47*365*'Assumptions'!B16/1000000000*'Assumptions'!B48*'Assumptions'!B83*MIN(1,MAX(0,(2030-'Assumptions'!B82+1)/2))",
+            "value": 0.0
+          },
+          {
+            "formula": "=B7+C7+D7+E7-F7-G7",
+            "value": 3.6088338280597636
+          },
+          "Supply increases reduce imports; Mozambique is route diversion only and does not reduce national demand or imports"
+        ]
+      ],
+      "widths": [
+        22,
+        20,
+        20,
+        20,
+        20,
+        24,
+        23,
+        25,
+        90
+      ]
+    },
+    "Mozambique": {
+      "title": "Mozambique nodes and route economics",
+      "headers": [
+        "Item",
+        "Value",
+        "Unit",
+        "Basis / source"
+      ],
+      "rows": [
+        [
+          "Galp/IPG Matola",
+          60000,
+          "petrol + diesel m3",
+          "Operating; inaugurated 3 December 2020; https://www.galp.com/corp/pt/media/comunicados-de-imprensa/comunicado/id/1172"
+        ],
+        [
+          "Petromoc Lingamo",
+          390000,
+          "all liquid fuels m3",
+          "Operating; includes jet and paraffin; capacity overlap with other operators unconfirmed; https://www.petromoc.co.mz/product-service/logistica/"
+        ],
+        [
+          "Petromoc Nacala",
+          47500,
+          "all liquid fuels m3",
+          "Northern regional supply; no incremental SA allocation assumed; https://www.petromoc.co.mz/product-service/logistica/"
+        ],
+        [
+          "Petromoc Pemba",
+          18000,
+          "all liquid fuels m3",
+          "Northern regional supply; no incremental SA allocation assumed; https://www.petromoc.co.mz/product-service/logistica/"
+        ],
+        [
+          "Galp/IPG Beira",
+          null,
+          "capacity not established here",
+          "Operating since February 2021; central regional supply; https://www.galp.com/mz/pt-pt/institucional/logistica"
+        ],
+        [
+          "Temane PSA",
+          4000,
+          "barrels light oil/day",
+          "Production began December 2025; light oil, gas and LPG, not finished petrol/diesel; https://sasol.com/our-businesses/energy/gas-sourcing-and-operations"
+        ],
+        [
+          "CFM Matola berth",
+          5000000,
+          "tonnes/year all petroleum",
+          "Shared berth capacity; not additive to storage or SA throughput; https://www.cfm.co.mz/terminal-de-combustiveis/"
+        ],
+        [
+          "Komatipoort imports 2019",
+          {
+            "formula": "='Evidence'!B86+'Evidence'!B87",
+            "value": 0.25139441304
+          },
+          "bn L",
+          "SARS office proxy; not terminal-specific; litres only"
+        ],
+        [
+          "Komatipoort imports 2020",
+          {
+            "formula": "='Evidence'!B94+'Evidence'!B95",
+            "value": 0.23838171999000002
+          },
+          "bn L",
+          "SARS office proxy; not terminal-specific; litres only"
+        ],
+        [
+          "Komatipoort imports 2021",
+          {
+            "formula": "='Evidence'!B102+'Evidence'!B103",
+            "value": 0.240790107
+          },
+          "bn L",
+          "SARS office proxy; not terminal-specific; litres only"
+        ],
+        [
+          "Komatipoort imports 2022",
+          {
+            "formula": "='Evidence'!B110+'Evidence'!B111",
+            "value": 0.30296426532
+          },
+          "bn L",
+          "SARS office proxy; not terminal-specific; litres only"
+        ],
+        [
+          "Komatipoort imports 2023",
+          {
+            "formula": "='Evidence'!B118+'Evidence'!B119",
+            "value": 0.254696261
+          },
+          "bn L",
+          "SARS office proxy; not terminal-specific; litres only"
+        ],
+        [
+          "Komatipoort imports 2024",
+          {
+            "formula": "='Evidence'!B126+'Evidence'!B127",
+            "value": 0.18682962784999999
+          },
+          "bn L",
+          "SARS office proxy; not terminal-specific; litres only"
+        ],
+        [
+          "Komatipoort imports 2025",
+          {
+            "formula": "='Evidence'!B134+'Evidence'!B135",
+            "value": 0.08643899099999999
+          },
+          "bn L",
+          "SARS office proxy; not terminal-specific; litres only"
+        ],
+        [
+          "Durban road logistics",
+          {
+            "formula": "=2*'Assumptions'!B26*'Assumptions'!B28/'Assumptions'!B29+'Assumptions'!B30",
+            "value": 0.95
+          },
+          "ZAR/L",
+          "Illustrative same inland destination; round-trip truck cost includes empty return; excludes common product price and taxes"
+        ],
+        [
+          "Matola road logistics",
+          {
+            "formula": "=2*'Assumptions'!B27*'Assumptions'!B28/'Assumptions'!B29+'Assumptions'!B31+'Assumptions'!B32+'Assumptions'!B33*'Assumptions'!B34/'Assumptions'!B29+'Assumptions'!B35*'Assumptions'!B36*'Assumptions'!B33/365+'Assumptions'!B37",
+            "value": 1.1424315068493152
+          },
+          "ZAR/L",
+          "Illustrative costs, not freight quotes. Landed product premium is editable; comparable tax treatment assumed, not a legal assessment"
+        ],
+        [
+          "Matola premium vs Durban",
+          {
+            "formula": "='Mozambique'!B20-'Mozambique'!B19",
+            "value": 0.1924315068493152
+          },
+          "ZAR/L",
+          "Positive value means Matola is more expensive under these assumptions"
+        ],
+        [
+          "Required Matola landed discount",
+          {
+            "formula": "=MAX(0,'Mozambique'!B20-'Mozambique'!B19)",
+            "value": 0.1924315068493152
+          },
+          "ZAR/L",
+          "Discount required to offset the modelled logistics disadvantage"
+        ],
+        [
+          "Galp SA volume screen",
+          {
+            "formula": "='Mozambique'!B5*'Assumptions'!B38*'Assumptions'!B39*12*'Assumptions'!B40/1000000",
+            "value": 0.1836
+          },
+          "bn L/year",
+          "Individual facility sensitivity only; no customer commitment. Not additive to Petromoc pending asset overlap check"
+        ],
+        [
+          "Petromoc SA volume screen",
+          {
+            "formula": "='Mozambique'!B6*'Assumptions'!B41*'Assumptions'!B42*'Assumptions'!B43*12*'Assumptions'!B44/1000000",
+            "value": 0.2808
+          },
+          "bn L/year",
+          "Individual facility sensitivity; assumed petrol/diesel share, working capacity and SA allocation. Not added to Galp"
+        ],
+        [
+          "Matola premium: Low border delay",
+          {
+            "formula": "='Mozambique'!B20-'Mozambique'!B19+('Assumptions'!B50-'Assumptions'!B33)*('Assumptions'!B34/'Assumptions'!B29+'Assumptions'!B35*'Assumptions'!B36/365)",
+            "value": 0.08750000000000013
+          },
+          "ZAR/L",
+          "Delay sensitivity; see editable days in Assumptions; all other route inputs fixed"
+        ],
+        [
+          "Matola premium: Base border delay",
+          {
+            "formula": "='Mozambique'!B20-'Mozambique'!B19+('Assumptions'!B33-'Assumptions'!B33)*('Assumptions'!B34/'Assumptions'!B29+'Assumptions'!B35*'Assumptions'!B36/365)",
+            "value": 0.1924315068493152
+          },
+          "ZAR/L",
+          "Delay sensitivity; see editable days in Assumptions; all other route inputs fixed"
+        ],
+        [
+          "Matola premium: High border delay",
+          {
+            "formula": "='Mozambique'!B20-'Mozambique'!B19+('Assumptions'!B51-'Assumptions'!B33)*('Assumptions'!B34/'Assumptions'!B29+'Assumptions'!B35*'Assumptions'!B36/365)",
+            "value": 0.40229452054794534
+          },
+          "ZAR/L",
+          "Delay sensitivity; see editable days in Assumptions; all other route inputs fixed"
+        ],
+        [
+          "Trucks/day: Low imports diversion",
+          {
+            "formula": "='Assumptions'!B62*1000000000/'Assumptions'!B29/'Assumptions'!B45",
+            "value": 45.45454545454545
+          },
+          "loaded trucks/day",
+          "Incremental SA flow scenario; compare with terminal loading and border availability, not gross port capacity"
+        ],
+        [
+          "Trucks/day: Base diversion",
+          {
+            "formula": "='Assumptions'!B73*1000000000/'Assumptions'!B29/'Assumptions'!B45",
+            "value": 15.151515151515152
+          },
+          "loaded trucks/day",
+          "Incremental SA flow scenario; compare with terminal loading and border availability, not gross port capacity"
+        ],
+        [
+          "Trucks/day: High imports diversion",
+          {
+            "formula": "='Assumptions'!B84*1000000000/'Assumptions'!B29/'Assumptions'!B45",
+            "value": 3.787878787878788
+          },
+          "loaded trucks/day",
+          "Incremental SA flow scenario; compare with terminal loading and border availability, not gross port capacity"
+        ]
+      ],
+      "widths": [
+        43,
+        22,
+        24,
+        110
+      ]
+    },
+    "Assumptions": {
+      "title": "Editable analytical assumptions",
+      "headers": [
+        "Assumption",
+        "Value",
+        "Unit / basis",
+        "Interpretation"
+      ],
+      "rows": [
+        [
+          "petrol_activity_growth",
+          0.005,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "petrol_efficiency_change",
+          0.015,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "nonpower_diesel_growth",
+          0.01,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "road_diesel_efficiency_change",
+          0.005,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "petrol_road_share",
+          0.97,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "road_diesel_freight_share",
+          0.75,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "ipp_litres_per_kwh",
+          0.31,
+          "litres/kWh",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "eskom_diesel_share",
+          1.0,
+          "fraction",
+          "Upper-bound simplification: diesel + kerosene treated as diesel; calendar year proxied by March financial year"
+        ],
+        [
+          "private_power_2023",
+          0.8,
+          "bn litres",
+          "Assumed private backup within national demand; allocation replaces part of other use, not additional national volume"
+        ],
+        [
+          "private_power_2024",
+          0.6,
+          "bn litres",
+          "Assumed private backup within national demand; allocation replaces part of other use, not additional national volume"
+        ],
+        [
+          "private_power_2025",
+          0.2,
+          "bn litres",
+          "Assumed private backup within national demand; allocation replaces part of other use, not additional national volume"
+        ],
+        [
+          "barrel_litres",
+          158.987294928,
+          "litres",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "btu_mj",
+          0.00105505585262,
+          "MJ/Btu",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "secunda_pd_share",
+          0.9,
+          "fraction",
+          "Assume 90% of refined products are petrol/diesel; published approximate 65/35 split applied within that subset"
+        ],
+        [
+          "secunda_petrol_share_of_pd",
+          0.65,
+          "fraction",
+          "Assume 90% of refined products are petrol/diesel; published approximate 65/35 split applied within that subset"
+        ],
+        [
+          "natref_share",
+          0.6364,
+          "fraction",
+          "FY2025 Sasol output / 63.64% ownership; product yields use midpoints of published 2021 ranges"
+        ],
+        [
+          "natref_petrol_yield",
+          0.305,
+          "fraction",
+          "FY2025 Sasol output / 63.64% ownership; product yields use midpoints of published 2021 ranges"
+        ],
+        [
+          "natref_diesel_yield",
+          0.34,
+          "fraction",
+          "FY2025 Sasol output / 63.64% ownership; product yields use midpoints of published 2021 ranges"
+        ],
+        [
+          "astron_pd_share",
+          0.8,
+          "fraction",
+          "Convert all-product energy to litres, then assume 80% petrol/diesel and 50/50 volume mix"
+        ],
+        [
+          "astron_petrol_share_of_pd",
+          0.5,
+          "fraction",
+          "Convert all-product energy to litres, then assume 80% petrol/diesel and 50/50 volume mix"
+        ],
+        [
+          "astron_mj_per_litre",
+          35.5,
+          "MJ/litre",
+          "Convert all-product energy to litres, then assume 80% petrol/diesel and 50/50 volume mix"
+        ],
+        [
+          "road_distance_durban_km",
+          600,
+          "km",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "road_distance_matola_km",
+          550,
+          "km",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "truck_cost_zar_km",
+          25,
+          "ZAR/km",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "truck_payload_litres",
+          40000,
+          "litres",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "terminal_cost_durban_zar_l",
+          0.2,
+          "ZAR/litre",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "terminal_cost_matola_zar_l",
+          0.25,
+          "ZAR/litre",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "border_cost_matola_zar_l",
+          0.1,
+          "ZAR/litre",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "border_delay_days",
+          1,
+          "days",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "truck_delay_zar_day",
+          4000,
+          "ZAR/day",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "inventory_price_zar_l",
+          15,
+          "ZAR/litre",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "financing_rate",
+          0.12,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "matola_landed_premium_zar_l",
+          0,
+          "ZAR/litre",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "galp_working_fraction",
+          0.85,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "galp_monthly_turns",
+          1.5,
+          "turns/month",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "galp_sa_allocation",
+          0.2,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "petromoc_pd_fraction",
+          0.75,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "petromoc_working_fraction",
+          0.8,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "petromoc_monthly_turns",
+          1,
+          "turns/month",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "petromoc_sa_allocation",
+          0.1,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "operating_days",
+          330,
+          "days",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "sapref_bpd",
+          180000,
+          "barrels/day",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "petrosa_bpd",
+          45000,
+          "barrels/day",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "restart_pd_yield",
+          0.7,
+          "fraction",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "unreported_construction_bn",
+          0,
+          "bn litres",
+          "Zero subtraction when no construction row is reported; does not establish zero construction use. Affects industry residual."
+        ],
+        [
+          "border_delay_low_days",
+          0,
+          "days",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "border_delay_high_days",
+          3,
+          "days",
+          "Analyst sensitivity; not measured or independently approved"
+        ],
+        [
+          "Low imports: activity_growth",
+          0.005,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Low imports: efficiency",
+          0.015,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Low imports: rail_shift",
+          0.15,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Low imports: rail_diesel_rebound",
+          0.1,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Low imports: power_retained",
+          0.35,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Low imports: supply_multiplier",
+          1.15,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Low imports: sapref_start",
+          2029,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Low imports: sapref_utilisation",
+          0.65,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Low imports: petrosa_start",
+          2029,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Low imports: petrosa_utilisation",
+          0.5,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Low imports: moz_diversion_bn",
+          0.6,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: activity_growth",
+          0.015,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: efficiency",
+          0.01,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: rail_shift",
+          0.075,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: rail_diesel_rebound",
+          0.1,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: power_retained",
+          0.5,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: supply_multiplier",
+          1.0,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: sapref_start",
+          2099,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: sapref_utilisation",
+          0,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: petrosa_start",
+          2099,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: petrosa_utilisation",
+          0,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Base: moz_diversion_bn",
+          0.2,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: activity_growth",
+          0.025,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: efficiency",
+          0.005,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: rail_shift",
+          0.025,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: rail_diesel_rebound",
+          0.1,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: power_retained",
+          1.0,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: supply_multiplier",
+          0.85,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: sapref_start",
+          2099,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: sapref_utilisation",
+          0,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: petrosa_start",
+          2099,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: petrosa_utilisation",
+          0,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "High imports: moz_diversion_bn",
+          0.05,
+          "Fraction / year / bn L as named",
+          "Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+        ],
+        [
+          "Calculated power 2023",
+          {
+            "formula": "='Evidence'!B74*'Assumptions'!B12+'Evidence'!B77*'Assumptions'!B11/1000+'Assumptions'!B13",
+            "value": 2.0778800000000004
+          },
+          "bn L",
+          "Eskom fuel FY proxy x diesel fraction + IPP GWh x 0.31 L/kWh + assumed private backup"
+        ],
+        [
+          "Calculated power 2024",
+          {
+            "formula": "='Evidence'!B75*'Assumptions'!B12+'Evidence'!B78*'Assumptions'!B11/1000+'Assumptions'!B14",
+            "value": 2.19729
+          },
+          "bn L",
+          "Eskom fuel FY proxy x diesel fraction + IPP GWh x 0.31 L/kWh + assumed private backup"
+        ],
+        [
+          "Calculated power 2025",
+          {
+            "formula": "='Evidence'!B76*'Assumptions'!B12+'Evidence'!B79*'Assumptions'!B11/1000+'Assumptions'!B15",
+            "value": 1.08432
+          },
+          "bn L",
+          "Eskom fuel FY proxy x diesel fraction + IPP GWh x 0.31 L/kWh + assumed private backup"
+        ]
+      ],
+      "widths": [
+        47,
+        20,
+        43,
+        95
+      ]
+    },
+    "Evidence": {
+      "title": "Frozen source observations",
+      "headers": [
+        "Input",
+        "Value",
+        "Unit",
+        "Source / period"
+      ],
+      "rows": [
+        [
+          "sales_diesel_2013",
+          12.141281548,
+          "bn L",
+          "Department national fuel sales; 2013-Annual-FSV-at-National-Level-07-February-2014.xlsx; Reported input"
+        ],
+        [
+          "sales_petrol_2013",
+          11.439925235,
+          "bn L",
+          "Department national fuel sales; 2013-Annual-FSV-at-National-Level-07-February-2014.xlsx; Reported input"
+        ],
+        [
+          "sales_diesel_2014",
+          12.615023359,
+          "bn L",
+          "Department national fuel sales; 2014-Annual-FSV-at-National-Level-Quarter-3-16Jan2015.xlsx; Reported input"
+        ],
+        [
+          "sales_petrol_2014",
+          10.890207679,
+          "bn L",
+          "Department national fuel sales; 2014-Annual-FSV-at-National-Level-Quarter-3-16Jan2015.xlsx; Reported input"
+        ],
+        [
+          "sales_diesel_2015",
+          13.52013925195,
+          "bn L",
+          "Department national fuel sales; 2015-Annual-FSV-at-National-Level.xlsx; Reported input"
+        ],
+        [
+          "sales_petrol_2015",
+          11.475709420318001,
+          "bn L",
+          "Department national fuel sales; 2015-Annual-FSV-at-National-Level.xlsx; Reported input"
+        ],
+        [
+          "sales_diesel_2016",
+          12.082374038422001,
+          "bn L",
+          "Department national fuel sales; 2016-National-Aggregated-Fuel-Sales-Volumes-data.xlsx; Reported input"
+        ],
+        [
+          "sales_petrol_2016",
+          11.462252466686001,
+          "bn L",
+          "Department national fuel sales; 2016-National-Aggregated-Fuel-Sales-Volumes-data.xlsx; Reported input"
+        ],
+        [
+          "sales_diesel_2017",
+          12.147245167188997,
+          "bn L",
+          "Department national fuel sales; 2017-Quarter3-FSV-Annual-data.xls; Reported input"
+        ],
+        [
+          "sales_petrol_2017",
+          11.174082980369999,
+          "bn L",
+          "Department national fuel sales; 2017-Quarter3-FSV-Annual-data.xls; Reported input"
+        ],
+        [
+          "sales_diesel_2018",
+          12.538744325998,
+          "bn L",
+          "Department national fuel sales; 2018-National-Aggregated-FSV.xls; Reported input"
+        ],
+        [
+          "sales_petrol_2018",
+          11.141630546702,
+          "bn L",
+          "Department national fuel sales; 2018-National-Aggregated-FSV.xls; Reported input"
+        ],
+        [
+          "sales_diesel_2019",
+          12.908631232217,
+          "bn L",
+          "Department national fuel sales; 2019-National-Aggregated-FSV.xls; Reported input"
+        ],
+        [
+          "sales_petrol_2019",
+          10.773208065062,
+          "bn L",
+          "Department national fuel sales; 2019-National-Aggregated-FSV.xls; Reported input"
+        ],
+        [
+          "sales_diesel_2020",
+          11.689957759296,
+          "bn L",
+          "Department national fuel sales; 2020-National-Aggregated-FSV-data-Quarter4.xls; Reported input"
+        ],
+        [
+          "sales_petrol_2020",
+          8.761470961496,
+          "bn L",
+          "Department national fuel sales; 2020-National-Aggregated-FSV-data-Quarter4.xls; Reported input"
+        ],
+        [
+          "sales_diesel_2021",
+          12.945782750434999,
+          "bn L",
+          "Department national fuel sales; 2021-National-Aggregated-FSV-data-Quarter4.xls; Reported input"
+        ],
+        [
+          "sales_petrol_2021",
+          9.301584227683001,
+          "bn L",
+          "Department national fuel sales; 2021-National-Aggregated-FSV-data-Quarter4.xls; Reported input"
+        ],
+        [
+          "sales_diesel_2022",
+          12.717326319019001,
+          "bn L",
+          "Department national fuel sales; 2022-National-Aggregated-FSV-data-Quarter4.xls; Reported input"
+        ],
+        [
+          "sales_petrol_2022",
+          9.184869915573,
+          "bn L",
+          "Department national fuel sales; 2022-National-Aggregated-FSV-data-Quarter4.xls; Reported input"
+        ],
+        [
+          "sales_diesel_2023",
+          12.907499965808,
+          "bn L",
+          "Department national fuel sales; 2023-National-Aggregated-FSV-data-Quarter4.xls; Reported input"
+        ],
+        [
+          "sales_petrol_2023",
+          9.036950113492,
+          "bn L",
+          "Department national fuel sales; 2023-National-Aggregated-FSV-data-Quarter4.xls; Reported input"
+        ],
+        [
+          "fiasa_diesel_2024",
+          11.734,
+          "bn L",
+          "FIASA Annual Report 2025; definition reconciliation pending; Alternative source anchor"
+        ],
+        [
+          "fiasa_petrol_2024",
+          9.029,
+          "bn L",
+          "FIASA Annual Report 2025; definition reconciliation pending; Alternative source anchor"
+        ],
+        [
+          "eb_industry_2018",
+          1.884421682861328,
+          "bn L",
+          "Department energy balance 2018; industry; Reported input"
+        ],
+        [
+          "eb_mining_2018",
+          1.650123,
+          "bn L",
+          "Department energy balance 2018; mining; Reported input"
+        ],
+        [
+          "eb_construction_2018",
+          0.074592859375,
+          "bn L",
+          "Department energy balance 2018; construction; Reported input"
+        ],
+        [
+          "eb_road_2018",
+          6.3919425,
+          "bn L",
+          "Department energy balance 2018; road; Reported input"
+        ],
+        [
+          "eb_agriculture_2018",
+          0.8998834375,
+          "bn L",
+          "Department energy balance 2018; agriculture; Reported input"
+        ],
+        [
+          "eb_industry_2019",
+          1.8979908483886718,
+          "bn L",
+          "Department energy balance 2019; industry; Reported input"
+        ],
+        [
+          "eb_mining_2019",
+          1.66724925,
+          "bn L",
+          "Department energy balance 2019; mining; Reported input"
+        ],
+        [
+          "eb_road_2019",
+          6.725982,
+          "bn L",
+          "Department energy balance 2019; road; Reported input"
+        ],
+        [
+          "eb_agriculture_2019",
+          0.9218486875,
+          "bn L",
+          "Department energy balance 2019; agriculture; Reported input"
+        ],
+        [
+          "eb_industry_2020",
+          1.4462206990966797,
+          "bn L",
+          "Department energy balance 2020; industry; Reported input"
+        ],
+        [
+          "eb_mining_2020",
+          1.26340575,
+          "bn L",
+          "Department energy balance 2020; mining; Reported input"
+        ],
+        [
+          "eb_construction_2020",
+          0.04284740625,
+          "bn L",
+          "Department energy balance 2020; construction; Reported input"
+        ],
+        [
+          "eb_road_2020",
+          5.8481915,
+          "bn L",
+          "Department energy balance 2020; road; Reported input"
+        ],
+        [
+          "eb_agriculture_2020",
+          1.0489635,
+          "bn L",
+          "Department energy balance 2020; agriculture; Reported input"
+        ],
+        [
+          "eb_industry_2021",
+          1.4991392599999998,
+          "bn L",
+          "Department energy balance 2021; industry; Reported input"
+        ],
+        [
+          "eb_mining_2021",
+          1.29381342,
+          "bn L",
+          "Department energy balance 2021; mining; Reported input"
+        ],
+        [
+          "eb_construction_2021",
+          0.04869243,
+          "bn L",
+          "Department energy balance 2021; construction; Reported input"
+        ],
+        [
+          "eb_road_2021",
+          6.32795728,
+          "bn L",
+          "Department energy balance 2021; road; Reported input"
+        ],
+        [
+          "eb_agriculture_2021",
+          1.05839895,
+          "bn L",
+          "Department energy balance 2021; agriculture; Reported input"
+        ],
+        [
+          "mining_activity_2018",
+          100.925,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "mining_activity_2019",
+          99.98333333333333,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "mining_activity_2020",
+          89.10000000000001,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "mining_activity_2021",
+          100.875,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "mining_activity_2022",
+          93.00833333333333,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "mining_activity_2023",
+          93.01666666666667,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "mining_activity_2024",
+          93.53333333333335,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "mining_activity_2025",
+          93.70833333333333,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "manufacturing_activity_2018",
+          101.10000000000001,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "manufacturing_activity_2019",
+          99.98333333333333,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "manufacturing_activity_2020",
+          87.66666666666667,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "manufacturing_activity_2021",
+          93.11666666666667,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "manufacturing_activity_2022",
+          93.14166666666667,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "manufacturing_activity_2023",
+          93.71666666666665,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "manufacturing_activity_2024",
+          93.33333333333333,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "manufacturing_activity_2025",
+          92.14166666666667,
+          "index 2019=100",
+          "Stats SA monthly production index; twelve-month mean; Reported input"
+        ],
+        [
+          "agriculture_activity_2018",
+          112.09492575179875,
+          "bn real 2015 ZAR",
+          "Stats SA P0441 agriculture real GVA; Reported input"
+        ],
+        [
+          "agriculture_activity_2019",
+          104.7847576991143,
+          "bn real 2015 ZAR",
+          "Stats SA P0441 agriculture real GVA; Reported input"
+        ],
+        [
+          "agriculture_activity_2020",
+          122.87009907534619,
+          "bn real 2015 ZAR",
+          "Stats SA P0441 agriculture real GVA; Reported input"
+        ],
+        [
+          "agriculture_activity_2021",
+          128.9830895613611,
+          "bn real 2015 ZAR",
+          "Stats SA P0441 agriculture real GVA; Reported input"
+        ],
+        [
+          "agriculture_activity_2022",
+          131.7706421450265,
+          "bn real 2015 ZAR",
+          "Stats SA P0441 agriculture real GVA; Reported input"
+        ],
+        [
+          "agriculture_activity_2023",
+          125.74664214502654,
+          "bn real 2015 ZAR",
+          "Stats SA P0441 agriculture real GVA; Reported input"
+        ],
+        [
+          "agriculture_activity_2024",
+          114.79164214502653,
+          "bn real 2015 ZAR",
+          "Stats SA P0441 agriculture real GVA; Reported input"
+        ],
+        [
+          "agriculture_activity_2025",
+          134.79674698171317,
+          "bn real 2015 ZAR",
+          "Stats SA P0441 agriculture real GVA; Reported input"
+        ],
+        [
+          "eskom_2021",
+          0.4587,
+          "bn L",
+          "Eskom Integrated Report 2025 p141; FY ending March; diesel and kerosene; FY proxy for calendar year, fuel mix retained"
+        ],
+        [
+          "eskom_2022",
+          0.5804,
+          "bn L",
+          "Eskom Integrated Report 2025 p141; FY ending March; diesel and kerosene; FY proxy for calendar year, fuel mix retained"
+        ],
+        [
+          "eskom_2023",
+          0.9375,
+          "bn L",
+          "Eskom Integrated Report 2025 p141; FY ending March; diesel and kerosene; FY proxy for calendar year, fuel mix retained"
+        ],
+        [
+          "eskom_2024",
+          1.1295,
+          "bn L",
+          "Eskom Integrated Report 2025 p141; FY ending March; diesel and kerosene; FY proxy for calendar year, fuel mix retained"
+        ],
+        [
+          "eskom_2025",
+          0.6791,
+          "bn L",
+          "Eskom Integrated Report 2025 p141; FY ending March; diesel and kerosene; FY proxy for calendar year, fuel mix retained"
+        ],
+        [
+          "ipp_gwh_2023",
+          1098.0,
+          "GWh",
+          "Eskom statistical tables; IPP OCGT generation; FY ending March; Reported input"
+        ],
+        [
+          "ipp_gwh_2024",
+          1509.0,
+          "GWh",
+          "Eskom statistical tables; IPP OCGT generation; FY ending March; Reported input"
+        ],
+        [
+          "ipp_gwh_2025",
+          662.0,
+          "GWh",
+          "Eskom statistical tables; IPP OCGT generation; FY ending March; Reported input"
+        ],
+        [
+          "freight_rail_2024",
+          160.745,
+          "million tonnes",
+          "Stats SA P7162 December 2025, p7; all reported freight, not tonne-km; Reported input"
+        ],
+        [
+          "freight_road_2024",
+          979.798,
+          "million tonnes",
+          "Stats SA P7162 December 2025, p7; all reported freight, not tonne-km; Reported input"
+        ],
+        [
+          "freight_rail_2025",
+          168.263,
+          "million tonnes",
+          "Stats SA P7162 December 2025, p7; all reported freight, not tonne-km; Reported input"
+        ],
+        [
+          "freight_road_2025",
+          976.468,
+          "million tonnes",
+          "Stats SA P7162 December 2025, p7; all reported freight, not tonne-km; Reported input"
+        ],
+        [
+          "trade_Durban_import_petrol_2019",
+          1.25634839252,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_diesel_2019",
+          3.80914333,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_petrol_2019",
+          0.03866750897,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_diesel_2019",
+          0.21272690407,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_petrol_2019",
+          1.4773858410899998,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_petrol_2019",
+          1.17470177789,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_diesel_2019",
+          5.590272108560001,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_diesel_2019",
+          1.7413773122,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_petrol_2020",
+          0.664092731,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_diesel_2020",
+          3.825937678,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_petrol_2020",
+          0.030842959,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_diesel_2020",
+          0.20753876099000002,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_petrol_2020",
+          1.71967306448,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_petrol_2020",
+          1.1547790711800001,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_diesel_2020",
+          6.81498544784,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_diesel_2020",
+          0.91381452025,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_petrol_2021",
+          2.436564685,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_diesel_2021",
+          5.83487318,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_petrol_2021",
+          0.039454367,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_diesel_2021",
+          0.20133574,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_petrol_2021",
+          4.00861276378,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_petrol_2021",
+          1.0524951445700002,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_diesel_2021",
+          9.761395305739999,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_diesel_2021",
+          0.8934881057699999,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_petrol_2022",
+          3.882669362,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_diesel_2022",
+          7.88124800634,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_petrol_2022",
+          0.028805741,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_diesel_2022",
+          0.27415852432,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_petrol_2022",
+          5.45526181472,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_petrol_2022",
+          0.85461371378,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_diesel_2022",
+          11.9542565479,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_diesel_2022",
+          0.88919906782,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_petrol_2023",
+          4.165599231,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_diesel_2023",
+          9.12503651042,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_petrol_2023",
+          0.000125422,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_diesel_2023",
+          0.254570839,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_petrol_2023",
+          4.48277476038,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_petrol_2023",
+          0.9940195590199999,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_diesel_2023",
+          12.87003210067,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_diesel_2023",
+          0.8894459079200001,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_petrol_2024",
+          3.804725224,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_diesel_2024",
+          8.03288993764,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_petrol_2024",
+          0.001009567,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_diesel_2024",
+          0.18582006085,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_petrol_2024",
+          4.00085443345,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_petrol_2024",
+          0.91974501589,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_diesel_2024",
+          10.79254713405,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_diesel_2024",
+          0.79583467852,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_petrol_2025",
+          4.228979739,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Durban_import_diesel_2025",
+          8.93153544064,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_petrol_2025",
+          0.004416485,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_Komatipoort_import_diesel_2025",
+          0.082022506,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_petrol_2025",
+          4.45347117815,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_petrol_2025",
+          0.801762466,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_import_diesel_2025",
+          12.24872026207,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "trade_All_export_diesel_2025",
+          0.74670021007,
+          "bn L",
+          "SARS customs by office; litres only; office is a gateway proxy; Reported input"
+        ],
+        [
+          "output_Secunda_2024",
+          29.1,
+          "million barrels",
+          "Operator production: sasol-metrics-fy2025.pdf; all refined products; no split by product; Reported input"
+        ],
+        [
+          "output_Natref_2024",
+          17.8,
+          "million barrels",
+          "Operator production: sasol-metrics-fy2025.pdf; Sasol's reported Natref production (its 63.64% share); Reported input"
+        ],
+        [
+          "output_Secunda_2025",
+          27.6,
+          "million barrels",
+          "Operator production: sasol-metrics-fy2025.pdf; all refined products; no split by product; Reported input"
+        ],
+        [
+          "output_Natref_2025",
+          14.7,
+          "million barrels",
+          "Operator production: sasol-metrics-fy2025.pdf; Sasol's reported Natref production (its 63.64% share); Reported input"
+        ],
+        [
+          "output_Secunda_2026",
+          30.6,
+          "million barrels",
+          "Operator production: sasol-metrics-fy2026.pdf; all refined products; no split by product; Reported input"
+        ],
+        [
+          "output_Natref_2026",
+          25.8,
+          "million barrels",
+          "Operator production: sasol-metrics-fy2026.pdf; includes 6.9 million barrels produced above Sasol's 63.64% shareholding; Reported input"
+        ],
+        [
+          "output_Astron_2024",
+          166204.0,
+          "billion Btu",
+          "Operator production: GLEN-2024-Annual-Report.pdf; all refined products; no split by product; Reported input"
+        ],
+        [
+          "output_Astron_2025",
+          164365.0,
+          "billion Btu",
+          "Operator production: GLEN-2025-Annual-Report.pdf; all refined products; no split by product; Reported input"
+        ]
+      ],
+      "widths": [
+        48,
+        22,
+        28,
+        115
+      ]
+    }
+  },
+  "summary": {
+    "2025 demand estimate": 20.987388197095243,
+    "2025 FIASA-anchor sensitivity": 19.654429925,
+    "2025 domestic production": 10.225867130847352,
+    "2025 gross customs imports": 16.70219144022,
+    "Unexplained supply-demand difference": 4.3922076979021085,
+    "2030 base demand": 20.856616056089173,
+    "2030 base import change": -0.1307721410060676,
+    "2030 base trade-anchored imports": 16.57141929921393,
+    "2030 base Mozambique diversion": 0.2,
+    "Matola logistics premium": 0.1924315068493152
+  },
+  "status": "Analyst base case and sensitivities; independent demand and supply do not yet reconcile",
+  "input_sha256": "cdf008b6878cd68d2798a81c0a0e31be223ee4883e1d70b167ad1b1bb03a83d7"
+}

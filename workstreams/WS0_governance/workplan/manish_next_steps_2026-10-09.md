@@ -1,7 +1,7 @@
 # Manish: next steps from the market sizing pack, 9 October 2026
 
 For Manish, from Nigel. The pack built on your DR01, DR04, DR07 and DR08 hand-back
-(PR #1) is `pptx/output/delivered/supporting/09102026_Vopak_Market_Sizing_v1100.pdf`
+(PR #1) is `pptx/output/delivered/supporting/archive/2026-10-11_cleanup/09102026_Vopak_Market_Sizing_v1100.pdf`
 (cover plus eight pages). Page 8 lists decisions and next steps; this note expands the
 items that are yours, with what "done" looks like. No delivery dates are committed here.
 

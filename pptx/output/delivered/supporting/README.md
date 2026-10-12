@@ -1,27 +1,41 @@
-# Current South Africa review
+# Current supporting deliverables
 
-**Current: 8 October 2026 — v27:** [PDF](SA_Market_Story_2026-10-08_v27.pdf) · [PowerPoint](SA_Market_Story_2026-10-08_v27.pptx)
+Updated 12 October 2026. **Accepted story: v10, 16 pages.**
 
-**Durban and Lesedi market sizing pack (current, built 9 October 2026 11:00):** [PDF](09102026_Vopak_Market_Sizing_v1100.pdf) · [editable PowerPoint](09102026_Vopak_Market_Sizing_v1100.pptx). Cover, then eight pages: 1 national balance; 2 issue tree; 3 demand by product and province; 4 demand by use (three sources to calibrate); 5 demand parameters (2035 lever cases, not accepted); 6 port and logistics; 7 outstanding data; 8 decisions and next steps. Built on Manish's DR01, DR04, DR07 and DR08 hand-back; where our work overlapped, his evidence is primary — see the [overlap log](../../../../workstreams/WS0_governance/workplan/overlap_log_2026_10_08.md). Rebuild with `pptx/scripts/build_market_sizing_issue_tree.ps1 -IncludeRequests -Layout flow`. Files are named ddmmyyyy_filename_vHHMM, with the build time rounded to the nearest half hour. The current file was built as v14; earlier versions v1-v13 are in [archive](archive/README.md) (record: `archive/records/cleanup_2026-10-09_issue_tree_v14.json`).
+| Deliverable | PowerPoint | PDF |
+|---|---|---|
+| South Africa SCR and evidence — v10 | [Open](SA_SCR_Evidence_2026-10-12_v10.pptx) | [Open](SA_SCR_Evidence_2026-10-12_v10.pdf) |
+| Extended South Africa story — v37, supporting reference | [Open](SA_Market_Story_2026-10-11_v37.pptx) | [Open](SA_Market_Story_2026-10-11_v37.pdf) |
+| Durban and Lesedi sizing — v2000 | [Open](10102026_Vopak_Market_Sizing_v2000.pptx) | [Open](10102026_Vopak_Market_Sizing_v2000.pdf) |
 
-- **[Review scope](Review_scope/)** — agreed scope and comments applied.
-- **[Archive](archive/)** — older story versions, background and illustrations.
+## Current story
 
-43 pages. Appendix starts at page 19. Nigel’s existing taglines are preserved. Manish's workbook history, estimates and proposed scenarios are integrated where relevant; scenario and commercial calibration remain open.
+- pp1–3: cover, graphical 2025 balance and clickable evidence index.
+- pp4–11: stacked demand history, sectors, Eskom, freight, vehicle sales, efficiency, production history and route map.
+- pp12–13: sizing flowchart and framework.
+- pp14–16: restored 2030 import cases, resolution and closing.
 
-Page 8 now uses three stacked sector chart rows with a common scale; 2024 estimates are outlined. Figures and other pages are preserved from v26.
+The production baseline is a 5.8bn-litre planning assumption. Demand is estimated;
+customs trade is recorded. Stock changes and product reconciliation remain open.
+Capture is illustrative and includes shared Durban–Lesedi fuel only once.
 
-New exhibits: industry demand (mining, manufacturing and agriculture), page 8; Durban–Lesedi market-sizing issue tree, page 16; vehicle stock and calibration, page 26; power fleet and proposed cases, page 33.
+## Saved styling
 
-Data request: page 18. Baseline reconciliation and implementation status: pages 36–37. [Page-by-page workbook audit](../../../../workstreams/WS3_reporting_delivery/sa_pack_workbook_audit_2026_10_08.csv) and [cell evidence](../../../story/sa_workbook_evidence_v26_2026_10_08.json).
+[Layout contract and build guidance](../../../brand_configs/VOPAK_LAYOUT.md).
+The approved source, native layout components and automated layout check are saved
+in the repository. Use `evidence_v09` to check the accepted v10 layout.
 
-Investment conditions: p4; nine-world investment priorities: p5; options: p17; original SCR synthesis: p38.
+## Supporting workbooks
 
-Illustrative investment case, annual-report context, assumptions and downside tests: pages 39–42. Reported, inferred and illustrative inputs are distinguished; actual commercial calibration remains open.
+- [South Africa analytical workbook v02](../../../../output/delivered/sa_analytics_2026_10_11_v02/SA_Fuel_Analytics_2025_Baseline_2026-10-11_v02.xlsx)
+- [Market-sizing workbook](../../../../output/delivered/Vopak_Market_Sizing_2026-10-10_v01.xlsx)
+- [Master-data review and gaps](../../../../output/delivered/Master_data_book_review_2026-10-10_v01.xlsx)
 
-Previous story versions, including v25, v26 and Nigel's edited v18, are preserved in `archive/story_versions/`. The first one-page issue-tree handback is in `archive/background/`. Builders use the archived sources; the active folder contains v27 and the current two-page handback.
+## Preserved history
 
+- [SCR v01–v09 and delivery history](archive/2026-10-12_accepted_v10/README.md)
+- [Earlier story packs and handbacks](archive/2026-10-11_cleanup/README.md)
+- [Review scope](Review_scope/)
 
-Page 11: current asset position and operating data gaps. Page 43: illustrative turnover sensitivity. Actual site share and investment capacity remain dependent on the client inputs listed on page 18.
-
-Previous workbook revision: [v26 PDF](archive/story_versions/SA_Market_Story_2026-10-08_v26.pdf) · [PowerPoint](archive/story_versions/SA_Market_Story_2026-10-08_v26.pptx). [Cleanup record](archive/records/cleanup_2026-10-08_v27.json) maps former paths and verified duplicate removals.
+Superseded packs are archived with original filenames and SHA-256 manifests.
+Presentation acceptance does not imply model validation or investment approval.

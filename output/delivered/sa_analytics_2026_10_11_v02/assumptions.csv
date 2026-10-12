@@ -1,0 +1,84 @@
+Assumption,Value,Unit / basis,Interpretation
+petrol_activity_growth,0.005,fraction,Analyst sensitivity; not measured or independently approved
+petrol_efficiency_change,0.015,fraction,Analyst sensitivity; not measured or independently approved
+nonpower_diesel_growth,0.01,fraction,Analyst sensitivity; not measured or independently approved
+road_diesel_efficiency_change,0.005,fraction,Analyst sensitivity; not measured or independently approved
+petrol_road_share,0.97,fraction,Analyst sensitivity; not measured or independently approved
+road_diesel_freight_share,0.75,fraction,Analyst sensitivity; not measured or independently approved
+ipp_litres_per_kwh,0.31,litres/kWh,Analyst sensitivity; not measured or independently approved
+eskom_diesel_share,1.0,fraction,Upper-bound simplification: diesel + kerosene treated as diesel; calendar year proxied by March financial year
+private_power_2023,0.8,bn litres,"Assumed private backup within national demand; allocation replaces part of other use, not additional national volume"
+private_power_2024,0.6,bn litres,"Assumed private backup within national demand; allocation replaces part of other use, not additional national volume"
+private_power_2025,0.2,bn litres,"Assumed private backup within national demand; allocation replaces part of other use, not additional national volume"
+barrel_litres,158.987294928,litres,Analyst sensitivity; not measured or independently approved
+btu_mj,0.00105505585262,MJ/Btu,Analyst sensitivity; not measured or independently approved
+secunda_pd_share,0.9,fraction,Assume 90% of refined products are petrol/diesel; published approximate 65/35 split applied within that subset
+secunda_petrol_share_of_pd,0.65,fraction,Assume 90% of refined products are petrol/diesel; published approximate 65/35 split applied within that subset
+natref_share,0.6364,fraction,FY2025 Sasol output / 63.64% ownership; product yields use midpoints of published 2021 ranges
+natref_petrol_yield,0.305,fraction,FY2025 Sasol output / 63.64% ownership; product yields use midpoints of published 2021 ranges
+natref_diesel_yield,0.34,fraction,FY2025 Sasol output / 63.64% ownership; product yields use midpoints of published 2021 ranges
+astron_pd_share,0.8,fraction,"Convert all-product energy to litres, then assume 80% petrol/diesel and 50/50 volume mix"
+astron_petrol_share_of_pd,0.5,fraction,"Convert all-product energy to litres, then assume 80% petrol/diesel and 50/50 volume mix"
+astron_mj_per_litre,35.5,MJ/litre,"Convert all-product energy to litres, then assume 80% petrol/diesel and 50/50 volume mix"
+road_distance_durban_km,600,km,Analyst sensitivity; not measured or independently approved
+road_distance_matola_km,550,km,Analyst sensitivity; not measured or independently approved
+truck_cost_zar_km,25,ZAR/km,Analyst sensitivity; not measured or independently approved
+truck_payload_litres,40000,litres,Analyst sensitivity; not measured or independently approved
+terminal_cost_durban_zar_l,0.2,ZAR/litre,Analyst sensitivity; not measured or independently approved
+terminal_cost_matola_zar_l,0.25,ZAR/litre,Analyst sensitivity; not measured or independently approved
+border_cost_matola_zar_l,0.1,ZAR/litre,Analyst sensitivity; not measured or independently approved
+border_delay_days,1,days,Analyst sensitivity; not measured or independently approved
+truck_delay_zar_day,4000,ZAR/day,Analyst sensitivity; not measured or independently approved
+inventory_price_zar_l,15,ZAR/litre,Analyst sensitivity; not measured or independently approved
+financing_rate,0.12,fraction,Analyst sensitivity; not measured or independently approved
+matola_landed_premium_zar_l,0,ZAR/litre,Analyst sensitivity; not measured or independently approved
+galp_working_fraction,0.85,fraction,Analyst sensitivity; not measured or independently approved
+galp_monthly_turns,1.5,turns/month,Analyst sensitivity; not measured or independently approved
+galp_sa_allocation,0.2,fraction,Analyst sensitivity; not measured or independently approved
+petromoc_pd_fraction,0.75,fraction,Analyst sensitivity; not measured or independently approved
+petromoc_working_fraction,0.8,fraction,Analyst sensitivity; not measured or independently approved
+petromoc_monthly_turns,1,turns/month,Analyst sensitivity; not measured or independently approved
+petromoc_sa_allocation,0.1,fraction,Analyst sensitivity; not measured or independently approved
+operating_days,330,days,Analyst sensitivity; not measured or independently approved
+sapref_bpd,180000,barrels/day,Analyst sensitivity; not measured or independently approved
+petrosa_bpd,45000,barrels/day,Analyst sensitivity; not measured or independently approved
+restart_pd_yield,0.7,fraction,Analyst sensitivity; not measured or independently approved
+unreported_construction_bn,0,bn litres,Zero subtraction when no construction row is reported; does not establish zero construction use. Affects industry residual.
+border_delay_low_days,0,days,Analyst sensitivity; not measured or independently approved
+border_delay_high_days,3,days,Analyst sensitivity; not measured or independently approved
+Low imports: activity_growth,0.005,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Low imports: efficiency,0.015,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Low imports: rail_shift,0.15,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Low imports: rail_diesel_rebound,0.1,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Low imports: power_retained,0.35,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Low imports: supply_multiplier,1.15,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Low imports: sapref_start,2029,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Low imports: sapref_utilisation,0.65,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Low imports: petrosa_start,2029,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Low imports: petrosa_utilisation,0.5,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Low imports: moz_diversion_bn,0.6,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: activity_growth,0.015,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: efficiency,0.01,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: rail_shift,0.075,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: rail_diesel_rebound,0.1,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: power_retained,0.5,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: supply_multiplier,1.0,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: sapref_start,2099,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: sapref_utilisation,0,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: petrosa_start,2099,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: petrosa_utilisation,0,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Base: moz_diversion_bn,0.2,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: activity_growth,0.025,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: efficiency,0.005,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: rail_shift,0.025,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: rail_diesel_rebound,0.1,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: power_retained,1.0,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: supply_multiplier,0.85,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: sapref_start,2099,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: sapref_utilisation,0,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: petrosa_start,2099,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: petrosa_utilisation,0,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+High imports: moz_diversion_bn,0.05,Fraction / year / bn L as named,"Authored 2030 sensitivity, not a project forecast or probability; rail shift is eligible road-freight tonne-km share"
+Calculated power 2023,2.0778800000000004,bn L,Eskom fuel FY proxy x diesel fraction + IPP GWh x 0.31 L/kWh + assumed private backup
+Calculated power 2024,2.19729,bn L,Eskom fuel FY proxy x diesel fraction + IPP GWh x 0.31 L/kWh + assumed private backup
+Calculated power 2025,1.08432,bn L,Eskom fuel FY proxy x diesel fraction + IPP GWh x 0.31 L/kWh + assumed private backup

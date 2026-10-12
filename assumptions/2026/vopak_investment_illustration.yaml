@@ -29,7 +29,7 @@ illustrative:
     vopak_share_of_durban_imports: 0.80
     lesedi_share_of_vopak_flow: 0.90
     lesedi_domestic_capture_share: 0.08
-    working_fraction: 0.90
+    working_fraction: 0.8857142857142857
     existing_monthly_turns: 1.25
     improved_monthly_turns: 1.50
     operating_receipt_limit_m3: 3500000
@@ -53,7 +53,10 @@ illustrative:
     capture_stress_vopak_share: 0.60
   units: per-key bn litres / m3 / turns per month / ZAR / fraction / years
   source: Authored 8 October 2026 at user request for an illustrative case. Medium demand rounds historical Gauteng 2022 petrol/diesel sales (6.809bn L) only as a scale reference; all future demand/supply/capture/operating/commercial values are assumptions, not inferred Vopak site facts or approved forecasts. Steady-state stress snapshots, no calendar forecast year. Storage rent and chargeable excess-service contribution separate; minimum-throughput inclusions must be validated. Pre-tax unlevered constant-ZAR screen; no tax, working capital, construction delay, inflation or residual value. No project hurdle inferred from group operating cash return or sector capex/EBITDA ranges.
-  last_updated: '2026-10-08'
+  # 124,000 / 140,000 aligns the existing working volume with the site screen.
+  # 36,000 m3 of that working capacity is estimated. Applying the same fraction
+  # to any further tanks is an illustration, not an engineering estimate.
+  last_updated: '2026-10-10'
   owner: nigel.zhuwaki
   confidence: unassessed
   provisional: true

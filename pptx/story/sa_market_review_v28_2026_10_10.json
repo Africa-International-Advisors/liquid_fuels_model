@@ -1,0 +1,1305 @@
+{
+  "date": "2026-10-10",
+  "result_source": "output\\delivered\\market_review_2026_10_10\\market_review.json",
+  "decks": {
+    "story": {
+      "source": "pptx/output/delivered/supporting/SA_Market_Story_2026-10-08_v27.pptx",
+      "output": "SA_Market_Story_2026-10-10_v28",
+      "edits": [
+        {
+          "page": 1,
+          "name": "TextBox 8",
+          "text": "10 October 2026",
+          "original": "8 October 2026"
+        },
+        {
+          "page": 1,
+          "name": "TextBox 9",
+          "text": "Public evidence and illustrative capture cases. Customer access, operating limits and returns remain provisional.",
+          "original": "Reported Vopak context and illustrative investment economics; all commercial assumptions require validation"
+        },
+        {
+          "page": 19,
+          "name": "TextBox 8",
+          "text": "10 October 2026",
+          "original": "8 October 2026"
+        },
+        {
+          "page": 2,
+          "name": "Title 1",
+          "text": "Import dependence supports the terminal opportunity, while customer access determines Vopak capture",
+          "original": "Slow demand growth and greater import reliance set the baseline; road-to-rail shifts, EV adoption, power recovery and refinery changes could reshape the outlook"
+        },
+        {
+          "page": 2,
+          "name": "Table 46",
+          "row": 2,
+          "col": 1,
+          "text": "2025 gross imports: 16.70bn L.\nNet imports: 15.15bn L.\nDurban customs: 13.16bn L (79%).",
+          "original": "2020–2025 imports rose by 5.43bn\nlitres of diesel and 2.73bn of petrol.\nThe sourcing mix has shifted."
+        },
+        {
+          "page": 2,
+          "name": "Table 46",
+          "row": 3,
+          "col": 1,
+          "text": "Shared MPP pipeline: 105 / 148ML\nper week in FY2025, 70.9% used.\nVopak access remains unverified.",
+          "original": "Durban and Lesedi provide coastal\nand inland assets serving Gauteng.\nWorking capacity and turns are open."
+        },
+        {
+          "page": 2,
+          "name": "Table 46",
+          "row": 4,
+          "col": 0,
+          "text": "Capture sensitivity\nand nine worlds",
+          "original": "Medium / Medium\nreference world"
+        },
+        {
+          "page": 2,
+          "name": "Table 46",
+          "row": 4,
+          "col": 1,
+          "text": "Base capture screen: Durban 2.63bn L;\nLesedi 1.32bn L within that flow.\nAssumed shares, not measured volumes.",
+          "original": "M/M anchors the nine-world matrix.\nHistorical evidence is assembled;\nnumerical calibration remains open."
+        },
+        {
+          "page": 2,
+          "name": "Table 46",
+          "row": 4,
+          "col": 2,
+          "text": "Capture cases are shown on p35.\nThe nine-world investment illustration\nuses separate capture assumptions.",
+          "original": "Vary demand and supply around M/M,\nthen test capture, turnover and returns\nto identify investment triggers."
+        },
+        {
+          "page": 2,
+          "name": "Unified source footer",
+          "text": "Department sales 2023; SARS customs 2025. Transnet Pipelines 2025 p8. Capture screen: 20% gateway share, 50% routed through Lesedi, two turns/month. Conditional illustration, no customer commitment.",
+          "original": "Department sales 2013-2023; 2023 total 21.94bn L. FIASA 2024 total 20.76bn L is unverified; no 2025 sales. SARS imports 2020-2025. Eskom FY2025 own diesel + kerosene. M/M remains an uncalibrated reference."
+        },
+        {
+          "page": 3,
+          "name": "Title 1",
+          "text": "Existing assets provide the starting point for capturing demand and testing expansion",
+          "original": "Prioritise capture and turnover through existing assets; expand where profitable demand exceeds achievable capacity"
+        },
+        {
+          "page": 3,
+          "name": "Table 46",
+          "row": 3,
+          "col": 1,
+          "text": "High demand / low domestic supply favours extra tanks in the illustration. Working-capacity assumptions materially affect its value.",
+          "original": "Only high demand / low domestic supply favours extra tanks, with a narrow advantage over improvement alone."
+        },
+        {
+          "page": 3,
+          "name": "Table 46",
+          "row": 4,
+          "col": 2,
+          "text": "Validate capture, chargeable revenues and capex. The illustrated tank choice reverses in the downside tests.",
+          "original": "Validate capture, chargeable revenues and capex first; the illustrated choice reverses under downside tests."
+        },
+        {
+          "page": 6,
+          "name": "Title 1",
+          "text": "Petrol demand declined while diesel grew slowly over 2013–2023",
+          "original": "Petrol demand has declined while diesel has grown slowly, limiting the case for demand-led expansion outlook"
+        },
+        {
+          "page": 7,
+          "name": "Title 1",
+          "text": "Power recovery reduces diesel support while freight and sector activity remain important",
+          "original": "Power shortages and road freight have supported diesel consumption, but that support can change with increased support for rail reform and improved Eskom"
+        },
+        {
+          "page": 7,
+          "name": "Table 46",
+          "row": 3,
+          "col": 2,
+          "text": "2025 activity-based diesel estimates:\nmining 1.406, industry residual 0.165,\nagriculture 1.131bn L. Uses can overlap.",
+          "original": "Activity differs by sector.\n2024 indicative diesel: mining 1.40,\nindustry residual 0.17, farms 0.96bn L."
+        },
+        {
+          "page": 8,
+          "name": "Year 0 2",
+          "text": "2025 est.",
+          "original": "2024 est."
+        },
+        {
+          "page": 8,
+          "name": "Value 0 2",
+          "text": "1.41",
+          "position": {
+            "left": 607.5593459905866
+          },
+          "original": "1.40"
+        },
+        {
+          "page": 8,
+          "name": "Sector interpretation 0",
+          "text": "Mining activity drives the estimate. Average historical intensity and road-use overlap remain uncertain.",
+          "original": "2024 production index 93.5 (2019=100). Fuel intensity varies materially; mine and on-road use overlap."
+        },
+        {
+          "page": 8,
+          "name": "Sector bar 0 2",
+          "position": {
+            "width": 256.89267932392
+          },
+          "original": ""
+        },
+        {
+          "page": 8,
+          "name": "Year 1 2",
+          "text": "2025 est.",
+          "original": "2024 est."
+        },
+        {
+          "page": 8,
+          "name": "Value 1 2",
+          "text": "0.17",
+          "position": {
+            "left": 380.82058221333335
+          },
+          "original": "0.17"
+        },
+        {
+          "page": 8,
+          "name": "Sector interpretation 1",
+          "text": "Industry residual excludes mining and construction. This is an estimate, not a complete industrial census.",
+          "original": "2024 output index 93.3. Fuel is industry less mining/construction, not all industrial use."
+        },
+        {
+          "page": 8,
+          "name": "Sector bar 1 2",
+          "position": {
+            "width": 30.153915546666664
+          },
+          "original": ""
+        },
+        {
+          "page": 8,
+          "name": "Year 2 2",
+          "text": "2025 est.",
+          "original": "2024 est."
+        },
+        {
+          "page": 8,
+          "name": "Value 2 2",
+          "text": "1.13",
+          "position": {
+            "left": 557.3037115451733
+          },
+          "original": "0.96"
+        },
+        {
+          "page": 8,
+          "name": "Sector interpretation 2",
+          "text": "2025 real GVA R134.8bn, 2015 prices. Weather, irrigation and transport affect fuel intensity.",
+          "original": "2024 GVA R114.8bn, 2015 prices. Weather, crop cycles, irrigation and transport affect exposure."
+        },
+        {
+          "page": 8,
+          "name": "Sector bar 2 2",
+          "position": {
+            "width": 206.63704487850669
+          },
+          "original": ""
+        },
+        {
+          "page": 8,
+          "name": "Interpretation",
+          "text": "2025 estimates apply average 2018–2021 intensity to sector activity. They require reconciliation with road use and total diesel sales.",
+          "original": "2024 estimates apply 2018-2021 average fuel intensity to sector activity; attribution and road-use overlap require review."
+        },
+        {
+          "page": 8,
+          "name": "Unified source footer",
+          "text": "Manish master workbook, DR01 sector activity: 2025 activity × historical average intensity. Department energy balance ends in 2021. Later sector litres are estimates; attribution and road overlap remain open.",
+          "original": "Workbook Sector history M6/O6/R9, M16/O16/R19, M22/O22/R25. Department energy balance to 2021; later fuel estimated with activity and average intensity. Sector attribution and road overlap require review."
+        },
+        {
+          "page": 9,
+          "name": "Title 1",
+          "text": "Refinery shutdowns have increased reliance on imported petrol and diesel",
+          "original": "The shut down of domestic refining capacity has lowered domestic production and has increased imports shifting how inland demand is supplied"
+        },
+        {
+          "page": 9,
+          "name": "Interpretation",
+          "text": "2025 imports: diesel 12.25bn L and petrol 4.45bn L, net 15.15bn L. Durban customs accounts for 13.16bn L; terminal capture remains unverified.",
+          "original": "2025 gross imports: diesel 12.25bn L and petrol 4.45bn L. Combined net imports: 15.15bn L; port allocation and Vopak capture remain open."
+        },
+        {
+          "page": 10,
+          "name": "Interpretation",
+          "text": "MPP use averaged 105ML/week in FY2025 against 148ML/week capacity. Compare route costs and access by destination; average spare capacity gives no Vopak entitlement.",
+          "original": "Maputo and Walvis Bay are emerging alternatives to include by destination. Compare delivered cost, capacity and reliable access before estimating how much inland demand Vopak can capture."
+        },
+        {
+          "page": 11,
+          "name": "Table 46",
+          "row": 1,
+          "col": 2,
+          "text": "146,000 m³ estimated working subset from the 162,000 m³ expansion. Full petrol/diesel allocation still needs confirmation.",
+          "original": "Isolate petrol/diesel working tankage and actual throughput by product."
+        },
+        {
+          "page": 11,
+          "name": "Table 46",
+          "row": 2,
+          "col": 2,
+          "text": "124,000 m³ working estimate: 88,000 documented plus 36,000 estimated for newer tanks. Actual throughput remains open.",
+          "original": "Confirm usable working capacity, annual deliveries and monthly tank turns."
+        },
+        {
+          "page": 11,
+          "name": "Table 46",
+          "row": 3,
+          "col": 1,
+          "text": "MPP use/capacity: 105 / 148ML per week in FY2025. Shared annualised use 5.46bn L.",
+          "original": "Storage capacity establishes the asset footprint.\nIt does not establish annual handling capacity."
+        },
+        {
+          "page": 11,
+          "name": "Unified source footer",
+          "text": "Vopak terminal directory; NERSA Lesedi licence documents; registered terminal_site_assumptions.csv; Transnet Pipelines 2025 p8. Gross capacity, estimated working tankage and annual throughput have different meanings.",
+          "original": "Sources: Vopak terminal directory; Annual Report 2025 confirms Lesedi expansion commissioned in 2025. Published capacity is not working capacity or throughput. Operating data request: p18. Illustrative turnover sensitivity moved to p43; it is not observed utilisation."
+        },
+        {
+          "page": 12,
+          "name": "Title 1",
+          "text": "Rail recovery, EV adoption and combustion-vehicle efficiency could reduce transport fuel demand",
+          "original": "Accelerated rail recovery, EV adoption and ICE technology efficiency could reduce transport fuel demand in the medium to long term"
+        },
+        {
+          "page": 12,
+          "name": "Interpretation",
+          "text": "2025 BEV sales were 0.18% of new sales. Manish reviewed the implemented EV/efficiency pair; hybrid savings and rail diversion still need explicit combination rules.",
+          "original": "2025 sales: 1,088 BEVs (0.18% of all new sales), 2,810 plug-in hybrids and 12,818 conventional hybrids. Each has a different fuel effect."
+        },
+        {
+          "page": 13,
+          "name": "Interpretation",
+          "text": "The engine still includes 3,000MW of notional plants. Reconcile power and road baselines jointly against reported Eskom fuel and estimated IPP burn before forecasting.",
+          "original": "Own Eskom fuel is reported separately. The workbook adds Eskom/IPP generation and four diesel stations; litres derived from output and future dispatch remain estimates."
+        },
+        {
+          "page": 14,
+          "name": "Interpretation",
+          "text": "SAPREF’s import-terminal phase can compete before any refinery restart. Natref availability and Secunda output also matter; these capacity cases are not product forecasts.",
+          "original": "These capacity cases anchor the supply-axis discussion. Translate them into product output, then test imports, corridor capture and required tank turns in each of the nine worlds."
+        },
+        {
+          "page": 15,
+          "name": "Table 46",
+          "row": 1,
+          "col": 1,
+          "text": "FY2025 MPP 105 / 148ML per week. Match tariffs, injection rights and reliable inland dispatch by customer.",
+          "original": "Pipeline, rail and road costs; reliable receipt and inland dispatch."
+        },
+        {
+          "page": 16,
+          "name": "Imports",
+          "text": "Gross imports, 2025\n16.70bn L petrol and diesel\nNet imports: 15.15bn L",
+          "original": "Gross imports\nBy product and entry point\nExports shown separately"
+        },
+        {
+          "page": 16,
+          "name": "National market",
+          "text": "National sales baseline\n2023: 21.94bn litres\n2024 source unverified\n2025 sales unavailable",
+          "original": "National sales baseline\n2023: 21.94bn litres\n2024: 20.76bn, unverified\n2025 sales unavailable"
+        },
+        {
+          "page": 16,
+          "name": "Durban opportunity",
+          "text": "Durban gateway context\n2025 customs imports: 13.16bn L\nAccessible customer share remains open",
+          "original": "Durban accessible market\nFeasible annual product volumes through\nVopak Durban to reachable customers"
+        },
+        {
+          "page": 16,
+          "name": "Lesedi opportunity",
+          "text": "Lesedi demand context\nGauteng 6.81bn L, inland 11.95bn L\n2022 catchments overlap the import pool",
+          "original": "Lesedi accessible market\nInland demand Lesedi can feasibly serve\nCatchment and receipt / dispatch connections"
+        },
+        {
+          "page": 16,
+          "name": "Share and headroom",
+          "text": "Conditional capture screen, p35\nBase: Durban 2.63bn L, Lesedi 1.32bn L\nUnique flow 2.63bn L; Lesedi is a subset\nActual share and incremental volume open",
+          "original": "Capture, market share and headroom\nClient throughput / accessible market = share\nAccessible market less current capture = headroom\nTrack shared Durban-Lesedi flows once"
+        },
+        {
+          "page": 16,
+          "name": "Routes",
+          "text": "Ports and inland delivery network\nDurban, Richards Bay and other gateways\nMPP FY2025: 5.46bn L annualised use\nVopak access and product allocation open",
+          "original": "Ports and inland delivery network\nDurban, Richards Bay, other gateways\nPipeline, road and rail to customer catchments\nNMPP / TM2 / DJP links to verify"
+        },
+        {
+          "page": 16,
+          "name": "Unified source footer",
+          "text": "Registered market_review.yaml and terminal_site_assumptions.csv. 2023 sales, 2025 customs and 2022 catchments retain separate periods. The 8.88bn L mixed-year residual is withdrawn as evidence of inland flow. Capture assumptions: p35.",
+          "original": "8 October PS framework; workbook History Q71/R71. 2023 Department sales 21.94bn L; 2024 FIASA 20.76bn L, unverified. Estimate accessible markets, then verify actual capture. Shared flows and client operating/economic inputs remain open."
+        },
+        {
+          "page": 18,
+          "name": "Unified source footer",
+          "text": "Public handback DR01/04/07/08 received and updated through 9 October. Client DR02/05/03/06 prepared; sending and receipt not recorded. Review workbook covers all nine requests, including separate DR09 EV adjacency.",
+          "original": "DR01-DR09 register and 8 October PS handback. Prepared, not sent; receipt not recorded. DR09 EV adjacency remains separate. Public estimates can proceed while client data is pending."
+        },
+        {
+          "page": 18,
+          "name": "Table 46",
+          "row": 1,
+          "col": 1,
+          "text": "Received: sales, customs and energy balance to 2021. Open: stocks, product output after 2021 and comparable 2024–25 sales.",
+          "original": "Product/year sales, gross imports, exports, actual production and stocks. Resolve 2024 source; 2025 sales are absent."
+        },
+        {
+          "page": 18,
+          "name": "Table 46",
+          "row": 2,
+          "col": 1,
+          "text": "Received: entry, tariff and FY2025 MPP evidence. Open: customer access, route quotes and modal flows.",
+          "original": "Port/pipeline capacity, route access and destination-matched delivered economics."
+        },
+        {
+          "page": 18,
+          "name": "Table 46",
+          "row": 3,
+          "col": 1,
+          "text": "Received: power, fleet, refinery and EV/efficiency review. Open: joint baseline and hybrid/rail rules.",
+          "original": "Reported Eskom litres, fleet/efficiency, IPP timing and all refineries including PetroSA/Mossgas."
+        },
+        {
+          "page": 23,
+          "name": "Table 46",
+          "row": 1,
+          "col": 1,
+          "text": "2025 activity-based diesel estimate: 1.406bn L. Post-2021 fuel volumes are estimated.",
+          "original": "2024 production index 93.5; indicative diesel 1.40bn L."
+        },
+        {
+          "page": 23,
+          "name": "Table 46",
+          "row": 2,
+          "col": 1,
+          "text": "2025 industry-residual diesel estimate: 0.165bn L. Sector boundary needs review.",
+          "original": "2024 output index 93.3; indicative industry residual 0.17bn L."
+        },
+        {
+          "page": 25,
+          "name": "Table 46",
+          "row": 3,
+          "col": 2,
+          "text": "Implemented EV/efficiency pair reviewed. New-cohort efficiency applies to combustion vehicles. Avoid counting hybrid savings twice.",
+          "original": "Recent OEM efficiency history remains open. Apply gains to new cohorts and count EV transitions once."
+        },
+        {
+          "page": 26,
+          "name": "Native evidence table",
+          "row": 4,
+          "col": 3,
+          "text": "Fuel/class splits and electric-LCV paths remain estimates. Sales shares do not establish fleet shares or hybrid fuel savings.",
+          "original": "All new-sales denominator. Fleet share, charging behaviour and hybrid fuel savings differ."
+        },
+        {
+          "page": 27,
+          "name": "Interpretation",
+          "text": "Own-fleet fuel fell from 1,129.5 to 679.1m L. FY2025 Eskom plus estimated IPP fuel is ~0.89bn L; the model’s power/road split needs joint recalibration.",
+          "original": "Reported own-fleet fuel fell from 1,129.5 to 679.1m L as EAF improved. Eskom/IPP output and generation-derived litres are a broader, separate series."
+        },
+        {
+          "page": 28,
+          "name": "Interpretation",
+          "text": "Apply freight diversion once to a defined road baseline. The ~3.15bn L operator-spending proxy has partial coverage and does not establish corridor tonne-km.",
+          "original": "2023 freight-operator fuel purchases imply ~3.15bn L at list diesel prices. Partial coverage and the estimated vehicle split do not establish corridor tonne-km."
+        },
+        {
+          "page": 29,
+          "name": "Table 46",
+          "row": 4,
+          "col": 2,
+          "text": "Apply road-to-rail diversion once to eligible freight activity. Separately assess the route used to distribute fuel inland.",
+          "original": "Keep freight-demand effects separate from the route delivering fuel to Gauteng."
+        },
+        {
+          "page": 30,
+          "name": "Interpretation",
+          "text": "Gauteng sales were 6.81bn L in 2022; the six inland provinces totalled 11.95bn L. These are nested catchments, not low/high Lesedi market scenarios.",
+          "original": "Gauteng sales: 6.81bn L observed in 2022; 6.81bn estimated in 2023 and 6.52bn in 2024. Customer catchment and actual Lesedi capture remain unverified."
+        },
+        {
+          "page": 31,
+          "name": "Table 46",
+          "row": 1,
+          "col": 2,
+          "text": "EV/efficiency pair reviewed. Hybrid, freight/rail and baseline combination rules remain open. Proposed annual paths require agreement.",
+          "original": "29 proposed levers (20 original, nine added). 2030/2035 values need review; no agreed annual path yet."
+        },
+        {
+          "page": 31,
+          "name": "Table 46",
+          "row": 4,
+          "col": 2,
+          "text": "Working-tank sensitivity uses Durban 146,000 and Lesedi 124,000 m³, both partly estimated. Validate turns, peaks and route access.",
+          "original": "Compare required with achievable turns, occupancy and headroom. Existing 1/2/3-turn sensitivity is illustrative only."
+        },
+        {
+          "page": 32,
+          "name": "Table 46",
+          "row": 1,
+          "col": 2,
+          "text": "Align FY/calendar scope. Reconcile the model’s 3.58bn L power estimate with reported/estimated fuel and other demand uses.",
+          "original": "Match financial and calendar periods. Obtain reported litres and private-backup evidence."
+        },
+        {
+          "page": 32,
+          "name": "Table 46",
+          "row": 3,
+          "col": 2,
+          "text": "Engine includes 3,000MW of notional plants. Treat these separately from the four existing stations and proposed coal-site cases.",
+          "original": "Wind/solar/gas commissioning, fuel availability and dependable output constrain peaking dispatch."
+        },
+        {
+          "page": 33,
+          "name": "Case qualification",
+          "text": "The engine also contains 3,000MW of notional capacity. Reconcile it with these cases and historical power/road use before adopting a forecast.",
+          "original": "Gas supply, diesel intensity, backup use and coal-site repowering remain assumptions. No engine or approved scenario change is implied."
+        },
+        {
+          "page": 34,
+          "name": "Table 46",
+          "row": 1,
+          "col": 2,
+          "text": "SAPREF plans an import-terminal phase before refining. No committed refinery restart date or product slate is established.",
+          "original": "Preserve the hypothetical case; actual funding, schedule, ramp-up and product yields need evidence."
+        },
+        {
+          "page": 34,
+          "name": "Table 46",
+          "row": 2,
+          "col": 2,
+          "text": "Natref is separate from Secunda. FY2026 Sasol output uses co-owner capacity; do not scale by historic ownership mechanically.",
+          "original": "Availability stress only. No closure decision or date is established."
+        },
+        {
+          "page": 34,
+          "name": "Table 46",
+          "row": 3,
+          "col": 1,
+          "text": "All-refined-products output: 29.1m barrels FY2024, 27.6m FY2025 and 30.6m FY2026.",
+          "original": "Operator all-products output: 29.1m barrels in FY2024 and 27.6m in FY2025."
+        },
+        {
+          "page": 34,
+          "name": "Table 46",
+          "row": 4,
+          "col": 0,
+          "text": "Other plant inputs",
+          "original": "S4 PetroSA"
+        },
+        {
+          "page": 34,
+          "name": "Table 46",
+          "row": 4,
+          "col": 1,
+          "text": "Astron output evidence is available; its petrol/diesel 50/50 split is an assumption. PetroSA restart remains uncertain.",
+          "original": "No restart addition in the existing capacity illustration; workbook identifies the source gap."
+        },
+        {
+          "page": 34,
+          "name": "Table 46",
+          "row": 4,
+          "col": 2,
+          "text": "Confirm product yields and actual operator output. No PetroSA addition appears in the existing capacity illustration.",
+          "original": "Complete the Mossgas/PetroSA feedstock, funded scope, timing and yield evidence."
+        },
+        {
+          "page": 34,
+          "name": "Unified source footer",
+          "text": "Manish DR08 refinery evidence, updated 9 October; Sasol FY2026 metrics; Glencore/Astron evidence; CEF SAPREF roadmap. FY output, calendar capacity and product yields differ. Capacity sensitivities remain illustrative.",
+          "original": "Existing capacity illustrations retained. Workbook History R53/S53: Sasol all-refined-products output, June FY. Department product production stops at 2021; stocks, plant yields and restart calibration remain open."
+        },
+        {
+          "page": 35,
+          "name": "Title 1",
+          "text": "A conditional Durban import-capture screen gives a 2.63bn litre base case",
+          "original": "Public capacity ratios establish scale but cannot substitute for realised terminal throughput"
+        },
+        {
+          "page": 35,
+          "name": "Unified source footer",
+          "text": "Registered market_review.yaml and terminal_site_assumptions.csv; 2025 Durban customs proxy 13.1605bn L. No forecast probabilities, measured market share or incremental revenue. Product mix, access and working tankage need validation.",
+          "original": "Existing capacity-scale ratios retained, not throughput shares. Workbook provincial estimates: 2023 estimated shares; 2024 estimated shares plus unverified national sales. Client throughput and commercial access remain open."
+        },
+        {
+          "page": 36,
+          "name": "Table 46",
+          "row": 3,
+          "col": 0,
+          "text": "2025 SARS imports / exports",
+          "original": "2025 SARS imports / exports"
+        },
+        {
+          "page": 36,
+          "name": "Table 46",
+          "row": 6,
+          "col": 1,
+          "text": "2025 gross imports 16.70bn L; net 15.15bn L. Durban customs 13.16bn L.",
+          "original": "Sales less net imports remains a residual."
+        },
+        {
+          "page": 36,
+          "name": "Table 46",
+          "row": 6,
+          "col": 2,
+          "text": "Current import penetration cannot be calculated using 2023 sales. Post-2021 production and stocks remain open.",
+          "original": "Stocks and definitions remain unresolved."
+        },
+        {
+          "page": 37,
+          "name": "Table 46",
+          "row": 1,
+          "col": 1,
+          "text": "Public handback received through 9 October. Review workbook maps all nine requests and source-level limitations.",
+          "original": "Workbook sales/trade, sector, vehicle and power history plus labelled estimates are assembled."
+        },
+        {
+          "page": 37,
+          "name": "Table 46",
+          "row": 3,
+          "col": 1,
+          "text": "Conditional Durban import-capture cases now quantified. Shared Lesedi transfers count once, see p35.",
+          "original": "Capture calculation constrained by accessible market and route capacity."
+        },
+        {
+          "page": 37,
+          "name": "Table 46",
+          "row": 6,
+          "col": 2,
+          "text": "EV/efficiency implementation review complete for the pair. Baseline, hybrid/rail interactions and annual paths remain open.",
+          "original": "29 proposed levers and fleet cases inform review. Agree annual paths before rerunning routes, capture and returns."
+        },
+        {
+          "page": 4,
+          "name": "Title 1",
+          "text": "The revised working-capacity assumption changes the illustrated expansion value",
+          "original": "The illustrated expansion case passes narrowly—and depends on capture, revenue and capex"
+        },
+        {
+          "page": 4,
+          "name": "Table 46",
+          "row": 1,
+          "col": 2,
+          "text": "Assumed capture 2.813bn L/year; tanks win above 2.765bn L/year.",
+          "original": "Assumed capture 2.813bn L/year; tanks win above 2.806bn L/year."
+        },
+        {
+          "page": 4,
+          "name": "Table 46",
+          "row": 3,
+          "col": 2,
+          "text": "Existing 1.860bn L/year; improvement 2.232bn; tanks 2.870bn.",
+          "original": "Existing 1.890bn L/year; improvement 2.268bn; tanks 2.916bn."
+        },
+        {
+          "page": 4,
+          "name": "Table 46",
+          "row": 3,
+          "col": 3,
+          "text": "124,000 m³ working estimate; 36,000 m³ estimated. Turns 1.25 / 1.50 remain assumptions.",
+          "original": "90% working capacity and 1.25 / 1.50 monthly turns are assumptions, not reported operations."
+        },
+        {
+          "page": 4,
+          "name": "Table 46",
+          "row": 4,
+          "col": 2,
+          "text": "Improvement NPV R+24m; combined R+82m. Difference R58m.",
+          "original": "Improvement NPV R+27m; combined R+35m. Extra advantage only R8m."
+        },
+        {
+          "page": 4,
+          "name": "Unified source footer",
+          "text": "ILLUSTRATIVE ONLY. Working tankage aligned to 124,000 m³. Difference was R8m at 126,000 m³; it is now R58m because the assumed rental allocation changes. Commercial terms and engineering remain unvalidated. Details pp39–42.",
+          "original": "ILLUSTRATIVE ONLY. 100% project basis, constant ZAR; capex at t0; operating ramp 50%/75%/100%; no tax, working capital, construction delay, inflation or residual value. Turnover and occupancy are distinct. Full assumptions, benchmarks, options and downside tests: pp39–42."
+        },
+        {
+          "page": 5,
+          "name": "Table 46",
+          "row": 1,
+          "col": 1,
+          "text": "L / H\nUSE EXISTING ASSETS\nCapture 0.99bn L/year\nIncremental NPV R+0m",
+          "original": "L / H\nUSE EXISTING ASSETS\nCapture 0.99bn L/year\nIncremental NPV R+0m"
+        },
+        {
+          "page": 5,
+          "name": "Table 46",
+          "row": 1,
+          "col": 2,
+          "text": "L / M\nUSE EXISTING ASSETS\nCapture 1.50bn L/year\nIncremental NPV R+0m",
+          "original": "L / M\nUSE EXISTING ASSETS\nCapture 1.50bn L/year\nIncremental NPV R+0m"
+        },
+        {
+          "page": 5,
+          "name": "Table 46",
+          "row": 1,
+          "col": 3,
+          "text": "L / L\nUSE EXISTING ASSETS\nCapture 2.01bn L/year\nIncremental NPV R+0m",
+          "original": "L / L\nUSE EXISTING ASSETS\nCapture 2.01bn L/year\nIncremental NPV R+0m"
+        },
+        {
+          "page": 5,
+          "name": "Table 46",
+          "row": 2,
+          "col": 1,
+          "text": "M / H\nUSE EXISTING ASSETS\nCapture 1.39bn L/year\nIncremental NPV R+0m",
+          "original": "M / H\nUSE EXISTING ASSETS\nCapture 1.39bn L/year\nIncremental NPV R+0m"
+        },
+        {
+          "page": 5,
+          "name": "Table 46",
+          "row": 2,
+          "col": 2,
+          "text": "M / M | REFERENCE\nUSE EXISTING ASSETS\nCapture 1.90bn L/year\nIncremental NPV R+0m",
+          "original": "M / M | BASELINE\nUSE EXISTING ASSETS\nCapture 1.90bn L/year\nIncremental NPV R+0m"
+        },
+        {
+          "page": 5,
+          "name": "Table 46",
+          "row": 2,
+          "col": 3,
+          "text": "M / L\nIMPROVE ACCESS / DISPATCH\nCapture 2.41bn L/year\nIncremental NPV R+24m",
+          "original": "M / L\nIMPROVE ACCESS / DISPATCH\nCapture 2.41bn L/year\nIncremental NPV R+27m"
+        },
+        {
+          "page": 5,
+          "name": "Table 46",
+          "row": 3,
+          "col": 1,
+          "text": "H / H\nUSE EXISTING ASSETS\nCapture 1.80bn L/year\nIncremental NPV R+0m",
+          "original": "H / H\nUSE EXISTING ASSETS\nCapture 1.80bn L/year\nIncremental NPV R+0m"
+        },
+        {
+          "page": 5,
+          "name": "Table 46",
+          "row": 3,
+          "col": 2,
+          "text": "H / M\nIMPROVE ACCESS / DISPATCH\nCapture 2.30bn L/year\nIncremental NPV R+24m",
+          "original": "H / M\nIMPROVE ACCESS / DISPATCH\nCapture 2.30bn L/year\nIncremental NPV R+27m"
+        },
+        {
+          "page": 5,
+          "name": "Table 46",
+          "row": 3,
+          "col": 3,
+          "text": "H / L\nTEST IMPROVEMENT + TANKS\nCapture 2.81bn L/year\nIncremental NPV R+82m",
+          "original": "H / L\nTEST IMPROVEMENT + TANKS\nCapture 2.81bn L/year\nIncremental NPV R+35m"
+        },
+        {
+          "page": 39,
+          "name": "Title 1",
+          "text": "The revised illustration gives extra tanks R58m more NPV than improvement alone",
+          "original": "The illustration gives extra tanks only R8m more NPV than improvement alone"
+        },
+        {
+          "page": 39,
+          "name": "Table 46",
+          "row": 1,
+          "col": 1,
+          "text": "R0m capex\n1.860bn L/year served",
+          "original": "R0m capex\n1.890bn L/year served"
+        },
+        {
+          "page": 39,
+          "name": "Table 46",
+          "row": 1,
+          "col": 2,
+          "text": "NPV R+0.0m\nUnserved 0.953bn L/year",
+          "original": "NPV R+0.0m\nUnserved 0.923bn L/year"
+        },
+        {
+          "page": 39,
+          "name": "Table 46",
+          "row": 2,
+          "col": 1,
+          "text": "R100m capex\n2.232bn L/year served",
+          "original": "R100m capex\n2.268bn L/year served"
+        },
+        {
+          "page": 39,
+          "name": "Table 46",
+          "row": 2,
+          "col": 2,
+          "text": "NPV R+24.2m\nUnserved 0.581bn L/year",
+          "original": "NPV R+27.0m\nUnserved 0.545bn L/year"
+        },
+        {
+          "page": 39,
+          "name": "Table 46",
+          "row": 3,
+          "col": 1,
+          "text": "R600m capex\n2.813bn L/year served",
+          "original": "R600m capex\n2.813bn L/year served"
+        },
+        {
+          "page": 39,
+          "name": "Table 46",
+          "row": 3,
+          "col": 2,
+          "text": "NPV R+82.2m\nUnserved 0.000bn L/year",
+          "original": "NPV R+35.1m\nUnserved 0.000bn L/year"
+        },
+        {
+          "page": 39,
+          "name": "Table 46",
+          "row": 4,
+          "col": 1,
+          "text": "Improvement beats existing above 2.181bn L/year.",
+          "original": "Improvement beats existing above 2.211bn L/year."
+        },
+        {
+          "page": 39,
+          "name": "Table 46",
+          "row": 4,
+          "col": 2,
+          "text": "Tanks beat improvement above 2.765bn L/year; assumed capture 2.813bn.",
+          "original": "Tanks beat improvement above 2.806bn L/year; assumed capture 2.813bn."
+        },
+        {
+          "page": 39,
+          "name": "Unified source footer",
+          "text": "ILLUSTRATIVE, 100% site basis, pre-tax at 10% for 20 years. Working tankage reduced from 126,000 to 124,000 m³. Model allocates more incremental contracted storage to added tanks, increasing assumed rent. This is model sensitivity, not new commercial evidence.",
+          "original": "ILLUSTRATIVE ONLY. Combined package = R100m access/dispatch improvement + R500m for a further 40,000 gross m³ beyond the reported 140,000 m³. Alternatives are authored packages, not engineered designs. Full incremental pre-tax cash flows in delivered CSV; 100% site basis. NPV uses 10% and 20 operating years; commercial and delivery risks uncalibrated."
+        },
+        {
+          "page": 41,
+          "name": "Table 46",
+          "row": 2,
+          "col": 2,
+          "text": "Separate investment illustration with imported and domestic capture. Its shares differ from the Durban-only capture screen on p35.",
+          "original": "No observed shares. Capture is unique Lesedi flow; Durban transfers are not added to market demand."
+        },
+        {
+          "page": 41,
+          "name": "Table 46",
+          "row": 3,
+          "col": 1,
+          "text": "124,000 m³ working, 88.57% of gross; turns 1.25 existing / 1.50 improved; +40,000 gross m³.",
+          "original": "90% working fraction; turns 1.25 existing / 1.50 improved; +40,000 gross m³ tanks."
+        },
+        {
+          "page": 41,
+          "name": "Table 46",
+          "row": 3,
+          "col": 2,
+          "text": "159,429 working m³ with tanks at the same assumed fraction. Receipt/dispatch ceiling 3.5bn L/year remains illustrative.",
+          "original": "126,000 working m³ initially; 162,000 with tanks. Assumed receipt/dispatch ceiling 3.5bn L/year."
+        },
+        {
+          "page": 42,
+          "name": "Title 1",
+          "text": "Capture and commercial assumptions can reverse the illustrated expansion choice",
+          "original": "Small changes in capture or economics overturn the illustrated tank-expansion choice"
+        },
+        {
+          "page": 43,
+          "name": "Title 1",
+          "text": "Estimated working tankage supports a handling sensitivity of 3.50 and 2.98bn litres at two turns",
+          "original": "Illustrative tank turns test handling potential; actual operating limits still need validation"
+        },
+        {
+          "page": 43,
+          "name": "Unified source footer",
+          "text": "Registered terminal_site_assumptions.csv. Capture cases hold base turns at two/month; the investment illustration separately tests 1.25 / 1.50 turns with the same Lesedi starting working capacity. Product allocation, access, peaks and downtime require validation.",
+          "original": "Registered REG-TERMINAL-HANDLING-TURNS: 1/2/3 turns per month, authored operational sensitivity, not the demand–supply worlds or measured limits. Gross Durban mixed-product tankage; no assumed eligible fraction. Do not sum inter-terminal transfers as unique demand. Separate p4/p5 illustration assumes 90% working capacity and 1.25/1.50 turns; neither is inferred from group occupancy."
+        }
+      ],
+      "notes": {
+        "9": "SARS customs 2025, registered fuel_trade_sars_by_office.csv. Office of clearance is a gateway proxy, not a measured Vopak terminal receipt. Do not divide 2025 imports by 2023 sales to infer current import penetration.\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nSARS litre-reported petrol/diesel codes, complete calendar years. 2020–2025 changes are historical comparisons, not plant-level causal attribution. Export histories retained in the source report; unit/blend exclusions remain.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nShow gross versus net imports and preserve sales/production boundaries.",
+        "10": "Transnet Pipelines 2025 printed p8: https://www.transnet.net/getFile.ashx?id=6121. Annualised use 5.460bn L and capacity 7.696bn L using 52 weeks. All shippers; no deduction of road/rail volumes from mismatched customs and demand years.\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\n© OpenStreetMap contributors (ODbL; osm.org/copyright) / Geofabrik; Natural Earth; geoBoundaries. Shared LAEA projection. Paths test road connectivity, not tanker access. Secunda uses a city reference; Natref a mapped site. Terminal access, turn restrictions and operating rail/pipeline services remain unvalidated. Emerging alternatives are in scope; relative competitiveness is not yet quantified.\n",
+        "13": "generation.yaml contains new_1 1000MW and new_2 2000MW, alongside older capacities. Current model power estimate around 3.58bn L (2024) differs from FY2024 Eskom plus estimated IPP fuel around 1.60bn L and FY2025 around 0.89bn L. Fiscal/calendar alignment and private backup remain unresolved. No engine recalibration was adopted in this presentation update.\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nEskom FY ending March: reported own diesel + kerosene; Eskom/IPP GWh include kerosene output. Workbook Power fleet separates the four diesel stations. Gas switch, coal-site repowering and L/M/H settings await Nigel/Henry review.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nDistinguish own reported burn from combined generation-derived estimates and proposed cases.",
+        "1": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nSpeaker note: Walk through four sections: the project question, the analytical\nrequirements, the model-build problem and the delivery approach. The purpose is to\nconnect the analyst's tasks to the decisions the engagement needs to support.\nWeek 1 analytical pack, 6 October 2026. Existing kickoff cover/closing reused at user request.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nConvergence order: national accounting p3; provincial map p4; history/estimates p5. Current page 1.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nConvergence order: national accounting p3; provincial map p4; history/estimates p5. Current page 1.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nConvergence order: national accounting p3; provincial map p4; history/estimates p5. Current page 1.\nFinal structure: baseline pp3–6; changes pp7–11 (forecast framework p9); outlook pp12–17 (market choices p16, inventory p17). Current page 1.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nConvergence order: national accounting p3; provincial map p4; history/estimates p5. Current page 1.\nFinal structure: baseline pp3–6; changes pp7–11 (forecast framework p9); outlook pp12–17 (market choices p16, inventory p17). Current page 1.",
+        "2": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nDepartment sales 2013-2023; 2023 total 21.94bn L. FIASA 2024 total 20.76bn L is unverified; no 2025 sales. SARS imports 2020-2025. Eskom FY2025 own diesel + kerosene. M/M remains an uncalibrated reference.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nAdd latest comparable national scale and sales-source qualification.",
+        "3": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nWorking recommendation supported by an authored Lesedi illustration, not a calibrated forecast. Reported capacity is used; capture, working capacity, tariffs, capex and discount rate are assumptions. No customer volume is represented as secured.\n",
+        "4": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nILLUSTRATIVE ONLY. 100% project basis, constant ZAR; capex at t0; operating ramp 50%/75%/100%; no tax, working capital, construction delay, inflation or residual value. Turnover and occupancy are distinct. Full assumptions, benchmarks, options and downside tests: pp39–42.\n\n",
+        "5": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nILLUSTRATIVE snapshot, not forecast or probabilities. Domestic supply here means assumed deliveries into Gauteng, not national refinery capacity. Shares, rates and costs held fixed across worlds. Rail/EV opportunities remain separate cases, not valued here. Each cell is relative to existing assets; unserved volumes can remain. Inputs: p41; downside: p42.\n\nOriginal import-direction framework: [[\"LOW demand\\nD1–D5\", \"L / H\\nLOWEST IMPORT PRESSURE\\nDomestic routing and customer capture still determine terminal turns.\", \"L / M\\nLower imports than baseline.\\nTest utilisation and customer capture.\", \"L / L\\nDemand and supply both fall.\\nNet import effect depends on their relative change.\"], [\"MEDIUM demand\\nD1–D5\", \"M / H\\nLower imports than baseline.\\nSupply recovery reduces import needs.\", \"M / M\\nBASELINE\\nReference sourcing, captured throughput, required turns and headroom.\", \"M / L\\nHigher imports than baseline.\\nSupply losses increase import needs.\"], [\"HIGH demand\\nD1–D5\", \"H / H\\nDemand and supply both rise.\\nNet import effect depends on their relative change.\", \"H / M\\nHigher imports than baseline.\\nDemand growth increases import needs.\", \"H / L\\nHIGHEST IMPORT PRESSURE\\nTest the captured flow against working capacity and achievable turns.\"]]\nThe nine numerical cells use an authored regional supply-delivery bridge, not calibrated national refinery output. Original qualitative rail/EV investment priorities remain in v23 and p15.",
+        "6": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nDepartment sales 2013-2023: petrol CAGR -2.08%, diesel +0.82%. FIASA 2024 is excluded from the trend. Workbook History Q71/R71. RAF levy evidence uses fiscal years and still needs reconciliation.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nKeep comparable 2013-2023 chart; add latest-year coverage and reconciliation caution.",
+        "7": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nEskom Integrated Report 2025 pp100,141: own-fleet diesel + kerosene; *cost includes storage/demurrage. Stats SA P7162 Dec 2025 p7: both years from the revised vintage. Stats SA P0441 Q2 2026 annual real GVA: agriculture includes forestry/fishing. FY and calendar-year periods shown separately. Bars start at zero; scales are common within each panel, not across different units. Light blue = 2024; navy = 2025. Workbook Sector history: post-2021 litres estimated. Freight proxy = survey fuel spending / wholesale price; partial coverage.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nAdd sector fuel scale and the freight-operator proxy without changing measured support bars.",
+        "8": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nWorkbook Sector history M6/O6/R9, M16/O16/R19, M22/O22/R25. Department energy balance to 2021; later fuel estimated with activity and average intensity. Sector attribution and road overlap require review.\n\nThree sector rows with comparable, zero-based horizontal bars. 2019/2021 observations; 2024 activity-based estimates. Values unchanged from v26.",
+        "11": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nSources: Vopak terminal directory; Annual Report 2025 confirms Lesedi expansion commissioned in 2025. Published capacity is not working capacity or throughput. Operating data request: p18. Illustrative turnover sensitivity moved to p43; it is not observed utilisation.\n\nPage 10 establishes the situation following corridor geography. Commercial and operational evidence remains open; do not infer spare capacity from gross tankage.\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nClarify that the commissioned Lesedi expansion is included in the existing footprint.",
+        "12": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nStats SA freight; naamsa all-market sales 2019-2025, Workbook Vehicle history S31:S36. BEV/PHEV/HEV sales are distinct from fleet shares. Efficiency paths remain model assumptions, with OEM history and annual calibration open.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nSeparate observed drivetrain sales from assumed efficiency and adoption paths.",
+        "14": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nFIASA 2025 p49; registered review_capacity_scenarios.yaml and review_supply_worlds.yaml. Illustrative 2036 sensitivities, not calibrated production forecasts. Other plants held at 2025 reported values; Secunda gas/MRG and PetroSA restart effects remain unquantified. Low is not a Natref closure prediction.\n",
+        "15": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nCompare common product, destination, price date and tax basis. Emerging gateways must be considered; no relative cost ranking is asserted without quotes and verified access. Landlocked SADC opportunities require separate market/access evidence.\n",
+        "16": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\n8 October PS framework; workbook History Q71/R71. 2023 Department sales 21.94bn L; 2024 FIASA 20.76bn L, unverified. Estimate accessible markets, then verify actual capture. Shared flows and client operating/economic inputs remain open.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nIntegrate the approved issue tree into Resolution with updated baseline evidence.",
+        "18": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nDR01-DR09 register and 8 October PS handback. Prepared, not sent; receipt not recorded. DR09 EV adjacency remains separate. Public estimates can proceed while client data is pending.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nReplace the request summary with all active baseline, route, demand, supply and client gaps.",
+        "19": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nSpeaker note: Walk through four sections: the project question, the analytical\nrequirements, the model-build problem and the delivery approach. The purpose is to\nconnect the analyst's tasks to the decisions the engagement needs to support.\nWeek 1 analytical pack, 6 October 2026. Existing kickoff cover/closing reused at user request.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nConvergence order: national accounting p3; provincial map p4; history/estimates p5. Current page 1.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nConvergence order: national accounting p3; provincial map p4; history/estimates p5. Current page 1.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nConvergence order: national accounting p3; provincial map p4; history/estimates p5. Current page 1.\nFinal structure: baseline pp3–6; changes pp7–11 (forecast framework p9); outlook pp12–17 (market choices p16, inventory p17). Current page 1.\nSCR delivery order: page 1 of 16. Gap IDs and original evidence references retained in notes.\n6 October SCR editorial pass: presentation copy and map hierarchy only. Source observations, example volumes and model inputs unchanged.\nConvergence order: national accounting p3; provincial map p4; history/estimates p5. Current page 1.\nFinal structure: baseline pp3–6; changes pp7–11 (forecast framework p9); outlook pp12–17 (market choices p16, inventory p17). Current page 1.",
+        "23": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nWorkbook Sector history R7/R9/R17/R19/S23/S25 and History R117/R124/R125. Sector litres after 2021 are estimates; jet 2024 uses unverified FIASA. Index base 2019=100; GVA in 2015 prices.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nQuantify sector and jet context from the workbook while preserving sector definitions.",
+        "25": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nWorkbook Vehicle history S6:S8/S24/S26. Apparent retirements are not verified scrappage. Stone et al. study uses a 2014 base; no recent OEM efficiency history or fuel-by-class stock is established.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nAdd observed apparent replacement and distinguish cohort assumptions from efficiency history.",
+        "26": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nWorkbook Vehicle history S6:S8/S18:S20/S24/S26/S31:S36/Q52. NaTIS and naamsa classes are not identical. Apparent retirement is not verified scrappage; petrol diagnostic compares different scopes.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nNew requested fleet and model-calibration evidence, with scope limits retained.",
+        "27": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nEskom Integrated Report 2025, FY March, own diesel + kerosene. Workbook combined generation includes IPPs and kerosene stations; multiplying it by 0.31 L/kWh is an estimate, not reported diesel burn. Private backup remains unmeasured.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nRetain comparable own-fleet reported fuel; qualify scope relative to the new fleet page.",
+        "28": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nStats SA payload and transport-industry fuel purchases. Workbook Diesel by use Q28: spending / average diesel price, hire-and-reward firms only; may include petrol/lubricants. Road residual includes unseparated uses; tonne-km and rail traction remain open.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nAdd the spending-based operator fuel proxy; preserve the tonne-kilometre evidence gap.",
+        "29": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nUser-supplied AIA Transnet Funding Brief, Sep 2026, pp1–2; cites FY2026 AFS and Network Statement v4 Annexure 17. Primary figures not independently reconciled.\n",
+        "30": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nDepartment provincial sales through 2022; workbook History Q84/Q104 and R84/R104 estimate later volumes. 2024 also uses unverified FIASA national sales. The chart retains observed 2013-2022 sales history, not current market share.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nAdd estimated provincial updates without converting sales or capacity into current share.",
+        "31": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nWorkbook HML response has 29 levers. Examples: BEV adoption, rail diversion, mileage, prices, hybrids, truck/LCV electrification and neighbouring exports. All replacement ranges remain proposals; no forecast inputs are adopted in this pack.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nExpose the expanded lever register without adopting analyst proposals.",
+        "32": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nWorkbook Power fleet F11:S15 and N63:N65; proposed scenarios, not forecasts. Generation includes kerosene. IPP renewal, gas availability and coal-site repowering are not established. Historical burn must match scope and period.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nReplace generic fleet-data gap wording with the assembled fleet and remaining dispatch dependencies.",
+        "33": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nWorkbook Power fleet F11:F15, N63:N65 and S63:S65. Proposed cases, Nigel/Henry review D22. 0.31 L/kWh, backup fraction, load factors, gas supply and coal-site repowering need review. Kerosene stations and private backup are separate.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nNew fleet inventory and analyst power scenarios, expressly unapproved.",
+        "34": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nExisting capacity illustrations retained. Workbook History R53/S53: Sasol all-refined-products output, June FY. Department product production stops at 2021; stocks, plant yields and restart calibration remain open.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nAdd operator output context and reinforce product-output versus nameplate distinction.",
+        "35": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nExisting capacity-scale ratios retained, not throughput shares. Workbook provincial estimates: 2023 estimated shares; 2024 estimated shares plus unverified national sales. Client throughput and commercial access remain open.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nExplain the accessible-market method alongside existing footprint proxies.",
+        "36": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nWorkbook History Q59/Q64/R59/R64/S36:S40/R70. RAF-derived 24.42bn L is combined fuel, fiscal/accrual basis, not an adopted calendar sales total. Product output after 2021 and stocks remain missing; 2025 trade is not 2025 consumption.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nExtend national evidence, add RAF reconciliation flag and retain production/stock gap.",
+        "37": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nScreening functions tested with synthetic cases; commercial outputs remain unpopulated. Not integrated into the forecast engine or independently reviewed. Owners, request IDs and expiry triggers: workstreams/WS0_governance/workplan/sa_investment_bridge_2026_10_08.csv.\n\nWorkbook source commit: 8a3c884b0d26a3c5819a9a0b702024ab60485d1e\nRefresh implementation status for the analyst workbook, without asserting forecast integration.",
+        "39": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nILLUSTRATIVE ONLY. Combined package = R100m access/dispatch improvement + R500m for a further 40,000 gross m³ beyond the reported 140,000 m³. Alternatives are authored packages, not engineered designs. Full incremental pre-tax cash flows in delivered CSV; 100% site basis. NPV uses 10% and 20 operating years; commercial and delivery risks uncalibrated.",
+        "41": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nEvery illustrative value is registered in assumptions/2026/vopak_investment_illustration.yaml. Not a forecast, commercial offer or approval. Proposed validation: Nigel coordinates Vopak commercial/operations; Manish reconciles; independent review outstanding.\n",
+        "42": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nILLUSTRATIVE high-demand/low-domestic-delivery case. NPVs are incremental versus existing assets at 10%, pre-tax. Each shock applied separately: capex +25%; no chargeable excess services; Vopak gateway capture 80%→60%; captured Lesedi flow −10%. No probabilities. Full numeric outputs and cash flows retained.\n",
+        "43": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nRegistered REG-TERMINAL-HANDLING-TURNS: 1/2/3 turns per month, authored operational sensitivity, not the demand–supply worlds or measured limits. Gross Durban mixed-product tankage; no assumed eligible fraction. Do not sum inter-terminal transfers as unique demand. Separate p4/p5 illustration assumes 90% working capacity and 1.25/1.50 turns; neither is inferred from group occupancy.\n"
+      },
+      "replacements": [
+        {
+          "page": 35,
+          "headers": [
+            "Illustrative case",
+            "Annual physical volumes",
+            "Assumptions and interpretation"
+          ],
+          "rows": [
+            [
+              "Low\n10% gateway share",
+              "Durban 1.32bn L\nLesedi 0.66bn L\nUnique flow 1.32bn L",
+              "50% of captured Durban flow routed to Lesedi. Conditional on customer allocation and terminal/pipeline access."
+            ],
+            [
+              "Base\n20% gateway share",
+              "Durban 2.63bn L\nLesedi 1.32bn L\nUnique flow 2.63bn L",
+              "50% of captured Durban flow routed to Lesedi. Conditional on customer allocation and terminal/pipeline access."
+            ],
+            [
+              "High\n30% gateway share",
+              "Durban 3.50bn L\nLesedi 1.75bn L\nUnique flow 3.50bn L",
+              "50% of captured Durban flow routed to Lesedi. Durban tank screen caps the requested 3.95bn L at 3.50bn L."
+            ]
+          ],
+          "widths": [
+            190,
+            265,
+            384
+          ],
+          "explanation": "10/20/30% shares and 50% routing are authored sensitivities. Base turns fixed at two/month. Lesedi is a subset, so volumes are counted once. Domestic and other-terminal Lesedi receipts are excluded.",
+          "height": 270
+        },
+        {
+          "page": 42,
+          "headers": [
+            "Independent sensitivity",
+            "Improve NPV Rm",
+            "Tanks NPV Rm",
+            "Preferred package"
+          ],
+          "rows": [
+            [
+              "Base illustration",
+              "+24.2",
+              "+82.2",
+              "Improve + add tanks"
+            ],
+            [
+              "Capex +25%",
+              "-2.9",
+              "-80.6",
+              "Existing"
+            ],
+            [
+              "No chargeable excess services",
+              "-151.1",
+              "-366.7",
+              "Existing"
+            ],
+            [
+              "Vopak gateway capture 60%",
+              "-10.9",
+              "-655.6",
+              "Existing"
+            ],
+            [
+              "Captured volume -10%",
+              "+24.2",
+              "-258.1",
+              "Improve access / dispatch"
+            ]
+          ],
+          "widths": [
+            280,
+            140,
+            140,
+            279
+          ],
+          "explanation": "The lower working-capacity estimate increases assumed incremental rental in the model. The tank option still loses under the tested downside cases. Validate rental inclusions, customer volumes and project costs.",
+          "height": 295
+        },
+        {
+          "page": 43,
+          "headers": [
+            "Site",
+            "Working estimate",
+            "Low turns",
+            "Base turns",
+            "High turns"
+          ],
+          "rows": [
+            [
+              "Durban",
+              "146,000 m³",
+              "1.75bn L\n1 turns/month",
+              "3.50bn L\n2 turns/month",
+              "5.26bn L\n3 turns/month"
+            ],
+            [
+              "Lesedi",
+              "124,000 m³",
+              "1.49bn L\n1 turns/month",
+              "2.98bn L\n2 turns/month",
+              "3.57bn L\n2.4 turns/month"
+            ]
+          ],
+          "widths": [
+            125,
+            190,
+            170,
+            170,
+            184
+          ],
+          "explanation": "Durban: estimated petrol/diesel subset, not all gross tankage. Lesedi: 88,000 m³ documented plus 36,000 estimated. Handling sensitivities are not measured throughput or guaranteed operating limits.",
+          "height": 240
+        }
+      ],
+      "row_heights": [
+        {
+          "page": 18,
+          "name": "Table 46",
+          "heights": [
+            42,
+            66,
+            66,
+            66,
+            66,
+            66,
+            66
+          ]
+        }
+      ]
+    },
+    "sizing": {
+      "source": "pptx/output/delivered/supporting/09102026_Vopak_Market_Sizing_v1900.pptx",
+      "output": "10102026_Vopak_Market_Sizing_v2000",
+      "edits": [
+        {
+          "page": 1,
+          "name": "TextBox 8",
+          "text": "10 October 2026",
+          "original": "9 October 2026"
+        },
+        {
+          "page": 1,
+          "name": "TextBox 9",
+          "text": "Public evidence and illustrative capture cases. Customer access, operating limits and returns remain provisional.",
+          "original": "Draft for review. Lever cases are proposals, not accepted inputs; open exceptions mean outputs are provisional."
+        },
+        {
+          "page": 2,
+          "name": "Title 1",
+          "text": "National petrol and diesel sales were 21.94bn litres in 2023",
+          "original": "National petrol and diesel balance: what makes up the ~20B litres"
+        },
+        {
+          "page": 2,
+          "name": "Finding 2",
+          "text": "Balance assembled through 2021\nResiduals remain, including diesel 2021\nStocks and statistical differences unresolved",
+          "original": "The balance closed to 2021\nSupply within 0.8B L of sales, 2014-2021\nException: diesel 2021, +1.2B L"
+        },
+        {
+          "page": 2,
+          "name": "Finding 3",
+          "text": "2025 trade is available\nGross imports 16.70B L; net 15.15B L\n2025 sales and product output unavailable",
+          "original": "It cannot close after 2021\nNo production published after 2021\nStock change never published"
+        },
+        {
+          "page": 2,
+          "name": "Finding 3 tag",
+          "text": "SARS customs; production and stocks open",
+          "original": "Pending · DR08 operators, DR01 stocks"
+        },
+        {
+          "page": 2,
+          "name": "Unified source footer",
+          "text": "Manish DR01, updated 9 Oct: energy balance through 2021; department sales through 2023; SARS customs through 2025. Supply less sales includes stock change and statistical difference. Figures retain their source periods.",
+          "original": "Source: Manish DR01 (8 Oct): department energy balance (production to 2021), SARS customs (trade), department sales. Supply less sales = stock change + statistical difference, not production. FIASA and JODI not used. Petrol and diesel only."
+        },
+        {
+          "page": 3,
+          "name": "National market",
+          "text": "National consumption\nPetrol and diesel sales\n2023: 21.94B L",
+          "original": "National consumption\nPetrol and diesel sales\nPS discussed ~20B L"
+        },
+        {
+          "page": 3,
+          "name": "Imports",
+          "text": "Gross imports, 2025\nPetrol 4.45B L\nDiesel 12.25B L",
+          "original": "Gross imports\nPetrol 4.5B L\nDiesel 12.9B L"
+        },
+        {
+          "page": 3,
+          "name": "Imports tag",
+          "text": "2025 gross 16.70B L",
+          "original": "2023 · 17.4B L · customs"
+        },
+        {
+          "page": 3,
+          "name": "Market sizing",
+          "text": "Market context\n2025 Durban customs 13.16B L\nCatchments and gateway overlap",
+          "original": "Market sizing\nCoastal 4.3B L, inland-bound 8.9B L\nShared flows counted once"
+        },
+        {
+          "page": 3,
+          "name": "Market sizing tag",
+          "text": "Gateway proxy; capture not observed",
+          "original": "2025 · 13.2B L · estimate"
+        },
+        {
+          "page": 3,
+          "name": "Durban opportunity",
+          "text": "Durban context\nImports 13.16B L\nKZN sales 4.28B L",
+          "original": "Durban market\nCoastal 4.3B L\nAll landed 13.2B L"
+        },
+        {
+          "page": 3,
+          "name": "Durban opportunity tag",
+          "text": "2025 / 2022 context",
+          "original": "4.3 to 13.2B L"
+        },
+        {
+          "page": 3,
+          "name": "Lesedi opportunity",
+          "text": "Lesedi catchments\nGauteng 6.81B L\nInland 11.95B L",
+          "original": "Lesedi market\nGauteng 6.8B L\nVia Durban 8.9B L"
+        },
+        {
+          "page": 3,
+          "name": "Lesedi opportunity tag",
+          "text": "2022 nested demand",
+          "original": "6.8 to 12.0B L"
+        },
+        {
+          "page": 3,
+          "name": "Share",
+          "text": "Conditional base capture\nDurban 2.63B L, Lesedi 1.32B L\nLesedi included in Durban flow",
+          "original": "Market share\nTanks allow at 2 turns a month:\nDurban 3.5B L, Lesedi 3.0B L"
+        },
+        {
+          "page": 3,
+          "name": "Share tag",
+          "text": "Assumed capture; details p.8",
+          "original": "Ceiling, not share · DR02/05"
+        },
+        {
+          "page": 3,
+          "name": "Headroom",
+          "text": "Incremental opportunity\nNeeds existing throughput baseline\nAccess and commitments unverified",
+          "original": "Headroom\nSite market less current capture\nShared Durban-Lesedi flows once"
+        },
+        {
+          "page": 3,
+          "name": "Inland tag",
+          "text": "FY25 use 5.46B L/yr",
+          "original": "Capacity ~7.7B L/yr"
+        },
+        {
+          "page": 3,
+          "name": "Unified source footer",
+          "text": "SARS 2025; department sales 2023 and provinces 2022; Transnet Pipelines 2025. Gateway, catchment and terminal throughput are separate measures. No inference of an 8.88B L inland flow from mixed-year subtraction.",
+          "original": "Source: 8 Oct PS session; Manish DR01 (sales, SARS customs, energy balance to 2021) and DR04 (entry points); provincial sales 2022. Coastal = KZN, WC, EC. Production is 2021, the last published year. Destinations sum to consumption; routes overlap."
+        },
+        {
+          "page": 5,
+          "name": "Use finding 1",
+          "text": "Years and scopes differ\nBalance 23.2B L (2021), model 23.4B L (2024)\nSimilar totals do not validate sector allocation",
+          "original": "Totals agree, the mix does not\nBalance 23.2B L (2021), model 23.4B L (2024)\nsplit across sectors differently"
+        },
+        {
+          "page": 5,
+          "name": "Use finding 2",
+          "text": "Power baseline needs joint review\nEngine includes 3,000MW notional plants\nRecalibrate power and road together",
+          "original": "Power is the largest gap\nModel 3.6B L against 0.9-1.6B L reported\nEskom plus independents, FY23-FY25"
+        },
+        {
+          "page": 5,
+          "name": "Use reported power",
+          "text": "0.89B L\nFY25; FY24 1.60B L",
+          "original": "1.6B L\nFY23 1.3 · FY25 0.9"
+        },
+        {
+          "page": 5,
+          "name": "Use reported power tag",
+          "text": "Eskom + estimated IPPs",
+          "original": "FY24 peak · DR07"
+        },
+        {
+          "page": 5,
+          "name": "Use model power tag",
+          "text": "2024; notional plants",
+          "original": "2024 · model, sourced"
+        },
+        {
+          "page": 6,
+          "name": "Unified source footer",
+          "text": "Manish proposed lever cases remain unapproved. Implemented EV/efficiency pair reviewed in the 9 Oct handback. Hybrid savings, road activity/rail diversion and inferred fuel/class splits still need rules and calibration.",
+          "original": "Source: Manish lever response (7 Oct): 2035 low / medium / high, an analyst proposal, not accepted; baselines from Stats SA, naamsa, Eskom and SARS. Levers overlap (road activity and rail; EVs and efficiency); the double-count check is open (DR07)."
+        },
+        {
+          "page": 6,
+          "name": "Lever 3 reported",
+          "text": "Eskom + estimated IPP fuel\nFY24 ~1.60B L, FY25 ~0.89B L\nPrivate backup remains unmeasured",
+          "original": "Reported power diesel\nFY24 1.6B L, FY25 0.9B L\nFalling as load-shedding ended"
+        },
+        {
+          "page": 7,
+          "name": "Mode 1 row 2",
+          "text": "Imports by customs office, 2025\nDurban 13.16 of 16.70B L (79%)\nOffice is a gateway proxy",
+          "original": "Fuel imports by port, 2025\nDurban 13.2 of 16.7B L (79%)\nCape Town 1.5, Richards Bay 0.7"
+        },
+        {
+          "page": 7,
+          "name": "Mode 2 row 2",
+          "text": "Whole pipeline system, FY25\nPetroleum total 13.372B L\nRefined petrol/diesel 8.619B L",
+          "original": "Pipeline throughput\nAll products FY24 15.2B L\nincl. crude and jet; FY25 13.4B L"
+        },
+        {
+          "page": 7,
+          "name": "Mode 2 row 2 tag",
+          "text": "TPL 2025 p8; different from MPP trunk",
+          "original": "Pack research · TPL 2024, IR 2025"
+        },
+        {
+          "page": 7,
+          "name": "Mode 2 row 3",
+          "text": "MPP usage / capacity, FY25\n105 / 148ML per week (70.9%)\nAnnualised 5.46 / 7.70B L",
+          "original": "Capacity and use\n148M L/week = ~7.7B L/yr\nvs 13.2B L landed at Durban"
+        },
+        {
+          "page": 7,
+          "name": "Mode 2 row 3 tag",
+          "text": "TPL 2025 p8; shared, not Vopak rights",
+          "original": "DR04 · 2020 capacity, lead to check"
+        },
+        {
+          "page": 7,
+          "name": "Mode 4 row 2",
+          "text": "Road and rail volumes\nNo matched corridor flow series\nMixed-year residual withdrawn",
+          "original": "Road throughput\nCorridor volume not published\nResidual needs a common basis"
+        },
+        {
+          "page": 7,
+          "name": "Unified source footer",
+          "text": "DR04/08 and Transnet Pipelines 2025 p8, https://www.transnet.net/getFile.ashx?id=6121. 52-week annualisation is arithmetic. MPP, system petroleum, customs and customer flows have different scopes. Average unused capacity is not shipper access.",
+          "original": "Source: Manish DR04, DR08 (8 Oct): SARS customs by office, Transnet Pipelines 2020, NERSA, department zone differentials, CEF. Pack research: Transnet Pipelines 2024, Transnet IR 2025, NERSA jet fuel paper (Jun 2026). Overlaps: overlap log, 8 Oct."
+        },
+        {
+          "page": 8,
+          "name": "Unified source footer",
+          "text": "Public DR01/04/07/08 handback received through 9 Oct. Client DR02/05/03/06 prepared; sending/receipt not recorded. Review workbook maps all nine requests. No source review or business approval inferred from receipt.",
+          "original": "Source: DR01-DR09 request register; Manish hand-back of 8 October (DR01, DR04, DR07, DR08; merged as PR #1). Register file not yet updated for receipt. Client requests DR02/05, DR03, DR06: prepared, not sent."
+        },
+        {
+          "page": 8,
+          "name": "Outstanding requests native table",
+          "row": 1,
+          "col": 1,
+          "text": "Received through 9 Oct: balance assembled to 2021. Residuals and stock changes unresolved; later product production and comparable sales still missing.",
+          "original": "Received 8 Oct: balance reconciled 2014-2021 (customs, sales, energy balance). Open: stock change, production after 2021, 2024-25 sales."
+        },
+        {
+          "page": 8,
+          "name": "Outstanding requests native table",
+          "row": 2,
+          "col": 1,
+          "text": "Received: entry offices, tariffs, access evidence. FY2025 MPP updated. Open: product/customer access, quoted road/rail costs and matched corridor volumes.",
+          "original": "Received 8 Oct, partial: entry points, pipeline tariff, zone costs, site access. Open: road and rail rates, pipeline volumes by product."
+        },
+        {
+          "page": 8,
+          "name": "Outstanding requests native table",
+          "row": 3,
+          "col": 1,
+          "text": "Received: power and fleet evidence; implemented EV/efficiency review complete. Open: joint baseline reconciliation and hybrid/rail combination rules.",
+          "original": "Received 8 Oct: Eskom litres, plant dates, fleet by province, efficiency, rail. Open: double-count check; sector baseline differs (overlap log)."
+        },
+        {
+          "page": 8,
+          "name": "Outstanding requests native table",
+          "row": 4,
+          "col": 1,
+          "text": "Received: plant status and operator output, including Secunda FY2026. Open: product yields, Natref ownership basis and stocks; Astron 50/50 split assumed.",
+          "original": "Received 8 Oct, partial: six plants, capacity and status, Natref split. Open: Secunda and Astron output by product; output after 2021."
+        },
+        {
+          "page": 9,
+          "name": "Title 1",
+          "text": "The base capture screen gives Durban 2.63bn litres and Lesedi 1.32bn within that flow",
+          "original": "Decisions and next steps"
+        },
+        {
+          "page": 9,
+          "name": "Unified source footer",
+          "text": "2025 Durban customs proxy 13.1605bn L. Registered market_review.yaml: authored sensitivities, no probabilities. Working estimates: Durban 146,000 m³; Lesedi 124,000 m³. Customer contestability, product allocation and pipeline access remain unverified. Other-terminal and domestic Lesedi receipts excluded.",
+          "original": "Owners as proposed in the request register and the 8 October hand-back; no dates are committed. Page references are to this pack; open items are listed in workstreams/WS0_governance/workplan/overlap_log_2026_10_08.md."
+        }
+      ],
+      "notes": {
+        "1": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nCover from the supplied Vopak 1_Title layout (reference: SA_Market_Story_2026-10-08_v25.pptx, slide 1); photo credit retained. Page numbers start after the cover so the p.# deep-dive markers on the issue tree match.",
+        "2": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nNational balance above the issue tree: production + imports - exports - sales = supply less sales, where supply less sales is the stock change and statistical difference together. All figures are Manish's DR01 balance file (workstreams/WS1_data_validation/fuel_balance_petrol_diesel_2009_2025_2026-10-06.csv): production from the department energy balances (none after 2021), trade from SARS customs, sales from the department. No residual is labelled as production. v9 showed implied production for 2023-24, energy-balance trade for 2021 and FIASA sales for 2024; all three are withdrawn (overlap log, items 1-3). The 2021 energy balance uses higher imports than customs (diesel 11.2 against 9.8B L), unexplained and open with Manish. The PS session figure of about 20B L has no department source after 2023; FIASA and JODI are excluded by instruction.",
+        "3": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nSource: workstreams/WS0_governance/meetings/2026-10-08_ps_session_manish_ramjeawon.docx and Nigel's supplied market sizing.jpg storyboard.\nThis is the issue-tree framework requested after the PS session. The roughly 20 billion litres is the discussion's provisional annual petrol-plus-diesel consumption total. It is not gross imports, addressable terminal volume or verified throughput. No market shares have been calculated.\nReconcile product/year consumption against actual domestic production, gross imports, exports and stock changes. Keep statistical differences explicit. Capacity is not production.\nEstimate the accessible annual market separately for Durban and Lesedi from product compatibility, destination demand, feasible routes, delivered cost and terminal access. Both imported and domestic fuel can influence each site's opportunity. Customer and contractual restrictions narrow achievable capture.\nRequest site/product throughput, actual working tanks, turns, occupancy, receipt and dispatch limits and customer commitments from the client. Calculate current accessible-market share and national-market share with explicit denominators. Trace common Durban-Lesedi flows so the combined opportunity is deduplicated.\nCompare additional achievable capture with existing handling capability, then operational improvements and expansion alternatives. Annual throughput in litres cannot directly determine storage cubic metres. Investment requires incremental cash flows and downside tests across coherent demand and domestic-supply worlds.\nParameters have different effects: road-to-rail changes freight diesel use and delivery choices; EV turnover and ICE efficiency affect road fuel demand; Eskom recovery and IPP delivery affect power diesel demand; refinery output and closures affect the import requirement and origin of flows; infrastructure capacity and access limit routes and terminal capture.\nManish handback: close evidence gaps, consolidate the baseline and build the terminal market-size methodology with source/year/unit, observed or estimated status, owner and unresolved gaps. Nigel coordinates client inputs. Nigel and Henry review scenario and capture assumptions. No commercial commitment or business approval is implied.\nLayout: four columns and four rows. Column 2 reads source (imports, production), route (ports, inland delivery), destination (coastal, inland demand) then parameters. Sources and destinations each add to national consumption; routes are throughput and overlap, so they do not add. Volume tags come from pptx/story/issue_tree_volumes_2026_10_08.json, built by pptx/scripts/issue_tree_volumes.py: 2023 department sales (observed), 2023 department trade review (rounded narrative, not customs), production implied as sales less imports plus exports with stock change unknown, and 2022 provincial sales split into coastal (KZN, WC, EC) and inland provinces as a presentation proxy, not a registered assumption. The PS figure of about 20B litres likely reflects 2024; FIASA 2024 (20.8B) remains unverified. All other tags are pending the named data requests.\nTemplate provenance: copied from the current SA_Market_Story_2026-10-08_v25.pptx, slide 14, with its supplied Vopak master and named Header only layout retained. Original preserved. All diagram content is editable native PowerPoint text and connectors.",
+        "5": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nDeep dive for Demand by use. Three sources are shown side by side for calibration with Manish; none is adopted here. The balance is 2021 final consumption, petrol and diesel; the model baseline is the engine's 2024 high-demand segments with Manish's sourced starting values (agriculture 1.06 and industry 1.50 diesel, both provisional); reported power is Eskom's turbine fuel plus independent plants estimated from generation at 0.31 litres per kWh (DR07). Power diesel is not final consumption in the balance. The model's generation segment is well above reported burn in every recent year, and the balance's commercial and public line has no model counterpart. Calibration decision owners: Nigel and Manish.",
+        "6": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nDeep dive for Demand parameters. Values are read from workstreams/WS2_model_development/fuel_lever_response_2026-10-07.csv: for each lever the baseline, and 2035 low / medium / high as proposed by Manish, with how many of Nigel's proposed values he revised. Supply levers (plant utilisation, yields, restart capacity) belong to the supply side and are not shown. Exports to neighbours are terminal throughput, not South African demand. No lever value is an accepted input; Nigel and Henry review scenario settings. The rail and road activity levers overlap, as do EV share and new-cohort efficiency: the DR07 acceptance test (no double count) is still open.",
+        "7": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nRows compare modes: network, actual throughput, capacity and use, relevance to Durban and Lesedi. Manish's DR04 and DR08 evidence (8 October, merged as PR #1) is primary; tags marked 'pack research' are public sources found separately the same day and not in DR04. Overlaps are recorded in workstreams/WS0_governance/workplan/overlap_log_2026_10_08.md (item 4). Transnet FY24 = year to March 2024. Not found publicly: per-port liquid bulk after 2021, a petroleum-only port split, Durban berth capacity, Durban-to-Gauteng fuel by rail or road, and an inland supply split by mode in volumes. The 38.9 port figure is printed as million kilometres in the TNPA table; treated as million kilolitres pending confirmation. TPL volumes include crude to Natref and Natref/Secunda product in the inland network, so they are not all Durban imports. The FY26 14.3B L figure is news only and is not shown.",
+        "8": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nThis page groups the outstanding requests in the existing DR01-DR09 register and adds the explicit evidence gaps raised in the 8 October PS session. It is a request summary, not evidence that requests were sent or data received. No new delivery dates are committed.\nManish: assemble public evidence, retain original source files, consolidate observed versus estimated data, and estimate accessible terminal markets while client inputs are pending. Nigel coordinates commercial requests and reviews the baseline. Henry's review concerns scenario settings and specialist power assumptions.\nDR01: compatible product/year definitions, actual output and explicit stock changes/statistical differences. Resolve the 2024 sales source and blank 2025 national sales rather than manufacturing observations.\nDR04: public port liquid-bulk capacity and pipeline/road/rail connections; confirm working service capacity, actual access rights and destination-matched route economics with operators. Geographic connectivity alone does not establish customer access.\nDR07: reported historical Eskom litres rather than generation-based estimates, vehicle composition by province/class, historical petrol/diesel efficiency, and the source paper behind retirement and road diesel split assumptions. Document renewable and gas commissioning dependencies, coal retirements and rail traction. Nigel/Henry review low/medium/high assumptions; scenarios must avoid double counting. Marine remains an open baseline gap; jet evidence is assembled but a separate model is not agreed in this handback.\nDR08: complete refinery/synfuels inventory including PetroSA/Mossgas, Secunda, Natref, SAPREF and other national sites, with actual annual product output, feedstock and restart/closure dependencies. Capacity alone does not establish production.\nDR02/05: latest 36 complete months of anonymised product/site movements, destinations, customer commitments, contestable volumes and contracts. Explicitly flag shared Durban-Lesedi flows and final deliveries. Verify market share against an explicit accessible-market denominator.\nDR03: product-compatible working and unavailable/committed tankage, stock policy, observed turns, occupancy, downtime and peak receipt/dispatch limits.\nDR06: storage and handling revenue terms, incremental operating costs, capex, schedule, ramp-up, tax, working capital, asset life and hurdle rate. Compare existing assets, operating improvements and expansion on incremental cash flows.\nDR09 is still outstanding but is a separate EV adjacency case, not a prerequisite to the petrol/diesel terminal market-sizing bridge.\nThe underlying register and full acceptance tests follow:\n[\n    {\n        \"id\":  \"DR01\",\n        \"priority\":  \"P1\",\n        \"step\":  \"Baseline\",\n        \"request\":  \"National product balance\",\n        \"required_fields_and_period\":  \"Latest complete calendar year and 2021/2022 bridge; petrol/diesel production, imports, exports, stock changes and statistical differences; units and coverage\",\n        \"proposed_coordinator\":  \"Manish / Nigel review\",\n        \"proposed_data_provider\":  \"Department / SARS / producers\",\n        \"expiry_trigger\":  \"Before baseline adoption\",\n        \"acceptance_test\":  \"Reconcile definitions and source revisions; no residual labelled as production\",\n        \"status\":  \"Prepared; not sent\",\n        \"received_file\":  \"\",\n        \"received_date\":  \"\"\n    },\n    {\n        \"id\":  \"DR02\",\n        \"priority\":  \"P1\",\n        \"step\":  \"Capture\",\n        \"request\":  \"Terminal movements\",\n        \"required_fields_and_period\":  \"Latest 36 complete months; terminal, product, origin, destination, customer ID, receipt/dispatch m3; flag Durban-Lesedi transfers and final customer deliveries\",\n        \"proposed_coordinator\":  \"Nigel to coordinate\",\n        \"proposed_data_provider\":  \"Vopak operations / commercial\",\n        \"expiry_trigger\":  \"Before market-share estimate\",\n        \"acceptance_test\":  \"Deduplicate chain deliveries; reconcile monthly totals to operating reports\",\n        \"status\":  \"Prepared; not sent\",\n        \"received_file\":  \"\",\n        \"received_date\":  \"\"\n    },\n    {\n        \"id\":  \"DR03\",\n        \"priority\":  \"P1\",\n        \"step\":  \"Assets\",\n        \"request\":  \"Working capacity and service limits\",\n        \"required_fields_and_period\":  \"Tank/product gross and working m3; unavailable/committed capacity; stock policy; actual turns; monthly receipt/dispatch m3; hourly and peak limits; downtime\",\n        \"proposed_coordinator\":  \"Nigel to coordinate\",\n        \"proposed_data_provider\":  \"Vopak operations\",\n        \"expiry_trigger\":  \"Before capacity-shortfall conclusion\",\n        \"acceptance_test\":  \"Eligible working tankage and achievable throughput reconciled by product and terminal\",\n        \"status\":  \"Prepared; not sent\",\n        \"received_file\":  \"\",\n        \"received_date\":  \"\"\n    },\n    {\n        \"id\":  \"DR04\",\n        \"priority\":  \"P1\",\n        \"step\":  \"Routes\",\n        \"request\":  \"Matched delivered economics\",\n        \"required_fields_and_period\":  \"Same petrol/diesel spec and inland destination; dated product basis and handling/road/rail/pipeline/border/loss/finance costs; tax basis, currency, transit time, access rights and available annual capacity\",\n        \"proposed_coordinator\":  \"Manish / Nigel review\",\n        \"proposed_data_provider\":  \"Logistics operators / Vopak\",\n        \"expiry_trigger\":  \"Before corridor ranking\",\n        \"acceptance_test\":  \"Compare same product/date/destination; confirm tanker access and service availability\",\n        \"status\":  \"Prepared; not sent\",\n        \"received_file\":  \"\",\n        \"received_date\":  \"\"\n    },\n    {\n        \"id\":  \"DR05\",\n        \"priority\":  \"P1\",\n        \"step\":  \"Capture\",\n        \"request\":  \"Customer access and commitments\",\n        \"required_fields_and_period\":  \"Anonymised customer/product/destination annual m3; sourcing alternatives, contract dates, committed vs contestable volumes and renewal assumptions\",\n        \"proposed_coordinator\":  \"Nigel to coordinate\",\n        \"proposed_data_provider\":  \"Vopak commercial\",\n        \"expiry_trigger\":  \"Before capturable-volume adoption\",\n        \"acceptance_test\":  \"Mutually exclusive customer pools; confirmed rights and no assumed capacity-share proxy\",\n        \"status\":  \"Prepared; not sent\",\n        \"received_file\":  \"\",\n        \"received_date\":  \"\"\n    },\n    {\n        \"id\":  \"DR06\",\n        \"priority\":  \"P1\",\n        \"step\":  \"Returns\",\n        \"request\":  \"Commercial terms and project options\",\n        \"required_fields_and_period\":  \"Incremental storage/handling revenue, variable and fixed costs; tank/debottleneck capex, schedule, ramp-up, working capital, tax, hurdle rate and asset life; effects on existing revenue\",\n        \"proposed_coordinator\":  \"Nigel to coordinate\",\n        \"proposed_data_provider\":  \"Vopak finance / engineering / commercial\",\n        \"expiry_trigger\":  \"Before investment recommendation\",\n        \"acceptance_test\":  \"Compare existing assets, debottleneck and expansion on incremental cash flows\",\n        \"status\":  \"Prepared; not sent\",\n        \"received_file\":  \"\",\n        \"received_date\":  \"\"\n    },\n    {\n        \"id\":  \"DR07\",\n        \"priority\":  \"P2\",\n        \"step\":  \"Demand worlds\",\n        \"request\":  \"Annual demand lever calibration\",\n        \"required_fields_and_period\":  \"Product/sector activity, transferable freight tonne-km, rail traction, EV fleet replacement, ICE efficiency; Eskom/IPP/private backup separately; generation commissioning and retirements\",\n        \"proposed_coordinator\":  \"Manish / Nigel review\",\n        \"proposed_data_provider\":  \"Public sources / sector specialists\",\n        \"expiry_trigger\":  \"Before L/M/H demand adoption\",\n        \"acceptance_test\":  \"No rail/EV/efficiency double count; power balance and dispatch constrain diesel\",\n        \"status\":  \"Prepared; not sent\",\n        \"received_file\":  \"\",\n        \"received_date\":  \"\"\n    },\n    {\n        \"id\":  \"DR08\",\n        \"priority\":  \"P2\",\n        \"step\":  \"Supply worlds\",\n        \"request\":  \"Annual plant output calibration\",\n        \"required_fields_and_period\":  \"SAPREF funded timing/ramp/yields; Natref availability/utilisation; Secunda gas/MRG liquids penalty; PetroSA feedstock/restart; product-specific annual output\",\n        \"proposed_coordinator\":  \"Manish / Nigel review\",\n        \"proposed_data_provider\":  \"Producers / public disclosures\",\n        \"expiry_trigger\":  \"Before L/M/H supply adoption\",\n        \"acceptance_test\":  \"Nameplate converted to output; dependencies and scenario consistency reviewed\",\n        \"status\":  \"Prepared; not sent\",\n        \"received_file\":  \"\",\n        \"received_date\":  \"\"\n    },\n    {\n        \"id\":  \"DR09\",\n        \"priority\":  \"P2\",\n        \"step\":  \"EV adjacency\",\n        \"request\":  \"Separate EV investment case\",\n        \"required_fields_and_period\":  \"Customer energy and charging demand; utilisation by location; power connection and tariff; capex, costs, commercial terms, partner model and strategic mandate\",\n        \"proposed_coordinator\":  \"Nigel to coordinate\",\n        \"proposed_data_provider\":  \"Potential customers / Vopak strategy / power partners\",\n        \"expiry_trigger\":  \"Before EV investment screening\",\n        \"acceptance_test\":  \"Standalone customer, power-access and incremental-return case; not inferred from low fuel demand\",\n        \"status\":  \"Prepared; not sent\",\n        \"received_file\":  \"\",\n        \"received_date\":  \"\"\n    }\n]",
+        "9": "\nSources and assumptions: output/delivered/market_review_2026_10_10/market_review.json; assumptions/2026/market_review.yaml; terminal_site_assumptions.csv; Manish Master_data_book.xlsx and DR01/04/07/08 handback through 9 October. Investment outputs: output/delivered/vopak_illustration_2026_10_10/results.json. Public observations, estimates and authored sensitivities retain their stated scopes. Pipeline source: https://www.transnet.net/getFile.ashx?id=6121, printed p8. No independent approval inferred.\n\nPrevious revision notes retained for source history; revised slide values take precedence:\nClosing page. Decisions: the demand-by-use baseline (overlap log item 6, page 4), the demand lever cases and the open DR07 double-count test (page 5), and whether to register the coastal and inland grouping (page 3). Requests: client data DR02/05, DR03 and DR06 (prepared, not sent); operator output by product and stock change (DR08, DR01 gaps); current trunk-line capacity and whether Vopak Durban can inject into the NMPP (DR04 gaps). Build next: the Durban and Lesedi market sizing method, an independent figure check for this pack, and recording receipt of DR01, DR04, DR07 and DR08 in the register file. No delivery dates are committed."
+      },
+      "replacements": [
+        {
+          "page": 9,
+          "headers": [
+            "Illustrative case",
+            "Durban bn L",
+            "Lesedi bn L",
+            "Unique bn L"
+          ],
+          "rows": [
+            [
+              "Low (10%)",
+              "1.32",
+              "0.66",
+              "1.32"
+            ],
+            [
+              "Base (20%)",
+              "2.63",
+              "1.32",
+              "2.63"
+            ],
+            [
+              "High (30%)",
+              "3.50",
+              "1.75",
+              "3.50"
+            ]
+          ],
+          "widths": [
+            285,
+            185,
+            185,
+            184
+          ],
+          "explanation": "Assumed gateway capture: 10/20/30%. Half of captured Durban flow routes to Lesedi. At two turns/month, Durban’s tank screen caps the high case at 3.50bn L. These are conditional total volumes, not measured shares or incremental sales.",
+          "height": 245
+        }
+      ]
+    }
+  }
+}

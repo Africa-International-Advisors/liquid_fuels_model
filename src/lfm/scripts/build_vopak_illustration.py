@@ -1,5 +1,6 @@
 """Resolve reported context and registered authored assumptions for a worked case."""
 from copy import deepcopy
+import argparse
 import csv,hashlib,html,json
 from pathlib import Path
 import yaml
@@ -9,6 +10,11 @@ ROOT=Path(__file__).resolve().parents[3]
 OUT=ROOT/'output/delivered/vopak_illustration_2026_10_08'
 
 def main():
+    global OUT
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output',type=Path,default=OUT)
+    args=parser.parse_args()
+    OUT=args.output
     OUT.mkdir(parents=True,exist_ok=True)
     source=ROOT/'assumptions/2026/vopak_investment_illustration.yaml'
     cfg=yaml.safe_load(source.read_text());reported=cfg['reported']['value'];a=cfg['illustrative']['value']

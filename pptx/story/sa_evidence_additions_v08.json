@@ -1,0 +1,127 @@
+{
+  "efficiency": {
+    "categories": [
+      "Activity growth",
+      "Vehicle efficiency"
+    ],
+    "series": [
+      {
+        "name": "2030 effect vs 2025",
+        "values": [
+          1.5381887998552797,
+          -0.7931698551445201
+        ]
+      }
+    ]
+  },
+  "refinery": {
+    "categories": [
+      "2025",
+      "2026",
+      "2027",
+      "2028",
+      "2029",
+      "2030"
+    ],
+    "series": [
+      {
+        "name": "Low imports",
+        "values": [
+          16.73585087316524,
+          16.16498508985107,
+          15.598364564224843,
+          15.035935275367054,
+          11.644311431365011,
+          8.256772830096688
+        ]
+      },
+      {
+        "name": "Base",
+        "values": [
+          16.73585087316524,
+          16.708035906836596,
+          16.681037530238367,
+          16.654869309593153,
+          16.629545036631914,
+          16.60507873215917
+        ]
+      },
+      {
+        "name": "High imports",
+        "values": [
+          16.73585087316524,
+          17.308293621173334,
+          17.888840628019732,
+          18.477659851445317,
+          19.07492280431642,
+          19.6808046315979
+        ]
+      }
+    ]
+  },
+  "balance": [
+    {
+      "Measure": "2025 demand",
+      "Petrol bn L": "8.855772869974501",
+      "Diesel bn L": "12.131615327120741",
+      "Total bn L": "20.987388197095243",
+      "Treatment": "Department anchored estimate"
+    },
+    {
+      "Measure": "Domestic production",
+      "Petrol bn L": "3.1995437289457436",
+      "Diesel bn L": "2.6004562710542563",
+      "Total bn L": "5.8",
+      "Treatment": "User-directed 5.8bn planning case; provisional product split"
+    },
+    {
+      "Measure": "Gross customs imports",
+      "Petrol bn L": "4.45347117815",
+      "Diesel bn L": "12.24872026207",
+      "Total bn L": "16.70219144022",
+      "Treatment": "Recorded litres, calendar 2025"
+    },
+    {
+      "Measure": "Customs exports",
+      "Petrol bn L": "0.801762466",
+      "Diesel bn L": "0.74670021007",
+      "Total bn L": "1.54846267607",
+      "Treatment": "Recorded litres, calendar 2025"
+    },
+    {
+      "Measure": "Supply plus net imports",
+      "Petrol bn L": "6.851252441095744",
+      "Diesel bn L": "14.102476323054256",
+      "Total bn L": "20.95372876415",
+      "Treatment": "Availability before stock changes and statistical/scope differences"
+    },
+    {
+      "Measure": "Unexplained availability less demand",
+      "Petrol bn L": "-2.0045204288787577",
+      "Diesel bn L": "1.9708609959335153",
+      "Total bn L": "-0.03365943294524243",
+      "Treatment": "Not assigned to stocks or concealed in demand; investigate sales coverage, FY conversion, yields, customs scope and re-exports"
+    },
+    {
+      "Measure": "Demand-implied gross imports",
+      "Petrol bn L": "6.457991607028758",
+      "Diesel bn L": "10.277859266136485",
+      "Total bn L": "16.73585087316524",
+      "Treatment": "Zero stock-change assumption; not reconciled to customs imports"
+    },
+    {
+      "Measure": "FIASA-anchor alternative demand",
+      "Petrol bn L": "8.938032824999999",
+      "Diesel bn L": "10.7163971",
+      "Total bn L": "19.654429925",
+      "Treatment": "Source-choice sensitivity only"
+    },
+    {
+      "Measure": "Domestic output implied by demand/trade",
+      "Petrol bn L": "5.204064157824501",
+      "Diesel bn L": "0.6295952751207412",
+      "Total bn L": "5.833659432945242",
+      "Treatment": "Zero stock change. Compare this implied output with the plant estimate; it is not a replacement production assumption."
+    }
+  ]
+}

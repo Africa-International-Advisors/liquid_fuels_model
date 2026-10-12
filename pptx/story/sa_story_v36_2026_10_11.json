@@ -1,0 +1,984 @@
+{
+  "slides": [
+    {
+      "page": 2,
+      "kind": "scr",
+      "title": "South Africa remains an import-led fuel market, making customer capture Vopak\u2019s priority",
+      "source": "Analytical workbook v02 and market review. Demand is estimated; production and capture are planning assumptions. Product reconciliation remains open; Walvis Bay diversion is unquantified.",
+      "takeaway": ""
+    },
+    {
+      "page": 3,
+      "kind": "chart",
+      "chartType": "line",
+      "direction": "column",
+      "title": "Fuel demand has eased to 21.0bn litres and stays broadly flat through 2030 in the base case",
+      "categories": [
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025E"
+      ],
+      "series": [
+        {
+          "name": "Total",
+          "values": [
+            23.581206783,
+            23.505231037999998,
+            24.995848672268004,
+            23.544626505108003,
+            23.321328147558994,
+            23.6803748727,
+            23.681839297278998,
+            20.451428720792002,
+            22.247366978118002,
+            21.902196234592,
+            21.9444500793,
+            22.08110900656465,
+            20.987388197095243
+          ]
+        },
+        {
+          "name": "Petrol",
+          "values": [
+            11.439925235,
+            10.890207679,
+            11.475709420318001,
+            11.462252466686001,
+            11.174082980369999,
+            11.141630546702,
+            10.773208065062,
+            8.761470961496,
+            9.301584227683001,
+            9.184869915573,
+            9.036950113492,
+            8.945902841098569,
+            8.855772869974501
+          ]
+        },
+        {
+          "name": "Diesel",
+          "values": [
+            12.141281548,
+            12.615023359,
+            13.52013925195,
+            12.082374038422001,
+            12.147245167188997,
+            12.538744325998,
+            12.908631232217,
+            11.689957759296,
+            12.945782750434999,
+            12.717326319019001,
+            12.907499965808,
+            13.13520616546608,
+            12.131615327120741
+          ]
+        }
+      ],
+      "chartHeading": "National fuel demand, 2013\u20132025",
+      "side": [
+        "Five drivers of the outlook",
+        "Sectors: activity supports demand.",
+        "Eskom: recovery lowers power fuel use.",
+        "Road-to-rail and efficiency reduce road fuel use.",
+        "Refineries: recovery displaces imports.",
+        "Matola / Walvis Bay: gateways compete for inland flows.",
+        "2030 base: 20.9bn L demand; 16.6bn L gross imports."
+      ],
+      "takeaway": "Demand determines consumption, domestic production determines import need, and competing gateways determine Durban\u2019s share.",
+      "source": "Department sales 2013\u20132023; analytical workbook v02. E = estimated 2024\u20132025. 2030 is the base scenario, not an observed outcome. Walvis Bay diversion remains unquantified."
+    },
+    {
+      "page": 4,
+      "title": "Petrol has declined since 2013, while diesel has sustained the market",
+      "kind": "chart",
+      "categories": [
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024E",
+        "2025E"
+      ],
+      "series": [
+        {
+          "name": "Petrol",
+          "values": [
+            11.439925235,
+            10.890207679,
+            11.475709420318001,
+            11.462252466686001,
+            11.174082980369999,
+            11.141630546702,
+            10.773208065062,
+            8.761470961496,
+            9.301584227683001,
+            9.184869915573,
+            9.036950113492,
+            8.945902841098569,
+            8.855772869974501
+          ]
+        },
+        {
+          "name": "Diesel",
+          "values": [
+            12.141281548,
+            12.615023359,
+            13.52013925195,
+            12.082374038422001,
+            12.147245167188997,
+            12.538744325998,
+            12.908631232217,
+            11.689957759296,
+            12.945782750434999,
+            12.717326319019001,
+            12.907499965808,
+            13.13520616546608,
+            12.131615327120741
+          ]
+        }
+      ],
+      "side": [
+        "Petrol demand outlook",
+        "Petrol: 9.04bn L in 2023 to 8.86bn L in 2025E.",
+        "Assumed efficiency and fleet changes outweigh activity growth.",
+        "Diesel: 12.13bn L in 2025E.",
+        "2013\u201323: reported Department series. 2024\u201325: estimates."
+      ],
+      "takeaway": "Petrol remains below its earlier level; diesel demand responds more directly to freight, industry and power.",
+      "source": "Department annual sales, 2013\u20132023. Estimated 2024\u20132025: analytical workbook v02. Earlier deck FIASA comparison figures are not spliced into this series.",
+      "chartType": "line",
+      "direction": "column",
+      "chartHeading": "Petrol and diesel demand, 2013\u20132025"
+    },
+    {
+      "page": 5,
+      "title": "Road use dominates the baseline, with meaningful diesel demand outside transport",
+      "kind": "chart",
+      "categories": [
+        "Manufacturing",
+        "Other petrol",
+        "Power",
+        "Agriculture",
+        "Mining",
+        "Other road diesel",
+        "Other diesel",
+        "Freight diesel",
+        "Petrol road"
+      ],
+      "series": [
+        {
+          "name": "2025 estimated bn litres",
+          "values": [
+            0.16507618000173108,
+            0.2656731860992353,
+            1.08432,
+            1.1312246982365153,
+            1.406346784621764,
+            1.6081823707959784,
+            1.9119181810768164,
+            4.824547112387935,
+            8.590099683875266
+          ]
+        }
+      ],
+      "side": [
+        "Demand allocation",
+        "Road freight: 4.82bn L",
+        "Mining: 1.41bn L",
+        "Agriculture: 1.13bn L",
+        "Other diesel: 1.91bn L remains unallocated to a specific end use."
+      ],
+      "takeaway": "Sector-attributed vehicle fuel stays in its sector; the road split is an explicit allocation assumption.",
+      "source": "Analytical workbook v02, Segments. 2021 energy-balance road volume; 75% of road diesel allocated to freight. Historical sector intensities at current activity.",
+      "chartType": "bar",
+      "direction": "bar",
+      "chartHeading": "2025 estimated demand by use"
+    },
+    {
+      "page": 6,
+      "title": "Agricultural demand rebounds in 2025 while mining and manufacturing remain broadly flat",
+      "kind": "chart",
+      "categories": [
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "series": [
+        {
+          "name": "Mining",
+          "values": [
+            1.3959664570874284,
+            1.4037204366913902,
+            1.406346784621764
+          ]
+        },
+        {
+          "name": "Agriculture",
+          "values": [
+            1.0552755203659356,
+            0.9633403153504746,
+            1.1312246982365153
+          ]
+        },
+        {
+          "name": "Manufacturing",
+          "values": [
+            0.16789786744139165,
+            0.16721110753544252,
+            0.16507618000173108
+          ]
+        }
+      ],
+      "side": [
+        "Estimated diesel use",
+        "Mining: 1.40 \u2192 1.41bn L",
+        "Agriculture: 1.06 \u2192 1.13bn L",
+        "Manufacturing: about 0.17bn L",
+        "Manufacturing covers the energy-balance industry residual, not a complete industrial census."
+      ],
+      "takeaway": "Sector activity produces different demand paths; applying one GDP growth rate would hide these differences.",
+      "source": "Stats SA mining/manufacturing indices and agriculture real GVA; mean 2018\u20132021 fuel intensity. Sector diesel values after 2021 are estimates.",
+      "chartType": "line",
+      "direction": "column",
+      "chartHeading": "Estimated sector diesel demand"
+    },
+    {
+      "page": 7,
+      "title": "Eskom fuel use fell by about 40% in FY2025 as supply performance improved",
+      "kind": "chart",
+      "categories": [
+        "FY2023",
+        "FY2024",
+        "FY2025"
+      ],
+      "series": [
+        {
+          "name": "Eskom diesel + kerosene, bn litres",
+          "values": [
+            0.9375,
+            1.1295,
+            0.6791
+          ]
+        }
+      ],
+      "side": [
+        "Observed utility trend",
+        "FY2024: 1.130bn L",
+        "FY2025: 0.679bn L",
+        "The utility series includes kerosene. Fiscal years end in March."
+      ],
+      "takeaway": "The demand baseline replaces annual power consumption explicitly, so the decline is not hidden in a generic growth rate.",
+      "source": "Eskom Integrated Report 2025 p141; staged source series. 679.1m L diesel + kerosene supersedes the earlier slide\u2019s 677.9m figure for this scope.",
+      "chartType": "bar",
+      "direction": "column",
+      "chartHeading": "Eskom diesel and kerosene use"
+    },
+    {
+      "page": 8,
+      "kind": "chart",
+      "chartType": "bar",
+      "direction": "column",
+      "title": "Further power recovery halves fuel demand to 0.54bn litres in the 2030 base case",
+      "categories": [
+        "2025 estimate",
+        "2030 base",
+        "2030 lower use",
+        "2030 unchanged use"
+      ],
+      "series": [
+        {
+          "name": "Utility and private power",
+          "values": [
+            1.08432,
+            0.54216,
+            0.37951199999999996,
+            1.08432
+          ]
+        }
+      ],
+      "chartHeading": "Power fuel demand across scenarios",
+      "side": [
+        "Base case and sensitivities",
+        "2025 estimate: 1.08bn L, including 0.20bn L assumed private backup.",
+        "Base: 50% retained in 2030; a 0.54bn L reduction.",
+        "Lower-use case: 35% retained. Unchanged-use case: 100% retained."
+      ],
+      "takeaway": "Improved electricity supply lowers peaking and backup fuel use, even where transport and industrial activity continue to grow.",
+      "source": "Analytical workbook v02: calculated power baseline and registered 2030 retention assumptions. Estimated utility/private scope includes FY proxies and IPP conversion. Scenario endpoints, not forecasts of annual dispatch."
+    },
+    {
+      "page": 9,
+      "title": "Road still carries most reported freight despite the recent recovery in rail volumes",
+      "kind": "chart",
+      "categories": [
+        "2024",
+        "2025"
+      ],
+      "series": [
+        {
+          "name": "Road, million tonnes",
+          "values": [
+            979.798,
+            976.468
+          ]
+        },
+        {
+          "name": "Rail, million tonnes",
+          "values": [
+            160.745,
+            168.263
+          ]
+        }
+      ],
+      "side": [
+        "Reported freight",
+        "Road: 979.8 \u2192 976.5m tonnes",
+        "Rail: 160.7 \u2192 168.3m tonnes",
+        "Tonnes measure payload, not tonne-kilometres or directly displaced diesel."
+      ],
+      "takeaway": "Rail recovery changes fuel demand through eligible freight, distance, truck efficiency and the rail traction mix.",
+      "source": "Stats SA P7162 December 2025 p7; all reported freight. Analytical workbook v02, Evidence.",
+      "chartType": "bar",
+      "direction": "column",
+      "chartHeading": "Reported road and rail freight"
+    },
+    {
+      "page": 10,
+      "title": "A 7.5% shift of road-freight activity to rail saves 0.33bn litres in the base case",
+      "kind": "table",
+      "headers": [
+        "2030 case",
+        "Road-freight shift",
+        "Net diesel reduction"
+      ],
+      "rows": [
+        [
+          "Low imports",
+          "15.0%",
+          "0.62bn litres"
+        ],
+        [
+          "Base",
+          "7.5%",
+          "0.33bn litres"
+        ],
+        [
+          "High imports",
+          "2.5%",
+          "0.12bn litres"
+        ],
+        [
+          "Calculation order",
+          "Activity \u2192 efficiency \u2192 modal shift",
+          "10% diesel rebound allowance for rail"
+        ]
+      ],
+      "takeaway": "These shifts apply to road-freight activity, not the entire diesel market; sector demand and power remain separate.",
+      "source": "Analytical workbook v02, Driver bridge and scenario assumptions. Shift interpreted as freight tonne-km share. Distances and eligibility remain assumed; cases also vary growth and efficiency.",
+      "widths": [
+        350,
+        310,
+        458
+      ],
+      "font": 20
+    },
+    {
+      "page": 11,
+      "title": "The 5.8bn-litre production assumption leaves a gross import requirement of about 16.7bn litres",
+      "kind": "table",
+      "headers": [
+        "2025 national balance",
+        "bn litres",
+        "Basis"
+      ],
+      "rows": [
+        [
+          "Demand",
+          "20.99",
+          "Estimated from the 2023 sales baseline"
+        ],
+        [
+          "Domestic production",
+          "5.80",
+          "User-directed national planning assumption"
+        ],
+        [
+          "Gross imports",
+          "16.70",
+          "SARS recorded customs litres"
+        ],
+        [
+          "Exports",
+          "1.55",
+          "SARS recorded customs litres"
+        ],
+        [
+          "Production + net imports",
+          "20.95",
+          "Availability before stock / statistical differences"
+        ],
+        [
+          "Availability less demand",
+          "-0.03",
+          "Aggregate near-balance; product differences remain"
+        ]
+      ],
+      "takeaway": "5.8bn litres sets the planning case. Aggregate closure does not validate domestic output or its petrol/diesel split.",
+      "source": "Analytical workbook v02, Balance and Supply assumption. User direction 11 October 2026. Original plant-based estimate 10.23bn L retained in appendix.",
+      "widths": [
+        475,
+        170,
+        473
+      ],
+      "font": 18
+    },
+    {
+      "page": 12,
+      "title": "Refinery recovery is the largest downside risk to the import requirement",
+      "kind": "table",
+      "headers": [
+        "Supply lever",
+        "Base case",
+        "Low-import sensitivity"
+      ],
+      "rows": [
+        [
+          "Operating domestic supply",
+          "5.8bn L through 2030",
+          "15% increase in the national planning volume"
+        ],
+        [
+          "SAPREF",
+          "No refining restart through 2030",
+          "Assumed 2029 start; 65% utilisation after a two-year ramp"
+        ],
+        [
+          "PetroSA / Mossel Bay",
+          "No refining restart through 2030",
+          "Assumed 2029 start; 50% utilisation after a two-year ramp"
+        ],
+        [
+          "Combined restart contribution",
+          "Zero",
+          "5.67bn L petrol/diesel in 2030"
+        ]
+      ],
+      "takeaway": "Restart dates and ramp-up settings are scenario assumptions. Import-terminal operations can compete before refining resumes.",
+      "source": "Registered scenario assumptions; DR08 refinery evidence. Capacity inputs: SAPREF 180kb/d, PetroSA 45kb/d; 70% petrol/diesel yield in restart sensitivities. Dates are not project commitments.",
+      "widths": [
+        310,
+        310,
+        498
+      ],
+      "font": 18
+    },
+    {
+      "page": 13,
+      "title": "Base-case imports remain near 16.6bn litres; refinery recovery creates a much lower outcome",
+      "kind": "chart",
+      "categories": [
+        "2025",
+        "2026",
+        "2027",
+        "2028",
+        "2029",
+        "2030"
+      ],
+      "series": [
+        {
+          "name": "Low imports",
+          "values": [
+            16.73585087316524,
+            16.16498508985107,
+            15.598364564224843,
+            15.035935275367054,
+            11.644311431365011,
+            8.256772830096688
+          ]
+        },
+        {
+          "name": "Base",
+          "values": [
+            16.73585087316524,
+            16.708035906836596,
+            16.681037530238367,
+            16.654869309593153,
+            16.629545036631914,
+            16.60507873215917
+          ]
+        },
+        {
+          "name": "High imports",
+          "values": [
+            16.73585087316524,
+            17.308293621173334,
+            17.888840628019732,
+            18.477659851445317,
+            19.07492280431642,
+            19.6808046315979
+          ]
+        }
+      ],
+      "side": [
+        "2030 gross import need",
+        "Low imports: 8.26bn L",
+        "Base: 16.61bn L",
+        "High imports: 19.68bn L",
+        "Cases are sensitivities, not assigned probabilities."
+      ],
+      "takeaway": "The base case balances activity growth against efficiency, rail and power reductions; supply assumptions drive the widest spread.",
+      "source": "Analytical workbook v02, Scenarios. Demand-implied gross imports = demand \u2212 domestic supply + 2025 exports. Zero stock change; 5.8bn L directed opening supply.",
+      "chartType": "line",
+      "direction": "column",
+      "chartHeading": "Gross import requirement, 2025\u20132030"
+    },
+    {
+      "page": 14,
+      "title": "Matola and Walvis Bay provide competing route options for inland supply",
+      "kind": "table",
+      "headers": [
+        "Node",
+        "Evidence",
+        "Implication for South African fuel routes"
+      ],
+      "rows": [
+        [
+          "Galp/IPG Matola",
+          "60,000m\u00b3 petrol/diesel storage; opened 2020",
+          "Existing import and distribution infrastructure"
+        ],
+        [
+          "Petromoc L\u00edngamo / Matola",
+          "390,000m\u00b3 across liquid fuels",
+          "Broader storage base; product allocation and overlap need confirmation"
+        ],
+        [
+          "Beira, Nacala and Pemba",
+          "Existing central / northern logistics nodes",
+          "Regional supply; no additional SA flow assigned in the base case"
+        ],
+        [
+          "Temane PSA",
+          "Light oil, gas and LPG; production began December 2025",
+          "No direct finished petrol/diesel output credited"
+        ],
+        [
+          "Komatipoort recorded imports",
+          "0.303bn L in 2022 \u2192 0.086bn L in 2025",
+          "Current cross-border flow is far smaller than gross storage suggests"
+        ],
+        [
+          "Walvis Bay",
+          "Alternative route identified in HG\u2019s framing",
+          "Test delivered cost, reliability and customer access; no diversion volume assigned"
+        ]
+      ],
+      "takeaway": "Matola has quantified infrastructure evidence; Walvis Bay remains a route sensitivity requiring comparable cost and access evidence.",
+      "source": "Galp Matola announcement (3 Dec 2020); Petromoc logistics; Sasol Mozambique operations; SARS customs. URLs retained in notes / workbook. Walvis Bay: HG supplied storyboard, 6 October 2026; qualitative route sensitivity only.",
+      "widths": [
+        280,
+        380,
+        458
+      ],
+      "font": 16
+    },
+    {
+      "page": 15,
+      "title": "Matola needs a landed-price or service advantage to offset border and logistics costs",
+      "kind": "table",
+      "headers": [
+        "Route sensitivity",
+        "Result",
+        "Assumptions behind the result"
+      ],
+      "rows": [
+        [
+          "Durban \u2192 same inland destination",
+          "R0.95 per litre logistics",
+          "600km one way; round trip; R25/truck-km; 40,000L payload"
+        ],
+        [
+          "Matola \u2192 same inland destination",
+          "R1.14 per litre logistics",
+          "550km one way; terminal and border costs; one-day delay"
+        ],
+        [
+          "Matola premium",
+          "R0.19 per litre",
+          "Required landed-product discount under these illustrative costs"
+        ],
+        [
+          "Border-delay sensitivity",
+          "R0.09\u2013R0.40 per litre premium",
+          "Zero to three delay days"
+        ],
+        [
+          "Base incremental Mozambique flow",
+          "0.20bn L by 2030",
+          "About 15 additional loaded trucks/day over 330 days"
+        ]
+      ],
+      "takeaway": "Mozambique diversion changes the gateway serving demand. It does not reduce South Africa\u2019s national import requirement.",
+      "source": "Analytical workbook v02, Mozambique. Distances, tariffs, border charges, financing and allocation are authored sensitivities, not carrier quotes or confirmed access.",
+      "widths": [
+        350,
+        300,
+        468
+      ],
+      "font": 18
+    },
+    {
+      "page": 16,
+      "title": "Vopak\u2019s capture depends on the accessible share of Durban imports",
+      "kind": "table",
+      "headers": [
+        "Market / flow measure",
+        "Annual volume",
+        "Meaning for Vopak"
+      ],
+      "rows": [
+        [
+          "National demand, 2025 estimate",
+          "20.99bn litres",
+          "Total consumption context"
+        ],
+        [
+          "National gross imports, 2025",
+          "16.70bn litres",
+          "All recorded import gateways"
+        ],
+        [
+          "Durban customs imports, 2025",
+          "13.16bn litres",
+          "Gateway proxy before customer and route allocation"
+        ],
+        [
+          "Illustrative Durban capture",
+          "2.63bn litres",
+          "20% of Durban gateway volume; no contracted share inferred"
+        ],
+        [
+          "Illustrative onward Lesedi flow",
+          "1.32bn litres",
+          "50% of captured Durban flow; counted within the same fuel volume"
+        ]
+      ],
+      "takeaway": "The illustrative unique flow is 2.63bn litres. Adding Lesedi would double-count fuel handled at both sites.",
+      "source": "Registered market_review.yaml and market_review.json, 10 October. Capture is total conditional flow, not incremental sales; domestic and other-terminal Lesedi receipts are outside this screen.",
+      "widths": [
+        400,
+        245,
+        473
+      ],
+      "font": 18
+    },
+    {
+      "page": 17,
+      "title": "The illustrative capture case fits the tank-turn screen, making usable capacity the next test",
+      "kind": "table",
+      "headers": [
+        "Site",
+        "Illustrative flow\nbn L/year",
+        "Handling screen\nbn L/year",
+        "Operating basis"
+      ],
+      "rows": [
+        [
+          "Durban",
+          "2.63",
+          "3.50",
+          "146,000m\u00b3 estimated working subset; two turns/month"
+        ],
+        [
+          "Lesedi",
+          "1.32",
+          "2.98",
+          "124,000m\u00b3 working capacity, partly estimated; two turns/month"
+        ],
+        [
+          "Investment test",
+          "Incremental contracts",
+          "Actual constraint",
+          "Receipt, product segregation, dispatch, pipeline access and peak demand"
+        ]
+      ],
+      "takeaway": "Working-tank arithmetic screens feasibility. Engineering limits and current customer flows determine actual headroom.",
+      "source": "Registered terminal_site_assumptions.csv and market_review.json. Durban working subset is not the full terminal; access, peaks and current throughput remain open.",
+      "widths": [
+        210,
+        230,
+        230,
+        448
+      ],
+      "font": 19
+    },
+    {
+      "page": 18,
+      "title": "The market supports an import platform; customer capture and capacity constraints govern investment",
+      "kind": "table",
+      "headers": [
+        "Conclusion",
+        "Evidence from this story",
+        "Decision implication"
+      ],
+      "rows": [
+        [
+          "A substantial demand base",
+          "2025 estimated demand of 21.0bn litres",
+          "Prioritise identifiable customer segments and destinations"
+        ],
+        [
+          "Base imports remain substantial",
+          "About 16.6bn litres in 2030 under the 5.8bn supply case",
+          "Plan for ongoing imports; retain refinery sensitivities"
+        ],
+        [
+          "Gateways compete for the same fuel",
+          "Mozambique base diversion of 0.20bn L is a route assumption",
+          "Validate delivered cost, service and customer access"
+        ],
+        [
+          "Expansion follows incremental capture",
+          "Illustrative 2.63bn L unique flow fits the tank-turn screen",
+          "Secure additional volumes, prove the bottleneck, then compare improvement and expansion returns"
+        ]
+      ],
+      "takeaway": "Next decisions: review the product balance, obtain route quotes and customer commitments, and establish usable capacity at both sites.",
+      "source": "2025 analytical workbook v02: registered demand assumptions and user-directed 5.8bn L domestic production case. Estimates are not reported actuals.",
+      "widths": [
+        305,
+        370,
+        443
+      ],
+      "font": 18
+    },
+    {
+      "page": 20,
+      "title": "The national supply assumption closes the total balance but leaves the product mix unresolved",
+      "kind": "table",
+      "headers": [
+        "2025 measure",
+        "Petrol bn L",
+        "Diesel bn L",
+        "Total bn L"
+      ],
+      "rows": [
+        [
+          "2025 demand",
+          "8.86",
+          "12.13",
+          "20.99"
+        ],
+        [
+          "Domestic production",
+          "3.20",
+          "2.60",
+          "5.80"
+        ],
+        [
+          "Gross customs imports",
+          "4.45",
+          "12.25",
+          "16.70"
+        ],
+        [
+          "Customs exports",
+          "0.80",
+          "0.75",
+          "1.55"
+        ],
+        [
+          "Supply plus net imports",
+          "6.85",
+          "14.10",
+          "20.95"
+        ],
+        [
+          "Unexplained availability less demand",
+          "-2.00",
+          "1.97",
+          "-0.03"
+        ]
+      ],
+      "takeaway": "The 5.8bn L override uses the original estimated production mix. Offsetting product differences remain visible; no product allocation is claimed as verified.",
+      "source": "Analytical workbook v02, Supply assumption and Balance. Original plant estimate: Secunda 3.95, Natref 2.37, Astron 3.91bn L; 10.23bn total. These do not govern the directed case.",
+      "widths": [
+        520,
+        199,
+        199,
+        200
+      ],
+      "font": 18
+    },
+    {
+      "page": 21,
+      "title": "Efficiency offsets activity growth in the petrol baseline",
+      "kind": "table",
+      "headers": [
+        "Demand component",
+        "Assumption / result",
+        "How it enters the estimate"
+      ],
+      "rows": [
+        [
+          "Petrol activity",
+          "+0.5% per year in 2024\u20132025",
+          "More vehicle use supports consumption"
+        ],
+        [
+          "Petrol fuel intensity",
+          "\u22121.5% per year in 2024\u20132025",
+          "A combined efficiency / fleet-mix assumption reduces fuel per unit of activity"
+        ],
+        [
+          "Petrol demand",
+          "9.04bn L in 2023 \u2192 8.86bn L in 2025",
+          "Compounding activity and intensity yields a modest decline"
+        ],
+        [
+          "2030 road outlook",
+          "Base: 1% annual efficiency improvement",
+          "Applied after activity growth; rail displacement is then applied to freight only"
+        ]
+      ],
+      "takeaway": "The assumptions are explicit and editable; EV uptake is not counted again as a separate reduction.",
+      "source": "Department 2023 sales; analytical workbook v02, Assumptions and Demand history. Activity and efficiency settings are authored planning assumptions.",
+      "widths": [
+        260,
+        360,
+        498
+      ],
+      "font": 19
+    },
+    {
+      "page": 22,
+      "title": "Our 2025 baseline is 21.0bn litres, with road use accounting for most demand",
+      "kind": "table",
+      "headers": [
+        "Demand segment",
+        "2025 estimate\nbn litres",
+        "Change since 2023\nbn litres"
+      ],
+      "rows": [
+        [
+          "Petrol road use",
+          "8.59",
+          "-0.18"
+        ],
+        [
+          "Mining",
+          "1.41",
+          "0.01"
+        ],
+        [
+          "Manufacturing",
+          "0.17",
+          "0.00"
+        ],
+        [
+          "Agriculture",
+          "1.13",
+          "0.08"
+        ],
+        [
+          "Utility and private power",
+          "1.08",
+          "-0.99"
+        ],
+        [
+          "Road freight diesel",
+          "4.82",
+          "-0.02"
+        ],
+        [
+          "Other road diesel",
+          "1.61",
+          "-0.01"
+        ],
+        [
+          "Other petrol",
+          "0.27",
+          "-0.01"
+        ],
+        [
+          "Other diesel / unallocated",
+          "1.91",
+          "0.16"
+        ]
+      ],
+      "takeaway": "Petrol: 8.86bn L. Diesel: 12.13bn L. Total demand falls from 21.94bn L in 2023 to an estimated 20.99bn L in 2025.",
+      "source": "Department sales through 2023; energy balances and Stats SA activity; Eskom/IPP evidence. All 2025 segment allocations are estimates; other diesel retains an explicit residual.",
+      "widths": [
+        610,
+        235,
+        273
+      ],
+      "font": 17
+    },
+    {
+      "page": 23,
+      "title": "The conclusions are traceable to sources and a small set of explicit planning assumptions",
+      "kind": "table",
+      "headers": [
+        "Evidence / assumption",
+        "Used on pages",
+        "Basis / next validation"
+      ],
+      "rows": [
+        [
+          "National sales and sector activity",
+          "3\u20136, 21\u201322",
+          "Department sales; energy balances; Stats SA. Manish: sales coverage and segment boundaries"
+        ],
+        [
+          "Power and freight",
+          "7\u201310",
+          "Eskom / IPP and Stats SA. Nigel: backup demand, eligible rail shift and efficiency"
+        ],
+        [
+          "Domestic supply and imports",
+          "11\u201313, 20",
+          "5.8bn L user-directed supply; SARS trade. Manish: product-level reconciliation"
+        ],
+        [
+          "Mozambique infrastructure and costs",
+          "14\u201315",
+          "Operator disclosures; authored cost sensitivities. Nigel: comparable quotes and access"
+        ],
+        [
+          "Vopak capture and handling",
+          "16\u201318",
+          "Registered illustrative capture and working tanks. Vopak/Nigel: contracts and operating limits"
+        ]
+      ],
+      "takeaway": "Planning assumptions remain editable in workbook v02. Source observations, estimates and sensitivities retain separate labels.",
+      "source": "Source register: REG-SA-ANALYTICS-202510 and REG-SA-STORY-CASE-2025. Exception EXC-SA-ANALYTICS-202510; review before external use, expiry 12 November 2026.",
+      "widths": [
+        330,
+        150,
+        638
+      ],
+      "font": 17
+    }
+  ],
+  "core_pages": 18,
+  "total_pages": 23,
+  "hg_page": 19
+}

@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-10",
+  "status": "provisional screening, not forecast or market-share evidence",
+  "years": {
+    "trade_year": 2025,
+    "national_sales_year": 2023,
+    "provincial_sales_year": 2022
+  },
+  "national_sales": {
+    "petrol": 9.036950113492,
+    "diesel": 12.907499965808,
+    "total": 21.9444500793
+  },
+  "gross_imports": {
+    "petrol": 4.45347117815,
+    "diesel": 12.24872026207,
+    "total": 16.70219144022
+  },
+  "exports": {
+    "petrol": 0.801762466,
+    "diesel": 0.74670021007,
+    "total": 1.54846267607
+  },
+  "net_imports": {
+    "petrol": 3.65170871215,
+    "diesel": 11.502020052,
+    "total": 15.153728764149998
+  },
+  "durban_customs": {
+    "petrol": 4.228979739,
+    "diesel": 8.93153544064,
+    "total": 13.160515179639999
+  },
+  "durban_import_share_pct": 78.79514030684976,
+  "catchments": {
+    "KZN": {
+      "petrol": 1.498937893394999,
+      "diesel": 2.7855548025030004,
+      "total": 4.284492695897999
+    },
+    "Gauteng": {
+      "petrol": 3.530440256933996,
+      "diesel": 3.2789905019619985,
+      "total": 6.809430758895994
+    },
+    "Six inland provinces": {
+      "petrol": 5.551794117377994,
+      "diesel": 6.399649786728995,
+      "total": 11.951443904106988
+    }
+  },
+  "sites": {
+    "Durban": {
+      "working_m3": 146000.0,
+      "estimated_component_m3": 146000.0,
+      "monthly_turns": {
+        "low": 1.0,
+        "base": 2.0,
+        "high": 3.0
+      },
+      "handling_bn_l": {
+        "low": 1.752,
+        "base": 3.504,
+        "high": 5.256
+      }
+    },
+    "Lesedi": {
+      "working_m3": 124000.0,
+      "estimated_component_m3": 36000.0,
+      "monthly_turns": {
+        "low": 1.0,
+        "base": 2.0,
+        "high": 2.4
+      },
+      "handling_bn_l": {
+        "low": 1.488,
+        "base": 2.976,
+        "high": 3.5712
+      }
+    }
+  },
+  "pipeline": {
+    "fiscal_year_ending_march": 2025,
+    "mpp_usage_million_litres_week": 105,
+    "mpp_capacity_million_litres_week": 148,
+    "annualisation_weeks": 52,
+    "system_total_petroleum_million_litres": 13372,
+    "system_refined_million_litres": 8619,
+    "usage_annualised_bn_l": 5.46,
+    "capacity_annualised_bn_l": 7.696,
+    "utilisation_pct": 70.94594594594594,
+    "arithmetic_unused_bn_l": 2.236
+  },
+  "scenarios": [
+    {
+      "case": "Low",
+      "gateway_capture_fraction": 0.1,
+      "lesedi_routing_fraction": 0.5,
+      "requested_durban_bn_l": 1.316051517964,
+      "durban_bn_l": 1.316051517964,
+      "lesedi_bn_l": 0.658025758982,
+      "unique_bn_l": 1.316051517964,
+      "gross_site_movements_bn_l": 1.974077276946,
+      "tank_screen_reduction_bn_l": 0.0
+    },
+    {
+      "case": "Base",
+      "gateway_capture_fraction": 0.2,
+      "lesedi_routing_fraction": 0.5,
+      "requested_durban_bn_l": 2.632103035928,
+      "durban_bn_l": 2.632103035928,
+      "lesedi_bn_l": 1.316051517964,
+      "unique_bn_l": 2.632103035928,
+      "gross_site_movements_bn_l": 3.948154553892,
+      "tank_screen_reduction_bn_l": 0.0
+    },
+    {
+      "case": "High",
+      "gateway_capture_fraction": 0.3,
+      "lesedi_routing_fraction": 0.5,
+      "requested_durban_bn_l": 3.9481545538919995,
+      "durban_bn_l": 3.504,
+      "lesedi_bn_l": 1.752,
+      "unique_bn_l": 3.504,
+      "gross_site_movements_bn_l": 5.256,
+      "tank_screen_reduction_bn_l": 0.44415455389199954
+    }
+  ],
+  "input_sha256": {
+    "market_review.yaml": "320639dd7d61ffd59f230b501624126fd4ba3e33cb690a1e24a0dcc1d359df2a",
+    "timeseries\\fuel_trade_sars_by_office.csv": "27d2301b731499cffb28b86091d6af27e4ab2fc90d05b445fe2ddfbfd76957e2",
+    "timeseries\\fuel_sales_department.csv": "8444d4f55f9634eb1cc3b024f70520fe941903ce9473be14659252b5b7abf266",
+    "timeseries\\fuel_sales_department_by_province.csv": "92d1d57a2e4b73d98fad393bb9226770868057b1ab9637b94e329a76ac2c0259",
+    "infrastructure\\terminal_site_assumptions.csv": "cdce4f98a2ebab78bf79915a9113e94b9a58485cb07eb77cd973776b1db6348e"
+  },
+  "limitations": [
+    "Gateway customs office is a port proxy, not measured terminal movements.",
+    "Capture fractions and the 50% onward routing assumption are authored sensitivities, not empirical bounds.",
+    "Existing base turns remain fixed in capture cases; route access and customer allocation are conditions, not validated constraints.",
+    "Lesedi other-terminal and domestic receipts are excluded. This is a single imported chain, not the full Vopak portfolio.",
+    "No existing throughput baseline is available, so these are total scenario volumes, not incremental volumes.",
+    "Working tankage is partly estimated. Tank arithmetic is not a guaranteed engineering ceiling.",
+    "Fiscal pipeline measures and calendar customs measures retain separate scopes. No road/rail flow residual is calculated."
+  ]
+}

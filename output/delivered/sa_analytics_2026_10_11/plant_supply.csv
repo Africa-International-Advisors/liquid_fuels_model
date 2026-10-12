@@ -1,0 +1,8 @@
+Plant,All products bn L,Petrol yield,Diesel yield,Petrol bn L,Diesel bn L,Total P+D bn L,Basis
+Secunda,4.388049340012801,0.5850000000000001,0.315,2.5670088639074886,1.3822355421040322,3.9492444060115206,FY2025 all-refined-products proxy for calendar 2025; excludes chemical output
+Natref,3.6723966615989947,0.305,0.34,1.1200809817876933,1.2486148649436584,2.3686958467313515,FY2025 share basis only. FY2026 includes above-share output and is not mechanically grossed up.
+Astron,4.8849085976306,0.4,0.4,1.9539634390522402,1.9539634390522402,3.9079268781044805,Calendar 2025 billion Btu converted to bn litres; energy density and product split assumed
+SAPREF,0,0,0,0,0,0,No refining output in 2025; terminal activity is not production
+PetroSA,0,0,0,0,0,0,No refining output in 2025; terminal activity is not production
+Enref,0,0,0,0,0,0,No refining output in 2025; terminal activity is not production
+Total,12.945354599242396,,,5.6410532847474215,4.58481384609993,10.225867130847352,"Petrol/diesel subset only; plant production is estimated, not national reported output"

@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "reference": "pptx/templates/Vopak_Approved_Exhibit_Reference_v1.pptx",
+  "reference_slide": 7,
+  "sha256": "7f134d6ebf843a8286279b89171b75e500edb92e6a66dc2d23a7557cb5262763",
+  "layout_name": "Vopak Exhibit + Commentary v1",
+  "exhibit_pages": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "font": "Lato",
+  "navigation": [
+    "1 Overview",
+    "2 Market baseline",
+    "3 Market changes",
+    "4 Vopak outlook"
+  ],
+  "panel_geometry_css_px": {
+    "left_x": 48,
+    "left_width": 676.8,
+    "right_x": 779.52,
+    "right_width": 386.88,
+    "rule_y": 204.48,
+    "divider_x": 756.48
+  },
+  "policy": "Use native approved components. Do not recreate from memory. Preserve chart data and story.",
+  "deck_profiles": {
+    "evidence_v08": {
+      "navigation_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "exhibit_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14
+      ]
+    },
+    "evidence_v09": {
+      "navigation_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "exhibit_pages": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14
+      ]
+    }
+  }
+}

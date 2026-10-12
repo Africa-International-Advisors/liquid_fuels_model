@@ -1,0 +1,16 @@
+Year,Petrol bn L,Diesel bn L,Total bn L,Basis
+2013,11.439925235,12.141281548,23.581206783,Department reported sales; national petrol and diesel
+2014,10.890207679,12.615023359,23.505231037999998,Department reported sales; national petrol and diesel
+2015,11.475709420318001,13.52013925195,24.995848672268004,Department reported sales; national petrol and diesel
+2016,11.462252466686001,12.082374038422001,23.544626505108003,Department reported sales; national petrol and diesel
+2017,11.174082980369999,12.147245167188997,23.321328147558994,Department reported sales; national petrol and diesel
+2018,11.141630546702,12.538744325998,23.6803748727,Department reported sales; national petrol and diesel
+2019,10.773208065062,12.908631232217,23.681839297278998,Department reported sales; national petrol and diesel
+2020,8.761470961496,11.689957759296,20.451428720792002,Department reported sales; national petrol and diesel
+2021,9.301584227683001,12.945782750434999,22.247366978118002,Department reported sales; national petrol and diesel
+2022,9.184869915573,12.717326319019001,21.902196234592,Department reported sales; national petrol and diesel
+2023,9.036950113492,12.907499965808,21.9444500793,Department reported sales; national petrol and diesel
+2024,8.945902841098569,13.13520616546608,22.08110900656465,Estimate from Department 2023 anchor; power FY proxy; explicit activity and efficiency assumptions
+2025,8.855772869974501,12.131615327120741,20.987388197095243,Estimate from Department 2023 anchor; power FY proxy; explicit activity and efficiency assumptions
+2024 FIASA,9.029,11.734,20.762999999999998,Alternative source; not spliced into the Department series
+2025 alternative,8.938032824999999,10.7163971,19.654429925,Same drivers applied to 2024 FIASA anchor; source-choice sensitivity

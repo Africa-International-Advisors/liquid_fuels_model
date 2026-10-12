@@ -48,3 +48,17 @@ requirement above to update the canon before adding a top-level folder. Keep thi
 exception local. The viewer reads only its allowlisted Markdown sources; do not add
 model execution, assumption editing, a database or a Python API without a new request.
 Legacy Streamlit files are archived, not a second active application.
+
+## Approved Vopak presentation layout
+
+For Vopak exhibit/commentary slides, use `pptx/brand_configs/vopak_layout.json`
+and the immutable `pptx/templates/Vopak_Approved_Exhibit_Reference_v1.pptx`
+(slide 7). The named layout is `Vopak Exhibit + Commentary v1`.
+Reuse the native black panel headings, exact panel split, horizontal rules,
+circle/arrow divider and numbered navigation; do not recreate them from memory
+or reuse the superseded blue-heading evidence layout.
+The project extension is `pptx/scripts/lock_vopak_layout.py`; workflow and scope
+are documented in `pptx/brand_configs/VOPAK_LAYOUT.md`.
+Run its layout check and inspect rendered slides before delivery. Preserve
+chart workbooks, approved storyline, native tables, links and previous vintages.
+Changing the standard requires explicit user approval and a new contract version.
