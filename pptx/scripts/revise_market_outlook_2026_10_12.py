@@ -11,7 +11,7 @@ Slide 12  capture figure made consistent with slides 13 and 15
 Slide 13  sizing table becomes a funnel drawn to scale
 Slide 14  baseline demand line added to the import chart
 Slide 15  capture is 20% of KwaZulu-Natal plus Gauteng sales
-All yellow review notes are removed; one new note on slide 9 asks Nigel for the source.
+All yellow review notes are removed; two new ones are added: slide 9 asks Nigel for the source, slide 14 says check with Nigel.
 
 Chart values are read from the registered files and delivered analytics outputs, with checks that stop the build
 if a figure no longer matches. The only typed-in series is slide 9's, measured from the screenshot.
@@ -538,6 +538,14 @@ note9 = [sh for sh in prs.slides[8].shapes if sh._element is src_note][0]
 note9.name = "Review note"
 set_single(note9, "Get source from Nigel", "l/100km")
 note9.left, note9.top = Inches(10.42), Inches(0.46)
+
+note14 = copy.deepcopy(src_note)                               # second review note, slide 14 (user instruction, 12 October 2026)
+tree14 = prs.slides[13].shapes._spTree
+tree14.append(note14)
+note14.xpath(".//p:cNvPr")[0].set("id", str(max(int(i) for i in tree14.xpath(".//p:cNvPr/@id")) + 1))
+n14 = [sh for sh in prs.slides[13].shapes if sh._element is note14][0]
+set_single(n14, "Check with Nigel", "Get source from Nigel")
+n14.left, n14.top = Inches(10.42), Inches(0.46)
 
 prs.save(OUT)
 print("saved", OUT)
