@@ -9,7 +9,7 @@ Slide 9   the pasted screenshot redrawn in the pack's format; ITS SOURCE IS NOT 
 Slide 11  corridor map with the NMPP trunk line (see add_nmpp_to_corridor_map.py)
 Slide 12  capture figure made consistent with slides 13 and 15
 Slide 13  sizing table becomes a funnel drawn to scale
-Slide 14  baseline demand line added to the import chart
+Slide 14  demand beside imports: two charts, each with the low, base and high cases
 Slide 15  capture is 20% of KwaZulu-Natal plus Gauteng sales
 All yellow review notes are removed; two new ones are added: slide 9 asks Nigel for the source, slide 14 says check with Nigel.
 
@@ -474,46 +474,32 @@ p12b = share12.text_frame.paragraphs[2]
 assert p12b.text == "Lesedi included in Durban flow"
 p12b.runs[0]._r.find(qn("a:t")).text = "20% of KZN and Gauteng sales"
 
-# ---------- slide 14: Nigel's import chart with one line added, baseline demand ----------
-import io
-import openpyxl
-from pptx.enum.dml import MSO_LINE
+# ---------- slide 14: demand beside imports, two charts, each with the low, base and high cases ----------
 sc = {r["Case / year"]: r for r in read_csv(A + "scenarios.csv")}
 yy = [str(y) for y in range(2025, 2031)]
-base_dem = [float(sc[f"Base {y}"]["Demand bn L"]) for y in yy]
-ch14 = shape(14, sid=4).chart
-plot = ch14.plots[0]
-assert list(plot.categories) == yy and len(plot.series) == 3
-for ser_, case in zip(plot.series, ["Low imports", "Base", "High imports"]):          # the chart already holds the analytics values
+cases = [("Low imports", NAVY), ("Base", BLUE), ("High imports", GREY)]
+old14 = shape(14, sid=4).chart.plots[0]
+for ser_, (case, _) in zip(old14.series, cases):                # the chart being replaced holds the same analytics values
     assert all(abs(v - float(sc[f"{case} {y}"]["Gross import need bn L"])) < 5e-3 for v, y in zip(ser_.values, yy)), case
-sers = ch14._chartSpace.xpath("c:chart/c:plotArea/c:lineChart/c:ser")
-new = copy.deepcopy(sers[-1])
-new.xpath("c:idx")[0].set("val", "3")
-new.xpath("c:order")[0].set("val", "3")
-new.xpath("c:tx/c:v")[0].text = "Base demand"
-for u in new.iter("{http://schemas.microsoft.com/office/drawing/2014/chart}uniqueId"):
-    u.set("val", "{00000003-3D57-4CA9-AD2A-3657A817E3C7}")
-new.xpath("c:val/c:numRef/c:f")[0].text = "'Chart Data'!$E$2:$E$7"
-for pt, v in zip(new.xpath("c:val/c:numRef/c:numCache/c:pt"), base_dem):
-    pt.xpath("c:v")[0].text = repr(v)
-sers[-1].addnext(new)
-added = ch14.plots[0].series[3]
-added.format.line.color.rgb = rgb("404040")
-added.format.line.width = Emu(23813)
-added.format.line.dash_style = MSO_LINE.DASH
-wbpart = ch14.part.chart_workbook.xlsx_part
-wb = openpyxl.load_workbook(io.BytesIO(wbpart.blob))
-ws = wb.worksheets[0]
-ws["E1"] = "Base demand"
-for i, v in enumerate(base_dem):
-    ws.cell(row=2 + i, column=5, value=v)
-buf = io.BytesIO()
-wb.save(buf)
-ch14.part.chart_workbook.update_from_xlsx_blob(buf.getvalue())
-set_single(shape(14, "Vopak exhibit left heading"), "Gross import requirement and baseline demand, 2025–2030", "Gross import requirement, 2025–2030")
+remove(14, 4)
+for col, left in [("Demand bn L", 0.50), ("Gross import need bn L", 4.10)]:
+    cd = CategoryChartData(number_format="0.00")
+    cd.categories = yy
+    for name, _ in cases:
+        cd.add_series(name, [float(sc[f"{name} {y}"][col]) for y in yy])
+    ch = add_chart(14, XL_CHART_TYPE.LINE, cd, left, 2.78, 3.45, 3.05)
+    base_style(ch, "0", legend_pt=9)
+    line_series(ch, [c for _, c in cases])
+    ch.value_axis.minimum_scale, ch.value_axis.maximum_scale, ch.value_axis.major_unit = 0, 25, 5
+unit14 = shape(14, "Evidence unit")
+clone(14, unit14, 0.50, 2.50, 3.45, 0.26, "Demand")
+clone(14, unit14, 4.10, 2.50, 3.45, 0.26, "Gross import requirement")
+set_single(shape(14, "Vopak exhibit left heading"), "Demand and gross import requirement, 2025–2030", "Gross import requirement, 2025–2030")
 ins14 = shape(14, "Evidence insights")
+d30 = {n: float(sc[f"{n} 2030"]["Demand bn L"]) for n, _ in cases}
 assert ins14.text_frame.text.startswith("2030 imports: base 16.61bn L")
-set_single(ins14, f"Baseline demand stays near 21bn L ({base_dem[-1]:.2f}bn L in 2030).\n\n" + ins14.text_frame.text)
+set_single(ins14, f"2030 demand: base {d30['Base']:.2f}bn L; low-import case {d30['Low imports']:.2f}bn L; "
+                  f"high-import case {d30['High imports']:.2f}bn L.\n\n" + ins14.text_frame.text)
 remove(14, 9, "Add demand")
 
 # ---------- review notes: all yellow blocks removed; one new note on slide 9 (user instruction, 12 October 2026) ----------
