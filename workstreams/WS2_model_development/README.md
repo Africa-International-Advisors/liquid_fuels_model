@@ -9,6 +9,14 @@ change assumptions merely to force a historical fit.
 Code lives once in `src/lfm/model/` and its adapters; tests live in `tests/`. Record design
 choices here or in cross-cutting `docs/methodology/`, not in a duplicate workstream codebase.
 
+## 14 October: market-of-interest outlook to 2030 (for Nigel's review)
+
+[`output/delivered/moi_outlook_2026_10_14/`](../../output/delivered/moi_outlook_2026_10_14/) holds a separate annual screen for the six
+market-of-interest provinces: `MOI_outlook_model_documentation.docx` (method, assumptions with sources, results, changes from v02 and
+limitations), the two scripts (`s13_2025.py`, `moi_forecast.py`), the starting point and results (JSON, CSV). It starts from 2025
+demand = production + imports − exports, applies GDP (IMF / Treasury / MTDP), petrol price, efficiency, EVs, rail and Avon peaker
+drivers, and reads v02 outputs and repository inputs directly. It is not yet in `src/lfm/`; the changes from v02 are proposals.
+
 ## 11 October: directed production planning case
 
 The [v02 analytical workbook](../../output/delivered/sa_analytics_2026_10_11_v02/SA_Fuel_Analytics_2025_Baseline_2026-10-11_v02.xlsx) applies the user's explicit 5.8bn-litre national production assumption. `assumptions/2026/sa_story_case_2025.yaml` is registered separately; the original plant estimate and v01 are preserved. The original estimated product mix is retained provisionally, leaving offsetting petrol and diesel gaps visible. National near-balance does not validate that allocation. The annual scenario screen uses this case; monthly forecast defaults are unchanged.

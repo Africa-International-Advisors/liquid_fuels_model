@@ -1,3 +1,10 @@
+# 14 October 2026: South Africa market outlook, v1522 (for Nigel's review)
+
+- [Editable PowerPoint, 22 slides](supporting/14102026_South_Africa_Market_Outlook_v1522.pptx)
+- [Market-of-interest outlook model and documentation](../../../output/delivered/moi_outlook_2026_10_14/)
+
+Demand is now production + imports - exports (25.4bn L in 2025); the outlook to 2030 is for the market of interest (pp16, 19, 20).
+
 # Current South Africa delivery — v10
 
 Updated 12 October 2026.

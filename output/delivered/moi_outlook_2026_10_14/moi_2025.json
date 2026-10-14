@@ -1,0 +1,1200 @@
+{
+ "national": {
+  "petrol": 9.292761996897422,
+  "diesel": 16.086833898099933
+ },
+ "imports": {
+  "petrol": 4.45347117815,
+  "diesel": 12.24872026207
+ },
+ "moi": {
+  "petrol": 7.032552371810577,
+  "diesel": 11.173623390484506
+ },
+ "inside": {
+  "petrol": 3.6870898456951817,
+  "diesel": 2.6308504070476904
+ },
+ "need": {
+  "petrol": 3.345462526115395,
+  "diesel": 8.542772983436816
+ },
+ "kzn": {
+  "petrol": 1.5165454948723205,
+  "diesel": 3.5235989309250497
+ },
+ "provinces": {
+  "GP": {
+   "name": "Gauteng",
+   "petrol": 3.5719113448006126,
+   "diesel": 4.147772435439006
+  },
+  "KZN": {
+   "name": "KwaZulu-Natal",
+   "petrol": 1.5165454948723205,
+   "diesel": 3.5235989309250497
+  },
+  "MP": {
+   "name": "Mpumalanga",
+   "petrol": 0.6194577582685151,
+   "diesel": 1.448276388632964
+  },
+  "FS": {
+   "name": "Free State",
+   "petrol": 0.5943587120325791,
+   "diesel": 0.9890184692962487
+  },
+  "NW": {
+   "name": "North West",
+   "petrol": 0.4534205972251749,
+   "diesel": 0.7841532464716229
+  },
+  "LP": {
+   "name": "Limpopo",
+   "petrol": 0.27685846461137487,
+   "diesel": 0.28080391971961527
+  }
+ },
+ "districts": [
+  {
+   "province": "KZN",
+   "district": "Durban",
+   "petrol": 0.7013406313911428,
+   "diesel": 2.2041361654088174
+  },
+  {
+   "province": "GP",
+   "district": "Johannesburg",
+   "petrol": 1.127579244840428,
+   "diesel": 1.7260267204152164
+  },
+  {
+   "province": "GP",
+   "district": "Pretoria",
+   "petrol": 0.6777855529568544,
+   "diesel": 0.7861823385703964
+  },
+  {
+   "province": "GP",
+   "district": "Randburg",
+   "petrol": 0.37648189557441164,
+   "diesel": 0.22700998296356623
+  },
+  {
+   "province": "FS",
+   "district": "Sasolburg",
+   "petrol": 0.2306184632073844,
+   "diesel": 0.28634509938440345
+  },
+  {
+   "province": "KZN",
+   "district": "Pinetown",
+   "petrol": 0.11103264828907987,
+   "diesel": 0.3804734455397214
+  },
+  {
+   "province": "GP",
+   "district": "Kempton Park",
+   "petrol": 0.24753340746640495,
+   "diesel": 0.2033969084942036
+  },
+  {
+   "province": "KZN",
+   "district": "Pietermaritzburg",
+   "petrol": 0.11897736377156382,
+   "diesel": 0.31078997967022337
+  },
+  {
+   "province": "MP",
+   "district": "Middelburg (MP)",
+   "petrol": 0.06557734779464691,
+   "diesel": 0.3545609848207466
+  },
+  {
+   "province": "FS",
+   "district": "Bloemfontein",
+   "petrol": 0.12170390289966154,
+   "diesel": 0.2924645709784247
+  },
+  {
+   "province": "NW",
+   "district": "Klerksdorp",
+   "petrol": 0.1359469725499757,
+   "diesel": 0.25859886755035183
+  },
+  {
+   "province": "MP",
+   "district": "Highveld Ridge",
+   "petrol": 0.15688505947372083,
+   "diesel": 0.233326554567652
+  },
+  {
+   "province": "GP",
+   "district": "Alberton",
+   "petrol": 0.12873531418734294,
+   "diesel": 0.23741843227325604
+  },
+  {
+   "province": "GP",
+   "district": "Germiston",
+   "petrol": 0.14420974909196113,
+   "diesel": 0.1398555157833396
+  },
+  {
+   "province": "NW",
+   "district": "Rustenburg",
+   "petrol": 0.09777173797888267,
+   "diesel": 0.1610379579151536
+  },
+  {
+   "province": "GP",
+   "district": "Vereeniging",
+   "petrol": 0.08251411644820261,
+   "diesel": 0.16699189959072844
+  },
+  {
+   "province": "MP",
+   "district": "Witbank",
+   "petrol": 0.09457403353050181,
+   "diesel": 0.13763163260405292
+  },
+  {
+   "province": "GP",
+   "district": "Krugersdorp",
+   "petrol": 0.08286995279444374,
+   "diesel": 0.14889231080100196
+  },
+  {
+   "province": "FS",
+   "district": "Kroonstad",
+   "petrol": 0.09229012617159583,
+   "diesel": 0.128349991026689
+  },
+  {
+   "province": "GP",
+   "district": "Roodepoort",
+   "petrol": 0.1377989407595907,
+   "diesel": 0.07618532921314444
+  },
+  {
+   "province": "LP",
+   "district": "Polokwane (Pietersburg) (south of tropic of capricorn)",
+   "petrol": 0.08698198777980384,
+   "diesel": 0.09419197860428899
+  },
+  {
+   "province": "KZN",
+   "district": "Inanda",
+   "petrol": 0.11086028408995888,
+   "diesel": 0.06081141391444722
+  },
+  {
+   "province": "GP",
+   "district": "Benoni",
+   "petrol": 0.10863752152358738,
+   "diesel": 0.05907525860545021
+  },
+  {
+   "province": "KZN",
+   "district": "Lower Umfolozi",
+   "petrol": 0.0615369217713365,
+   "diesel": 0.09185455876637846
+  },
+  {
+   "province": "GP",
+   "district": "Boksburg",
+   "petrol": 0.09625091966251573,
+   "diesel": 0.05323924337890532
+  },
+  {
+   "province": "MP",
+   "district": "Nelspruit",
+   "petrol": 0.05828575498125012,
+   "diesel": 0.07586352081908786
+  },
+  {
+   "province": "GP",
+   "district": "Vanderbijlpark",
+   "petrol": 0.06939334414321423,
+   "diesel": 0.062413043486515066
+  },
+  {
+   "province": "NW",
+   "district": "Brits",
+   "petrol": 0.04060152982518451,
+   "diesel": 0.08847404975112433
+  },
+  {
+   "province": "MP",
+   "district": "Volksrust",
+   "petrol": 0.012537112181334596,
+   "diesel": 0.1047178650420831
+  },
+  {
+   "province": "MP",
+   "district": "Standerton",
+   "petrol": 0.012848560852794658,
+   "diesel": 0.10265851526053309
+  },
+  {
+   "province": "MP",
+   "district": "Delmas",
+   "petrol": 0.010475976282746482,
+   "diesel": 0.09649391070681944
+  },
+  {
+   "province": "GP",
+   "district": "Randfontein",
+   "petrol": 0.02817809776718257,
+   "diesel": 0.0787529496396587
+  },
+  {
+   "province": "KZN",
+   "district": "Newcastle",
+   "petrol": 0.04337082767132865,
+   "diesel": 0.05661401431702147
+  },
+  {
+   "province": "KZN",
+   "district": "Lower Tugela",
+   "petrol": 0.044620172182835656,
+   "diesel": 0.046877615019757464
+  },
+  {
+   "province": "GP",
+   "district": "Brakpan",
+   "petrol": 0.05810393582794214,
+   "diesel": 0.028873655228384903
+  },
+  {
+   "province": "GP",
+   "district": "Wonderboom",
+   "petrol": 0.05349886020756312,
+   "diesel": 0.032637147159436955
+  },
+  {
+   "province": "KZN",
+   "district": "Port Shepstone",
+   "petrol": 0.031057367072830327,
+   "diesel": 0.04769921101608909
+  },
+  {
+   "province": "GP",
+   "district": "Springs",
+   "petrol": 0.05009187599295462,
+   "diesel": 0.024514267773698323
+  },
+  {
+   "province": "NW",
+   "district": "Potchefstroom",
+   "petrol": 0.0440297645382018,
+   "diesel": 0.03010117898204244
+  },
+  {
+   "province": "MP",
+   "district": "Piet Retief",
+   "petrol": 0.018148146007639015,
+   "diesel": 0.05575769647073581
+  },
+  {
+   "province": "KZN",
+   "district": "Chatsworth",
+   "petrol": 0.04602712697755401,
+   "diesel": 0.02765422403494091
+  },
+  {
+   "province": "FS",
+   "district": "Welkom",
+   "petrol": 0.03458735475492186,
+   "diesel": 0.03739034009127557
+  },
+  {
+   "province": "MP",
+   "district": "White River",
+   "petrol": 0.033216088086308715,
+   "diesel": 0.038305322489339454
+  },
+  {
+   "province": "NW",
+   "district": "Molopo",
+   "petrol": 0.013688820860099048,
+   "diesel": 0.05654848964853135
+  },
+  {
+   "province": "MP",
+   "district": "Lydenburg",
+   "petrol": 0.021502925058802955,
+   "diesel": 0.046791426615358234
+  },
+  {
+   "province": "KZN",
+   "district": "Mount Currie",
+   "petrol": 0.017517869922043385,
+   "diesel": 0.04454301132889069
+  },
+  {
+   "province": "FS",
+   "district": "Harrismith",
+   "petrol": 0.014963655714023794,
+   "diesel": 0.0433781340747157
+  },
+  {
+   "province": "NW",
+   "district": "Lichtenburg",
+   "petrol": 0.016900605127902375,
+   "diesel": 0.04064599022842259
+  },
+  {
+   "province": "GP",
+   "district": "Bronkhorstspruit",
+   "petrol": 0.019385039683773333,
+   "diesel": 0.03266028477870281
+  },
+  {
+   "province": "FS",
+   "district": "Bethlehem",
+   "petrol": 0.01656243188824864,
+   "diesel": 0.03217892192209553
+  },
+  {
+   "province": "MP",
+   "district": "LETABA",
+   "petrol": 0.019614765485323697,
+   "diesel": 0.0283899677808321
+  },
+  {
+   "province": "KZN",
+   "district": "Kliprivier",
+   "petrol": 0.023499675708067203,
+   "diesel": 0.022833909113839302
+  },
+  {
+   "province": "KZN",
+   "district": "Umzinto",
+   "petrol": 0.02158507485244021,
+   "diesel": 0.02391150153683152
+  },
+  {
+   "province": "NW",
+   "district": "Vryburg (south of 26o30' latitude)",
+   "petrol": 0.011586751630822524,
+   "diesel": 0.032752001836971356
+  },
+  {
+   "province": "LP",
+   "district": "Soutpansberg (central of 29o 30'and 30o 30' longitude)",
+   "petrol": 0.019821648695735068,
+   "diesel": 0.02375161935123721
+  },
+  {
+   "province": "MP",
+   "district": "Ermelo",
+   "petrol": 0.017225550845591797,
+   "diesel": 0.025256021976761068
+  },
+  {
+   "province": "MP",
+   "district": "Belfast",
+   "petrol": 0.005203388307202116,
+   "diesel": 0.03624734255060395
+  },
+  {
+   "province": "GP",
+   "district": "Soshanguve",
+   "petrol": 0.03347716106003428,
+   "diesel": 0.006984035409092268
+  },
+  {
+   "province": "NW",
+   "district": "Odi",
+   "petrol": 0.03364925686905625,
+   "diesel": 0.0064880680238129885
+  },
+  {
+   "province": "MP",
+   "district": "Barberton",
+   "petrol": 0.01685751457109572,
+   "diesel": 0.022747424285159232
+  },
+  {
+   "province": "KZN",
+   "district": "Camperdown",
+   "petrol": 0.01573166430618273,
+   "diesel": 0.02379903814621183
+  },
+  {
+   "province": "FS",
+   "district": "Reitz",
+   "petrol": 0.007271552157666989,
+   "diesel": 0.03202008476440539
+  },
+  {
+   "province": "KZN",
+   "district": "Estcourt",
+   "petrol": 0.016314621754540824,
+   "diesel": 0.0227116228070119
+  },
+  {
+   "province": "LP",
+   "district": "Polokwane (Pietersburg) (north of tropic of capricorn)",
+   "petrol": 0.01894331082871631,
+   "diesel": 0.017020448271649637
+  },
+  {
+   "province": "GP",
+   "district": "Nigel",
+   "petrol": 0.009924390176180943,
+   "diesel": 0.024038603356892736
+  },
+  {
+   "province": "FS",
+   "district": "Koppies",
+   "petrol": 0.003955444030896107,
+   "diesel": 0.02919702630244289
+  },
+  {
+   "province": "KZN",
+   "district": "Vryheid",
+   "petrol": 0.015466580989025829,
+   "diesel": 0.017477153597083524
+  },
+  {
+   "province": "MP",
+   "district": "Bethal",
+   "petrol": 0.012915452312055866,
+   "diesel": 0.019668119360651565
+  },
+  {
+   "province": "NW",
+   "district": "Mankwe",
+   "petrol": 0.005348145511864735,
+   "diesel": 0.027073822435521464
+  },
+  {
+   "province": "KZN",
+   "district": "Umlazi",
+   "petrol": 0.02064798444878069,
+   "diesel": 0.00969048104016015
+  },
+  {
+   "province": "GP",
+   "district": "Westonaria",
+   "petrol": 0.01606288617812756,
+   "diesel": 0.013880617850569503
+  },
+  {
+   "province": "LP",
+   "district": "Thohoyandou (west 31o longitude)",
+   "petrol": 0.01809056177944994,
+   "diesel": 0.011806366068684657
+  },
+  {
+   "province": "FS",
+   "district": "Witsieshoek",
+   "petrol": 0.017962025911948468,
+   "diesel": 0.010595444586953075
+  },
+  {
+   "province": "MP",
+   "district": "Kriel",
+   "petrol": 0.0063284954532560915,
+   "diesel": 0.0221159612366357
+  },
+  {
+   "province": "LP",
+   "district": "Phalaborwa",
+   "petrol": 0.015806192630001,
+   "diesel": 0.012601537640914885
+  },
+  {
+   "province": "FS",
+   "district": "Bothaville",
+   "petrol": 0.0037311453186717482,
+   "diesel": 0.024614234882759056
+  },
+  {
+   "province": "KZN",
+   "district": "Lions River",
+   "petrol": 0.008268700840071735,
+   "diesel": 0.018940446887061594
+  },
+  {
+   "province": "GP",
+   "district": "Oberholzer",
+   "petrol": 0.016366964836262803,
+   "diesel": 0.010732062714795808
+  },
+  {
+   "province": "LP",
+   "district": "Waterberg",
+   "petrol": 0.01142820564681024,
+   "diesel": 0.014142176114639969
+  },
+  {
+   "province": "KZN",
+   "district": "Eshowe",
+   "petrol": 0.012969029276570614,
+   "diesel": 0.012494652885030384
+  },
+  {
+   "province": "LP",
+   "district": "Mokopane (Potgietersrus) (south of tropic of capricorn)",
+   "petrol": 0.014811005779117736,
+   "diesel": 0.009751954640059807
+  },
+  {
+   "province": "LP",
+   "district": "Giyani",
+   "petrol": 0.014369198379128726,
+   "diesel": 0.009725947538226082
+  },
+  {
+   "province": "LP",
+   "district": "Musina (Messina) (East of 30o longitude)",
+   "petrol": 0.008681435468438248,
+   "diesel": 0.013992750820002323
+  },
+  {
+   "province": "NW",
+   "district": "Wolmaranstad",
+   "petrol": 0.0073577844009124664,
+   "diesel": 0.015285165527981578
+  },
+  {
+   "province": "KZN",
+   "district": "Hlabisa",
+   "petrol": 0.007176681679620297,
+   "diesel": 0.013960385272127814
+  },
+  {
+   "province": "LP",
+   "district": "Thabazimbi (east of 27o longitude)",
+   "petrol": 0.008116591741456281,
+   "diesel": 0.012712585146921206
+  },
+  {
+   "province": "MP",
+   "district": "Groblersdal",
+   "petrol": 0.010666052969788703,
+   "diesel": 0.009542704692866517
+  },
+  {
+   "province": "KZN",
+   "district": "Mtunzini",
+   "petrol": 0.010507443273050315,
+   "diesel": 0.009295254493347954
+  },
+  {
+   "province": "MP",
+   "district": "Balfour",
+   "petrol": 0.008082431741406718,
+   "diesel": 0.011584749319367763
+  },
+  {
+   "province": "NW",
+   "district": "Marico",
+   "petrol": 0.010338380593680172,
+   "diesel": 0.0092669475633099
+  },
+  {
+   "province": "NW",
+   "district": "Schweizer-Reneke",
+   "petrol": 0.0038687302548939353,
+   "diesel": 0.015508940485038127
+  },
+  {
+   "province": "NW",
+   "district": "Moretele 1",
+   "petrol": 0.013837432125700893,
+   "diesel": 0.005518519659296669
+  },
+  {
+   "province": "KZN",
+   "district": "Umbumbulu",
+   "petrol": 0.009759875238617387,
+   "diesel": 0.008992704576205239
+  },
+  {
+   "province": "NW",
+   "district": "Bloemhof",
+   "petrol": -0.0004537097219359696,
+   "diesel": 0.01854248253813698
+  },
+  {
+   "province": "FS",
+   "district": "Virginia",
+   "petrol": 0.010399926510400887,
+   "diesel": 0.006837270815085548
+  },
+  {
+   "province": "LP",
+   "district": "Thabamoopo",
+   "petrol": 0.011344417320256652,
+   "diesel": 0.005824237306086946
+  },
+  {
+   "province": "KZN",
+   "district": "Ubombo",
+   "petrol": 0.007904503635462742,
+   "diesel": 0.008898871283903539
+  },
+  {
+   "province": "LP",
+   "district": "Lephalale (Ellisras)",
+   "petrol": 0.004668246911238231,
+   "diesel": 0.011283654625645559
+  },
+  {
+   "province": "KZN",
+   "district": "Kranskop",
+   "petrol": 0.008756368053869333,
+   "diesel": 0.0070598184681489136
+  },
+  {
+   "province": "FS",
+   "district": "Ladybrand",
+   "petrol": 0.003650471952856335,
+   "diesel": 0.01189956066922362
+  },
+  {
+   "province": "GP",
+   "district": "Cullinan",
+   "petrol": 0.007032173621634095,
+   "diesel": 0.008011827952049877
+  },
+  {
+   "province": "MP",
+   "district": "Kwamhlanga",
+   "petrol": 0.008127452084681047,
+   "diesel": 0.005828293555929351
+  },
+  {
+   "province": "KZN",
+   "district": "Dundee",
+   "petrol": 0.006826670937596619,
+   "diesel": 0.006756076833966334
+  },
+  {
+   "province": "LP",
+   "district": "Bela-Bela (Warmbad)",
+   "petrol": 0.007941168290394944,
+   "diesel": 0.005043065409552756
+  },
+  {
+   "province": "LP",
+   "district": "Musina (Messina) (West of 30o longitude)",
+   "petrol": 0.0,
+   "diesel": 0.012188475221242107
+  },
+  {
+   "province": "MP",
+   "district": "Pilgrims Rest",
+   "petrol": 0.004991747124133523,
+   "diesel": 0.006864040946079002
+  },
+  {
+   "province": "MP",
+   "district": "Mdutjana (Siyabuswa)",
+   "petrol": 0.008290428149415288,
+   "diesel": 0.0032865749174963276
+  },
+  {
+   "province": "KZN",
+   "district": "Mahlabatini",
+   "petrol": 0.005430656744934954,
+   "diesel": 0.005496529095336753
+  },
+  {
+   "province": "LP",
+   "district": "Malamulele",
+   "petrol": 0.006500101608230462,
+   "diesel": 0.0040441181231438425
+  },
+  {
+   "province": "LP",
+   "district": "Mokopane (Potgietersrus) (north of tropic of capricorn)",
+   "petrol": 0.00439772607364666,
+   "diesel": 0.006058093369129823
+  },
+  {
+   "province": "FS",
+   "district": "Parys",
+   "petrol": 0.004645533386604623,
+   "diesel": 0.005622751237232193
+  },
+  {
+   "province": "LP",
+   "district": "Mhala",
+   "petrol": 0.0053241370151714965,
+   "diesel": 0.0025843924780478192
+  },
+  {
+   "province": "KZN",
+   "district": "Umvoti",
+   "petrol": 0.004561179844711508,
+   "diesel": 0.0032490495169113127
+  },
+  {
+   "province": "KZN",
+   "district": "Mooirivier",
+   "petrol": 0.0028456813138051954,
+   "diesel": 0.0045222576629611756
+  },
+  {
+   "province": "KZN",
+   "district": "Ingwavuma",
+   "petrol": 0.0035679389672316686,
+   "diesel": 0.003464953379385895
+  },
+  {
+   "province": "KZN",
+   "district": "Alfred",
+   "petrol": 0.003107366567304138,
+   "diesel": 0.0036024829825452823
+  },
+  {
+   "province": "KZN",
+   "district": "Nongoma",
+   "petrol": 0.003949849858681768,
+   "diesel": 0.0026542454867394243
+  },
+  {
+   "province": "NW",
+   "district": "Christiana",
+   "petrol": 0.002796757035537157,
+   "diesel": 0.0035822624738985885
+  },
+  {
+   "province": "LP",
+   "district": "Thohoyandou (east of 31o longitude)",
+   "petrol": 0.00381226447324404,
+   "diesel": 0.002554144393741833
+  },
+  {
+   "province": "FS",
+   "district": "Bethulie",
+   "petrol": 0.0011953059021397835,
+   "diesel": 0.0051242606973695435
+  },
+  {
+   "province": "FS",
+   "district": "Odendaalsrus",
+   "petrol": 0.0043319261140625275,
+   "diesel": 0.0019177298481552222
+  },
+  {
+   "province": "MP",
+   "district": "Nsikazi (Kangwane)",
+   "petrol": 0.0037185499775397816,
+   "diesel": 0.0024839185094742986
+  },
+  {
+   "province": "FS",
+   "district": "Viljoenskroon",
+   "petrol": 0.0012043104479344017,
+   "diesel": 0.004964796689151871
+  },
+  {
+   "province": "FS",
+   "district": "Botshabelo",
+   "petrol": 0.004513927199665436,
+   "diesel": 0.0016430778470013323
+  },
+  {
+   "province": "MP",
+   "district": "Nkomazi (Kamhulshwa)",
+   "petrol": 0.004226601257173612,
+   "diesel": 0.0019014271198868873
+  },
+  {
+   "province": "FS",
+   "district": "Bultfontein",
+   "petrol": 0.001554781534714997,
+   "diesel": 0.004511089383330424
+  },
+  {
+   "province": "KZN",
+   "district": "Mtonjaneni",
+   "petrol": 0.0025232224584196107,
+   "diesel": 0.003525294219225755
+  },
+  {
+   "province": "KZN",
+   "district": "Ixopo",
+   "petrol": 0.002697376241206745,
+   "diesel": 0.00328179918833349
+  },
+  {
+   "province": "NW",
+   "district": "Swartruggens",
+   "petrol": 0.003456570481789686,
+   "diesel": 0.0024696434988119506
+  },
+  {
+   "province": "KZN",
+   "district": "Nqutu",
+   "petrol": 0.0037355151984404616,
+   "diesel": 0.0020228209687173735
+  },
+  {
+   "province": "NW",
+   "district": "Taung",
+   "petrol": 0.004039621357875009,
+   "diesel": 0.0015001128461827517
+  },
+  {
+   "province": "KZN",
+   "district": "Bergville",
+   "petrol": 0.0032981342368852223,
+   "diesel": 0.0017759407435957457
+  },
+  {
+   "province": "LP",
+   "district": "Seshego",
+   "petrol": 0.0037616722758762365,
+   "diesel": 0.0011218738649267054
+  },
+  {
+   "province": "FS",
+   "district": "Ficksburg",
+   "petrol": 0.002314618496506583,
+   "diesel": 0.002548382827671406
+  },
+  {
+   "province": "FS",
+   "district": "Ventersburg",
+   "petrol": 0.0015006868583926488,
+   "diesel": 0.003354438763117552
+  },
+  {
+   "province": "KZN",
+   "district": "Paulpietersburg",
+   "petrol": 0.002365205081715338,
+   "diesel": 0.0024126771251258444
+  },
+  {
+   "province": "MP",
+   "district": "Molopo",
+   "petrol": 0.0033669949397243776,
+   "diesel": 0.0012771684832785588
+  },
+  {
+   "province": "KZN",
+   "district": "Nkandla",
+   "petrol": 0.0023744497089357754,
+   "diesel": 0.0021991532383465193
+  },
+  {
+   "province": "MP",
+   "district": "Carolina",
+   "petrol": 0.0018211056833411271,
+   "diesel": 0.0027204314934652966
+  },
+  {
+   "province": "NW",
+   "district": "Vryburg (west of 24o longitude)",
+   "petrol": 0.0028294752034321627,
+   "diesel": 0.001669112933414316
+  },
+  {
+   "province": "FS",
+   "district": "Heilbron",
+   "petrol": 0.0018229356478423127,
+   "diesel": 0.002661493531980889
+  },
+  {
+   "province": "KZN",
+   "district": "Underberg",
+   "petrol": 0.002230189698869052,
+   "diesel": 0.0021824472363906
+  },
+  {
+   "province": "LP",
+   "district": "Thabazimbi (west of 27o longitude)",
+   "petrol": 0.0013075743767577382,
+   "diesel": 0.0030754549912066966
+  },
+  {
+   "province": "LP",
+   "district": "Soutpansberg (east of 30o 30' longitude)",
+   "petrol": 0.0017490598753638054,
+   "diesel": 0.0024051331021323306
+  },
+  {
+   "province": "LP",
+   "district": "Namakgale",
+   "petrol": 0.003000012061511196,
+   "diesel": 0.0010275660491335385
+  },
+  {
+   "province": "FS",
+   "district": "Senekal",
+   "petrol": 0.0018370513792145397,
+   "diesel": 0.0021880337087813117
+  },
+  {
+   "province": "FS",
+   "district": "Frankfort",
+   "petrol": 0.0022479325796617177,
+   "diesel": 0.001742487481941418
+  },
+  {
+   "province": "FS",
+   "district": "Marquard",
+   "petrol": 0.0004793463720359504,
+   "diesel": 0.0035046625891163225
+  },
+  {
+   "province": "MP",
+   "district": "Moutse",
+   "petrol": 0.0025986997753661622,
+   "diesel": 0.0011319378396398396
+  },
+  {
+   "province": "NW",
+   "district": "Ventersdorp",
+   "petrol": 0.001791988588106637,
+   "diesel": 0.0018036828526598145
+  },
+  {
+   "province": "NW",
+   "district": "Delareyville",
+   "petrol": 0.0011647310630100959,
+   "diesel": 0.0021630924926796854
+  },
+  {
+   "province": "NW",
+   "district": "Coligny",
+   "petrol": 0.0,
+   "diesel": 0.0028733988657329923
+  },
+  {
+   "province": "LP",
+   "district": "Lulekani",
+   "petrol": 0.0016119325774760632,
+   "diesel": 0.0012407582978401584
+  },
+  {
+   "province": "NW",
+   "district": "Lehurutshe",
+   "petrol": 0.0018094568858986362,
+   "diesel": 0.0009170123976470369
+  },
+  {
+   "province": "FS",
+   "district": "Thaba'nchu",
+   "petrol": 0.0020065659026456675,
+   "diesel": 0.0005915102402598707
+  },
+  {
+   "province": "LP",
+   "district": "Bochum",
+   "petrol": 0.0013847048878423127,
+   "diesel": 0.0011953892015786939
+  },
+  {
+   "province": "FS",
+   "district": "Clocolan",
+   "petrol": 0.0013392415684669848,
+   "diesel": 0.0010542975737282672
+  },
+  {
+   "province": "KZN",
+   "district": "Glencoe",
+   "petrol": 0.0006878343371877027,
+   "diesel": 0.0012120510389276328
+  },
+  {
+   "province": "FS",
+   "district": "Rouxville",
+   "petrol": 0.0006603369836977352,
+   "diesel": 0.0012006327904548705
+  },
+  {
+   "province": "FS",
+   "district": "Brandfort",
+   "petrol": 0.0011664650501823247,
+   "diesel": 0.0006527327530981037
+  },
+  {
+   "province": "LP",
+   "district": "Mapulaneng",
+   "petrol": 0.0010593789962049349,
+   "diesel": 0.0007595715316964185
+  },
+  {
+   "province": "FS",
+   "district": "Trompsburg",
+   "petrol": 0.0009529692928853665,
+   "diesel": 0.0008482529114044149
+  },
+  {
+   "province": "LP",
+   "district": "Ritavi",
+   "petrol": 0.0012992507365046683,
+   "diesel": 0.0004590999062890267
+  },
+  {
+   "province": "NW",
+   "district": "Koster",
+   "petrol": 0.0010514547419572446,
+   "diesel": 0.000702265825221898
+  },
+  {
+   "province": "FS",
+   "district": "Wesselsbron",
+   "petrol": 0.000537608818567285,
+   "diesel": 0.001176925931730415
+  },
+  {
+   "province": "FS",
+   "district": "Theunissen",
+   "petrol": 0.0004399600840316034,
+   "diesel": 0.0012240492663192016
+  },
+  {
+   "province": "KZN",
+   "district": "Dannhauser",
+   "petrol": 0.0006918742448698991,
+   "diesel": 0.000859792132496297
+  },
+  {
+   "province": "KZN",
+   "district": "Richmond (KZN)",
+   "petrol": 0.0,
+   "diesel": 0.0015407064877764156
+  },
+  {
+   "province": "FS",
+   "district": "Vrede",
+   "petrol": 0.0,
+   "diesel": 0.0013830198412467674
+  },
+  {
+   "province": "FS",
+   "district": "Hoopstad",
+   "petrol": 0.0004537097219359696,
+   "diesel": 0.0008502768379430041
+  },
+  {
+   "province": "MP",
+   "district": "Waterval-Boven",
+   "petrol": 0.0007291840714612997,
+   "diesel": 0.0005609932229202071
+  },
+  {
+   "province": "FS",
+   "district": "Boshof",
+   "petrol": 0.0005402019254067912,
+   "diesel": 0.0006703611532492146
+  },
+  {
+   "province": "MP",
+   "district": "Eerstehoek",
+   "petrol": 0.0006423392702120952,
+   "diesel": 0.0005618819455077049
+  },
+  {
+   "province": "FS",
+   "district": "Fauresmith",
+   "petrol": 0.00039367665389547637,
+   "diesel": 0.0007961964038774455
+  },
+  {
+   "province": "FS",
+   "district": "Lindley",
+   "petrol": 0.00018372308661176412,
+   "diesel": 0.0007813747888449121
+  },
+  {
+   "province": "FS",
+   "district": "Petrusburg",
+   "petrol": 9.066262344446381e-05,
+   "diesel": 0.0008170717931692768
+  },
+  {
+   "province": "LP",
+   "district": "Sekhukhuneland",
+   "petrol": 0.0006466784029980336,
+   "diesel": 0.00024152765159621045
+  },
+  {
+   "province": "KZN",
+   "district": "Polela",
+   "petrol": 0.00041610815514305036,
+   "diesel": 0.00041641276568200983
+  },
+  {
+   "province": "FS",
+   "district": "Smithfield",
+   "petrol": 0.00015772018419968776,
+   "diesel": 0.000606033178128334
+  },
+  {
+   "province": "KZN",
+   "district": "New Hanover",
+   "petrol": 0.00030682408040798043,
+   "diesel": 0.00040816602400971133
+  },
+  {
+   "province": "FS",
+   "district": "Zastron",
+   "petrol": 0.0,
+   "diesel": 0.000543458429371506
+  },
+  {
+   "province": "NW",
+   "district": "Ditsobotla",
+   "petrol": 0.0,
+   "diesel": 0.0005379179304721185
+  },
+  {
+   "province": "FS",
+   "district": "Winburg",
+   "petrol": 9.101369955578207e-05,
+   "diesel": 0.00038498751130815455
+  },
+  {
+   "province": "KZN",
+   "district": "Ndwedwe",
+   "petrol": 0.0,
+   "diesel": 0.00044875511176866334
+  },
+  {
+   "province": "FS",
+   "district": "Hennenman",
+   "petrol": 0.0,
+   "diesel": 0.0003834037887917086
+  },
+  {
+   "province": "NW",
+   "district": "Vryburg (east of 24o longitude and north of 26o30' latitude)",
+   "petrol": 8.339322327206707e-06,
+   "diesel": 8.175241407506516e-05
+  },
+  {
+   "province": "KZN",
+   "district": "Ngotshe",
+   "petrol": 0.0,
+   "diesel": 4.784056355589933e-05
+  },
+  {
+   "province": "NW",
+   "district": "Kudumane",
+   "petrol": 0.0,
+   "diesel": 1.05097951314219e-05
+  },
+  {
+   "province": "KZN",
+   "district": "Impendle",
+   "petrol": 0.0,
+   "diesel": 0.0
+  },
+  {
+   "province": "LP",
+   "district": "Mokerong 1 (East of Lephalale)",
+   "petrol": 0.0,
+   "diesel": 0.0
+  }
+ ]
+}
