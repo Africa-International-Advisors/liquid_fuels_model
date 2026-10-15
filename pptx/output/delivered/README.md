@@ -1,3 +1,12 @@
+# 15 October 2026: South Africa market outlook, v1712 (for Nigel's review)
+
+- [Editable PowerPoint, 23 slides](supporting/15102026_South_Africa_Market_Outlook_v1712.pptx)
+- [Model run behind the outlook](../../../output/delivered/moi_outlook_2026_10_15/) (`python -m lfm.scripts.build_moi_outlook`)
+
+Addresses Nigel's v1002 markup (pp4, 6-11, 13-15), refined titles, and today's model additions: petrol price build, road
+freight from the truck fleet, peaker load factors, EV curves from the 2025 actual with benchmarks (p19), and generators if load
+shedding returns (high case). Outlook p15, assumptions p18, comparison with November 2025 p22.
+
 # 14 October 2026: South Africa market outlook, v1522 (for Nigel's review)
 
 - [Editable PowerPoint, 22 slides](supporting/14102026_South_Africa_Market_Outlook_v1522.pptx)
@@ -5,7 +14,7 @@
 
 Demand is now production + imports - exports (25.4bn L in 2025); the outlook to 2030 is for the market of interest (pp16, 19, 20).
 
-# Current South Africa delivery — v10
+# Current South Africa delivery ï¿½ v10
 
 Updated 12 October 2026.
 

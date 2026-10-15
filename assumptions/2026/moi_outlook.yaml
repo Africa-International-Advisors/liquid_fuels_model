@@ -1,0 +1,198 @@
+# Market-of-interest petrol and diesel outlook to 2030 (lfm.model.moi_outlook).
+#
+# Low / Base / High are demand cases: Low demand has the high petrol price, High demand the low one.
+# All money values are real 2025 terms. Every block is provisional until Nigel reviews it (EXC-MOI-OUTLOOK-2026-10-15).
+
+market:
+  register_id: REG-MOI-OUTLOOK-MARKET
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: province codes; Department magisterial district names
+  source: AIA Vopak board report, 25 November 2025 (six provinces); southern Free State cut agreed with Henry Gilfillan, 14 October 2026 (Bloemfontein kept)
+  value:
+    provinces: [GP, KZN, MP, FS, NW, LP]
+    excluded_districts_fs: [Ladybrand, Botshabelo, "Thaba'nchu", Bethulie, Rouxville, Brandfort, Trompsburg, Boshof, Fauresmith, Petrusburg, Smithfield, Zastron]
+    district_sales_year: 2022
+
+gdp_growth:
+  register_id: REG-MOI-OUTLOOK-GDP
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: real GDP growth a year, 2026-2030, held flat
+  source: "Low: IMF World Economic Outlook, October 2026 (2026); Base: National Treasury 2026 Budget Review, Table 2.2; High: Medium-Term Development Plan 2024-2029 target"
+  value: {Low: 0.010, Base: 0.020, High: 0.030}
+
+gdp_path_rail_total:
+  register_id: REG-MOI-OUTLOOK-GDP-RAIL
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: real GDP growth a year, 2026-2030 (total freight tonnes grow with it)
+  source: National Treasury 2026 Budget Review, Table 2.2 (2029-30 held at 2028)
+  value: [0.016, 0.018, 0.020, 0.020, 0.020]
+
+petrol_elasticities:
+  register_id: REG-MOI-OUTLOOK-PETROL-EL
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: elasticities (dimensionless)
+  source: "Income 0.36 and long-run price -0.47: Akinboade, Ziramba and Kumo (2008), Energy Economics, South African petrol demand. Phasing: Brons et al. (2008), Energy Economics, meta-analysis short run -0.34 vs long run -0.84"
+  value: {income: 0.36, price_long_run: -0.47, phasing_short_run: -0.34, phasing_long_run: -0.84}
+
+diesel_gdp_elasticity:
+  register_id: REG-MOI-OUTLOOK-DIESEL-EL
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-13'
+  units: elasticity of non-power diesel to GDP; no price response
+  source: Henry Gilfillan, 13 October 2026 (diesel grows in line with GDP); Nigel Zhuwaki (petrol follows price, diesel follows GDP)
+  value: 1.0
+
+oil_price:
+  register_id: REG-MOI-OUTLOOK-OIL
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: Brent and margin in real US$/bbl; petrol share of the average refining margin; rand per US$ (real)
+  source: "Henry Gilfillan, 14 October 2026: real Brent mostly $60-80 (base $70); refining margins $5-10; petrol sold at 50-70% of the average margin as EVs grow; rand 15-18 (base 16.50). Petrol only; no freight (Manish Ramjeawon, 15 October 2026)"
+  value:
+    Low: {brent: 80, margin: 10.0, petrol_share: 0.50, fx: 18.0}
+    Base: {brent: 70, margin: 7.5, petrol_share: 0.60, fx: 16.5}
+    High: {brent: 60, margin: 5.0, petrol_share: 0.70, fx: 15.0}
+
+oil_price_2025:
+  register_id: REG-MOI-OUTLOOK-OIL-2025
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: Brent US$/bbl and rand per US$, 2025 averages; CPI 2026 a year
+  source: "Brent: Statista 2025 average (EIA STEO October 2025 had 68.64); rand: 2025 market average; CPI 2026: National Treasury 2026 Budget Review, Table 2.2"
+  value: {brent: 69.14, fx: 17.88, cpi_2026: 0.034}
+
+efficiency:
+  register_id: REG-MOI-OUTLOOK-EFFICIENCY
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: road fleet fuel use per km, fall a year
+  source: IEA/GFEI; eNaTIS; Lightstone; Stone et al. (2018); US fueleconomy.gov like-for-like 2006-2026 (pack p9)
+  value:
+    Low: {petrol: 0.008, diesel: 0.007}
+    Base: {petrol: 0.0065, diesel: 0.0055}
+    High: {petrol: 0.005, diesel: 0.004}
+
+ev_scurves:
+  register_id: REG-MOI-OUTLOOK-EV
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: logistic EV share of new light-vehicle sales (ceiling, slope in years); midpoint set so each curve passes the anchor-year actual; anchor share is of new cars (scaled to cars + LCVs by the eNaTIS 2025 car share of new light vehicles); Base = average of Low and High
+  source: "Ceilings and slopes: Vopak/Reatile xlsx EV_High_Penetration (Low demand) and EV_Low_Penetration (High demand), see _meta.yaml. Anchor: South Africa 0.88% of new cars electric (BEV + PHEV) in 2025, IEA Global EV Outlook 2026 via Our World in Data (external/data/raw/ev_benchmark_20261015). Anchoring replaces the workbook midpoints (2036, 2040), which started below the 2025 actual (Manish Ramjeawon, 15 October 2026). No electric trucks to 2030: IEA GEVO 2026 has Europe heavy trucks at about 1.5% of sales in 2025. Benchmarks (same source): electric share of new cars five years after first reaching South Africa's 2025 level, world 2015-2020 4.4%, China 2015-2020 5.7%, Germany 2015-2020 14% (purchase subsidies), Brazil 2021-2025 9.0% (four years). Each case's share of new cars in check_year must sit in its band: slow (High demand) at or below China, base between China and Brazil, fast (Low demand) between Brazil and Germany (pack p23; Manish Ramjeawon, 15 October 2026)"
+  value:
+    anchor_year: 2025
+    anchor_car_share: 0.0088
+    Low: {ceiling: 0.90, slope: 2}
+    High: {ceiling: 0.30, slope: 3}
+    check_year: 2030
+    benchmarks: {world: 0.044, china: 0.057, brazil: 0.090, germany: 0.14}
+    bands: {High: [null, china], Base: [china, brazil], Low: [brazil, germany]}
+
+light_fleet:
+  register_id: REG-MOI-OUTLOOK-FLEET
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: net growth a year of cars + light commercials
+  source: eNaTIS live vehicle population, December 2023-2025
+  value: {growth: 0.0195}
+
+road_freight_diesel:
+  register_id: REG-MOI-OUTLOOK-ROAD-FREIGHT
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: base year of the truck parameters; fleet fuel use per km, fall a year since then
+  source: "Bottom-up (Henry Gilfillan, 14 October 2026 cross-check; applied by Manish Ramjeawon, 15 October 2026): Stone et al. (2018) 2010 diesel heavy trucks HCV1-9 x fleet-average km x fleet-average L/100 km, scaled by eNaTIS trucks (December) with km per truck held; 0.4% a year efficiency (low end of the diesel range, pack p9). Replaces the workbook's assumed 75% of road diesel; other road diesel unchanged; the difference comes out of unallocated diesel"
+  value: {base_year: 2010, efficiency_gain: 0.004}
+
+rail:
+  register_id: REG-MOI-OUTLOOK-RAIL
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: rail freight in 2030, million tonnes (High = 2025 tonnes grown 5% a year); share of moved road tonnes whose diesel is used by rail
+  source: "Low: draft National Rail Master Plan, April 2026 (262m t); Base: Transnet target (250m t); High: Stats SA P7162 2025 rail tonnes at 5% a year. Rail's own diesel excluded (Manish Ramjeawon, 14 October 2026)"
+  value: {Low: 262.0, Base: 250.0, high_growth: 0.05, rebound: 0.0}
+
+peakers:
+  register_id: REG-MOI-OUTLOOK-PEAKERS
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: MW; GWh; days; L/kWh; Eskom-owned load factor in 2030; FY ending March
+  source: "Henry Gilfillan, 13-14 October 2026: national forecast covers all diesel peakers; Eskom-owned units run first, so national load factors sit above the market of interest (Avon only); base 5% (Eskom planning maximum), high about 10%, low at this year's rate. Eskom-owned: Ankerlig 1 338, Gourikwa 746, Acacia 171, Port Rex 171 MW (Eskom). IPP: Dedisa 335, Avon 670 MW. Low: Eskom turbines 152 GWh over 191 days, 1 April-8 October 2026 (includes winter). IPP load factor = Eskom-owned x FY2025 IPP/Eskom ratio (0.734): Eskom OCGT 2 176 GWh and IPP OCGT 662 GWh, Eskom Integrated Report 2026 (timeseries/ocgt_generation_eskom.csv). Eskom 0.31 L/kWh (FY2024-25)"
+  value:
+    eskom_units_mw: {ankerlig: 1338, gourikwa: 746, acacia: 171, port_rex: 171}
+    ipp_units_mw: {dedisa: 335, avon: 670}
+    market_units: [avon]
+    eskom_load_factor: {Base: 0.05, High: 0.10}
+    eskom_gwh_2026: 152
+    eskom_days_2026: 191
+    ratio_year: 2025
+    litres_per_kwh: 0.31
+
+backup_generators:
+  register_id: REG-MOI-OUTLOOK-GENERATORS
+  exception_id: EXC-MOI-OUTLOOK-2026-10-15
+  owner: manish.r@africaia.com
+  confidence: unassessed
+  provisional: true
+  shared: true
+  last_updated: '2026-10-15'
+  units: calendar years (load shedding, none); share of that year's generator diesel back in 2030
+  source: "Henry Gilfillan, 14 October 2026 check-in: the drop in industrial diesel once load shedding stopped is all generator diesel; treat it as going from stage 6 load shedding to none, and extrapolate for a return of load shedding. Installed generator capacity is not published, so not used. Generator diesel = fall in national diesel (production + imports - exports) less fall in Eskom + IPP peaker diesel, 2023 to 2024; peakers by FY ending the next March (9 of 12 months). Base: no load shedding by 2030 (Henry Gilfillan, 13 October 2026); High: stage 6 returns (Manish Ramjeawon, 15 October 2026)"
+  value:
+    years: [2023, 2024]
+    level: {Low: 0.0, Base: 0.0, High: 1.0}

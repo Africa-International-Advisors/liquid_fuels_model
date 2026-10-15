@@ -1,0 +1,54 @@
+entity,code,year,ev_sales_share_pct
+China,CHN,2013,0.096
+China,CHN,2014,0.41
+China,CHN,2015,1.1
+China,CHN,2016,1.5
+China,CHN,2017,2.4
+China,CHN,2018,4.7
+China,CHN,2019,5
+China,CHN,2020,5.7
+China,CHN,2021,16
+China,CHN,2022,29
+China,CHN,2023,38
+China,CHN,2024,48
+China,CHN,2025,53
+Germany,DEU,2013,0.23
+Germany,DEU,2014,0.45
+Germany,DEU,2015,0.73
+Germany,DEU,2016,0.74
+Germany,DEU,2017,1.6
+Germany,DEU,2018,2
+Germany,DEU,2019,3
+Germany,DEU,2020,14
+Germany,DEU,2021,26
+Germany,DEU,2022,31
+Germany,DEU,2023,24
+Germany,DEU,2024,20
+Germany,DEU,2025,30
+Brazil,BRA,2019,0.084
+Brazil,BRA,2020,0.16
+Brazil,BRA,2021,0.92
+Brazil,BRA,2022,1.2
+Brazil,BRA,2023,3
+Brazil,BRA,2024,6.4
+Brazil,BRA,2025,9
+World,OWID_WRL,2013,0.29
+World,OWID_WRL,2014,0.44
+World,OWID_WRL,2015,0.68
+World,OWID_WRL,2016,0.95
+World,OWID_WRL,2017,1.4
+World,OWID_WRL,2018,2.4
+World,OWID_WRL,2019,2.7
+World,OWID_WRL,2020,4.4
+World,OWID_WRL,2021,9.3
+World,OWID_WRL,2022,15
+World,OWID_WRL,2023,18
+World,OWID_WRL,2024,21
+World,OWID_WRL,2025,25
+South Africa,ZAF,2019,0.064
+South Africa,ZAF,2020,0.098
+South Africa,ZAF,2021,0.088
+South Africa,ZAF,2022,0.17
+South Africa,ZAF,2023,0.3
+South Africa,ZAF,2024,0.54
+South Africa,ZAF,2025,0.88
